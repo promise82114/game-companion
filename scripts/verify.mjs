@@ -28,15 +28,15 @@ for(const slug of ['edf-wb','edf-wb2']){
  assert.equal(validate(w.SideProjectProgress.pack(legacyProject,legacy)).data.app,raw.app);
  assert.equal(validate(w.SideProjectProgress.pack(w.SIDE_PROJECT_CLOUD_CONFIG.projectId,raw)).data.gameId,slug);
  assert.throws(()=>validate(w.SideProjectProgress.pack('another-game',raw)));
- assert.equal(w.SIDE_PROJECT_CLOUD_CONFIG.writesEnabled,false);
+ assert.equal(w.SIDE_PROJECT_CLOUD_CONFIG.writesEnabled,true);
  // 直接測 adapter 的最後一道防線，不依賴按鈕 disabled 或 config flag。
  vm.runInContext(await fs.readFile(path.join(dir,'dist/shared/drive-appdata.js'),'utf8'),context);
  const adapter=new w.SideProjectDrive.DriveAppData({token(){throw Error('不應取得 Token');}},w.SIDE_PROJECT_CLOUD_CONFIG.fileName);
  await assert.rejects(adapter.write(raw,null),error=>error.code==='write-disabled');
  const manifest=JSON.parse(await fs.readFile(path.join(dir,'source-manifest.json'),'utf8'));
- const unchanged=manifest.files.filter(file=>file.path.startsWith('dist/')&&!['dist/app.js','dist/index.html','dist/sw.js','dist/cloud-config.js','dist/cloud-sync.js','dist/shared/drive-appdata.js'].includes(file.path));
+ const unchanged=manifest.files.filter(file=>file.path.startsWith('dist/')&&!['dist/app.js','dist/index.html','dist/sw.js','dist/cloud-config.js','dist/cloud-sync.js','dist/shared/drive-appdata.js','dist/shared/google-auth.js'].includes(file.path));
  for(const file of unchanged){const data=await fs.readFile(path.join(dir,file.path),'utf8');assert.equal(createHash('sha256').update(data.replace(/\r\n/g,'\n')).digest('hex'),file.sha256LF,'攻略內容／UI 樣式不可變更：'+slug+'/'+file.path);}
- results.push({slug,items:catalog.items.length,missions:w.EDF_MISSIONS.rows.length,immutableFiles:unchanged.length,unknownData:'retained',cloudWrite:'blocked'});
+ results.push({slug,items:catalog.items.length,missions:w.EDF_MISSIONS.rows.length,immutableFiles:unchanged.length,unknownData:'retained',cloudWrite:'blocked-until-current-grant-proven'});
 }
 const legacyCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/edf-wb'),encoding:'utf8'});assert.equal(legacyCheck.status,0,legacyCheck.stderr);console.log(legacyCheck.stdout.trim());
 console.log(JSON.stringify({passed:true,modules:results}));

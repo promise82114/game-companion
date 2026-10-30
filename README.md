@@ -22,10 +22,13 @@ node server.mjs
 - 新站不讀寫舊站 Key。請由舊站下載 JSON，再到對應模組的「備份與還原」選檔。
 - 逐筆或批次選擇差異，下載來源與匯入前進度的備份、確認保存後才套用。預覽後有新編輯時必須重新比較。
 - 未知項目保留；未知欄位及兩端原文也保存在可匯出的 `importHistory`／`recoveryBundle`。備份與歷史可能占用空間；儲存失敗會停止匯入，不清理使用者資料。
-- Google Drive 保留各遊戲獨立的授權、檔名與下載入口。**所有雲端寫入目前停用**，尚未完成三方合併與原子競爭驗證；不會連接後自動上傳。正式寫入與舊站切換仍需另行確認。
+- Google Drive 沿用原 Google Client／scope，各遊戲與帳號的 Base、檔名及同步獨立。連接後先按「驗證 Drive 寫入安全」，通過本次授權的獨立合成檔條件寫入測試，才能手動同步。首次配對與三方衝突須確認；同步中新增編輯保留為未同步變更。沒有自動上傳。
+- 使用者已要求直接發布至綁定網域自行測試；尚未取得真實 Drive 通過證據。可先使用 [獨立測試入口](https://promise82114.github.io/game-companion/sync-safety/)，不會讀寫遊戲備份；遊戲內仍需驗證當次授權。詳見 [同步報告](docs/reports/DRIVE_SYNC_REPORT.md)。
 - 瀏覽器資料可被清除，請定期下載 JSON。切換網址不等於資料已移轉。
 
 ## 驗證與部署
+
+同步合成回歸：`node scripts/verify-sync.mjs`；隔離瀏覽器同步：`node scripts/verify-sync-browser.mjs`。兩者不代表真實 Google 已通過。
 
 資料與發布產物：`node scripts/verify.mjs`、`node scripts/build.mjs`、`node scripts/verify-site.mjs`。
 
@@ -37,7 +40,7 @@ node server.mjs
 - `/game-companion/games/edf-wb/`
 - `/game-companion/games/edf-wb2/`
 
-已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Google Drive 寫入仍停用，舊站入口未切換。
+已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Drive 已提供具每次授權驗證門檻的手動同步；舊站入口未切換。
 
 ## 維護文件
 

@@ -70,7 +70,6 @@ try{
   await upload({...source,app:'wrong-game'});assert.equal(await page.locator('#importPreview').isVisible(),false);assert.match(await page.locator('#backupMessage').textContent(),/不是/);
   await page.locator('#backupDialog .close').click();
   await page.locator('#cloudQuick').click();await page.waitForFunction(()=>document.getElementById('cloudConnect').textContent.includes('連接／'));
-  await page.locator('#cloudConnect').click();await page.waitForFunction(()=>!document.getElementById('cloudRead').disabled);await page.locator('#cloudRead').click();await page.waitForFunction(()=>document.getElementById('cloudRemoteSummary').textContent.includes('尚無備份'));
   assert.equal(await page.locator('#cloudUpload').isDisabled(),true);assert.equal(await page.locator('#cloudAuto').isChecked(),false);
   await page.evaluate(async()=>{const c=window.SIDE_PROJECT_CLOUD_CONFIG;try{await new window.SideProjectDrive.DriveAppData({token:()=>{throw Error('token must not be used');}},c.fileName).write({},null);throw Error('write must reject');}catch(error){if(error.code!=='write-disabled')throw error;}});
   assert.deepEqual(writes,[]);await page.locator('#cloudDialog .close').click();
@@ -84,7 +83,7 @@ try{
   const restricted=await browser.newContext({serviceWorkers:'block'}),blocked=await restricted.newPage();await blocked.goto(url);
   await blocked.locator('#backupOpen').click();await blocked.evaluate(()=>{const set=Storage.prototype.setItem;Storage.prototype.setItem=function(key,value){if(key.includes('.import.'))throw new DOMException('Synthetic quota','QuotaExceededError');return set.call(this,key,value);};});
   await blocked.locator('#importFile').setInputFiles({name:'quota.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(source))});assert.equal(await blocked.locator('#importPreview').isVisible(),false);assert.match(await blocked.locator('#backupMessage').textContent(),/quota/i);await restricted.close();
-  results.push({slug,counts,checks:['selection/undo/reload','search/filter','DLC','accessory qualifications','favorites/notes','cross-tab','protected import/differences','unknown retention','stale preview blocked','quota blocks import','cloud GET only/write blocked','offline','390px','old keys/caches untouched']});
+  results.push({slug,counts,checks:['selection/undo/reload','search/filter','DLC','accessory qualifications','favorites/notes','cross-tab','protected import/differences','unknown retention','stale preview blocked','quota blocks import','unverified grant write blocked','offline','390px','old keys/caches untouched']});
  }
  const together=await browser.newContext(),one=await together.newPage(),two=await together.newPage();
  await one.goto(base+'games/edf-wb/');await one.locator('.item-check').first().click();

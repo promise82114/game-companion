@@ -2,14 +2,15 @@
   "gameId": "edf-wb",
   "slug": "edf-wb",
   "title": "EDF World Brothers",
-  "moduleVersion": "1.0.0",
+  "moduleVersion": "1.1.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/edf-wb/",
   "storagePrefix": "game-companion.edf-wb.",
   "driveProjectId": "game-companion.edf-wb",
   "driveFileName": "game-companion.edf-wb.progress.v1.json",
-  "cloudWritesEnabled": false,
+  "cloudWritesEnabled": true,
   "sourceCommit": "766e4ba5fa1535ac78bc0559cba57c8c3bb6b7b2",
-  "legacyUrl": "https://promise82114.github.io/edfwb-checklist/"
+  "legacyUrl": "https://promise82114.github.io/edfwb-checklist/",
+  "cloudSafety": "per-grant-conditional-probe"
 }

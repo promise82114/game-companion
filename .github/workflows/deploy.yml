@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: '24'
       - run: node scripts/verify.mjs
+      - run: node scripts/verify-sync.mjs
       - run: node scripts/build.mjs
       - run: node scripts/verify-site.mjs
       - uses: actions/upload-pages-artifact@v4

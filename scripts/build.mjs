@@ -14,10 +14,11 @@ for(const item of await fs.readdir(path.join(root,'games'),{withFileTypes:true})
  const config=JSON.parse(await fs.readFile(path.join(moduleRoot,'module.json'),'utf8'));
  assert.equal(config.slug,item.name);assert.match(config.slug,/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
  assert.equal(config.publicPath,'games/'+config.slug+'/');assert.equal(config.entry,'dist/index.html');
- assert.equal(config.cloudWritesEnabled,false,'目前發布必須保持雲端寫入停用');
+ if(config.cloudWritesEnabled)assert.equal(config.cloudSafety,'per-grant-conditional-probe','寫入必須有逐次授權條件驗證閘門');
  await fs.access(path.join(moduleRoot,config.entry));
  await fs.cp(path.join(moduleRoot,'dist'),path.join(output,'games',config.slug),{recursive:true});modules.push(config);
 }
+await fs.cp(path.join(root,'tools/sync-safety'),path.join(output,'sync-safety'),{recursive:true});
 assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,modules.length);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');

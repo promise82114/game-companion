@@ -1,6 +1,8 @@
 # Game Companion｜整合報告
 
-日期：2026-10-31（Asia/Taipei）。狀態：**兩款遊戲已整合並發布至 GitHub Pages；Google Drive 寫入仍停用，舊站未切換。**
+日期：2026-10-31（Asia/Taipei）。狀態：**兩款遊戲已整合並發布；後續加入具每次授權驗證門檻的手動 Drive 同步，真實 Google 尚待使用者於正式網域測試，舊站未切換。**
+
+同步擴充的現況、測試、檔案與限制見 [DRIVE_SYNC_REPORT.md](DRIVE_SYNC_REPORT.md)。下方為初次整合與首發歷史，當時的「停用」不代表目前程式策略。
 
 ## 後續授權與首次發布紀錄
 

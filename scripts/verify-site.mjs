@@ -14,6 +14,8 @@ for(const slug of ['edf-wb','edf-wb2']){
  assert.ok(sw.includes('game-companion.'+slug+'.assets.'));assert.ok(sw.includes('caches.open(CACHE).then(c=>c.match(e.request))'));assert.ok(sw.includes('self.registration.scope'));assert.ok(!/startsWith\('edfwb/.test(sw));
  for(const match of sw.matchAll(/'\.\/([^']*)'/g)){const target=path.join(dir,match[1]);await fs.access(target);}
  assert.ok(!/await drive\.write\(/.test(cloud));assert.ok(!cloud.includes('setInterval('));
- assert.ok((await fs.readFile(path.join(dir,'shared/drive-appdata.js'),'utf8')).includes("throw new DriveError('雲端寫入尚未通過競爭安全驗證"));
+ const adapter=await fs.readFile(path.join(dir,'shared/drive-appdata.js'),'utf8');assert.ok(adapter.includes("'If-Match':etag"));assert.ok(adapter.includes('!this.verified'));
+ assert.ok((await fs.readFile(path.join(dir,'shared/sync-session.js'),'utf8')).includes('commitSync'));
+ assert.ok((await fs.readFile(path.join(dir,'shared/sync-core.js'),'utf8')).includes('preserveConcurrent'));
 }
 console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:2}));

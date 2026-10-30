@@ -26,7 +26,8 @@ games/{slug}/
 | publicPath | `games/{slug}/` |
 | storagePrefix | 完全獨立，例如 `game-companion.{slug}.` |
 | driveProjectId／driveFileName | 遊戲自己的備份識別；名稱不代表唯一檔案 |
-| cloudWritesEnabled | 目前發布必須 false，不能當作可單獨解除底層封鎖的開關 |
+| cloudWritesEnabled | 新模組預設 false；true 必須搭配 cloudSafety 與已驗證的底層保護，不能單獨解除封鎖 |
+| cloudSafety | EDF 使用 per-grant-conditional-probe；授權、遊戲／帳號隔離、Base、衝突、編輯保護與條件寫入缺一不可 |
 | legacyUrl／sourceCommit | 搬移來源可填；新遊戲沒有舊站時可省略 legacyUrl |
 
 新增模組時複製結構而不是把 EDF app 改名當成 Roadmap。不同遊戲可有不同框架，但編譯結果必須落在該模組的 `dist/`；在 artifact 建立前執行該模組自己的建置與驗證。不要發布其他遊戲失敗時的半份網站。

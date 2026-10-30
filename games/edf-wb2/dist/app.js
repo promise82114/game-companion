@@ -66,7 +66,7 @@ sections.dlcCharacters={...sections.characters,title:'DLC 角色清單',short:'D
 let activeView='weapons';
 function sectionItems(key=activeView){const s=sections[key];return availableItems().filter(i=>i.kind===s.kind&&(s.kind==='accessories'||!!i.extra===s.extra));}
 let section='weapons', filter='missing', current=[], undoStack=[], pendingImport=null, storageError='', recovered=false,missionLevel=1,missionMode='weapons',missionRows=[],missionOtherExpanded=false,missionTab='all';
-const fresh=()=>({app:'edfwb2-collection',schema:1,catalogVersion:catalog.version,updatedAt:Date.now(),gameId:'edf-wb2',moduleVersion:'1.0.0',revision:0,entries:{},favorites:{},content:{},missionNotes:{}});
+const fresh=()=>({app:'edfwb2-collection',schema:1,catalogVersion:catalog.version,updatedAt:Date.now(),gameId:'edf-wb2',moduleVersion:'1.1.0',revision:0,entries:{},favorites:{},content:{},missionNotes:{}});
 function validate(raw){
   if(raw?.schemaVersion!==undefined){const allowed=[window.SIDE_PROJECT_CLOUD_CONFIG.projectId,'edfwb2-checklist'];if(!allowed.includes(raw.projectId))throw Error('備份不屬於這款遊戲。');return window.SideProjectProgress.unpack(raw,raw.projectId,validate);}
   if(!raw||raw.app!=='edfwb2-collection'||raw.schema!==1||!raw.entries||typeof raw.entries!=='object'||Array.isArray(raw.entries))throw Error('這不是支援的 EDF WB2 備份檔。');
@@ -106,7 +106,8 @@ function validate(raw){
 }
 function snapshots(){try{const a=JSON.parse(localStorage.getItem(SNAP)||'[]');return Array.isArray(a)?a.filter(x=>{try{validate(x.data);return true;}catch{return false;}}):[];}catch{return [];}}
 function load(){try{const raw=localStorage.getItem(KEY);if(!raw)return fresh();return validate(JSON.parse(raw)).data;}catch(e){storageError='存檔讀取異常，請立即備份';const last=snapshots()[0];if(last){recovered=true;return validate(last.data).data;}return fresh();}}
-let state=load();
+let state=load(),changeSeq=0,syncCommit=false,journal=null,journalView=JSON.parse(JSON.stringify(state));
+try{journal=new window.SideProjectSync.Journal('game-companion.edf-wb2.',localStorage,state);state=validate(journal.read()).data;journalView=JSON.parse(JSON.stringify(state));}catch{storageError='本機操作日誌無法讀寫，請先下載備份。';}
 function owned(i){return state.entries[i.id]?.owned===true;}
 function favorite(code){return state.favorites?.[code]?.favorite===true;}
 function missionNote(code){return state.missionNotes?.[code]?.text||'';}
@@ -122,11 +123,23 @@ function toggleFavorite(code){if(!missionIds.has(code))return;mergeLatest();cons
 function escape(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,4000);}
 function status(){const el=$('saveStatus');el.classList.toggle('error',!!storageError);el.textContent=storageError||(state.updatedAt?'● 已自動儲存 '+new Date(state.updatedAt).toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'}):'● 自動儲存就緒');}
-function mergeLatest(){try{const raw=localStorage.getItem(KEY);if(!raw)return;const latest=validate(JSON.parse(raw)).data;for(const key of ['entries','favorites','content','missionNotes']){state[key]??={};for(const [id,e]of Object.entries(latest[key]||{}))if(!Object.hasOwn(state[key],id)||(Number.isFinite(e?.updatedAt)&&e.updatedAt>(state[key][id]?.updatedAt??-1)))Object.defineProperty(state[key],id,{value:e,enumerable:true,writable:true,configurable:true});}}catch{}}
+function checkLegacyWriter(){
+ if(!journal)return;const raw=localStorage.getItem(KEY);if(!raw)return;
+ try{const data=validate(JSON.parse(raw)).data,signature=window.SideProjectSync.signature(data);
+  if(data.journalSignature===window.SideProjectSync.fingerprint(data)||signature===window.SideProjectSync.signature(journal.read()))return;
+  const key='game-companion.edf-wb2.journal.external.pending';if(localStorage.getItem(key)!==raw){localStorage.setItem('game-companion.edf-wb2.journal.external.archive.'+crypto.randomUUID(),raw);localStorage.setItem(key,raw);window.dispatchEvent(new Event('edf-external-progress'));}
+ }catch(error){if(error?.name==='QuotaExceededError'){storageError='舊分頁進度備份失敗，請先下載備份。';throw error;}}
+}
+function mergeLatest(){try{checkLegacyWriter();if(journal){state=validate(journal.read()).data;journalView=JSON.parse(JSON.stringify(state));}}catch{storageError='本機操作日誌損壞，已停止同步，請先下載備份。';}}
 function saveSnapshot(label){try{const list=snapshots();list.unshift({at:Date.now(),label,data:JSON.parse(JSON.stringify(state))});localStorage.setItem(SNAP,JSON.stringify(list.slice(0,12)));return true;}catch{toast('本機快照儲存失敗；請下載備份。');return false;}}
 function persist(){state.updatedAt=Date.now();state.revision=(Number.isSafeInteger(state.revision)?state.revision:0)+1;try{
+  checkLegacyWriter();
   if(storageError&&localStorage.getItem(KEY)){const existing=localStorage.getItem(KEY);try{validate(JSON.parse(existing));}catch{localStorage.setItem(KEY+'-damaged-'+Date.now(),existing);}}
-  localStorage.setItem(KEY,JSON.stringify(state));storageError='';
+  if(!journal)throw Error('journal unavailable');
+  state=validate(journal.write(journalView,state,{preserveConcurrent:syncCommit})).data;
+  state.storageVersion=2;state.journalSignature=window.SideProjectSync.fingerprint(state);
+  localStorage.setItem(KEY,JSON.stringify(state));journalView=JSON.parse(JSON.stringify(state));changeSeq++;storageError='';
+  journal.compact().catch(()=>{});
   const latest=snapshots()[0];if(!latest||Date.now()-latest.at>10*60*1000)saveSnapshot('自動儲存');
 }catch{storageError='儲存失敗 · 請下載備份';toast('瀏覽器無法儲存，請立即下載進度備份。');}status();window.dispatchEvent(new Event('edf-progress-change'));}
 function change(items,value){mergeLatest();const changes=items.filter(i=>owned(i)!==value).map(i=>({id:i.id,before:!!state.entries[i.id]?.owned}));if(!changes.length)return;undoStack.push(changes);undoStack=undoStack.slice(-30);const now=Date.now();for(const c of changes)state.entries[c.id]={...state.entries[c.id],owned:value,updatedAt:now};persist();render();}
@@ -348,7 +361,7 @@ $('export').onclick=()=>{mergeLatest();download(state);try{localStorage.setItem(
 $('importFile').onchange=async e=>{pendingImport=null;$('importPreview').hidden=true;try{const file=e.target.files[0];if(!file)return;if(file.size>5*1024*1024)throw Error('檔案太大，請選擇本工具匯出的 JSON 備份。');const {data,unknown}=validate(JSON.parse(await file.text()));pendingImport=data;const n=Object.values(data.entries).filter(x=>x.owned).length;$('importDescription').textContent='這份備份包含 '+n+' 個已取得項目。'+(unknown?'另有 '+unknown+' 個不在目前清單中的項目，會保留原文。':'');$('importPreview').hidden=false;$('backupMessage').textContent='';}catch(err){$('backupMessage').textContent=err.message==='Unexpected end of JSON input'?'備份檔不完整，未修改進度。':err.message;}finally{e.target.value='';}};
 $('merge').onclick=()=>{if(pendingImport)applyImport(pendingImport,'merge');};$('replace').onclick=()=>{if(pendingImport&&confirm('還原會把目前進度改成這份備份，包括取消備份中未取得的項目。確定還原？'))applyImport(pendingImport,'replace');};
 $('restoreSnapshot').onclick=()=>{const x=snapshots()[Number($('snapshots').value)];if(x&&confirm('將目前進度還原至 '+new Date(x.at).toLocaleString('zh-TW')+'？'))applyImport(validate(x.data).data,'replace');};
-window.addEventListener('storage',e=>{if(e.key===KEY){mergeLatest();render();toast('已同步另一個分頁的進度。');}});
+window.addEventListener('storage',e=>{if(e.key===KEY||e.key?.startsWith('game-companion.edf-wb2.journal.')){changeSeq++;mergeLatest();render();}});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)&&!document.querySelector('dialog[open]')){e.preventDefault();$('search').focus();}});
 let tooltipButton=null,tooltipTimer=null,tooltipPinned=false;
 function hideTooltip(){clearTimeout(tooltipTimer);$('appearanceTooltip').hidden=true;tooltipButton=null;tooltipPinned=false;}
@@ -403,7 +416,8 @@ window.EDF_CHECKLIST_STORAGE={
   if(storageError)throw Error('同步進度的本機儲存失敗，請立即匯出備份。');
  },
  apply(data,mode){applyImport(validate(data).data,mode,{requireSnapshot:true});if(storageError)throw Error("雲端進度已套用至畫面，但本機儲存失敗。請立即匯出 JSON 備份。");},
- stamp(){return JSON.stringify({state,stored:localStorage.getItem(KEY)});},
+ sequence(){return changeSeq;},
+ stamp(){return JSON.stringify({state,stored:localStorage.getItem(KEY),journal:journal?.stamp()});},
  applyReviewed(data,expected){
   if(this.stamp()!==expected)throw Error('預覽後本機或其他分頁已有變更，請重新選檔比較。');
   const next=validate(data).data,previous=state;
@@ -414,7 +428,13 @@ window.EDF_CHECKLIST_STORAGE={
   for(const id of contentIds)changes.push({id,before:contentEnabled(id),type:'content'});
   state=next;persist();
   if(storageError){state=previous;render();throw Error('儲存失敗，未套用匯入；來源與匯入前備份仍保留。');}
-  undoStack.push(changes);undoStack=undoStack.slice(-30);render();backupInfo();
+  undoStack.push(changes);undoStack=undoStack.slice(-30);localStorage.removeItem('game-companion.edf-wb2.journal.external.pending');render();backupInfo();
+ },
+ externalRaw(){const raw=localStorage.getItem('game-companion.edf-wb2.journal.external.pending');return raw?JSON.parse(raw):null;},
+ checkpoint(label){if(this.externalRaw())throw Error('有舊分頁寫入的進度尚未處理，請先在備份與還原中比較。');if(storageError)throw Error(storageError);if(!saveSnapshot(label))throw Error('無法保留本機快照，已停止雲端寫入。');},
+ commitSync(start,merged){
+  const current=this.get(),next=window.SideProjectSync.rebase(start,current,merged),previous=state;
+  state=validate(next).data;syncCommit=true;try{persist();}finally{syncCommit=false;}if(storageError){state=previous;render();throw Error('雲端已確認，但本機儲存失敗；同步復原紀錄仍保留。');}render();backupInfo();return this.get();
  },
  export:download
 };

@@ -9,6 +9,10 @@
  const put=(map,id,value)=>Object.defineProperty(map,id,{value,enumerable:true,writable:true,configurable:true});
  let pending=null;
  const panel=$('importPreview');
+ const externalButton=document.createElement('button');externalButton.id='migrationExternal';externalButton.className='button';externalButton.textContent='比較舊分頁另存的進度';$('backupDialog').append(externalButton);
+ function externalState(){externalButton.hidden=!storage.externalRaw();}
+ externalButton.onclick=()=>{const raw=storage.externalRaw();if(raw)preview(raw,'舊分頁的獨立原文備份');};
+ global.addEventListener('edf-external-progress',externalState);global.addEventListener('storage',externalState);global.addEventListener('edf-progress-change',externalState);externalState();
  $('merge').textContent='套用已選差異';
  panel.insertAdjacentHTML('beforeend','<section class="migration-review" aria-label="匯入差異"><p id="migrationSummary"></p><p>原始檔、未知欄位與無法對應項目會完整保留在匯入紀錄及備份中。來源檔不會被修改。</p><div class="cloud-actions"><button type="button" id="migrationLocal">差異全部保留本機</button><button type="button" id="migrationSource">差異全部使用來源</button></div><div class="migration-scroll"><table><thead><tr><th>項目</th><th>目前本機</th><th>匯入來源</th><th>選擇</th></tr></thead><tbody id="migrationRows"></tbody></table></div><button type="button" id="migrationBackup" class="button">下載來源與匯入前進度備份</button><label class="migration-ack"><input type="checkbox" id="migrationAck" disabled> 我已保留下載的備份</label><p id="migrationMessage" role="status"></p></section>');
  const rowValue=(record,key)=>{
@@ -96,7 +100,7 @@
    record.archiveKey=pending.archiveKey;
    next.importHistory=[...previousHistory,record];
    next.gameId=config.gameId;
-   storage.applyReviewed(next,pending.stamp);
+   storage.applyReviewed(next,pending.stamp);externalState();
    pending=null;$('importPreview').hidden=true;$('backupMessage').textContent='已依差異選擇匯入；來源與匯入前進度已保留。雲端未變更。';
   }catch(error){$('migrationMessage').textContent=error.message;}
  }

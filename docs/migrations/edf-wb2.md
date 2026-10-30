@@ -12,7 +12,7 @@
 | 快照 | edfwb2-snapshots-v1 | game-companion.edf-wb2.snapshots.v1 |
 | 備份時間 | edfwb2-backup-time | game-companion.edf-wb2.backup-time |
 | 原文備份 | 無 | game-companion.edf-wb2.import.{uuid} |
-| SW cache | edfwb2-field-log-v23 | game-companion.edf-wb2.assets.v1 |
+| SW cache | edfwb2-field-log-v23 | game-companion.edf-wb2.assets.v2 |
 | Drive projectId | edfwb2-checklist | game-companion.edf-wb2 |
 | Drive 檔名 | edfwb2-checklist.json | game-companion.edf-wb2.progress.v1.json |
 
@@ -21,3 +21,9 @@
 來源 repo 沒有 WB1 那樣的 `data/` 原始 JSON／完整重產腳本；它以 `dist/*.js` 維護資料，另有 `normalize-data.mjs`、`inspect_data.py` 及來源核對文件，均已搬入。`inspect_data.py` 會連外查 Wiki 且依賴 lxml，normalize 會寫 data；本次未執行，不能宣稱可從原始 Wiki 一鍵重建全部資料。
 
 變更與 WB1 相同的隔離／無損匯入保護；二代專屬 UI 功能保留。驗證工具調整新測試 URL、Key、Playwright 環境起點及匯入確認操作；舊自動寫入 mock suite 放在 `upstream/verify-cloud.mjs`，當前 `verify-cloud.mjs` 驗證底層寫入封鎖。這不等於舊雲端同步 suite 已在新策略通過。
+
+## 1.1.0 同步安全擴充
+
+沿用原 Google Client／scope，新增三方合併、逐筆／批次衝突、同步中編輯保護與每次授權的條件寫入測試。舊 adapter 留在 upstream，不會復用其無條件覆寫。所有進度寫入僅限本模組的新 Drive 檔名；未通過 real runtime probe 保持停用。
+
+本機新增同 storagePrefix 下的 journal.checkpoint.v1、journal.op.{uuid}、journal.external.archive.{uuid}／pending；帳號雜湊隔離 sync.base.{identity}、sync.pending.{identity}、sync.recovery.{uuid}。不保存 Token／email。未知資料及分支原文不自動刪除；日誌整理只移除已保存 checkpoint 的捕獲操作。測試與限制見 ../reports/DRIVE_SYNC_REPORT.md。

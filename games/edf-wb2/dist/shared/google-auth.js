@@ -16,7 +16,7 @@
   }).catch(e=>{loading=null;throw e;});return loading;
  }
  class GoogleAuth {
-  #token='';#expires=0;#client;#pending;#timer;#issued=0;#lifetime=0;#reason='';
+  #generation=0;#token='';#expires=0;#client;#pending;#timer;#issued=0;#lifetime=0;#reason='';
   constructor(clientId,onChange=()=>{}){this.clientId=clientId;this.onChange=onChange;}
   async prepare(){
    if(!this.clientId)throw new AuthError('尚未設定 Google OAuth Client ID。','config');
@@ -45,10 +45,11 @@
    });
   }
   #finish(error){const p=this.#pending;if(!p)return;clearTimeout(p.timer);this.#pending=null;error?p.reject(error):p.resolve();}
+  get generation(){return this.#generation;}
   get connected(){return !!this.#token&&Date.now()<this.#expires;}
   get info(){return {issuedAt:this.#issued,expiresAt:this.#expires,lifetimeSeconds:this.#lifetime,reason:this.#reason};}
   token(){if(!this.connected){this.invalidate();throw new AuthError('Google 授權已過期，請重新授權。','expired');}return this.#token;}
-  invalidate(reason='expired'){clearTimeout(this.#timer);this.#token='';this.#reason=reason;this.onChange();}
+  invalidate(reason='expired'){this.#generation++;clearTimeout(this.#timer);this.#token='';this.#reason=reason;this.onChange();}
   disconnect(){this.#finish(new AuthError('已取消連接。','cancelled'));this.invalidate('disconnected');}
  }
  global.SideProjectAuth={GoogleAuth,AuthError,scope};

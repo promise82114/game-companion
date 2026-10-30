@@ -1,4 +1,4 @@
-> Game Companion 整合版（2026-10-31）：本模組使用新儲存 namespace 與獨立 Drive 識別。雲端寫入目前停用，匯入需先備份與預覽；下方來源 README 保留原版說明，現行操作與部署以根 README 及 docs/migrations/edf-wb2.md 為準。
+> Game Companion 整合版（2026-10-31）：本模組使用新儲存 namespace 與獨立 Drive 識別。手動同步需先通過本次授權的 Drive 安全測試；匯入需先備份與預覽；下方來源 README 保留原版說明，現行操作與部署以根 README 及 docs/migrations/edf-wb2.md 為準。
 
 # EDF WB2 收集手帳
 
