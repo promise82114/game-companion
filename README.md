@@ -37,7 +37,7 @@ node server.mjs
 - `/game-companion/games/edf-wb/`
 - `/game-companion/games/edf-wb2/`
 
-目前尚未 commit、push 或正式部署，詳見 [整合報告](docs/reports/INTEGRATION_REPORT.md)。
+已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Google Drive 寫入仍停用，舊站入口未切換。
 
 ## 維護文件
 

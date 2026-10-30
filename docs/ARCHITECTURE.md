@@ -29,4 +29,4 @@ docs/                           規範、遷移、驗收、報告
 
 雲端現況：保留原 GIS OAuth 與 Drive appDataFolder 查找／讀取，使用新 projectId 與檔名；手動下載後轉入受保護的匯入預覽。自動同步、上傳及還原後上傳均未開放。adapter 的 `write()` 與非 GET `request()` 直接拒絕。完整三方同步與遠端競爭控制尚未完成，因此不宣稱可安全雲端同步。
 
-GitHub workflow 驗證資料與每個必要模組，再建立並檢查完整 artifact，成功後才可部署。這次僅在本機完成產物驗證，沒有推送、部署、改舊站或操作正式 Google 帳號。
+GitHub workflow 驗證資料與每個必要模組，再建立並檢查完整 artifact，成功後才可部署。初次整合先完成本機驗證；後續依使用者明確授權完成 commit、push 與 GitHub Pages 首次發布，Actions 與正式 43 個網站資源驗證皆成功。發布證據見 `docs/reports/INTEGRATION_REPORT.md`。沒有改舊站或操作正式 Google 帳號，雲端寫入維持停用。

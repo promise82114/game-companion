@@ -1,6 +1,6 @@
 # 整合驗收與限制
 
-日期：2026-10-31。這是本機整合驗收，不是正式切換的 Go/No-Go。
+日期：2026-10-31。本機整合驗收後，已依使用者授權完成 Game Companion Pages 發布；這不代表舊站切換或正式雲端寫入的 Go/No-Go。
 
 | 項目 | 證據／狀態 |
 | --- | --- |
@@ -12,9 +12,9 @@
 | 匯入保護 | 未選差異／未下載確認不可寫主進度；來源與目前原文先保存；未知項目／欄位保留，預覽過期及備份配額失敗停止 |
 | 兩款獨立性 | 各自新 Key、Drive config、SW prefix；Portal 不讀進度；Node 與產物隔離檢查通過 |
 | Drive 讀取／寫入 | 模擬 GIS 與 GET，核對新檔名；UI 停用與底層 request/write 封鎖均通過。未登入真實 Google，正式可用性未知 |
-| 離線／路徑 | 本機模擬 `/game-companion/games/{slug}/`，直接進入／重整、SW 離線重開通過；正式 Pages CDN 未測 |
+| 離線／路徑 | 本機模擬 `/game-companion/games/{slug}/`，直接進入／重整、SW 離線重開通過；正式 Pages 三個入口與靜態資源 GET 已驗證，正式瀏覽器 SW 行為未另測 |
 | 建置／artifact | Node verify、build、verify-site 通過；44 個網站檔與必要相對連結完整；原工具、upstream、Git metadata 未發布 |
-| 正式部署／切換 | 未執行；未 commit／push／改 Pages 設定，舊站仍為正式來源 |
+| 正式部署／切換 | Game Companion 首次 commit／push／Pages 發布成功，43 個正式網站資源與產物一致；原 Pages 已為 workflow 模式，無需更改設定。舊站未切換、仍保留 |
 
 尚未通過：真實 OAuth 控制台設定／appDataFolder 可見性、三方 Base 合併、逐筆／批次「雲端同步」衝突、同步中競爭寫入、條件 PATCH 原子性、跨裝置正式雲端與逆向回復到舊站。匯入差異選擇已實作，不等於雲端三方同步已完成。
 

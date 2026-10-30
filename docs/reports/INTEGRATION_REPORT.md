@@ -1,6 +1,17 @@
 # Game Companion｜整合報告
 
-日期：2026-10-31（Asia/Taipei）。狀態：**兩款遊戲的本機整合可用；正式部署、Google Drive 寫入與舊站切換未執行。**
+日期：2026-10-31（Asia/Taipei）。狀態：**兩款遊戲已整合並發布至 GitHub Pages；Google Drive 寫入仍停用，舊站未切換。**
+
+## 後續授權與首次發布紀錄
+
+使用者在整合交付後明確要求「commit push 發布到 github page」，已據此發布 Game Companion，沒有擴大為正式 Google Drive 寫入或舊站切換。以下第 1～7 節保留初次整合時點的範圍、測試與限制；本節為後續發布現況。
+
+- 首發程式提交：`9e2d328e06a9d008aa0655ff614041d31348e842`，`feat(platform): 整合 EDF WB 與 WB2 並加入隔離備份與 Pages 發布`；111 個檔案。在 develop 提交，atomic fast-forward 推送到遠端 develop 與 main，沒有強制推送或合併舊 repo 歷史。
+- GitHub Actions：[41118057049](https://github.com/promise82114/game-companion/actions/runs/41118057049)，main／上述 SHA，completed／success。Linux 上的資料驗證、build、verify-site、artifact 上傳與 deploy 全部成功。
+- GitHub Deployment：`7447371570`，github-pages 環境，對應上述 SHA，狀態 success。原 Pages 已使用 workflow 模式，沒有修改後台來源設定。
+- 正式網址：[Portal](https://promise82114.github.io/game-companion/)、[EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/)、[EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。全部 43 個 HTML／JS／CSS 以 HTTP GET 檢查為 200，LF 正規化 SHA-256 與本機產物全數相符；沒有執行正式網頁 JS、存取玩家儲存或 Google。
+- 發布前重新執行 verify、build、verify-site 與 Drive guard，皆通過；stage 僅包含指定來源與文件，未含 outputs、_site、測試備份或憑證。暫存格式檢查的五項訊息為來源保留的 Markdown 換行尾空白／檔尾空行，未為消除訊息修改攻略原檔或來源 hash。
+- 本次發布補記另以文件提交推送，網站程式與雲端寫入封鎖不變。之後的 main 部署可由 [Pages workflow](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 核對最新 SHA／結果。
 
 依據 `GAME_COMPANION_ARCHITECTURE.md`、`P0_REPORT.md` 與使用者後續「加速整合任務」執行。後者已授權連續整合兩款遊戲，取代逐階段等待；獨立儲存、未知資料保留及正式雲端／切換須確認的要求保留。原架構文件及 P0 歷史紀錄沒有改寫。
 
