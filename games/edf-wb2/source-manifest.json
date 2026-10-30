@@ -1,0 +1,224 @@
+{
+  "repository": "https://github.com/promise82114/edfwb2-checklist",
+  "branch": "main",
+  "commit": "c49be804b91ce463bfb833b791edf468a80792dd",
+  "importedAt": "2026-10-31",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b007d47d9c120bb645a2db74da0276daaab35dc1a638e16822f0a9bf2dd4b46f",
+      "sha256LF": "196b58299fe595e61e36e573e0ab5a2ef5e8c81aee6cda6e7cb3201aba9030a4"
+    },
+    {
+      "path": "dist/acquisition.js",
+      "sha256": "e7cda5a59570af449a6970cdc75129813197ae199fd78eab002acc94e13c470a",
+      "sha256LF": "e7cda5a59570af449a6970cdc75129813197ae199fd78eab002acc94e13c470a"
+    },
+    {
+      "path": "dist/app.js",
+      "sha256": "dadab3913bcdff7036c1570ab83f38de29f7239a8ad0105c0fa2daa8e9265a11",
+      "sha256LF": "4819bcb2eeb0695d117befcbce3aebe83dce561241aa7451fe7ef262406110ea"
+    },
+    {
+      "path": "dist/character-accessories.js",
+      "sha256": "d45a61045e257b7b99ef8077f6a80365fec15db9c16fd448a5bb483776b742c2",
+      "sha256LF": "d45a61045e257b7b99ef8077f6a80365fec15db9c16fd448a5bb483776b742c2"
+    },
+    {
+      "path": "dist/cloud-config.js",
+      "sha256": "6b27c62223d011e1516b5c50a9385378bb7f9e9f13a727e301696358e030fd21",
+      "sha256LF": "6b27c62223d011e1516b5c50a9385378bb7f9e9f13a727e301696358e030fd21"
+    },
+    {
+      "path": "dist/cloud-sync.js",
+      "sha256": "8821802a6221695cac39a9a6e5b1d85b5725dae1d99faaf0fbbee40927feeef1",
+      "sha256LF": "a304161a51cc9a145e7ef3317081b3c84312b87deae2e80ab95dfa9bf1fc07c2"
+    },
+    {
+      "path": "dist/content.js",
+      "sha256": "126ec44a04cb28258565ece233182852139acd104c85b61a1cae00781d426b6c",
+      "sha256LF": "126ec44a04cb28258565ece233182852139acd104c85b61a1cae00781d426b6c"
+    },
+    {
+      "path": "dist/data.js",
+      "sha256": "98b70c4a2c1298e3ebc8ac9b3ef181b68a6c1f659a66eb2641f1113755006806",
+      "sha256LF": "98b70c4a2c1298e3ebc8ac9b3ef181b68a6c1f659a66eb2641f1113755006806"
+    },
+    {
+      "path": "dist/details.js",
+      "sha256": "e0daabbab83a7e3101b7207a064891106af2fdd86639508ab9dc775ff6fe96ec",
+      "sha256LF": "e0daabbab83a7e3101b7207a064891106af2fdd86639508ab9dc775ff6fe96ec"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "dfd53381e609b59f86f73fdcd741c7027e14623e4f405c5ccd79bcafd0922b6e",
+      "sha256LF": "3654f348b552f3cc983f92be7b3b4eab08df030d1cae2302f41eddb801b2459b"
+    },
+    {
+      "path": "dist/missions.js",
+      "sha256": "68047feb9d9aba19b9f1845c67852691ab15a171638e24f3eebd22d73cec17f4",
+      "sha256LF": "68047feb9d9aba19b9f1845c67852691ab15a171638e24f3eebd22d73cec17f4"
+    },
+    {
+      "path": "dist/recommendations.js",
+      "sha256": "6604ccf1377b3f33c35609e9972fd09847cb19c1e800b6efa4f52f8e67122b69",
+      "sha256LF": "6604ccf1377b3f33c35609e9972fd09847cb19c1e800b6efa4f52f8e67122b69"
+    },
+    {
+      "path": "dist/shared/drive-appdata.js",
+      "sha256": "f92d7ff0c8251003aa1356a7fdc5a7619e10ad497a6ff09c1c05ed327db089c5",
+      "sha256LF": "f92d7ff0c8251003aa1356a7fdc5a7619e10ad497a6ff09c1c05ed327db089c5"
+    },
+    {
+      "path": "dist/shared/google-auth.js",
+      "sha256": "d0f017be23e3d763dc12143f5b2e33897866ae11cfc08958da23779e9e61ac98",
+      "sha256LF": "d0f017be23e3d763dc12143f5b2e33897866ae11cfc08958da23779e9e61ac98"
+    },
+    {
+      "path": "dist/shared/progress-envelope.js",
+      "sha256": "1f4b6acb8de82c8d5d1879c9d56d188eea13e54bf6110500470eb8b0b3dd1f9c",
+      "sha256LF": "1f4b6acb8de82c8d5d1879c9d56d188eea13e54bf6110500470eb8b0b3dd1f9c"
+    },
+    {
+      "path": "dist/style.css",
+      "sha256": "dbf6b3d61d9e7be8e8ea64a421d01f4823c5c37cd3b8620a770fa36201d157a5",
+      "sha256LF": "dbf6b3d61d9e7be8e8ea64a421d01f4823c5c37cd3b8620a770fa36201d157a5"
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "2f6c290d8cc9fbe283197737ee059aa92ecea27597f3e94e8d5669765bf64df3",
+      "sha256LF": "c1e52788f25bcfc5a58397fa31fd78d27e2a073d35c0ef71a0f64a81a19e8745"
+    },
+    {
+      "path": "dist/translations.js",
+      "sha256": "b3fd4a8fb95c7ce9117663c89620b0ff6a6af609bfeaee52448c88b11bc77806",
+      "sha256LF": "b3fd4a8fb95c7ce9117663c89620b0ff6a6af609bfeaee52448c88b11bc77806"
+    },
+    {
+      "path": "dist/usability.css",
+      "sha256": "9fe330255048f008bff50870f7eef852105236831a28d2eaee57b98e32830fd0",
+      "sha256LF": "547092683e388537369153721822f3d8902e904c236e9bb1940d38395eed5e81"
+    },
+    {
+      "path": "docs/accessory-localization.md",
+      "sha256": "3ea36ecc55bf4b775a8a617cf033bc0a10978fa5a405714e44c5695ffbd5ac1a",
+      "sha256LF": "3ea36ecc55bf4b775a8a617cf033bc0a10978fa5a405714e44c5695ffbd5ac1a"
+    },
+    {
+      "path": "docs/google-drive-sync.md",
+      "sha256": "4ffc02e8f7134b5da9fca70a88e33f5a825266e1924b958a867d8b2c1ce7c764",
+      "sha256LF": "af0ab3cde454b83b989d9066067405d5301bef5f671d8c70071ec1fb02e9014b"
+    },
+    {
+      "path": "docs/localization-review.md",
+      "sha256": "f728c3b75c3674ad5ace3781c9612fb14ded0c800d4de76741a225be4b288cd7",
+      "sha256LF": "f728c3b75c3674ad5ace3781c9612fb14ded0c800d4de76741a225be4b288cd7"
+    },
+    {
+      "path": "docs/weapon-localization.md",
+      "sha256": "d50d97c6b1867da155530dc9006a12a30f0ee84c37d937a673496544e13d53d5",
+      "sha256LF": "d50d97c6b1867da155530dc9006a12a30f0ee84c37d937a673496544e13d53d5"
+    },
+    {
+      "path": "inspect_data.py",
+      "sha256": "0ebc2cec97b3922988ab9c4055e6f1022a5e3bedf554e1272c10b86925195104",
+      "sha256LF": "0ebc2cec97b3922988ab9c4055e6f1022a5e3bedf554e1272c10b86925195104"
+    },
+    {
+      "path": "normalize-data.mjs",
+      "sha256": "211ee176818af27b789dc5c55436b4e51d1a4eaae24742103844a3e8b5860935",
+      "sha256LF": "211ee176818af27b789dc5c55436b4e51d1a4eaae24742103844a3e8b5860935"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "effd4a2d0c30f7aed059add97b733a3a371f5c832d5a534aaecb8c0ef3fc5324",
+      "sha256LF": "effd4a2d0c30f7aed059add97b733a3a371f5c832d5a534aaecb8c0ef3fc5324"
+    },
+    {
+      "path": "verify-accessory-localization.mjs",
+      "sha256": "57fd11ebad7ff6c2143569217608af4c30b3fe0fd443c6c01a611c3d325c7f9f",
+      "sha256LF": "57fd11ebad7ff6c2143569217608af4c30b3fe0fd443c6c01a611c3d325c7f9f"
+    },
+    {
+      "path": "verify-character-accessories.mjs",
+      "sha256": "2555d957285432a861a2ac9780934cd81185ec88f8421ceafa8242bc5f0b4cc9",
+      "sha256LF": "2555d957285432a861a2ac9780934cd81185ec88f8421ceafa8242bc5f0b4cc9"
+    },
+    {
+      "path": "verify-cloud.mjs",
+      "sha256": "a160c21c01124c2b6a62e3480654c95aa82ad48cc895e0635c6139784c9964c8",
+      "sha256LF": "4a567a86d958f25e367504aa797ab837a3bd56e3c105748061ebf582f6facc31"
+    },
+    {
+      "path": "verify-content-support.mjs",
+      "sha256": "5dd4b02422dbf7fd20fe6068c555a506e31eee6b1990b811ac65df86e38b9b36",
+      "sha256LF": "5dd4b02422dbf7fd20fe6068c555a506e31eee6b1990b811ac65df86e38b9b36"
+    },
+    {
+      "path": "verify-content.mjs",
+      "sha256": "c7207cbd4730212d83d7a7eaa8a67e0327d53fed27b3fa3790dafbd302896a44",
+      "sha256LF": "dd9614ea803576cf2bfa021d5023cac432ab6528bb5aa0e02652245e926e7080"
+    },
+    {
+      "path": "verify-default-missing.mjs",
+      "sha256": "48216d247759f30f01f2ab71347e917a3712fa486146216da169ca30831b0b41",
+      "sha256LF": "48216d247759f30f01f2ab71347e917a3712fa486146216da169ca30831b0b41"
+    },
+    {
+      "path": "verify-enhancements.mjs",
+      "sha256": "2716dd2b88472a65f26b53c069e479d616ee7565b5ef46a8e0570f7e31c77144",
+      "sha256LF": "2716dd2b88472a65f26b53c069e479d616ee7565b5ef46a8e0570f7e31c77144"
+    },
+    {
+      "path": "verify-favorites.mjs",
+      "sha256": "eba066d8709766e00e51e03316100a3dbe00db663c895a5de7a87a5f8b71ca23",
+      "sha256LF": "e9c7ec6f08ca1fb646e1f38b5cbdbac57773dc349b6432d1241f2463504b66df"
+    },
+    {
+      "path": "verify-levels.mjs",
+      "sha256": "4c15529ba00496464241a709e258155f34b861714e442cf09285b728a4626563",
+      "sha256LF": "4c15529ba00496464241a709e258155f34b861714e442cf09285b728a4626563"
+    },
+    {
+      "path": "verify-linked-collection.mjs",
+      "sha256": "935854c5d3d942878194167d6e68bb40794563758b1fd7e667e82c002601b7af",
+      "sha256LF": "db85eb4c2709dc8c4e7ecbe0a60f400445e81250340380639e3d7189f4e798dc"
+    },
+    {
+      "path": "verify-localization.mjs",
+      "sha256": "b6392ac6f757f8cf5adcadf61ab0eb68c23d67b8951e0c5bda5570a9d6651c4d",
+      "sha256LF": "b6392ac6f757f8cf5adcadf61ab0eb68c23d67b8951e0c5bda5570a9d6651c4d"
+    },
+    {
+      "path": "verify-mission-modes.mjs",
+      "sha256": "cc0700bbbd89cdc187a00e6f0464205bc06199b6bdd2495693855374431705a8",
+      "sha256LF": "65277207a57dc4802c787b2f27979b1718b473eb90b1e62097a06b0f1d31d5be"
+    },
+    {
+      "path": "verify-mission-tabs.mjs",
+      "sha256": "c5475615d242e765ec6162ee1ecc5b473e27c07ccbac2e64919c1144c3d593dc",
+      "sha256LF": "00bd0d3465bb0e69e6b8b1110f16364ff074f2d9b17e1ad09f89cb78ba491ff6"
+    },
+    {
+      "path": "verify-missions.mjs",
+      "sha256": "6c1a3750542704453421344cedabb8eead06b56ae5b6803f619ebd26c4dacdbc",
+      "sha256LF": "6c1a3750542704453421344cedabb8eead06b56ae5b6803f619ebd26c4dacdbc"
+    },
+    {
+      "path": "verify-separated.mjs",
+      "sha256": "5b3428bd5c44c0a4f74c17b3b5c805dff2808e99dc7366ed8a915969fd099a39",
+      "sha256LF": "5b3428bd5c44c0a4f74c17b3b5c805dff2808e99dc7366ed8a915969fd099a39"
+    },
+    {
+      "path": "verify-weapon-localization.mjs",
+      "sha256": "78eb9db43db84663ab843fa7785fde906a9deeb1e0a3d945a6544680bc1e06e3",
+      "sha256LF": "78eb9db43db84663ab843fa7785fde906a9deeb1e0a3d945a6544680bc1e06e3"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "32b69701d1d282d15a400181f8198ab2183be9cf4a04925af53352ac71022b09",
+      "sha256LF": "32b69701d1d282d15a400181f8198ab2183be9cf4a04925af53352ac71022b09"
+    }
+  ],
+  "hashPolicy": "sha256 preserves original checkout bytes; sha256LF normalizes CRLF to LF for cross-platform verification"
+}

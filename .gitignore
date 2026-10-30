@@ -1,0 +1,5 @@
+_site/
+outputs/
+**/outputs/
+node_modules/
+.taste-skill/

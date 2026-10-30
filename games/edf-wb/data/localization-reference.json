@@ -1,0 +1,3892 @@
+{
+  "sourceProject": "edfwb2-checklist",
+  "sourceCommit": "c49be804b91ce463bfb833b791edf468a80792dd",
+  "checkedAt": "2026-10-23",
+  "entries": {
+    "陸戦兵(EDF1)": {
+      "zh": "陸戰兵",
+      "sourceName": "陸戦兵(EDF1)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "陸戦兵(EDF2)": {
+      "zh": "陸戰兵(EDF2)",
+      "sourceName": "陸戦兵(EDF2)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ペイルウイング(EDF2)": {
+      "zh": "飛翼兵(EDF2)",
+      "sourceName": "ペイルウイング(EDF2)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エアレイド(EDF2PV)": {
+      "zh": "空襲兵(EDF2PV)",
+      "sourceName": "エアレイド(EDF2PV)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "陸戦兵(EDF3)": {
+      "zh": "陸戰兵(EDF3)",
+      "sourceName": "陸戦兵(EDF3)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "陸戦兵(EDF3P)バックパック装備": {
+      "zh": "陸戰兵(EDF3P)背包",
+      "sourceName": "陸戦兵(EDF3P)バックパック装備",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ペイルウイング(EDF3P)": {
+      "zh": "飛翼兵(EDF3P)",
+      "sourceName": "ペイルウイング(EDF3P)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レンジャー(EDF4)": {
+      "zh": "突擊兵(EDF4)",
+      "sourceName": "レンジャー(EDF4)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウイングダイバー(EDF4)": {
+      "zh": "飛翼潛行兵(EDF4)",
+      "sourceName": "ウイングダイバー(EDF4)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エアレイダー(EDF4)": {
+      "zh": "空襲兵(EDF4)",
+      "sourceName": "エアレイダー(EDF4)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フェンサー(EDF4)": {
+      "zh": "劍兵(EDF4)",
+      "sourceName": "フェンサー(EDF4)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レンジャー(EDF5)": {
+      "zh": "突擊兵(EDF5)",
+      "sourceName": "レンジャー(EDF5)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウイングダイバー(EDF5)": {
+      "zh": "飛翼潛行兵(EDF5)",
+      "sourceName": "ウイングダイバー(EDF5)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エアレイダー(EDF5)": {
+      "zh": "空襲兵(EDF5)",
+      "sourceName": "エアレイダー(EDF5)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フェンサー(EDF5)": {
+      "zh": "劍兵(EDF5)",
+      "sourceName": "フェンサー(EDF5)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "トルーパー(EDF:IA)": {
+      "zh": "裝甲步兵(EDF:IA)",
+      "sourceName": "トルーパー(EDF:IA)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "タクティカル(EDF:IA)": {
+      "zh": "策略步兵(EDF:IA)",
+      "sourceName": "タクティカル(EDF:IA)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バトル(EDF:IA)": {
+      "zh": "戰鬥步兵(EDF:IA)",
+      "sourceName": "バトル(EDF:IA)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジェット(EDF:IA)": {
+      "zh": "噴射步兵(EDF:IA)",
+      "sourceName": "ジェット(EDF:IA)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "トルーパー(EDF:IR)": {
+      "zh": "裝甲步兵(EDF:IR)",
+      "sourceName": "トルーパー(EDF:IR)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジェットリフター(EDF:IR)": {
+      "zh": "噴射飛行兵(EDF:IR)",
+      "sourceName": "ジェットリフター(EDF:IR)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘビーストライカー(EDF:IR)": {
+      "zh": "重裝兵(EDF:IR)",
+      "sourceName": "ヘビーストライカー(EDF:IR)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プロールライダー(EDF:IR)": {
+      "zh": "獵行兵(EDF:IR)",
+      "sourceName": "プロールライダー(EDF:IR)",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アルペンブラザー": {
+      "zh": "阿爾卑斯弟兄",
+      "sourceName": "アルペンブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インカブラザー": {
+      "zh": "印加弟兄",
+      "sourceName": "インカブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヴァイキングブラザー": {
+      "zh": "維京弟兄",
+      "sourceName": "ヴァイキングブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エルドラドブラザー": {
+      "zh": "黃金國弟兄",
+      "sourceName": "エルドラドブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "オーロラシスター": {
+      "zh": "極光姊妹",
+      "sourceName": "オーロラシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ガウチョシスター": {
+      "zh": "高喬姊妹",
+      "sourceName": "ガウチョシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "カウボーイブラザー": {
+      "zh": "牛仔弟兄",
+      "sourceName": "カウボーイブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゲーエスゲーブラザー": {
+      "zh": "GSG弟兄",
+      "sourceName": "ゲーエスゲーブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "コアラブラザー": {
+      "zh": "無尾熊弟兄",
+      "sourceName": "コアラブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サファリシスター": {
+      "zh": "遊獵姊妹",
+      "sourceName": "サファリシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンバシスター": {
+      "zh": "森巴姊妹",
+      "sourceName": "サンバシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパルタブラザー": {
+      "zh": "斯巴達弟兄",
+      "sourceName": "スパルタブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スペースブラザー": {
+      "zh": "太空弟兄",
+      "sourceName": "スペースブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "タコスブラザー": {
+      "zh": "塔可弟兄",
+      "sourceName": "タコスブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "タピオカシスター": {
+      "zh": "珍奶姊妹",
+      "sourceName": "タピオカシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チューリップシスター": {
+      "zh": "鬱金香姊妹",
+      "sourceName": "チューリップシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "テンシンシスター": {
+      "zh": "點心姊妹",
+      "sourceName": "テンシンシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ドラゴンシスター": {
+      "zh": "飛龍姊妹",
+      "sourceName": "ドラゴンシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ナイトブラザー": {
+      "zh": "騎士弟兄",
+      "sourceName": "ナイトブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ニンジャブラザー": {
+      "zh": "忍者弟兄",
+      "sourceName": "ニンジャブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "パイレーツブラザー": {
+      "zh": "海盜弟兄",
+      "sourceName": "パイレーツブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハカブラザー": {
+      "zh": "哈卡弟兄",
+      "sourceName": "ハカブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バズシスター": {
+      "zh": "直播姊妹",
+      "sourceName": "バズシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バロンブラザー": {
+      "zh": "男爵弟兄",
+      "sourceName": "バロンブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハンターブラザー": {
+      "zh": "獵人弟兄",
+      "sourceName": "ハンターブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "パンダブラザー": {
+      "zh": "熊貓弟兄",
+      "sourceName": "パンダブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ファラオシスター": {
+      "zh": "法老姊妹",
+      "sourceName": "ファラオシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プリンスブラザー": {
+      "zh": "王子弟兄",
+      "sourceName": "プリンスブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ベアブラザー": {
+      "zh": "熊熊弟兄",
+      "sourceName": "ベアブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ベファーナシスター": {
+      "zh": "貝法娜姊妹",
+      "sourceName": "ベファーナシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ボイジャーブラザー": {
+      "zh": "航海弟兄",
+      "sourceName": "ボイジャーブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ボクサーブラザー": {
+      "zh": "拳擊手弟兄",
+      "sourceName": "ボクサーブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マタドールブラザー": {
+      "zh": "鬥牛士弟兄",
+      "sourceName": "マタドールブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "メイドシスター": {
+      "zh": "女僕姊妹",
+      "sourceName": "メイドシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヨガブラザー": {
+      "zh": "瑜伽弟兄",
+      "sourceName": "ヨガブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヨーデルシスター": {
+      "zh": "約德爾姊妹",
+      "sourceName": "ヨーデルシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ロイヤルブラザー": {
+      "zh": "皇家弟兄",
+      "sourceName": "ロイヤルブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レゴンシスター": {
+      "zh": "雷貢姊妹",
+      "sourceName": "レゴンシスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ワイルドブラザー": {
+      "zh": "狂野弟兄",
+      "sourceName": "ワイルドブラザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "メカユーキ隊員": {
+      "zh": "機械隊員YUKI",
+      "sourceName": "メカユーキ隊員",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "コロニスト": {
+      "zh": "異星殖民者",
+      "sourceName": "コロニスト",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "コスモノーツ": {
+      "zh": "異星太空人",
+      "sourceName": "コスモノーツ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レンジャー(EDF4)オメガ隊仕様": {
+      "zh": "突擊兵(EDF4) OMEGA小隊規格",
+      "sourceName": "レンジャー(EDF4)オメガ隊仕様",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウイングダイバー(EDF5)SG隊仕様": {
+      "zh": "飛翼潛行兵(EDF5) SG部隊規格",
+      "sourceName": "ウイングダイバー(EDF5)SG隊仕様",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フェンサー(EDF5)GR隊仕様": {
+      "zh": "劍兵(EDF5) GR部隊規格",
+      "sourceName": "フェンサー(EDF5)GR隊仕様",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フューリアス": {
+      "zh": "狂怒",
+      "sourceName": "フューリアス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ランページ": {
+      "zh": "狂暴",
+      "sourceName": "ランページ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゲキド": {
+      "zh": "暴怒",
+      "sourceName": "ゲキド",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ランページ・ヘルメス": {
+      "zh": "狂暴荷米斯",
+      "sourceName": "ランページ・ヘルメス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フューリアス・アレス": {
+      "zh": "狂怒阿瑞斯",
+      "sourceName": "フューリアス・アレス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "G&M": {
+      "zh": "G&M 步槍",
+      "sourceName": "G&M",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "G&M-Y29": {
+      "zh": "G&M-Y29",
+      "sourceName": "G&M-Y29",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "G&M-29": {
+      "zh": "G&M-29",
+      "sourceName": "G&M-29",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "G&M-A29": {
+      "zh": "G&M-A29",
+      "sourceName": "G&M-A29",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "G&M-B29": {
+      "zh": "G&M-B29",
+      "sourceName": "G&M-B29",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "G&M-30": {
+      "zh": "G&M-30",
+      "sourceName": "G&M-30",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レイブン": {
+      "zh": "渡鴉",
+      "sourceName": "レイブン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レイブン・ラッシュ": {
+      "zh": "渡鴉・速攻",
+      "sourceName": "レイブン・ラッシュ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "シリウス": {
+      "zh": "天狼星",
+      "sourceName": "シリウス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "シリウスγ": {
+      "zh": "天狼星γ",
+      "sourceName": "シリウスγ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レイブン・タイラント": {
+      "zh": "渡鴉・暴君",
+      "sourceName": "レイブン・タイラント",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "AS-99": {
+      "zh": "AS-99",
+      "sourceName": "AS-99",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "AS-99D": {
+      "zh": "AS-99D",
+      "sourceName": "AS-99D",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "AS-99ST": {
+      "zh": "AS-99ST",
+      "sourceName": "AS-99ST",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "AS-99G": {
+      "zh": "AS-99G",
+      "sourceName": "AS-99G",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "AS-100": {
+      "zh": "AS-100",
+      "sourceName": "AS-100",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ライフル": {
+      "zh": "以太步槍",
+      "sourceName": "エーテル・ライフル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ブラスター": {
+      "zh": "以太光束槍",
+      "sourceName": "エーテル・ブラスター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ライフルST": {
+      "zh": "以太步槍ST",
+      "sourceName": "エーテル・ライフルST",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ブラスターⅡ": {
+      "zh": "以太光束槍II",
+      "sourceName": "エーテル・ブラスターII",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "エーテル・ライフル改": {
+      "zh": "以太步槍改",
+      "sourceName": "エーテル・ライフル改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "オプティクス": {
+      "zh": "光學系統",
+      "sourceName": "オプティクス",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "Opx.A1\"Alice\"": {
+      "zh": "Opx.A1\"Alice\"",
+      "sourceName": "Opx.A1 \"Alice\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "Opx.C1\"Celia\"": {
+      "zh": "Opx.C1\"Celia\"",
+      "sourceName": "Opx.C1 \"Celia\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "Opx.E1\"Elizabeth\"": {
+      "zh": "Opx.E1\"Elizabeth\"",
+      "sourceName": "Opx.E1 \"Elizabeth\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "Opx.N1\"Natsuko\"": {
+      "zh": "Opx.N1\"Natsuko\"",
+      "sourceName": "Opx.N1 \"Natsuko\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "Opx.A2\"Abigail\"": {
+      "zh": "Opx.A2\"Abigail\"",
+      "sourceName": "Opx.A2 \"Abigail\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "マグ・ブラスター": {
+      "zh": "磁力爆能槍",
+      "sourceName": "マグ・ブラスター",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "マグ・ブラスターA": {
+      "zh": "強襲光束槍A",
+      "sourceName": "マグ・ブラスターA",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マグ・ブラスターB": {
+      "zh": "強襲光束槍B",
+      "sourceName": "マグ・ブラスターB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マグ・ブラスターA2": {
+      "zh": "強襲光束槍A2",
+      "sourceName": "マグ・ブラスターA2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マグ・ブラスターB2": {
+      "zh": "強襲光束槍B2",
+      "sourceName": "マグ・ブラスターB2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マグ・ブラスターSP": {
+      "zh": "強襲光束槍SP",
+      "sourceName": "マグ・ブラスターSP",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チタニアキャノン": {
+      "zh": "蒂塔妮亞砲",
+      "sourceName": "チタニアキャノン",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "チタニアオートキャノン": {
+      "zh": "提泰妮亞自動加農",
+      "sourceName": "チタニアオートキャノン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チタニアオートキャノンR": {
+      "zh": "提泰妮亞自動加農R",
+      "sourceName": "チタニアオートキャノンR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チタニアオートキャノンB3": {
+      "zh": "提泰妮亞自動加農B3",
+      "sourceName": "チタニアオートキャノンB3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チタニアオートキャノンR2": {
+      "zh": "提泰妮亞自動加農R2",
+      "sourceName": "チタニアオートキャノンR2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チタニアバトルキャノン": {
+      "zh": "提泰妮亞戰鬥加農",
+      "sourceName": "チタニアバトルキャノン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジンザベック": {
+      "zh": "金札貝克",
+      "sourceName": "ジンザベック",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジンザベックS": {
+      "zh": "金札貝克S",
+      "sourceName": "ジンザベックS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジンザベックR": {
+      "zh": "金札貝克R",
+      "sourceName": "ジンザベックR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジンザベックSⅡ": {
+      "zh": "金札貝克SII",
+      "sourceName": "ジンザベックSII",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ジンザベック改": {
+      "zh": "金札貝克改",
+      "sourceName": "ジンザベック改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フェンリル": {
+      "zh": "黃昏巨狼",
+      "sourceName": "フェンリル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "カース・フェンリル": {
+      "zh": "黃昏巨狼・詛咒",
+      "sourceName": "カース・フェンリル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フェンリル・ランブル": {
+      "zh": "黃昏巨狼・轟雷",
+      "sourceName": "フェンリル・ランブル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "強化型フェンリル": {
+      "zh": "強化型黃昏巨狼",
+      "sourceName": "強化型フェンリル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダーク・フェンリル": {
+      "zh": "黃昏巨狼・黑暗",
+      "sourceName": "ダーク・フェンリル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブレイザー": {
+      "zh": "烈焰槍",
+      "sourceName": "ブレイザー",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "ブレイザー001": {
+      "zh": "光耀者001",
+      "sourceName": "ブレイザー001",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブレイザー002": {
+      "zh": "光耀者002",
+      "sourceName": "ブレイザー002",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブレイザー005A": {
+      "zh": "光耀者005A",
+      "sourceName": "ブレイザー005A",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブレイザー005B": {
+      "zh": "烈焰槍005B",
+      "sourceName": "ブレイザー005B",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブレイザー007": {
+      "zh": "烈焰槍007",
+      "sourceName": "ブレイザー007",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イズナ": {
+      "zh": "管狐",
+      "sourceName": "イズナ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イズナ-A": {
+      "zh": "管狐-A",
+      "sourceName": "イズナ-A",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イズナ-K": {
+      "zh": "管狐-K",
+      "sourceName": "イズナ-K",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イズナ-B": {
+      "zh": "管狐-B",
+      "sourceName": "イズナ-B",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マスターイズナ": {
+      "zh": "大師管狐",
+      "sourceName": "マスターイズナ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "火炎砲": {
+      "zh": "火焰砲",
+      "sourceName": "火炎砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スーパー火炎砲": {
+      "zh": "超級火焰砲",
+      "sourceName": "スーパー火炎砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アシュラ炎舞": {
+      "zh": "阿修羅炎舞",
+      "sourceName": "アシュラ炎舞",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウルトラ火炎砲": {
+      "zh": "究極火焰砲",
+      "sourceName": "ウルトラ火炎砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "マグマ砲": {
+      "zh": "岩漿砲",
+      "sourceName": "マグマ砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フレイムリボルバー": {
+      "zh": "火焰轉輪槍",
+      "sourceName": "フレイムリボルバー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フレイムボール": {
+      "zh": "火焰球",
+      "sourceName": "フレイムボール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フレイムリボルバーD": {
+      "zh": "火焰轉輪槍D",
+      "sourceName": "フレイムリボルバーD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フレイムボールD": {
+      "zh": "火焰球D",
+      "sourceName": "フレイムボールD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘルフレイムリボルバー": {
+      "zh": "地獄火焰轉輪槍",
+      "sourceName": "ヘルフレイムリボルバー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アシッドガン": {
+      "zh": "強酸槍",
+      "sourceName": "アシッドガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アシッドガンM2": {
+      "zh": "強酸槍M2",
+      "sourceName": "アシッドガンM2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アシッドガンST": {
+      "zh": "強酸槍ST",
+      "sourceName": "アシッドガンST",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ワイド・アシッドガン": {
+      "zh": "廣角強酸槍",
+      "sourceName": "ワイド・アシッドガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スーパー・アシッドガン": {
+      "zh": "超級強酸槍",
+      "sourceName": "スーパー・アシッドガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ロデオ": {
+      "zh": "競技賽",
+      "sourceName": "ロデオ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エクスターミネーター": {
+      "zh": "終結者",
+      "sourceName": "エクスターミネーター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ロデオSS": {
+      "zh": "競技賽SS",
+      "sourceName": "ロデオSS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ロデオ・パワード": {
+      "zh": "競技賽・驅動",
+      "sourceName": "ロデオ・パワード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エクスターミネーター2": {
+      "zh": "終結者2",
+      "sourceName": "エクスターミネーター2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FGガトリング": {
+      "zh": "FG格林機槍砲",
+      "sourceName": "FGガトリング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FGガトリング威力試験": {
+      "zh": "FG格林機槍砲威力試驗版",
+      "sourceName": "FGガトリング威力試験",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FGガトリング射程試験": {
+      "zh": "FG格林機槍砲射程試驗版",
+      "sourceName": "FGガトリング射程試験",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FGガトリング軽量型": {
+      "zh": "FG格林機槍砲輕量型",
+      "sourceName": "FGガトリング軽量型",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FGガトリング改": {
+      "zh": "FG格林機槍砲改",
+      "sourceName": "FGガトリング改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ガン": {
+      "zh": "以太槍",
+      "sourceName": "エーテル・ガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ガンA1": {
+      "zh": "以太槍A1",
+      "sourceName": "エーテル・ガンA1",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ガンZ": {
+      "zh": "以太槍Z",
+      "sourceName": "エーテル・ガンZ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ガンS1": {
+      "zh": "以太槍S1",
+      "sourceName": "エーテル・ガンS1",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エーテル・ガンA2": {
+      "zh": "以太槍A2",
+      "sourceName": "エーテル・ガンA2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "OpxII.A1\"Arthur\"": {
+      "zh": "OpxII.A1\"Arthur\"",
+      "sourceName": "OpxII.A1 \"Arthur\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "OpxII.D1\"David\"": {
+      "zh": "OpxII.D1\"David\"",
+      "sourceName": "OpxII.D1 \"David\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "OpxII.A2\"Alex\"": {
+      "zh": "OpxII.A2 「亞歷克斯」",
+      "sourceName": "OpxII.A2 \"Alex\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "OpxII.D2\"Diego\"": {
+      "zh": "OpxII.D2\"Diego\"",
+      "sourceName": "OpxII.D2 \"Diego\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "OpxII.A3\"Ali\"": {
+      "zh": "OpxII.A3 「阿里」",
+      "sourceName": "OpxII.A3 \"Ali\"",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "モンスーン": {
+      "zh": "暴雨",
+      "sourceName": "モンスーン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "モンスーン・サルディ": {
+      "zh": "暴雨・薩迪",
+      "sourceName": "モンスーン・サルディ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スコール": {
+      "zh": "狂風",
+      "sourceName": "スコール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘビー・スコール": {
+      "zh": "重裝狂風",
+      "sourceName": "ヘビー・スコール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "モンスーン・ガルミィ": {
+      "zh": "暴雨・茄米",
+      "sourceName": "モンスーン・ガルミィ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ユーフォニアム": {
+      "zh": "上低音號",
+      "sourceName": "ユーフォニアム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "トランペット": {
+      "zh": "小號",
+      "sourceName": "トランペット",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "コルネット": {
+      "zh": "短號",
+      "sourceName": "コルネット",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アルト・コルネット": {
+      "zh": "中音・短號",
+      "sourceName": "アルト・コルネット",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ユーフォニアムGD": {
+      "zh": "上低音號GD",
+      "sourceName": "ユーフォニアムGD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バッファロー": {
+      "zh": "水牛",
+      "sourceName": "バッファロー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バッファローG": {
+      "zh": "水牛G",
+      "sourceName": "バッファローG",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘビー・バッファロー": {
+      "zh": "重裝水牛",
+      "sourceName": "ヘビー・バッファロー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミノタウロス": {
+      "zh": "米諾陶洛斯",
+      "sourceName": "ミノタウロス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バッファローGZ": {
+      "zh": "水牛GZ",
+      "sourceName": "バッファローGZ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "キャバトリックス": {
+      "zh": "卡帕特里斯",
+      "sourceName": "キャバトリックス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "キャバトリックス改": {
+      "zh": "卡帕特里斯改",
+      "sourceName": "キャバトリックス改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ビーバレットバズ": {
+      "zh": "嗡嗡蜜蜂子彈",
+      "sourceName": "ビーバレットバズ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ビーバレットバズSP": {
+      "zh": "嗡嗡蜜蜂子彈SP",
+      "sourceName": "ビーバレットバズSP",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "キャバトリックスSP": {
+      "zh": "卡帕特里斯SP",
+      "sourceName": "キャバトリックスSP",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパロー": {
+      "zh": "麻雀",
+      "sourceName": "スパロー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパローSRカスタム": {
+      "zh": "麻雀SR改造",
+      "sourceName": "スパローSRカスタム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパローMGカスタム": {
+      "zh": "麻雀MG改造",
+      "sourceName": "スパローMGカスタム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパローSSカスタム": {
+      "zh": "麻雀SS改造",
+      "sourceName": "スパローSSカスタム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパローF": {
+      "zh": "麻雀F",
+      "sourceName": "スパローF",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デクスター自動小銃": {
+      "zh": "德斯塔自動步槍",
+      "sourceName": "デクスター自動小銃",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デクスター自動小銃D1": {
+      "zh": "德斯塔自動步槍D1",
+      "sourceName": "デクスター自動小銃D1",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デクスター自動小銃D2": {
+      "zh": "德克斯特自動步槍D2",
+      "sourceName": "デクスター自動小銃D2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デクスター自動小銃G": {
+      "zh": "德斯塔自動步槍G",
+      "sourceName": "デクスター自動小銃G",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デクスター自動小銃Z": {
+      "zh": "德克斯特自動步槍Z",
+      "sourceName": "デクスター自動小銃Z",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サプレスガン": {
+      "zh": "鎮壓槍",
+      "sourceName": "サプレスガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サプレスガンM2": {
+      "zh": "鎮壓槍M2",
+      "sourceName": "サプレスガンM2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サプレスガンM3": {
+      "zh": "壓制槍M3",
+      "sourceName": "サプレスガンM3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サプレスガンM4": {
+      "zh": "壓制槍M4",
+      "sourceName": "サプレスガンM4",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サプレスガンMS": {
+      "zh": "壓制槍MS",
+      "sourceName": "サプレスガンMS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーボウ": {
+      "zh": "閃電弓",
+      "sourceName": "サンダーボウ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーボウR": {
+      "zh": "閃電弓R",
+      "sourceName": "サンダーボウR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーボウR2": {
+      "zh": "閃電弓R2",
+      "sourceName": "サンダーボウR2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーボウD": {
+      "zh": "閃電弓D",
+      "sourceName": "サンダーボウD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーボウST": {
+      "zh": "閃電弓ST",
+      "sourceName": "サンダーボウST",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レイピア": {
+      "zh": "刺劍",
+      "sourceName": "レイピア",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "レーザーランス": {
+      "zh": "雷射長槍",
+      "sourceName": "レーザーランス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レーザーランスX": {
+      "zh": "雷射長槍X",
+      "sourceName": "レーザーランスX",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "デモニックランス": {
+      "zh": "惡魔強槍",
+      "sourceName": "デモニックランス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホーリーランス": {
+      "zh": "神聖長槍",
+      "sourceName": "ホーリーランス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ルオンノタル": {
+      "zh": "自然女神",
+      "sourceName": "ルオンノタル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピア": {
+      "zh": "爆破刺槍",
+      "sourceName": "ブラストホールスピア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアD": {
+      "zh": "爆破刺槍D",
+      "sourceName": "ブラストホールスピアD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアST": {
+      "zh": "爆破刺槍ST",
+      "sourceName": "ブラストホールスピアST",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアST改": {
+      "zh": "爆破刺槍ST改",
+      "sourceName": "ブラストホールスピアST改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアD2": {
+      "zh": "爆破刺槍D2",
+      "sourceName": "ブラストホールスピアD2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパインドライバー": {
+      "zh": "銳擊刺鎚",
+      "sourceName": "スパインドライバー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパインドライバーM2": {
+      "zh": "銳擊刺鎚M2",
+      "sourceName": "スパインドライバーM2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "重スパインドライバー": {
+      "zh": "重銳擊刺鎚",
+      "sourceName": "重スパインドライバー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダブル・スパインドライバー": {
+      "zh": "雙銳擊刺鎚",
+      "sourceName": "ダブル・スパインドライバー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパインドライバーM3": {
+      "zh": "銳擊刺鎚M3",
+      "sourceName": "スパインドライバーM3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フラッシングスピア": {
+      "zh": "迅流刺槍",
+      "sourceName": "フラッシングスピア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ラッシュスピア": {
+      "zh": "速攻刺槍",
+      "sourceName": "ラッシュスピア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フォークスピア": {
+      "zh": "多叉刺槍",
+      "sourceName": "フォークスピア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターラッシュスピア": {
+      "zh": "星擊刺槍",
+      "sourceName": "スターラッシュスピア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "フラッシングスピアM2": {
+      "zh": "迅流刺槍M2",
+      "sourceName": "フラッシングスピアM2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアGR": {
+      "zh": "爆破刺槍GR",
+      "sourceName": "ブラストホールスピアGR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアGR-M2": {
+      "zh": "爆破刺槍GR-M2",
+      "sourceName": "ブラストホールスピアGR-M2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアGR-M3": {
+      "zh": "爆破刺槍GR-M3",
+      "sourceName": "ブラストホールスピアGR-M3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアGR-M4": {
+      "zh": "爆破刺槍GR-M4",
+      "sourceName": "ブラストホールスピアGR-M4",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ブラストホールスピアGR-MS": {
+      "zh": "爆破刺槍GR-MS",
+      "sourceName": "ブラストホールスピアGR-MS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リボルバー": {
+      "zh": "左輪手槍",
+      "sourceName": "リボルバー",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "スピリット・オブ・テキサス": {
+      "zh": "德克薩斯之魂",
+      "sourceName": "スピリット・オブ・テキサス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スピリット・オブ・ルイジアナ": {
+      "zh": "路易斯安那之魂",
+      "sourceName": "スピリット・オブ・ルイジアナ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スピリット・オブ・コロラド": {
+      "zh": "科羅拉多之魂",
+      "sourceName": "スピリット・オブ・コロラド",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "黄金拳銃": {
+      "zh": "黃金手槍",
+      "sourceName": "黄金拳銃",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スピリット・オブ・フリーダム": {
+      "zh": "自由之魂",
+      "sourceName": "スピリット・オブ・フリーダム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プレデター": {
+      "zh": "掠食者",
+      "sourceName": "プレデター",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プレデターShuriken": {
+      "zh": "掠食者-手裏劍",
+      "sourceName": "プレデターShuriken",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プレデターKatana": {
+      "zh": "掠食者太刀",
+      "sourceName": "プレデターKatana",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プレデターYaiba": {
+      "zh": "掠食者刀刃",
+      "sourceName": "プレデターYaiba",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プレデターSamurai": {
+      "zh": "掠食者武士",
+      "sourceName": "プレデターSamurai",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ドゥンケル": {
+      "zh": "黑暗深淵",
+      "sourceName": "ドゥンケル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ドゥンケル後期型": {
+      "zh": "黑暗深淵後期型",
+      "sourceName": "ドゥンケル後期型",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ドゥンケルN191": {
+      "zh": "黑暗深淵N191",
+      "sourceName": "ドゥンケルN191",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "指揮官用ドゥンケル": {
+      "zh": "指揮官用黑暗深淵",
+      "sourceName": "指揮官用ドゥンケル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ドゥンケル最終生産型": {
+      "zh": "黑暗深淵最終生產型",
+      "sourceName": "ドゥンケル最終生産型",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライサンダー": {
+      "zh": "呂山德",
+      "sourceName": "ライサンダー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライサンダー2": {
+      "zh": "呂山德2",
+      "sourceName": "ライサンダー2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライサンダー量産型": {
+      "zh": "呂山德量產型",
+      "sourceName": "ライサンダー量産型",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライサンダー・エリート": {
+      "zh": "呂山德・菁英",
+      "sourceName": "ライサンダー・エリート",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライサンダーF": {
+      "zh": "呂山德F",
+      "sourceName": "ライサンダーF",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ペネトレーター": {
+      "zh": "貫穿者",
+      "sourceName": "ペネトレーター",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "ペネトレーター9": {
+      "zh": "穿透機9",
+      "sourceName": "ペネトレーター9",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ペネトレーター13": {
+      "zh": "穿透機13",
+      "sourceName": "ペネトレーター13",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ペネトレーター2222": {
+      "zh": "穿透機2222",
+      "sourceName": "ペネトレーター2222",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハーキュリー": {
+      "zh": "赫拉克勒斯",
+      "sourceName": "ハーキュリー",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "トライ・ハーキュリー": {
+      "zh": "三重海克力士",
+      "sourceName": "トライ・ハーキュリー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハーキュリーA": {
+      "zh": "海克力士A",
+      "sourceName": "ハーキュリーA",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハーキュリー・セブン": {
+      "zh": "海克力士7",
+      "sourceName": "ハーキュリー・セブン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "トライ・ハーキュリーB": {
+      "zh": "三重海克力士B",
+      "sourceName": "トライ・ハーキュリーB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハーキュリーA2": {
+      "zh": "海克力士A2",
+      "sourceName": "ハーキュリーA2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ソニックパイル": {
+      "zh": "音速長槍",
+      "sourceName": "ソニックパイル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アラベスク": {
+      "zh": "阿拉伯風",
+      "sourceName": "アラベスク",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ソニックパイルPlus": {
+      "zh": "音速樁增強型",
+      "sourceName": "ソニックパイルPlus",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アラベスクⅡ": {
+      "zh": "蔓藤花紋II",
+      "sourceName": "アラベスクII",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ローレンツ": {
+      "zh": "勞倫茲",
+      "sourceName": "ローレンツ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "オングストローム": {
+      "zh": "埃格斯特朗",
+      "sourceName": "オングストローム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ピタゴラス": {
+      "zh": "畢達哥拉斯",
+      "sourceName": "ピタゴラス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "オングストローム改": {
+      "zh": "埃格斯特朗改",
+      "sourceName": "オングストローム改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "オングストロームθ": {
+      "zh": "埃格斯特朗Theta",
+      "sourceName": "オングストロームθ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "MONSTER": {
+      "zh": "MONSTER",
+      "sourceName": "MONSTER",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "MONSTER-S": {
+      "zh": "MONSTER-S",
+      "sourceName": "MONSTER-S",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "M式レーザーライフル": {
+      "zh": "M式雷射步槍",
+      "sourceName": "M式レーザーライフル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "汎用型MONSTER": {
+      "zh": "泛用型MONSTER",
+      "sourceName": "汎用型MONSTER",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "MONSTER-SS": {
+      "zh": "MONSTER-SS",
+      "sourceName": "MONSTER-SS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "零式レーザーライフル": {
+      "zh": "零式雷射步槍",
+      "sourceName": "零式レーザーライフル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "零式レーザーライフルRplc": {
+      "zh": "零式雷射步槍Rplc",
+      "sourceName": "零式レーザーライフルRplc",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "零式レーザーライフルR2": {
+      "zh": "零式雷射步槍R2",
+      "sourceName": "零式レーザーライフルR2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "零式レーザーライフルR3": {
+      "zh": "零式雷射步槍R3",
+      "sourceName": "零式レーザーライフルR3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "零式レーザーライフルRX": {
+      "zh": "零式雷射步槍RX",
+      "sourceName": "零式レーザーライフルRX",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライジン": {
+      "zh": "雷神",
+      "sourceName": "ライジン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プロト・ライジン": {
+      "zh": "原型雷神",
+      "sourceName": "プロト・ライジン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライコウ": {
+      "zh": "雷公",
+      "sourceName": "ライコウ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライコウα": {
+      "zh": "雷光α",
+      "sourceName": "ライコウα",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライジンα": {
+      "zh": "雷神α",
+      "sourceName": "ライジンα",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "キュロスII": {
+      "zh": "居魯士II",
+      "sourceName": "キュロスII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダレイオスI": {
+      "zh": "大流士I",
+      "sourceName": "ダレイオスI",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "キュロスII・トライアンフ": {
+      "zh": "居魯士II凱旋",
+      "sourceName": "キュロスII・トライアンフ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダレイオスIII": {
+      "zh": "大流士III",
+      "sourceName": "ダレイオスIII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴリアス": {
+      "zh": "巨人歌利亞",
+      "sourceName": "ゴリアス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴリアス改": {
+      "zh": "巨人歌利亞改",
+      "sourceName": "ゴリアス改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スーパーゴリアス": {
+      "zh": "超級巨人歌利亞",
+      "sourceName": "スーパーゴリアス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "汎用型ゴリアス": {
+      "zh": "泛用型巨人歌利亞",
+      "sourceName": "汎用型ゴリアス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴリアス改二": {
+      "zh": "巨人歌利亞改二",
+      "sourceName": "ゴリアス改二",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ボルケーノ": {
+      "zh": "火山",
+      "sourceName": "ボルケーノ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ボルケーノ・アイガー": {
+      "zh": "火山・艾格峰",
+      "sourceName": "ボルケーノ・アイガー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "カスケード": {
+      "zh": "瀑布火箭",
+      "sourceName": "カスケード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルト・カスケード": {
+      "zh": "突擊瀑布火箭",
+      "sourceName": "アサルト・カスケード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ボルケーノ・モンブラン": {
+      "zh": "火山・白朗峰",
+      "sourceName": "ボルケーノ・モンブラン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スティングレイ": {
+      "zh": "魟魚",
+      "sourceName": "スティングレイ",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "スティングレイM1": {
+      "zh": "刺魟M1",
+      "sourceName": "スティングレイM1",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スティングレイM2": {
+      "zh": "刺魟M2",
+      "sourceName": "スティングレイM2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スティングレイM3": {
+      "zh": "魟魚M3",
+      "sourceName": "スティングレイM3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スティングレイM4": {
+      "zh": "魟魚M4",
+      "sourceName": "スティングレイM4",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スティングレイMF": {
+      "zh": "魟魚MF",
+      "sourceName": "スティングレイMF",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマランチャー": {
+      "zh": "電漿發射器",
+      "sourceName": "プラズマランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマメガランチャー": {
+      "zh": "超級電漿發射器",
+      "sourceName": "プラズマメガランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "パワースリンガー": {
+      "zh": "強力投射器",
+      "sourceName": "パワースリンガー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "パワースリンガーW": {
+      "zh": "強力投射器W",
+      "sourceName": "パワースリンガーW",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマメガランチャーR": {
+      "zh": "超級電漿發射器R",
+      "sourceName": "プラズマメガランチャーR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターダストキャノン": {
+      "zh": "星塵加農",
+      "sourceName": "スターダストキャノン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターダストフォール": {
+      "zh": "星塵殞落",
+      "sourceName": "スターダストフォール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターダストウォール": {
+      "zh": "星塵障壁",
+      "sourceName": "スターダストウォール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターダストフォールB": {
+      "zh": "星塵殞落B",
+      "sourceName": "スターダストフォールB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スターダストキャノンB": {
+      "zh": "星塵加農B",
+      "sourceName": "スターダストキャノンB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "XSXプラズマランチャー": {
+      "zh": "XSX電漿發射器",
+      "sourceName": "XSXプラズマランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマランチャーV3": {
+      "zh": "電漿發射器V3",
+      "sourceName": "プラズマランチャーV3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "M20プラズマランチャー": {
+      "zh": "M20電漿發射器",
+      "sourceName": "M20プラズマランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマメガランチャーV3": {
+      "zh": "超級電漿發射器V3",
+      "sourceName": "プラズマメガランチャーV3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "XSXプラズマランチャー2": {
+      "zh": "XSX電漿發射器2",
+      "sourceName": "XSXプラズマランチャー2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマヘビーキャノン": {
+      "zh": "電漿重型加農砲",
+      "sourceName": "プラズマヘビーキャノン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマヘビーキャノンR": {
+      "zh": "電漿重型加農砲R",
+      "sourceName": "プラズマヘビーキャノンR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマヘビーキャノン改": {
+      "zh": "重型電漿砲改良型",
+      "sourceName": "プラズマヘビーキャノン改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマヘビーキャノンR2": {
+      "zh": "電漿重型加農砲R2",
+      "sourceName": "プラズマヘビーキャノンR2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プラズマグレートキャノン": {
+      "zh": "巨型電漿砲",
+      "sourceName": "プラズマグレートキャノン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リムペットガン": {
+      "zh": "黏彈槍",
+      "sourceName": "リムペットガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リムペットショット": {
+      "zh": "黏彈散彈槍",
+      "sourceName": "リムペットショット",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リムペットスナイプガン": {
+      "zh": "黏彈狙擊槍",
+      "sourceName": "リムペットスナイプガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リムペットガン改": {
+      "zh": "黏彈槍改",
+      "sourceName": "リムペットガン改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リムペットヘビーガン": {
+      "zh": "重型黏彈槍",
+      "sourceName": "リムペットヘビーガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グラッジ": {
+      "zh": "怨恨",
+      "sourceName": "グラッジ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グラッジ・エアカスタム": {
+      "zh": "怨恨・對空改造",
+      "sourceName": "グラッジ・エアカスタム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グラッジ・カトプシス": {
+      "zh": "怨恨・肉食性",
+      "sourceName": "グラッジ・カトプシス",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "陸戦型グラッジ": {
+      "zh": "陸戰型怨恨",
+      "sourceName": "陸戦型グラッジ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グラッジGD": {
+      "zh": "怨恨GD",
+      "sourceName": "グラッジGD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グレネードランチャー": {
+      "zh": "榴彈發射器",
+      "sourceName": "グレネードランチャー",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "グレネードランチャーUMAX": {
+      "zh": "榴彈發射器UMAX",
+      "sourceName": "グレネードランチャーUMAX",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "3連グレネードランチャー": {
+      "zh": "3連發榴彈發射器",
+      "sourceName": "3連グレネードランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタンピード": {
+      "zh": "蝗蟲過境",
+      "sourceName": "スタンピード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタンピード・パーティ": {
+      "zh": "蝗蟲過境・陣線",
+      "sourceName": "スタンピード・パーティ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グレネードランチャーUMAD": {
+      "zh": "榴彈發射器UMAD",
+      "sourceName": "グレネードランチャーUMAD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イクシオン": {
+      "zh": "伊克西翁",
+      "sourceName": "イクシオン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イクシオンMX": {
+      "zh": "伊克西翁MX",
+      "sourceName": "イクシオンMX",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダイナストZ": {
+      "zh": "霸王Z",
+      "sourceName": "ダイナストZ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ダイナストα": {
+      "zh": "霸王α",
+      "sourceName": "ダイナストα",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イクシオン・マーク4": {
+      "zh": "伊克西翁・馬克4",
+      "sourceName": "イクシオン・マーク4",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "迫撃砲": {
+      "zh": "迫擊砲",
+      "sourceName": "迫撃砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "軽迫撃砲": {
+      "zh": "輕迫擊砲",
+      "sourceName": "軽迫撃砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "対空砲": {
+      "zh": "對空砲",
+      "sourceName": "対空砲",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "対空砲・弐式": {
+      "zh": "對空砲・貳式",
+      "sourceName": "対空砲・弐式",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "軽迫撃砲・弐式": {
+      "zh": "輕迫擊砲・貳式",
+      "sourceName": "軽迫撃砲・弐式",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホットフット": {
+      "zh": "急行",
+      "sourceName": "ホットフット",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホットフットScatter": {
+      "zh": "急行潰擊",
+      "sourceName": "ホットフットScatter",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホットフットBurst": {
+      "zh": "急行爆破",
+      "sourceName": "ホットフットBurst",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホットフットScatterII": {
+      "zh": "急行潰擊II",
+      "sourceName": "ホットフットScatterII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ホットフットII": {
+      "zh": "急行II",
+      "sourceName": "ホットフットII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エキゾチックレイ": {
+      "zh": "奇異光束",
+      "sourceName": "エキゾチックレイ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リグ・エキゾチックレイ": {
+      "zh": "奇異光束・梨俱吠陀",
+      "sourceName": "リグ・エキゾチックレイ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エキゾチックレイ改": {
+      "zh": "奇異光束改",
+      "sourceName": "エキゾチックレイ改",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エキゾチックレイ・インドラ": {
+      "zh": "奇異光束・因陀羅",
+      "sourceName": "エキゾチックレイ・インドラ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エキゾチックレイ・ルドラ": {
+      "zh": "奇異光束・樓陀羅",
+      "sourceName": "エキゾチックレイ・ルドラ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エメロード": {
+      "zh": "翡翠石",
+      "sourceName": "エメロード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エメロード・パワード": {
+      "zh": "翡翠石・驅動",
+      "sourceName": "エメロード・パワード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルト・エメロード": {
+      "zh": "突擊・翡翠石",
+      "sourceName": "アサルト・エメロード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハイ・エメロード": {
+      "zh": "上等翡翠石",
+      "sourceName": "ハイ・エメロード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エメロードⅡ": {
+      "zh": "翡翠石II",
+      "sourceName": "エメロードⅡ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FORK": {
+      "zh": "FORK",
+      "sourceName": "FORK",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FORK-2": {
+      "zh": "FORK-2",
+      "sourceName": "FORK-2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FORK-2B": {
+      "zh": "FORK-2B",
+      "sourceName": "FORK-2B",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FORK-0": {
+      "zh": "FORK-0",
+      "sourceName": "FORK-0",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "FORK-3": {
+      "zh": "FORK-3",
+      "sourceName": "FORK-3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リヴァイアサン": {
+      "zh": "利維坦",
+      "sourceName": "リヴァイアサン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スカイタートル": {
+      "zh": "空龜",
+      "sourceName": "スカイタートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "クラーケン": {
+      "zh": "海怪",
+      "sourceName": "クラーケン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "レジェンド・クラーケン": {
+      "zh": "傳說海怪",
+      "sourceName": "レジェンド・クラーケン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ワイルド・リヴァイアサン": {
+      "zh": "狂野利維坦",
+      "sourceName": "ワイルド・リヴァイアサン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジャギリシステム": {
+      "zh": "珈吉利系統",
+      "sourceName": "ジャギリシステム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジャギリシステムII": {
+      "zh": "珈吉利系統II",
+      "sourceName": "ジャギリシステムII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジャギリシステムIII": {
+      "zh": "珈吉利系統III",
+      "sourceName": "ジャギリシステムIII",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジャギリシステムAu": {
+      "zh": "珈吉利系統Au",
+      "sourceName": "ジャギリシステムAu",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジャギリシステムVI": {
+      "zh": "珈吉利系統IV",
+      "sourceName": "ジャギリシステムVI",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エアメール": {
+      "zh": "航空郵件",
+      "sourceName": "エアメール",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エアメールⅡ": {
+      "zh": "航空郵件II",
+      "sourceName": "エアメールII",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "エアメールⅢ": {
+      "zh": "航空郵件III",
+      "sourceName": "エアメールIII",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "エアメールⅣ": {
+      "zh": "航空郵件IV",
+      "sourceName": "エアメールIV",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "エアメールⅤ": {
+      "zh": "航空郵件V",
+      "sourceName": "エアメールV",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ファルコン": {
+      "zh": "飛鷹",
+      "sourceName": "ファルコン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ファルコンLR": {
+      "zh": "飛鷹LR",
+      "sourceName": "ファルコンLR",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "パワード・ファルコン": {
+      "zh": "飛鷹・驅動",
+      "sourceName": "パワード・ファルコン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ファルコンLR-2": {
+      "zh": "飛鷹LR-2",
+      "sourceName": "ファルコンLR-2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スーパーファルコン": {
+      "zh": "超級獵隼",
+      "sourceName": "スーパー・ファルコン",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ゴーストチェイサー": {
+      "zh": "幽鬼獵手",
+      "sourceName": "ゴーストチェイサー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴーストチェイサーX1": {
+      "zh": "幽鬼獵手X1",
+      "sourceName": "ゴーストチェイサーX1",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴーストチェイサーX2": {
+      "zh": "幽鬼獵手X2",
+      "sourceName": "ゴーストチェイサーX2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ゴーストチェイサーX1.5": {
+      "zh": "幽鬼獵手X1.5",
+      "sourceName": "ゴーストチェイサーX1.5",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "試作兵器CODE：GC2": {
+      "zh": "試作武器CODE：GC2",
+      "sourceName": "試作兵器CODE:GC2",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ネイピアレーザー": {
+      "zh": "內皮爾雷射",
+      "sourceName": "ネイピアレーザー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ネイピアレーザーS": {
+      "zh": "內皮爾雷射S",
+      "sourceName": "ネイピアレーザーS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "シグマスフィア": {
+      "zh": "西格瑪球體",
+      "sourceName": "シグマスフィア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "シグマスフィアLimit": {
+      "zh": "西格瑪球體Limit",
+      "sourceName": "シグマスフィアLimit",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ネイピアレーザーHyper": {
+      "zh": "內皮爾雷射Hyper",
+      "sourceName": "ネイピアレーザーHyper",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サイブレード": {
+      "zh": "靈犀刀刃",
+      "sourceName": "サイブレード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サイブレードα": {
+      "zh": "靈犀刀刃α",
+      "sourceName": "サイブレードα",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サイブレードスラッシュ": {
+      "zh": "靈犀刀刃斬擊",
+      "sourceName": "サイブレードスラッシュ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サイブレードライトカスタム": {
+      "zh": "靈犀刀刃・輕改造",
+      "sourceName": "サイブレード・ライトカスタム",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "サイブレードβ": {
+      "zh": "靈犀刀刃β",
+      "sourceName": "サイブレードβ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インテグラルレイ": {
+      "zh": "積分射線",
+      "sourceName": "インテグラルレイ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インテグラルレイF": {
+      "zh": "積分射線F",
+      "sourceName": "インテグラルレイF",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インテグラルレイG": {
+      "zh": "積分射線G",
+      "sourceName": "インテグラルレイG",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インテグラルレイFdx": {
+      "zh": "積分射線F豪華型",
+      "sourceName": "インテグラルレイFdx",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "インテグラルレイGdx": {
+      "zh": "積分射線G豪華型",
+      "sourceName": "インテグラルレイGdx",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミラージュ": {
+      "zh": "幻象",
+      "sourceName": "ミラージュ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミラージュ・ニンフ": {
+      "zh": "幻象・寧芙",
+      "sourceName": "ミラージュ・ニンフ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミラージュ・ヴィヴィアン": {
+      "zh": "幻影薇薇安",
+      "sourceName": "ミラージュ・ヴィヴィアン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミラージュ・モルガン": {
+      "zh": "幻影摩根",
+      "sourceName": "ミラージュ・モルガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ミラージュ・ロキ": {
+      "zh": "幻影洛基",
+      "sourceName": "ミラージュ・ロキ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ベアファング": {
+      "zh": "熊尖牙",
+      "sourceName": "ベアファング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "使い込まれたベアファング": {
+      "zh": "慣用的熊尖牙",
+      "sourceName": "使い込まれたベアファング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "いいベアファング": {
+      "zh": "良好的熊尖牙",
+      "sourceName": "いいベアファング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "豪華なベアファング": {
+      "zh": "豪華的熊尖牙",
+      "sourceName": "豪華なベアファング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "すごいベアファング": {
+      "zh": "厲害的熊尖牙",
+      "sourceName": "すごいベアファング",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "グローブ": {
+      "zh": "手套",
+      "sourceName": "グローブ",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "ルーキーグローブ": {
+      "zh": "新手拳套",
+      "sourceName": "ルーキーグローブ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "プロフェッショナルグローブ": {
+      "zh": "專家拳套",
+      "sourceName": "プロフェッショナルグローブ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エリートグローブ": {
+      "zh": "菁英拳套",
+      "sourceName": "エリートグローブ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "メモリアルグローブ": {
+      "zh": "紀念拳套",
+      "sourceName": "メモリアルグローブ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "チャンピオングローブ": {
+      "zh": "冠軍拳套",
+      "sourceName": "チャンピオングローブ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "素手": {
+      "zh": "徒手",
+      "sourceName": "素手",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "素手：玄武級": {
+      "zh": "空手：玄武級",
+      "sourceName": "素手：玄武級",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "素手：朱雀級": {
+      "zh": "空手：朱雀級",
+      "sourceName": "素手：朱雀級",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "素手：白虎級": {
+      "zh": "空手：白虎級",
+      "sourceName": "素手:白虎級",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "素手：鳳凰級": {
+      "zh": "空手：鳳凰級",
+      "sourceName": "素手:鳳凰級",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ソード": {
+      "zh": "劍",
+      "sourceName": "ソード",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "ブラッドソード": {
+      "zh": "嗜血劍",
+      "sourceName": "ブラッドソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バットソード": {
+      "zh": "蝙蝠劍",
+      "sourceName": "バットソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ムーンソード": {
+      "zh": "月之劍",
+      "sourceName": "ムーンソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "エレガントソード": {
+      "zh": "優雅之劍",
+      "sourceName": "エレガントソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘルソード": {
+      "zh": "地獄之劍",
+      "sourceName": "ヘルソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "剣": {
+      "zh": "劍",
+      "sourceName": "剣",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "鉄の剣": {
+      "zh": "鐵劍",
+      "sourceName": "鉄の剣",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "銅の剣": {
+      "zh": "銅劍",
+      "sourceName": "銅の剣",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "銀の剣": {
+      "zh": "銀劍",
+      "sourceName": "銀の剣",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "金の剣": {
+      "zh": "金劍",
+      "sourceName": "金の剣",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スパルタンソード": {
+      "zh": "斯巴達戰士之劍",
+      "sourceName": "スパルタンソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "日本刀": {
+      "zh": "日本刀",
+      "sourceName": "日本刀",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "朱鷺丸": {
+      "zh": "朱鷺丸",
+      "sourceName": "朱鷺丸",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "眉月切": {
+      "zh": "眉月切",
+      "sourceName": "眉月切",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "しゝのはやて": {
+      "zh": "迅獅疾風",
+      "sourceName": "しゝのはやて",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "金刀": {
+      "zh": "金刀",
+      "sourceName": "金刀",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "朱鷺御剣": {
+      "zh": "朱鷺御劍",
+      "sourceName": "朱鷺御剣",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタグビートル": {
+      "zh": "鍬形蟲",
+      "sourceName": "スタグビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタグビートル・ペア": {
+      "zh": "雙鍬形蟲",
+      "sourceName": "スタグビートル・ペア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタグビートル・ゴールド": {
+      "zh": "黃金鍬形蟲",
+      "sourceName": "スタグビートル・ゴールド",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スタグビートルズ": {
+      "zh": "複鍬形蟲",
+      "sourceName": "スタグビートルズ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルトビートル": {
+      "zh": "突擊甲蟲",
+      "sourceName": "アサルトビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルトバンクビートル": {
+      "zh": "突擊龐克甲蟲",
+      "sourceName": "アサルトバンクビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルトキングビートル": {
+      "zh": "突擊國王甲蟲",
+      "sourceName": "アサルトキングビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アサルトビートル・ゴールド": {
+      "zh": "黃金突擊甲蟲",
+      "sourceName": "アサルトビートル・ゴールド",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "新型アサルトビートル": {
+      "zh": "新型突擊甲蟲",
+      "sourceName": "新型アサルトビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウィザードビートル": {
+      "zh": "精靈甲蟲",
+      "sourceName": "ウィザードビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウィザードビートルE": {
+      "zh": "精靈甲蟲E",
+      "sourceName": "ウィザードビートルE",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウィザードビートルS": {
+      "zh": "巫師甲蟲S",
+      "sourceName": "ウィザードビートルS",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ウィザードビートルQ": {
+      "zh": "巫師甲蟲Q",
+      "sourceName": "ウィザードビートルQ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ニュー・ウィザードビートル": {
+      "zh": "新型巫師甲蟲",
+      "sourceName": "ニュー・ウィザードビートル",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘブンズゲート・ランチャー": {
+      "zh": "天國門扉發射器",
+      "sourceName": "ヘブンズゲート・ランチャー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘブンズゲート・ランチャー2": {
+      "zh": "天國門扉發射器2",
+      "sourceName": "ヘブンズゲート・ランチャー2",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘブンズゲート・ランチャー3": {
+      "zh": "天國門扉發射器3",
+      "sourceName": "ヘブンズゲート・ランチャー3",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘブンズゲート・ガン": {
+      "zh": "天堂之門槍",
+      "sourceName": "ヘブンズゲート・ガン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ヘブンズゲート・ランチャーD": {
+      "zh": "天堂之門發射器D",
+      "sourceName": "ヘブンズゲート・ランチャーD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イグアス": {
+      "zh": "伊瓜蘇",
+      "sourceName": "イグアス",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "イグアス1号基": {
+      "zh": "伊瓜蘇1號機",
+      "sourceName": "イグアス1号基",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イグアス2号基": {
+      "zh": "伊瓜蘇2號機",
+      "sourceName": "イグアス2号基",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ナイル1号基": {
+      "zh": "尼羅1號機",
+      "sourceName": "ナイル1号基",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "イグアス・シンギュラリティ": {
+      "zh": "伊瓜蘇奇點",
+      "sourceName": "イグアス・シンギュラリティ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ナイル・ジェットパルサー": {
+      "zh": "尼羅・噴射脈衝星",
+      "sourceName": "ナイル・ジェットパルサー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アークソード": {
+      "zh": "弧劍",
+      "sourceName": "アークソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アークソードType-R": {
+      "zh": "弧劍Type-R",
+      "sourceName": "アークソードType-R",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アークソードType-W": {
+      "zh": "弧劍Type-W",
+      "sourceName": "アークソードType-W",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ハイパーアークソード": {
+      "zh": "超弧劍",
+      "sourceName": "ハイパーアークソード",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アークソードType-R+W": {
+      "zh": "弧劍Type-R+W",
+      "sourceName": "アークソードType-R+W",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "かんしゃく玉": {
+      "zh": "甩炮",
+      "sourceName": "かんしゃく玉",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ジェドマロース": {
+      "zh": "冰霜爺爺",
+      "sourceName": "ジェドマロース",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "スネグーラチカ": {
+      "zh": "冰霜女孩",
+      "sourceName": "スネグーラチカ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "大かんしゃく玉": {
+      "zh": "大甩炮",
+      "sourceName": "大かんしゃく玉",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "アイスファンタジア": {
+      "zh": "冰霜幻想曲",
+      "sourceName": "アイスファンタジア",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リニアボウ": {
+      "zh": "線性弓",
+      "sourceName": "リニアボウ",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "サンダーアロー": {
+      "zh": "雷箭",
+      "sourceName": "サンダーアロー",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リニアボウGカスタム": {
+      "zh": "線性弓G改造",
+      "sourceName": "リニアボウGカスタム",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リニアボウ∀": {
+      "zh": "線性弓Turn-A",
+      "sourceName": "リニアボウ∀",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "リニアボウ・エロース": {
+      "zh": "線性弓・厄洛斯",
+      "sourceName": "リニアボウ・エロース",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "航空支援": {
+      "zh": "航空支援",
+      "sourceName": "航空支援",
+      "method": "family-reference",
+      "wb2Verified": false
+    },
+    "機関砲プラン": {
+      "zh": "機關砲",
+      "sourceName": "機関砲プラン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "速射砲プラン": {
+      "zh": "速射砲",
+      "sourceName": "速射砲プラン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "制圧砲プラン": {
+      "zh": "壓制砲",
+      "sourceName": "制圧砲プラン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "速射砲プランB": {
+      "zh": "速射砲B",
+      "sourceName": "速射砲プランB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "バルカン砲プラン": {
+      "zh": "火神砲",
+      "sourceName": "バルカン砲プラン",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオニック・プランA": {
+      "zh": "雄獅・計畫A",
+      "sourceName": "ライオニック・プランA",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオニック・プランB": {
+      "zh": "雄獅・計畫B",
+      "sourceName": "ライオニック・プランB",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオニック・プランC": {
+      "zh": "萊奧尼克支援方案C",
+      "sourceName": "ライオニック・プランC",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオニック・プランD": {
+      "zh": "萊奧尼克支援方案D",
+      "sourceName": "ライオニック・プランD",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオニック・プランE": {
+      "zh": "萊奧尼克支援方案E",
+      "sourceName": "ライオニック・プランE",
+      "method": "exact",
+      "wb2Verified": true
+    },
+    "ライオン・グローブ": {
+      "zh": "獅子手套",
+      "sourceName": "ライオングローブ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "タイガー・ガントレット": {
+      "zh": "老虎金屬手套",
+      "sourceName": "タイガーガントレット",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "イーグル・バンテージ": {
+      "zh": "老鷹手綁帶",
+      "sourceName": "イーグルバンテージ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ドルフィン・ティアラ": {
+      "zh": "海豚冠冕",
+      "sourceName": "ドルフィンティアラ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ホエール・クラウン": {
+      "zh": "鯨魚王冠",
+      "sourceName": "ホエールクラウン",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "オルカ・ネックレス": {
+      "zh": "虎鯨項鍊",
+      "sourceName": "オルカネックレス",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ゼブラ・シューズ": {
+      "zh": "斑馬鞋",
+      "sourceName": "ゼブラシューズ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "チーター・スパイク": {
+      "zh": "獵豹釘鞋",
+      "sourceName": "チータースパイク",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "カンガルー・サンダル": {
+      "zh": "袋鼠涼鞋",
+      "sourceName": "カンガルーサンダル",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "バイソン・ブーツ": {
+      "zh": "野牛靴",
+      "sourceName": "バイソンブーツ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "ジャガー・スニーカー": {
+      "zh": "美洲豹運動鞋",
+      "sourceName": "ジャガースニーカー",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "アルマジロ・ジャンパー": {
+      "zh": "犰狳外套",
+      "sourceName": "アルマジロジャンパー",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "タートル・アーマー": {
+      "zh": "海龜鐵甲",
+      "sourceName": "タートルアーマー",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "クロコダイル・ローブ": {
+      "zh": "鱷魚長袍",
+      "sourceName": "クロコダイルローブ",
+      "method": "typography",
+      "wb2Verified": true
+    },
+    "プロールライダ－(EDF:IR)KR仕様": {
+      "zh": "獵行兵(EDF:IR) KR規格",
+      "sourceName": "プロールライダー(EDF:IR)KR仕様",
+      "method": "explicit-alias",
+      "wb2Verified": false
+    },
+    "キュロスII・コンクエスト": {
+      "zh": "居魯士II征服",
+      "sourceName": "キュロスII・コンクェスト",
+      "method": "explicit-alias",
+      "wb2Verified": false
+    },
+    "素手：青竜級": {
+      "zh": "空手：青龍級",
+      "sourceName": "素手:青龍級",
+      "method": "explicit-alias",
+      "wb2Verified": false
+    },
+    "スタグクィックビートル": {
+      "zh": "敏捷鍬形蟲",
+      "sourceName": "スタグクイックビートル",
+      "method": "explicit-alias",
+      "wb2Verified": false
+    },
+    "ファイブカード": {
+      "zh": "梭哈",
+      "sourceName": "ファイブガード",
+      "method": "explicit-alias",
+      "wb2Verified": true,
+      "note": "カ／ガ 差異；同系列、LV3、出處角色與 PF 型號對應。"
+    },
+    "ファイブカードPF": {
+      "zh": "梭哈PF",
+      "sourceName": "ファイブガードPF",
+      "method": "explicit-alias",
+      "wb2Verified": true,
+      "note": "カ／ガ 差異；同系列、LV3、出處角色與 PF 型號對應。"
+    },
+    "オングストロームΦ": {
+      "zh": "埃格斯特朗Phi",
+      "sourceName": "オングストロームφ",
+      "method": "typography",
+      "wb2Verified": true,
+      "note": "希臘字母 Φ／φ 大小寫差異，型號與 LV2 對應。"
+    }
+  },
+  "compositions": {
+    "ブルーレイピア": {
+      "zh": "蒼藍刺劍",
+      "parts": [
+        {
+          "ja": "ブルーレイピア",
+          "zh": "蒼藍刺劍",
+          "sourceName": "MXブルーレイピア",
+          "sourceZh": "MX蒼藍刺劍",
+          "wb2Verified": true
+        }
+      ],
+      "note": "移除日文與中文共同的 MX 型號前綴；保留完整名稱待核對標記。"
+    },
+    "レイピアスフィア": {
+      "zh": "刺劍領域",
+      "parts": [
+        {
+          "ja": "レイピアスフィア",
+          "zh": "刺劍領域",
+          "sourceName": "MXレイピアスフィア",
+          "sourceZh": "MX刺劍領域",
+          "wb2Verified": true
+        }
+      ],
+      "note": "移除日文與中文共同的 MX 型號前綴；保留完整名稱待核對標記。"
+    },
+    "レイピアスライサー": {
+      "zh": "刺劍切片刀",
+      "parts": [
+        {
+          "ja": "レイピアスライサー",
+          "zh": "刺劍切片刀",
+          "sourceName": "MXレイピアスライサー",
+          "sourceZh": "MX刺劍切片刀",
+          "wb2Verified": true
+        }
+      ],
+      "note": "移除日文與中文共同的 MX 型號前綴；保留完整名稱待核對標記。"
+    },
+    "マスターレイピア": {
+      "zh": "大師刺劍",
+      "parts": [
+        {
+          "ja": "マスターレイピア",
+          "zh": "大師刺劍",
+          "sourceName": "MXマスターレイピア",
+          "sourceZh": "MX大師刺劍",
+          "wb2Verified": true
+        }
+      ],
+      "note": "移除日文與中文共同的 MX 型號前綴；保留完整名稱待核對標記。"
+    },
+    "双葉理保": {
+      "zh": "雙葉理保",
+      "parts": [
+        {
+          "ja": "双葉理保",
+          "zh": "雙葉理保",
+          "sourceName": "双葉理保 14歳 ～夏～",
+          "sourceZh": "雙葉理保 14歲 ～夏～",
+          "wb2Verified": false
+        }
+      ],
+      "note": "取既有角色名的本名；來源本身仍待畫面核對。"
+    },
+    "双葉理保(水着)": {
+      "zh": "雙葉理保（泳裝）",
+      "parts": [
+        {
+          "ja": "双葉理保",
+          "zh": "雙葉理保",
+          "sourceName": "双葉理保 14歳 ～夏～",
+          "sourceZh": "雙葉理保 14歲 ～夏～",
+          "wb2Verified": false
+        },
+        {
+          "ja": "(",
+          "zh": "（",
+          "method": "literal"
+        },
+        {
+          "ja": "水着",
+          "zh": "泳裝",
+          "method": "translation"
+        },
+        {
+          "ja": ")",
+          "zh": "）",
+          "method": "literal"
+        }
+      ],
+      "note": "角色本名加服裝參考翻譯；不等同另一年齡／季節版本。"
+    },
+    "双葉理保(夏服)": {
+      "zh": "雙葉理保（夏服）",
+      "parts": [
+        {
+          "ja": "双葉理保",
+          "zh": "雙葉理保",
+          "sourceName": "双葉理保 14歳 ～夏～",
+          "sourceZh": "雙葉理保 14歲 ～夏～",
+          "wb2Verified": false
+        },
+        {
+          "ja": "(",
+          "zh": "（",
+          "method": "literal"
+        },
+        {
+          "ja": "夏服",
+          "zh": "夏服",
+          "method": "translation"
+        },
+        {
+          "ja": ")",
+          "zh": "）",
+          "method": "literal"
+        }
+      ],
+      "note": "角色本名加服裝參考翻譯；不等同另一年齡／季節版本。"
+    },
+    "双葉理保(サンタ)": {
+      "zh": "雙葉理保（聖誕裝）",
+      "parts": [
+        {
+          "ja": "双葉理保",
+          "zh": "雙葉理保",
+          "sourceName": "双葉理保 14歳 ～夏～",
+          "sourceZh": "雙葉理保 14歲 ～夏～",
+          "wb2Verified": false
+        },
+        {
+          "ja": "(",
+          "zh": "（",
+          "method": "literal"
+        },
+        {
+          "ja": "サンタ",
+          "zh": "聖誕裝",
+          "method": "translation"
+        },
+        {
+          "ja": ")",
+          "zh": "）",
+          "method": "literal"
+        }
+      ],
+      "note": "角色本名加服裝參考翻譯；不等同另一年齡／季節版本。"
+    },
+    "陸戦兵(EDF3)ストーム1仕様": {
+      "zh": "陸戰兵(EDF3) STORM 1規格",
+      "parts": [
+        {
+          "ja": "陸戦兵(EDF3)",
+          "zh": "陸戰兵(EDF3)",
+          "sourceName": "陸戦兵(EDF3)",
+          "sourceZh": "陸戰兵(EDF3)",
+          "wb2Verified": true
+        },
+        {
+          "ja": "ストーム1",
+          "zh": " STORM 1",
+          "method": "translation"
+        },
+        {
+          "ja": "仕様",
+          "zh": "規格",
+          "sourceName": "プロールライダー(EDF:IR)KR仕様",
+          "sourceZh": "獵行兵(EDF:IR) KR規格",
+          "wb2Verified": true
+        }
+      ],
+      "note": "既有兵種名加 STORM 1 規格；角色版本仍待核對。"
+    },
+    "レンジャー(EDF5)軍曹仕様": {
+      "zh": "突擊兵(EDF5) 軍曹規格",
+      "parts": [
+        {
+          "ja": "レンジャー(EDF5)",
+          "zh": "突擊兵(EDF5)",
+          "sourceName": "レンジャー(EDF5)",
+          "sourceZh": "突擊兵(EDF5)",
+          "wb2Verified": true
+        },
+        {
+          "ja": "軍曹",
+          "zh": " 軍曹",
+          "method": "translation"
+        },
+        {
+          "ja": "仕様",
+          "zh": "規格",
+          "sourceName": "プロールライダー(EDF:IR)KR仕様",
+          "sourceZh": "獵行兵(EDF:IR) KR規格",
+          "wb2Verified": true
+        }
+      ],
+      "note": "既有兵種名加軍曹規格；無印與 V01 共用本名，進度分開。"
+    },
+    "サンダースナイパー": {
+      "zh": "閃電狙擊槍",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "サンダースナイパーA": {
+      "zh": "閃電狙擊槍A",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        },
+        {
+          "ja": "A",
+          "zh": "A",
+          "method": "literal"
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "サンダースナイパーB": {
+      "zh": "閃電狙擊槍B",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        },
+        {
+          "ja": "B",
+          "zh": "B",
+          "method": "literal"
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "サンダースナイパーC": {
+      "zh": "閃電狙擊槍C",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        },
+        {
+          "ja": "C",
+          "zh": "C",
+          "method": "literal"
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "サンダースナイパーD": {
+      "zh": "閃電狙擊槍D",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        },
+        {
+          "ja": "D",
+          "zh": "D",
+          "method": "literal"
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "サンダースナイパーR": {
+      "zh": "閃電狙擊槍R",
+      "parts": [
+        {
+          "ja": "サンダー",
+          "zh": "閃電",
+          "sourceName": "サンダーボウ",
+          "sourceZh": "閃電弓",
+          "wb2Verified": true
+        },
+        {
+          "ja": "スナイパー",
+          "zh": "狙擊槍",
+          "sourceName": "スタンスナイパー",
+          "sourceZh": "電擊狙擊槍",
+          "wb2Verified": true
+        },
+        {
+          "ja": "R",
+          "zh": "R",
+          "method": "literal"
+        }
+      ],
+      "note": "依已核對的閃電／狙擊槍詞段組合，保留一代原型號。"
+    },
+    "ラッキーバレット": {
+      "zh": "幸運子彈",
+      "parts": [
+        {
+          "ja": "ラッキー",
+          "zh": "幸運",
+          "sourceName": "ラッキーガール",
+          "sourceZh": "幸運女孩",
+          "wb2Verified": true
+        },
+        {
+          "ja": "バレット",
+          "zh": "子彈",
+          "sourceName": "ビーバレットバズ",
+          "sourceZh": "嗡嗡蜜蜂子彈",
+          "wb2Verified": true
+        }
+      ],
+      "note": "依既有幸運／子彈詞段組合。"
+    },
+    "ビンゴバレット": {
+      "zh": "賓果子彈",
+      "parts": [
+        {
+          "ja": "ビンゴ",
+          "zh": "賓果",
+          "method": "translation"
+        },
+        {
+          "ja": "バレット",
+          "zh": "子彈",
+          "sourceName": "ビーバレットバズ",
+          "sourceZh": "嗡嗡蜜蜂子彈",
+          "wb2Verified": true
+        }
+      ],
+      "note": "前段參考翻譯加已核對的子彈詞段。"
+    },
+    "フォーチュンバレット": {
+      "zh": "福運子彈",
+      "parts": [
+        {
+          "ja": "フォーチュン",
+          "zh": "福運",
+          "method": "translation"
+        },
+        {
+          "ja": "バレット",
+          "zh": "子彈",
+          "sourceName": "ビーバレットバズ",
+          "sourceZh": "嗡嗡蜜蜂子彈",
+          "wb2Verified": true
+        }
+      ],
+      "note": "前段參考翻譯加已核對的子彈詞段。"
+    },
+    "ギャンブルバレット": {
+      "zh": "賭博子彈",
+      "parts": [
+        {
+          "ja": "ギャンブル",
+          "zh": "賭博",
+          "method": "translation"
+        },
+        {
+          "ja": "バレット",
+          "zh": "子彈",
+          "sourceName": "ビーバレットバズ",
+          "sourceZh": "嗡嗡蜜蜂子彈",
+          "wb2Verified": true
+        }
+      ],
+      "note": "前段參考翻譯加已核對的子彈詞段。"
+    },
+    "スーパーラッキーバレット": {
+      "zh": "超級幸運子彈",
+      "parts": [
+        {
+          "ja": "スーパー",
+          "zh": "超級",
+          "sourceName": "ラッキーガール・スーパー",
+          "sourceZh": "超級幸運女孩",
+          "wb2Verified": true
+        },
+        {
+          "ja": "ラッキー",
+          "zh": "幸運",
+          "sourceName": "ラッキーガール",
+          "sourceZh": "幸運女孩",
+          "wb2Verified": true
+        },
+        {
+          "ja": "バレット",
+          "zh": "子彈",
+          "sourceName": "ビーバレットバズ",
+          "sourceZh": "嗡嗡蜜蜂子彈",
+          "wb2Verified": true
+        }
+      ],
+      "note": "依既有超級／幸運／子彈詞段組合。"
+    },
+    "サンタハンマー": {
+      "zh": "聖誕戰鎚",
+      "parts": [
+        {
+          "ja": "サンタ",
+          "zh": "聖誕",
+          "method": "translation"
+        },
+        {
+          "ja": "ハンマー",
+          "zh": "戰鎚",
+          "sourceName": "ヴィブロハンマー",
+          "sourceZh": "駭波戰鎚",
+          "wb2Verified": true
+        }
+      ],
+      "note": "聖誕參考翻譯加已核對的戰鎚詞段，型號照原文保留。"
+    },
+    "サンタハンマーD2": {
+      "zh": "聖誕戰鎚D2",
+      "parts": [
+        {
+          "ja": "サンタ",
+          "zh": "聖誕",
+          "method": "translation"
+        },
+        {
+          "ja": "ハンマー",
+          "zh": "戰鎚",
+          "sourceName": "ヴィブロハンマー",
+          "sourceZh": "駭波戰鎚",
+          "wb2Verified": true
+        },
+        {
+          "ja": "D2",
+          "zh": "D2",
+          "method": "literal"
+        }
+      ],
+      "note": "聖誕參考翻譯加已核對的戰鎚詞段，型號照原文保留。"
+    },
+    "サンタハンマーD3": {
+      "zh": "聖誕戰鎚D3",
+      "parts": [
+        {
+          "ja": "サンタ",
+          "zh": "聖誕",
+          "method": "translation"
+        },
+        {
+          "ja": "ハンマー",
+          "zh": "戰鎚",
+          "sourceName": "ヴィブロハンマー",
+          "sourceZh": "駭波戰鎚",
+          "wb2Verified": true
+        },
+        {
+          "ja": "D3",
+          "zh": "D3",
+          "method": "literal"
+        }
+      ],
+      "note": "聖誕參考翻譯加已核對的戰鎚詞段，型號照原文保留。"
+    },
+    "サンタハンマーZD": {
+      "zh": "聖誕戰鎚ZD",
+      "parts": [
+        {
+          "ja": "サンタ",
+          "zh": "聖誕",
+          "method": "translation"
+        },
+        {
+          "ja": "ハンマー",
+          "zh": "戰鎚",
+          "sourceName": "ヴィブロハンマー",
+          "sourceZh": "駭波戰鎚",
+          "wb2Verified": true
+        },
+        {
+          "ja": "ZD",
+          "zh": "ZD",
+          "method": "literal"
+        }
+      ],
+      "note": "聖誕參考翻譯加已核對的戰鎚詞段，型號照原文保留。"
+    },
+    "サンタハンマーD9": {
+      "zh": "聖誕戰鎚D9",
+      "parts": [
+        {
+          "ja": "サンタ",
+          "zh": "聖誕",
+          "method": "translation"
+        },
+        {
+          "ja": "ハンマー",
+          "zh": "戰鎚",
+          "sourceName": "ヴィブロハンマー",
+          "sourceZh": "駭波戰鎚",
+          "wb2Verified": true
+        },
+        {
+          "ja": "D9",
+          "zh": "D9",
+          "method": "literal"
+        }
+      ],
+      "note": "聖誕參考翻譯加已核對的戰鎚詞段，型號照原文保留。"
+    },
+    "グリズリー・ナックル": {
+      "zh": "灰熊手指虎",
+      "parts": [
+        {
+          "ja": "グリズリー",
+          "zh": "灰熊",
+          "method": "translation"
+        },
+        {
+          "ja": "ナックル",
+          "zh": "手指虎",
+          "sourceName": "ウルフナックル",
+          "sourceZh": "野狼手指虎",
+          "wb2Verified": true
+        }
+      ],
+      "note": "灰熊參考翻譯加手指虎；不借用野狼整個名稱。"
+    },
+    "バット・ミトン": {
+      "zh": "蝙蝠連指手套",
+      "parts": [
+        {
+          "ja": "バット",
+          "zh": "蝙蝠",
+          "sourceName": "バットリストバンド",
+          "sourceZh": "蝙蝠護腕",
+          "wb2Verified": true
+        },
+        {
+          "ja": "ミトン",
+          "zh": "連指手套",
+          "sourceName": "ホークミトン",
+          "sourceZh": "隼鷹連指手套",
+          "wb2Verified": true
+        }
+      ],
+      "note": "蝙蝠與連指手套均有既有詞段對照；完整組合仍待核對。"
+    },
+    "シール・アンクレット": {
+      "zh": "海豹腳鍊",
+      "parts": [
+        {
+          "ja": "シール",
+          "zh": "海豹",
+          "method": "translation"
+        },
+        {
+          "ja": "アンクレット",
+          "zh": "腳鍊",
+          "sourceName": "マーリンアンクレット",
+          "sourceZh": "旗魚腳鍊",
+          "wb2Verified": true
+        }
+      ],
+      "note": "海豹參考翻譯加腳鍊。"
+    },
+    "マナティー・リング": {
+      "zh": "海牛戒指",
+      "parts": [
+        {
+          "ja": "マナティー",
+          "zh": "海牛",
+          "method": "translation"
+        },
+        {
+          "ja": "リング",
+          "zh": "戒指",
+          "sourceName": "シーオッターリング",
+          "sourceZh": "海獺戒指",
+          "wb2Verified": true
+        }
+      ],
+      "note": "海牛參考翻譯加戒指。"
+    },
+    "エレファント・ジャケット": {
+      "zh": "大象夾克",
+      "parts": [
+        {
+          "ja": "エレファント",
+          "zh": "大象",
+          "sourceName": "エレファントコート",
+          "sourceZh": "大象外套",
+          "wb2Verified": true
+        },
+        {
+          "ja": "ジャケット",
+          "zh": "夾克",
+          "sourceName": "スネークジャケット",
+          "sourceZh": "蛇皮夾克",
+          "wb2Verified": true
+        }
+      ],
+      "note": "大象加夾克；不把ジャケット當成コート。"
+    },
+    "ライノサラス・コート": {
+      "zh": "犀牛外套",
+      "parts": [
+        {
+          "ja": "ライノサラス",
+          "zh": "犀牛",
+          "method": "translation"
+        },
+        {
+          "ja": "コート",
+          "zh": "外套",
+          "sourceName": "エレファントコート",
+          "sourceZh": "大象外套",
+          "wb2Verified": true
+        }
+      ],
+      "note": "犀牛參考翻譯加已核對的外套詞段。"
+    },
+    "オプティクスⅡ": {
+      "zh": "光學系統II",
+      "parts": [
+        {
+          "ja": "オプティクス",
+          "zh": "光學系統",
+          "sourceName": "オプティクス",
+          "sourceZh": "光學系統",
+          "wb2Verified": false
+        },
+        {
+          "ja": "Ⅱ",
+          "zh": "II",
+          "method": "literal"
+        }
+      ],
+      "note": "既有系列名加 II；系列名來源本身未獨立實機核對。"
+    },
+    "キュロス": {
+      "zh": "居魯士",
+      "parts": [
+        {
+          "ja": "キュロス",
+          "zh": "居魯士",
+          "sourceName": "キュロスII",
+          "sourceZh": "居魯士II",
+          "wb2Verified": true
+        }
+      ],
+      "note": "移除日文與中文共同的 II 型號。"
+    },
+    "ヘブンズゲート": {
+      "zh": "天國門扉",
+      "parts": [
+        {
+          "ja": "ヘブンズゲート",
+          "zh": "天國門扉",
+          "sourceName": "ヘブンズゲート・ランチャー",
+          "sourceZh": "天國門扉發射器",
+          "wb2Verified": true
+        }
+      ],
+      "note": "取已核對發射器名稱的系列詞段；不套用未核對的ガン譯名。"
+    },
+    "ライオニック": {
+      "zh": "雄獅",
+      "parts": [
+        {
+          "ja": "ライオニック",
+          "zh": "雄獅",
+          "sourceName": "ライオニック・プランA",
+          "sourceZh": "雄獅・計畫A",
+          "wb2Verified": true
+        }
+      ],
+      "note": "取 A／B 型已核對的雄獅詞段；不取未核對 C／D／E 的讀音推定。"
+    }
+  }
+}

@@ -1,0 +1,6260 @@
+{
+  "checkedAt": "2026-10-23",
+  "weaponFamilies": [
+    {
+      "name": "フューリアス",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 278,
+      "owners": [
+        "プロールライダー(EDF:IR)"
+      ],
+      "weapons": [
+        {
+          "name": "フューリアス",
+          "level": 1,
+          "sourceLine": 299
+        },
+        {
+          "name": "ランページ",
+          "level": 2,
+          "sourceLine": 300
+        },
+        {
+          "name": "ゲキド",
+          "level": 3,
+          "sourceLine": 301
+        },
+        {
+          "name": "ランページ・ヘルメス",
+          "level": 3,
+          "sourceLine": 303
+        },
+        {
+          "name": "フューリアス・アレス",
+          "level": 4,
+          "sourceLine": 304
+        }
+      ]
+    },
+    {
+      "name": "G&M",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 306,
+      "owners": [
+        "レンジャー(EDF5)"
+      ],
+      "weapons": [
+        {
+          "name": "G&M-Y29",
+          "level": 1,
+          "sourceLine": 333
+        },
+        {
+          "name": "G&M-29",
+          "level": 2,
+          "sourceLine": 334
+        },
+        {
+          "name": "G&M-A29",
+          "level": 3,
+          "sourceLine": 335
+        },
+        {
+          "name": "G&M-B29",
+          "level": 3,
+          "sourceLine": 337
+        },
+        {
+          "name": "G&M-30",
+          "level": 4,
+          "sourceLine": 338
+        }
+      ]
+    },
+    {
+      "name": "レイブン",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 340,
+      "owners": [
+        "タコスブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "レイブン",
+          "level": 1,
+          "sourceLine": 360
+        },
+        {
+          "name": "レイブン・ラッシュ",
+          "level": 2,
+          "sourceLine": 361
+        },
+        {
+          "name": "シリウス",
+          "level": 3,
+          "sourceLine": 363
+        },
+        {
+          "name": "シリウスγ",
+          "level": 3,
+          "sourceLine": 366
+        },
+        {
+          "name": "レイブン・タイラント",
+          "level": 4,
+          "sourceLine": 369
+        }
+      ]
+    },
+    {
+      "name": "AS-99",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 371,
+      "owners": [
+        "陸戦兵(EDF1)"
+      ],
+      "weapons": [
+        {
+          "name": "AS-99",
+          "level": 1,
+          "sourceLine": 403
+        },
+        {
+          "name": "AS-99D",
+          "level": 2,
+          "sourceLine": 404
+        },
+        {
+          "name": "AS-99ST",
+          "level": 3,
+          "sourceLine": 405
+        },
+        {
+          "name": "AS-99G",
+          "level": 3,
+          "sourceLine": 406
+        },
+        {
+          "name": "AS-100",
+          "level": 4,
+          "sourceLine": 407
+        }
+      ]
+    },
+    {
+      "name": "エーテル・ライフル",
+      "category": "アサルトライフル",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 409,
+      "owners": [
+        "コスモノーツ"
+      ],
+      "weapons": [
+        {
+          "name": "エーテル・ライフル",
+          "level": 1,
+          "sourceLine": 435
+        },
+        {
+          "name": "エーテル・ブラスター",
+          "level": 2,
+          "sourceLine": 437
+        },
+        {
+          "name": "エーテル・ライフルST",
+          "level": 3,
+          "sourceLine": 439
+        },
+        {
+          "name": "エーテル・ブラスターⅡ",
+          "level": 3,
+          "sourceLine": 441
+        },
+        {
+          "name": "エーテル・ライフル改",
+          "level": 4,
+          "sourceLine": 443
+        }
+      ]
+    },
+    {
+      "name": "オプティクス",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 446,
+      "owners": [
+        "バズシスター"
+      ],
+      "weapons": [
+        {
+          "name": "Opx.A1\"Alice\"",
+          "level": 1,
+          "sourceLine": 467
+        },
+        {
+          "name": "Opx.C1\"Celia\"",
+          "level": 2,
+          "sourceLine": 469
+        },
+        {
+          "name": "Opx.E1\"Elizabeth\"",
+          "level": 3,
+          "sourceLine": 472
+        },
+        {
+          "name": "Opx.N1\"Natsuko\"",
+          "level": 3,
+          "sourceLine": 475
+        },
+        {
+          "name": "Opx.A2\"Abigail\"",
+          "level": 4,
+          "sourceLine": 478
+        }
+      ]
+    },
+    {
+      "name": "マグ・ブラスター",
+      "category": "アサルトライフル",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 481,
+      "owners": [
+        "ウイングダイバー(EDF5)SG隊仕様"
+      ],
+      "weapons": [
+        {
+          "name": "マグ・ブラスターA",
+          "level": 1,
+          "sourceLine": 509
+        },
+        {
+          "name": "マグ・ブラスターB",
+          "level": 2,
+          "sourceLine": 510
+        },
+        {
+          "name": "マグ・ブラスターA2",
+          "level": 3,
+          "sourceLine": 511
+        },
+        {
+          "name": "マグ・ブラスターB2",
+          "level": 3,
+          "sourceLine": 512
+        },
+        {
+          "name": "マグ・ブラスターSP",
+          "level": 4,
+          "sourceLine": 513
+        }
+      ]
+    },
+    {
+      "name": "チタニアキャノン",
+      "category": "アサルトライフル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/29.html",
+      "sourceLine": 515,
+      "owners": [
+        "陸戦兵(EDF3P)バックパック装備"
+      ],
+      "weapons": [
+        {
+          "name": "チタニアオートキャノン",
+          "level": 1,
+          "sourceLine": 549
+        },
+        {
+          "name": "チタニアオートキャノンR",
+          "level": 2,
+          "sourceLine": 551
+        },
+        {
+          "name": "チタニアオートキャノンB3",
+          "level": 3,
+          "sourceLine": 553
+        },
+        {
+          "name": "チタニアオートキャノンR2",
+          "level": 3,
+          "sourceLine": 556
+        },
+        {
+          "name": "チタニアバトルキャノン",
+          "level": 4,
+          "sourceLine": 558
+        }
+      ]
+    },
+    {
+      "name": "ジンザベック",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 282,
+      "owners": [
+        "トルーパー(EDF:IA)"
+      ],
+      "weapons": [
+        {
+          "name": "ジンザベック",
+          "level": 1,
+          "sourceLine": 303
+        },
+        {
+          "name": "ジンザベックS",
+          "level": 2,
+          "sourceLine": 305
+        },
+        {
+          "name": "ジンザベックR",
+          "level": 3,
+          "sourceLine": 307
+        },
+        {
+          "name": "ジンザベックSⅡ",
+          "level": 3,
+          "sourceLine": 309
+        },
+        {
+          "name": "ジンザベック改",
+          "level": 4,
+          "sourceLine": 311
+        }
+      ]
+    },
+    {
+      "name": "フェンリル",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 315,
+      "owners": [
+        "スペースブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "フェンリル",
+          "level": 1,
+          "sourceLine": 334
+        },
+        {
+          "name": "カース・フェンリル",
+          "level": 2,
+          "sourceLine": 335
+        },
+        {
+          "name": "フェンリル・ランブル",
+          "level": 3,
+          "sourceLine": 336
+        },
+        {
+          "name": "強化型フェンリル",
+          "level": 3,
+          "sourceLine": 337
+        },
+        {
+          "name": "ダーク・フェンリル",
+          "level": 4,
+          "sourceLine": 338
+        }
+      ]
+    },
+    {
+      "name": "ブレイザー",
+      "category": "アサルトライフルⅡ種",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 340,
+      "owners": [
+        "レンジャー(EDF5)軍曹仕様"
+      ],
+      "weapons": [
+        {
+          "name": "ブレイザー001",
+          "level": 1,
+          "sourceLine": 362
+        },
+        {
+          "name": "ブレイザー002",
+          "level": 2,
+          "sourceLine": 363
+        },
+        {
+          "name": "ブレイザー005A",
+          "level": 3,
+          "sourceLine": 364
+        },
+        {
+          "name": "ブレイザー005B",
+          "level": 3,
+          "sourceLine": 365
+        },
+        {
+          "name": "ブレイザー007",
+          "level": 4,
+          "sourceLine": 366
+        }
+      ]
+    },
+    {
+      "name": "イズナ",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 368,
+      "owners": [
+        "メイドシスター"
+      ],
+      "weapons": [
+        {
+          "name": "イズナ",
+          "level": 1,
+          "sourceLine": 382
+        },
+        {
+          "name": "イズナ-A",
+          "level": 2,
+          "sourceLine": 384
+        },
+        {
+          "name": "イズナ-K",
+          "level": 3,
+          "sourceLine": 386
+        },
+        {
+          "name": "イズナ-B",
+          "level": 3,
+          "sourceLine": 388
+        },
+        {
+          "name": "マスターイズナ",
+          "level": 4,
+          "sourceLine": 390
+        }
+      ]
+    },
+    {
+      "name": "火炎砲",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 393,
+      "owners": [
+        "ヨガブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "火炎砲",
+          "level": 1,
+          "sourceLine": 417
+        },
+        {
+          "name": "スーパー火炎砲",
+          "level": 2,
+          "sourceLine": 419
+        },
+        {
+          "name": "アシュラ炎舞",
+          "level": 3,
+          "sourceLine": 421
+        },
+        {
+          "name": "ウルトラ火炎砲",
+          "level": 3,
+          "sourceLine": 425
+        },
+        {
+          "name": "マグマ砲",
+          "level": 4,
+          "sourceLine": 427
+        }
+      ]
+    },
+    {
+      "name": "フレイムリボルバー",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 430,
+      "owners": [
+        "ハカブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "フレイムリボルバー",
+          "level": 1,
+          "sourceLine": 462
+        },
+        {
+          "name": "フレイムボール",
+          "level": 2,
+          "sourceLine": 465
+        },
+        {
+          "name": "フレイムリボルバーD",
+          "level": 3,
+          "sourceLine": 467
+        },
+        {
+          "name": "フレイムボールD",
+          "level": 3,
+          "sourceLine": 470
+        },
+        {
+          "name": "ヘルフレイムリボルバー",
+          "level": 4,
+          "sourceLine": 472
+        }
+      ]
+    },
+    {
+      "name": "アシッドガン",
+      "category": "アサルトライフルⅡ種",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 476,
+      "owners": [
+        "メカユーキ隊員"
+      ],
+      "weapons": [
+        {
+          "name": "アシッドガン",
+          "level": 1,
+          "sourceLine": 488
+        },
+        {
+          "name": "アシッドガンM2",
+          "level": 2,
+          "sourceLine": 489
+        },
+        {
+          "name": "アシッドガンST",
+          "level": 3,
+          "sourceLine": 490
+        },
+        {
+          "name": "ワイド・アシッドガン",
+          "level": 3,
+          "sourceLine": 491
+        },
+        {
+          "name": "スーパー・アシッドガン",
+          "level": 4,
+          "sourceLine": 493
+        }
+      ]
+    },
+    {
+      "name": "ロデオ",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 496,
+      "owners": [
+        "コアラブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ロデオ",
+          "level": 1,
+          "sourceLine": 515
+        },
+        {
+          "name": "エクスターミネーター",
+          "level": 2,
+          "sourceLine": 516
+        },
+        {
+          "name": "ロデオSS",
+          "level": 3,
+          "sourceLine": 518
+        },
+        {
+          "name": "ロデオ・パワード",
+          "level": 3,
+          "sourceLine": 520
+        },
+        {
+          "name": "エクスターミネーター2",
+          "level": 4,
+          "sourceLine": 521
+        }
+      ]
+    },
+    {
+      "name": "FGガトリング",
+      "category": "アサルトライフルⅡ種",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 524,
+      "owners": [
+        "フェンサー(EDF5)"
+      ],
+      "weapons": [
+        {
+          "name": "FGガトリング",
+          "level": 1,
+          "sourceLine": 559
+        },
+        {
+          "name": "FGガトリング威力試験",
+          "level": 2,
+          "sourceLine": 560
+        },
+        {
+          "name": "FGガトリング射程試験",
+          "level": 3,
+          "sourceLine": 561
+        },
+        {
+          "name": "FGガトリング軽量型",
+          "level": 3,
+          "sourceLine": 562
+        },
+        {
+          "name": "FGガトリング改",
+          "level": 4,
+          "sourceLine": 563
+        }
+      ]
+    },
+    {
+      "name": "エーテル・ガン",
+      "category": "アサルトライフルⅡ種",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 565,
+      "owners": [
+        "コロニスト"
+      ],
+      "weapons": [
+        {
+          "name": "エーテル・ガン",
+          "level": 1,
+          "sourceLine": 590
+        },
+        {
+          "name": "エーテル・ガンA1",
+          "level": 2,
+          "sourceLine": 592
+        },
+        {
+          "name": "エーテル・ガンZ",
+          "level": 3,
+          "sourceLine": 595
+        },
+        {
+          "name": "エーテル・ガンS1",
+          "level": 3,
+          "sourceLine": 597
+        },
+        {
+          "name": "エーテル・ガンA2",
+          "level": 4,
+          "sourceLine": 599
+        }
+      ]
+    },
+    {
+      "name": "オプティクスⅡ",
+      "category": "アサルトライフルⅡ種",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/30.html",
+      "sourceLine": 603,
+      "owners": [
+        "プリンスブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "OpxII.A1\"Arthur\"",
+          "level": 1,
+          "sourceLine": 624
+        },
+        {
+          "name": "OpxII.D1\"David\"",
+          "level": 2,
+          "sourceLine": 625
+        },
+        {
+          "name": "OpxII.A2\"Alex\"",
+          "level": 3,
+          "sourceLine": 627
+        },
+        {
+          "name": "OpxII.D2\"Diego\"",
+          "level": 4,
+          "sourceLine": 628
+        },
+        {
+          "name": "OpxII.A3\"Ali\"",
+          "level": 4,
+          "sourceLine": 630
+        }
+      ]
+    },
+    {
+      "name": "モンスーン",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 279,
+      "owners": [
+        "エルドラドブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "モンスーン",
+          "level": 1,
+          "sourceLine": 298
+        },
+        {
+          "name": "モンスーン・サルディ",
+          "level": 2,
+          "sourceLine": 299
+        },
+        {
+          "name": "スコール",
+          "level": 3,
+          "sourceLine": 300
+        },
+        {
+          "name": "ヘビー・スコール",
+          "level": 3,
+          "sourceLine": 301
+        },
+        {
+          "name": "モンスーン・ガルミィ",
+          "level": 4,
+          "sourceLine": 302
+        }
+      ]
+    },
+    {
+      "name": "ユーフォニアム",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 305,
+      "owners": [
+        "ハンターブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ユーフォニアム",
+          "level": 1,
+          "sourceLine": 319
+        },
+        {
+          "name": "トランペット",
+          "level": 2,
+          "sourceLine": 320
+        },
+        {
+          "name": "コルネット",
+          "level": 3,
+          "sourceLine": 321
+        },
+        {
+          "name": "アルト・コルネット",
+          "level": 3,
+          "sourceLine": 322
+        },
+        {
+          "name": "ユーフォニアムGD",
+          "level": 4,
+          "sourceLine": 323
+        }
+      ]
+    },
+    {
+      "name": "バッファロー",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 325,
+      "owners": [
+        "マタドールブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "バッファロー",
+          "level": 1,
+          "sourceLine": 350
+        },
+        {
+          "name": "バッファローG",
+          "level": 2,
+          "sourceLine": 352
+        },
+        {
+          "name": "ヘビー・バッファロー",
+          "level": 3,
+          "sourceLine": 354
+        },
+        {
+          "name": "ミノタウロス",
+          "level": 3,
+          "sourceLine": 358
+        },
+        {
+          "name": "バッファローGZ",
+          "level": 4,
+          "sourceLine": 359
+        }
+      ]
+    },
+    {
+      "name": "キャバトリックス",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 362,
+      "owners": [
+        "タクティカル(EDF:IA)"
+      ],
+      "weapons": [
+        {
+          "name": "キャバトリックス",
+          "level": 1,
+          "sourceLine": 390
+        },
+        {
+          "name": "キャバトリックス改",
+          "level": 2,
+          "sourceLine": 392
+        },
+        {
+          "name": "ビーバレットバズ",
+          "level": 3,
+          "sourceLine": 394
+        },
+        {
+          "name": "ビーバレットバズSP",
+          "level": 3,
+          "sourceLine": 395
+        },
+        {
+          "name": "キャバトリックスSP",
+          "level": 4,
+          "sourceLine": 396
+        }
+      ]
+    },
+    {
+      "name": "スパロー",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 399,
+      "owners": [
+        "テンシンシスター"
+      ],
+      "weapons": [
+        {
+          "name": "スパロー",
+          "level": 1,
+          "sourceLine": 421
+        },
+        {
+          "name": "スパローSRカスタム",
+          "level": 2,
+          "sourceLine": 422
+        },
+        {
+          "name": "スパローMGカスタム",
+          "level": 3,
+          "sourceLine": 423
+        },
+        {
+          "name": "スパローSSカスタム",
+          "level": 3,
+          "sourceLine": 424
+        },
+        {
+          "name": "スパローF",
+          "level": 4,
+          "sourceLine": 425
+        }
+      ]
+    },
+    {
+      "name": "デクスター自動小銃",
+      "category": "ショットガン",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 427,
+      "owners": [
+        "アイリ"
+      ],
+      "weapons": [
+        {
+          "name": "デクスター自動小銃",
+          "level": 1,
+          "sourceLine": 447
+        },
+        {
+          "name": "デクスター自動小銃D1",
+          "level": 2,
+          "sourceLine": 448
+        },
+        {
+          "name": "デクスター自動小銃D2",
+          "level": 3,
+          "sourceLine": 449
+        },
+        {
+          "name": "デクスター自動小銃G",
+          "level": 3,
+          "sourceLine": 450
+        },
+        {
+          "name": "デクスター自動小銃Z",
+          "level": 4,
+          "sourceLine": 451
+        }
+      ]
+    },
+    {
+      "name": "サプレスガン",
+      "category": "ショットガン",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 453,
+      "owners": [
+        "エアレイダー(EDF5)"
+      ],
+      "weapons": [
+        {
+          "name": "サプレスガン",
+          "level": 1,
+          "sourceLine": 463
+        },
+        {
+          "name": "サプレスガンM2",
+          "level": 2,
+          "sourceLine": 467
+        },
+        {
+          "name": "サプレスガンM3",
+          "level": 3,
+          "sourceLine": 471
+        },
+        {
+          "name": "サプレスガンM4",
+          "level": 4,
+          "sourceLine": 475
+        },
+        {
+          "name": "サプレスガンMS",
+          "level": 4,
+          "sourceLine": 479
+        }
+      ]
+    },
+    {
+      "name": "サンダーボウ",
+      "category": "ショットガン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/31.html",
+      "sourceLine": 484,
+      "owners": [
+        "サンバシスター"
+      ],
+      "weapons": [
+        {
+          "name": "サンダーボウ",
+          "level": 1,
+          "sourceLine": 506
+        },
+        {
+          "name": "サンダーボウR",
+          "level": 2,
+          "sourceLine": 508
+        },
+        {
+          "name": "サンダーボウR2",
+          "level": 3,
+          "sourceLine": 510
+        },
+        {
+          "name": "サンダーボウD",
+          "level": 3,
+          "sourceLine": 512
+        },
+        {
+          "name": "サンダーボウST",
+          "level": 4,
+          "sourceLine": 514
+        }
+      ]
+    },
+    {
+      "name": "レイピア",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 282,
+      "owners": [
+        "ペイルウイング(EDF2)"
+      ],
+      "weapons": [
+        {
+          "name": "レイピア",
+          "level": 1,
+          "sourceLine": 322
+        },
+        {
+          "name": "ブルーレイピア",
+          "level": 2,
+          "sourceLine": 323
+        },
+        {
+          "name": "レイピアスフィア",
+          "level": 3,
+          "sourceLine": 324
+        },
+        {
+          "name": "レイピアスライサー",
+          "level": 3,
+          "sourceLine": 325
+        },
+        {
+          "name": "マスターレイピア",
+          "level": 4,
+          "sourceLine": 326
+        }
+      ]
+    },
+    {
+      "name": "レーザーランス",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 328,
+      "owners": [
+        "ウイングダイバー(EDF4)"
+      ],
+      "weapons": [
+        {
+          "name": "レーザーランス",
+          "level": 1,
+          "sourceLine": 363
+        },
+        {
+          "name": "レーザーランスX",
+          "level": 2,
+          "sourceLine": 365
+        },
+        {
+          "name": "デモニックランス",
+          "level": 3,
+          "sourceLine": 367
+        },
+        {
+          "name": "ホーリーランス",
+          "level": 3,
+          "sourceLine": 369
+        },
+        {
+          "name": "ルオンノタル",
+          "level": 4,
+          "sourceLine": 371
+        }
+      ]
+    },
+    {
+      "name": "ブラストホールスピア",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 375,
+      "owners": [
+        "フェンサー(EDF4)"
+      ],
+      "weapons": [
+        {
+          "name": "ブラストホールスピア",
+          "level": 1,
+          "sourceLine": 412
+        },
+        {
+          "name": "ブラストホールスピアD",
+          "level": 2,
+          "sourceLine": 415
+        },
+        {
+          "name": "ブラストホールスピアST",
+          "level": 3,
+          "sourceLine": 418
+        },
+        {
+          "name": "ブラストホールスピアST改",
+          "level": 3,
+          "sourceLine": 421
+        },
+        {
+          "name": "ブラストホールスピアD2",
+          "level": 4,
+          "sourceLine": 425
+        }
+      ]
+    },
+    {
+      "name": "スパインドライバー",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 429,
+      "owners": [
+        "ヴァイキングブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "スパインドライバー",
+          "level": 1,
+          "sourceLine": 452
+        },
+        {
+          "name": "スパインドライバーM2",
+          "level": 2,
+          "sourceLine": 453
+        },
+        {
+          "name": "重スパインドライバー",
+          "level": 3,
+          "sourceLine": 454
+        },
+        {
+          "name": "ダブル・スパインドライバー",
+          "level": 3,
+          "sourceLine": 455
+        },
+        {
+          "name": "スパインドライバーM3",
+          "level": 4,
+          "sourceLine": 456
+        }
+      ]
+    },
+    {
+      "name": "フラッシングスピア",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 459,
+      "owners": [
+        "ナイトブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "フラッシングスピア",
+          "level": 1,
+          "sourceLine": 486
+        },
+        {
+          "name": "ラッシュスピア",
+          "level": 2,
+          "sourceLine": 488
+        },
+        {
+          "name": "フォークスピア",
+          "level": 3,
+          "sourceLine": 491
+        },
+        {
+          "name": "スターラッシュスピア",
+          "level": 3,
+          "sourceLine": 494
+        },
+        {
+          "name": "フラッシングスピアM2",
+          "level": 4,
+          "sourceLine": 497
+        }
+      ]
+    },
+    {
+      "name": "ブラストホールスピアGR",
+      "category": "コンバットウェポン",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 500,
+      "owners": [
+        "フェンサー(EDF5)GR隊仕様"
+      ],
+      "weapons": [
+        {
+          "name": "ブラストホールスピアGR",
+          "level": 1,
+          "sourceLine": 538
+        },
+        {
+          "name": "ブラストホールスピアGR-M2",
+          "level": 2,
+          "sourceLine": 542
+        },
+        {
+          "name": "ブラストホールスピアGR-M3",
+          "level": 3,
+          "sourceLine": 546
+        },
+        {
+          "name": "ブラストホールスピアGR-M4",
+          "level": 3,
+          "sourceLine": 550
+        },
+        {
+          "name": "ブラストホールスピアGR-MS",
+          "level": 4,
+          "sourceLine": 554
+        }
+      ]
+    },
+    {
+      "name": "リボルバー",
+      "category": "コンバットウェポン",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 559,
+      "owners": [
+        "カウボーイブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "スピリット・オブ・テキサス",
+          "level": 1,
+          "sourceLine": 574
+        },
+        {
+          "name": "スピリット・オブ・ルイジアナ",
+          "level": 2,
+          "sourceLine": 576
+        },
+        {
+          "name": "スピリット・オブ・コロラド",
+          "level": 3,
+          "sourceLine": 578
+        },
+        {
+          "name": "黄金拳銃",
+          "level": 3,
+          "sourceLine": 580
+        },
+        {
+          "name": "スピリット・オブ・フリーダム",
+          "level": 4,
+          "sourceLine": 582
+        }
+      ]
+    },
+    {
+      "name": "プレデター",
+      "category": "コンバットウェポン",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/32.html",
+      "sourceLine": 585,
+      "owners": [
+        "ボクサーブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "プレデター",
+          "level": 1,
+          "sourceLine": 623
+        },
+        {
+          "name": "プレデターShuriken",
+          "level": 2,
+          "sourceLine": 625
+        },
+        {
+          "name": "プレデターKatana",
+          "level": 3,
+          "sourceLine": 627
+        },
+        {
+          "name": "プレデターYaiba",
+          "level": 4,
+          "sourceLine": 628
+        },
+        {
+          "name": "プレデターSamurai",
+          "level": 4,
+          "sourceLine": 629
+        }
+      ]
+    },
+    {
+      "name": "ドゥンケル",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 280,
+      "owners": [
+        "ロイヤルブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ドゥンケル",
+          "level": 1,
+          "sourceLine": 300
+        },
+        {
+          "name": "ドゥンケル後期型",
+          "level": 2,
+          "sourceLine": 301
+        },
+        {
+          "name": "ドゥンケルN191",
+          "level": 3,
+          "sourceLine": 302
+        },
+        {
+          "name": "指揮官用ドゥンケル",
+          "level": 3,
+          "sourceLine": 303
+        },
+        {
+          "name": "ドゥンケル最終生産型",
+          "level": 4,
+          "sourceLine": 304
+        }
+      ]
+    },
+    {
+      "name": "ライサンダー",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 306,
+      "owners": [
+        "陸戦兵(EDF2)"
+      ],
+      "weapons": [
+        {
+          "name": "ライサンダー",
+          "level": 1,
+          "sourceLine": 353
+        },
+        {
+          "name": "ライサンダー2",
+          "level": 2,
+          "sourceLine": 354
+        },
+        {
+          "name": "ライサンダー量産型",
+          "level": 3,
+          "sourceLine": 355
+        },
+        {
+          "name": "ライサンダー・エリート",
+          "level": 3,
+          "sourceLine": 356
+        },
+        {
+          "name": "ライサンダーF",
+          "level": 4,
+          "sourceLine": 357
+        }
+      ]
+    },
+    {
+      "name": "ペネトレーター",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 359,
+      "owners": [
+        "タピオカシスター"
+      ],
+      "weapons": [
+        {
+          "name": "ペネトレーター9",
+          "level": 1,
+          "sourceLine": 389
+        },
+        {
+          "name": "ペネトレーター13",
+          "level": 2,
+          "sourceLine": 391
+        },
+        {
+          "name": "ファイブカード",
+          "level": 3,
+          "sourceLine": 393
+        },
+        {
+          "name": "ファイブカードPF",
+          "level": 3,
+          "sourceLine": 394
+        },
+        {
+          "name": "ペネトレーター2222",
+          "level": 4,
+          "sourceLine": 396
+        }
+      ]
+    },
+    {
+      "name": "ハーキュリー",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 400,
+      "owners": [
+        "ガウチョシスター"
+      ],
+      "weapons": [
+        {
+          "name": "トライ・ハーキュリー",
+          "level": 1,
+          "sourceLine": 442
+        },
+        {
+          "name": "ハーキュリーA",
+          "level": 2,
+          "sourceLine": 444
+        },
+        {
+          "name": "ハーキュリー・セブン",
+          "level": 3,
+          "sourceLine": 445
+        },
+        {
+          "name": "トライ・ハーキュリーB",
+          "level": 3,
+          "sourceLine": 447
+        },
+        {
+          "name": "ハーキュリーA2",
+          "level": 4,
+          "sourceLine": 449
+        }
+      ]
+    },
+    {
+      "name": "ソニックパイル",
+      "category": "スナイパー",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 451,
+      "owners": [
+        "雪"
+      ],
+      "weapons": [
+        {
+          "name": "ソニックパイル",
+          "level": 1,
+          "sourceLine": 464
+        },
+        {
+          "name": "アラベスク",
+          "level": 2,
+          "sourceLine": 466
+        },
+        {
+          "name": "ソニックパイルPlus",
+          "level": 3,
+          "sourceLine": 469
+        },
+        {
+          "name": "アラベスクⅡ",
+          "level": 3,
+          "sourceLine": 471
+        },
+        {
+          "name": "ローレンツ",
+          "level": 4,
+          "sourceLine": 474
+        }
+      ]
+    },
+    {
+      "name": "オングストローム",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 477,
+      "owners": [
+        "ジェットリフター(EDF:IR)"
+      ],
+      "weapons": [
+        {
+          "name": "オングストローム",
+          "level": 1,
+          "sourceLine": 507
+        },
+        {
+          "name": "オングストロームΦ",
+          "level": 2,
+          "sourceLine": 508
+        },
+        {
+          "name": "ピタゴラス",
+          "level": 3,
+          "sourceLine": 509
+        },
+        {
+          "name": "オングストローム改",
+          "level": 3,
+          "sourceLine": 511
+        },
+        {
+          "name": "オングストロームθ",
+          "level": 4,
+          "sourceLine": 512
+        }
+      ]
+    },
+    {
+      "name": "MONSTER",
+      "category": "スナイパー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 514,
+      "owners": [
+        "ウイングダイバー(EDF5)"
+      ],
+      "weapons": [
+        {
+          "name": "MONSTER",
+          "level": 1,
+          "sourceLine": 541
+        },
+        {
+          "name": "MONSTER-S",
+          "level": 2,
+          "sourceLine": 543
+        },
+        {
+          "name": "M式レーザーライフル",
+          "level": 3,
+          "sourceLine": 545
+        },
+        {
+          "name": "汎用型MONSTER",
+          "level": 3,
+          "sourceLine": 546
+        },
+        {
+          "name": "MONSTER-SS",
+          "level": 4,
+          "sourceLine": 548
+        }
+      ]
+    },
+    {
+      "name": "サンダースナイパー",
+      "category": "スナイパー",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 551,
+      "owners": [
+        "双葉理保"
+      ],
+      "weapons": [
+        {
+          "name": "サンダースナイパーA",
+          "level": 1,
+          "sourceLine": 563
+        },
+        {
+          "name": "サンダースナイパーB",
+          "level": 2,
+          "sourceLine": 567
+        },
+        {
+          "name": "サンダースナイパーC",
+          "level": 3,
+          "sourceLine": 571
+        },
+        {
+          "name": "サンダースナイパーD",
+          "level": 3,
+          "sourceLine": 575
+        },
+        {
+          "name": "サンダースナイパーR",
+          "level": 4,
+          "sourceLine": 579
+        }
+      ]
+    },
+    {
+      "name": "零式レーザーライフル",
+      "category": "スナイパー",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 584,
+      "owners": [
+        "レンジャー(EDF4)オメガ隊仕様"
+      ],
+      "weapons": [
+        {
+          "name": "零式レーザーライフルRplc",
+          "level": 1,
+          "sourceLine": 608
+        },
+        {
+          "name": "零式レーザーライフルR2",
+          "level": 2,
+          "sourceLine": 609
+        },
+        {
+          "name": "零式レーザーライフルR3",
+          "level": 3,
+          "sourceLine": 610
+        },
+        {
+          "name": "零式レーザーライフルRX",
+          "level": 3,
+          "sourceLine": 611
+        },
+        {
+          "name": "零式レーザーライフル",
+          "level": 4,
+          "sourceLine": 613
+        }
+      ]
+    },
+    {
+      "name": "ライジン",
+      "category": "スナイパー",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/33.html",
+      "sourceLine": 615,
+      "owners": [
+        "ニンジャブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "プロト・ライジン",
+          "level": 1,
+          "sourceLine": 638
+        },
+        {
+          "name": "ライコウ",
+          "level": 2,
+          "sourceLine": 640
+        },
+        {
+          "name": "ライジン",
+          "level": 3,
+          "sourceLine": 642
+        },
+        {
+          "name": "ライコウα",
+          "level": 4,
+          "sourceLine": 644
+        },
+        {
+          "name": "ライジンα",
+          "level": 4,
+          "sourceLine": 646
+        }
+      ]
+    },
+    {
+      "name": "キュロス",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 283,
+      "owners": [
+        "トルーパー(EDF:IR)"
+      ],
+      "weapons": [
+        {
+          "name": "キュロスII",
+          "level": 1,
+          "sourceLine": 314
+        },
+        {
+          "name": "ダレイオスI",
+          "level": 2,
+          "sourceLine": 315
+        },
+        {
+          "name": "キュロスII・トライアンフ",
+          "level": 3,
+          "sourceLine": 316
+        },
+        {
+          "name": "キュロスII・コンクエスト",
+          "level": 3,
+          "sourceLine": 317
+        },
+        {
+          "name": "ダレイオスIII",
+          "level": 4,
+          "sourceLine": 318
+        }
+      ]
+    },
+    {
+      "name": "ゴリアス",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 320,
+      "owners": [
+        "レンジャー(EDF4)"
+      ],
+      "weapons": [
+        {
+          "name": "ゴリアス",
+          "level": 1,
+          "sourceLine": 364
+        },
+        {
+          "name": "ゴリアス改",
+          "level": 2,
+          "sourceLine": 365
+        },
+        {
+          "name": "スーパーゴリアス",
+          "level": 3,
+          "sourceLine": 366
+        },
+        {
+          "name": "汎用型ゴリアス",
+          "level": 3,
+          "sourceLine": 370
+        },
+        {
+          "name": "ゴリアス改二",
+          "level": 4,
+          "sourceLine": 371
+        }
+      ]
+    },
+    {
+      "name": "ボルケーノ",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 373,
+      "owners": [
+        "ヨーデルシスター"
+      ],
+      "weapons": [
+        {
+          "name": "ボルケーノ",
+          "level": 1,
+          "sourceLine": 400
+        },
+        {
+          "name": "ボルケーノ・アイガー",
+          "level": 2,
+          "sourceLine": 402
+        },
+        {
+          "name": "カスケード",
+          "level": 3,
+          "sourceLine": 404
+        },
+        {
+          "name": "アサルト・カスケード",
+          "level": 3,
+          "sourceLine": 405
+        },
+        {
+          "name": "ボルケーノ・モンブラン",
+          "level": 4,
+          "sourceLine": 406
+        }
+      ]
+    },
+    {
+      "name": "スティングレイ",
+      "category": "ロケットランチャー",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 409,
+      "owners": [
+        "陸戦兵(EDF3)ストーム1仕様"
+      ],
+      "weapons": [
+        {
+          "name": "スティングレイM1",
+          "level": 1,
+          "sourceLine": 430
+        },
+        {
+          "name": "スティングレイM2",
+          "level": 2,
+          "sourceLine": 431
+        },
+        {
+          "name": "スティングレイM3",
+          "level": 3,
+          "sourceLine": 432
+        },
+        {
+          "name": "スティングレイM4",
+          "level": 3,
+          "sourceLine": 433
+        },
+        {
+          "name": "スティングレイMF",
+          "level": 4,
+          "sourceLine": 434
+        }
+      ]
+    },
+    {
+      "name": "プラズマランチャー",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 436,
+      "owners": [
+        "チューリップシスター"
+      ],
+      "weapons": [
+        {
+          "name": "プラズマランチャー",
+          "level": 1,
+          "sourceLine": 473
+        },
+        {
+          "name": "プラズマメガランチャー",
+          "level": 2,
+          "sourceLine": 474
+        },
+        {
+          "name": "パワースリンガー",
+          "level": 3,
+          "sourceLine": 475
+        },
+        {
+          "name": "パワースリンガーW",
+          "level": 3,
+          "sourceLine": 476
+        },
+        {
+          "name": "プラズマメガランチャーR",
+          "level": 4,
+          "sourceLine": 477
+        }
+      ]
+    },
+    {
+      "name": "スターダストキャノン",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 479,
+      "owners": [
+        "レゴンシスター"
+      ],
+      "weapons": [
+        {
+          "name": "スターダストキャノン",
+          "level": 1,
+          "sourceLine": 492
+        },
+        {
+          "name": "スターダストフォール",
+          "level": 2,
+          "sourceLine": 493
+        },
+        {
+          "name": "スターダストウォール",
+          "level": 3,
+          "sourceLine": 494
+        },
+        {
+          "name": "スターダストフォールB",
+          "level": 3,
+          "sourceLine": 495
+        },
+        {
+          "name": "スターダストキャノンB",
+          "level": 4,
+          "sourceLine": 496
+        }
+      ]
+    },
+    {
+      "name": "XSXプラズマランチャー",
+      "category": "ロケットランチャー",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 498,
+      "owners": [
+        "ペイルウイング(EDF3P)"
+      ],
+      "weapons": [
+        {
+          "name": "XSXプラズマランチャー",
+          "level": 1,
+          "sourceLine": 524
+        },
+        {
+          "name": "プラズマランチャーV3",
+          "level": 2,
+          "sourceLine": 525
+        },
+        {
+          "name": "M20プラズマランチャー",
+          "level": 3,
+          "sourceLine": 526
+        },
+        {
+          "name": "プラズマメガランチャーV3",
+          "level": 3,
+          "sourceLine": 527
+        },
+        {
+          "name": "XSXプラズマランチャー2",
+          "level": 4,
+          "sourceLine": 528
+        }
+      ]
+    },
+    {
+      "name": "プラズマヘビーキャノン",
+      "category": "ロケットランチャー",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/34.html",
+      "sourceLine": 530,
+      "owners": [
+        "ドラゴンシスター"
+      ],
+      "weapons": [
+        {
+          "name": "プラズマヘビーキャノン",
+          "level": 1,
+          "sourceLine": 565
+        },
+        {
+          "name": "プラズマヘビーキャノンR",
+          "level": 2,
+          "sourceLine": 567
+        },
+        {
+          "name": "プラズマヘビーキャノン改",
+          "level": 3,
+          "sourceLine": 569
+        },
+        {
+          "name": "プラズマヘビーキャノンR2",
+          "level": 4,
+          "sourceLine": 571
+        },
+        {
+          "name": "プラズマグレートキャノン",
+          "level": 4,
+          "sourceLine": 573
+        }
+      ]
+    },
+    {
+      "name": "リムペットガン",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 276,
+      "owners": [
+        "エアレイダー(EDF5)"
+      ],
+      "weapons": [
+        {
+          "name": "リムペットガン",
+          "level": 1,
+          "sourceLine": 290
+        },
+        {
+          "name": "リムペットショット",
+          "level": 2,
+          "sourceLine": 292
+        },
+        {
+          "name": "リムペットスナイプガン",
+          "level": 3,
+          "sourceLine": 295
+        },
+        {
+          "name": "リムペットガン改",
+          "level": 3,
+          "sourceLine": 297
+        },
+        {
+          "name": "リムペットヘビーガン",
+          "level": 4,
+          "sourceLine": 299
+        }
+      ]
+    },
+    {
+      "name": "グラッジ",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 302,
+      "owners": [
+        "インカブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "グラッジ",
+          "level": 1,
+          "sourceLine": 347
+        },
+        {
+          "name": "グラッジ・エアカスタム",
+          "level": 2,
+          "sourceLine": 348
+        },
+        {
+          "name": "グラッジ・カトプシス",
+          "level": 3,
+          "sourceLine": 349
+        },
+        {
+          "name": "陸戦型グラッジ",
+          "level": 3,
+          "sourceLine": 350
+        },
+        {
+          "name": "グラッジGD",
+          "level": 4,
+          "sourceLine": 351
+        }
+      ]
+    },
+    {
+      "name": "グレネードランチャー",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 353,
+      "owners": [
+        "陸戦兵(EDF3)"
+      ],
+      "weapons": [
+        {
+          "name": "グレネードランチャーUMAX",
+          "level": 1,
+          "sourceLine": 397
+        },
+        {
+          "name": "3連グレネードランチャー",
+          "level": 2,
+          "sourceLine": 398
+        },
+        {
+          "name": "スタンピード",
+          "level": 3,
+          "sourceLine": 399
+        },
+        {
+          "name": "スタンピード・パーティ",
+          "level": 3,
+          "sourceLine": 400
+        },
+        {
+          "name": "グレネードランチャーUMAD",
+          "level": 4,
+          "sourceLine": 401
+        }
+      ]
+    },
+    {
+      "name": "イクシオン",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 403,
+      "owners": [
+        "サファリシスター"
+      ],
+      "weapons": [
+        {
+          "name": "イクシオン",
+          "level": 1,
+          "sourceLine": 434
+        },
+        {
+          "name": "イクシオンMX",
+          "level": 2,
+          "sourceLine": 435
+        },
+        {
+          "name": "ダイナストZ",
+          "level": 3,
+          "sourceLine": 436
+        },
+        {
+          "name": "ダイナストα",
+          "level": 3,
+          "sourceLine": 437
+        },
+        {
+          "name": "イクシオン・マーク4",
+          "level": 4,
+          "sourceLine": 438
+        }
+      ]
+    },
+    {
+      "name": "迫撃砲",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 440,
+      "owners": [
+        "パイレーツブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "軽迫撃砲",
+          "level": 1,
+          "sourceLine": 474
+        },
+        {
+          "name": "対空砲",
+          "level": 2,
+          "sourceLine": 475
+        },
+        {
+          "name": "迫撃砲",
+          "level": 3,
+          "sourceLine": 477
+        },
+        {
+          "name": "対空砲・弐式",
+          "level": 3,
+          "sourceLine": 478
+        },
+        {
+          "name": "軽迫撃砲・弐式",
+          "level": 4,
+          "sourceLine": 480
+        }
+      ]
+    },
+    {
+      "name": "ホットフット",
+      "category": "火砲",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 482,
+      "owners": [
+        "バトル(EDF:IA)"
+      ],
+      "weapons": [
+        {
+          "name": "ホットフット",
+          "level": 1,
+          "sourceLine": 497
+        },
+        {
+          "name": "ホットフットScatter",
+          "level": 2,
+          "sourceLine": 498
+        },
+        {
+          "name": "ホットフットBurst",
+          "level": 3,
+          "sourceLine": 500
+        },
+        {
+          "name": "ホットフットScatterII",
+          "level": 3,
+          "sourceLine": 502
+        },
+        {
+          "name": "ホットフットII",
+          "level": 4,
+          "sourceLine": 504
+        }
+      ]
+    },
+    {
+      "name": "エキゾチックレイ",
+      "category": "火砲",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/35.html",
+      "sourceLine": 506,
+      "owners": [
+        "プロールライダ－(EDF:IR)KR仕様"
+      ],
+      "weapons": [
+        {
+          "name": "リグ・エキゾチックレイ",
+          "level": 1,
+          "sourceLine": 529
+        },
+        {
+          "name": "エキゾチックレイ",
+          "level": 2,
+          "sourceLine": 532
+        },
+        {
+          "name": "エキゾチックレイ改",
+          "level": 3,
+          "sourceLine": 535
+        },
+        {
+          "name": "エキゾチックレイ・インドラ",
+          "level": 3,
+          "sourceLine": 538
+        },
+        {
+          "name": "エキゾチックレイ・ルドラ",
+          "level": 4,
+          "sourceLine": 541
+        }
+      ]
+    },
+    {
+      "name": "エメロード",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 285,
+      "owners": [
+        "パンダブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "エメロード",
+          "level": 1,
+          "sourceLine": 321
+        },
+        {
+          "name": "エメロード・パワード",
+          "level": 2,
+          "sourceLine": 322
+        },
+        {
+          "name": "アサルト・エメロード",
+          "level": 3,
+          "sourceLine": 323
+        },
+        {
+          "name": "ハイ・エメロード",
+          "level": 3,
+          "sourceLine": 324
+        },
+        {
+          "name": "エメロードⅡ",
+          "level": 4,
+          "sourceLine": 325
+        }
+      ]
+    },
+    {
+      "name": "FORK",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 327,
+      "owners": [
+        "アルペンブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "FORK",
+          "level": 1,
+          "sourceLine": 365
+        },
+        {
+          "name": "FORK-2",
+          "level": 2,
+          "sourceLine": 366
+        },
+        {
+          "name": "FORK-2B",
+          "level": 3,
+          "sourceLine": 367
+        },
+        {
+          "name": "FORK-0",
+          "level": 3,
+          "sourceLine": 368
+        },
+        {
+          "name": "FORK-3",
+          "level": 4,
+          "sourceLine": 369
+        }
+      ]
+    },
+    {
+      "name": "リヴァイアサン",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 371,
+      "owners": [
+        "ボイジャーブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "リヴァイアサン",
+          "level": 1,
+          "sourceLine": 424
+        },
+        {
+          "name": "スカイタートル",
+          "level": 2,
+          "sourceLine": 426
+        },
+        {
+          "name": "クラーケン",
+          "level": 3,
+          "sourceLine": 427
+        },
+        {
+          "name": "レジェンド・クラーケン",
+          "level": 3,
+          "sourceLine": 429
+        },
+        {
+          "name": "ワイルド・リヴァイアサン",
+          "level": 4,
+          "sourceLine": 432
+        }
+      ]
+    },
+    {
+      "name": "ジャギリシステム",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 435,
+      "owners": [
+        "ジェット(EDF:IA)"
+      ],
+      "weapons": [
+        {
+          "name": "ジャギリシステム",
+          "level": 1,
+          "sourceLine": 461
+        },
+        {
+          "name": "ジャギリシステムII",
+          "level": 2,
+          "sourceLine": 462
+        },
+        {
+          "name": "ジャギリシステムIII",
+          "level": 3,
+          "sourceLine": 463
+        },
+        {
+          "name": "ジャギリシステムAu",
+          "level": 3,
+          "sourceLine": 464
+        },
+        {
+          "name": "ジャギリシステムVI",
+          "level": 4,
+          "sourceLine": 465
+        }
+      ]
+    },
+    {
+      "name": "エアメール",
+      "category": "ミサイル",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 467,
+      "owners": [
+        "スパルタブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "エアメール",
+          "level": 1,
+          "sourceLine": 481
+        },
+        {
+          "name": "エアメールⅡ",
+          "level": 2,
+          "sourceLine": 483
+        },
+        {
+          "name": "エアメールⅢ",
+          "level": 3,
+          "sourceLine": 485
+        },
+        {
+          "name": "エアメールⅣ",
+          "level": 4,
+          "sourceLine": 487
+        },
+        {
+          "name": "エアメールⅤ",
+          "level": 4,
+          "sourceLine": 489
+        }
+      ]
+    },
+    {
+      "name": "ファルコン",
+      "category": "ミサイル",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 492,
+      "owners": [
+        "ベアブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ファルコン",
+          "level": 1,
+          "sourceLine": 510
+        },
+        {
+          "name": "ファルコンLR",
+          "level": 2,
+          "sourceLine": 511
+        },
+        {
+          "name": "パワード・ファルコン",
+          "level": 3,
+          "sourceLine": 512
+        },
+        {
+          "name": "ファルコンLR-2",
+          "level": 4,
+          "sourceLine": 513
+        },
+        {
+          "name": "スーパーファルコン",
+          "level": 4,
+          "sourceLine": 514
+        }
+      ]
+    },
+    {
+      "name": "ゴーストチェイサー",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 516,
+      "owners": [
+        "ベファーナシスター"
+      ],
+      "weapons": [
+        {
+          "name": "ゴーストチェイサー",
+          "level": 1,
+          "sourceLine": 546
+        },
+        {
+          "name": "ゴーストチェイサーX1",
+          "level": 2,
+          "sourceLine": 548
+        },
+        {
+          "name": "ゴーストチェイサーX2",
+          "level": 3,
+          "sourceLine": 550
+        },
+        {
+          "name": "ゴーストチェイサーX1.5",
+          "level": 3,
+          "sourceLine": 552
+        },
+        {
+          "name": "試作兵器CODE：GC2",
+          "level": 4,
+          "sourceLine": 554
+        }
+      ]
+    },
+    {
+      "name": "ネイピアレーザー",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 558,
+      "owners": [
+        "ヘビーストライカー(EDF:IR)"
+      ],
+      "weapons": [
+        {
+          "name": "ネイピアレーザー",
+          "level": 1,
+          "sourceLine": 590
+        },
+        {
+          "name": "ネイピアレーザーS",
+          "level": 2,
+          "sourceLine": 592
+        },
+        {
+          "name": "シグマスフィア",
+          "level": 3,
+          "sourceLine": 594
+        },
+        {
+          "name": "シグマスフィアLimit",
+          "level": 3,
+          "sourceLine": 595
+        },
+        {
+          "name": "ネイピアレーザーHyper",
+          "level": 4,
+          "sourceLine": 596
+        }
+      ]
+    },
+    {
+      "name": "サイブレード",
+      "category": "ミサイル",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 599,
+      "owners": [
+        "ファラオシスター"
+      ],
+      "weapons": [
+        {
+          "name": "サイブレード",
+          "level": 1,
+          "sourceLine": 627
+        },
+        {
+          "name": "サイブレードα",
+          "level": 2,
+          "sourceLine": 628
+        },
+        {
+          "name": "サイブレードスラッシュ",
+          "level": 3,
+          "sourceLine": 629
+        },
+        {
+          "name": "サイブレードライトカスタム",
+          "level": 3,
+          "sourceLine": 630
+        },
+        {
+          "name": "サイブレードβ",
+          "level": 4,
+          "sourceLine": 631
+        }
+      ]
+    },
+    {
+      "name": "インテグラルレイ",
+      "category": "ミサイル",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 633,
+      "owners": [
+        "双葉理保(水着)"
+      ],
+      "weapons": [
+        {
+          "name": "インテグラルレイ",
+          "level": 1,
+          "sourceLine": 646
+        },
+        {
+          "name": "インテグラルレイF",
+          "level": 2,
+          "sourceLine": 647
+        },
+        {
+          "name": "インテグラルレイG",
+          "level": 3,
+          "sourceLine": 648
+        },
+        {
+          "name": "インテグラルレイFdx",
+          "level": 3,
+          "sourceLine": 650
+        },
+        {
+          "name": "インテグラルレイGdx",
+          "level": 4,
+          "sourceLine": 651
+        }
+      ]
+    },
+    {
+      "name": "ミラージュ",
+      "category": "ミサイル",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/36.html",
+      "sourceLine": 654,
+      "owners": [
+        "バロンブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ミラージュ",
+          "level": 1,
+          "sourceLine": 684
+        },
+        {
+          "name": "ミラージュ・ニンフ",
+          "level": 2,
+          "sourceLine": 685
+        },
+        {
+          "name": "ミラージュ・ヴィヴィアン",
+          "level": 3,
+          "sourceLine": 686
+        },
+        {
+          "name": "ミラージュ・モルガン",
+          "level": 4,
+          "sourceLine": 687
+        },
+        {
+          "name": "ミラージュ・ロキ",
+          "level": 4,
+          "sourceLine": 688
+        }
+      ]
+    },
+    {
+      "name": "ベアファング",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 287,
+      "owners": [
+        "ベアブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "使い込まれたベアファング",
+          "level": 1,
+          "sourceLine": 310
+        },
+        {
+          "name": "ベアファング",
+          "level": 2,
+          "sourceLine": 314
+        },
+        {
+          "name": "いいベアファング",
+          "level": 3,
+          "sourceLine": 318
+        },
+        {
+          "name": "豪華なベアファング",
+          "level": 3,
+          "sourceLine": 322
+        },
+        {
+          "name": "すごいベアファング",
+          "level": 4,
+          "sourceLine": 326
+        }
+      ]
+    },
+    {
+      "name": "グローブ",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 331,
+      "owners": [
+        "ボクサーブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ルーキーグローブ",
+          "level": 1,
+          "sourceLine": 349
+        },
+        {
+          "name": "プロフェッショナルグローブ",
+          "level": 2,
+          "sourceLine": 353
+        },
+        {
+          "name": "エリートグローブ",
+          "level": 3,
+          "sourceLine": 357
+        },
+        {
+          "name": "メモリアルグローブ",
+          "level": 3,
+          "sourceLine": 361
+        },
+        {
+          "name": "チャンピオングローブ",
+          "level": 4,
+          "sourceLine": 365
+        }
+      ]
+    },
+    {
+      "name": "素手",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 370,
+      "owners": [
+        "ドラゴンシスター"
+      ],
+      "weapons": [
+        {
+          "name": "素手：玄武級",
+          "level": 1,
+          "sourceLine": 410
+        },
+        {
+          "name": "素手：朱雀級",
+          "level": 2,
+          "sourceLine": 414
+        },
+        {
+          "name": "素手：白虎級",
+          "level": 3,
+          "sourceLine": 418
+        },
+        {
+          "name": "素手：鳳凰級",
+          "level": 3,
+          "sourceLine": 422
+        },
+        {
+          "name": "素手：青竜級",
+          "level": 4,
+          "sourceLine": 426
+        }
+      ]
+    },
+    {
+      "name": "狂虎",
+      "category": "格闘",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 431,
+      "owners": [
+        "彩"
+      ],
+      "weapons": [
+        {
+          "name": "狂虎:穢れレベル1",
+          "level": 1,
+          "sourceLine": 461
+        },
+        {
+          "name": "狂虎:穢れレベル2",
+          "level": 2,
+          "sourceLine": 465
+        },
+        {
+          "name": "狂虎:穢れレベル3",
+          "level": 3,
+          "sourceLine": 469
+        },
+        {
+          "name": "金狂虎",
+          "level": 3,
+          "sourceLine": 473
+        },
+        {
+          "name": "狂虎:穢れMAX",
+          "level": 4,
+          "sourceLine": 477
+        }
+      ]
+    },
+    {
+      "name": "鴉",
+      "category": "格闘",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 482,
+      "owners": [
+        "咲"
+      ],
+      "weapons": [
+        {
+          "name": "鴉:穢れレベル1",
+          "level": 1,
+          "sourceLine": 496
+        },
+        {
+          "name": "鴉:穢れレベル2",
+          "level": 2,
+          "sourceLine": 499
+        },
+        {
+          "name": "鴉:穢れレベル3",
+          "level": 3,
+          "sourceLine": 502
+        },
+        {
+          "name": "金鴉",
+          "level": 3,
+          "sourceLine": 505
+        },
+        {
+          "name": "鴉:穢れMAX",
+          "level": 4,
+          "sourceLine": 508
+        }
+      ]
+    },
+    {
+      "name": "ソード",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 512,
+      "owners": [
+        "バロンブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "ブラッドソード",
+          "level": 1,
+          "sourceLine": 540
+        },
+        {
+          "name": "バットソード",
+          "level": 2,
+          "sourceLine": 544
+        },
+        {
+          "name": "ムーンソード",
+          "level": 3,
+          "sourceLine": 548
+        },
+        {
+          "name": "エレガントソード",
+          "level": 3,
+          "sourceLine": 552
+        },
+        {
+          "name": "ヘルソード",
+          "level": 4,
+          "sourceLine": 556
+        }
+      ]
+    },
+    {
+      "name": "剣",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 561,
+      "owners": [
+        "スパルタブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "鉄の剣",
+          "level": 1,
+          "sourceLine": 589
+        },
+        {
+          "name": "銅の剣",
+          "level": 2,
+          "sourceLine": 593
+        },
+        {
+          "name": "銀の剣",
+          "level": 3,
+          "sourceLine": 597
+        },
+        {
+          "name": "金の剣",
+          "level": 3,
+          "sourceLine": 601
+        },
+        {
+          "name": "スパルタンソード",
+          "level": 4,
+          "sourceLine": 605
+        }
+      ]
+    },
+    {
+      "name": "日本刀",
+      "category": "格闘",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/37.html",
+      "sourceLine": 610,
+      "owners": [
+        "ニンジャブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "朱鷺丸",
+          "level": 1,
+          "sourceLine": 638
+        },
+        {
+          "name": "眉月切",
+          "level": 2,
+          "sourceLine": 642
+        },
+        {
+          "name": "しゝのはやて",
+          "level": 3,
+          "sourceLine": 646
+        },
+        {
+          "name": "金刀",
+          "level": 3,
+          "sourceLine": 650
+        },
+        {
+          "name": "朱鷺御剣",
+          "level": 4,
+          "sourceLine": 654
+        }
+      ]
+    },
+    {
+      "name": "ラッキーバレット",
+      "category": "特殊",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 281,
+      "owners": [
+        "双葉理保(夏服)"
+      ],
+      "weapons": [
+        {
+          "name": "ラッキーバレット",
+          "level": 1,
+          "sourceLine": 298
+        },
+        {
+          "name": "ビンゴバレット",
+          "level": 2,
+          "sourceLine": 299
+        },
+        {
+          "name": "フォーチュンバレット",
+          "level": 3,
+          "sourceLine": 300
+        },
+        {
+          "name": "ギャンブルバレット",
+          "level": 3,
+          "sourceLine": 301
+        },
+        {
+          "name": "スーパーラッキーバレット",
+          "level": 4,
+          "sourceLine": 302
+        }
+      ]
+    },
+    {
+      "name": "スタグビートル",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 304,
+      "owners": [
+        "プリンスブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "スタグビートル",
+          "level": 1,
+          "sourceLine": 342
+        },
+        {
+          "name": "スタグクィックビートル",
+          "level": 2,
+          "sourceLine": 344
+        },
+        {
+          "name": "スタグビートル・ペア",
+          "level": 3,
+          "sourceLine": 346
+        },
+        {
+          "name": "スタグビートル・ゴールド",
+          "level": 3,
+          "sourceLine": 349
+        },
+        {
+          "name": "スタグビートルズ",
+          "level": 4,
+          "sourceLine": 351
+        }
+      ]
+    },
+    {
+      "name": "アサルトビートル",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 355,
+      "owners": [
+        "エアレイダー(EDF4)"
+      ],
+      "weapons": [
+        {
+          "name": "アサルトビートル",
+          "level": 1,
+          "sourceLine": 405
+        },
+        {
+          "name": "アサルトバンクビートル",
+          "level": 2,
+          "sourceLine": 408
+        },
+        {
+          "name": "アサルトキングビートル",
+          "level": 3,
+          "sourceLine": 410
+        },
+        {
+          "name": "アサルトビートル・ゴールド",
+          "level": 3,
+          "sourceLine": 413
+        },
+        {
+          "name": "新型アサルトビートル",
+          "level": 4,
+          "sourceLine": 415
+        }
+      ]
+    },
+    {
+      "name": "ウィザードビートル",
+      "category": "特殊",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 419,
+      "owners": [
+        "エアレイド(EDF2PV)"
+      ],
+      "weapons": [
+        {
+          "name": "ウィザードビートル",
+          "level": 1,
+          "sourceLine": 466
+        },
+        {
+          "name": "ウィザードビートルE",
+          "level": 2,
+          "sourceLine": 469
+        },
+        {
+          "name": "ウィザードビートルS",
+          "level": 3,
+          "sourceLine": 472
+        },
+        {
+          "name": "ウィザードビートルQ",
+          "level": 4,
+          "sourceLine": 475
+        },
+        {
+          "name": "ニュー・ウィザードビートル",
+          "level": 4,
+          "sourceLine": 478
+        }
+      ]
+    },
+    {
+      "name": "ヘブンズゲート",
+      "category": "特殊",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 482,
+      "owners": [
+        "オーロラシスター"
+      ],
+      "weapons": [
+        {
+          "name": "ヘブンズゲート・ランチャー",
+          "level": 2,
+          "sourceLine": 503
+        },
+        {
+          "name": "ヘブンズゲート・ランチャー2",
+          "level": 2,
+          "sourceLine": 507
+        },
+        {
+          "name": "ヘブンズゲート・ランチャー3",
+          "level": 3,
+          "sourceLine": 511
+        },
+        {
+          "name": "ヘブンズゲート・ガン",
+          "level": 4,
+          "sourceLine": 515
+        },
+        {
+          "name": "ヘブンズゲート・ランチャーD",
+          "level": 4,
+          "sourceLine": 519
+        }
+      ]
+    },
+    {
+      "name": "イグアス",
+      "category": "特殊",
+      "extra": "DLC",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 524,
+      "owners": [
+        "魅杏"
+      ],
+      "weapons": [
+        {
+          "name": "イグアス1号基",
+          "level": 1,
+          "sourceLine": 577
+        },
+        {
+          "name": "イグアス2号基",
+          "level": 2,
+          "sourceLine": 581
+        },
+        {
+          "name": "ナイル1号基",
+          "level": 3,
+          "sourceLine": 585
+        },
+        {
+          "name": "イグアス・シンギュラリティ",
+          "level": 3,
+          "sourceLine": 589
+        },
+        {
+          "name": "ナイル・ジェットパルサー",
+          "level": 4,
+          "sourceLine": 593
+        }
+      ]
+    },
+    {
+      "name": "アークソード",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 598,
+      "owners": [
+        "ゲーエスゲーブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "アークソード",
+          "level": 1,
+          "sourceLine": 631
+        },
+        {
+          "name": "アークソードType-R",
+          "level": 2,
+          "sourceLine": 632
+        },
+        {
+          "name": "アークソードType-W",
+          "level": 3,
+          "sourceLine": 636
+        },
+        {
+          "name": "ハイパーアークソード",
+          "level": 3,
+          "sourceLine": 640
+        },
+        {
+          "name": "アークソードType-R+W",
+          "level": 4,
+          "sourceLine": 641
+        }
+      ]
+    },
+    {
+      "name": "サンタハンマー",
+      "category": "特殊",
+      "extra": "特典",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 646,
+      "owners": [
+        "双葉理保(サンタ)"
+      ],
+      "weapons": [
+        {
+          "name": "サンタハンマー",
+          "level": 1,
+          "sourceLine": 661
+        },
+        {
+          "name": "サンタハンマーD2",
+          "level": 2,
+          "sourceLine": 665
+        },
+        {
+          "name": "サンタハンマーD3",
+          "level": 3,
+          "sourceLine": 669
+        },
+        {
+          "name": "サンタハンマーZD",
+          "level": 3,
+          "sourceLine": 673
+        },
+        {
+          "name": "サンタハンマーD9",
+          "level": 4,
+          "sourceLine": 677
+        }
+      ]
+    },
+    {
+      "name": "かんしゃく玉",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 682,
+      "owners": [
+        "オーロラシスター"
+      ],
+      "weapons": [
+        {
+          "name": "かんしゃく玉",
+          "level": 1,
+          "sourceLine": 705
+        },
+        {
+          "name": "ジェドマロース",
+          "level": 2,
+          "sourceLine": 707
+        },
+        {
+          "name": "スネグーラチカ",
+          "level": 3,
+          "sourceLine": 710
+        },
+        {
+          "name": "大かんしゃく玉",
+          "level": 3,
+          "sourceLine": 713
+        },
+        {
+          "name": "アイスファンタジア",
+          "level": 4,
+          "sourceLine": 715
+        }
+      ]
+    },
+    {
+      "name": "リニアボウ",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 719,
+      "owners": [
+        "ワイルドブラザー"
+      ],
+      "weapons": [
+        {
+          "name": "リニアボウ",
+          "level": 1,
+          "sourceLine": 766
+        },
+        {
+          "name": "サンダーアロー",
+          "level": 2,
+          "sourceLine": 770
+        },
+        {
+          "name": "リニアボウGカスタム",
+          "level": 3,
+          "sourceLine": 773
+        },
+        {
+          "name": "リニアボウ∀",
+          "level": 3,
+          "sourceLine": 775
+        },
+        {
+          "name": "リニアボウ・エロース",
+          "level": 4,
+          "sourceLine": 779
+        }
+      ]
+    },
+    {
+      "name": "航空支援",
+      "category": "特殊",
+      "extra": "",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 783,
+      "owners": [
+        "エアレイド(EDF2PV)"
+      ],
+      "weapons": [
+        {
+          "name": "機関砲プラン",
+          "level": 1,
+          "sourceLine": 832
+        },
+        {
+          "name": "速射砲プラン",
+          "level": 2,
+          "sourceLine": 833
+        },
+        {
+          "name": "制圧砲プラン",
+          "level": 3,
+          "sourceLine": 835
+        },
+        {
+          "name": "速射砲プランB",
+          "level": 3,
+          "sourceLine": 837
+        },
+        {
+          "name": "バルカン砲プラン",
+          "level": 4,
+          "sourceLine": 839
+        }
+      ]
+    },
+    {
+      "name": "ライオニック",
+      "category": "特殊",
+      "extra": "任務包",
+      "source": "https://w.atwiki.jp/edfwb/pages/38.html",
+      "sourceLine": 841,
+      "owners": [
+        "エアレイダー(EDF4)"
+      ],
+      "weapons": [
+        {
+          "name": "ライオニック・プランA",
+          "level": 1,
+          "sourceLine": 867
+        },
+        {
+          "name": "ライオニック・プランB",
+          "level": 2,
+          "sourceLine": 868
+        },
+        {
+          "name": "ライオニック・プランC",
+          "level": 3,
+          "sourceLine": 869
+        },
+        {
+          "name": "ライオニック・プランD",
+          "level": 4,
+          "sourceLine": 870
+        },
+        {
+          "name": "ライオニック・プランE",
+          "level": 4,
+          "sourceLine": 871
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "name": "陸戦兵(EDF1)",
+      "source": "https://w.atwiki.jp/edfwb/pages/28.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 53
+    },
+    {
+      "name": "陸戦兵(EDF2)",
+      "source": "https://w.atwiki.jp/edfwb/pages/57.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 54
+    },
+    {
+      "name": "ペイルウイング(EDF2)",
+      "source": "https://w.atwiki.jp/edfwb/pages/79.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 55
+    },
+    {
+      "name": "エアレイド(EDF2PV)",
+      "source": "https://w.atwiki.jp/edfwb/pages/69.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 56
+    },
+    {
+      "name": "陸戦兵(EDF3)",
+      "source": "https://w.atwiki.jp/edfwb/pages/80.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 57
+    },
+    {
+      "name": "陸戦兵(EDF3P)バックパック装備",
+      "source": "https://w.atwiki.jp/edfwb/pages/77.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 58
+    },
+    {
+      "name": "ペイルウイング(EDF3P)",
+      "source": "https://w.atwiki.jp/edfwb/pages/82.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 59
+    },
+    {
+      "name": "レンジャー(EDF4)",
+      "source": "https://w.atwiki.jp/edfwb/pages/83.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 60
+    },
+    {
+      "name": "ウイングダイバー(EDF4)",
+      "source": "https://w.atwiki.jp/edfwb/pages/68.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 61
+    },
+    {
+      "name": "エアレイダー(EDF4)",
+      "source": "https://w.atwiki.jp/edfwb/pages/52.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 62
+    },
+    {
+      "name": "フェンサー(EDF4)",
+      "source": "https://w.atwiki.jp/edfwb/pages/53.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 63
+    },
+    {
+      "name": "レンジャー(EDF5)",
+      "source": "https://w.atwiki.jp/edfwb/pages/41.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 64
+    },
+    {
+      "name": "ウイングダイバー(EDF5)",
+      "source": "https://w.atwiki.jp/edfwb/pages/70.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 65
+    },
+    {
+      "name": "エアレイダー(EDF5)",
+      "source": "https://w.atwiki.jp/edfwb/pages/85.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 66
+    },
+    {
+      "name": "フェンサー(EDF5)",
+      "source": "https://w.atwiki.jp/edfwb/pages/78.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 67
+    },
+    {
+      "name": "トルーパー(EDF:IA)",
+      "source": "https://w.atwiki.jp/edfwb/pages/55.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 68
+    },
+    {
+      "name": "タクティカル(EDF:IA)",
+      "source": "https://w.atwiki.jp/edfwb/pages/86.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 69
+    },
+    {
+      "name": "バトル(EDF:IA)",
+      "source": "https://w.atwiki.jp/edfwb/pages/56.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 70
+    },
+    {
+      "name": "ジェット(EDF:IA)",
+      "source": "https://w.atwiki.jp/edfwb/pages/87.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 71
+    },
+    {
+      "name": "トルーパー(EDF:IR)",
+      "source": "https://w.atwiki.jp/edfwb/pages/54.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 72
+    },
+    {
+      "name": "ジェットリフター(EDF:IR)",
+      "source": "https://w.atwiki.jp/edfwb/pages/88.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 73
+    },
+    {
+      "name": "ヘビーストライカー(EDF:IR)",
+      "source": "https://w.atwiki.jp/edfwb/pages/74.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 74
+    },
+    {
+      "name": "プロールライダー(EDF:IR)",
+      "source": "https://w.atwiki.jp/edfwb/pages/76.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 75
+    },
+    {
+      "name": "アルペンブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/43.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 76
+    },
+    {
+      "name": "インカブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/110.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 77
+    },
+    {
+      "name": "ヴァイキングブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/109.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 78
+    },
+    {
+      "name": "エルドラドブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/95.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 79
+    },
+    {
+      "name": "オーロラシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/112.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 80
+    },
+    {
+      "name": "ガウチョシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/42.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 81
+    },
+    {
+      "name": "カウボーイブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/47.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 82
+    },
+    {
+      "name": "ゲーエスゲーブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/99.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 83
+    },
+    {
+      "name": "コアラブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/89.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 84
+    },
+    {
+      "name": "サファリシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/105.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 85
+    },
+    {
+      "name": "サンバシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/90.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 86
+    },
+    {
+      "name": "スパルタブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/100.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 87
+    },
+    {
+      "name": "スペースブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/116.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 88
+    },
+    {
+      "name": "タコスブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/107.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 89
+    },
+    {
+      "name": "タピオカシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/60.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 90
+    },
+    {
+      "name": "チューリップシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/44.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 91
+    },
+    {
+      "name": "テンシンシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/92.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 92
+    },
+    {
+      "name": "ドラゴンシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/93.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 93
+    },
+    {
+      "name": "ナイトブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/98.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 94
+    },
+    {
+      "name": "ニンジャブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/67.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 95
+    },
+    {
+      "name": "パイレーツブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/117.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 96
+    },
+    {
+      "name": "ハカブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/108.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 97
+    },
+    {
+      "name": "バズシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/106.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 98
+    },
+    {
+      "name": "バロンブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/111.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 99
+    },
+    {
+      "name": "ハンターブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/96.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 100
+    },
+    {
+      "name": "パンダブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/94.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 101
+    },
+    {
+      "name": "ファラオシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/97.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 102
+    },
+    {
+      "name": "プリンスブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/113.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 103
+    },
+    {
+      "name": "ベアブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/91.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 104
+    },
+    {
+      "name": "ベファーナシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/103.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 105
+    },
+    {
+      "name": "ボイジャーブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/58.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 106
+    },
+    {
+      "name": "ボクサーブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/115.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 107
+    },
+    {
+      "name": "マタドールブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/114.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 108
+    },
+    {
+      "name": "メイドシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/46.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 109
+    },
+    {
+      "name": "ヨガブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/101.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 110
+    },
+    {
+      "name": "ヨーデルシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/59.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 111
+    },
+    {
+      "name": "ロイヤルブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/45.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 112
+    },
+    {
+      "name": "レゴンシスター",
+      "source": "https://w.atwiki.jp/edfwb/pages/102.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 113
+    },
+    {
+      "name": "ワイルドブラザー",
+      "source": "https://w.atwiki.jp/edfwb/pages/73.html",
+      "variants": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "extra": "",
+      "menuId": 114
+    },
+    {
+      "name": "双葉理保",
+      "source": "https://w.atwiki.jp/edfwb/pages/196.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 115
+    },
+    {
+      "name": "双葉理保(水着)",
+      "source": "https://w.atwiki.jp/edfwb/pages/104.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 116
+    },
+    {
+      "name": "双葉理保(夏服)",
+      "source": "https://w.atwiki.jp/edfwb/pages/219.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 117
+    },
+    {
+      "name": "双葉理保(サンタ)",
+      "source": "https://w.atwiki.jp/edfwb/pages/123.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 118
+    },
+    {
+      "name": "陸戦兵(EDF3)ストーム1仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/81.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 119
+    },
+    {
+      "name": "メカユーキ隊員",
+      "source": "https://w.atwiki.jp/edfwb/pages/129.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 120
+    },
+    {
+      "name": "雪",
+      "source": "https://w.atwiki.jp/edfwb/pages/200.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 121
+    },
+    {
+      "name": "魅杏",
+      "source": "https://w.atwiki.jp/edfwb/pages/201.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 122
+    },
+    {
+      "name": "アイリ",
+      "source": "https://w.atwiki.jp/edfwb/pages/199.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 123
+    },
+    {
+      "name": "コロニスト",
+      "source": "https://w.atwiki.jp/edfwb/pages/216.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 124
+    },
+    {
+      "name": "コスモノーツ",
+      "source": "https://w.atwiki.jp/edfwb/pages/217.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 125
+    },
+    {
+      "name": "彩",
+      "source": "https://w.atwiki.jp/edfwb/pages/218.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 126
+    },
+    {
+      "name": "咲",
+      "source": "https://w.atwiki.jp/edfwb/pages/215.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "DLC",
+      "menuId": 127
+    },
+    {
+      "name": "レンジャー(EDF4)オメガ隊仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/131.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 128
+    },
+    {
+      "name": "レンジャー(EDF5)軍曹仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/128.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 129
+    },
+    {
+      "name": "ウイングダイバー(EDF5)SG隊仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/84.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 130
+    },
+    {
+      "name": "フェンサー(EDF5)GR隊仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/130.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 131
+    },
+    {
+      "name": "プロールライダ－(EDF:IR)KR仕様",
+      "source": "https://w.atwiki.jp/edfwb/pages/124.html",
+      "variants": [
+        "無印"
+      ],
+      "extra": "特典",
+      "menuId": 132
+    }
+  ],
+  "accessories": [
+    {
+      "name": "ライオン・グローブ",
+      "type": "通常型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 285
+        },
+        {
+          "level": 2,
+          "sourceLine": 286
+        },
+        {
+          "level": 3,
+          "sourceLine": 287
+        },
+        {
+          "level": 4,
+          "sourceLine": 288
+        }
+      ]
+    },
+    {
+      "name": "ライオン・グローブ",
+      "type": "赤色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 290
+        },
+        {
+          "level": 3,
+          "sourceLine": 292
+        },
+        {
+          "level": 4,
+          "sourceLine": 293
+        }
+      ]
+    },
+    {
+      "name": "ライオン・グローブ",
+      "type": "緑色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 296
+        },
+        {
+          "level": 3,
+          "sourceLine": 297
+        },
+        {
+          "level": 4,
+          "sourceLine": 298
+        }
+      ]
+    },
+    {
+      "name": "タイガー・ガントレット",
+      "type": "通常型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 320
+        },
+        {
+          "level": 2,
+          "sourceLine": 321
+        },
+        {
+          "level": 3,
+          "sourceLine": 322
+        },
+        {
+          "level": 4,
+          "sourceLine": 323
+        }
+      ]
+    },
+    {
+      "name": "タイガー・ガントレット",
+      "type": "新型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 325
+        },
+        {
+          "level": 3,
+          "sourceLine": 327
+        },
+        {
+          "level": 4,
+          "sourceLine": 328
+        }
+      ]
+    },
+    {
+      "name": "タイガー・ガントレット",
+      "type": "赤色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 331
+        },
+        {
+          "level": 3,
+          "sourceLine": 332
+        },
+        {
+          "level": 4,
+          "sourceLine": 333
+        }
+      ]
+    },
+    {
+      "name": "グリズリー・ナックル",
+      "type": "通常型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 352
+        },
+        {
+          "level": 2,
+          "sourceLine": 353
+        },
+        {
+          "level": 3,
+          "sourceLine": 354
+        },
+        {
+          "level": 4,
+          "sourceLine": 355
+        }
+      ]
+    },
+    {
+      "name": "グリズリー・ナックル",
+      "type": "赤色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 357
+        },
+        {
+          "level": 3,
+          "sourceLine": 359
+        },
+        {
+          "level": 4,
+          "sourceLine": 360
+        }
+      ]
+    },
+    {
+      "name": "グリズリー・ナックル",
+      "type": "黄色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 363
+        },
+        {
+          "level": 3,
+          "sourceLine": 364
+        },
+        {
+          "level": 4,
+          "sourceLine": 365
+        }
+      ]
+    },
+    {
+      "name": "イーグル・バンテージ",
+      "type": "通常型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 388
+        },
+        {
+          "level": 2,
+          "sourceLine": 389
+        },
+        {
+          "level": 3,
+          "sourceLine": 390
+        },
+        {
+          "level": 4,
+          "sourceLine": 391
+        }
+      ]
+    },
+    {
+      "name": "イーグル・バンテージ",
+      "type": "緑色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 393
+        },
+        {
+          "level": 3,
+          "sourceLine": 395
+        },
+        {
+          "level": 4,
+          "sourceLine": 396
+        }
+      ]
+    },
+    {
+      "name": "イーグル・バンテージ",
+      "type": "赤色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 399
+        },
+        {
+          "level": 3,
+          "sourceLine": 400
+        },
+        {
+          "level": 4,
+          "sourceLine": 401
+        }
+      ]
+    },
+    {
+      "name": "バット・ミトン",
+      "type": "通常型",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 422
+        },
+        {
+          "level": 2,
+          "sourceLine": 423
+        },
+        {
+          "level": 3,
+          "sourceLine": 424
+        },
+        {
+          "level": 4,
+          "sourceLine": 425
+        }
+      ]
+    },
+    {
+      "name": "バット・ミトン",
+      "type": "赤色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 427
+        },
+        {
+          "level": 3,
+          "sourceLine": 429
+        },
+        {
+          "level": 4,
+          "sourceLine": 430
+        }
+      ]
+    },
+    {
+      "name": "バット・ミトン",
+      "type": "緑色",
+      "category": "攻撃",
+      "source": "https://w.atwiki.jp/edfwb/pages/48.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 433
+        },
+        {
+          "level": 3,
+          "sourceLine": 434
+        },
+        {
+          "level": 4,
+          "sourceLine": 435
+        }
+      ]
+    },
+    {
+      "name": "ドルフィン・ティアラ",
+      "type": "通常型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 287
+        },
+        {
+          "level": 2,
+          "sourceLine": 288
+        },
+        {
+          "level": 3,
+          "sourceLine": 289
+        },
+        {
+          "level": 4,
+          "sourceLine": 290
+        }
+      ]
+    },
+    {
+      "name": "ドルフィン・ティアラ",
+      "type": "緑色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 292
+        },
+        {
+          "level": 3,
+          "sourceLine": 294
+        },
+        {
+          "level": 4,
+          "sourceLine": 295
+        }
+      ]
+    },
+    {
+      "name": "ドルフィン・ティアラ",
+      "type": "赤色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 298
+        },
+        {
+          "level": 3,
+          "sourceLine": 299
+        },
+        {
+          "level": 4,
+          "sourceLine": 300
+        }
+      ]
+    },
+    {
+      "name": "ホエール・クラウン",
+      "type": "通常型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 317
+        },
+        {
+          "level": 2,
+          "sourceLine": 318
+        },
+        {
+          "level": 3,
+          "sourceLine": 319
+        },
+        {
+          "level": 4,
+          "sourceLine": 320
+        }
+      ]
+    },
+    {
+      "name": "ホエール・クラウン",
+      "type": "新型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 322
+        },
+        {
+          "level": 3,
+          "sourceLine": 324
+        },
+        {
+          "level": 4,
+          "sourceLine": 325
+        }
+      ]
+    },
+    {
+      "name": "ホエール・クラウン",
+      "type": "緑色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 328
+        },
+        {
+          "level": 3,
+          "sourceLine": 329
+        },
+        {
+          "level": 4,
+          "sourceLine": 330
+        }
+      ]
+    },
+    {
+      "name": "シール・アンクレット",
+      "type": "通常型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 350
+        },
+        {
+          "level": 2,
+          "sourceLine": 351
+        },
+        {
+          "level": 3,
+          "sourceLine": 352
+        },
+        {
+          "level": 4,
+          "sourceLine": 353
+        }
+      ]
+    },
+    {
+      "name": "シール・アンクレット",
+      "type": "緑色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 355
+        },
+        {
+          "level": 3,
+          "sourceLine": 357
+        },
+        {
+          "level": 4,
+          "sourceLine": 358
+        }
+      ]
+    },
+    {
+      "name": "シール・アンクレット",
+      "type": "黄色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 361
+        },
+        {
+          "level": 3,
+          "sourceLine": 362
+        },
+        {
+          "level": 4,
+          "sourceLine": 363
+        }
+      ]
+    },
+    {
+      "name": "オルカ・ネックレス",
+      "type": "通常型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 385
+        },
+        {
+          "level": 2,
+          "sourceLine": 386
+        },
+        {
+          "level": 3,
+          "sourceLine": 387
+        },
+        {
+          "level": 4,
+          "sourceLine": 388
+        }
+      ]
+    },
+    {
+      "name": "オルカ・ネックレス",
+      "type": "赤色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 390
+        },
+        {
+          "level": 3,
+          "sourceLine": 392
+        },
+        {
+          "level": 4,
+          "sourceLine": 393
+        }
+      ]
+    },
+    {
+      "name": "オルカ・ネックレス",
+      "type": "緑色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 396
+        },
+        {
+          "level": 3,
+          "sourceLine": 397
+        },
+        {
+          "level": 4,
+          "sourceLine": 398
+        }
+      ]
+    },
+    {
+      "name": "マナティー・リング",
+      "type": "通常型",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 417
+        },
+        {
+          "level": 2,
+          "sourceLine": 418
+        },
+        {
+          "level": 3,
+          "sourceLine": 419
+        },
+        {
+          "level": 4,
+          "sourceLine": 420
+        }
+      ]
+    },
+    {
+      "name": "マナティー・リング",
+      "type": "緑色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 422
+        },
+        {
+          "level": 3,
+          "sourceLine": 424
+        },
+        {
+          "level": 4,
+          "sourceLine": 425
+        }
+      ]
+    },
+    {
+      "name": "マナティー・リング",
+      "type": "黄色",
+      "category": "回復",
+      "source": "https://w.atwiki.jp/edfwb/pages/49.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 428
+        },
+        {
+          "level": 3,
+          "sourceLine": 429
+        },
+        {
+          "level": 4,
+          "sourceLine": 430
+        }
+      ]
+    },
+    {
+      "name": "ゼブラ・シューズ",
+      "type": "通常型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 283
+        },
+        {
+          "level": 2,
+          "sourceLine": 284
+        },
+        {
+          "level": 3,
+          "sourceLine": 285
+        },
+        {
+          "level": 4,
+          "sourceLine": 286
+        }
+      ]
+    },
+    {
+      "name": "ゼブラ・シューズ",
+      "type": "赤色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 288
+        },
+        {
+          "level": 3,
+          "sourceLine": 290
+        },
+        {
+          "level": 4,
+          "sourceLine": 291
+        }
+      ]
+    },
+    {
+      "name": "ゼブラ・シューズ",
+      "type": "緑色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 294
+        },
+        {
+          "level": 3,
+          "sourceLine": 295
+        },
+        {
+          "level": 4,
+          "sourceLine": 296
+        }
+      ]
+    },
+    {
+      "name": "チーター・スパイク",
+      "type": "通常型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 317
+        },
+        {
+          "level": 2,
+          "sourceLine": 318
+        },
+        {
+          "level": 3,
+          "sourceLine": 319
+        },
+        {
+          "level": 4,
+          "sourceLine": 320
+        }
+      ]
+    },
+    {
+      "name": "チーター・スパイク",
+      "type": "新型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 322
+        },
+        {
+          "level": 3,
+          "sourceLine": 324
+        },
+        {
+          "level": 4,
+          "sourceLine": 325
+        }
+      ]
+    },
+    {
+      "name": "チーター・スパイク",
+      "type": "赤色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 328
+        },
+        {
+          "level": 3,
+          "sourceLine": 329
+        },
+        {
+          "level": 4,
+          "sourceLine": 330
+        }
+      ]
+    },
+    {
+      "name": "カンガルー・サンダル",
+      "type": "通常型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 354
+        },
+        {
+          "level": 2,
+          "sourceLine": 355
+        },
+        {
+          "level": 3,
+          "sourceLine": 356
+        },
+        {
+          "level": 4,
+          "sourceLine": 357
+        }
+      ]
+    },
+    {
+      "name": "カンガルー・サンダル",
+      "type": "緑色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 359
+        },
+        {
+          "level": 3,
+          "sourceLine": 361
+        },
+        {
+          "level": 4,
+          "sourceLine": 362
+        }
+      ]
+    },
+    {
+      "name": "カンガルー・サンダル",
+      "type": "赤色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 365
+        },
+        {
+          "level": 3,
+          "sourceLine": 366
+        },
+        {
+          "level": 4,
+          "sourceLine": 367
+        }
+      ]
+    },
+    {
+      "name": "バイソン・ブーツ",
+      "type": "通常型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 390
+        },
+        {
+          "level": 2,
+          "sourceLine": 391
+        },
+        {
+          "level": 3,
+          "sourceLine": 392
+        },
+        {
+          "level": 4,
+          "sourceLine": 393
+        }
+      ]
+    },
+    {
+      "name": "バイソン・ブーツ",
+      "type": "黄色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 395
+        },
+        {
+          "level": 3,
+          "sourceLine": 397
+        },
+        {
+          "level": 4,
+          "sourceLine": 398
+        }
+      ]
+    },
+    {
+      "name": "バイソン・ブーツ",
+      "type": "赤色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 401
+        },
+        {
+          "level": 3,
+          "sourceLine": 402
+        },
+        {
+          "level": 4,
+          "sourceLine": 403
+        }
+      ]
+    },
+    {
+      "name": "ジャガー・スニーカー",
+      "type": "通常型",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 423
+        },
+        {
+          "level": 2,
+          "sourceLine": 424
+        },
+        {
+          "level": 3,
+          "sourceLine": 425
+        },
+        {
+          "level": 4,
+          "sourceLine": 426
+        }
+      ]
+    },
+    {
+      "name": "ジャガー・スニーカー",
+      "type": "赤色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 428
+        },
+        {
+          "level": 3,
+          "sourceLine": 430
+        },
+        {
+          "level": 4,
+          "sourceLine": 431
+        }
+      ]
+    },
+    {
+      "name": "ジャガー・スニーカー",
+      "type": "黄色",
+      "category": "移動",
+      "source": "https://w.atwiki.jp/edfwb/pages/50.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 434
+        },
+        {
+          "level": 3,
+          "sourceLine": 435
+        },
+        {
+          "level": 4,
+          "sourceLine": 436
+        }
+      ]
+    },
+    {
+      "name": "アルマジロ・ジャンパー",
+      "type": "通常型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 284
+        },
+        {
+          "level": 2,
+          "sourceLine": 285
+        },
+        {
+          "level": 3,
+          "sourceLine": 286
+        },
+        {
+          "level": 4,
+          "sourceLine": 287
+        }
+      ]
+    },
+    {
+      "name": "アルマジロ・ジャンパー",
+      "type": "赤色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 289
+        },
+        {
+          "level": 3,
+          "sourceLine": 291
+        },
+        {
+          "level": 4,
+          "sourceLine": 292
+        }
+      ]
+    },
+    {
+      "name": "アルマジロ・ジャンパー",
+      "type": "黄色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 295
+        },
+        {
+          "level": 3,
+          "sourceLine": 296
+        },
+        {
+          "level": 4,
+          "sourceLine": 297
+        }
+      ]
+    },
+    {
+      "name": "タートル・アーマー",
+      "type": "通常型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 315
+        },
+        {
+          "level": 2,
+          "sourceLine": 316
+        },
+        {
+          "level": 3,
+          "sourceLine": 317
+        },
+        {
+          "level": 4,
+          "sourceLine": 318
+        }
+      ]
+    },
+    {
+      "name": "タートル・アーマー",
+      "type": "新型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 320
+        },
+        {
+          "level": 3,
+          "sourceLine": 322
+        },
+        {
+          "level": 4,
+          "sourceLine": 323
+        }
+      ]
+    },
+    {
+      "name": "タートル・アーマー",
+      "type": "赤色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 326
+        },
+        {
+          "level": 3,
+          "sourceLine": 327
+        },
+        {
+          "level": 4,
+          "sourceLine": 328
+        }
+      ]
+    },
+    {
+      "name": "クロコダイル・ローブ",
+      "type": "通常型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 348
+        },
+        {
+          "level": 2,
+          "sourceLine": 349
+        },
+        {
+          "level": 3,
+          "sourceLine": 350
+        },
+        {
+          "level": 4,
+          "sourceLine": 351
+        }
+      ]
+    },
+    {
+      "name": "クロコダイル・ローブ",
+      "type": "赤色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 353
+        },
+        {
+          "level": 3,
+          "sourceLine": 355
+        },
+        {
+          "level": 4,
+          "sourceLine": 356
+        }
+      ]
+    },
+    {
+      "name": "クロコダイル・ローブ",
+      "type": "黄色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 359
+        },
+        {
+          "level": 3,
+          "sourceLine": 360
+        },
+        {
+          "level": 4,
+          "sourceLine": 361
+        }
+      ]
+    },
+    {
+      "name": "エレファント・ジャケット",
+      "type": "通常型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 389
+        },
+        {
+          "level": 2,
+          "sourceLine": 390
+        },
+        {
+          "level": 3,
+          "sourceLine": 391
+        },
+        {
+          "level": 4,
+          "sourceLine": 392
+        }
+      ]
+    },
+    {
+      "name": "エレファント・ジャケット",
+      "type": "赤色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 394
+        },
+        {
+          "level": 3,
+          "sourceLine": 396
+        },
+        {
+          "level": 4,
+          "sourceLine": 397
+        }
+      ]
+    },
+    {
+      "name": "エレファント・ジャケット",
+      "type": "緑色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 400
+        },
+        {
+          "level": 3,
+          "sourceLine": 401
+        },
+        {
+          "level": 4,
+          "sourceLine": 402
+        }
+      ]
+    },
+    {
+      "name": "ライノサラス・コート",
+      "type": "通常型",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 424
+        },
+        {
+          "level": 2,
+          "sourceLine": 425
+        },
+        {
+          "level": 3,
+          "sourceLine": 426
+        },
+        {
+          "level": 4,
+          "sourceLine": 427
+        }
+      ]
+    },
+    {
+      "name": "ライノサラス・コート",
+      "type": "緑色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 1,
+          "sourceLine": 429
+        },
+        {
+          "level": 3,
+          "sourceLine": 431
+        },
+        {
+          "level": 4,
+          "sourceLine": 432
+        }
+      ]
+    },
+    {
+      "name": "ライノサラス・コート",
+      "type": "赤色",
+      "category": "耐久",
+      "source": "https://w.atwiki.jp/edfwb/pages/51.html",
+      "levels": [
+        {
+          "level": 2,
+          "sourceLine": 435
+        },
+        {
+          "level": 3,
+          "sourceLine": 436
+        },
+        {
+          "level": 4,
+          "sourceLine": 437
+        }
+      ]
+    }
+  ],
+  "distribution": [
+    {
+      "start": 1,
+      "end": 5,
+      "names": [
+        "エアレイダー(EDF5)",
+        "ジェット(EDF:IA)",
+        "トルーパー(EDF:IR)",
+        "アルペンブラザー",
+        "エルドラドブラザー",
+        "ガウチョシスター",
+        "サファリシスター",
+        "スパルタブラザー",
+        "スペースブラザー",
+        "タコスブラザー",
+        "タピオカシスター",
+        "チューリップシスター",
+        "パイレーツブラザー",
+        "ハカブラザー",
+        "プリンスブラザー",
+        "ロイヤルブラザー"
+      ],
+      "source": "https://w.atwiki.jp/edfwb/pages/198.html"
+    },
+    {
+      "start": 6,
+      "end": 13,
+      "names": [
+        "ペイルウイング(EDF2)",
+        "レンジャー(EDF4)",
+        "フェンサー(EDF4)",
+        "ジェットリフター(EDF:IR)",
+        "エアレイダー(EDF5)",
+        "ジェット(EDF:IA)",
+        "トルーパー(EDF:IR)",
+        "インカブラザー",
+        "カウボーイブラザー",
+        "ドラゴンシスター",
+        "ナイトブラザー",
+        "ニンジャブラザー",
+        "パンダブラザー",
+        "ヨーデルシスター",
+        "ワイルドブラザー",
+        "アルペンブラザー",
+        "エルドラドブラザー",
+        "ガウチョシスター",
+        "サファリシスター",
+        "スパルタブラザー",
+        "スペースブラザー",
+        "タコスブラザー",
+        "タピオカシスター",
+        "チューリップシスター",
+        "パイレーツブラザー",
+        "ハカブラザー",
+        "プリンスブラザー",
+        "ロイヤルブラザー"
+      ],
+      "source": "https://w.atwiki.jp/edfwb/pages/198.html"
+    },
+    {
+      "start": 14,
+      "end": 21,
+      "names": [
+        "陸戦兵(EDF3)",
+        "ペイルウイング(EDF3P)",
+        "エアレイダー(EDF4)",
+        "トルーパー(EDF:IA)",
+        "ペイルウイング(EDF2)",
+        "レンジャー(EDF4)",
+        "フェンサー(EDF4)",
+        "ジェットリフター(EDF:IR)",
+        "ゲーエスゲーブラザー",
+        "コアラブラザー",
+        "サンバシスター",
+        "バズシスター",
+        "バロンブラザー",
+        "ハンターブラザー",
+        "ボクサーブラザー",
+        "マタドールブラザー",
+        "ヴァイキングブラザー",
+        "インカブラザー",
+        "ガウチョシスター",
+        "カウボーイブラザー",
+        "タコスブラザー",
+        "チューリップシスター",
+        "ドラゴンシスター",
+        "ナイトブラザー",
+        "ニンジャブラザー",
+        "パンダブラザー",
+        "ヨーデルシスター",
+        "ロイヤルブラザー",
+        "ワイルドブラザー"
+      ],
+      "source": "https://w.atwiki.jp/edfwb/pages/198.html"
+    },
+    {
+      "start": 22,
+      "end": 29,
+      "names": [
+        "陸戦兵(EDF1)",
+        "エアレイド(EDF2PV)",
+        "レンジャー(EDF5)",
+        "ウイングダイバー(EDF5)",
+        "タクティカル(EDF:IA)",
+        "バトル(EDF:IA)",
+        "ヘビーストライカー(EDF:IR)",
+        "ペイルウイング(EDF2)",
+        "陸戦兵(EDF3)",
+        "ペイルウイング(EDF3P)",
+        "エアレイダー(EDF4)",
+        "トルーパー(EDF:IA)",
+        "オーロラシスター",
+        "テンシンシスター",
+        "ベアブラザー",
+        "ボイジャーブラザー",
+        "メイドシスター",
+        "ヨガブラザー",
+        "カウボーイブラザー",
+        "ゲーエスゲーブラザー",
+        "コアラブラザー",
+        "サンバシスター",
+        "バズシスター",
+        "バロンブラザー",
+        "ハンターブラザー",
+        "ボクサーブラザー",
+        "マタドールブラザー",
+        "ヴァイキングブラザー"
+      ],
+      "source": "https://w.atwiki.jp/edfwb/pages/198.html"
+    },
+    {
+      "start": 30,
+      "end": 37,
+      "names": [
+        "陸戦兵(EDF2)",
+        "陸戦兵(EDF3P)バックパック装備",
+        "ウイングダイバー(EDF4)",
+        "フェンサー(EDF5)",
+        "プロールライダー(EDF:IR)",
+        "陸戦兵(EDF1)",
+        "エアレイド(EDF2PV)",
+        "レンジャー(EDF5)",
+        "ウイングダイバー(EDF5)",
+        "タクティカル(EDF:IA)",
+        "バトル(EDF:IA)",
+        "ヘビーストライカー(EDF:IR)",
+        "ファラオシスター",
+        "ベファーナシスター",
+        "レゴンシスター",
+        "オーロラシスター",
+        "カウボーイブラザー",
+        "テンシンシスター",
+        "ベアブラザー",
+        "ボイジャーブラザー",
+        "メイドシスター",
+        "ヨガブラザー",
+        "ヨーデルシスター",
+        "ロイヤルブラザー"
+      ],
+      "source": "https://w.atwiki.jp/edfwb/pages/198.html"
+    }
+  ],
+  "missions": [
+    {
+      "number": 1,
+      "extra": false,
+      "title": "バラバラの大地に立つ！",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 279
+    },
+    {
+      "number": 2,
+      "extra": false,
+      "title": "ブラザーは地球の接着剤",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 280
+    },
+    {
+      "number": 3,
+      "extra": false,
+      "title": "カウボーイブラザー登場！",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 281
+    },
+    {
+      "number": 4,
+      "extra": false,
+      "title": "ベイザル出現！",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 282
+    },
+    {
+      "number": 5,
+      "extra": false,
+      "title": "激突！マザーシップ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 283
+    },
+    {
+      "number": 6,
+      "extra": false,
+      "title": "あれは何じゃ？何なんじゃ？",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 284
+    },
+    {
+      "number": 7,
+      "extra": false,
+      "title": "Miso Soup",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 285
+    },
+    {
+      "number": 8,
+      "extra": false,
+      "title": "材料探し",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 286
+    },
+    {
+      "number": 9,
+      "extra": false,
+      "title": "飢える世界",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 287
+    },
+    {
+      "number": 10,
+      "extra": false,
+      "title": "指揮官はだれ？",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 288
+    },
+    {
+      "number": 11,
+      "extra": false,
+      "title": "一匹狼",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 289
+    },
+    {
+      "number": 12,
+      "extra": false,
+      "title": "ヘクトル大部隊",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 290
+    },
+    {
+      "number": 13,
+      "extra": false,
+      "title": "さあ、指揮官はだれ？",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 291
+    },
+    {
+      "number": 14,
+      "extra": false,
+      "title": "エリート陸戦兵",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 292
+    },
+    {
+      "number": 15,
+      "extra": false,
+      "title": "商魂は世界を繋ぐ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 293
+    },
+    {
+      "number": 16,
+      "extra": false,
+      "title": "インセクト・ウェーブ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 294
+    },
+    {
+      "number": 17,
+      "extra": false,
+      "title": "一握の勇気",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 295
+    },
+    {
+      "number": 18,
+      "extra": false,
+      "title": "頭上注意",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 296
+    },
+    {
+      "number": 19,
+      "extra": false,
+      "title": "ベアブラザーのハニーハント",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 297
+    },
+    {
+      "number": 20,
+      "extra": false,
+      "title": "銀の防衛網",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 298
+    },
+    {
+      "number": 21,
+      "extra": false,
+      "title": "ハチミツ強奪作戦",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 299
+    },
+    {
+      "number": 22,
+      "extra": false,
+      "title": "英国の悪夢",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 300
+    },
+    {
+      "number": 23,
+      "extra": false,
+      "title": "メイドのくにへ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 301
+    },
+    {
+      "number": 24,
+      "extra": false,
+      "title": "プリズム・トーチカ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 302
+    },
+    {
+      "number": 25,
+      "extra": false,
+      "title": "発進！！未完の転用兵器",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 303
+    },
+    {
+      "number": 26,
+      "extra": false,
+      "title": "瓦解都市",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 304
+    },
+    {
+      "number": 27,
+      "extra": false,
+      "title": "伝説の男",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 305
+    },
+    {
+      "number": 28,
+      "extra": false,
+      "title": "奪われた街",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 306
+    },
+    {
+      "number": 29,
+      "extra": false,
+      "title": "新たなる伝説",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 307
+    },
+    {
+      "number": 30,
+      "extra": false,
+      "title": "ファラオの目覚め",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 308
+    },
+    {
+      "number": 31,
+      "extra": false,
+      "title": "壁画の予言",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 309
+    },
+    {
+      "number": 32,
+      "extra": false,
+      "title": "文化財も守るぞ、EDF！",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 310
+    },
+    {
+      "number": 33,
+      "extra": false,
+      "title": "赤い悪魔",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 311
+    },
+    {
+      "number": 34,
+      "extra": false,
+      "title": "〖驚愕〗EDFと怪獣が戦った結果・・・",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 312
+    },
+    {
+      "number": 35,
+      "extra": false,
+      "title": "不期遭遇戦",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 313
+    },
+    {
+      "number": 36,
+      "extra": false,
+      "title": "エルギヌスを追撃せよ！",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 314
+    },
+    {
+      "number": 37,
+      "extra": false,
+      "title": "母船に一言物申す",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 315
+    },
+    {
+      "number": 38,
+      "extra": false,
+      "title": "雷光、ふたたび･･･",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 316
+    },
+    {
+      "number": 39,
+      "extra": false,
+      "title": "光の城",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 317
+    },
+    {
+      "number": 40,
+      "extra": false,
+      "title": "この作戦が終わったら",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 318
+    },
+    {
+      "number": 41,
+      "extra": false,
+      "title": "よし守ろう",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 319
+    },
+    {
+      "number": 42,
+      "extra": false,
+      "title": "怪生物退治の専門家",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 320
+    },
+    {
+      "number": 43,
+      "extra": false,
+      "title": "倒せ！火を吐く巨大生物",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 321
+    },
+    {
+      "number": 44,
+      "extra": false,
+      "title": "君にも見える、護りの星",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 322
+    },
+    {
+      "number": 45,
+      "extra": false,
+      "title": "友人は、光とともにやってくる",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 323
+    },
+    {
+      "number": 46,
+      "extra": false,
+      "title": "もっと力が欲しいと願うとき",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 324
+    },
+    {
+      "number": 47,
+      "extra": false,
+      "title": "進化狂乱",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 325
+    },
+    {
+      "number": 48,
+      "extra": false,
+      "title": "老兵と砂漠",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 326
+    },
+    {
+      "number": 49,
+      "extra": false,
+      "title": "噴出",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 327
+    },
+    {
+      "number": 50,
+      "extra": false,
+      "title": "戦場より愛をこめて",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 328
+    },
+    {
+      "number": 51,
+      "extra": false,
+      "title": "破滅を編む者達",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 329
+    },
+    {
+      "number": 52,
+      "extra": false,
+      "title": "城攻め",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 330
+    },
+    {
+      "number": 53,
+      "extra": false,
+      "title": "空中分解",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 331
+    },
+    {
+      "number": 54,
+      "extra": false,
+      "title": "絶望包囲",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 332
+    },
+    {
+      "number": 55,
+      "extra": false,
+      "title": "黒幕",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 333
+    },
+    {
+      "number": 56,
+      "extra": false,
+      "title": "絶望の先へ",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 334
+    },
+    {
+      "number": 57,
+      "extra": false,
+      "title": "バッド・エンド",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 335
+    },
+    {
+      "number": 58,
+      "extra": false,
+      "title": "冥府下り",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 336
+    },
+    {
+      "number": 59,
+      "extra": false,
+      "title": "光",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 337
+    },
+    {
+      "number": 60,
+      "extra": false,
+      "title": "Story of Our･･･",
+      "source": "https://w.atwiki.jp/edfwb/pages/8.html",
+      "sourceLine": 338
+    },
+    {
+      "number": 1,
+      "extra": true,
+      "title": "侵略者再び",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 264
+    },
+    {
+      "number": 2,
+      "extra": true,
+      "title": "要塞",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 326
+    },
+    {
+      "number": 3,
+      "extra": true,
+      "title": "魔獣の群れ",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 381
+    },
+    {
+      "number": 4,
+      "extra": true,
+      "title": "龍虫",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 429
+    },
+    {
+      "number": 5,
+      "extra": true,
+      "title": "要塞急襲作戦",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 480
+    },
+    {
+      "number": 6,
+      "extra": true,
+      "title": "激突",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 542
+    },
+    {
+      "number": 7,
+      "extra": true,
+      "title": "空爆",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 615
+    },
+    {
+      "number": 8,
+      "extra": true,
+      "title": "百脚龍虫",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 702
+    },
+    {
+      "number": 9,
+      "extra": true,
+      "title": "巨人たちの戦場",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 773
+    },
+    {
+      "number": 10,
+      "extra": true,
+      "title": "要塞攻略作戦",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 896
+    },
+    {
+      "number": 11,
+      "extra": true,
+      "title": "死角なき蹂躙",
+      "source": "https://w.atwiki.jp/edfwb/pages/233.html",
+      "sourceLine": 1013
+    }
+  ],
+  "sources": [
+    "https://w.atwiki.jp/edfwb/pages/29.html",
+    "https://w.atwiki.jp/edfwb/pages/30.html",
+    "https://w.atwiki.jp/edfwb/pages/31.html",
+    "https://w.atwiki.jp/edfwb/pages/32.html",
+    "https://w.atwiki.jp/edfwb/pages/33.html",
+    "https://w.atwiki.jp/edfwb/pages/34.html",
+    "https://w.atwiki.jp/edfwb/pages/35.html",
+    "https://w.atwiki.jp/edfwb/pages/36.html",
+    "https://w.atwiki.jp/edfwb/pages/37.html",
+    "https://w.atwiki.jp/edfwb/pages/38.html",
+    "https://w.atwiki.jp/edfwb/pages/28.html",
+    "https://w.atwiki.jp/edfwb/pages/57.html",
+    "https://w.atwiki.jp/edfwb/pages/79.html",
+    "https://w.atwiki.jp/edfwb/pages/69.html",
+    "https://w.atwiki.jp/edfwb/pages/80.html",
+    "https://w.atwiki.jp/edfwb/pages/77.html",
+    "https://w.atwiki.jp/edfwb/pages/82.html",
+    "https://w.atwiki.jp/edfwb/pages/83.html",
+    "https://w.atwiki.jp/edfwb/pages/68.html",
+    "https://w.atwiki.jp/edfwb/pages/52.html",
+    "https://w.atwiki.jp/edfwb/pages/53.html",
+    "https://w.atwiki.jp/edfwb/pages/41.html",
+    "https://w.atwiki.jp/edfwb/pages/70.html",
+    "https://w.atwiki.jp/edfwb/pages/85.html",
+    "https://w.atwiki.jp/edfwb/pages/78.html",
+    "https://w.atwiki.jp/edfwb/pages/55.html",
+    "https://w.atwiki.jp/edfwb/pages/86.html",
+    "https://w.atwiki.jp/edfwb/pages/56.html",
+    "https://w.atwiki.jp/edfwb/pages/87.html",
+    "https://w.atwiki.jp/edfwb/pages/54.html",
+    "https://w.atwiki.jp/edfwb/pages/88.html",
+    "https://w.atwiki.jp/edfwb/pages/74.html",
+    "https://w.atwiki.jp/edfwb/pages/76.html",
+    "https://w.atwiki.jp/edfwb/pages/43.html",
+    "https://w.atwiki.jp/edfwb/pages/110.html",
+    "https://w.atwiki.jp/edfwb/pages/109.html",
+    "https://w.atwiki.jp/edfwb/pages/95.html",
+    "https://w.atwiki.jp/edfwb/pages/112.html",
+    "https://w.atwiki.jp/edfwb/pages/42.html",
+    "https://w.atwiki.jp/edfwb/pages/47.html",
+    "https://w.atwiki.jp/edfwb/pages/99.html",
+    "https://w.atwiki.jp/edfwb/pages/89.html",
+    "https://w.atwiki.jp/edfwb/pages/105.html",
+    "https://w.atwiki.jp/edfwb/pages/90.html",
+    "https://w.atwiki.jp/edfwb/pages/100.html",
+    "https://w.atwiki.jp/edfwb/pages/116.html",
+    "https://w.atwiki.jp/edfwb/pages/107.html",
+    "https://w.atwiki.jp/edfwb/pages/60.html",
+    "https://w.atwiki.jp/edfwb/pages/44.html",
+    "https://w.atwiki.jp/edfwb/pages/92.html",
+    "https://w.atwiki.jp/edfwb/pages/93.html",
+    "https://w.atwiki.jp/edfwb/pages/98.html",
+    "https://w.atwiki.jp/edfwb/pages/67.html",
+    "https://w.atwiki.jp/edfwb/pages/117.html",
+    "https://w.atwiki.jp/edfwb/pages/108.html",
+    "https://w.atwiki.jp/edfwb/pages/106.html",
+    "https://w.atwiki.jp/edfwb/pages/111.html",
+    "https://w.atwiki.jp/edfwb/pages/96.html",
+    "https://w.atwiki.jp/edfwb/pages/94.html",
+    "https://w.atwiki.jp/edfwb/pages/97.html",
+    "https://w.atwiki.jp/edfwb/pages/113.html",
+    "https://w.atwiki.jp/edfwb/pages/91.html",
+    "https://w.atwiki.jp/edfwb/pages/103.html",
+    "https://w.atwiki.jp/edfwb/pages/58.html",
+    "https://w.atwiki.jp/edfwb/pages/115.html",
+    "https://w.atwiki.jp/edfwb/pages/114.html",
+    "https://w.atwiki.jp/edfwb/pages/46.html",
+    "https://w.atwiki.jp/edfwb/pages/101.html",
+    "https://w.atwiki.jp/edfwb/pages/59.html",
+    "https://w.atwiki.jp/edfwb/pages/45.html",
+    "https://w.atwiki.jp/edfwb/pages/102.html",
+    "https://w.atwiki.jp/edfwb/pages/73.html",
+    "https://w.atwiki.jp/edfwb/pages/196.html",
+    "https://w.atwiki.jp/edfwb/pages/104.html",
+    "https://w.atwiki.jp/edfwb/pages/219.html",
+    "https://w.atwiki.jp/edfwb/pages/123.html",
+    "https://w.atwiki.jp/edfwb/pages/81.html",
+    "https://w.atwiki.jp/edfwb/pages/129.html",
+    "https://w.atwiki.jp/edfwb/pages/200.html",
+    "https://w.atwiki.jp/edfwb/pages/201.html",
+    "https://w.atwiki.jp/edfwb/pages/199.html",
+    "https://w.atwiki.jp/edfwb/pages/216.html",
+    "https://w.atwiki.jp/edfwb/pages/217.html",
+    "https://w.atwiki.jp/edfwb/pages/218.html",
+    "https://w.atwiki.jp/edfwb/pages/215.html",
+    "https://w.atwiki.jp/edfwb/pages/131.html",
+    "https://w.atwiki.jp/edfwb/pages/128.html",
+    "https://w.atwiki.jp/edfwb/pages/84.html",
+    "https://w.atwiki.jp/edfwb/pages/130.html",
+    "https://w.atwiki.jp/edfwb/pages/124.html",
+    "https://w.atwiki.jp/edfwb/pages/48.html",
+    "https://w.atwiki.jp/edfwb/pages/49.html",
+    "https://w.atwiki.jp/edfwb/pages/50.html",
+    "https://w.atwiki.jp/edfwb/pages/51.html",
+    "https://w.atwiki.jp/edfwb/pages/198.html",
+    "https://w.atwiki.jp/edfwb/pages/8.html",
+    "https://w.atwiki.jp/edfwb/pages/233.html"
+  ]
+}

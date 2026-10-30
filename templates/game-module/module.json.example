@@ -1,0 +1,13 @@
+{
+  "gameId": "your-game",
+  "slug": "your-game",
+  "title": "遊戲名稱",
+  "moduleVersion": "0.1.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/your-game/",
+  "storagePrefix": "game-companion.your-game.",
+  "driveProjectId": "game-companion.your-game",
+  "driveFileName": "game-companion.your-game.progress.v1.json",
+  "cloudWritesEnabled": false
+}

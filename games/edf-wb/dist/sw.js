@@ -1,0 +1,5 @@
+const CACHE='game-companion.edf-wb.assets.v1';
+const prefix='game-companion.edf-wb.assets.';
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./app.js','./style.css','./usability.css','./data.js','./details.js','./character-accessories.js','./translations.js','./acquisition.js','./mission-facts.js','./missions.js','./recommendations.js','./content.js','./cloud-config.js','./shared/progress-envelope.js','./shared/google-auth.js','./shared/drive-appdata.js','./cloud-sync.js','./migration.js','./migration.css'])));self.skipWaiting();});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(prefix)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||!e.request.url.startsWith(self.registration.scope))return;e.respondWith(fetch(e.request).then(r=>{if(r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}return r;}).catch(()=>caches.open(CACHE).then(c=>c.match(e.request)).then(r=>r||Response.error())));});

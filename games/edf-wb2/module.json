@@ -1,0 +1,15 @@
+{
+  "gameId": "edf-wb2",
+  "slug": "edf-wb2",
+  "title": "EDF World Brothers 2",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/edf-wb2/",
+  "storagePrefix": "game-companion.edf-wb2.",
+  "driveProjectId": "game-companion.edf-wb2",
+  "driveFileName": "game-companion.edf-wb2.progress.v1.json",
+  "cloudWritesEnabled": false,
+  "sourceCommit": "c49be804b91ce463bfb833b791edf468a80792dd",
+  "legacyUrl": "https://promise82114.github.io/edfwb2-checklist/"
+}

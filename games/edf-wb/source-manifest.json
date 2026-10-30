@@ -1,0 +1,149 @@
+{
+  "repository": "https://github.com/promise82114/edfwb-checklist",
+  "branch": "main",
+  "commit": "766e4ba5fa1535ac78bc0559cba57c8c3bb6b7b2",
+  "importedAt": "2026-10-31",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "5214f392b471800692baf69a6471e08d09bc98eec5c07ecd3f2869aedd907bc0",
+      "sha256LF": "e6d232677ce1d14b5c7181ca3cef5e12c52f830431aea0a953dce8c6aecc9056"
+    },
+    {
+      "path": "data/localization-fallback.json",
+      "sha256": "19f9caca37602e46d5a33397ea29ea0a219c3c0c227a894c061a494e506a8026",
+      "sha256LF": "19f9caca37602e46d5a33397ea29ea0a219c3c0c227a894c061a494e506a8026"
+    },
+    {
+      "path": "data/localization-reference.json",
+      "sha256": "8d75fdd5cb8c1fd8e9d3427040bbdc9af286d2f62d42bdd6fc477b3ffbbba818",
+      "sha256LF": "8d75fdd5cb8c1fd8e9d3427040bbdc9af286d2f62d42bdd6fc477b3ffbbba818"
+    },
+    {
+      "path": "data/wiki-facts.json",
+      "sha256": "b61fc98433dbc1de00ca50a2d1853d2aee75ed567aa678192a1dfa4e8622f02e",
+      "sha256LF": "b61fc98433dbc1de00ca50a2d1853d2aee75ed567aa678192a1dfa4e8622f02e"
+    },
+    {
+      "path": "dist/acquisition.js",
+      "sha256": "4366734ea3dd639b7d06b06bcf6ddee4fafe127a433b3c4ea70d17443dd3078b",
+      "sha256LF": "4366734ea3dd639b7d06b06bcf6ddee4fafe127a433b3c4ea70d17443dd3078b"
+    },
+    {
+      "path": "dist/app.js",
+      "sha256": "42f2f94757a2b457daef131030d6ae19a9188427a5055d2cb7f1725e712af5fe",
+      "sha256LF": "42f2f94757a2b457daef131030d6ae19a9188427a5055d2cb7f1725e712af5fe"
+    },
+    {
+      "path": "dist/character-accessories.js",
+      "sha256": "1cf75d91510c4d9cb0ee19d6d7afc96e28d340b9e56319a080844a828435d988",
+      "sha256LF": "1cf75d91510c4d9cb0ee19d6d7afc96e28d340b9e56319a080844a828435d988"
+    },
+    {
+      "path": "dist/cloud-config.js",
+      "sha256": "5f88a22099ef83ae6bc9332eac221f5363fb4a476e0f6ea2ae699eb715297bc1",
+      "sha256LF": "5f88a22099ef83ae6bc9332eac221f5363fb4a476e0f6ea2ae699eb715297bc1"
+    },
+    {
+      "path": "dist/cloud-sync.js",
+      "sha256": "e7e2a91de17f659ece9263bc734f9ef9fe156353cfdf03aead52de0e750b4d09",
+      "sha256LF": "e7e2a91de17f659ece9263bc734f9ef9fe156353cfdf03aead52de0e750b4d09"
+    },
+    {
+      "path": "dist/content.js",
+      "sha256": "8df534cf726a3e4d5d53a38b3fd9630770720a14ac264b64f2a5e125766fb70a",
+      "sha256LF": "8df534cf726a3e4d5d53a38b3fd9630770720a14ac264b64f2a5e125766fb70a"
+    },
+    {
+      "path": "dist/data.js",
+      "sha256": "5be3c2049ff28e7b18ccb4eeaf023425488ec844f3781c44792dd00067b28664",
+      "sha256LF": "5be3c2049ff28e7b18ccb4eeaf023425488ec844f3781c44792dd00067b28664"
+    },
+    {
+      "path": "dist/details.js",
+      "sha256": "c1b7a0a57e4c857e9cbaccf6a50d49470a982d33fe8af323827ee715c42f6fbe",
+      "sha256LF": "c1b7a0a57e4c857e9cbaccf6a50d49470a982d33fe8af323827ee715c42f6fbe"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "6d3b9e12c1305a7a3571af3cf407a14196cb8cd010dcf80a14920a3f18a09987",
+      "sha256LF": "6d3b9e12c1305a7a3571af3cf407a14196cb8cd010dcf80a14920a3f18a09987"
+    },
+    {
+      "path": "dist/mission-facts.js",
+      "sha256": "f7c32d3f51ac4fbd8f7830f2e054c51b87d14ad0b133082f48c5777d11c8af91",
+      "sha256LF": "f7c32d3f51ac4fbd8f7830f2e054c51b87d14ad0b133082f48c5777d11c8af91"
+    },
+    {
+      "path": "dist/missions.js",
+      "sha256": "32df5ead9d22b394c0f7540d3ce82c5fd8d26db7ca70b9ca03c6da09b513e550",
+      "sha256LF": "32df5ead9d22b394c0f7540d3ce82c5fd8d26db7ca70b9ca03c6da09b513e550"
+    },
+    {
+      "path": "dist/recommendations.js",
+      "sha256": "4495bd488459377c0a621d2c6c109c666b1094c71980091892f1af73464f4a67",
+      "sha256LF": "4495bd488459377c0a621d2c6c109c666b1094c71980091892f1af73464f4a67"
+    },
+    {
+      "path": "dist/shared/drive-appdata.js",
+      "sha256": "f92d7ff0c8251003aa1356a7fdc5a7619e10ad497a6ff09c1c05ed327db089c5",
+      "sha256LF": "f92d7ff0c8251003aa1356a7fdc5a7619e10ad497a6ff09c1c05ed327db089c5"
+    },
+    {
+      "path": "dist/shared/google-auth.js",
+      "sha256": "d0f017be23e3d763dc12143f5b2e33897866ae11cfc08958da23779e9e61ac98",
+      "sha256LF": "d0f017be23e3d763dc12143f5b2e33897866ae11cfc08958da23779e9e61ac98"
+    },
+    {
+      "path": "dist/shared/progress-envelope.js",
+      "sha256": "1f4b6acb8de82c8d5d1879c9d56d188eea13e54bf6110500470eb8b0b3dd1f9c",
+      "sha256LF": "1f4b6acb8de82c8d5d1879c9d56d188eea13e54bf6110500470eb8b0b3dd1f9c"
+    },
+    {
+      "path": "dist/style.css",
+      "sha256": "dbf6b3d61d9e7be8e8ea64a421d01f4823c5c37cd3b8620a770fa36201d157a5",
+      "sha256LF": "dbf6b3d61d9e7be8e8ea64a421d01f4823c5c37cd3b8620a770fa36201d157a5"
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "5bcb8b69c94d2ea220ea1407a415767baa438124da5028e0358e5bfa8694341d",
+      "sha256LF": "5bcb8b69c94d2ea220ea1407a415767baa438124da5028e0358e5bfa8694341d"
+    },
+    {
+      "path": "dist/translations.js",
+      "sha256": "c41566b67e8b1a980f7a36a56fc6a4ff10c7678e2a2ed2380dbfce7b92f8f7b9",
+      "sha256LF": "c41566b67e8b1a980f7a36a56fc6a4ff10c7678e2a2ed2380dbfce7b92f8f7b9"
+    },
+    {
+      "path": "dist/usability.css",
+      "sha256": "405f15cfb51c559b29c65043bae27ef1c4415af1596102e66e1517631bd11e76",
+      "sha256LF": "405f15cfb51c559b29c65043bae27ef1c4415af1596102e66e1517631bd11e76"
+    },
+    {
+      "path": "docs/data-review.md",
+      "sha256": "25cd3cf69f02c69182fe044d441451267c2b177d4a44dd9a7d25c9ca8176a79d",
+      "sha256LF": "25cd3cf69f02c69182fe044d441451267c2b177d4a44dd9a7d25c9ca8176a79d"
+    },
+    {
+      "path": "docs/reference-translations.md",
+      "sha256": "390bdbc55fc3a1cd351c94d561a16d05f021136717bb0a0866387b1f5e5d5f17",
+      "sha256LF": "390bdbc55fc3a1cd351c94d561a16d05f021136717bb0a0866387b1f5e5d5f17"
+    },
+    {
+      "path": "scripts/build-data.mjs",
+      "sha256": "9520fecce285288132d8e5f2e66a932f211125f08c91b3ef8224523886a229da",
+      "sha256LF": "9520fecce285288132d8e5f2e66a932f211125f08c91b3ef8224523886a229da"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "40af5d490616058fb642d2fa421e4044fa985bf0090f58463d7afcdb4b1e913b",
+      "sha256LF": "40af5d490616058fb642d2fa421e4044fa985bf0090f58463d7afcdb4b1e913b"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "5c6dbea4993d84395b374a454b7f46cc8bf4f43869883166365fca3b188d627a",
+      "sha256LF": "5c6dbea4993d84395b374a454b7f46cc8bf4f43869883166365fca3b188d627a"
+    }
+  ],
+  "hashPolicy": "sha256 preserves original checkout bytes; sha256LF normalizes CRLF to LF for cross-platform verification"
+}
