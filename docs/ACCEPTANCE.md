@@ -1,6 +1,6 @@
 # 驗收結果與限制
 
-日期：2026-10-31。兩款模組 1.1.0；已依使用者要求準備正式網域發布。真實 Google Drive 測試由使用者上線後執行，本機合成測試不能代替它。
+日期：2026-10-31。兩款模組 1.1.0；已依使用者要求發布至正式網域。真實 Google Drive 測試由使用者上線後執行，本機合成測試不能代替它。
 
 | 項目 | 實際結果與界線 |
 | --- | --- |
@@ -13,7 +13,7 @@
 | 遠端競爭 | 合成 HTTP mock 驗證 stale 412、parallel 一勝一拒；忽略 If-Match 的 mock 被拒。真實 Google 尚未測試；每次授權需在獨立測試檔通過後才能寫新站進度 |
 | 寫入保護 | 未驗證 adapter.write／公開非 GET request 均在 Token／網路前拒絕；已驗證 PATCH 必帶 strong If-Match；不存在無條件降級 |
 | artifact | verify、build、verify-site、guard 通過；50 個網站檔／56 個本地引用。同步 Node 回歸加入 Pages workflow |
-| 發布 | 首發已成功；本次同步版的提交／Actions／正式資源檢查記錄在 DRIVE_SYNC_REPORT.md |
+| 發布 | 同步版 eb9e5dd 的 Actions 41126649205／Deployment 7448565975 成功；49 個正式資源 hash 與本機一致、四入口 200，記錄在 DRIVE_SYNC_REPORT.md |
 
 尚未取得的證據：真實 OAuth／appDataFolder、新舊 API ETag 相容性、真實 If-Match 原子競爭、跨裝置使用、真實手機與非 Edge 瀏覽器。每次授權的實際檢查失敗會停止寫入；沒有用 mock 宣稱遠端問題已解決。
 

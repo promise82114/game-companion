@@ -66,4 +66,9 @@
 
 ## 發布證據
 
-本次發布進行中；完成後補記提交、Actions、Deployment 與正式網站產物核對。歷史首發見 INTEGRATION_REPORT.md。
+- 程式提交：eb9e5dd1742e6851deedd36e3f40710dbfc8b60b，feat(sync): 加入 EDF 三方同步與每次授權條件寫入驗證；49 檔。以非強制 atomic fast-forward 同步遠端 develop／main，本機 main 亦 fast-forward。
+- GitHub Actions：[41126649205](https://github.com/promise82114/game-companion/actions/runs/41126649205)，上述 SHA，completed／success。Linux Node 24 的 verify、verify-sync、build、verify-site、artifact 與 deploy 全部成功。
+- GitHub Deployment：7448565975，github-pages，對應上述 SHA，success；沒有修改 Pages Source 或 Google 設定。
+- 正式 49 個 HTML／JS／CSS HTTP GET 均為 200，LF 正規化 SHA-256 與本機 artifact 全數一致；另檢查 Portal、WB、WB2、sync-safety 四入口皆 200。本次網路核對不執行玩家網頁 JS、不登入 Google。
+- 文件補記另行提交；網站程式與上述測試產物不變。最新 main 狀態可查 [Pages workflow](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml)。
+- 尚待使用者在正式網域完成 real Drive probe；沒有把發布成功視為雲端驗證成功。歷史首發見 INTEGRATION_REPORT.md。
