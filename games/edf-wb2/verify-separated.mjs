@@ -10,7 +10,7 @@ try{
  const groups=await page.evaluate(()=>Object.fromEntries(['weapons','characters','accessories','dlcWeapons','dlcCharacters'].map(key=>{const kind=key==='dlcWeapons'?'weapons':key==='dlcCharacters'?'characters':key;const extra=key.startsWith('dlc');return [key,window.EDF_CATALOG.items.filter(i=>i.kind===kind&&!window.EDF_CONTENT.excluded.includes(i.id)&&(kind==='accessories'||!!i.extra===extra)).map(i=>({id:i.id,variant:i.variant}))];})));
  assert.equal(groups.weapons.length+groups.dlcWeapons.length,685);assert.equal(groups.characters.length+groups.dlcCharacters.length,313);
  const cards=await page.locator('#stats .stat').evaluateAll(es=>es.map(e=>({key:e.dataset.stat,top:e.offsetTop})));
- assert.equal(cards.length,5);assert.ok(cards.every(card=>card.top===cards[0].top));
+ assert.equal(cards.length,5);assert.equal(cards[0].top,cards[2].top);assert.ok(cards[3].top>cards[0].top);assert.equal(cards[3].top,cards[4].top);
  const owned=[];
  for(const key of Object.keys(groups)){
   await page.locator(`[data-stat="${key}"]`).click();assert.equal(await page.locator('#filter .active').getAttribute('data-filter'),'missing');
@@ -29,7 +29,6 @@ try{
  await page.locator('[data-stat="weapons"]').click();await page.screenshot({path:'outputs/separated-desktop.png'});
  assert.ok(await page.locator('.table-scroll').evaluate(e=>e.clientHeight)>150);
  await page.setViewportSize({width:390,height:844});await page.screenshot({path:'outputs/separated-mobile.png'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
- await page.locator('#progressOverview > summary').click();
  for(const key of Object.keys(groups)){await page.locator(`[data-stat="${key}"]`).click();assert.equal(await page.locator('#list tr').count(),groups[key].length-1);}
- assert.deepEqual(errors,[]);console.log('PASS: compact desktop progress strip, expandable mobile progress, separate base/DLC lists and progress/LV counts, missing defaults, reset stays in tab, preserved IDs/reload, mission scope, mobile and desktop');
+ assert.deepEqual(errors,[]);console.log('PASS: two-row cards, separate base/DLC lists and progress/LV counts, missing defaults, reset stays in tab, preserved IDs/reload, mission scope, mobile and desktop');
 }finally{await browser.close();}

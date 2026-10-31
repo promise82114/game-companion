@@ -4,18 +4,11 @@
 
 同步擴充的現況、測試、檔案與限制見 [DRIVE_SYNC_REPORT.md](DRIVE_SYNC_REPORT.md)。下方為初次整合與首發歷史，當時的「停用」不代表目前程式策略。
 
-## UI 視覺優化（2026-10-31）
+## UI 改版撤回（2026-10-31）
 
-依使用者本次要求使用 design-taste-frontend 技能，採 Achromatic ledger（seed 1538520587，無重抽）。Portal 改為同框遊戲目錄；兩款手帳使用淺色上方分類列、統一數字與文字對比、白色清單與藍色收集進度。各模組新增自己的 `dist/notebook.css`／`notebook.js`，沒有中央 UI runtime 或框架遷移。
+使用者試看正式站後要求還原。本輪以反向提交撤回 `b8765fa1caa4331c73f7ccda573bf0dd4d6ea870` 的 UI、相關測試與目錄產生變更，回復 `1116180` 的原有介面；保留 Git 歷史。兩款遊戲的 SW cache 另升至各自的 `assets.v4`，移除改版資源並清理同遊戲舊版快取，避免離線留下改版畫面。資料、進度、備份及同步邏輯未變更。
 
-手機將進度總覽、完整資料說明、進階篩選與二代角色配件條件設為可展開區，保留搜尋、取得狀態與原始欄位。清單名稱改為可見 h1，補上跳至清單、鍵盤焦點、篩選摘要及選取狀態；設定、備份、錯誤與空資料狀態沿用原流程。SW 增列兩個視覺資源並升至各遊戲的 assets.v3，清理前綴不變。
-
-- 資料與產物：`verify.mjs`、`build.mjs`、`verify-site.mjs` 通過，產物 54 個檔案、60 個本機資源連結。
-- 隔離瀏覽器：`verify-browser.mjs` 通過兩遊戲的勾選、復原、重載、搜尋、DLC、跨分頁、匯入保護、未知資料保留、過期預覽封鎖、配額失敗、未驗證雲端封鎖、離線與舊 Key／cache 隔離；新增手機 disclosure、鍵盤篩選、跨斷點與空清單復原檢查。
-- 二代既有 12 項 suite 中 10 項首輪通過；原本寫死舊版進度排列／手機展開狀態的斷言依新 UI 調整，重跑 `verify-separated.mjs`、`verify-mission-tabs.mjs` 與 `verify-character-accessories.mjs` 全數通過，保留資料與行為斷言。
-- 視覺：Portal 與兩手帳均檢查 1440、768、390px，最終 0 FAIL；一代手機保留一個 12px 次要註記比例 WARN，二代與 Portal 無 WARN。另檢視分類、空收藏、DLC、設定、備份與雲端視窗。自評整體 7.5／10，主要限制是手機多欄表格仍需在表格內橫向滑動，以及遊戲識別仍以文字與 E1／E2 為主。
-
-使用者後續已授權本輪 commit、push 與 GitHub Pages 發布，於正式站自行測試 UI；發布使用既有 main workflow，可由 [Pages workflow](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 核對對應提交的執行結果。發布前重跑 `verify.mjs`、`verify-sync.mjs`、`build.mjs`、`verify-site.mjs`，皆通過。原 repo、攻略／翻譯／ID、`source-manifest.json` 與實際 Google 帳號未操作；真實 Drive 驗收狀態不變。
+資料、同步合成回歸、建置與產物檢查皆通過（50 個產物檔、56 個本機連結）；隔離瀏覽器回歸通過兩款遊戲的操作與資料保護，並確認 v3 UI 快取清除後原介面可離線開啟，另一遊戲的快取仍保留。依本次還原要求同步推送 develop／main 並透過既有 Pages workflow 發布。
 
 ## 後續授權與首次發布紀錄
 

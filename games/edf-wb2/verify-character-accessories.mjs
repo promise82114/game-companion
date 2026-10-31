@@ -60,7 +60,7 @@ try{
  await page.locator('[data-tab="characters"]').click();await input('foot').check();
  await page.screenshot({path:'outputs/character-accessories-desktop.png'});
  assert.ok(await page.locator('.table-scroll').evaluate(e=>e.clientHeight)>150);
- await page.setViewportSize({width:390,height:844});await page.locator('.equipment-filters > summary').click();await page.locator('#characterAccessoryFilters').scrollIntoViewIfNeeded();
+ await page.setViewportSize({width:390,height:844});await page.locator('#characterAccessoryFilters').scrollIntoViewIfNeeded();
  await page.screenshot({path:'outputs/character-accessories-mobile.png'});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
  assert.equal(await page.locator('#characterAccessoryFilters').evaluate(e=>e.scrollWidth<=e.clientWidth),true);
