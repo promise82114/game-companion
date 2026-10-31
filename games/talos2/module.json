@@ -1,0 +1,15 @@
+{
+  "gameId": "talos2",
+  "slug": "talos2",
+  "title": "The Talos Principle II",
+  "description": "PS5 本體白金 Roadmap · 階段追蹤、不可逆提醒與三市長分歧",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/talos2/",
+  "storagePrefix": "game-companion.talos2.",
+  "driveProjectId": "game-companion.talos2",
+  "driveFileName": "game-companion.talos2.progress.v1.json",
+  "cloudWritesEnabled": true,
+  "cloudSafety": "per-grant-conditional-probe"
+}

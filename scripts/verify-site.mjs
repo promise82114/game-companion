@@ -27,5 +27,11 @@ const roadmap=JSON.parse(await fs.readFile(path.join(thankGoodness,'guide.json')
 assert.equal(roadmap.trophies.length,33);
 for(const file of ['model.js','app.js','sw.js','shared/sync-core.js','shared/sync-session.js','shared/drive-appdata.js'])await fs.access(path.join(thankGoodness,file));
 assert.ok((await fs.readFile(path.join(thankGoodness,'index.html'),'utf8')).includes('href="../../"'));
+const talos=path.join(root,'games/talos2');
+for(const file of ['index.html','data.js','app.js','roadmap/model.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js','shared/drive-appdata.js'])await fs.access(path.join(talos,file));
+assert.ok((await fs.readFile(path.join(talos,'index.html'),'utf8')).includes('href="../../"'));
+assert.ok((await fs.readFile(path.join(talos,'data.js'),'utf8')).includes("storagePrefix:'game-companion.talos2.'"));
+assert.ok((await fs.readFile(path.join(talos,'roadmap/store.js'),'utf8')).includes('indexedDB.open'));
+assert.ok((await fs.readFile(path.join(talos,'shared/drive-appdata.js'),'utf8')).includes("'If-Match':etag"));
 const moduleCount=(await fs.readdir(path.join(root,'games'),{withFileTypes:true})).filter(entry=>entry.isDirectory()).length;
 console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:moduleCount}));

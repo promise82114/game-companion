@@ -2,7 +2,7 @@
 
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
-目前包含 EDF World Brothers、EDF World Brothers 2、Mycopunk 與 Thank Goodness You're Here!。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
+目前包含 EDF World Brothers、EDF World Brothers 2、Mycopunk、The Talos Principle II 與 Thank Goodness You're Here!。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
 
 ## 本機使用
 
@@ -44,11 +44,18 @@ Mycopunk 已完成整合及本機驗證，納入既有 main 分支的 Pages 發�
 - `/game-companion/games/edf-wb/`
 - `/game-companion/games/edf-wb2/`
 - `/game-companion/games/mycopunk/`
+- `/game-companion/games/talos2/`
 - `/game-companion/games/thank-goodness-youre-here/`
 
 已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Drive 已提供具每次授權驗證門檻的手動同步；舊站入口未切換。
 
 Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io/game-companion/games/mycopunk/)。
+
+## Talos II 本體白金 Roadmap
+
+2026-10-31 新增 `/game-companion/games/talos2/`：八階段、57 步驟、本體 60 獎盃（DLC 9 排除），提供不可逆警示、三市長獨立追蹤與手動 PS5 備份註記。進度使用本遊戲獨立 IndexedDB；Drive 沿用既有安全 adapter 及每次授權驗證門檻。沒有修改原遊戲模組或替網站備份冒充 PS5 遊戲存檔。
+
+建置與資料驗證沿用上述命令；隔離瀏覽器執行 `node scripts/verify-talos2-browser.mjs`，`TEST_BASE_URL` 可設定本機網址。詳見 [Talos 模組](games/talos2/README.md) 與 [攻略查證／驗證報告](games/talos2/docs/RESEARCH.md)。官方逐盃數字 ID、部分英文對話與 PS5 分支重現仍待查證，已在介面標示。已接入 main 的 Pages 發布流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)。
 
 ## 維護文件
 

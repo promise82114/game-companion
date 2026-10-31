@@ -36,3 +36,13 @@ Thank Goodness You're Here!（2026-10-31 本機整合，模組 1.0.0）以獨立
 本機以每筆不可變操作及帶欄位版本的 checkpoint 保存，跨分頁操作可回放。同步結果以起始 Local 再 rebase 到最新 Local，最後寫入使用 expected-value 條件保留其他分頁新變更。較舊新站分頁改寫主 Key 時另存原文並要求預覽匯入。測試入口 tools/sync-safety 只操作唯一名稱的合成檔，不載入玩家進度。真實 Drive 測試尚待使用者於正式網域執行，限制詳見同步報告。
 
 GitHub workflow 驗證資料與每個必要模組，再建立並檢查完整 artifact，成功後才可部署。初次整合先完成本機驗證；後續依使用者明確授權完成 commit、push 與 GitHub Pages 首次發布，Actions 與正式 43 個網站資源驗證皆成功。發布證據見 `docs/reports/INTEGRATION_REPORT.md`。沒有改舊站或操作正式 Google 帳號。後續已依使用者授權加入具 runtime 驗證門檻的雲端功能；目前證據及發布狀態見 docs/reports/DRIVE_SYNC_REPORT.md。
+
+## Talos II Roadmap · 2026-10-31 本機整合
+
+`games/talos2/` 新增原生 ES module 畫面、靜態攻略與獨立 IndexedDB（schema 1）。八階段 57 步驟；本體 60 獎盃、DLC 9 排除。共用候選邏輯放在模組內 `dist/roadmap/`：狀態／篩選／風險計算與交易儲存皆不包含 Talos 專屬規則；遊戲內容、分支與前置在 `dist/data.js`。
+
+既有模組沒有中央獎盃系統或 IndexedDB。本次新增本遊戲 DB `game-companion.talos2.progress.v1`，以 `records/progress` 儲存 `steps`、`trophies`、`backups`、`branches`、`settings`；快照、匯入原文也在該 DB。每次寫入在同一 readwrite transaction 讀取最新資料，匯入以預覽原文條件檢查，雲端套用在交易內 rebase，避免跨分頁覆蓋。內容版本獨立，未知資料保留，資料不相容時停止並可下載原文，不用新空資料覆蓋。
+
+Google Auth、Drive adapter、progress envelope 與 EDF 安全版相同；Talos 的 sync-core 改群組，sync-session 等待非同步本機介面。Base／pending／復原仍保留既有遊戲與帳號隔離、逐 grant 合成檔條件寫入驗證、strong If-Match、三方衝突與結果未知復原。沒有新增 OAuth 流程、中央同步或 SW。正式 Google 仍未驗收。
+
+官方逐盃數字 ID 尚未核實，`trophyIds` 留空，名稱對照使用獨立 `trophyRefs`，不假冒 PSN ID。PS5 備份僅記錄使用者確認；清單 JSON／Drive 不是遊戲存檔。詳見 `games/talos2/docs/RESEARCH.md`。
