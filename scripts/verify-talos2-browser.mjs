@@ -39,13 +39,20 @@ try{
  await page.screenshot({path:'outputs/talos2/desktop.png',fullPage:false});
  await page.locator('[data-complete="calibration"]').check();await page.reload();await page.locator('[data-complete="calibration"]:checked').waitFor();
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
+ await page.locator('#open-backup').click();await page.locator('#backup-tools-dialog').waitFor();const quickBackup=page.waitForEvent('download');await page.locator('#export-progress').click();assert.equal(await (await quickBackup).failure(),null);await page.locator('[data-close="backup-tools-dialog"]').click();
  await page.locator('[data-view="trophies"]').click();await page.locator('[data-trophy="chicken"]').check();await page.waitForFunction(()=>document.getElementById('trophy-count').textContent.includes('1 '));
  await page.locator('[data-view="roadmap"]').click();assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
- await page.locator('[data-stage="P1"]').click();await page.locator('#stage-dialog').waitFor();assert.match(await page.locator('#stage-warning').textContent(),/Doge/);assert.equal(await page.locator('#stage-confirm').isDisabled(),true);await page.locator('#stage-cancel').click();
- await page.locator('[data-stage="P1"]').click();await page.locator('#stage-ack').check();await page.locator('#stage-confirm').click();await page.waitForFunction(()=>document.querySelector('[data-stage="P1"]').getAttribute('aria-current')==='step');
+ // 只看後期章節也可直接開始；切換只寫 currentStage，不代填早期進度或要求確認。
+ await page.locator('#chapter-select').selectOption('P7');await page.waitForFunction(()=>document.querySelector('[data-stage="P7"]').getAttribute('aria-current')==='step');assert.equal(await page.locator('dialog[open]').count(),0);
+ assert.match(await page.locator('.checkpoint').textContent(),/本章/);assert.doesNotMatch(await page.locator('.checkpoint').textContent(),/Doge/);
+ await page.reload();await page.waitForFunction(()=>document.getElementById('chapter-select')?.value==='P7');await page.locator('#continue').click();assert.match(page.url(),/#step-/);assert.equal(await page.locator('#chapter-select').inputValue(),'P7');
+ await page.locator('#chapter-select').selectOption('P1');await page.waitForFunction(()=>document.querySelector('[data-stage="P1"]').getAttribute('aria-current')==='step');
  assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
+ await page.locator('.branch-overview>summary').click();
  await page.locator('[data-branch="rand"]').selectOption('completed');await page.waitForFunction(()=>document.querySelector('[data-branch="rand"]').value==='completed');assert.equal(await page.locator('[data-branch="byron"]').inputValue(),'not_started');
- await page.locator('[data-filter="backup"]').click();assert.ok(await page.locator('.step').count()>0);await page.locator('[data-filter="all"]').click();
+ await page.locator('#filter').selectOption('backup');assert.ok(await page.locator('.step').count()>0);await page.locator('#filter').selectOption('all');
+ await page.locator('#search').fill('synthetic-no-match-834');assert.equal(await page.locator('.stage-list .empty').isVisible(),true);await page.locator('#search').fill('');
+ await page.locator('[data-stage="P0"]').click();await page.waitForFunction(()=>document.getElementById('chapter-select').value==='P0');
  await page.locator('[data-detail="save-safety"] summary').click();await page.locator('[data-backup="save-safety"]').click();await page.locator('#backup-ack').check();await page.locator('#backup-note').fill('synthetic PS5 timestamp only');await page.locator('#backup-confirm').click();await page.waitForFunction(()=>document.getElementById('step-save-safety').textContent.includes('synthetic PS5 timestamp only'));
  assert.equal(await page.locator('[data-complete="save-safety"]').isChecked(),false);
  // IDB 兩分頁讀取最新值再交易，不會用舊畫面整包覆蓋。
@@ -85,7 +92,7 @@ try{
  await page.locator('#sync-disconnect').click();assert.equal(await page.locator('#sync-start').isDisabled(),true);await page.locator('[data-close="sync-dialog"]').click();
  await page.locator('[data-view="roadmap"]').click();
  for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'overflow '+width);await page.screenshot({path:'outputs/talos2/'+width+'.png',fullPage:false});}
- await page.locator('[data-branch-detail="rand"] summary').click();await page.screenshot({path:'outputs/talos2/mobile-branch.png'});
+ await page.locator('#nav-toggle').click();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'true');await page.locator('[data-view="branches"]').click();await page.locator('[data-branch-detail="rand"] summary').click();await page.screenshot({path:'outputs/talos2/mobile-branch.png'});
  // 閉合階段中的深連結仍會展開目標；點擊下一步也可開啟未顯示篩選的步驟。
  await page.goto(url+'?view=roadmap#step-w2-backup');await page.waitForFunction(()=>document.querySelector('[data-detail="w2-backup"]')?.open===true);
  // 配額／IDB put 失敗時不重設，也不偷偷回退至他遊戲儲存。
@@ -95,6 +102,6 @@ try{
  await page.evaluate(async()=>{const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('game-companion.talos2.progress.v1',1);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite'),s=tx.objectStore('records'),r=s.get('progress');r.onsuccess=()=>s.put({...r.result,schema:999,syntheticCorruptMarker:'retain-original'},'progress');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();});await page.reload();await page.locator('#raw-recovery').waitFor();assert.match(await page.locator('#app').textContent(),/沒有重設/);const rawEvent=page.waitForEvent('download');await page.locator('#raw-recovery').click();const rawFile=await rawEvent,rawBundle=JSON.parse(await fs.readFile(await rawFile.path(),'utf8'));const rawProgress=rawBundle.records.find(r=>r.key==='progress').value;assert.equal(rawProgress.schema,999);assert.equal(rawProgress.syntheticCorruptMarker,'retain-original');assert.ok(Object.keys(rawBundle.syncState).every(key=>key.startsWith('game-companion.talos2.sync.')));
  assert.deepEqual(errors,[]);
  const forbidden=accesses.filter(a=>!a.key.startsWith('game-companion.talos2.'));assert.deepEqual(forbidden,[]);
- await fs.writeFile('outputs/talos2/browser-result.json',JSON.stringify({passed:true,checks:['portal/direct-route/reload','60 base/9 DLC excluded','independent trophies/steps/backups/branches','stage warning and acknowledgement','filters and deep links','IDB cross-tab transactions','unknown fields/raw archives','import stale preview/download failure/wrong game','synthetic OAuth/CAS gate/first pairing/three-way conflict','IDB in-flight edits/rebase','lost acknowledgement read-before-retry','corrupt/newer schema preserved and raw export','1440/768/390/320 no overflow','quota stops without reset','storage namespace isolation'],pageErrors:errors,storageAccesses:accesses.length},null,2));
+ await fs.writeFile('outputs/talos2/browser-result.json',JSON.stringify({passed:true,checks:['portal/direct-route/reload','60 base/9 DLC excluded','independent trophies/steps/backups/branches','direct chapter selection without blocking or changing prior steps','filters and deep links','IDB cross-tab transactions','unknown fields/raw archives','import stale preview/download failure/wrong game','synthetic OAuth/CAS gate/first pairing/three-way conflict','IDB in-flight edits/rebase','lost acknowledgement read-before-retry','corrupt/newer schema preserved and raw export','1440/768/390/320 no overflow','quota stops without reset','storage namespace isolation'],pageErrors:errors,storageAccesses:accesses.length},null,2));
  console.log(JSON.stringify({passed:true,gameId:'talos2',storageAccesses:accesses.length,screenshots:'outputs/talos2/'}));await context.close();
 }finally{await browser.close();}

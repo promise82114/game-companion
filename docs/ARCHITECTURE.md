@@ -46,3 +46,11 @@ GitHub workflow 驗證資料與每個必要模組，再建立並檢查完整 art
 Google Auth、Drive adapter、progress envelope 與 EDF 安全版相同；Talos 的 sync-core 改群組，sync-session 等待非同步本機介面。Base／pending／復原仍保留既有遊戲與帳號隔離、逐 grant 合成檔條件寫入驗證、strong If-Match、三方衝突與結果未知復原。沒有新增 OAuth 流程、中央同步或 SW。正式 Google 仍未驗收。
 
 官方逐盃數字 ID 尚未核實，`trophyIds` 留空，名稱對照使用獨立 `trophyRefs`，不假冒 PSN ID。PS5 備份僅記錄使用者確認；清單 JSON／Drive 不是遊戲存檔。詳見 `games/talos2/docs/RESEARCH.md`。
+
+## 入口與 Roadmap 共用操作規則 · 2026-10-31
+
+2026-11-01 使用者授權將 UI 改版提交、推送並納入既有 main 分支 Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準。Portal 增加 `portal/covers/*.svg` 原創主題插畫及 `catalogue.js` 靜態篩選；build 只把目錄資源複製至 `_site/`，不讀取玩家儲存。遊戲 metadata 與既有模組註冊方式不變。
+
+Talos II 與 Thank Goodness 保留各自原生畫面及資料模型，以相同的視覺 token 與操作順序對齊：左側功能頁、右上 Drive／備份還原、章節選單、本章提醒、搜尋與顯示條件、下一步、可展開步驟。手機以「功能選單」收合頁面導覽，章節保留完整名稱的原生 select。沒有新增共用進度 SDK、中央登入或同步服務。
+
+切章是瀏覽操作，沒有先完成早期階段的門檻。Talos 只沿用 `settings.currentStage` 保存目前章節，保留既有確認歷史；Thank Goodness 以 URL hash 保存瀏覽章節，不增加進度欄位。兩款的下一步從目前章節往後找；提醒限於本章，完整攻略與前置仍可展開閱讀。匯入下載／差異確認、PS5 手動備份確認及 Drive 每次授權安全閘門維持原行為。進度 schema、ID、namespace、雲端 adapter 和攻略資料均未更動。

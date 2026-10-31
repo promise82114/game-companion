@@ -33,6 +33,10 @@ try{
  await page.locator('[data-view="trophies"]').click();assert.equal(await page.locator('.trophy-row').count(),33);await page.locator('#trophy-t18').check();assert.equal((await state(page)).stepDone.mow,undefined);
  await page.locator('[data-view="sources"]').click();assert.equal(await page.locator('.source').count(),10);
  await page.locator('[data-view="roadmap"]').click();
+ const lastStage=await page.evaluate(()=>ROADMAP_APP.guide.stages.at(-1).id),lastStep=await page.evaluate(()=>ROADMAP_APP.guide.stages.at(-1).steps[0].id);
+ const beforeChapter=await state(page);await page.locator('#chapter-select').selectOption(lastStage);assert.equal(await page.locator('dialog[open]').count(),0);assert.deepEqual(await state(page),beforeChapter);
+ await page.locator('#continue').click();assert.match(page.url(),new RegExp('#'+lastStage+'$'));assert.equal(await page.locator('[data-group="stepDone"][data-id="'+lastStep+'"]').isVisible(),true);assert.deepEqual(await state(page),beforeChapter);
+ await page.reload();await ready(page);assert.equal(await page.locator('#chapter-select').inputValue(),lastStage);await page.locator('#chapter-select').selectOption(await page.evaluate(()=>ROADMAP_APP.guide.stages[0].id));checks.push('直接切到後期章節、下一步依所選章節、重整保留章節、早期進度不代填');
  const other=await context.newPage();await other.goto(url);await ready(other);
  await Promise.all([edit(page,'stepDone','mow',true),edit(other,'stepDone','stoat',true)]);
  await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone.stoat===true);const joined=await state(page);assert.equal(joined.stepDone.mow,true);assert.equal(joined.stepDone.stoat,true);checks.push('IndexedDB 跨分頁不同項目不互蓋');

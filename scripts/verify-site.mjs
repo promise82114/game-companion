@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../_site/',import.meta.url));
 let files=0,links=0;
 async function visit(dir){for(const entry of await fs.readdir(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isDirectory()){assert.ok(!['.git','.openai','upstream','outputs'].includes(entry.name));await visit(file);continue;}files++;
- if(file.endsWith('.html')){const html=await fs.readFile(file,'utf8');for(const match of html.matchAll(/(?:src|href)="([^"]+)"/g)){const url=match[1];if(/^(https?:|#|data:|mailto:)/.test(url))continue;const target=path.resolve(path.dirname(file),url);assert.ok(target.startsWith(path.resolve(root)));await fs.access(target);links++;}}
+ if(file.endsWith('.html')){const html=await fs.readFile(file,'utf8');for(const match of html.matchAll(/(?:src|href)="([^"]+)"/g)){const url=match[1];if(/^(https?:|#|data:|mailto:)/.test(url))continue;const target=path.resolve(path.dirname(file),url.split(/[?#]/)[0]||'.');assert.ok(target===path.resolve(root)||target.startsWith(path.resolve(root)+path.sep));await fs.access(target);links++;}}
 }}
 await visit(root);
 for(const slug of ['edf-wb','edf-wb2']){

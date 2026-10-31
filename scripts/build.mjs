@@ -22,6 +22,18 @@ await fs.cp(path.join(root,'tools/sync-safety'),path.join(output,'sync-safety'),
 assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,modules.length);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
-html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>`<article class="game"><div><h3>${escape(m.title)}</h3><p>${escape(m.description||'武器、角色、配件與關卡收集手帳')}</p>${m.legacyUrl?`<a class="original" href="${escape(m.legacyUrl)}">開啟舊站 ↗</a>`:''}</div><a class="open-game" href="${m.publicPath}">開啟收集手帳 <span aria-hidden="true">→</span></a></article>`).join('\n'));
+const presentation={
+ 'edf-wb':{kind:'checklist',features:['武器與角色','配件收集','手動 Drive 同步']},
+ 'edf-wb2':{kind:'checklist',features:['救出分布','關卡筆記','手動 Drive 同步']},
+ mycopunk:{kind:'checklist',features:['雙語裝備攻略','隱藏解鎖','配裝模擬']},
+ talos2:{kind:'roadmap',features:['60 個本體獎盃','8 階段','三市長分歧']},
+ 'thank-goodness-youre-here':{kind:'roadmap',features:['33 個本體獎盃','8 階段','跨階段追蹤']}
+};
+html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>{
+ const info=presentation[m.slug]||{kind:'checklist',features:[]};
+ return `<article class="game" data-kind="${info.kind}"><a class="game-cover" href="${m.publicPath}" tabindex="-1" aria-hidden="true"><img src="covers/${m.slug}.svg" alt="" width="600" height="360"></a><div class="game-body"><h3>${escape(m.title)}</h3><p>${escape(m.description||'武器、角色、配件與關卡收集手帳')}</p><ul class="game-features">${info.features.map(label=>`<li>${escape(label)}</li>`).join('')}</ul><div class="game-footer"><a class="open-game" href="${m.publicPath}">${info.kind==='roadmap'?'開啟白金攻略':'開啟收集手帳'} <span aria-hidden="true">→</span></a>${m.legacyUrl?`<a class="original" href="${escape(m.legacyUrl)}">舊站 ↗</a>`:''}</div></div></article>`;
+}).join('\n'));
+await fs.cp(path.join(root,'portal/covers'),path.join(output,'covers'),{recursive:true});
+await fs.copyFile(path.join(root,'portal/catalogue.js'),path.join(output,'catalogue.js'));
 await fs.writeFile(path.join(output,'index.html'),html);await fs.copyFile(path.join(root,'portal/portal.css'),path.join(output,'portal.css'));await fs.writeFile(path.join(output,'.nojekyll'),'');
 console.log(JSON.stringify({built:true,directory:'_site',modules:modules.map(m=>m.slug)}));

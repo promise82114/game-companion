@@ -11,6 +11,9 @@ try{
  await portal.goto(base);assert.equal(await portal.locator('.open-game').count(),moduleSlugs.length);
  for(const slug of moduleSlugs)assert.equal(await portal.locator(`.open-game[href="games/${slug}/"]`).count(),1);
  assert.equal(await portal.locator('.open-game[href="games/mycopunk/"]').count(),1);
+ await portal.locator('button[data-kind="roadmap"]').click();assert.equal(await portal.locator('.game:visible').count(),2);assert.match(await portal.locator('#visible-count').textContent(),/2/);
+ await portal.locator('#game-search').fill('Talos');assert.equal(await portal.locator('.game:visible').count(),1);assert.equal(await portal.locator('.game:visible h3').textContent(),'The Talos Principle II');
+ await portal.locator('#game-search').fill('synthetic-no-match-834');assert.equal(await portal.locator('#no-games').isVisible(),true);await portal.locator('#game-search').fill('');await portal.locator('button[data-kind="all"]').click();assert.equal(await portal.locator('.game:visible').count(),moduleSlugs.length);
  for(const width of [1440,768,390]){await portal.setViewportSize({width,height:900});assert.equal(await portal.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await portal.screenshot({path:`outputs/integration/portal-${width}.png`,fullPage:true});}
  await portal.locator('.open-game').first().click();assert.match(portal.url(),/games\/edf-wb\/$/);await portalContext.close();
  for(const slug of ['edf-wb','edf-wb2']){

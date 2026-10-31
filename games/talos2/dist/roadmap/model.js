@@ -22,5 +22,6 @@ export function matches(step, progress, filter) {
   if(filter==='backup') return step.backupRecommended;
   if(filter==='recommended') return step.warningLevel==='recommended';
   if(filter==='completed') return done(progress,step.id);
+  if(filter==='unverified') return step.verificationStatus==='unverified';
   return true;
 }

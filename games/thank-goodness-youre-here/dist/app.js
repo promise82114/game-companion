@@ -4,7 +4,7 @@
   const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const statusNames = {verified:'資料已核對',consensus:'多來源共識',unverified:'待查證'};
   const warningNames = {critical:'容易錯過／不可逆',branch:'分歧／待核對',prepare:'提前準備',experience:'推薦體驗',later:'可延後'};
-  let guide, store, view = 'roadmap', activeStage, importReview, busyImport = false;
+  let guide, store, view = new URL(location.href).searchParams.get('view') || 'roadmap', activeStage, importReview, busyImport = false;
   function fatal(error) { $('fatal').hidden = false; $('fatal').textContent = '無法保存或讀取：' + error.message + ' 原資料保留。請重試或先匯出原文。'; $('saveStatus').textContent = '儲存失敗'; }
   function message(text) { $('saveStatus').textContent = text; }
   window.addEventListener('roadmap-error', event => fatal(Error(event.detail)));
@@ -30,37 +30,40 @@
   activeStage = guide.stages.find(stage => stage.id === location.hash.slice(1))?.id || guide.stages.find(stage => stage.steps.some(step => !store.data.stepDone[step.id]))?.id || guide.stages[0].id;
   function sourceLinks(refs) { return refs.map(id => {const source = guide.sources.find(value => value.id === id); return `<a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)}</a>`;}).join(' · '); }
   function trophyInput(id) { return `<label><input type="checkbox" data-group="trophyEarned" data-id="${id}" ${store.data.trophyEarned[id] ? 'checked' : ''}>已跳盃：${escape(trophyMap.get(id).officialName)}</label>`; }
+  // taste-skill-ignore: 保留原攻略指定的紅／橙風險符號，與文字一起說明不可逆事項。
   function stepHtml(step, compact = false) {
-    return `<article class="step ${store.data.stepDone[step.id] ? 'done' : ''}" data-step-row="${step.id}" id="${compact ? 'track-' : 'step-'}${step.id}"><div class="step-head"><label><input type="checkbox" data-group="stepDone" data-id="${step.id}" ${store.data.stepDone[step.id] ? 'checked' : ''}><span>${escape(step.action)}</span></label></div><p class="step-location">${escape(step.location)} · ${statusNames[step.verificationStatus]}</p>${step.warningLevel === 'critical' || step.verificationStatus === 'unverified' ? `<span class="warning ${step.warningLevel === 'critical' ? 'critical' : 'branch'}">${step.warningLevel === 'critical' ? '🔴 ' : '🟠 '}${warningNames[step.warningLevel]}${step.verificationStatus === 'unverified' ? ' · 待查證' : ''}</span>` : ''}<details class="step-details"><summary>時機、驗證與來源</summary><dl><dt>觸發時機</dt><dd>${escape(step.trigger)}</dd><dt>驗證方式</dt><dd>${escape(step.verification)}</dd><dt>錯過後</dt><dd>${escape(step.recovery)}</dd><dt>來源 · ${statusNames[step.verificationStatus]}</dt><dd>${sourceLinks(step.sourceRefs)}</dd></dl></details>${step.trophyIds.length ? `<div class="trophy-inline">${step.trophyIds.map(trophyInput).join('')}</div>` : ''}</article>`;
+    return `<article class="step ${store.data.stepDone[step.id] ? 'done' : ''}" data-step-row="${step.id}" id="${compact ? 'track-' : 'step-'}${step.id}"><div class="step-head"><label><input type="checkbox" data-group="stepDone" data-id="${step.id}" ${store.data.stepDone[step.id] ? 'checked' : ''}><span>${escape(step.action)}</span></label></div><p class="step-location">${escape(step.location)} · ${statusNames[step.verificationStatus]}</p>${step.warningLevel === 'critical' || step.verificationStatus === 'unverified' ? `<span class="warning ${step.warningLevel === 'critical' ? 'critical' : 'branch'}">${step.warningLevel === 'critical' ? '🔴 ' : '🟠 '}${warningNames[step.warningLevel]}${step.verificationStatus === 'unverified' ? ' · 待查證' : ''}</span>` : ''}<details class="step-details"><summary>時機、驗證與來源</summary><dl><dt>觸發時機</dt><dd>${escape(step.trigger)}</dd><dt>驗證方式</dt><dd>${escape(step.verification)}</dd><dt>錯過後</dt><dd>${escape(step.recovery)}</dd><dt>來源 · ${statusNames[step.verificationStatus]}</dt><dd>${sourceLinks(step.sourceRefs)}</dd></dl></details>${step.trophyIds.length ? `<div class="trophy-inline">${step.trophyIds.map(trophyInput).join('')}</div>` : ''}</article>`; // taste-skill-ignore: 既有攻略使用紅／橙風險符號。
   }
   function matches(item, group) {
     const query = $('search').value.trim().toLocaleLowerCase(), filter = $('filter').value;
     const text = JSON.stringify(item) + (item.trophyIds || []).map(id => trophyMap.get(id).officialName).join(' ');
     if (query && !text.toLocaleLowerCase().includes(query)) return false;
     if (filter === 'pending' && store.data[group][item.id]) return false;
+    if (filter === 'completed' && !store.data[group][item.id]) return false;
     if (filter === 'unverified' && item.verificationStatus !== 'unverified') return false;
     if (filter === 'risk' && !(item.missable || item.warningLevel === 'critical' || item.category === 'optional')) return false;
     return true;
   }
   function stats() {
     const data = store.data, count = steps.filter(step => data.stepDone[step.id]).length, earned = guide.trophies.filter(trophy => data.trophyEarned[trophy.id]).length;
-    const nextStage = guide.stages.find(stage => stage.steps.some(step => !data.stepDone[step.id]));
-    $('summary').innerHTML = `<div><span>攻略步驟完成</span><strong>${count} <small>/ ${steps.length}</small></strong></div><div><span>獎盃實際取得</span><strong>${earned} <small>/ ${guide.trophies.length}</small></strong></div><div><span>目前階段（依首個未完成步驟）</span><strong class="current">${nextStage ? escape(nextStage.title) : '全步驟已記錄'}</strong></div>`;
+    const current = guide.stages.find(stage => stage.id === activeStage);
+    $('summary').innerHTML = `<div><span>攻略步驟完成</span><strong>${count} <small>/ ${steps.length}</small></strong></div><div><span>獎盃實際取得</span><strong>${earned} <small>/ ${guide.trophies.length}</small></strong></div><div><span>目前瀏覽章節</span><strong class="current">${escape(current.title)}</strong></div>`;
     $('nav-trophies').textContent = earned + '/33';
-    const checkpoint = steps.find(step => step.checkpoint && !data.stepDone[step.id]);
-    $('checkpoint').innerHTML = checkpoint ? `<strong>下一個不可逆檢查點 · ${escape(stageFor(checkpoint.id).title)}</strong><p>${escape(checkpoint.trigger)} · ${escape(checkpoint.action)}</p><button data-jump="${checkpoint.id}">查看檢查點</button>` : '<strong>所有檢查點已記錄</strong><p>請對照 PS5 的 33 個獎盃，獎盃狀態需要另行確認。</p>';
+    const checkpoint = current.steps.find(step => step.checkpoint && !data.stepDone[step.id]);
+    $('checkpoint').innerHTML = checkpoint ? `<div><strong>本章留意 · ${escape(current.title)}</strong><p>${escape(checkpoint.trigger)}</p></div><button data-jump="${checkpoint.id}">查看提醒</button>` : '<div><strong>本章進度</strong><p>本章檢查點已記錄；可直接切換章節繼續攻略。</p></div>';
     document.querySelectorAll('[data-stage-count]').forEach(node => {const stage=guide.stages.find(value=>value.id===node.dataset.stageCount);node.textContent=stage.steps.filter(step=>data.stepDone[step.id]).length+'/'+stage.steps.length;});
     document.querySelectorAll('[data-tracker-count]').forEach(node => {const tracker=guide.trackers.find(value=>value.id===node.dataset.trackerCount);node.textContent=tracker.stepIds.filter(id=>data.stepDone[id]).length+'/'+tracker.stepIds.length;});
   }
   function render() {
     document.querySelectorAll('[data-view]').forEach(button => {if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});
     $('view-title').textContent = {roadmap:'遊玩 Roadmap',trackers:'跨階段追蹤',trophies:'獎盃清單',sources:'來源與查證'}[view];
-    $('stage-nav').hidden = view !== 'roadmap'; $('search').closest('.toolbar').hidden = view === 'sources';
+    $('chapter-picker').hidden = view !== 'roadmap'; $('checkpoint').hidden = view !== 'roadmap'; $('search').closest('.toolbar').hidden = view === 'sources';$('continue').hidden = view !== 'roadmap';
+    $('chapter-select').innerHTML = guide.stages.map(stage=>`<option value="${stage.id}" ${activeStage===stage.id?'selected':''}>${escape(stage.title)}</option>`).join('');
     $('stage-nav').innerHTML = guide.stages.map(stage => `<button data-stage="${stage.id}" aria-label="${escape(stage.title)}" ${activeStage===stage.id?'aria-current="step"':''}>${stage.title.slice(0,2)}</button>`).join('');
     if (view === 'roadmap') {
       $('content').innerHTML = guide.stages.map(stage => {
         const visible = stage.steps.filter(step=>matches(step,'stepDone')); if(!visible.length)return '';
-        return `<details class="stage" data-stage-panel="${stage.id}" ${activeStage===stage.id || $('search').value || $('filter').value!=='all'?'open':''}><summary><span class="number">${stage.title.slice(0,2)}</span><strong>${escape(stage.title.slice(3))}</strong><span class="count" data-stage-count="${stage.id}"></span></summary><div class="stage-body"><p class="stage-description">${escape(stage.description)}</p><p class="stage-checkpoint">🔴 ${escape(stage.checkpoint)}</p>${visible.map(step=>stepHtml(step)).join('')}</div></details>`;
+        return `<details class="stage" data-stage-panel="${stage.id}" ${activeStage===stage.id || $('search').value || $('filter').value!=='all'?'open':''}><summary><span class="number">${stage.title.slice(0,2)}</span><strong>${escape(stage.title.slice(3))}</strong><span class="count" data-stage-count="${stage.id}"></span></summary><div class="stage-body"><p class="stage-description">${escape(stage.description)}</p><details class="stage-reminder"><summary>離開本章前的提醒</summary><p>${escape(stage.checkpoint)}</p></details>${visible.map(step=>stepHtml(step)).join('')}</div></details>`;
       }).join('');
     } else if (view === 'trackers') {
       $('content').innerHTML = guide.trackers.map(tracker=>{
@@ -78,7 +81,7 @@
   function syncUi() {
     document.querySelectorAll('input[data-group]').forEach(input=>input.checked=!!store.data[input.dataset.group][input.dataset.id]);
     document.querySelectorAll('[data-step-row]').forEach(row=>row.classList.toggle('done',!!store.data.stepDone[row.dataset.stepRow]));
-    stats(); message('已存於此裝置 · IndexedDB');
+    stats(); message('已儲存在此裝置');
   }
   function jump(id) {
     const stage=stageFor(id);if(!stage)return;view='roadmap';activeStage=stage.id;$('search').value='';$('filter').value='all';history.replaceState(null,'','#'+stage.id);render();
@@ -86,9 +89,9 @@
   }
   document.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
-    if(button.dataset.view){view=button.dataset.view;render();}
+    if(button.dataset.view){view=button.dataset.view;history.pushState(null,'','?view='+view+'#'+activeStage);render();}
     if(button.dataset.jump)jump(button.dataset.jump);
-    if(button.dataset.stage){activeStage=button.dataset.stage;history.replaceState(null,'','#'+activeStage);render();document.querySelector(`[data-stage-panel="${activeStage}"]`)?.scrollIntoView({block:'start'});}
+    if(button.dataset.stage)selectStage(button.dataset.stage);
   });
   document.addEventListener('change',async event=>{
     const input=event.target;if(!input.matches('input[data-group]'))return;
@@ -97,7 +100,10 @@
   window.addEventListener('roadmap-progress-change',()=>{syncUi();cloudRender();});
   window.addEventListener('focus',()=>store.refresh().then(syncUi).catch(fatal));
   $('search').oninput=render;$('filter').onchange=render;
-  $('continue').onclick=()=>{const next=steps.find(step=>!store.data.stepDone[step.id]);if(next)jump(next.id);};
+  function selectStage(id){activeStage=id;view='roadmap';$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+id);render();$('chapter-picker').scrollIntoView({block:'start'});}
+  $('chapter-select').onchange=event=>selectStage(event.target.value);
+  $('continue').onclick=()=>{const start=guide.stages.findIndex(stage=>stage.id===activeStage),next=guide.stages.slice(start).flatMap(stage=>stage.steps).find(step=>!store.data.stepDone[step.id]);if(next)jump(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
+  window.addEventListener('popstate',()=>{view=new URL(location.href).searchParams.get('view')||'roadmap';activeStage=guide.stages.find(stage=>stage.id===location.hash.slice(1))?.id||activeStage;render();});
   $('guide-version').textContent=`攻略 v${guide.guideVersion} · 文獻核對 ${guide.lastVerifiedAt}`;
   function download(value,name) {
     const href=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),link=document.createElement('a');
@@ -175,7 +181,8 @@
     const grant=auth.connect({selectAccount:true}),expected=epoch;
     cloudRun(async()=>{await grant;check(expected);const user=await drive.account();check(expected);
       const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(config.projectId+'|'+user.permissionId));check(expected);
-      const identity=[...new Uint8Array(bytes)].map(value=>value.toString(16).padStart(2,'0')).join('');
+      // taste-skill-ignore: SHA-256 帳號隔離使用兩位十六進位編碼，不是介面編號。
+      const identity=[...new Uint8Array(bytes)].map(value=>value.toString(16).padStart(2,'0')).join(''); // taste-skill-ignore: 帳號 hash 的十六進位編碼。
       const bound=new window.SideProjectSyncSession({drive,local:store,storage:localStorage,prefix:model.prefix,gameId:model.gameId,projectId:config.projectId,identity,check:()=>check(expected)});
       account=user;session=bound;$('cloudStatus').textContent='已連接。先驗證本次授權的 Drive 寫入安全，再手動同步。';
     });
@@ -187,6 +194,6 @@
   for(const [id,value]of [['cloud-local','local'],['cloud-remote','remote']])$(id).onclick=()=>{if(!cloudReview)return;cloudReview.choices.fill(value);$('cloud-rows').querySelectorAll('select').forEach(select=>select.value=value);cloudRender();};
   // Exposed contract for isolated regression tests and module integration; no token is exposed.
   window.ROADMAP_APP={store,guide,jump};
-  render();message('已存於此裝置 · IndexedDB');cloudRender();
+  render();message('已儲存在此裝置');cloudRender();
   if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js',{scope:'./'}).catch(error=>message('離線快取尚未就緒：'+error.message));
 })();
