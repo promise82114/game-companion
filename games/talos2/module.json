@@ -3,7 +3,7 @@
   "slug": "talos2",
   "title": "The Talos Principle II",
   "description": "PS5 本體白金 Roadmap · 階段追蹤、不可逆提醒與三市長分歧",
-  "moduleVersion": "1.0.0",
+  "moduleVersion": "1.0.1",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/talos2/",

@@ -4,6 +4,27 @@
 
 ## 已取得證據
 
+### 1.0.1 三市長補強（攻略 2026.10.31.2）
+
+新增 58 筆選項查證列，沿用全部 57 個已發布步驟 ID。英文逐字、中文操作方向、人物／版本適用性分開標示；選項無原文時 `english: null`，頁面直接顯示「英文原文待查證」。以下是本輪取得的證據，並不代表 PS5 三結果已實機重現。
+
+| 範圍 | 本輪查證與處理 | 證據 |
+| --- | --- | --- |
+| Doge 七題 | 六題後追加祈禱題，補齊七條英文。法文指南漏列懲罰題；宇宙題的 full／fully 轉錄不同，明示差異。配對學者以 Rand 身份確認，不能照「第二／第五項」硬選；時機記 E2–E3 | [問卷逐字稿](https://taloswiki.org/wiki/Permission_to_share_your_personal_data)、[玩家紀錄](https://steamcommunity.com/app/835960/discussions/0/4030220670872362258/)、[PS5 指南](https://www.psthc.fr/unjeu/the-talos-principle2-ps5/guide-trophees.htm) |
+| Rand 前置 | 博物館 exercise 後回報；N1 Desolate Island 中途接受組織邀請；N2 嘗試故障機器；簡報後 S1 關係訊息維護關係。精確解題數、完整私訊英文與最晚期限仍未知 | [全流程搜尋索引](https://www.xboxachievements.com/forum/topic/490227-full-walkthrough-all-achievements-in-one-playthrough/)、[選舉攻略搜尋索引](https://www.xboxachievements.com/game/the-talos-principle-2/achievement/a-new-morality.html) |
+| 城市回訪 | 分開列 Damien、Atal、Malduc 與塔內四次簡報回覆；三條簡報短英文可讀，第二條 good on／good of 不一致，保留中文方向與待查證 | 同上；[Hanni](https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588) |
+| W2 原文 | 入機、甦醒、Cryer 準備／延後及終端指令可見實際截圖；修正原簡述批次檔名。聯絡人截圖是 Helga，因此對 Rand 的適用性仍標待查證 | [獨立遊戲實錄與截圖](https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_3/west_2_3.htm)；頁面選項逐條連到對應 JPG |
+| 三分支流程 | 列出公共貼文、入機前／後、Rand 六次道德回應、Cryer、最後 VTOL、Act V 公告與跳盃核對；缺英文者不反向翻譯填補。舊版轉載的分支標籤與新版相反，只採兩條可對照的結尾文字 | Xbox 選舉攻略、PS5 指南；[歷史轉載](https://gamepretty.com/the-talos-principle-2-100-achievement-guide/)（不採其分支配對） |
+| 備份還原 | 本頁採 W2 入口 A；A 只是筆記，並非額外雲端槽。先停遊戲別 Auto-Sync、關閉遊戲、核對時間再上傳；分支後關閉遊戲，下載入口 A 到主機，勿反向上傳分支覆蓋唯一 A。若唯一早期雲端無法保留，先停止覆蓋 | [PlayStation 官方](https://www.playstation.com/en-ca/support/subscriptions/ps5-ps-plus-cloud-storage/)；路線節點由全流程／PS5 指南支持 |
+
+建議順序 Rand → 還原 A → Hermanubis → 還原 A → Byron 續玩，是本工具讓高前置風險先暴露的操作建議，來源沒有規定固定先後。Hanni 的出機後備份及早期社群策略是另一套流程，不混用。所有分支仍為 `unverified`，共用準備清單不宣稱每項都是所有玩法的硬性條件。
+
+來源獨立性：Xbox 全流程與成就頁同作者，且引用 BlackTorito；PS5 指南也致謝 BlackTorito，不能計成三次獨立實測。獨立截圖支持文字存在，不自動證明選舉結果。BlackTorito 影片頁面／章節可讀，但本環境未取得可播放影格，未逐幀驗證。
+
+本輪檢查：全模組 `scripts/verify.mjs`、`scripts/verify-sync.mjs`、build、site 產物檢查、Talos 隔離瀏覽器回歸均通過。新增瀏覽器案例確認合成 1.0.0 schema 1 的完成狀態、筆記與未知欄位可保留，七題／待查證原文／正確終端檔名可讀，390px 新攻略不溢出。設計量測 1440／768／390 為 0 FAIL、0 WARN；既有風險 emoji 為任務指定符號，source lint 的既有命中保留，新增元件未命中。真實 Google 與 PS5 上傳／還原未測。
+
+本輪修改：`dist/mayor-research.js`、`dist/roadmap/evidence.js`（新增）；`dist/data.js`、`dist/app.js`、`dist/style.css`；`module.json`、模組 README、本報告、模組 verify、`scripts/verify-site.mjs`、`scripts/verify-talos2-browser.mjs`。沒有修改 IndexedDB schema、進度 ID 或 Auth／Drive／sync 實作。下文保留首版整合記錄；內容細節以本節為準。
+
 | 項目 | 結果／適用範圍 | 來源 |
 | --- | --- | --- |
 | PS5 分組 | 本體 60：1 白金、1 金、6 銀、52 銅；DLC 9，不計白金進度 | [Platinum Pursuit NPWR34440_00](https://platpursuit.com/games/NPWR34440_00/)、[TrueTrophies 原始清單公告](https://www.truetrophies.com/forum/viewthread.aspx?tid=188935)、[Exophase 分組](https://www.exophase.com/game/the-talos-principle-2-psn/trophies/) |
@@ -18,8 +39,8 @@
 
 ## 衝突與待查證
 
-1. **三市長完整英文選項與 PS5 重現**：已建入可讀來源中的具體中文答法、NPC 與貼文標題，沒有宣稱其在任意前期狀態必然成功。所有分支保留 `unverified`。完整英文原文、精確配分及 PS5 目前版本的三結果還原仍需核對。單個 W2 備份無法補救更早旗標。
-2. **Rand 每封私訊**：N2、S1 條件已有證據；N1–N3 其他訊息的精確出現時間仍待查證。沒有自行編造選單。
+1. **三市長完整英文選項與 PS5 重現**：本輪已補齊決策順序及部分逐字英文，但 Rand 道德對話、公共貼文、城市人物與部分追問尚缺完整英文。資料逐項留空並標待查證。西區幻象的中立／肯定答法、Byron Founder／Goal 貼文題名亦有衝突。精確配分及 PS5 目前版本三結果仍未實測；所有分支保留 `unverified`。
+2. **Rand 每封私訊**：N1 邀請、N2 操作、簡報後 S1 關係修補已有文獻定位；精確觸發旗標、訊息完整原文、所有時序分支與期限仍待查證。沒有自行編造選單。
 3. **城市時機**：Schuyler 的 Your Biggest Fan，Hanni 與 Xbox 攻略對回訪機會不同；Museum Explorer 也有是否只限第一次、需否操作謎題的衝突。優先序章驗收。Purple 的位置描述採博物館後方／Archeological Gardens 範圍，逐字選項待核對。
 4. **Sinner**：第二次回城與具體爭論回覆有玩家實測；第三次可補說法不一致。不能對話時先做博物館主線，不保證一律有效。
 5. **文字冒險**：Hanni 要成功結局，Xbox 攻略稱任意完成即可；本工具採成功結局的保守做法，補入來源衝突註記，不宣稱最小條件已實測。

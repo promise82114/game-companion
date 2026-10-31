@@ -26,9 +26,16 @@ try{
    try{const result=await mock.fetch(req.url(),{method:req.method(),headers:req.headers(),body:req.postData()});return route.fulfill({status:result.status,body:await result.text(),headers:{...Object.fromEntries(result.headers),...cors}});}catch{return route.abort('failed');}
   }return route.abort();
  });
- await page.goto(base);await page.locator('.open-game[href="games/talos2/"]').click();await page.locator('#trophy-count').waitFor();
+ await page.goto(base);
+ // 合成舊版進度：攻略更新只增加內容，不重建 DB 或清除已發布步驟／筆記。
+ await page.evaluate(async()=>{const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('game-companion.talos2.progress.v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('records');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put({gameId:'talos2',schema:1,moduleVersion:'1.0.0',revision:3,updatedAt:1,steps:{calibration:{status:'completed',note:'synthetic pre-research note'}},trophies:{},backups:{},branches:{},settings:{},futureFromOld:{keep:true}},'progress');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();});
+ await page.locator('.open-game[href="games/talos2/"]').click();await page.locator('#trophy-count').waitFor();
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
  assert.equal(await page.locator('.branch-lane').count(),3);assert.equal(await page.locator('.stage').count(),8);
+ assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),true);
+ const research=await context.newPage();research.on('pageerror',e=>errors.push(e.message));await research.goto(url+'?view=roadmap#step-doge-survey');await research.locator('#step-doge-survey .dialogue-list').waitFor({state:'visible'});assert.equal(await research.locator('#step-doge-survey [data-dialogue]').count(),7);assert.match(await research.locator('#step-doge-survey [data-dialogue="doge-prayer"]').textContent(),/No, prayer has no effect on the world/);
+ await research.goto(url+'?view=roadmap#step-mayor-rand');await research.locator('#step-mayor-rand .dialogue-list').waitFor({state:'visible'});assert.ok(await research.locator('#step-mayor-rand .dialogue-missing').count()>0);assert.match(await research.locator('#step-mayor-rand [data-dialogue="rand-wake"]').textContent(),/I think so/);assert.match(await research.locator('#step-mayor-rand').textContent(),/Download to Console Storage/);
+ await research.setViewportSize({width:390,height:844});assert.equal(await research.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await research.locator('#step-mayor-rand [data-dialogue="rand-sleep"]').scrollIntoViewIfNeeded();await research.screenshot({path:'outputs/talos2/research-guide-mobile.png'});await research.goto(url+'?view=roadmap#step-working-somnodrome');await research.locator('#step-working-somnodrome .dialogue-list').waitFor({state:'visible'});assert.match(await research.locator('#step-working-somnodrome [data-dialogue="somnodrome-command"]').textContent(),/somnodrome_v2_final_final.bat/);await research.close();
  await page.screenshot({path:'outputs/talos2/desktop.png',fullPage:false});
  await page.locator('[data-complete="calibration"]').check();await page.reload();await page.locator('[data-complete="calibration"]:checked').waitFor();
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
@@ -47,7 +54,8 @@ try{
  const getData=async target=>target.evaluate(async()=>{const {roadmap}=await import('./data.js');const {createStore}=await import('./roadmap/store.js');const store=createStore(roadmap,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
  await page.waitForFunction(async()=>{const {roadmap}=await import('./data.js');const {createStore}=await import('./roadmap/store.js');const s=createStore(roadmap,window.SideProjectSync);try{const p=await s.open();return p.steps.chicken?.status==='completed'&&p.steps.petition?.status==='completed';}finally{s.close();}});
  await other.close();
- const local=await getData(page),source={...local,steps:{...local.steps,chicken:{status:'missed',note:'synthetic imported note'},'future-step':{status:'unknown',extra:{keep:true}}},futureTop:{keep:'synthetic'}};
+ const local=await getData(page);assert.equal(local.steps.calibration.note,'synthetic pre-research note');assert.deepEqual(local.futureFromOld,{keep:true});
+ const source={...local,steps:{...local.steps,chicken:{status:'missed',note:'synthetic imported note'},'future-step':{status:'unknown',extra:{keep:true}}},futureTop:{keep:'synthetic'}};
  await page.locator('[data-view="backup"]').click();
  const upload=async obj=>{await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(obj))});await page.locator('#import-dialog').waitFor();};
  await upload(source);assert.equal(await page.locator('#import-apply').isDisabled(),true);await page.locator('#import-source').click();assert.equal(await page.locator('#import-apply').isDisabled(),true);

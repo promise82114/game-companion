@@ -1,6 +1,8 @@
 # The Talos Principle II · 本體白金 Roadmap
 
-2026-10-31，模組 1.0.0，攻略版本 `2026.10.31.1`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+2026-10-31，模組 1.0.1，攻略版本 `2026.10.31.2`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+
+本次補強三市長：Doge 七題英文、Rand N1／S1 私訊、城市 Damien／Atal／Malduc 與簡報、W2 三條完整決策順序及 PS5 入口備份／還原。58 筆逐項選項分別標記英文證據與適用性；缺少原文直接顯示待查證，不用翻譯冒充英文。現有 57 步驟 ID、schema 1 與同步契約不變，合成 1.0.0 進度可繼續使用。
 
 入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=trophies`、`?view=backup` 與 `#step-w2-backup` 等穩定深連結。Portal 由既有 build 自動列入。
 
@@ -26,6 +28,8 @@ node scripts/verify-talos2-browser.mjs
 ## 檔案與資料
 
 - `dist/data.js`：八階段、57 步驟、60 本體獎盃、三市長與查證來源。內容更新不得改已發布步驟 ID。
+- `dist/mayor-research.js`：三市長逐項查證、來源衝突與 PS5 手動備份順序，以原 ID 補強資料。
+- `dist/roadmap/evidence.js`：可重用原文／待查證／來源呈現，不增加進度欄位。
 - `dist/roadmap/model.js`：可重用的步驟狀態、篩選、摘要與階段風險計算，不包含 Talos 專屬判斷。
 - `dist/roadmap/store.js`：獨立 IndexedDB 與交易；`steps`、`trophies`、`backups`、`branches`、`settings` 分開保存。
 - `dist/roadmap/sync.js`：手動同步 UI；沿用相同 GIS OAuth client 及 Drive appDataFolder adapter。
@@ -34,7 +38,7 @@ node scripts/verify-talos2-browser.mjs
 
 原專案沒有共用獎盃模型或既有 IndexedDB，故新增此模組的交易儲存，不假稱曾沿用不存在的 API。資料庫 `game-companion.talos2.progress.v1`，store `records`，主記錄 `progress`；快照／匯入原文鍵分別以 `game-companion.talos2.snapshot.`／`game-companion.talos2.import.raw.` 開頭。Drive 檔名與 localStorage 同步 Base／pending／復原全部使用 `game-companion.talos2.` namespace，帳號 Base 另以 permissionId 的 SHA-256 隔離。
 
-沒有既有 Talos 進度需要遷移。schema 1 保留未知欄位及未知步驟／獎盃 ID；版本不相容或損壞時停止，不用空資料覆蓋。可匯出原始記錄。匯入在寫入前保存兩端原文、顯示新增欄位與衝突、逐筆／批次選擇、下載復原包、手動確認，再以原始版本交易條件套用；過期或備份失敗停止。完整復原匯出含快照、匯入原文與本模組 sync 原文；復原包本身不直接覆寫，需將選定的 progress／sourceRaw 經一般匯入預覽。
+本次內容更新不需儲存遷移。schema 1 保留未知欄位及未知步驟／獎盃 ID；版本不相容或損壞時停止，不用空資料覆蓋。可匯出原始記錄。匯入在寫入前保存兩端原文、顯示新增欄位與衝突、逐筆／批次選擇、下載復原包、手動確認，再以原始版本交易條件套用；過期或備份失敗停止。完整復原匯出含快照、匯入原文與本模組 sync 原文；復原包本身不直接覆寫，需將選定的 progress／sourceRaw 經一般匯入預覽。
 
 Drive 保留每次 grant 合成檔驗證、strong If-Match、412、競爭測試、首次配對、三方衝突、過期預覽、同步期間新編輯與結果未知修訂核對。沒有自動登入／上傳；正式 Google 驗證仍須使用者在正式網域進行。
 

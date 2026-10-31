@@ -6,12 +6,23 @@ import {spawnSync} from 'node:child_process';
 import {roadmap as data} from './dist/data.js';
 import {overview,blockers,matches} from './dist/roadmap/model.js';
 import {createStore} from './dist/roadmap/store.js';
+import {dialogueHtml} from './dist/roadmap/evidence.js';
 import {mockDrive} from '../../scripts/fixtures/drive.mjs';
 const config=JSON.parse(await fs.readFile(new URL('module.json',import.meta.url),'utf8'));
 assert.equal(data.gameId,config.gameId);assert.equal(data.storagePrefix,config.storagePrefix);assert.equal(data.driveFileName,config.driveFileName);
 assert.equal(data.stages.length,8);assert.equal(data.trophies.filter(t=>t.category==='base').length,60);assert.equal(data.dlcCount,9);
 const ids=new Set(data.steps.map(s=>s.id)),trophyIds=new Set(data.trophies.map(t=>t.id));assert.equal(ids.size,data.steps.length);assert.equal(trophyIds.size,60);
 const mapped=new Set(data.steps.flatMap(s=>s.trophyRefs));assert.ok(data.trophies.every(t=>mapped.has(t.id)),'所有本體獎盃都要有名稱對照');
+const publishedStepIds='calibration save-safety doge-intro chicken petition schuyler museum purple neutral-route departure-check region-e1 doge-survey team field-basics chase puzzle-time region-e2 single-rod one-lap region-e3 doge-match first-megastructure region-n1 rand-north region-n2 broken-somnodrome region-n3 north-exit sinner text-adventures city-tour city-politics city-exit region-s1 hard-way rand-south region-s2 region-s3 artifacts west-arrival region-w1 region-w3 region-w2 w2-backup working-somnodrome mayor-rand mayor-byron mayor-hermanubis final-city all-puzzles miranda collectibles stars story-audit final-backup ending platinum-audit'.split(' ');
+assert.ok(publishedStepIds.every(id=>ids.has(id)),'已發布的 57 步驟 ID 不得因攻略更新消失');
+const survey=data.steps.find(s=>s.id==='doge-survey');assert.equal(survey.dialogue.length,7);assert.equal(survey.dialogue.at(-1).id,'doge-prayer');assert.ok(survey.dialogue.every(row=>typeof row.english==='string'&&row.english.length));
+assert.ok(data.steps.find(s=>s.id==='rand-north').location.startsWith('N1 '));
+assert.ok(data.steps.find(s=>s.id==='doge-match').location.includes('E2–E3'));
+const seenContexts=new Set();
+for(const step of data.steps)for(const row of step.dialogue||[]){assert.ok(row.id&&row.speaker&&row.context&&row.meaning);assert.ok(row.sources.length);for(const key of row.sources)assert.ok(data.sources[key]);assert.ok(['confirmed','consensus','unverified'].includes(row.verificationStatus));if(row.english===null)assert.equal(row.verificationStatus,'unverified','缺英文不能假裝已查證');if(row.verificationStatus==='confirmed')assert.ok(row.sources.some(id=>['screenshot','transcript'].includes(data.sources[id].kind)));}
+for(const branch of data.branches){const step=data.steps.find(s=>s.id===branch.stepId);assert.ok(step.dialogue.length>=10);assert.ok(step.dialogue.some(row=>row.speaker.includes('Cryer')));assert.ok(step.dialogue.some(row=>row.context.includes('VTOL')));assert.equal(step.verificationStatus,'unverified','未實機驗證不得保證三結果');assert.ok(branch.prerequisites.includes('museum'));assert.match(branch.restore,/Download to Console Storage/);assert.match(branch.restore,/不要.*上傳/);seenContexts.add(branch.id);}
+assert.equal(seenContexts.size,3);assert.ok(data.steps.find(s=>s.id==='working-somnodrome').dialogue.some(row=>row.english.includes('somnodrome_v2_final_final.bat')));
+const escaped=dialogueHtml({title:'synthetic',dialogue:[{id:'synthetic',speaker:'NPC',context:'test',english:null,meaning:'<script>synthetic</script>',sources:['guide'],verificationStatus:'unverified'}]},{escape:s=>String(s).replaceAll('<','&lt;').replaceAll('>','&gt;'),sourceLinks:()=>'',labels:{unverified:'待查證'}});assert.ok(escaped.includes('英文原文待查證'));assert.ok(escaped.includes('&lt;script&gt;'));assert.ok(!escaped.includes('<script>'));
 for(const s of data.steps){
  for(const field of ['id','stageId','order','title','description','location','trigger','prerequisites','actions','verification','trophyIds','warningLevel','missable','recovery','backupRecommended','sources','verificationStatus']) assert.ok(Object.hasOwn(s,field),s.id+' / '+field);
  assert.ok(data.stages.some(t=>t.id===s.stageId));assert.ok(['confirmed','consensus','unverified'].includes(s.verificationStatus));assert.ok(s.actions.length);assert.ok(s.sources.length);
@@ -46,5 +57,5 @@ const unsafe=new ctx.window.SideProjectDrive.DriveAppData(auth,config.driveFileN
 auth.generation++;assert.equal(drive.verified,false);await assert.rejects(drive.write({},null),e=>e.code==='write-disabled');
 // 未修改三個既有模組的底層同步／身份／格式程式。
 for(const file of ['google-auth','drive-appdata','progress-envelope'])assert.equal(await fs.readFile(new URL('dist/shared/'+file+'.js',import.meta.url),'utf8'),await fs.readFile(new URL('../edf-wb/dist/shared/'+file+'.js',import.meta.url),'utf8'));
-for(const file of ['app.js','data.js','roadmap/model.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','mayor-research.js','roadmap/model.js','roadmap/evidence.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,gameId:data.gameId,stages:8,steps:data.steps.length,baseTrophies:60,dlcExcluded:9,checks:['schema/source/dependency/ID guards','DLC excluded','trophy/step/backup separation','async three-way merge','first pairing','stale preview','in-flight edit preservation','lost acknowledgement recovery','quota before upload','412/racing CAS','unsafe server/grant rejection','unchanged auth/adapter/envelope','syntax']}));
