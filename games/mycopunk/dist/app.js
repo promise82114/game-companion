@@ -124,6 +124,7 @@ function renderHeading() {
   $('#eyebrow').textContent = home ? 'AN INDEPENDENT FIELD GUIDE / 非官方攻略手冊' : filters.view === 'collection' ? 'COMPLETION / 獎盃玩家工具' : 'FIELD REFERENCE / 攻略資料';
   $('#breadcrumbs').innerHTML = home ? '' : `<button type="button" data-view="home">Field guide / 攻略首頁</button><span>/</span>${owner ? `<button type="button" data-category="${owner.category}">${en} / ${zh}</button><span>/</span>${escapeHtml(owner.nameEn)}` : escapeHtml(filters.view === 'library' ? en : filters.view)}`;
   document.body.classList.toggle('home-page', home);
+  if(filters.view==='library')$('#sidebar .equipment-nav').open=true;
   for (const button of document.querySelectorAll('.primary-nav [data-view]')) button.setAttribute('aria-current', button.dataset.view === filters.view || (button.dataset.view === 'home' && filters.view === 'library') ? 'page' : 'false');
   document.title = (home ? 'Mycopunk Field Guide' : (owner?.nameEn || (filters.view === 'library' ? en : filters.view))) + ' — 裝備與升級攻略';
 }
@@ -223,9 +224,20 @@ async function previewImport(file) {
   try {if($('#backup-dialog').open)$('#backup-dialog').close();await importReview.preview(file);} catch(error) {showToast(error.message);} finally {renderStorageNotice();$('#import-file').value='';}
 }
 function applyImport() {importReview.apply();}
+function closeNavigation() {$('#menuOpen').setAttribute('aria-expanded','false');$('#nav-dialog').close();}
+function setupNavigation() {
+  const mobile=matchMedia('(max-width:720px)'),dialog=$('#nav-dialog');
+  const placeNavigation=()=>{if(mobile.matches){dialog.append($('#sidebar'));}else{if(dialog.open)closeNavigation();$('#sidebar-anchor').after($('#sidebar'));}};
+  mobile.addEventListener('change',placeNavigation);placeNavigation();
+  $('#menuOpen').addEventListener('click',()=>{dialog.showModal();$('#menuOpen').setAttribute('aria-expanded','true');$('#sidebar .primary-nav [aria-current="page"]')?.focus();});
+  dialog.addEventListener('cancel',()=>$('#menuOpen').setAttribute('aria-expanded','false'));
+  dialog.addEventListener('close',()=>$('#menuOpen').setAttribute('aria-expanded','false'));
+}
 function setupEvents() {
+  setupNavigation();
   document.addEventListener('click',event=>{
     const element=event.target.closest('button,a[data-home],a[data-route]');if(!element||element.disabled)return;const data=element.dataset;
+    if($('#nav-dialog').open&&$('#sidebar').contains(element))closeNavigation();
     if(data.home!==undefined){event.preventDefault();navigate({view:'home'});}
     if(data.route){event.preventDefault();navigate({view:data.route});}
     if(data.view)navigate({view:data.view,category:data.view==='recommendations'?'weapons':'all'});
@@ -273,7 +285,7 @@ async function start() {
     collection=readStorage()||collection;readUrl();
     $('#rarity-filter').insertAdjacentHTML('beforeend',rarities.map(r=>`<option value="${r}">${r} / ${rarityLabels[r]}</option>`).join(''));
     $('#tag-filter').insertAdjacentHTML('beforeend',Object.entries(tagLabels).map(([tag,label])=>`<option value="${tag}">${tag} / ${label}</option>`).join(''));
-    setupEvents();$('#backupOpen').disabled=false;renderStorageNotice();refresh();void loadRecommendations();
+    setupEvents();$('#backupOpen').disabled=false;$('#menuOpen').disabled=false;renderStorageNotice();refresh();void loadRecommendations();
   }catch(error){$('#app-error').hidden=false;$('#app-error').textContent=error.message+'。請以 README 的 HTTP 伺服器開啟，再重新整理。';}
 }
 start();

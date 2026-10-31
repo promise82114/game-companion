@@ -34,6 +34,8 @@ node scripts/verify-mycopunk-browser.mjs
 
 ## 維護與限制
 
+2026-11-01 接續調整（本批依使用者授權提交、推送並納入 main Pages 發布流程）：五項主功能改為固定左側選單，裝備分類可展開；720px 以下由「功能選單」開啟左側抽屜。抽屜使用原生 dialog 與同一份導覽節點，支援鍵盤、Escape、選完自動關閉及跨尺寸切換。右上仍提供遊戲目錄、語言、來源與備份。側欄及工作區沿用 EDF 的 244px／195px 與 1620px 上限，僅改 `companion-ui.css`、HTML 結構與導覽事件，不改原始 `styles.css`、攻略、資料或儲存 schema。
+
 2026-11-01 介面調整：右上工具列固定提供遊戲目錄、語言切換、來源與查證及備份還原；收集備份沿用原 `exportCollection`／保護式匯入。配裝配置仍由配裝頁另行匯出。新增 `dist/companion-ui.css` 調整工具位置，來源 `styles.css`／資料與 manifest hash 不變；本批依使用者授權提交、推送並透過既有 main Pages 流程發布；部署結果以對應提交的 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。
 
 攻略、翻譯、資料 JSON、圖片、裝備 SVG、格形與求解器保持來源版本。Wiki 貢獻者署名、固定修訂與 CC BY-SA 4.0 授權仍在頁面與來源資料中。沒有為搬移更新外部攻略，也沒有進遊戲驗證效果、版本適用性或配裝資格。

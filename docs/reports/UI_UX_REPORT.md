@@ -114,3 +114,40 @@ Top three problems (most visible first), each with the screenshot it shows in an
 1. 新 Mycopunk 工具列一開始引入第三種字體（desktop-fold）：改為繼承原字體，重驗後回到原有兩種。
 2. Mycopunk 手機導覽較長（mobile-fold）：資料工具以可換行觸控列呈現，維持 44px 點選高度。
 3. Talos 狀態操作比單一關閉的下拉選單多占一列（mobile-fold）：接受此閱讀密度，交換為免開選單、免移到列尾的一次點選。
+
+## 2026-11-01 EDF 寬度與左側導覽對齊
+
+接續已發布的 `b9f5711`。使用者指定兩款 Roadmap 直接跟隨 EDF WB1／WB2 的寬度規則，並要求 Mycopunk 主選單改放左側。使用者已授權將本批修改與文件 commit、push，並透過既有 main Pages 流程部署至正式站；部署結果以本批對應提交的 GitHub Actions 為準。
+
+EDF 兩款的主內容最大寬度皆為 1620px，接在固定側欄後方，超過上限時保留右側空間。兩款 Roadmap 的主內容、上方資料工具列及側欄均已改成相同規則，取代上一批的 1200px 置中設定。
+
+| 視窗寬度 | 側欄 | 主內容左右內距 |
+| --- | --- | --- |
+| 1500px 起 | 244px | 64px |
+| 1101–1499px | 244px | 46px |
+| 721–1100px | 195px | 26px |
+| 720px 以下 | 手機導覽、內容左緣歸零 | 16px |
+
+Mycopunk 五項主功能移入固定左側欄，選取項目有底色；裝備分類保留於可展開區塊。720px 以下由左側開啟原生 dialog，使用同一份導覽，不複製按鈕或 ID。開啟時聚焦目前功能，Escape 或選完功能即關閉；回到桌面時移回固定側欄。遊戲目錄、語言、來源、備份仍在右上資料工具區。Thank Goodness SW cache 改為 v4。所有進度 schema、namespace、攻略、來源 hash 與原 repo 保持不變。
+
+通過：
+
+- `verify.mjs`、`build.mjs`、`verify-site.mjs`（591 檔、104 個本機連結）與 `git diff --check`。
+- Portal／EDF、Talos、Thank Goodness、Mycopunk 的隔離瀏覽器回歸；沿用合成資料，不讀取既有瀏覽器 profile。
+- 新增四款模組於 1920／1500／1440／1100／900／768／721／720／390／320px 的實際版面比較：主內容左緣、寬度、max-width、margin、左右內距、側欄寬度與橫向溢出。兩款 Roadmap 與兩款 EDF 完全一致。
+- Mycopunk 驗證主選單不在上排、五項按鈕直排、平板主選單位於分類之前、手機抽屜焦點／Escape／鍵盤選頁／收合與跨尺寸移回，以及原配裝 Worker、進度、匯入保護、備份、資料隔離。
+
+畫面與量測位於 `.taste-skill/edf-alignment-{before,after,final}/`；手機抽屜與平板補圖位於 `outputs/mycopunk/`。最終三尺寸量測均 0 FAIL：Talos 0 WARN，Thank Goodness 保留長清單短文字的 1 個 unused-canvas 提醒；Mycopunk 保留既有首頁小型大寫標籤、品牌底色、輔助文字 4.4:1 與大標題共 4 個 WARN。此次導覽輔助文字已提高對比。靜態 lint 的 emoji 提醒來自既有品牌星號與勾選／關閉符號，保留其識別與既有語意；backdrop-filter 提醒實際是 `none`，用來取消來源 CSS 的模糊效果。
+
+ROUND 2 — EDF 對齊
+
+Seen in one second: 左側主功能與右側工作區，換遊戲時導覽位置一致。
+Idea (one sentence): 用 EDF 的實際版面規則統一工作區，讓常用功能在固定位置直接可見。
+Live thing: 左側功能切換、可展開分類與支援鍵盤的手機抽屜。
+Layout words by section: 固定側欄 / 共用資料工具列 / 攻略與裝備工作區。
+Scores: design 7.8 · usability 8.7 · creativity 7.1 · content 8.0 → overall 7.9
+Caps applied: 沿用 framed-sheet（seed 1783821664），元件與響應式調整，沒有重抽方向或新增圖像；主體攻略與 Mycopunk 原首頁視覺維持既有樣式。
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. 平板繼承來源 flex order，主選單掉到側欄底部（mycopunk/tablet-fold）：明確重設順序，並新增實際位置回歸。
+2. 195px 側欄的底部文字太靠螢幕邊（mycopunk、talos2/tablet-fold）：側欄水平內距改為 18px，主內容寬度仍與 EDF 相同。
+3. Mycopunk 平板品牌副標擠成碎行（mycopunk/tablet-fold）：英中副標上下排列，保留完整名稱並重拍三尺寸。

@@ -1,16 +1,28 @@
-/* 共用資料工具放在右上角，各功能頁均可開啟；保留 Mycopunk 原攻略與配裝版面。 */
-.site-header{display:grid;grid-template-columns:minmax(200px,1fr) auto;gap:12px 24px;padding:16px 32px}
-.site-header>.brand{grid-column:1;grid-row:1}
-.header-tools{grid-column:2;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+/* 與其他手帳相同：固定左側主選單，資料工具保留於工作區右上。 */
+.site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-left:244px;max-width:1620px;padding:12px 46px;min-height:64px;background:transparent;border:0}
+.workspace-heading{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+#menuOpen,#nav-close{display:none}
+.header-tools{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
 .header-tools button,.header-tools a{font:inherit;font-size:13px;line-height:1.5;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--text);white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
 .header-tools #language-toggle{font-size:13px;padding:8px 12px}
 .header-tools button:hover,.header-tools a:hover{background:var(--soft)}
-.header-tools :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.header-tools button:disabled{opacity:.5;cursor:default}
-.site-header>.primary-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:8px;margin:0;padding:8px 0 0;border-top:1px solid var(--line)}
-.site-header>.primary-nav button{font-size:13px;min-height:44px}
-.backup-actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
-.backup-actions button{min-height:44px;font-size:14px}
-.collection-summary [data-action=backup]{min-height:44px}
-@media(max-width:900px){.site-header{padding:16px 22px;gap:12px}.header-tools{gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{font-size:12px;padding:7px 9px}.site-header>.primary-nav{width:100%;justify-content:flex-start}}
-@media(max-width:650px){.site-header{grid-template-columns:minmax(0,1fr);padding:12px 16px;gap:12px}.header-tools{grid-column:1;grid-row:2;justify-content:flex-start}.header-tools button,.header-tools a,.header-tools #language-toggle{min-height:44px;padding:7px 9px}.site-header>.primary-nav{grid-row:3;gap:4px}.site-header>.primary-nav button{padding:6px 4px}.backup-actions{display:grid;grid-template-columns:1fr}.backup-actions button{text-align:left}.header-tools{width:100%}}
+.header-tools :focus-visible,.sidebar :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.header-tools button:disabled,#menuOpen:disabled{opacity:.5;cursor:default}
+.app-layout,.home-page .app-layout,.is-planner .app-layout{display:block;max-width:none;margin:0}
+.main,.home-page .main,.is-planner .main{width:auto;max-width:1620px;margin-left:244px;padding:24px 46px 0}
+.sidebar,.home-page .sidebar,.is-planner .sidebar{display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;width:244px;height:100dvh;max-height:100dvh;overflow:auto;align-self:auto;padding:24px 20px;background:#f2f5f1;border:0;gap:0}
+.sidebar>.brand{flex:none;gap:10px;font-size:14px}.sidebar .brand strong{font-size:16px;letter-spacing:.05em}.sidebar .brand-sub{font-size:11px}.sidebar .brand-mark{width:32px;height:32px;font-size:20px}.sidebar .brand-mark>span{font-size:20px}
+.sidebar>.primary-nav{display:grid;grid-template-columns:1fr;gap:4px;flex:none;order:0;margin:28px 0 20px;padding:0;width:100%;border:0;justify-content:normal}
+.sidebar>.primary-nav button{display:block;text-align:left;min-height:48px;padding:8px 12px;font-size:14px;border:0;background:transparent;white-space:normal;width:100%;flex:none}
+.sidebar>.primary-nav button>span{display:block;font-size:12px;margin-top:2px;color:#526157}
+.sidebar>.primary-nav button[aria-current=page]{background:#e1e8df;color:var(--text);font-weight:600}
+.sidebar>.primary-nav button:hover{background:#e7ede5}
+.equipment-nav{flex:none;margin:0 0 24px}.equipment-nav>summary{font-size:13px;cursor:pointer;min-height:44px;padding:10px 12px;color:var(--muted)}
+.sidebar #directory{display:block;padding-top:4px}.sidebar .directory-group{display:block}.sidebar .directory-group>button,.sidebar .directory-secondary{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:44px;margin:0;padding:8px 12px;font-size:13px}.sidebar .directory-group small,.sidebar .directory-secondary small{display:block}.sidebar .owner-list{display:block;padding-left:12px}.sidebar .owner-list button{width:100%;min-height:44px;font-size:13px}.sidebar .directory-total{font-size:12px}
+.sidebar-bottom{margin-top:auto;padding-top:12px}.sidebar .portal-return{font-size:13px}.sidebar #about-button{display:block;font:inherit;font-size:13px;text-align:left;min-height:44px;padding:8px 0;border:0;background:none}
+.backup-actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.backup-actions button{min-height:44px;font-size:14px}.collection-summary [data-action=backup]{min-height:44px}
+.nav-drawer{margin:0 auto 0 0;padding:0;border:0;border-radius:0;width:min(320px,88vw);max-width:none;height:100dvh;max-height:100dvh;background:#f2f5f1}
+.nav-drawer::backdrop{background:#20292166;backdrop-filter:none}
+@media(min-width:1500px){.site-header{padding-left:64px;padding-right:64px}.main,.home-page .main,.is-planner .main{padding-left:64px;padding-right:64px}}
+@media(min-width:721px) and (max-width:1100px){.sidebar,.home-page .sidebar,.is-planner .sidebar{width:195px;padding:24px 18px}.site-header{margin-left:195px;padding-left:26px;padding-right:26px}.main,.home-page .main,.is-planner .main{margin-left:195px;padding-left:26px;padding-right:26px}.header-tools{gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{font-size:12px;padding:7px 9px}.sidebar>.brand{gap:8px}.sidebar .brand strong{font-size:15px}.sidebar .brand-sub{display:block;white-space:normal;letter-spacing:.03em}.sidebar .brand-sub>span{display:block}}
+@media(max-width:720px){.site-header{display:grid;grid-template-columns:minmax(0,1fr);margin-left:0;padding:12px 16px;gap:10px}.workspace-heading{justify-content:space-between}.workspace-heading>span{font-size:12px}.header-tools{justify-content:flex-end;gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{min-height:44px;font-size:12px;padding:7px 9px}.main,.home-page .main,.is-planner .main{margin-left:0;padding:20px 16px 0}.sidebar,.home-page .sidebar,.is-planner .sidebar{display:none}.nav-drawer .sidebar{display:flex;position:static;inset:auto;width:100%;height:auto;min-height:100dvh;max-height:none;overflow:visible;padding:16px 20px 24px}#menuOpen,#nav-close{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:13px;padding:7px 12px}#nav-close{align-self:flex-end;margin-bottom:12px}.sidebar>.primary-nav{grid-template-columns:1fr;gap:4px}.backup-actions{display:grid;grid-template-columns:1fr}.backup-actions button{text-align:left}}

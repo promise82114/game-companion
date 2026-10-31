@@ -16,6 +16,19 @@ try{
  await portal.locator('#game-search').fill('synthetic-no-match-834');assert.equal(await portal.locator('#no-games').isVisible(),true);await portal.locator('#game-search').fill('');await portal.locator('button[data-kind="all"]').click();assert.equal(await portal.locator('.game:visible').count(),moduleSlugs.length);
  for(const width of [1440,768,390]){await portal.setViewportSize({width,height:900});assert.equal(await portal.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await portal.screenshot({path:`outputs/integration/portal-${width}.png`,fullPage:true});}
  await portal.locator('.open-game').first().click();assert.match(portal.url(),/games\/edf-wb\/$/);await portalContext.close();
+ // 以 EDF 實際計算後的版面為基準，避免各模組各自猜一個最大寬度。
+ const layoutContext=await browser.newContext({serviceWorkers:'block'}),layoutPage=await layoutContext.newPage(),widths=[1920,1500,1440,1100,900,768,721,720,390,320],reference=new Map();
+ await layoutContext.route('https://fonts.googleapis.com/**',route=>route.abort());
+ for(const slug of ['edf-wb','edf-wb2','talos2','thank-goodness-youre-here']){
+  await layoutPage.goto(base+'games/'+slug+'/');
+  for(const width of widths){
+   await layoutPage.setViewportSize({width,height:1000});
+   const layout=await layoutPage.evaluate(()=>{const main=document.querySelector('body>main'),s=getComputedStyle(main),r=main.getBoundingClientRect();return {left:r.x,width:r.width,max:s.maxWidth,margin:s.marginLeft,paddingLeft:s.paddingLeft,paddingRight:s.paddingRight,rail:getComputedStyle(document.querySelector('.rail')).width};});
+   if(slug==='edf-wb')reference.set(width,layout);else assert.deepEqual(layout,reference.get(width),'EDF width parity: '+slug+' / '+width);
+   assert.equal(await layoutPage.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'layout overflow: '+slug+' / '+width);
+  }
+ }
+ await layoutContext.close();
  for(const slug of ['edf-wb','edf-wb2']){
   console.log('START '+slug);
   const url=base+'games/'+slug+'/',key='game-companion.'+slug+'.progress.v1';
