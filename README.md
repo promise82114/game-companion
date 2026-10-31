@@ -2,7 +2,7 @@
 
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
-目前包含 EDF World Brothers 與 EDF World Brothers 2。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。
+目前包含 EDF World Brothers、EDF World Brothers 2 與 Mycopunk。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
 
 ## 本機使用
 
@@ -34,13 +34,20 @@ node server.mjs
 
 隔離瀏覽器回歸：啟動 server 後執行 `node scripts/verify-browser.mjs`；二代專屬工具執行 `node scripts/verify-upstream.mjs`。沿用來源的 Playwright 與 Edge；跨電腦可設定 `PLAYWRIGHT_REQUIRE_FROM` 指向已安裝 Playwright 的 require 起點，`TEST_BASE_URL`／`TEST_URL` 指向隔離測試網址。不會自動安裝測試套件。
 
-`.github/workflows/deploy.yml` 先驗證兩個模組與 `_site/`，任一必要檢查失敗即停止；僅 main 的 push 或手動 main workflow 進入部署，PR 只驗證。Pages Source 需設為 GitHub Actions。輸出網址預計為：
+Mycopunk 的原始資料／格形／求解器驗證已加入 `scripts/verify.mjs`。其隔離瀏覽器檢查執行 `node scripts/verify-mycopunk-browser.mjs`，沿用 `TEST_BASE_URL`。本機入口為 `/game-companion/games/mycopunk/`；舊站 JSON 需經新站差異預覽、下載復原備份與確認後匯入。詳見 [Mycopunk 模組說明](games/mycopunk/README.md)。
+
+Mycopunk 已完成整合及本機驗證，納入既有 main 分支的 Pages 發布流程；各次部署結果可由 GitHub Actions 核對。
+
+`.github/workflows/deploy.yml` 先驗證三個模組與 `_site/`，任一必要檢查失敗即停止；僅 main 的 push 或手動 main workflow 進入部署，PR 只驗證。Pages Source 需設為 GitHub Actions。輸出網址為：
 
 - `/game-companion/`
 - `/game-companion/games/edf-wb/`
 - `/game-companion/games/edf-wb2/`
+- `/game-companion/games/mycopunk/`
 
 已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Drive 已提供具每次授權驗證門檻的手動同步；舊站入口未切換。
+
+Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io/game-companion/games/mycopunk/)。
 
 ## 維護文件
 

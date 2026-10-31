@@ -7,7 +7,8 @@ await fs.mkdir('outputs/integration',{recursive:true});
 const results=[];
 try{
  const portalContext=await browser.newContext(),portal=await portalContext.newPage();
- await portal.goto(base);assert.equal(await portal.locator('.open-game').count(),2);
+ await portal.goto(base);assert.equal(await portal.locator('.open-game').count(),3);
+ assert.equal(await portal.locator('.open-game[href="games/mycopunk/"]').count(),1);
  for(const width of [1440,768,390]){await portal.setViewportSize({width,height:900});assert.equal(await portal.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await portal.screenshot({path:`outputs/integration/portal-${width}.png`,fullPage:true});}
  await portal.locator('.open-game').first().click();assert.match(portal.url(),/games\/edf-wb\/$/);await portalContext.close();
  for(const slug of ['edf-wb','edf-wb2']){

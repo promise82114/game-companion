@@ -39,4 +39,6 @@ for(const slug of ['edf-wb','edf-wb2']){
  results.push({slug,items:catalog.items.length,missions:w.EDF_MISSIONS.rows.length,immutableFiles:unchanged.length,unknownData:'retained',cloudWrite:'blocked-until-current-grant-proven'});
 }
 const legacyCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/edf-wb'),encoding:'utf8'});assert.equal(legacyCheck.status,0,legacyCheck.stderr);console.log(legacyCheck.stdout.trim());
+const mycopunkCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/mycopunk'),encoding:'utf8'});assert.equal(mycopunkCheck.status,0,mycopunkCheck.stderr);console.log(mycopunkCheck.stdout.trim());
+results.push({slug:'mycopunk',items:842,legacyIds:660,equipment:27,hiddenPaths:7,cloudWrite:'not implemented'});
 console.log(JSON.stringify({passed:true,modules:results}));

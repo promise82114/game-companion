@@ -1,6 +1,6 @@
 # Game Companion 目前架構
 
-日期：2026-10-31；模組版本：1.1.0。
+日期：2026-10-31；EDF 模組版本 1.1.0，Mycopunk 1.0.0，均納入 main 分支的靜態發布流程。
 
 原始基準為 `GAME_COMPANION_ARCHITECTURE.md`。使用者後續「加速整合任務」明確改為一次連續實作 EDF WB／WB2，不需逐階段批准；資料保護、獨立模組及正式雲端／切換須確認的要求仍有效。原始規格與 P0 保留作歷史，不改寫成已驗收。
 
@@ -19,7 +19,9 @@ _site/                          可重建的 Pages artifact，不追蹤
 docs/                           規範、遷移、驗收、報告
 ```
 
-兩款遊戲沿用原生 HTML/CSS/JS，各自保留 `dist/shared/`。沒有平台共用進度 SDK；兩份小型匯入保護程式隨模組一起發布、各自維護。確認更多遊戲有相同需求後再考慮抽取，不把 Portal 變成同步中心。
+EDF 兩款沿用原生 HTML/CSS/JS，各自保留 `dist/shared/`。Mycopunk 模組版本 1.0.0，沿用自己的 ES modules、JSON、圖片與 Worker，不使用 EDF 的資料格式或同步程式。沒有平台共用進度 SDK；各模組的匯入保護程式隨模組一起維護，不把 Portal 變成同步中心。
+
+Mycopunk 原 `prototype/` 對應到 `games/mycopunk/dist/`；Excel、localization、research 與離線產生器保留在模組內但不部署。原 appId、schema 及 ID 不改，新主 Key 為 `game-companion.mycopunk.progress.v1`，舊站 Key 不讀寫。匯入先保存兩端原文、逐筆／批次選差異、下載備份與確認；未知欄位與原文可匯出，過期預覽或備份失敗會停止。沒有 Google Drive 或 SW。
 
 建置讀取 `games/*/module.json`，自動產生 Portal 遊戲列，將各模組 `dist/` 放到 `_site/games/{slug}/`。網站不用 router 或後端；GitHub Pages 根為 `_site`，路徑自然對應 `/game-companion/`。來源與工具不會被打包到網站。
 

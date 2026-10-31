@@ -18,4 +18,8 @@ for(const slug of ['edf-wb','edf-wb2']){
  assert.ok((await fs.readFile(path.join(dir,'shared/sync-session.js'),'utf8')).includes('commitSync'));
  assert.ok((await fs.readFile(path.join(dir,'shared/sync-core.js'),'utf8')).includes('preserveConcurrent'));
 }
-console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:2}));
+const mycopunk=path.join(root,'games/mycopunk'),model=await fs.readFile(path.join(mycopunk,'model.js'),'utf8'),app=await fs.readFile(path.join(mycopunk,'app.js'),'utf8'),html=await fs.readFile(path.join(mycopunk,'index.html'),'utf8');
+assert.ok(model.includes("storagePrefix = 'game-companion.mycopunk.'"));assert.ok(!model.includes('mycopunk-checklist:collection:v1'));assert.ok(!model.includes('mycopunk-checklist:before-import:v1'));
+assert.ok(!app.includes('serviceWorker'));assert.ok(!html.includes('accounts.google.com'));assert.ok(html.includes('href="../../"'));
+for(const name of ['catalogue','upgrades','field-guide','recommendations','build-rules'])await fs.access(path.join(mycopunk,'data',name+'.json'));
+console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:3}));

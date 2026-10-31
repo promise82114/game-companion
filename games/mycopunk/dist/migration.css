@@ -1,0 +1,10 @@
+.portal-return{display:block;margin:16px 0;text-underline-offset:4px}
+.migration-scroll{overflow:auto;max-height:340px;margin:16px 0;border:1px solid var(--line,#d8d9d2)}
+.migration-scroll table{width:100%;min-width:650px;border-collapse:collapse;font:13px/1.6 system-ui,sans-serif}
+.migration-scroll th,.migration-scroll td{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line,#d8d9d2);white-space:pre-wrap;overflow-wrap:anywhere;max-width:260px}
+.migration-scroll select{min-width:110px;max-width:100%}
+#import-dialog{width:min(960px,calc(100% - 32px));max-width:960px}
+.migration-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.migration-ack{display:flex;gap:10px;align-items:center;margin:16px 0;font-size:14px}
+.migration-ack input{width:20px;height:20px;flex:none}
+#import-preview p{font-size:14px;line-height:1.7}

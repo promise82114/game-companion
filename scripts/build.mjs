@@ -22,6 +22,6 @@ await fs.cp(path.join(root,'tools/sync-safety'),path.join(output,'sync-safety'),
 assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,modules.length);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
-html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>`<article class="game"><div><h3>${escape(m.title)}</h3><p>武器、角色、配件與關卡收集手帳</p>${m.legacyUrl?`<a class="original" href="${escape(m.legacyUrl)}">開啟舊站 ↗</a>`:''}</div><a class="open-game" href="${m.publicPath}">開啟收集手帳 <span aria-hidden="true">→</span></a></article>`).join('\n'));
+html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>`<article class="game"><div><h3>${escape(m.title)}</h3><p>${escape(m.description||'武器、角色、配件與關卡收集手帳')}</p>${m.legacyUrl?`<a class="original" href="${escape(m.legacyUrl)}">開啟舊站 ↗</a>`:''}</div><a class="open-game" href="${m.publicPath}">開啟收集手帳 <span aria-hidden="true">→</span></a></article>`).join('\n'));
 await fs.writeFile(path.join(output,'index.html'),html);await fs.copyFile(path.join(root,'portal/portal.css'),path.join(output,'portal.css'));await fs.writeFile(path.join(output,'.nojekyll'),'');
 console.log(JSON.stringify({built:true,directory:'_site',modules:modules.map(m=>m.slug)}));

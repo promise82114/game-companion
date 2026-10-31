@@ -20,6 +20,7 @@ games/{slug}/
 | --- | --- |
 | gameId／slug | 穩定且唯一；目前兩者相同 |
 | title | Portal 顯示名稱 |
+| description | 可選；遊戲目錄的工具說明，缺少時沿用既有收集手帳文案 |
 | moduleVersion | 模組程式版本 |
 | progressSchema | 進度 Schema 版本，與攻略內容版本分開 |
 | entry | 目前靜態打包契約為 `dist/index.html` |
@@ -41,4 +42,4 @@ games/{slug}/
 5. 增加資料／行為回歸與 `scripts/verify.mjs` 的必要模組檢查，再執行 build／verify-site。模組 registry 自動產生入口，新增無舊站遊戲不應產生假舊站連結。
 6. 隔離瀏覽器測試新舊存檔共存、直接網址／重整、手機與鍵盤、空資料／錯誤／備份回復。真實外部寫入另行授權。
 
-目前自動化的深入資料驗證與整合 browser suite 明列 EDF 兩款；新增遊戲要擴充此驗證清單，不能只新增 manifest 就聲稱該模組已驗收。目前 workflow 沒有 Node 以外的產品依賴；需要框架時限定在模組內管理，不要求其他遊戲更換技術。
+目前深入驗證明列 EDF 兩款與 Mycopunk；`scripts/verify.mjs` 會執行各模組的必要資料檢查，Mycopunk 另有 `scripts/verify-mycopunk-browser.mjs` 檢查自己的路徑、Worker、資料隔離及匯入保護。新增遊戲要擴充此驗證清單，不能只新增 manifest 就聲稱該模組已驗收。目前 workflow 沒有 Node 以外的產品依賴；需要框架時限定在模組內管理，不要求其他遊戲更換技術。

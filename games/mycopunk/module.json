@@ -1,0 +1,16 @@
+{
+  "gameId": "mycopunk",
+  "slug": "mycopunk",
+  "title": "Mycopunk",
+  "description": "雙語攻略、升級收集清單、隱藏解鎖與配裝模擬",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/mycopunk/",
+  "storagePrefix": "game-companion.mycopunk.",
+  "driveProjectId": "game-companion.mycopunk",
+  "driveFileName": "game-companion.mycopunk.progress.v1.json",
+  "cloudWritesEnabled": false,
+  "sourceCommit": "b708d9889fa08e642d496c5e1c67aa59bef45a75",
+  "legacyUrl": "https://promise82114.github.io/mycopunk-checklist/"
+}

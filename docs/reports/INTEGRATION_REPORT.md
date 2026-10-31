@@ -4,6 +4,21 @@
 
 同步擴充的現況、測試、檔案與限制見 [DRIVE_SYNC_REPORT.md](DRIVE_SYNC_REPORT.md)。下方為初次整合與首發歷史，當時的「停用」不代表目前程式策略。
 
+## Mycopunk 搬入（2026-10-31）
+
+依使用者要求將 `G:\git\mycopunk-checklist` 以獨立模組搬入 `games/mycopunk/`，原 repo 唯讀。來源 main／`b708d9889fa08e642d496c5e1c67aa59bef45a75` 起始乾淨；原 `prototype/` 對應新 `dist/`，不複製 Git 歷史、GitHub workflow 或本機輸出。549 個追蹤檔的搬入前 SHA-256／文字 LF hash 存於 source-manifest，README 原文另存 SOURCE_README；原始 hash 不更新成搬入後內容。
+
+保留原攻略 UI、27 件裝備、842 筆項目（840 筆 Wiki／2 筆舊表相容）、660 個舊 ID、837 筆格形、七條 Hidden Paths、14 份推薦來源、Worker 求解器、圖片、翻譯與 CC BY-SA 4.0 署名。Excel、研究證據及離線工具留在模組內供維護，部署只包含 dist。15 個需適配的來源檔涉及入口、儲存／匯入及工具路徑，其餘 534 個檔案的 hash 驗證通過，包含原 CSS、攻略 JSON 與求解器。
+
+新主 Key 為 `game-companion.mycopunk.progress.v1`，保留原 appId／schema／records 欄位。新增 gameId／moduleVersion／revision 與本模組獨立的原文、匯入前備份、備份時間及損壞備份 Key，不讀寫舊 Mycopunk 或 EDF 的儲存。舊備份匯入改為先保存兩端原文、顯示逐筆／批次差異、下載並確認後才套用；未知欄位、未對應 ID 與舊筆記保留，原文可隨一般備份匯出。過期預覽、原文紀錄遺失、下載或儲存失敗會停止；不清理玩家資料。沒有加入 OAuth、雲端同步或 SW。
+
+- Node：原有完整 validate_site、模組與平台 verify／build／verify-site 通過；本機產物 558 檔、65 個資源連結。Mycopunk 資料驗證已接入既有 Pages workflow 的 verify 入口。
+- 新隔離 Edge context：入口／深連結／重整、收集／搜尋／空清單、跨分頁、差異／原文／下載／確認、明確 false、追蹤／舊筆記／未知欄位與 ID、過期預覽封鎖、下載與配額失敗封鎖、損壞原文保留及備份後修復、鍵盤選擇、Worker 實際排入與配置匯出通過。
+- 儲存 Key 稽核與合成 sentinel 確認不讀寫舊 Mycopunk／兩款 EDF 進度；主測試頁無 JavaScript 錯誤、無外部服務請求。320／390／768／1440px 無整頁水平溢出，匯入比較表在自己的容器內滾動。
+- EDF 原有隔離 browser suite 在三遊戲 Portal 下通過；原 EDF 產品檔案未修改。
+
+使用者後續已授權本輪 commit／push，沿用 main 的既有 Pages workflow 發布；對應提交的部署結果由 [Pages workflow](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 核對。沒有切換舊站、讀取正式玩家備份、使用現有瀏覽器 profile、執行 Python 重建或重新抓取 Wiki／遊戲資料；正式 Google 驗收狀態不變。原模組沒有離線 SW 保證，也沒有把配裝結果宣稱為遊戲內已驗證。
+
 ## UI 改版撤回（2026-10-31）
 
 使用者試看正式站後要求還原。本輪以反向提交撤回 `b8765fa1caa4331c73f7ccda573bf0dd4d6ea870` 的 UI、相關測試與目錄產生變更，回復 `1116180` 的原有介面；保留 Git 歷史。兩款遊戲的 SW cache 另升至各自的 `assets.v4`，移除改版資源並清理同遊戲舊版快取，避免離線留下改版畫面。資料、進度、備份及同步邏輯未變更。

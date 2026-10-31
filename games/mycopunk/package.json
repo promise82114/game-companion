@@ -1,0 +1,14 @@
+{
+  "name": "mycopunk-checklist",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/migration.js && node --check dist/app.js && node --check dist/model.js && node --check dist/recommendations.js && node --check dist/wiki.js && node --check dist/hidden-paths.js && node --check dist/patterns.js && node --check dist/build-planner.js && node --check dist/build-solver.js && node --check dist/build-worker.js && node --check scripts/serve.mjs && node scripts/validate_site.mjs",
+    "import:excel": "python scripts/import_excel.py --strict",
+    "import:recommendations": "python scripts/import_recommendations.py",
+    "import:wiki": "python scripts/import_wiki_catalogue.py && python scripts/import_wiki.py",
+    "import:build": "python scripts/import_build_rules.py"
+  }
+}
