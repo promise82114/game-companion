@@ -24,7 +24,7 @@ node scripts/verify-mycopunk-browser.mjs
 
 - 新 namespace 為 `game-companion.mycopunk.`，主 Key 為 `game-companion.mycopunk.progress.v1`。舊站 `mycopunk-checklist:collection:v1` 與 `mycopunk-checklist:before-import:v1` 完全不讀寫。
 - 沿用 `appId: mycopunk-checklist`、`schemaVersion: 1`、所有穩定 ID 與 `collected`／`tracked`／`note`／`updatedAt`；新站附加 gameId、moduleVersion、revision。revision 為本機變更計數，不是跨分頁交易保證。
-- 先在舊站匯出 JSON，再到新站 Checklist 選擇匯入。兩端原文先存至本模組的獨立匯入紀錄，顯示逐筆差異；下載復原備份並明確確認後才可套用。可逐筆或批次選擇保留本機／使用來源，不再以新舊時間自動決定匯入結果。
+- 先在舊站匯出 JSON，再到新站右上角「備份與還原」選擇匯入；各功能頁都可使用，Checklist 摘要也保留入口。兩端原文先存至本模組的獨立匯入紀錄，顯示逐筆差異；下載復原備份並明確確認後才可套用。可逐筆或批次選擇保留本機／使用來源，不再以新舊時間自動決定匯入結果。
 - 來源未列出的本機記錄保留。未知 ID、未知欄位與舊筆記保留；同名頂層欄位以本機為準，來源的碰撞原文保存於匯入紀錄。一般匯出會包含可回復的原文 archives，匯入前下載另含本次兩端原文。
 - 預覽之後有本機或另一分頁的新變更、原文紀錄遺失、備份失敗或配額不足時停止匯入。損壞主存檔保留並停用修改；可從來源說明下載原文，再以有效備份走相同預覽流程修復。
 - 保留 10 MiB、10,000 筆與每筆舊筆記 5,000 字限制。格式不支援或記錄缺少必要欄位時明確拒絕，不猜測轉換。原文與未知資料會增加儲存空間，不自動清理；含大量歷史的復原檔可能超過一般匯入限制，請保留原檔。
@@ -33,6 +33,8 @@ node scripts/verify-mycopunk-browser.mjs
 命名與實際 Key 見 `dist/model.js` 及 [搬移與儲存契約](docs/MIGRATION.md)；快照與 SW cache 前綴僅保留命名，沒有建立原模組不存在的快照／SW 功能。
 
 ## 維護與限制
+
+2026-11-01 介面調整：右上工具列固定提供遊戲目錄、語言切換、來源與查證及備份還原；收集備份沿用原 `exportCollection`／保護式匯入。配裝配置仍由配裝頁另行匯出。新增 `dist/companion-ui.css` 調整工具位置，來源 `styles.css`／資料與 manifest hash 不變；本批依使用者授權提交、推送並透過既有 main Pages 流程發布；部署結果以對應提交的 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。
 
 攻略、翻譯、資料 JSON、圖片、裝備 SVG、格形與求解器保持來源版本。Wiki 貢獻者署名、固定修訂與 CC BY-SA 4.0 授權仍在頁面與來源資料中。沒有為搬移更新外部攻略，也沒有進遊戲驗證效果、版本適用性或配裝資格。
 

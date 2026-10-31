@@ -32,8 +32,14 @@ function exportCollection() {
     if (storageBlocked) {if (rawStorage !== null) downloadText(rawStorage, 'game-companion.mycopunk.original.json');return;}
     downloadText(JSON.stringify(importReview.withRecovery(makeBackup(collection, dataset.datasetVersion)), null, 2), 'game-companion.mycopunk.progress.v1.json');
     localStorage.setItem(backupTimeKey, new Date().toISOString());
+    updateBackupSummary();
   } catch (error) {showToast('備份未完成：'+error.message);}
 }
+function updateBackupSummary() {
+  try {const at=localStorage.getItem(backupTimeKey);$('#backup-status').textContent=at?'上次發起下載：'+new Date(at).toLocaleString('zh-TW')+'。請確認檔案已保存。':'尚未下載收集備份。';}
+  catch {$('#backup-status').textContent='無法讀取上次備份時間，仍可下載目前可讀的資料。';}
+}
+function openBackup() {updateBackupSummary();$('#backup-dialog').showModal();}
 function showToast(message) {
   clearTimeout(toastTimer); $('#toast').textContent = message; $('#toast').hidden = false;
   toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 4500);
@@ -143,7 +149,7 @@ function renderGearProfile(profile) {
 }
 function renderCollection() {
   const upgrades = scopeUpgrades(); const count = countCollected(upgrades);
-  return `<section class="collection-summary"><div><span class="eyebrow">CATALOGUE RECORDS / 圖鑑收集進度</span><p><b>${count}</b> / ${upgrades.length}<span>${(100 * count / (upgrades.length || 1)).toFixed(1)}%</span></p><progress max="${upgrades.length || 1}" value="${count}" aria-label="收集進度"></progress></div><div><p>Progress is stored in this browser. / 紀錄僅儲存於此瀏覽器。</p><button id="export-button" type="button">Export backup / 匯出備份</button><button id="import-button" type="button">Import backup / 匯入備份</button></div></section><div class="collection-groups">${[['all','All','全部'],...wikiCategories,['general','General','通用']].map(([id,en,zh])=>`<button type="button" data-collection-category="${id}" aria-pressed="${filters.category===id}">${en} <span>${zh}</span></button>`).join('')}</div><p class="data-note">Catalogue counts are not a verified trophy total. Two archived Workbook entries are retained for existing saves. / 圖鑑筆數不等於獎盃總數；兩筆舊表項目另行保留，不計入進度，並於列內標註。</p>`;
+  return `<section class="collection-summary"><div><span class="eyebrow">CATALOGUE RECORDS / 圖鑑收集進度</span><p><b>${count}</b> / ${upgrades.length}<span>${(100 * count / (upgrades.length || 1)).toFixed(1)}%</span></p><progress max="${upgrades.length || 1}" value="${count}" aria-label="收集進度"></progress></div><div><p>Progress is stored in this browser. / 紀錄僅儲存於此瀏覽器。</p><button type="button" data-action="backup">備份與還原</button></div></section><div class="collection-groups">${[['all','All','全部'],...wikiCategories,['general','General','通用']].map(([id,en,zh])=>`<button type="button" data-collection-category="${id}" aria-pressed="${filters.category===id}">${en} <span>${zh}</span></button>`).join('')}</div><p class="data-note">Catalogue counts are not a verified trophy total. Two archived Workbook entries are retained for existing saves. / 圖鑑筆數不等於獎盃總數；兩筆舊表項目另行保留，不計入進度，並於列內標註。</p>`;
 }
 function renderUnlocks() {
   if (!fieldGuide?.hiddenPaths) return '<p class="data-note">Hidden paths could not load. Please reload. / 隱藏路徑未能載入，請重新整理。</p>';
@@ -214,7 +220,7 @@ function openAbout() {
   $('#about-dialog').showModal();
 }
 async function previewImport(file) {
-  try {await importReview.preview(file);} catch(error) {showToast(error.message);} finally {renderStorageNotice();$('#import-file').value='';}
+  try {if($('#backup-dialog').open)$('#backup-dialog').close();await importReview.preview(file);} catch(error) {showToast(error.message);} finally {renderStorageNotice();$('#import-file').value='';}
 }
 function applyImport() {importReview.apply();}
 function setupEvents() {
@@ -231,6 +237,7 @@ function setupEvents() {
     if(data.detail)showUpgrade(data.detail);
     if(data.close)$('#'+data.close).close();
     if(data.action==='about'||element.id==='about-button')openAbout();
+    if(data.action==='backup'||element.id==='backupOpen')openBackup();
     if(data.action==='all-upgrades')navigate({view:'library'});
     if(data.action==='retry-recommendations')void loadRecommendations();
     if(data.track){writeRecord(data.track,{tracked:!collection.records[data.track]?.tracked});document.querySelector(`[data-track="${data.track}"]`)?.focus();}
@@ -266,7 +273,7 @@ async function start() {
     collection=readStorage()||collection;readUrl();
     $('#rarity-filter').insertAdjacentHTML('beforeend',rarities.map(r=>`<option value="${r}">${r} / ${rarityLabels[r]}</option>`).join(''));
     $('#tag-filter').insertAdjacentHTML('beforeend',Object.entries(tagLabels).map(([tag,label])=>`<option value="${tag}">${tag} / ${label}</option>`).join(''));
-    setupEvents();renderStorageNotice();refresh();void loadRecommendations();
+    setupEvents();$('#backupOpen').disabled=false;renderStorageNotice();refresh();void loadRecommendations();
   }catch(error){$('#app-error').hidden=false;$('#app-error').textContent=error.message+'。請以 README 的 HTTP 伺服器開啟，再重新整理。';}
 }
 start();

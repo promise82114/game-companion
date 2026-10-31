@@ -23,6 +23,10 @@ try{
  await page.goto(base);await page.locator('.open-game[href="games/mycopunk/"]').click();await page.locator('.category-card').first().waitFor();
  assert.equal(await page.locator('#app-error').isVisible(),false);
  assert.equal(await page.locator('.page-footer .portal-return').getAttribute('href'),'../../');
+ // 備份入口不依賴收集頁；語言與來源工具在相同右上工具區。
+ await page.locator('#backupOpen').click();await page.locator('#backup-dialog').waitFor();assert.equal(await page.locator('#export-button').isVisible(),true);assert.equal(await page.locator('#import-button').isVisible(),true);await page.locator('[data-close="backup-dialog"]').click();
+ await page.locator('.header-tools [data-action="about"]').click();await page.locator('#about-dialog').waitFor();await page.locator('[data-close="about-dialog"]').click();
+ await page.locator('#language-toggle').click();assert.equal(await page.locator('#language-toggle').getAttribute('aria-pressed'),'false');await page.locator('#language-toggle').click();
  await page.locator('.primary-nav [data-view="collection"]').click();assert.equal(await page.locator('#upgrade-list [data-collect]').count(),842);
  assert.equal(await page.locator('#upgrade-list [data-collect]:checked').count(),0);
  await page.locator(`[data-collect="${sample.id}"]`).check();
@@ -33,7 +37,7 @@ try{
  await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)).records[id]?.collected,{key,id:second.id});
  await page.waitForFunction(id=>document.querySelector(`[data-collect="${id}"]`)?.checked,second.id);await other.close();
  await page.evaluate(({key})=>{const data=JSON.parse(localStorage.getItem(key));data.currentOnly={keep:'local'};data.collision='local';localStorage.setItem(key,JSON.stringify(data));}, {key});await page.reload();await page.locator('#upgrade-list [data-collect]').first().waitFor();
- const upload=async data=>{await page.locator('#import-file').setInputFiles({name:'synthetic-legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.locator('#import-dialog').waitFor();};
+ const upload=async data=>{await page.locator('#backupOpen').click();const chooser=page.waitForEvent('filechooser');await page.locator('#import-button').click();await (await chooser).setFiles({name:'synthetic-legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.locator('#import-dialog').waitFor();assert.equal(await page.locator('#backup-dialog').isVisible(),false);};
  const backup=async()=>{await page.locator('#import-source').click();const event=page.waitForEvent('download');await page.locator('#import-backup').click();const file=await event;assert.equal(await file.failure(),null);const pathname=await file.path();const bundle=JSON.parse(await fs.readFile(pathname,'utf8'));assert.equal(bundle.recoveryBundle.sourceRaw,JSON.stringify(source));assert.equal(typeof bundle.recoveryBundle.localRaw,'string');await page.locator('#import-ack').check();};
  const before=await page.evaluate(key=>localStorage.getItem(key),key);
  await upload(source);assert.equal(await page.locator('#apply-import').isDisabled(),true);
@@ -48,7 +52,7 @@ try{
  const imported=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
  assert.equal(imported.gameId,'mycopunk');assert.equal(imported.records[sample.id].collected,false);assert.equal(imported.records[sample.id].tracked,true);assert.equal(imported.records[sample.id].note,record.note);assert.deepEqual(imported.records[sample.id].extraRecord,{keep:true});
  assert.equal(imported.records[second.id].collected,true);assert.equal(imported.records['future:item'].note,'unknown synthetic ID');assert.deepEqual(imported.futureTop,{keep:'source'});assert.deepEqual(imported.currentOnly,{keep:'local'});assert.equal(imported.collision,'local');assert.equal(imported.importHistory.length,1);
- const exportedEvent=page.waitForEvent('download');await page.locator('#export-button').click();const exported=await exportedEvent;assert.equal(await exported.failure(),null);const exportedData=JSON.parse(await fs.readFile(await exported.path(),'utf8'));
+ await page.locator('#backupOpen').click();const exportedEvent=page.waitForEvent('download');await page.locator('#export-button').click();const exported=await exportedEvent;assert.equal(await exported.failure(),null);const exportedData=JSON.parse(await fs.readFile(await exported.path(),'utf8'));await page.locator('[data-close="backup-dialog"]').click();
  assert.equal(exportedData.recoveryArchives.length,1);assert.equal(exportedData.recoveryArchives[0].sourceRaw,JSON.stringify(source));assert.equal(exportedData.records[sample.id].note,record.note);
  const after=await page.evaluate(key=>localStorage.getItem(key),key);
  await page.locator('#import-file').setInputFiles({name:'wrong-game.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({...source,gameId:'edf-wb'}))});await page.waitForFunction(()=>document.getElementById('toast').textContent.includes('不是 Mycopunk'));assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),after);
@@ -63,7 +67,7 @@ try{
   assert.equal(await page.locator('#build-selected .build-selected-row').count(),1);assert.equal(await page.locator('#build-output .build-error').count(),0);
   assert.ok(await page.locator('#build-output .build-filled').count()>0);
   const layoutEvent=page.waitForEvent('download');await page.locator('[data-build-action="export"]').click();const layoutFile=await layoutEvent;assert.equal(await layoutFile.failure(),null);const layout=JSON.parse(await fs.readFile(await layoutFile.path(),'utf8'));assert.equal(layout.schemaVersion,2);assert.deepEqual(layout.selected,['cycler:infinity-burn']);assert.equal(layout.result.placements.length,1);
- for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/mycopunk/planner-${width}.png`,fullPage:true});}
+ for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.locator('#backupOpen').click();await page.locator('#backup-dialog').waitFor();await page.locator('[data-close="backup-dialog"]').click();await page.screenshot({path:`outputs/mycopunk/planner-${width}.png`,fullPage:true});}
  await page.goto(url+'?view=collection');await page.locator('#upgrade-list [data-collect]').first().waitFor();
  await page.locator('#import-file').setInputFiles({name:'synthetic-legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(source))});await page.locator('#import-dialog').waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:'outputs/mycopunk/import-320.png'});await page.locator('[data-close="import-dialog"]').first().click();
  await page.goto(url);await page.locator('.category-card').first().waitFor();for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/mycopunk/home-${width}.png`,fullPage:true});}

@@ -54,3 +54,5 @@ Google Auth、Drive adapter、progress envelope 與 EDF 安全版相同；Talos 
 Talos II 與 Thank Goodness 保留各自原生畫面及資料模型，以相同的視覺 token 與操作順序對齊：左側功能頁、右上 Drive／備份還原、章節選單、本章提醒、搜尋與顯示條件、下一步、可展開步驟。手機以「功能選單」收合頁面導覽，章節保留完整名稱的原生 select。沒有新增共用進度 SDK、中央登入或同步服務。
 
 切章是瀏覽操作，沒有先完成早期階段的門檻。Talos 只沿用 `settings.currentStage` 保存目前章節，保留既有確認歷史；Thank Goodness 以 URL hash 保存瀏覽章節，不增加進度欄位。兩款的下一步從目前章節往後找；提醒限於本章，完整攻略與前置仍可展開閱讀。匯入下載／差異確認、PS5 手動備份確認及 Drive 每次授權安全閘門維持原行為。進度 schema、ID、namespace、雲端 adapter 和攻略資料均未更動。
+
+2026-11-01 後續介面調整（依使用者授權納入 main Pages 發布流程）：Mycopunk 以獨立 `companion-ui.css` 將語言、來源及備份還原放進常駐右上工具區，所有功能頁共用既有備份流程。兩款 Roadmap 的工作區與上方工具列在桌面上限為 1200px，於功能列右側置中。Talos 步驟改為標題／核取方塊完成，加上附近的略過、不確定、已錯過切換鈕；再次點選同一狀態回到未開始，交易內讀取最新狀態，保留筆記與未知欄位。市長路線與獎盃依舊獨立，沒有改 schema 或同步群組。Thank Goodness 的 CSS 變更同步將本模組 SW cache 遞增為 v3。

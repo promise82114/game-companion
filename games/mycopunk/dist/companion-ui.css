@@ -1,0 +1,16 @@
+/* 共用資料工具放在右上角，各功能頁均可開啟；保留 Mycopunk 原攻略與配裝版面。 */
+.site-header{display:grid;grid-template-columns:minmax(200px,1fr) auto;gap:12px 24px;padding:16px 32px}
+.site-header>.brand{grid-column:1;grid-row:1}
+.header-tools{grid-column:2;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.header-tools button,.header-tools a{font:inherit;font-size:13px;line-height:1.5;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--text);white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.header-tools #language-toggle{font-size:13px;padding:8px 12px}
+.header-tools button:hover,.header-tools a:hover{background:var(--soft)}
+.header-tools :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.header-tools button:disabled{opacity:.5;cursor:default}
+.site-header>.primary-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:8px;margin:0;padding:8px 0 0;border-top:1px solid var(--line)}
+.site-header>.primary-nav button{font-size:13px;min-height:44px}
+.backup-actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+.backup-actions button{min-height:44px;font-size:14px}
+.collection-summary [data-action=backup]{min-height:44px}
+@media(max-width:900px){.site-header{padding:16px 22px;gap:12px}.header-tools{gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{font-size:12px;padding:7px 9px}.site-header>.primary-nav{width:100%;justify-content:flex-start}}
+@media(max-width:650px){.site-header{grid-template-columns:minmax(0,1fr);padding:12px 16px;gap:12px}.header-tools{grid-column:1;grid-row:2;justify-content:flex-start}.header-tools button,.header-tools a,.header-tools #language-toggle{min-height:44px;padding:7px 9px}.site-header>.primary-nav{grid-row:3;gap:4px}.site-header>.primary-nav button{padding:6px 4px}.backup-actions{display:grid;grid-template-columns:1fr}.backup-actions button{text-align:left}.header-tools{width:100%}}

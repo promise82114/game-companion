@@ -86,3 +86,31 @@ Top three problems (most visible first), each with the screenshot it shows in an
 - 既有匯入原文保護、未知欄位、過期預覽、下載失敗、交易失敗、跨分頁、離線、合成 Drive 條件寫入與衝突測試維持通過。
 
 畫面與量測檔放在忽略追蹤的 `.taste-skill/{before,final}/`、`outputs/ui/` 及各模組的 outputs。2026-11-01 發布前重新執行資料／合成同步、build、產物與 Portal／EDF／兩款 Roadmap 隔離瀏覽器回歸。正式 Google 與 PS5 實機尚未驗收；正式站檢查僅讀取網站資源與全新 context 的合成進度，不操作正式遊戲存檔。
+
+## 2026-11-01 後續易用性調整
+
+以下是 `f9180a2` 發布後的後續介面修改。使用者已於 2026-11-01 授權將本批修改與文件 commit、push 並直接部署至正式站；部署結果以對應提交的 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。
+
+- Mycopunk：遊戲目錄、語言、來源與查證、備份還原固定在頁面頂端工具區；備份最靠右，各功能頁皆可開啟。備份視窗沿用原匯出及保護式匯入，配裝配置依舊在配裝頁另行匯出。原 `styles.css` 與 534 個來源保護檔不變，新增 `companion-ui.css`。
+- 兩款 Roadmap：工作區及上方資料工具列最大 1200px，於左側導覽以外的可用區置中。1920px 全新 context 實測兩者寬度均為 1200px、左緣 x=480，工具列與內容外緣一致。窄螢幕保留原響應式內距。
+- Talos：移除步驟列尾的五選一下拉選單；點標題或勾選可完成，「略過／不確定／已錯過」改為標題附近的直接切換按鈕。同一個狀態再點一次回到未開始，`aria-pressed` 表達選取，畫面重繪後保留鍵盤焦點。狀態切換在既有交易內使用最新資料計算，筆記不被清除，獎盃與市長追蹤不連動。
+- Thank Goodness SW cache 升為 v3，繼續只清自己的舊版本前綴。沒有增加 namespace、改 schema、改攻略或操作原 repo。
+
+沿用 `framed-sheet` 方向與既有字體／遊戲識別，這次屬既有介面元件調整，沒有重抽方向或增加圖像。驗證與圖片位於 `.taste-skill/refinement-{before,after}/`、`outputs/ui-refinement/`。
+
+通過 `verify.mjs`、`build.mjs`、`verify-site.mjs`（591 檔、104 本機連結），以及 Mycopunk、Talos、Thank Goodness 的既有隔離瀏覽器回歸。新增回歸驗證各頁可開備份、匯出原文保留、語言與來源工具、狀態鍵盤切換／取消／重整、可點標題完成、筆記保留與 1920px 閱讀寬度。320／390／768／1440px 無橫向溢出；既有未知資料、過期匯入、下載／儲存失敗、跨分頁、離線與合成 Drive 回歸保持通過。
+
+三種尺寸的版面量測皆 0 FAIL；Talos 0 WARN，Thank Goodness 保留先前長篇清單的 1 個 `unused-canvas` 提醒。Mycopunk 前後皆保留原首頁的 4 個警告：原有小型大寫標籤、原品牌底色、4.4:1 的既有輔助文字及大字首頁標題。此次只調整工具元件，保留既有主體視覺；新工具列沿用字體，沒有新增字體警告。
+
+ROUND 1 — 後續調整
+
+Seen in one second: Mycopunk 右上資料工具與 Talos 標題旁的狀態操作。
+Idea (one sentence): 把常用操作放在讀者正在看的地方，長篇攻略限制於固定閱讀寬度。
+Live thing: 各頁備份入口、點標題完成、直接切換與取消步驟狀態。
+Layout words by section: Mycopunk=工具列與索引 / roadmap=限寬章節清單。
+Scores: design 7.5 · usability 8.4 · creativity 7.1 · content 8.0 → overall 7.7
+Caps applied: app-screen 元件調整，原攻略視覺維持既有樣式。
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. 新 Mycopunk 工具列一開始引入第三種字體（desktop-fold）：改為繼承原字體，重驗後回到原有兩種。
+2. Mycopunk 手機導覽較長（mobile-fold）：資料工具以可換行觸控列呈現，維持 44px 點選高度。
+3. Talos 狀態操作比單一關閉的下拉選單多占一列（mobile-fold）：接受此閱讀密度，交換為免開選單、免移到列尾的一次點選。
