@@ -65,4 +65,5 @@ Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[�
 - [新增遊戲模組契約](docs/MODULE_CONTRACT.md)
 - [資料遷移與回復](docs/MIGRATION_PLAN.md)
 - [驗收結果與限制](docs/ACCEPTANCE.md)
+- [Thank Goodness 正式站 Drive 同步驗收清單](docs/THANK_GOODNESS_DRIVE_ACCEPTANCE_CHECKLIST.md)
 - [原始需求基準](GAME_COMPANION_ARCHITECTURE.md) 與 [P0 歷史報告](docs/reports/P0_REPORT.md)
