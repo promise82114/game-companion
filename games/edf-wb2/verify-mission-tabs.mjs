@@ -95,6 +95,7 @@ try{
  assert.equal(await focus.isVisible(),true);assert.equal(await page.locator('[data-favorite-row="M74"] .mission-details').getAttribute('open'),null);await page.locator('[data-favorite-row="M74"] summary').click();await page.locator('[data-favorite-row="M74"] .mission-focus-list').waitFor();
  assert.equal(await page.locator('[data-mission-note="M74"]').isVisible(),true);
  await tab('recommended').click();assert.equal(await page.locator('[data-recommended-row="M74"] .mission-details').getAttribute('open'),null);await page.locator('[data-recommended-row="M74"] summary').click();await page.locator('[data-recommended-row="M74"] .mission-focus-list').waitFor();
+ if(!(await page.locator('#progressOverview').evaluate(el=>el.open)))await page.locator('#progressOverview > summary').click();
  await page.locator('[data-mission-mode="characters"]').click();assert.equal(await focus.isDisabled(),true);assert.equal(await page.locator('#recommendedMissionList .mission-focus-list').count(),0);
  await page.locator('[data-weapon-level="2"]').click();assert.equal(await focus.isChecked(),true);assert.equal(await focus.isDisabled(),false);
  await focus.uncheck();assert.equal(await page.locator('#recommendedMissionList .mission-focus-list').count(),0);assert.ok(await page.locator('#recommendedMissionList .mission-details').count()>0);

@@ -75,7 +75,29 @@ try{
   assert.deepEqual(writes,[]);await page.locator('#cloudDialog .close').click();
   await page.reload();await page.evaluate(()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>!!navigator.serviceWorker.controller);
   await context.setOffline(true);await page.reload();await page.locator('#list tr').first().waitFor();await context.setOffline(false);
-  for(const width of [1440,390]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/integration/${slug}-${width}.png`,fullPage:true});}
+  // 手機收合區保持所有原始篩選；跨斷點還原桌面可見性，使用合成進度。
+  await page.setViewportSize({width:390,height:844});
+  assert.equal(await page.locator('#progressOverview').getAttribute('open'),null);
+  assert.equal(await page.locator('#filterFields').isVisible(),false);
+  await page.locator('#filterToggle').focus();await page.keyboard.press('Enter');
+  assert.equal(await page.locator('#filterToggle').getAttribute('aria-expanded'),'true');
+  assert.equal(await page.locator('#filterFields').isVisible(),true);
+  await page.locator('#level').selectOption('Lv.2');
+  await page.waitForFunction(()=>document.getElementById('filterToggle').textContent.includes('(1)'));
+  await page.locator('#filterToggle').click();
+  assert.equal(await page.locator('#filterFields').isVisible(),false);
+  await page.locator('#progressOverview > summary').click();
+  await page.locator('[data-weapon-level="3"]').click();
+  assert.equal(await page.locator('#level').inputValue(),'Lv.3');
+  await page.locator('.list-notes > summary').click();assert.equal(await page.locator('#sectionNote').isVisible(),true);
+  await page.setViewportSize({width:768,height:1024});
+  await page.waitForFunction(()=>!document.getElementById('filterFields').hidden);
+  assert.equal(await page.locator('#level').inputValue(),'Lv.3');
+  assert.equal(await page.locator('#sectionTitle').evaluate(el=>el.tagName),'H1');
+  await page.locator('[data-tab="weapons"]').click();await page.locator('#search').fill('synthetic-no-match-UI');
+  assert.equal(await page.locator('#empty').isVisible(),true);await page.locator('#clearFilters').click();
+  assert.equal(await page.locator('#empty').isVisible(),false);
+  for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/integration/${slug}-${width}.png`,fullPage:true});}
   assert.equal(await page.evaluate(()=>['edfwb-progress-v1','edfwb2-progress-v1','edfwb-snapshots-v1','edfwb2-snapshots-v1','edfwb-backup-time','edfwb2-backup-time'].every(key=>localStorage.getItem(key)==='synthetic legacy sentinel')),true);
   assert.equal(await page.evaluate(async()=>{const names=await caches.keys();return names.includes('edfwb-field-log-v3')&&names.includes('edfwb2-field-log-v23');}),true);
   assert.deepEqual(errors,[]);await context.close();
