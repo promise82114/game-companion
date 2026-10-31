@@ -1,0 +1,2523 @@
+{
+  "gameId": "thank-goodness-youre-here",
+  "platform": "PS5",
+  "scope": "base",
+  "guideVersion": "1.0.0",
+  "lastVerifiedAt": "2026-10-31",
+  "verificationNote": "此日期是文獻查證，不是 PS5 實機驗收。verified 僅指獎盃列表；consensus 為攻略交叉比對；unverified 仍待查。",
+  "estimatedTime": "來源估計約 3–6 小時；另有約 15 分鐘短結局。主線一次可規劃全收集，短結局後需重新開局。",
+  "trophies": [
+    {
+      "id": "t00",
+      "officialName": "Barnsworth's Best",
+      "description": "其餘 32 個獎盃全部取得",
+      "category": "platinum",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t01",
+      "officialName": "In For A Penny",
+      "description": "救出 Charlie 的手",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t02",
+      "officialName": "Open For Business",
+      "description": "修好炸鍋",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t03",
+      "officialName": "Cream of the Crop",
+      "description": "種出番茄",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t04",
+      "officialName": "Enough For Everyone",
+      "description": "烤出巨大派",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t05",
+      "officialName": "Milk Shy No More",
+      "description": "喝茶",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t06",
+      "officialName": "Still at Large",
+      "description": "逮捕罪犯",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t07",
+      "officialName": "Breakfast In Bed",
+      "description": "買湯並送達",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t08",
+      "officialName": "Thank Goodness it's Over!",
+      "description": "完成遊戲",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t09",
+      "officialName": "Patience is a Virtue",
+      "description": "在接待室等候",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t10",
+      "officialName": "Spill the Beans",
+      "description": "打翻男子的豆罐",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t11",
+      "officialName": "Done Up Like a Kipper",
+      "description": "讓魚販滿意",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t12",
+      "officialName": "Friend of the Forest",
+      "description": "聽過森林動物",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t13",
+      "officialName": "No Post on Thuesdays",
+      "description": "破壞所有郵筒",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t14",
+      "officialName": "Bobby Knocker",
+      "description": "敲過關閉的門",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t15",
+      "officialName": "Cheek to Cheek",
+      "description": "回訪餐車服務員",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t16",
+      "officialName": "The Rat Pack",
+      "description": "找齊唱歌老鼠",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t17",
+      "officialName": "Mole Supper",
+      "description": "被鼴鼠取消晚餐邀請",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t18",
+      "officialName": "A Lovely Pair",
+      "description": "割完草",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t19",
+      "officialName": "Think F.A.S.T.",
+      "description": "聽 Larry 談喜愛的飲料",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t20",
+      "officialName": "A Fine Mess",
+      "description": "幫 Keri 整理貨架",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t21",
+      "officialName": "Lights Out",
+      "description": "欺負卡住的 Charlie",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t22",
+      "officialName": "The Beans are on the Windowsill!",
+      "description": "將窗邊豆罐送下去",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t23",
+      "officialName": "The People's Princess",
+      "description": "打破紀念盤",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t24",
+      "officialName": "Visit Barnsworth",
+      "description": "離開接待室",
+      "category": "story",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t25",
+      "officialName": "Everything Must Go",
+      "description": "幫 Nick 開新店",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t26",
+      "officialName": "Final Form",
+      "description": "找到 Sam 的所有肉塊",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t27",
+      "officialName": "Ménage à trois",
+      "description": "拜訪 Polly 和 Paul",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t28",
+      "officialName": "The Ol' One Two",
+      "description": "觀看 Bobby 的把戲",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t29",
+      "officialName": "Tough Tatties",
+      "description": "等馬鈴薯說完話",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t30",
+      "officialName": "Green Fingers",
+      "description": "拍打 Graham 警告的花",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t31",
+      "officialName": "Shell Shocked",
+      "description": "清除 Sue 的蝸牛",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "t32",
+      "officialName": "Sick as a Fig",
+      "description": "讓 Ronny 側躺",
+      "category": "optional",
+      "sourceRefs": [
+        "ps5"
+      ],
+      "verificationStatus": "verified"
+    }
+  ],
+  "stages": [
+    {
+      "id": "reception",
+      "title": "00｜接待室與短結局",
+      "order": 0,
+      "description": "先取等候獎盃，再開新遊戲走主線。既有主線存檔先自行備份；本工具不操作主機存檔。",
+      "checkpoint": "離開接待室之前：先敲市長辦公室門。",
+      "steps": [
+        {
+          "id": "reception-wait",
+          "order": 1,
+          "location": "市長接待室",
+          "trigger": "首次開始；或另開新遊戲前先保護現有遊戲存檔",
+          "action": "坐著等約 15 分鐘，市長開門後進辦公室，觀看短結局。",
+          "verification": "PS5 出現 Patience is a Virtue；等待本身不代表已跳盃。",
+          "trophyIds": [
+            "t09"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "main-run",
+          "order": 2,
+          "location": "標題畫面",
+          "trigger": "短結局結束後",
+          "action": "選 New Game 重新到接待室；後續各收集操作記在同一主線輪次。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "branch",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "door-reception",
+          "order": 3,
+          "location": "接待室右側",
+          "trigger": "主線輪次離開之前",
+          "action": "拍打市長辦公室的關閉門，保守多敲幾次。",
+          "verification": "此處之後不能自由回訪；必要敲擊次數未證實。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "fool",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "leave-reception",
+          "order": 4,
+          "location": "接待室左側出口",
+          "trigger": "已檢查辦公室門",
+          "action": "離開接待室，抵達 Barnsworth。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t24"
+          ],
+          "warningLevel": "critical",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "steam"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "title": "01｜廣場、花園與奶油店",
+      "order": 1,
+      "description": "先處理花園、警察亭、酒館及 Nick；救出 Charlie 後才進洞。",
+      "checkpoint": "第一次跳入 Charlie 的洞前：Ronny、花園與早期回訪。",
+      "steps": [
+        {
+          "id": "post-town-hall",
+          "order": 1,
+          "location": "接待室外",
+          "trigger": "剛離開接待室",
+          "action": "拍打路邊第一個紅色郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "door-chicken",
+          "order": 2,
+          "location": "廣場 Barnsworth Fried Chicken II",
+          "trigger": "店門仍關閉時",
+          "action": "拍打炸雞店鐵捲門。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "nick-open",
+          "order": 3,
+          "location": "廣場左下 Nick’s Bricks",
+          "trigger": "第一次抵達",
+          "action": "等 Nick 開店並拍打捲門確認招牌；之後每次回廣場都查看磚牆。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t25"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "post-nick",
+          "order": 4,
+          "location": "Nick 店旁",
+          "trigger": "第一次探索",
+          "action": "拍打第二個郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "rats-park",
+          "order": 5,
+          "location": "廣場花園垃圾袋與垃圾桶",
+          "trigger": "第一次進花園",
+          "action": "快速連拍兩袋垃圾和垃圾桶，聽老鼠合唱。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t16",
+            "t12"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "rats",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "mow",
+          "order": 6,
+          "location": "廣場花園紅色割草機",
+          "trigger": "首次探索花園",
+          "action": "啟動割草機，左右往返割完整片草地。",
+          "verification": "割草事件結束並檢查 A Lovely Pair。",
+          "trophyIds": [
+            "t18"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "mole-invite",
+          "order": 7,
+          "location": "廣場花園右側土堆",
+          "trigger": "首次探索；晚期井道之前",
+          "action": "追著移動土堆拍打，聽完鼴鼠的晚餐邀請。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t17",
+            "t12"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "forest",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-first",
+          "order": 8,
+          "location": "廣場警察亭",
+          "trigger": "進酒館前",
+          "action": "敲警察亭並等本次對話全部結束。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-first",
+          "order": 9,
+          "location": "Thumbitt Inn",
+          "trigger": "奶油店鎖住，需要鎖匠",
+          "action": "聽 Larry／Ronny 對話；跳水槽進地下室，拍酒桶後由軟管返回，打破酒杯並聽完新對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-after-pub",
+          "order": 10,
+          "location": "廣場警察亭",
+          "trigger": "從酒館出來",
+          "action": "再敲亭檢查有無新對話；同一劇情重複敲不保證累積。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "ronny",
+          "order": 11,
+          "location": "Mother Megg’s 門外",
+          "trigger": "鎖匠開店後、首次跳洞前",
+          "action": "拍倒地的 Ronny，直到側躺／嘔吐事件結束。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t32"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "stoat",
+          "order": 12,
+          "location": "奶油店冷藏庫左後方箱子",
+          "trigger": "拿奶油之前",
+          "action": "經員工門進冷藏庫，爬箱子拍最上層，聽完動物對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t12"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "forest",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "butter",
+          "order": 13,
+          "location": "奶油店冷藏庫貨架",
+          "trigger": "聽完動物後",
+          "action": "將大奶油推下貨架，觀看 Charlie 獲救。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t01"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "steam"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "nick-return",
+          "order": 14,
+          "location": "廣場 Nick 店",
+          "trigger": "Charlie 獲救後",
+          "action": "再查看磚牆缺口；保留之後拆牆的前置。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t25"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-before-hole",
+          "order": 15,
+          "location": "Thumbitt Inn",
+          "trigger": "第一次跳洞之前",
+          "action": "進酒館檢查新對話、拍酒杯，全部聽完再走。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-before-hole",
+          "order": 16,
+          "location": "廣場警察亭",
+          "trigger": "第一次跳洞之前",
+          "action": "敲亭聽完可用對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "first-hole",
+          "order": 17,
+          "location": "Charlie 的洞",
+          "trigger": "Ronny／花園／早期回訪已做",
+          "action": "跳洞沿管道到 Marge’s Chippo；途中會碰到紀念盤，之後仍需回走管道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t23"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        }
+      ]
+    },
+    {
+      "id": "spanner",
+      "title": "02｜扳手、魚販與市場",
+      "order": 2,
+      "description": "炸鍋修理要找三件工具。這一圈先拿扳手、開啟市場，再回廣場。",
+      "checkpoint": "第一次離開 Price Shaggers 前：完成三層貨架。",
+      "steps": [
+        {
+          "id": "tool-spanner",
+          "order": 1,
+          "location": "Marge’s Chippo 工具櫃",
+          "trigger": "第一次由管道抵達",
+          "action": "和 Jasper 確認缺扳手，從店面出去。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "rats-chippy",
+          "order": 2,
+          "location": "炸魚薯條店左側垃圾",
+          "trigger": "首次離店",
+          "action": "快速拍垃圾袋與垃圾桶，聽第二組合唱。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t16"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "rats",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "door-chippy-one",
+          "order": 3,
+          "location": "Marge’s Chippo 旁第一扇關門",
+          "trigger": "門仍關閉時",
+          "action": "拍打此門並檢查是否有回應。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "door-chippy-two",
+          "order": 4,
+          "location": "Marge’s Chippo 旁第二扇關門",
+          "trigger": "門仍關閉時",
+          "action": "拍打此門並檢查是否有回應。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "post-chippy",
+          "order": 5,
+          "location": "炸魚薯條店下方停車區",
+          "trigger": "第一圈工具任務",
+          "action": "拍打靠磚牆的郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "shelves",
+          "order": 6,
+          "location": "Price Shaggers",
+          "trigger": "第一次進店找扳手",
+          "action": "跳上貨架，拍空三層所有商品。",
+          "verification": "確認三層都清空，另核對 A Fine Mess。",
+          "trophyIds": [
+            "t20"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "chimney-first",
+          "order": 7,
+          "location": "Price Shaggers 右側 Bumberly Cl",
+          "trigger": "完成貨架後",
+          "action": "沿垃圾箱、梯子、電線杆上屋頂，下煙囪，再由窗戶到社區花園。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "door-shed",
+          "order": 8,
+          "location": "社區花園工具棚",
+          "trigger": "首次抵達",
+          "action": "拍打關閉的棚門。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "door-garden-house",
+          "order": 9,
+          "location": "工具棚左方白門房屋",
+          "trigger": "首次抵達",
+          "action": "拍打此處關閉門；不要與稍後藍門混淆。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "worm-first",
+          "order": 10,
+          "location": "花園井底",
+          "trigger": "沿水管跳井",
+          "action": "聽完蚯蚓對話，拍右牆打開通道，沿水管爬進魚店。",
+          "verification": "保守互動；蚯蚓是否計入森林獎盃，來源有分歧。",
+          "trophyIds": [
+            "t12"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "fish-first",
+          "order": 11,
+          "location": "Bish 魚販冰檯",
+          "trigger": "第一次進店",
+          "action": "開水龍頭；拍每條魚及香菸，直到陳列完成、魚販道謝，再讓 Jasper 拿走扳手。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t11"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "market-access",
+          "order": 12,
+          "location": "Sam’s Hams 員工門",
+          "trigger": "魚販出口打開後",
+          "action": "跳絞肉機、掙脫長香腸抵達市場；此時不是 Final Form 的肉塊事件。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "rats-market",
+          "order": 13,
+          "location": "市場 Rog 店附近垃圾袋／長椅",
+          "trigger": "首次抵達市場",
+          "action": "快速拍出第三組老鼠並聽合唱。",
+          "verification": "三處合唱都完成後核對 The Rat Pack。",
+          "trophyIds": [
+            "t16"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "rats",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "post-market-flower",
+          "order": 14,
+          "location": "Big Ron’s Big Pies／花壇附近",
+          "trigger": "第一次市場探索",
+          "action": "拍打此區郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "post-market-crossword",
+          "order": 15,
+          "location": "市場填字男子附近",
+          "trigger": "第一次市場探索",
+          "action": "拍打此區另一個郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "door-travel",
+          "order": 16,
+          "location": "All Abroad 旅行店",
+          "trigger": "捲門關閉時",
+          "action": "拍打旅行店門。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "door-pies",
+          "order": 17,
+          "location": "Big Ron’s Big Pies 旁",
+          "trigger": "捲門關閉時",
+          "action": "拍打派店旁的關閉捲門。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "cheek-first",
+          "order": 18,
+          "location": "市場下方餐車窗戶",
+          "trigger": "餐車第一次開放時",
+          "action": "跳進窗口拍打服務員，直到被踢出且窗關上。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t15"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pie-request",
+          "order": 19,
+          "location": "Big Ron’s Big Pies",
+          "trigger": "第一圈市場",
+          "action": "聽 Ron 要求帶肉，回餐車旁缺口到花園，打開花園水龍頭。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "river-first",
+          "order": 20,
+          "location": "花園右上缺口 → 河岸 → 紅車庫",
+          "trigger": "花園供水後",
+          "action": "越過河岸到裂開屋頂，跳破屋頂落至車庫旁。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "owl",
+          "order": 21,
+          "location": "紅車庫附近樹洞",
+          "trigger": "第一次到此",
+          "action": "拍樹洞，聽完貓頭鷹對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t12"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "forest",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "post-blue-house",
+          "order": 22,
+          "location": "車庫右側兩屋之間",
+          "trigger": "首度抵達住宅區",
+          "action": "拍打最後一區郵筒。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t13"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "doors"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "door-blue-house",
+          "order": 23,
+          "location": "郵筒上方藍門",
+          "trigger": "仍關閉時",
+          "action": "拍打藍色門，若還沒跳盃，之後回訪繼續檢查漏門。",
+          "verification": "待 PS5 實機核對；本清單與次數不能保證跳盃。",
+          "trophyIds": [
+            "t14"
+          ],
+          "warningLevel": "branch",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "doors"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "gutter-return",
+          "order": 24,
+          "location": "白門房屋 → 梯子 → 屋頂排水管",
+          "trigger": "住宅區探索後",
+          "action": "由白門穿過屋內上屋頂，踩排水管淤塞回廣場。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "tools-pie",
+      "title": "03｜螺絲起子、Charlie 與巨大派",
+      "order": 3,
+      "description": "回訪廣場，再找螺絲起子；接著是 Charlie 卡柵欄與肉塊事件。",
+      "checkpoint": "跳井前檢查 Charlie；離開肉世界前檢查全部肉塊。",
+      "steps": [
+        {
+          "id": "nick-mid",
+          "order": 1,
+          "location": "廣場 Nick 店",
+          "trigger": "由排水管返回",
+          "action": "查看磚牆剩餘狀態。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t25"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-tools",
+          "order": 2,
+          "location": "Thumbitt Inn",
+          "trigger": "回廣場找下一件工具前",
+          "action": "進店拍酒杯並聽完新對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-tools",
+          "order": 3,
+          "location": "廣場警察亭",
+          "trigger": "本次回廣場",
+          "action": "敲亭，聽完所有新對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "screwdriver",
+          "order": 4,
+          "location": "Chippo → Price Shaggers 閣樓",
+          "trigger": "由洞回 Chippo 問 Jasper 後",
+          "action": "推落頂層鼠藥進天花板；經箱子拍破封牆，把起司推向守門鼠；進鼠商店，跳破櫃檯地板取螺絲起子。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "hammer-request",
+          "order": 5,
+          "location": "Marge’s Chippo",
+          "trigger": "交回螺絲起子後",
+          "action": "再問 Jasper，確認要找槌子；沿 Bumberly Cl 煙囪回花園。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "charlie-fence",
+          "order": 6,
+          "location": "社區花園右上柵欄",
+          "trigger": "找槌子這次回花園",
+          "action": "先拍卡在柵欄的 Charlie 頭部，觀看小孩接續互動。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t21"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "worm-second",
+          "order": 7,
+          "location": "花園井道",
+          "trigger": "Charlie 事件之後",
+          "action": "再沿井道前進，有動物對話時聽完。",
+          "verification": "保守保留對話互動，無法證實蚯蚓是必要計數。",
+          "trophyIds": [
+            "t12"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "fish-second",
+          "order": 8,
+          "location": "Bish 魚販",
+          "trigger": "第二次穿過魚店",
+          "action": "再次整理整個冰檯，確認每條魚都有香菸並聽到道謝。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t11"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "meat-all",
+          "order": 9,
+          "location": "Sam’s Hams 肉世界",
+          "trigger": "第二次到肉店，拍櫃檯大肉塊",
+          "action": "巡完整個肉世界拍所有肉塊；先找齊，再進中央肉人的嘴。",
+          "verification": "核對全部肉塊與 Final Form；精確 17 塊及各位置仍待 PS5 實機核對。",
+          "trophyIds": [
+            "t26"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "big-pie",
+          "order": 10,
+          "location": "Big Ron’s Big Pies",
+          "trigger": "帶肉回店後",
+          "action": "拍電話叫 Colin；推最上層派粉箱入機器，在機器內掙脫做出大派。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t04"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "steam"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "rog",
+          "order": 11,
+          "location": "Rog’s Veg Hole",
+          "trigger": "離開巨大派後",
+          "action": "進蔬菜店觸發 Rog 的回憶與肥料相關主線，再離店。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "cheek-second",
+          "order": 12,
+          "location": "市場餐車",
+          "trigger": "大派／Rog 事件後再次開窗",
+          "action": "再跳窗拍服務員，等被踢出。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t15"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "beans-balcony",
+          "order": 13,
+          "location": "旅行店旁假錶攤 → 巷內陽台",
+          "trigger": "拍假錶攤追男子",
+          "action": "藉垃圾桶與梯子爬上陽台，推落窗邊豆罐。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t22"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "steam"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-bin",
+          "order": 14,
+          "location": "巷內垃圾桶外",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-pie",
+          "order": 15,
+          "location": "大派旁",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-veg",
+          "order": 16,
+          "location": "Rog 店外蔬菜箱",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-fish",
+          "order": 17,
+          "location": "填字男子後方的魚",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-burger",
+          "order": 18,
+          "location": "餐車附近漢堡",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "gull-oily",
+          "order": 19,
+          "location": "Oily Baps 攤車",
+          "trigger": "Brigadier 請你找海鷗後",
+          "action": "拍打這隻海鷗，再回 Brigadier 開通道。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-beans",
+          "order": 20,
+          "location": "Brigadier 通道 → 酒館地下室",
+          "trigger": "海鷗集合完成",
+          "action": "沿新通道進酒館地下室，經軟管回吧檯；聽完所有新對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-beans",
+          "order": 21,
+          "location": "廣場警察亭",
+          "trigger": "再次回廣場",
+          "action": "檢查新對話，聽完再離開。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "nick-wall",
+          "order": 22,
+          "location": "廣場 Nick 店",
+          "trigger": "磚牆已明顯稀疏時",
+          "action": "拍倒磚牆，確認招牌變成二手家具店。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t25"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        }
+      ]
+    },
+    {
+      "id": "fertiliser",
+      "title": "04｜肥料、槌子與炸鍋",
+      "order": 4,
+      "description": "回社區花園時視角會變；先拜訪屋內兩人，再開肥料袋。",
+      "checkpoint": "肥料袋前先走左邊；離開河岸前先聽鴨子。",
+      "steps": [
+        {
+          "id": "polly-paul",
+          "order": 1,
+          "location": "由廣場洞 → Chippo → 煙囪 → 花園窗邊",
+          "trigger": "肥料袋尚未打開",
+          "action": "先沿畫面左側走進 Polly 和 Paul 家，再回來。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t27"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "fertiliser-bag",
+          "order": 2,
+          "location": "花園肥料袋",
+          "trigger": "拜訪屋內後",
+          "action": "跳肥料袋、經曬衣繩事件將袋子打開，觀看番茄成長。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t03"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "hammer-river",
+          "order": 3,
+          "location": "河岸釣魚處",
+          "trigger": "肥料事件後找 Frank",
+          "action": "進魚餌盒，擺盪拿起槌子供 Jasper 回收。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "ducks",
+          "order": 4,
+          "location": "河岸右側",
+          "trigger": "槌子／烤麵包機事件附近",
+          "action": "停下聽完兩隻鴨子的對話；先前五組動物都檢查後核對獎盃。",
+          "verification": "五組動物為來源共識；另保留蚯蚓互動，避免依爭議數量斷言。",
+          "trophyIds": [
+            "t12"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "forest",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "flowers",
+          "order": 5,
+          "location": "由破屋頂出來的房屋前",
+          "trigger": "帶槌子離開河岸後",
+          "action": "拍完所有有臉的花，不採納 Graham 的勸告。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t30"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "fryer",
+          "order": 6,
+          "location": "Marge’s Chippo",
+          "trigger": "Jasper 三件工具已收齊",
+          "action": "依 Jasper 指示進炸鍋，連續操作至修理事件結束。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t02"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        }
+      ]
+    },
+    {
+      "id": "tea",
+      "title": "05｜紀念盤、馬鈴薯與牛奶",
+      "order": 5,
+      "description": "找想喝奶茶的男孩與 Normal Milk；回廣場時記得酒館和警察。",
+      "checkpoint": "進馬鈴薯袋後先停手，等整段對話完畢。",
+      "steps": [
+        {
+          "id": "milk-request",
+          "order": 1,
+          "location": "Chippo 右側男孩家 → Normal Milk",
+          "trigger": "炸鍋修好後",
+          "action": "聽男孩需要牛奶；沿 Normal Milk 指示找牛，得知需要薯條。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-milk",
+          "order": 2,
+          "location": "由住宅白門／排水管回廣場 → 酒館",
+          "trigger": "替牛找薯條這次回訪",
+          "action": "進酒館拍酒杯並聽完新對話。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-milk",
+          "order": 3,
+          "location": "廣場警察亭",
+          "trigger": "回廣場買薯條時",
+          "action": "敲亭聽對話；若已出現丟蛋把戲，可另勾獎盃。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "sick-arm",
+          "order": 4,
+          "location": "炸雞店病人房",
+          "trigger": "本次廣場回訪",
+          "action": "拍病人後走開讓相框掉下；跟隨長手臂、拍購物袋，手入噴泉後再跳洞。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "plate",
+          "order": 5,
+          "location": "回 Chippo 的排水管內",
+          "trigger": "多次經過後",
+          "action": "走完原管道路線直到紀念盤跌碎。",
+          "verification": "以碎裂事件與跳盃為準；不把固定經過次數當保證。",
+          "trophyIds": [
+            "t23"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "potato-wait",
+          "order": 6,
+          "location": "Marge 的馬鈴薯袋內",
+          "trigger": "入袋後立即停手",
+          "action": "等兩顆馬鈴薯說完整段對話，核對獎盃後才開始切。",
+          "verification": "對話結束並核對 Tough Tatties；切早會中斷。",
+          "trophyIds": [
+            "t29"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "chips-cow",
+          "order": 7,
+          "location": "薯條店 → 鳥 → 牛的田地",
+          "trigger": "完成等待後",
+          "action": "切薯條，等鳥叼起你；送薯條給牛，再拍田地磚塊開門。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "tea",
+          "order": 8,
+          "location": "牛奶田地浴池",
+          "trigger": "田地門出現",
+          "action": "進門跳浴池，完成牛奶與飲茶事件。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t05"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "title": "06｜購物、蝸牛與井道",
+      "order": 6,
+      "description": "長手購物後回花園，這次必須完整清蝸牛才跳井。",
+      "checkpoint": "跳井不可回頭：核對地上各處蝸牛；晚期井道需要早期鼴鼠邀請。",
+      "steps": [
+        {
+          "id": "bubble",
+          "order": 1,
+          "location": "煙囪 → 花園 → 車庫 → Price Shaggers",
+          "trigger": "牛奶事件結束後",
+          "action": "由員工門進後場，用網捉氣泡升空，觀看墜落逮捕事件。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t06"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "shopping",
+          "order": 2,
+          "location": "Price Shaggers",
+          "trigger": "逮捕事件之後",
+          "action": "替長手開門，把架上罐頭推進車內，完成購物；掙脫購物袋後經煙囪回花園。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "walk"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-sue",
+          "order": 3,
+          "location": "Sue 旁／花園右上",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-crops",
+          "order": 4,
+          "location": "玉米與紅蘿蔔田之間",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-gate",
+          "order": 5,
+          "location": "左下 No Snail Zone 金屬門／白欄杆",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails",
+            "route"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "snail-stone",
+          "order": 6,
+          "location": "玉米下方白石附近",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-tree",
+          "order": 7,
+          "location": "井左側樹上",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-bench",
+          "order": 8,
+          "location": "井右上長椅",
+          "trigger": "Sue 提出蝸牛問題後",
+          "action": "仔細找出並拍掉此處蝸牛，確認沒有遺漏再離開。",
+          "verification": "七隻位置清單來自文字攻略；除金屬門外各地標仍需 PS5 實機逐隻核對。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "snails"
+          ],
+          "verificationStatus": "unverified"
+        },
+        {
+          "id": "snail-well",
+          "order": 9,
+          "location": "花園井底",
+          "trigger": "先確認地面各處都已清除",
+          "action": "最後才跳井壓到逃走的蝸牛。",
+          "verification": "核對 Shell Shocked；跳井後不能補地面漏項。",
+          "trophyIds": [
+            "t31"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "snails"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "mole-cancel",
+          "order": 10,
+          "location": "最後一趟井道",
+          "trigger": "已有廣場鼴鼠邀請",
+          "action": "走井道聽鼴鼠取消晚餐邀請。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t17"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "fool",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        }
+      ]
+    },
+    {
+      "id": "finale",
+      "title": "07｜最後回訪、湯與結局",
+      "order": 7,
+      "description": "最後一輪先清魚販、餐車、酒館、警察與豆罐，再送湯。",
+      "checkpoint": "送湯前核對所有可錯過與跨階段獎盃；工具核取不能代替 PS5 跳盃。",
+      "steps": [
+        {
+          "id": "fish-final",
+          "order": 1,
+          "location": "Bish 冰檯",
+          "trigger": "最後一趟井道出來",
+          "action": "完成魚檯互動，持續拍魚販面前那條魚直到最後反應。",
+          "verification": "若無最後反應，可能先前未完整整理；不能只靠此次補做保證。",
+          "trophyIds": [
+            "t11"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "cheek-final",
+          "order": 2,
+          "location": "市場餐車",
+          "trigger": "道路清除、餐車再次開窗",
+          "action": "第三次跳窗拍打服務員，直到事件結束。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t15"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "pub-final",
+          "order": 3,
+          "location": "市場巷道 → Brigadier 通道 → 酒館",
+          "trigger": "Big Ron／Rog 前往酒館後",
+          "action": "經地下室回吧檯、打破酒杯，聽 Larry 最後的飲料對話。",
+          "verification": "每次須有新劇情；以對話與實際跳盃為準，不保證固定五次必成功。",
+          "trophyIds": [
+            "t19"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "police-final",
+          "order": 4,
+          "location": "廣場警察亭",
+          "trigger": "最後離開酒館後",
+          "action": "敲亭直到 Bobby 丟蛋把戲，核對獎盃。",
+          "verification": "前置為早期多次回訪；固定次數仍待 PS5 核對。",
+          "trophyIds": [
+            "t28"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "spill",
+          "order": 5,
+          "location": "Nick 二手家具店原址",
+          "trigger": "家具賣光後",
+          "action": "把窮困男子正在煮的豆罐拍落。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t10"
+          ],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "fool"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "before-ending",
+          "order": 6,
+          "location": "廣場、送湯之前",
+          "trigger": "最後清理檢查",
+          "action": "展開跨階段追蹤，對照 PS5 獎盃列表核對尚未取得項目；下載一份目前工具進度。",
+          "verification": "保留所有未跳盃項，不自動補勾。錯過遊戲內事件可能須重玩。",
+          "trophyIds": [],
+          "warningLevel": "critical",
+          "missable": true,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "route",
+            "steam"
+          ],
+          "verificationStatus": "consensus",
+          "checkpoint": true
+        },
+        {
+          "id": "soup",
+          "order": 7,
+          "location": "炸雞店病人房",
+          "trigger": "購物與最後清理完成",
+          "action": "把湯碗推向病人直到送湯事件結束。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t07"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "ending",
+          "order": 8,
+          "location": "音樂結局 → 市長辦公室",
+          "trigger": "送湯之後",
+          "action": "完成歌曲中的要求，最後進市長辦公室結束主線。",
+          "verification": "核對畫面互動已結束；有跳盃時另勾獎盃取得。",
+          "trophyIds": [
+            "t08"
+          ],
+          "warningLevel": "prepare",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "steam",
+            "walk"
+          ],
+          "verificationStatus": "consensus"
+        },
+        {
+          "id": "platinum",
+          "order": 9,
+          "location": "PS5 獎盃列表",
+          "trigger": "其餘 32 個獎盃實際取得後",
+          "action": "檢查 Barnsworth’s Best 是否已解鎖，再手動記錄。",
+          "verification": "獎盃頁顯示白金；完成所有步驟不等於白金。",
+          "trophyIds": [
+            "t00"
+          ],
+          "warningLevel": "later",
+          "missable": false,
+          "recovery": "若已越過時機，保留本輪記錄；遊戲內補救能力須依存檔確認，必要時另開一輪。",
+          "sourceRefs": [
+            "ps5"
+          ],
+          "verificationStatus": "verified"
+        }
+      ]
+    }
+  ],
+  "trackers": [
+    {
+      "id": "fish",
+      "title": "Bish 魚販",
+      "trophyIds": [
+        "t11"
+      ],
+      "stepIds": [
+        "fish-first",
+        "fish-second",
+        "fish-final"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "pub",
+      "title": "Larry 酒館對話",
+      "trophyIds": [
+        "t19"
+      ],
+      "stepIds": [
+        "pub-first",
+        "pub-before-hole",
+        "pub-tools",
+        "pub-beans",
+        "pub-milk",
+        "pub-final"
+      ],
+      "note": "這是路線回訪提醒，並非已證實的必要互動計數；只勾完成新對話的項目。"
+    },
+    {
+      "id": "police",
+      "title": "Bobby 警察亭",
+      "trophyIds": [
+        "t28"
+      ],
+      "stepIds": [
+        "police-first",
+        "police-after-pub",
+        "police-before-hole",
+        "police-tools",
+        "police-beans",
+        "police-milk",
+        "police-final"
+      ],
+      "note": "此清單刻意涵蓋每次路線回訪；不以勾選數推定丟蛋事件。"
+    },
+    {
+      "id": "nick",
+      "title": "Nick 店面變化",
+      "trophyIds": [
+        "t25",
+        "t10"
+      ],
+      "stepIds": [
+        "nick-open",
+        "nick-return",
+        "nick-mid",
+        "nick-wall",
+        "spill"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "postboxes",
+      "title": "郵筒",
+      "trophyIds": [
+        "t13"
+      ],
+      "stepIds": [
+        "post-town-hall",
+        "post-nick",
+        "post-chippy",
+        "post-market-flower",
+        "post-market-crossword",
+        "post-blue-house"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "doors",
+      "title": "關閉門與捲門",
+      "trophyIds": [
+        "t14"
+      ],
+      "stepIds": [
+        "door-reception",
+        "door-chicken",
+        "door-chippy-one",
+        "door-chippy-two",
+        "door-shed",
+        "door-garden-house",
+        "door-travel",
+        "door-pies",
+        "door-blue-house"
+      ],
+      "note": "九處為來源檢查路線；精確總數與每門三下均未實機驗收。沿途其他關門也應敲。"
+    },
+    {
+      "id": "rats",
+      "title": "唱歌老鼠",
+      "trophyIds": [
+        "t16"
+      ],
+      "stepIds": [
+        "rats-park",
+        "rats-chippy",
+        "rats-market"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "forest",
+      "title": "森林動物",
+      "trophyIds": [
+        "t12"
+      ],
+      "stepIds": [
+        "rats-park",
+        "mole-invite",
+        "stoat",
+        "owl",
+        "ducks"
+      ],
+      "note": "五組為多來源共識；七隻森林生物說法不一致。蚯蚓另作保守提醒。"
+    },
+    {
+      "id": "worm",
+      "title": "蚯蚓對話（保守提醒）",
+      "trophyIds": [
+        "t12"
+      ],
+      "stepIds": [
+        "worm-first",
+        "worm-second"
+      ],
+      "note": "是否計入獎盃未查明；不把它算進已確認五組動物。"
+    },
+    {
+      "id": "cheek",
+      "title": "餐車服務員",
+      "trophyIds": [
+        "t15"
+      ],
+      "stepIds": [
+        "cheek-first",
+        "cheek-second",
+        "cheek-final"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "snails",
+      "title": "Sue 的蝸牛",
+      "trophyIds": [
+        "t31"
+      ],
+      "stepIds": [
+        "snail-sue",
+        "snail-crops",
+        "snail-gate",
+        "snail-stone",
+        "snail-tree",
+        "snail-bench",
+        "snail-well"
+      ],
+      "note": "先地面後井底。七隻文字位置部分仍待實機查證，請全面巡查花園。"
+    },
+    {
+      "id": "mole",
+      "title": "鼴鼠晚餐邀請",
+      "trophyIds": [
+        "t17"
+      ],
+      "stepIds": [
+        "mole-invite",
+        "mole-cancel"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    },
+    {
+      "id": "gulls",
+      "title": "Brigadier 的海鷗",
+      "trophyIds": [],
+      "stepIds": [
+        "gull-bin",
+        "gull-pie",
+        "gull-veg",
+        "gull-fish",
+        "gull-burger",
+        "gull-oily"
+      ],
+      "note": "子項與流程使用同一筆步驟狀態；不推定獎盃已取得。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ps5",
+      "title": "PS5 獎盃列表（Exophase）",
+      "url": "https://www.exophase.com/game/thank-goodness-you-re-here-psn/trophies/",
+      "limitation": "列表核對；不代表已實機解鎖",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "route",
+      "title": "PlatGet 流程攻略",
+      "url": "https://platget.com/guides/thank-goodness-youre-here-trophy-guide/",
+      "limitation": "搜尋索引可讀；直接頁面有驗證牆。只作流程交叉核對",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "steam",
+      "title": "Forgotten Lands：100% [ENG]",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3303349698",
+      "limitation": "玩家指南；部分收集項仍標 WIP",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "fool",
+      "title": "The Fool：Achievement Guide!",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3302801903",
+      "limitation": "玩家第一手指南；頁面有移除提示，本文可讀",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "walk",
+      "title": "Neoseeker 主線 Part II",
+      "url": "https://www.neoseeker.com/thank-goodness-youre-here/Walkthrough_Part_II",
+      "limitation": "搜尋索引可讀；實體頁面可能 403，動物數量自相矛盾",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "rats",
+      "title": "Prima：The Rat Pack",
+      "url": "https://primagames.com/tips/thank-goodness-youre-here-achievement-guide-the-rat-pack",
+      "limitation": "有作者實機截圖",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "forest",
+      "title": "Prima：Friend of the Forest",
+      "url": "https://primagames.com/tips/thank-goodness-youre-here-achievement-guide-friend-of-the-forest",
+      "limitation": "有作者截圖；列五組動物",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "snails",
+      "title": "Beyond the Fog Gate：Shell Shocked",
+      "url": "https://beyondthefoggate.com/guides/thank-goodness-youre-here-shell-shocked-trophy/",
+      "limitation": "七隻位置；白石附近的描述仍待實機核對",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "doors",
+      "title": "Beyond the Fog Gate 獎盃攻略",
+      "url": "https://beyondthefoggate.com/guides/thank-goodness-youre-here-trophy-guide/",
+      "limitation": "九扇門與每門三下僅作保守檢查清單，非證實的必要計數",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "video",
+      "title": "IBadDriverI 白金影片章節",
+      "url": "https://www.youtube.com/watch?v=1anI7-Uoo8A",
+      "limitation": "只核對作者發布的章節與時間，未逐格觀看影片",
+      "accessedAt": "2026-10-31"
+    }
+  ]
+}

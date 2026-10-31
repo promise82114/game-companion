@@ -2,7 +2,7 @@
 
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
-目前包含 EDF World Brothers、EDF World Brothers 2 與 Mycopunk。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
+目前包含 EDF World Brothers、EDF World Brothers 2、Mycopunk 與 Thank Goodness You're Here!。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
 
 ## 本機使用
 
@@ -38,18 +38,21 @@ Mycopunk 的原始資料／格形／求解器驗證已加入 `scripts/verify.mjs
 
 Mycopunk 已完成整合及本機驗證，納入既有 main 分支的 Pages 發布流程；各次部署結果可由 GitHub Actions 核對。
 
-`.github/workflows/deploy.yml` 先驗證三個模組與 `_site/`，任一必要檢查失敗即停止；僅 main 的 push 或手動 main workflow 進入部署，PR 只驗證。Pages Source 需設為 GitHub Actions。輸出網址為：
+`.github/workflows/deploy.yml` 先驗證各必要模組與 `_site/`，任一必要檢查失敗即停止；僅 main 的 push 或手動 main workflow 進入部署，PR 只驗證。Pages Source 需設為 GitHub Actions。輸出網址為：
 
 - `/game-companion/`
 - `/game-companion/games/edf-wb/`
 - `/game-companion/games/edf-wb2/`
 - `/game-companion/games/mycopunk/`
+- `/game-companion/games/thank-goodness-youre-here/`
 
 已發布至 [Game Companion](https://promise82114.github.io/game-companion/)，包含 [EDF WB](https://promise82114.github.io/game-companion/games/edf-wb/) 與 [EDF WB2](https://promise82114.github.io/game-companion/games/edf-wb2/)。發布證據與功能限制見 [整合報告](docs/reports/INTEGRATION_REPORT.md)；Drive 已提供具每次授權驗證門檻的手動同步；舊站入口未切換。
 
 Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io/game-companion/games/mycopunk/)。
 
 ## 維護文件
+
+Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[模組說明](games/thank-goodness-youre-here/README.md)。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)包含 PS5 本體 33 獎盃、8 階段、100 個獨立步驟與 13 組跨階段追蹤。IndexedDB 分開保存攻略與獎盃狀態，Drive 沿用既有安全同步核心。執行 `node scripts/verify-thank-goodness-browser.mjs` 驗證新模組；真實 PS5 跳盃與正式 Google Drive 尚待人工驗收。
 
 - [目前架構](docs/ARCHITECTURE.md)
 - [新增遊戲模組契約](docs/MODULE_CONTRACT.md)

@@ -25,6 +25,8 @@ Mycopunk 原 `prototype/` 對應到 `games/mycopunk/dist/`；Excel、localizatio
 
 建置讀取 `games/*/module.json`，自動產生 Portal 遊戲列，將各模組 `dist/` 放到 `_site/games/{slug}/`。網站不用 router 或後端；GitHub Pages 根為 `_site`，路徑自然對應 `/game-companion/`。來源與工具不會被打包到網站。
 
+Thank Goodness You're Here!（2026-10-31 本機整合，模組 1.0.0）以獨立 JSON 定義 33 獎盃、8 階段、100 步與 13 組 tracker。其 schema 1 分開保存 `stepDone`／`trophyEarned`；IndexedDB `game-companion.thank-goodness-youre-here.progress.v1` 的 `state`／`archives` 提供交易與原文復原。沒有重用 EDF item hash 或增加中央狀態。Drive OAuth／adapter／envelope 沿用 EDF 版本，sync-core 的群組改為兩個進度 map，session 等待本模組的非同步儲存；Base／pending 按遊戲／帳號保存於自己的 localStorage 前綴。SW 只處理本模組 scope。攻略查證、保護式匯入、測試與實機限制見 `games/thank-goodness-youre-here/README.md`；發布沿用 main 的既有 Pages 流程；尚未完成真實 Google 驗收。
+
 版本分為平台版本、moduleVersion、progressSchema 與原有 catalogVersion。既有項目 ID 與進度 app/schema 相容保留，新增 `gameId`、`moduleVersion`、`revision`。revision 是本機變更計數，**不是跨分頁交易或雲端修訂保證**。
 
 進度、快照、匯入原文、Cache Storage 與 Drive 檔名皆按遊戲命名。SW 只攔截自己 scope 的 GET、只查自己的 cache、只清自己的版本前綴。Portal 不註冊 SW、不存取玩家儲存。

@@ -22,4 +22,10 @@ const mycopunk=path.join(root,'games/mycopunk'),model=await fs.readFile(path.joi
 assert.ok(model.includes("storagePrefix = 'game-companion.mycopunk.'"));assert.ok(!model.includes('mycopunk-checklist:collection:v1'));assert.ok(!model.includes('mycopunk-checklist:before-import:v1'));
 assert.ok(!app.includes('serviceWorker'));assert.ok(!html.includes('accounts.google.com'));assert.ok(html.includes('href="../../"'));
 for(const name of ['catalogue','upgrades','field-guide','recommendations','build-rules'])await fs.access(path.join(mycopunk,'data',name+'.json'));
-console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:3}));
+const thankGoodness=path.join(root,'games/thank-goodness-youre-here');
+const roadmap=JSON.parse(await fs.readFile(path.join(thankGoodness,'guide.json'),'utf8'));
+assert.equal(roadmap.trophies.length,33);
+for(const file of ['model.js','app.js','sw.js','shared/sync-core.js','shared/sync-session.js','shared/drive-appdata.js'])await fs.access(path.join(thankGoodness,file));
+assert.ok((await fs.readFile(path.join(thankGoodness,'index.html'),'utf8')).includes('href="../../"'));
+const moduleCount=(await fs.readdir(path.join(root,'games'),{withFileTypes:true})).filter(entry=>entry.isDirectory()).length;
+console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:moduleCount}));

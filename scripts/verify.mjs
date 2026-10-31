@@ -41,4 +41,6 @@ for(const slug of ['edf-wb','edf-wb2']){
 const legacyCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/edf-wb'),encoding:'utf8'});assert.equal(legacyCheck.status,0,legacyCheck.stderr);console.log(legacyCheck.stdout.trim());
 const mycopunkCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/mycopunk'),encoding:'utf8'});assert.equal(mycopunkCheck.status,0,mycopunkCheck.stderr);console.log(mycopunkCheck.stdout.trim());
 results.push({slug:'mycopunk',items:842,legacyIds:660,equipment:27,hiddenPaths:7,cloudWrite:'not implemented'});
+const thankGoodnessCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/thank-goodness-youre-here'),encoding:'utf8'});assert.equal(thankGoodnessCheck.status,0,thankGoodnessCheck.stderr);console.log(thankGoodnessCheck.stdout.trim());
+results.push({slug:'thank-goodness-youre-here',trophies:33,roadmap:'independent IndexedDB steps and trophies',cloudWrite:'blocked-until-current-grant-proven'});
 console.log(JSON.stringify({passed:true,modules:results}));

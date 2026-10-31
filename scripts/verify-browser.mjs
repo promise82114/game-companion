@@ -7,7 +7,9 @@ await fs.mkdir('outputs/integration',{recursive:true});
 const results=[];
 try{
  const portalContext=await browser.newContext(),portal=await portalContext.newPage();
- await portal.goto(base);assert.equal(await portal.locator('.open-game').count(),3);
+ const moduleSlugs=(await fs.readdir(new URL('../games/',import.meta.url),{withFileTypes:true})).filter(entry=>entry.isDirectory()).map(entry=>entry.name);
+ await portal.goto(base);assert.equal(await portal.locator('.open-game').count(),moduleSlugs.length);
+ for(const slug of moduleSlugs)assert.equal(await portal.locator(`.open-game[href="games/${slug}/"]`).count(),1);
  assert.equal(await portal.locator('.open-game[href="games/mycopunk/"]').count(),1);
  for(const width of [1440,768,390]){await portal.setViewportSize({width,height:900});assert.equal(await portal.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await portal.screenshot({path:`outputs/integration/portal-${width}.png`,fullPage:true});}
  await portal.locator('.open-game').first().click();assert.match(portal.url(),/games\/edf-wb\/$/);await portalContext.close();

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#356249"><meta name="description" content="Thank Goodness You're Here! PS5 本體 33 獎盃白金 Roadmap，依順序勾選步驟、記錄獎盃與跨階段互動。">
+  <title>Thank Goodness You're Here! · 白金 Roadmap</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">跳至攻略</a>
+<aside class="rail">
+  <a class="brand" href="../../"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M4 24V10l10-6 10 6v14H4Zm7 0V14h6v10M8 10h12" stroke="currentColor" stroke-width="1.5"/></svg><span>Game Companion<small>Barnsworth 白金手帳</small></span></a>
+  <nav aria-label="手帳頁面"><button data-view="roadmap" aria-current="page">遊玩 Roadmap</button><button data-view="trackers">跨階段追蹤</button><button data-view="trophies">獎盃清單 <span id="nav-trophies">0/33</span></button><button data-view="sources">來源與查證</button></nav>
+  <div class="rail-bottom"><button id="cloudOpen" title="Google Drive 手動同步">Drive 同步</button><button id="backupOpen">備份還原</button><a href="../../">← 返回遊戲目錄</a><p>PS5 · 本體 · 含完整劇透<br>步驟與獎盃分別記錄</p></div>
+</aside>
+<main>
+  <header><div><p class="scope">Thank Goodness You're Here!</p><h1 id="view-title">遊玩 Roadmap</h1></div><span id="saveStatus" role="status">讀取 IndexedDB…</span></header>
+  <div id="fatal" class="notice critical" role="alert" hidden></div>
+  <section id="summary" class="stats" aria-label="進度摘要"></section>
+  <section id="checkpoint" class="notice" aria-label="下一個檢查點"></section>
+  <nav id="stage-nav" class="stage-nav" aria-label="選擇攻略階段"></nav>
+  <div class="toolbar"><label>搜尋步驟或獎盃<input id="search" type="search" placeholder="地點、角色、獎盃名稱…"></label><label>顯示<select id="filter"><option value="all">全部</option><option value="pending">未完成</option><option value="risk">容易錯過／不可逆</option><option value="unverified">待查證</option></select></label><button id="continue">繼續下一步</button></div>
+  <section id="content" tabindex="-1"><p>載入攻略資料…</p></section>
+  <footer>白金目標：Barnsworth's Best · <span id="guide-version"></span><p>勾選僅記錄手帳，不會讀取 PSN。瀏覽器資料可能被清除，請定期下載 JSON。</p></footer>
+</main>
+<dialog id="backupDialog" aria-labelledby="backup-title"><div class="dialog-heading"><h2 id="backup-title">備份與還原</h2><button data-close="backupDialog">關閉</button></div><p>只接受本遊戲 PS5 本體 JSON。匯入前會保護兩端原文、顯示差異並要求下載備份。</p><button id="export">下載完整進度 JSON</button><label class="file-label">若選擇雙端復原備份，要恢復哪一端？<select id="recovery-side"><option value="localRaw">匯入前本機原文</option><option value="sourceRaw">當時匯入來源原文</option></select></label><label class="file-label">選擇匯入 JSON<input id="import-file" type="file" accept=".json,application/json"></label><p id="backup-status" role="status"></p></dialog>
+<dialog id="importDialog" aria-labelledby="import-title"><div class="dialog-heading"><h2 id="import-title">匯入差異預覽</h2><button data-close="importDialog">取消</button></div><p id="import-summary"></p><p>未知項目與欄位保留；衝突可逐筆或批次選擇。</p><div class="actions"><button id="import-local">差異全部用本機</button><button id="import-source">差異全部用匯入</button></div><div id="import-rows" class="differences"></div><button id="import-backup">下載兩端原文復原備份</button><label class="ack"><input id="import-ack" type="checkbox" disabled>我已確認備份下載成功並保存</label><button id="import-apply" disabled>套用選擇</button><p id="import-status" role="status"></p></dialog>
+<dialog id="cloudDialog" aria-labelledby="cloud-title"><div class="dialog-heading"><h2 id="cloud-title">Google Drive 手動同步</h2><button data-close="cloudDialog">關閉</button></div><p>此遊戲有自己的備份與帳號 Base；不會背景上傳。每次授權都必須先通過合成檔條件寫入測試。</p><div class="actions"><button id="cloudConnect">載入 Google 授權服務</button><button id="cloudDisconnect" disabled>中斷連接</button><button id="cloudVerify" disabled>驗證 Drive 寫入安全</button><button id="cloudUpload" disabled>立即同步進度</button></div><p id="cloudAccount"></p><p id="cloudSafety">本次授權尚未驗證，無法上傳。</p><p id="cloudStatus" role="status">尚未連接</p><section id="cloud-review" hidden><h3 id="cloud-review-title">首次配對</h3><div class="actions"><button id="cloud-local">衝突全部用本機</button><button id="cloud-remote">衝突全部用雲端</button></div><div id="cloud-rows" class="differences"></div><button id="cloudConfirm" disabled>確認配對與選擇並同步</button></section></dialog>
+<noscript>此手帳需要 JavaScript 才能讀取攻略與保存核取狀態。</noscript>
+<script src="shared/progress-envelope.js"></script><script src="shared/sync-core.js"></script><script src="shared/sync-session.js"></script><script src="shared/google-auth.js"></script><script src="shared/drive-appdata.js"></script><script src="cloud-config.js"></script><script src="model.js"></script><script src="app.js"></script>
+</body></html>
