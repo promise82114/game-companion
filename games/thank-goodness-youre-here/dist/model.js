@@ -1,10 +1,10 @@
 (function (global) {
   'use strict';
-  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.';
+  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.', moduleVersion = '1.1.0';
   const clone = value => JSON.parse(JSON.stringify(value));
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   function fresh() {
-    return {app: 'game-companion-roadmap', gameId, platform: 'PS5', scope: 'base', schema: 1, moduleVersion: '1.0.0', revision: 0, updatedAt: Date.now(), stepDone: {}, trophyEarned: {}};
+    return {app: 'game-companion-roadmap', gameId, platform: 'PS5', scope: 'base', schema: 1, moduleVersion, revision: 0, updatedAt: Date.now(), stepDone: {}, trophyEarned: {}};
   }
   function validate(raw) {
     if (!object(raw) || raw.app !== 'game-companion-roadmap' || raw.gameId !== gameId || raw.platform !== 'PS5' || raw.scope !== 'base' || raw.schema !== 1) throw Error('不是此遊戲的 PS5 本體進度，或資料版本不相容。');
@@ -27,6 +27,13 @@
     // automatically; require choices only for explicit values present at both ends.
     const data = core.resolve(plan, plan.conflicts.map(conflict => conflict.local === undefined ? 'remote' : 'local'));
     return {...plan, data, conflicts: plan.conflicts.filter(conflict => conflict.local !== undefined && conflict.remote !== undefined)};
+  }
+  function resetData(raw, {stepIds, trophyIds}) {
+    const data = validate(raw).data;
+    for (const ids of [stepIds, trophyIds]) if (!Array.isArray(ids) || !ids.length || ids.some(id => typeof id !== 'string' || !id)) throw Error('初始化項目不完整，未修改紀錄。');
+    // Explicit false values propagate through three-way sync. Keep unknown IDs,
+    // extra fields and recovery data instead of deleting or replacing the database.
+    return {...data, moduleVersion, stepDone: {...data.stepDone, ...Object.fromEntries(stepIds.map(id => [id, false]))}, trophyEarned: {...data.trophyEarned, ...Object.fromEntries(trophyIds.map(id => [id, false]))}, revision: data.revision + 1, updatedAt: Date.now()};
   }
   class ProgressStore {
     constructor() { this.db = null; this.data = null; this.channel = null; }
@@ -105,9 +112,16 @@
         return {...validate(result).data, revision: current.revision + 1, updatedAt: Date.now()};
       }, current => ({kind: 'import', at: Date.now(), sourceRaw: review.sourceRaw, localRaw: JSON.stringify(current)}));
     }
+    async resetProgress(review, ids) {
+      return this.transact(current => {
+        if (!review?.downloaded || !review.acknowledged) throw Error('必須先下載初始化前備份並確認保存。');
+        if (JSON.stringify(current) !== review.stamp) throw Error('紀錄已變更，初始化預覽已過期。請關閉後重新開啟初始化紀錄。');
+        return resetData(current, ids);
+      }, current => ({kind: 'reset', at: Date.now(), localRaw: JSON.stringify(current)}));
+    }
     async commitSync(start, remote) {
       return this.transact(current => ({...validate(global.SideProjectSync.rebase(start, current, remote)).data, revision: current.revision + 1, updatedAt: Date.now()}));
     }
   }
-  global.RoadmapModel = {gameId, prefix, fresh, validate, parse, importPlan, ProgressStore};
+  global.RoadmapModel = {gameId, prefix, fresh, validate, parse, importPlan, resetData, ProgressStore};
 })(window);

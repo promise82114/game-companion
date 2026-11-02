@@ -21,6 +21,7 @@
 
 
 
+.reset-section{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}.danger-action{color:var(--critical);border-color:var(--critical)}#resetDialog{max-width:640px}#reset-status{margin:12px 0 0}
 /* 與 EDF WB1／WB2 相同的主內容寬度、側欄寬度與水平內距。 */
 body>main,.workspace-bar{width:auto;max-width:1620px;margin-left:244px;margin-right:0;padding-left:46px;padding-right:46px}
 @media(min-width:1500px){body>main,.workspace-bar{padding-left:64px;padding-right:64px}}

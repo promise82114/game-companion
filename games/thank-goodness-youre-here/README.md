@@ -1,6 +1,6 @@
 # Thank Goodness You're Here! 白金 Roadmap
 
-PS5 本體；模組／攻略版本 1.0.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；現有專案沒有本作的已發布 ID，沒有改動其他遊戲 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
+PS5 本體；模組版本 1.1.0、攻略版本 1.0.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
 
 入口：`/game-companion/games/thank-goodness-youre-here/`。根目錄 `node scripts/build.mjs` 自動產生 Portal 入口，不需修改路由或集中登入。2026-10-31 使用者授權將本模組獨立 commit、push 並透過既有 main 分支 Pages 流程發布，排除其他未完成工作。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)；部署結果以對應提交的 GitHub Actions 為準。
 
@@ -14,6 +14,21 @@ PS5 本體；模組／攻略版本 1.0.0，進度 schema 1。新遊戲識別碼�
 - 同步 Base／pending／結果未知復原資料沿用 localStorage，但只使用 `game-companion.thank-goodness-youre-here.sync.*`。每款遊戲／帳號的 Base 分開。Drive 名稱 `game-companion.thank-goodness-youre-here.progress.v1.json`，不是中央同步服務。
 - 匯入先將兩端原文持久化，預覽重疊值的差異，要求下載復原檔並確認保存。單邊欄位保留；預覽過期、持久化或下載 API 失敗不套用。復原檔可直接選擇本機／來源端再走相同預覽流程。完整匯出包含所有 archives 與此 namespace 的 sync recovery；不包含 OAuth token。
 - `dist/sw.js` 只快取本模組資源，只清自己的 `game-companion.thank-goodness-youre-here.assets.*` 前綴。Google OAuth 不做離線快取。新版本更新 ASSETS 或攻略時須遞增 CACHE 版本，確保離線內容一起更新。
+
+## 初始化紀錄與下一輪遊玩
+
+2026-11-02 新增（模組 1.1.0）：第一輪完成、準備再玩另一版本時，由右上「備份與還原」底部按「初始化紀錄」。使用者已授權本批功能、測試與文件提交及推送，沿用 main 的 Pages 發布流程；部署結果以對應提交的 GitHub Actions 為準。
+
+1. 核對目前完成數，按「下載初始化前備份」，確認 JSON 已保存。
+2. 勾選確認，再按「確認初始化紀錄」。下載或本機快照儲存失敗時停止；預覽後有其他分頁編輯，也會停止並要求重新開啟。
+3. 已知 100 個步驟與 33 個獎盃會各自記為 `false`，回到第一章、清除搜尋與篩選。重新整理後仍可從零開始，跨階段追蹤會隨對應步驟歸零。
+4. 若使用 Drive，先完成第一輪同步再初始化，之後按「立即同步進度」送出重設，其他裝置也要手動同步接收。初始化不自動上傳；首次配對若有差異，需核對後選擇要保留的本機重設結果。
+
+初始化前原文快照與新進度在同一 IndexedDB 交易保存，任一寫入失敗都不重設。既有 archives、未知 ID／額外欄位、同步 Base／pending 與其他遊戲資料保留；不刪除資料庫或重建同步配對。明確的 `false` 可由既有三方同步傳遞，避免以「刪除紀錄」造成舊勾選回填。同頁同步處理中不能初始化。
+
+需要回看第一輪時，以剛下載的 `thank-goodness-before-reset-*.json` 經原有匯入差異預覽、備份與確認流程還原。這是手帳紀錄的備份，不會重設或還原主機遊戲存檔。
+
+本機驗證（2026-11-02）：資料／同步回歸、build／verify-site 及模組隔離瀏覽器均通過。新增測試涵蓋取消、下載失敗、快照配額失敗的交易回復、跨分頁過期預覽、100／33 歸零、未知欄位與 Base／pending 保留、重整與第一輪還原、1440／768／390px 確認視窗及鍵盤；以兩個獨立 browser contexts 與合成 Drive 驗證手動同步歸零、不自動上傳、不回填舊勾選。沒有操作正式玩家資料或真實 Google。
 
 ## 查證與限制
 

@@ -4,7 +4,7 @@
   const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const statusNames = {verified:'資料已核對',consensus:'多來源共識',unverified:'待查證'};
   const warningNames = {critical:'容易錯過／不可逆',branch:'分歧／待核對',prepare:'提前準備',experience:'推薦體驗',later:'可延後'};
-  let guide, store, view = new URL(location.href).searchParams.get('view') || 'roadmap', activeStage, importReview, busyImport = false;
+  let guide, store, view = new URL(location.href).searchParams.get('view') || 'roadmap', activeStage, importReview, busyImport = false, resetReview = null, busyReset = false;
   function fatal(error) { $('fatal').hidden = false; $('fatal').textContent = '無法保存或讀取：' + error.message + ' 原資料保留。請重試或先匯出原文。'; $('saveStatus').textContent = '儲存失敗'; }
   function message(text) { $('saveStatus').textContent = text; }
   window.addEventListener('roadmap-error', event => fatal(Error(event.detail)));
@@ -124,7 +124,7 @@
     });
     if(!plan.conflicts.length)container.textContent='沒有衝突欄位；仍需確認資料配對。';
   }
-  function importRender() { $('import-apply').disabled=busyImport||!importReview||!importReview.downloaded||!importReview.acknowledged||importReview.choices.some(value=>!value); }
+  function importRender() { $('import-apply').disabled=busyImport||!importReview||!importReview.downloaded||!importReview.acknowledged||importReview.choices.some(value=>!value); resetRender(); }
   $('import-file').onchange=async event=>{
     const file=event.target.files[0];event.target.value='';if(!file)return;
     try{
@@ -155,14 +155,15 @@
   drive=new window.SideProjectDrive.DriveAppData(auth,config.fileName,config);
   function cloudRender() {
     if(!drive)return;
-    $('cloudConnect').disabled=busy;$('cloudConnect').textContent=ready?'連接／切換 Google 帳號':'載入 Google 授權服務';
-    $('cloudDisconnect').disabled=busy||!auth.connected;$('cloudVerify').disabled=busy||!account||!auth.connected;
-    $('cloudUpload').disabled=busy||!session||!drive.verified;
-    $('cloudConfirm').disabled=busy||!session||!drive.verified||!cloudReview||cloudReview.choices.some(value=>!value);
+    $('cloudConnect').disabled=busy||busyReset;$('cloudConnect').textContent=ready?'連接／切換 Google 帳號':'載入 Google 授權服務';
+    $('cloudDisconnect').disabled=busy||busyReset||!auth.connected;$('cloudVerify').disabled=busy||busyReset||!account||!auth.connected;
+    $('cloudUpload').disabled=busy||busyReset||!session||!drive.verified;
+    $('cloudConfirm').disabled=busy||busyReset||!session||!drive.verified||!cloudReview||cloudReview.choices.some(value=>!value);
     $('cloudAccount').textContent=account?'目前帳號：'+(account.emailAddress||'已辨識帳號'):'重新整理後需重新連接；Token 僅存在本頁記憶體。';
     $('cloudSafety').textContent=drive.verified?'本次授權：過期版本 412、競爭一勝一拒已通過（尚非實機攻略驗收）。':'本次授權尚未驗證，無法上傳。';
+    resetRender();
   }
-  async function cloudRun(action) {if(busy)return;busy=true;cloudRender();try{await action();}catch(error){$('cloudStatus').textContent=error.message;}finally{busy=false;cloudRender();}}
+  async function cloudRun(action) {if(busy||busyReset)return;busy=true;cloudRender();try{await action();}catch(error){$('cloudStatus').textContent=error.message;}finally{busy=false;cloudRender();}}
   function check(expected) {if(expected!==epoch||!auth.connected)throw Object.assign(Error('帳號或授權已變更，請重新連接比較。'),{code:'cancelled'});}
   async function locked(action) {
     if(!navigator.locks)throw Error('此瀏覽器不支援同步鎖，無法安全同步。');
@@ -177,7 +178,7 @@
   $('cloudOpen').onclick=()=>{$('cloudDialog').showModal();cloudRender();};
   $('cloudConnect').onclick=()=>{
     if(!ready){cloudRun(async()=>{await auth.prepare();ready=true;$('cloudStatus').textContent='授權服務已就緒，請按連接。';});return;}
-    if(busy)return;
+    if(busy||busyReset)return;
     const grant=auth.connect({selectAccount:true}),expected=epoch;
     cloudRun(async()=>{await grant;check(expected);const user=await drive.account();check(expected);
       const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(config.projectId+'|'+user.permissionId));check(expected);
@@ -192,6 +193,45 @@
   $('cloudUpload').onclick=()=>cloudRun(()=>locked(async()=>cloudShow(await session.start())));
   $('cloudConfirm').onclick=()=>cloudRun(()=>locked(async()=>{const review=cloudReview;cloudShow(await session.confirm(review,review.choices));}));
   for(const [id,value]of [['cloud-local','local'],['cloud-remote','remote']])$(id).onclick=()=>{if(!cloudReview)return;cloudReview.choices.fill(value);$('cloud-rows').querySelectorAll('select').forEach(select=>select.value=value);cloudRender();};
+  function resetRender() {
+    $('resetOpen').disabled=busy||busyImport||busyReset;
+    $('reset-backup').disabled=busyReset||!resetReview;
+    $('reset-ack').disabled=busyReset||!resetReview?.downloaded;
+    $('reset-confirm').disabled=busyReset||!resetReview?.downloaded||!resetReview?.acknowledged;
+    $('resetDialog').querySelector('[data-close]').disabled=busyReset;
+  }
+  $('resetOpen').onclick=async()=>{
+    if(busy||busyImport||busyReset)return;
+    busyReset=true;resetReview=null;cloudRender();
+    try{
+      await store.refresh();const stamp=store.stamp(),snapshot=store.get(),backup=await store.exportData();
+      if(store.stamp()!==stamp)throw Error('紀錄正在變更，請重新開啟初始化紀錄。');
+      if(!$('backupDialog').open)return;
+      resetReview={stamp,backup,downloaded:false,acknowledged:false};
+      $('reset-summary').textContent=`目前已完成 ${steps.filter(step=>snapshot.stepDone[step.id]).length}/${steps.length} 步驟、${guide.trophies.filter(trophy=>snapshot.trophyEarned[trophy.id]).length}/${guide.trophies.length} 獎盃。初始化後顯示 0/${steps.length}、0/${guide.trophies.length}。`;
+      $('reset-ack').checked=false;$('reset-status').textContent='';$('backupDialog').close();$('resetDialog').showModal();
+    }catch(error){$('backup-status').textContent='無法準備初始化：'+error.message;}finally{busyReset=false;cloudRender();}
+  };
+  $('reset-backup').onclick=()=>{
+    if(!resetReview||busyReset)return;
+    resetReview.downloaded=false;resetReview.acknowledged=false;$('reset-ack').checked=false;
+    try{download(resetReview.backup,'thank-goodness-before-reset-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json');resetReview.downloaded=true;$('reset-status').textContent='請確認備份已下載並保存，再勾選確認。';}catch(error){$('reset-status').textContent='備份失敗，未初始化：'+error.message;}resetRender();
+  };
+  $('reset-ack').onchange=()=>{if(resetReview)resetReview.acknowledged=$('reset-ack').checked;resetRender();};
+  $('reset-confirm').onclick=async()=>{
+    if(busy||busyImport||busyReset||!resetReview?.downloaded||!resetReview.acknowledged)return;
+    busyReset=true;cloudRender();
+    try{
+      await store.resetProgress(resetReview,{stepIds:steps.map(step=>step.id),trophyIds:guide.trophies.map(trophy=>trophy.id)});
+      importReview=null;cloudReview=null;$('cloud-review').hidden=true;resetReview=null;$('resetDialog').close();
+      selectStage(guide.stages[0].id);
+      $('backup-status').textContent='已初始化紀錄。第一輪可由剛下載的 JSON 經差異預覽還原。';
+      $('cloudStatus').textContent='本機已初始化，雲端尚未更新。請手動同步，再由其他裝置同步接收。';
+      message('已初始化：可以從第一章重新開始。');
+    }catch(error){$('reset-status').textContent='未初始化：'+error.message;if(resetReview){resetReview.downloaded=false;resetReview.acknowledged=false;}$('reset-ack').checked=false;}finally{busyReset=false;cloudRender();}
+  };
+  $('resetDialog').addEventListener('cancel',event=>{if(busyReset)event.preventDefault();});
+  $('resetDialog').addEventListener('close',()=>{resetReview=null;$('backupOpen').focus({preventScroll:true});});
   // Exposed contract for isolated regression tests and module integration; no token is exposed.
   window.ROADMAP_APP={store,guide,jump};
   render();message('已儲存在此裝置');cloudRender();

@@ -3,7 +3,7 @@
   "slug": "thank-goodness-youre-here",
   "title": "Thank Goodness You're Here!",
   "description": "PS5 本體 33 獎盃 · 依遊玩順序的白金 Roadmap 與獨立步驟追蹤",
-  "moduleVersion": "1.0.0",
+  "moduleVersion": "1.1.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/thank-goodness-youre-here/",
