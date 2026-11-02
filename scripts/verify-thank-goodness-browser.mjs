@@ -20,6 +20,8 @@ try{
   const open=indexedDB.open.bind(indexedDB);window.__dbAccess=[];indexedDB.open=function(name,...args){window.__dbAccess.push(name);return open(name,...args);};
  });
  await page.goto(base);await page.locator(`.open-game[href="games/${slug}/"]`).click();await ready(page);
+ const openingStep=await page.evaluate(()=>ROADMAP_APP.guide.stages[0].steps[0]),openingRow=page.locator('[data-step-row="'+openingStep.id+'"]');
+ assert.equal(await page.locator('.step details').count(),0);assert.equal(await openingRow.locator('.step-trigger').isVisible(),true);assert.equal(await openingRow.locator('.step-trigger').textContent(),'時機：'+openingStep.trigger);assert.equal(await openingRow.locator('.step-location').textContent(),openingStep.location);assert.equal(await openingRow.locator('a').count(),0);assert.match(await openingRow.locator('.warning').textContent(),/容易錯過/);assert.equal(await page.locator('.stage[open] .stage-reminder').first().isVisible(),true);assert.match(await page.locator('[data-step-row="main-run"] .warning').textContent(),/待查證/);
  assert.equal(Object.values((await state(page)).trophyEarned).filter(Boolean).length,0);
  await page.locator('[data-group="stepDone"][data-id="reception-wait"]').check();
  await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['reception-wait']===true);
@@ -29,9 +31,9 @@ try{
  await page.locator('[data-group="trophyEarned"][data-id="t09"]').uncheck();await page.waitForFunction(()=>ROADMAP_APP.store.data.trophyEarned.t09===false);
  assert.equal((await state(page)).stepDone['reception-wait'],true);checks.push('步驟與獎盃獨立、重整與取消勾選');
  await page.locator('#search').fill('synthetic-no-match-834');assert.equal(await page.locator('.empty').isVisible(),true);await page.locator('#search').fill('');
- await page.locator('[data-view="trackers"]').click();assert.equal(await page.locator('.tracker').count(),13);await page.locator('.tracker summary').first().click();assert.equal(await page.locator('.tracker').first().locator('[data-group="stepDone"]').count(),3);
+ await page.locator('[data-view="trackers"]').click();assert.equal(await page.locator('.tracker').count(),13);await page.locator('.tracker summary').first().click();assert.equal(await page.locator('.tracker').first().locator('[data-group="stepDone"]').count(),3);assert.equal(await page.locator('.tracker').first().locator('.step-trigger').first().isVisible(),true);assert.equal(await page.locator('.step details').count(),0);
  await page.locator('[data-view="trophies"]').click();assert.equal(await page.locator('.trophy-row').count(),33);await page.locator('#trophy-t18').check();assert.equal((await state(page)).stepDone.mow,undefined);
- await page.locator('[data-view="sources"]').click();assert.equal(await page.locator('.source').count(),10);
+ const beforeAudit=await state(page);await page.locator('[data-view="sources"]').click();assert.equal(await page.locator('.source').count(),10);assert.equal(await page.locator('.source-step').count(),100);await page.locator('.source-audit>summary').click();const openingAudit=page.locator('[data-source-step="'+openingStep.id+'"]');assert.equal(await openingAudit.locator('dd').first().isVisible(),true);assert.equal(await openingAudit.locator('dd').first().textContent(),openingStep.verification);assert.equal(await openingAudit.locator('a').count(),openingStep.sourceRefs.length);assert.deepEqual(await state(page),beforeAudit);checks.push('操作／地點／時機與本章提醒直接顯示，保留風險與待查警示，逐步驗證／來源移至查證頁且不改進度');
  await page.locator('[data-view="roadmap"]').click();
  const lastStage=await page.evaluate(()=>ROADMAP_APP.guide.stages.at(-1).id),lastStep=await page.evaluate(()=>ROADMAP_APP.guide.stages.at(-1).steps[0].id);
  const beforeChapter=await state(page);await page.locator('#chapter-select').selectOption(lastStage);assert.equal(await page.locator('dialog[open]').count(),0);assert.deepEqual(await state(page),beforeChapter);
