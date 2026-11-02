@@ -1,6 +1,6 @@
 # Thank Goodness You're Here! 白金 Roadmap
 
-PS5 本體；模組版本 1.1.1、攻略版本 1.0.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
+PS5 本體；模組版本 1.1.2、攻略版本 1.0.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
 
 入口：`/game-companion/games/thank-goodness-youre-here/`。根目錄 `node scripts/build.mjs` 自動產生 Portal 入口，不需修改路由或集中登入。2026-10-31 使用者授權將本模組獨立 commit、push 並透過既有 main 分支 Pages 流程發布，排除其他未完成工作。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)；部署結果以對應提交的 GitHub Actions 為準。
 
@@ -31,6 +31,8 @@ PS5 本體；模組版本 1.1.1、攻略版本 1.0.0，進度 schema 1。新遊�
 本機驗證（2026-11-02）：資料／同步回歸、build／verify-site 及模組隔離瀏覽器均通過。新增測試涵蓋取消、下載失敗、快照配額失敗的交易回復、跨分頁過期預覽、100／33 歸零、未知欄位與 Base／pending 保留、重整與第一輪還原、1440／768／390px 確認視窗及鍵盤；以兩個獨立 browser contexts 與合成 Drive 驗證手動同步歸零、不自動上傳、不回填舊勾選。沒有操作正式玩家資料或真實 Google。
 
 ## 查證與限制
+
+2026-11-03 角色小圖（模組 1.1.2，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：19 組極簡 SVG 辨識圖放在英文名字旁，以 24px 顯示，攻略、跨階段追蹤與相關說明共用名字對照。`Big Ron`／`Ron` 共用頭像，`Ronny` 獨立。Bobby 使用警察亭，Sue 保留參考中的背影，Graham 窗內造型仍待實機核對；[角色外觀來源與限制](docs/CHARACTER_PORTRAITS.md)有逐一紀錄。名字仍是原文，圖示不影響搜尋、輔助朗讀與核取操作。攻略資料與進度／同步邏輯不變，SW cache v7 包含本機圖示及對照程式。
 
 2026-11-03 閱讀調整（模組 1.1.1，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：攻略與跨階段追蹤的每個步驟直接顯示操作、地點與觸發時機，本章離開前提醒亦直接顯示，省去逐項展開。逐步驗證方式、重複的錯過後說明及來源連結集中在「來源與查證」的「逐步查證紀錄」；主攻略保留容易錯過／不可逆與待查證警示，不將未查證內容升級為已確認。攻略原文、100 個步驟與 33 個獎盃映射、儲存及同步契約不變，SW cache 遞增至 v6。
 

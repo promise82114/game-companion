@@ -25,6 +25,18 @@ const pos=id=>steps.findIndex(step=>step.id===id);
 for(const [first,last]of [['reception-wait','main-run'],['door-reception','leave-reception'],['ronny','first-hole'],['shelves','chimney-first'],['screwdriver','charlie-fence'],['charlie-fence','fish-second'],['polly-paul','fertiliser-bag'],['potato-wait','chips-cow'],['mole-invite','mole-cancel'],['fish-first','fish-second'],['fish-second','fish-final'],['cheek-first','cheek-second'],['cheek-second','cheek-final'],['spill','soup'],['soup','ending']])assert.ok(pos(first)<pos(last),first+' → '+last);
 for(const id of ['snail-sue','snail-crops','snail-gate','snail-stone','snail-tree','snail-bench'])assert.ok(pos(id)<pos('snail-well'));
 const context={window:{},TextEncoder};vm.createContext(context);
+vm.runInContext(await fs.readFile(new URL('characters.js',dir),'utf8'),context);
+const portraits=context.window.RoadmapCharacters,portraitSvg=await fs.readFile(new URL('characters.svg',dir),'utf8');
+assert.equal(portraits.characters.length,19);assert.equal(new Set(portraits.characters.map(value=>value.id)).size,19);
+for(const character of portraits.characters){
+ assert.ok(portraitSvg.includes('<symbol id="'+character.id+'"'));
+ for(const alias of character.aliases){assert.ok(portraits.html(alias).includes('data-character="'+character.id+'"'));assert.ok(JSON.stringify(guide).includes(alias),'沒有使用的頭像：'+alias);}
+}
+assert.equal((portraits.html('Big Ron／Ron／Ronny').match(/data-character="big-ron"/g)||[]).length,2);
+assert.equal((portraits.html('Big Ron／Ron／Ronny').match(/data-character="ronny"/g)||[]).length,1);
+assert.equal(portraits.html('Ronald Nickname Samson'), 'Ronald Nickname Samson');
+assert.ok(portraits.html('<img onerror="x">Rog & Sue').startsWith('&lt;img onerror=&quot;x&quot;&gt;'));
+assert.ok(!/<script|\bon\w+=|(?:href|src)="https?:/i.test(portraitSvg),'頭像只能使用本機靜態 SVG');
 for(const file of ['shared/progress-envelope.js','shared/sync-core.js','model.js'])vm.runInContext(await fs.readFile(new URL(file,dir),'utf8'),context);
 const {RoadmapModel:model,SideProjectSync:core}=context.window,base=model.fresh();
 assert.equal(Object.values(base.trophyEarned).filter(Boolean).length,0);
@@ -50,4 +62,6 @@ const cloud=await fs.readFile(new URL('cloud-config.js',dir),'utf8');assert.ok(!
 const adapter=await fs.readFile(new URL('shared/drive-appdata.js',dir),'utf8');assert.ok(adapter.includes("'If-Match':etag"));assert.ok(adapter.includes('!this.verified'));
 for(const file of ['shared/drive-appdata.js','shared/google-auth.js','shared/progress-envelope.js'])assert.equal((await fs.readFile(new URL(file,dir),'utf8')).replaceAll('\r\n','\n'),(await fs.readFile(new URL('../edf-wb/dist/'+file,import.meta.url),'utf8')).replaceAll('\r\n','\n'),'重用的安全模組應保持一致：'+file);
 const sw=await fs.readFile(new URL('sw.js',dir),'utf8');assert.ok(sw.includes(config.storagePrefix+'assets.'));assert.ok(sw.includes('self.registration.scope'));assert.ok(!sw.includes('caches.match('));
+for(const file of ['characters.js','characters.svg'])assert.ok(sw.includes("'./"+file+"'"),'離線需包含頭像：'+file);
+assert.ok((await fs.readFile(new URL('index.html',dir),'utf8')).indexOf('src="characters.js"')<(await fs.readFile(new URL('index.html',dir),'utf8')).indexOf('src="app.js"'));
 console.log(JSON.stringify({passed:true,module:guide.gameId,trophies:33,mapped:33,steps:steps.length,stages:guide.stages.length,trackers:guide.trackers.length,statuses:Object.fromEntries(['verified','consensus','unverified'].map(status=>[status,steps.filter(step=>step.verificationStatus===status).length]))}));

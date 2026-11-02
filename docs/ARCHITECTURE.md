@@ -64,3 +64,5 @@ Talos II 與 Thank Goodness 保留各自原生畫面及資料模型，以相同�
 Mycopunk 的五項主功能移入固定左側欄；裝備分類仍沿用原 directory，改為可展開區塊。720px 以下由「功能選單」開啟原生 modal dialog，將同一份側欄節點移入抽屜；支援焦點限制、Escape、選完功能收合及返回桌面時移回側欄。右上資料工具保持共用。沒有新增套件或資料欄位；Thank Goodness 的 SW cache 遞增為 v4，清理前綴不變。
 
 2026-11-03 Thank Goodness 閱讀調整（模組 1.1.1，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：攻略與追蹤的步驟直接顯示地點及觸發時機，本章提醒不再折疊。逐步驗證方式、錯過後說明與來源連結集中於既有「來源與查證」頁的查證紀錄，主攻略保留容易錯過／不可逆與待查證警示。只改呈現方式，攻略資料、步驟／獎盃 ID、schema、namespace、IndexedDB 與 Drive 同步邏輯均不變；本模組 SW cache 遞增為 v6，清理前綴不變。
+
+2026-11-03 Thank Goodness 角色小圖（模組 1.1.2，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：新增模組內 `characters.js` 名字／別名對照與 `characters.svg` 的 19 個共用辨識圖，在攻略文字中的英文角色名字旁以 24px 呈現。原文安全跳脫，完整名字比對，圖示排除於輔助朗讀與焦點順序；名字仍可搜尋及操作核取。沒有新增進度欄位、修改攻略 JSON 或觸及其他遊戲，schema／namespace／IndexedDB／Drive 邏輯不變；SW cache v7 納入兩個本機素材，清理前綴不變。造型依據與人工核對限制見模組 `docs/CHARACTER_PORTRAITS.md`。
