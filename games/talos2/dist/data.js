@@ -20,6 +20,7 @@ const sources = {
  election:{title:'A New Morality：三市長完整條件（攻略搜尋索引）',url:'https://www.xboxachievements.com/game/the-talos-principle-2/achievement/a-new-morality.html',kind:'guide'},
  ending:{title:'GameSpot：結局與市長影響因素',url:'https://www.gamespot.com/articles/the-talos-principle-2-ending-guide/1100-6519076/',kind:'guide'},
  wiki:{title:'Talos Wiki：本體成就與附註',url:'https://taloswiki.org/wiki/Achievements_(TTP2)',kind:'community-wiki'},
+ remnants:{title:'Talos Wiki：過去人物光影的出現時機與碰觸方式',url:'https://taloswiki.org/wiki/Remnants_of_the_past',kind:'community-wiki'},
  purpleLocation:{title:'Hanni：Purple 所在的舊磚牆、棕櫚樹與短階梯（遊戲畫面）',url:'https://images.steamusercontent.com/ugc/2158973210210926694/C333728F9FDA833F84EDDAB95BD96076D8D566BF/',kind:'screenshot'},
  purpleGardens:{title:'FreedSquare4945：考古花園中的 Purple 與聲音建議',url:'https://www.trueachievements.com/a407930/excellent-achievement',kind:'player-guide'},
  manorWest:{title:'Dick Leeuw／Louis Koot：西側巨構到 Act V 的圖文流程',url:'https://mysterymanor.net/walkthroughs/Talos_Principle_2/19_Megastructure_West/megastructure_west_1.htm',kind:'walkthrough'},
@@ -103,7 +104,7 @@ for(const b of branches) add('P6',b.stepId,b.name+' · '+b.trophy,'W2 → 救援
 add('P7','final-city','西側巨構後回城：離開前巡查','W2 收尾 → 西側巨構 → Act V · New Jerusalem',['三座西區塔啟動後，搭 VTOL 進西側巨構。跟 Prometheus 的影像找到 Byron，把他的手從終端拉開；看完劇情，再沿黃色目標撤回 VTOL。','途中過載後會在 New Jerusalem 醒來。和 Neith 談未來方向，再依黃色標記找同伴；這段會影響回島隊伍，請依選定結局方向回答。','完成仍開放的城市探索、文字遊戲與未完成對話；不要假設早期限定人物仍然有效。','離城回島後，先補完剩餘謎題、探索及黃金謎題，再接近最終 VTOL。'],{warningLevel:'irreversible',missable:true,sources:['steam','manorWest'],trophyRefs:refs('Good Citizen','Text Adventurer')});
 add('P7','all-puzzles','全區解題與黃金門','12 個區域 · 一般／Lost／Golden puzzles',['回訪各區，把尚未親自解完的 8 個正規與 2 個 Lost 謎題補齊；使用 Spark 跳過的題目也要重解。','完成下方 12 個黃金謎題，再去交通站附近的 Golden Gate 找 Cornelius。Puzzle Fiend 與 Renaissance Robot 要分別核對。'],{trophyRefs:refs('Puzzle Fiend','Renaissance Robot'),sources:['wiki','steam','guide'],verificationStatus:'consensus'});
 add('P7','miranda','Miranda：完成黃金謎題後救回','Golden Gate · Cornelius／Miranda',['完成全部黃金謎題，推進 Golden Gate 後的救回 Miranda 流程。','確認 Ab Aeterno；保留該進度直到完成最後結局，才能核對 The Future。'],{trophyRefs:refs('Ab Aeterno','The Future'),prerequisites:['all-puzzles'],sources:['wiki','ending'],verificationStatus:'consensus'});
-add('P7','collectibles','收集驗收：錄音、顯現與實驗室','全部 12 區域',['查看每區 Trevor 與 Lifthrasir 錄音，各收齊 12 段；12 座 Lost Lab 都要實際進入。','補齊 E3 起的過去顯現與 30 份終端文字，查看 Mnemosyne 與 Remnants of the Past。','Xbox 的顯現 bug 記錄不直接套用 PS5。數量對不上時，以遊戲清單及實際獎盃通知核對。'],{trophyRefs:refs("Trevor's Biographer",'Ecstatic Truth','Mnemosyne','Scientia Vincere Tenebras','Lord of the Files','Remnants of the Past'),sources:['guide','wiki'],verificationStatus:'consensus'});
+add('P7','collectibles','收集驗收：錄音、人物光影與實驗室','全部 12 區域',['進入並探索 12 區各自的 Lost Lab（失落實驗室）；它們是場外建築，與 Lost 謎題不同。','在電腦終端下載 Trevor 與 Lifthrasir 的錄音，各收齊 12 份；另逐份開啟文字檔，累計閱讀 30 份。','從 E3 起，找齊戶外的過去人物光影，走近並碰觸它們，觸發對話。E1、E2 沒有這類光影，不必回去找。','查看對應獎盃是否取得；Xbox 的顯現 bug 記錄不直接套用 PS5。'],{trophyRefs:refs("Trevor's Biographer",'Ecstatic Truth','Mnemosyne','Scientia Vincere Tenebras','Lord of the Files','Remnants of the Past'),sources:['guide','wiki','steam','remnants'],verificationStatus:'consensus'});
 add('P7','stars','完成所有 monument 與星星','各區 monument → Megastructure 島上塔',['每區下方都有兩座雕像的星星步驟，逐區補齊 24 顆。','回 Megastructure 島上的 Astronomical Temple，把星星放入圓形裝置並看完幻象，查看 The Edge of Forever。'],{trophyRefs:refs('The Thief of Fire','The All-Gifted','Mistress of Riddles','The Edge of Forever','Renaissance Robot'),sources:['steam','wiki']});
 add('P7','final-backup','最終 VTOL 前保留節點','Megastructure · 最後登機前',['登上最終 VTOL 前，完成剩餘謎題、星星、收集與 Miranda，並保留這裡的 PS5 存檔。','PC 攻略提到結局後的隱藏自動存檔，PS5 各版本是否相同仍待確認；請先備份再登機。'],{warningLevel:'irreversible',missable:true,backupRecommended:true,prerequisites:['miranda','collectibles','stars'],sources:['steam','ps5'],verificationStatus:'unverified'});
 add('P7','ending','最後選擇與 The Future','Megastructure · 最終選擇',['三種結局方向是使用機器、暫停機器、摧毀機器。Break the Loop 只需完成定義未來的選擇；並非三種結局各有一個 PS5 本體盃。','救回 Miranda 後完成結局再核對 The Future。不要把三種主結局與三市長獎盃混為一談。'],{trophyRefs:refs('Break the Loop','The Future'),prerequisites:['final-backup'],sources:['ending','wiki'],verificationStatus:'confirmed'});
@@ -113,9 +114,12 @@ add('P4','prometheus-rescue','進入南側巨構，釋放 Prometheus','S3 收尾
 const regions=[['P1','E1','Grasslands Ring'],['P1','E2','Wooded Plateau'],['P1','E3','Eastern Wetlands'],['P2','N1','Desolate Island'],['P2','N2','Flooded Valley'],['P2','N3','Lost Marshes'],['P4','S1','Southern Coast'],['P4','S2','Verdant Canyon'],['P4','S3','Circular Oasis'],['P5','W1','Western Delta'],['P5','W3','High Plain'],['P5','W2','Anthropic Hills']];
 for(const [stageId,code,name] of regions) add(stageId,'region-'+code.toLowerCase(),code+' · '+name+' 謎題與探索',code+' '+name,[
  '依下方清單解完正規與 Lost 謎題，再搭橋啟動塔。黃金門等 P7 再回來。',
- '沿路進 Lost Lab、讀終端、收錄音與過去顯現；離區前把兩座雕像的星星也拿走。',
- ...(code==='W2'?['W2 Lost Lab 先不要進入。等下方「W2 Lost Lab 前」完成 PS5 備份，再選市長路線。']:[])
-],{trophyRefs:refs(name),sources:['guide','wiki'],warningLevel:'recommended',verificationStatus:'consensus'});
+ code==='W2'?'失落實驗室：本區先不要進 Lost Lab，等下方「W2 Lost Lab 前」完成 PS5 備份再進入。':code==='E1'?'失落實驗室：到塔左側、Prometheus 雕像附近找 Lost Lab 入口，走進內部探索。它與下方 Lost 1／2 謎題是不同地點。':'失落實驗室：找本區 Lost Lab 的入口，走進內部探索。這是場外的實驗室建築，與下方 Lost 1／2 謎題不同。',
+ '電腦文字：靠近電腦終端並操作，在選單中逐份開啟文字檔閱讀；只走過電腦旁邊不算。',
+ '錄音：在電腦終端的選單找 Trevor 與 Lifthrasir 的音訊檔，依畫面選項下載；本區各有一份。',
+ ...(['E1','E2'].includes(code)?['本區沒有「過去人物光影」。這類收集從 E3 才開始，不用在這裡找。']:['過去人物光影：在戶外找半透明、發光的人物影像，走近並碰觸，讓過去的對話播放；本區有兩處。']),
+ '離開本區前，完成下方兩座雕像的解法，拿走兩顆星星。'
+],{trophyRefs:refs(name),sources:['guide','wiki','steam','remnants'],warningLevel:'recommended',verificationStatus:'consensus'});
 // 區域帳插在轉場驗收之前；每階段順序明確，不依顯示標題生成 ID。
 const flowOrders={
  P1:['region-e1','doge-survey','team','field-basics','chase','puzzle-time','region-e2','single-rod','one-lap','region-e3','doge-match','first-megastructure'],
@@ -126,5 +130,5 @@ const flowOrders={
 };
 for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),order=flowOrders[stage.id];list.sort((a,b)=>order?order.indexOf(a.id)-order.indexOf(b.id):a.order-b.order).forEach((s,i)=>s.order=i+1);}
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
-export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.1',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.2.2',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
+export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.2',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.2.3',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);
