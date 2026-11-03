@@ -5,6 +5,7 @@ import {mockDrive} from './fixtures/drive.mjs';
 const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4197/game-companion/',url=base+'games/talos2/';
 const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||'msedge'});
 await fs.mkdir('outputs/talos2',{recursive:true});
+const getData=async target=>target.evaluate(async()=>{const {roadmap}=await import('./data.js');const {createStore}=await import('./roadmap/store.js');const store=createStore(roadmap,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
 try{
  const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true}),page=await context.newPage(),errors=[],accesses=[],mock=mockDrive();
  page.on('pageerror',e=>errors.push(e.message));
@@ -33,6 +34,12 @@ try{
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
  assert.equal(await page.locator('.branch-lane').count(),3);assert.equal(await page.locator('.stage').count(),8);
  assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),true);
+ assert.equal(await page.locator('[data-detail]').count(),0);assert.equal(await page.locator('.step textarea').count(),0);await page.locator('#step-calibration .instructions').waitFor({state:'visible'});
+ assert.doesNotMatch(await page.locator('#step-calibration').textContent(),/完成確認|錯過[／/]復原|本步驟筆記|以名稱對照/);
+ assert.match(await page.locator('#step-calibration .step-note').textContent(),/synthetic pre-research note/);
+ await page.locator('[data-edit-note="calibration"]').click();assert.equal(await page.locator('#step-note-text').inputValue(),'synthetic pre-research note');await page.locator('#step-note-text').fill('synthetic cancelled');await page.locator('[data-close="note-dialog"]').click();assert.equal((await getData(page)).steps.calibration.note,'synthetic pre-research note');
+ await page.locator('[data-edit-note="petition"]').click();await page.locator('#step-note-text').fill('synthetic playing note');await page.locator('#note-save').click();await page.locator('#note-dialog').waitFor({state:'hidden'});await page.waitForFunction(()=>document.querySelector('#step-petition .step-note').textContent.includes('synthetic playing note'));assert.equal((await getData(page)).steps.petition.status,'not_started');
+
  assert.equal(await page.locator('select[data-status]').count(),0);
  const statusButton=status=>page.locator(`[data-status-action="calibration"][data-status-value="${status}"]`);
  await statusButton('unknown').focus();await page.keyboard.press('Space');await page.waitForFunction(()=>document.querySelector('[data-status-action="calibration"][data-status-value="unknown"]')?.getAttribute('aria-pressed')==='true');
@@ -56,8 +63,17 @@ try{
  await page.locator('[data-trophy="chicken"]').check();await page.waitForFunction(()=>document.getElementById('trophy-count').textContent.includes('1 '));
  await page.reload();await page.locator('[data-trophy="chicken"]:checked').waitFor();assert.match(await page.locator('[data-trophy="chicken"]').locator('..').textContent(),/Chicken（膽小鬼）/);
  await page.locator('[data-view="branches"]').click();assert.match(await page.locator('.branch-grid').textContent(),/A New Morality（新的道德規範）/);assert.match(await page.locator('.branch-grid').textContent(),/A New Beginning（新的開始）/);assert.match(await page.locator('.branch-grid').textContent(),/Balance（平衡）/);
- await page.locator('[data-view="roadmap"]').click();await page.locator('#search').fill('膽小鬼');await page.locator('#step-chicken').waitFor({state:'visible'});await page.locator('[data-detail="chicken"] summary').click();assert.match(await page.locator('#step-chicken .detail-info').textContent(),/Chicken（膽小鬼）/);await page.locator('#search').fill('');
+ await page.locator('[data-view="roadmap"]').click();await page.locator('#search').fill('膽小鬼');await page.locator('#step-chicken').waitFor({state:'visible'});assert.match(await page.locator('#step-chicken .step-trophies').textContent(),/Chicken（膽小鬼）/);await page.locator('#search').fill('');
  await page.locator('[data-view="roadmap"]').click();assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
+
+ // 同一獎盃的兩張方塊與清單雙向反映；勾獎盃不代填攻略，重整保留並維持鍵盤焦點。
+ await page.goto(url+'?view=roadmap#step-ending');await page.locator('#step-ending .step-trophies').waitFor({state:'visible'});
+ const future=page.locator('[data-trophy="the-future"][data-trophy-context="ending"]');await future.focus();await page.keyboard.press('Space');
+ await page.waitForFunction(()=>[...document.querySelectorAll('.step-trophies [data-trophy="the-future"]')].every(el=>el.checked));
+ assert.equal(await page.locator('.step-trophies [data-trophy="the-future"]').count(),2);assert.equal(await page.locator('[data-complete="ending"]').isChecked(),false);assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('data-trophy-context')),'ending');
+ await page.reload();await page.locator('[data-trophy="the-future"][data-trophy-context="ending"]:checked').waitFor();
+ await page.locator('[data-view="trophies"]').click();assert.equal(await page.locator('[data-trophy="the-future"]').isChecked(),true);await page.locator('[data-trophy="the-future"]').uncheck();await page.waitForFunction(()=>document.getElementById('trophy-count').textContent.includes('1 '));
+ await page.goto(url+'?view=roadmap#step-miranda');await page.locator('#step-miranda .step-trophies').waitFor({state:'visible'});assert.equal(await page.locator('[data-trophy="the-future"][data-trophy-context="miranda"]').isChecked(),false);
  // 只看後期章節也可直接開始；切換只寫 currentStage，不代填早期進度或要求確認。
  await page.locator('#chapter-select').selectOption('P7');await page.waitForFunction(()=>document.querySelector('[data-stage="P7"]').getAttribute('aria-current')==='step');assert.equal(await page.locator('dialog[open]').count(),0);
  assert.match(await page.locator('.checkpoint').textContent(),/本章/);assert.doesNotMatch(await page.locator('.checkpoint').textContent(),/Doge/);
@@ -69,17 +85,16 @@ try{
  await page.locator('#filter').selectOption('backup');assert.ok(await page.locator('.step').count()>0);await page.locator('#filter').selectOption('all');
  await page.locator('#search').fill('synthetic-no-match-834');assert.equal(await page.locator('.stage-list .empty').isVisible(),true);await page.locator('#search').fill('');
  await page.locator('[data-stage="P0"]').click();await page.waitForFunction(()=>document.getElementById('chapter-select').value==='P0');
- await page.locator('[data-detail="save-safety"] summary').click();await page.locator('[data-backup="save-safety"]').click();await page.locator('#backup-ack').check();await page.locator('#backup-note').fill('synthetic PS5 timestamp only');await page.locator('#backup-confirm').click();await page.waitForFunction(()=>document.getElementById('step-save-safety').textContent.includes('synthetic PS5 timestamp only'));
+ await page.locator('[data-backup="save-safety"]').click();await page.locator('#backup-ack').check();await page.locator('#backup-note').fill('synthetic PS5 timestamp only');await page.locator('#backup-confirm').click();await page.waitForFunction(()=>document.getElementById('step-save-safety').textContent.includes('synthetic PS5 timestamp only'));
  assert.equal(await page.locator('[data-complete="save-safety"]').isChecked(),false);
  // IDB 兩分頁讀取最新值再交易，不會用舊畫面整包覆蓋。
  const other=await context.newPage();await other.goto(url);await other.locator('#trophy-count').waitFor();
  await Promise.all([page.locator('[data-complete="chicken"]').check(),other.locator('[data-complete="petition"]').check()]);
- const getData=async target=>target.evaluate(async()=>{const {roadmap}=await import('./data.js');const {createStore}=await import('./roadmap/store.js');const store=createStore(roadmap,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
  await page.waitForFunction(async()=>{const {roadmap}=await import('./data.js');const {createStore}=await import('./roadmap/store.js');const s=createStore(roadmap,window.SideProjectSync);try{const p=await s.open();return p.steps.chicken?.status==='completed'&&p.steps.petition?.status==='completed';}finally{s.close();}});
  await other.close();
  const local=await getData(page);assert.equal(local.steps.calibration.note,'synthetic pre-research note');assert.deepEqual(local.futureFromOld,{keep:true});
  const source={...local,steps:{...local.steps,chicken:{status:'missed',note:'synthetic imported note'},'future-step':{status:'unknown',extra:{keep:true}}},futureTop:{keep:'synthetic'}};
- await page.locator('[data-view="backup"]').click();
+ await page.locator('[data-view="backup"]').click();assert.ok(await page.locator('#research-chicken .sources a').count()>0);assert.equal(await page.locator('.research-register p').filter({hasText:'網站無法讀取遊戲存檔'}).count(),1);assert.match(await page.locator('#research-w2-backup').textContent(),/雲端 A 必須/);
  const upload=async obj=>{await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(obj))});await page.locator('#import-dialog').waitFor();};
  await upload(source);assert.equal(await page.locator('#import-apply').isDisabled(),true);await page.locator('#import-source').click();assert.equal(await page.locator('#import-apply').isDisabled(),true);
  const backup=async()=>{const event=page.waitForEvent('download');await page.locator('#import-download').click();const file=await event;assert.equal(await file.failure(),null);const bundle=JSON.parse(await fs.readFile(await file.path(),'utf8'));assert.equal(bundle.recoveryBundle.sourceRaw,JSON.stringify(source));await page.locator('#import-ack').check();};
@@ -110,7 +125,7 @@ try{
  for(const width of [1920,1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'overflow '+width);await page.screenshot({path:'outputs/talos2/'+width+'.png',fullPage:false});}
  await page.locator('#nav-toggle').click();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'true');await page.locator('[data-view="branches"]').click();await page.locator('[data-branch-detail="rand"] summary').click();await page.screenshot({path:'outputs/talos2/mobile-branch.png'});
  // 閉合階段中的深連結仍會展開目標；點擊下一步也可開啟未顯示篩選的步驟。
- await page.goto(url+'?view=roadmap#step-w2-backup');await page.waitForFunction(()=>document.querySelector('[data-detail="w2-backup"]')?.open===true);
+ await page.goto(url+'?view=roadmap#step-w2-backup');await page.locator('#step-w2-backup .step-body').waitFor({state:'visible'});
  // 配額／IDB put 失敗時不重設，也不偷偷回退至他遊戲儲存。
  const beforeQuota=await getData(page);await page.evaluate(()=>{window.originalPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(){throw new DOMException('synthetic quota','QuotaExceededError');};});
  await page.locator('[data-complete="w2-backup"]').check();await page.waitForFunction(()=>document.getElementById('feedback').textContent.includes('synthetic quota'));await page.evaluate(()=>IDBObjectStore.prototype.put=window.originalPut);assert.deepEqual(await getData(page),beforeQuota);
@@ -118,6 +133,6 @@ try{
  await page.evaluate(async()=>{const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('game-companion.talos2.progress.v1',1);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite'),s=tx.objectStore('records'),r=s.get('progress');r.onsuccess=()=>s.put({...r.result,schema:999,syntheticCorruptMarker:'retain-original'},'progress');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();});await page.reload();await page.locator('#raw-recovery').waitFor();assert.match(await page.locator('#app').textContent(),/沒有重設/);const rawEvent=page.waitForEvent('download');await page.locator('#raw-recovery').click();const rawFile=await rawEvent,rawBundle=JSON.parse(await fs.readFile(await rawFile.path(),'utf8'));const rawProgress=rawBundle.records.find(r=>r.key==='progress').value;assert.equal(rawProgress.schema,999);assert.equal(rawProgress.syntheticCorruptMarker,'retain-original');assert.ok(Object.keys(rawBundle.syncState).every(key=>key.startsWith('game-companion.talos2.sync.')));
  assert.deepEqual(errors,[]);
  const forbidden=accesses.filter(a=>!a.key.startsWith('game-companion.talos2.'));assert.deepEqual(forbidden,[]);
- await fs.writeFile('outputs/talos2/browser-result.json',JSON.stringify({passed:true,checks:['portal/direct-route/reload','60 base/9 DLC excluded','independent trophies/steps/backups/branches','direct chapter selection without blocking or changing prior steps','filters and deep links','IDB cross-tab transactions','unknown fields/raw archives','import stale preview/download failure/wrong game','synthetic OAuth/CAS gate/first pairing/three-way conflict','IDB in-flight edits/rebase','lost acknowledgement read-before-retry','corrupt/newer schema preserved and raw export','1440/768/390/320 no overflow','quota stops without reset','storage namespace isolation'],pageErrors:errors,storageAccesses:accesses.length},null,2));
+ await fs.writeFile('outputs/talos2/browser-result.json',JSON.stringify({passed:true,checks:['expanded instructions/inline trophy parity/optional notes','portal/direct-route/reload','60 base/9 DLC excluded','independent trophies/steps/backups/branches','direct chapter selection without blocking or changing prior steps','filters and deep links','IDB cross-tab transactions','unknown fields/raw archives','import stale preview/download failure/wrong game','synthetic OAuth/CAS gate/first pairing/three-way conflict','IDB in-flight edits/rebase','lost acknowledgement read-before-retry','corrupt/newer schema preserved and raw export','1440/768/390/320 no overflow','quota stops without reset','storage namespace isolation'],pageErrors:errors,storageAccesses:accesses.length},null,2));
  console.log(JSON.stringify({passed:true,gameId:'talos2',storageAccesses:accesses.length,screenshots:'outputs/talos2/'}));await context.close();
 }finally{await browser.close();}
