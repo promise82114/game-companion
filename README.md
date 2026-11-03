@@ -57,6 +57,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 2026-10-31 新增 `/game-companion/games/talos2/`：八階段、本體 60 獎盃（DLC 9 排除），提供不可逆警示、三市長獨立追蹤與手動 PS5 備份紀錄。2026-11-03 模組 1.2.0 擴充為 58 步驟與 212 個逐題解題項目，涵蓋本體 12 區全部 132 題及序章、橋樑、星星、巨構／終局、博物館與文字冒險；上方「拒絕謎語」勾選後直接顯示解法與 SVG。進度使用本遊戲獨立 IndexedDB；Drive 沿用既有安全 adapter 及每次授權驗證門檻。沒有修改原遊戲模組或替網站備份冒充 PS5 遊戲存檔。
 
+2026-11-04 模組 1.3.0 新增區域收集清單、位置圖連結與計數：12 區固定追蹤 80 項（12 實驗室、兩種錄音各 12、20 人物光影、24 星星）。文字／遺物另以各區實際數量加總至獎盃目標，不以目標數冒充遊戲總量；N1／W3 遺物位置及各區文字總量仍待查證。
+
 建置與資料驗證沿用上述命令；隔離瀏覽器執行 `node scripts/verify-talos2-browser.mjs`，`TEST_BASE_URL` 可設定本機網址。詳見 [Talos 模組](games/talos2/README.md) 與 [攻略查證／驗證報告](games/talos2/docs/RESEARCH.md)。官方逐盃數字 ID、部分英文對話與 PS5 分支重現仍待查證，已在介面標示。已接入 main 的 Pages 發布流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)。
 
 ## 維護文件

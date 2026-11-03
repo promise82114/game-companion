@@ -114,11 +114,7 @@ add('P4','prometheus-rescue','進入南側巨構，釋放 Prometheus','S3 收尾
 const regions=[['P1','E1','Grasslands Ring'],['P1','E2','Wooded Plateau'],['P1','E3','Eastern Wetlands'],['P2','N1','Desolate Island'],['P2','N2','Flooded Valley'],['P2','N3','Lost Marshes'],['P4','S1','Southern Coast'],['P4','S2','Verdant Canyon'],['P4','S3','Circular Oasis'],['P5','W1','Western Delta'],['P5','W3','High Plain'],['P5','W2','Anthropic Hills']];
 for(const [stageId,code,name] of regions) add(stageId,'region-'+code.toLowerCase(),code+' · '+name+' 謎題與探索',code+' '+name,[
  '依下方清單解完正規與 Lost 謎題，再搭橋啟動塔。黃金門等 P7 再回來。',
- code==='W2'?'失落實驗室：本區先不要進 Lost Lab，等下方「W2 Lost Lab 前」完成 PS5 備份再進入。':code==='E1'?'失落實驗室：到塔左側、Prometheus 雕像附近找 Lost Lab 入口，走進內部探索。它與下方 Lost 1／2 謎題是不同地點。':'失落實驗室：找本區 Lost Lab 的入口，走進內部探索。這是場外的實驗室建築，與下方 Lost 1／2 謎題不同。',
- '電腦文字：靠近電腦終端並操作，在選單中逐份開啟文字檔閱讀；只走過電腦旁邊不算。',
- '錄音：在電腦終端的選單找 Trevor 與 Lifthrasir 的音訊檔，依畫面選項下載；本區各有一份。',
- ...(['E1','E2'].includes(code)?['本區沒有「過去人物光影」。這類收集從 E3 才開始，不用在這裡找。']:['過去人物光影：在戶外找半透明、發光的人物影像，走近並碰觸，讓過去的對話播放；本區有兩處。']),
- '離開本區前，完成下方兩座雕像的解法，拿走兩顆星星。'
+ ...(code==='W2'?['Lost Lab 先不要進入；保留下方入口備份，再繼續市長路線。']:[])
 ],{trophyRefs:refs(name),sources:['guide','wiki','steam','remnants'],warningLevel:'recommended',verificationStatus:'consensus'});
 // 區域帳插在轉場驗收之前；每階段順序明確，不依顯示標題生成 ID。
 const flowOrders={
@@ -130,5 +126,5 @@ const flowOrders={
 };
 for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),order=flowOrders[stage.id];list.sort((a,b)=>order?order.indexOf(a.id)-order.indexOf(b.id):a.order-b.order).forEach((s,i)=>s.order=i+1);}
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
-export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.2',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.2.3',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
+export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.3',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.3.0',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);

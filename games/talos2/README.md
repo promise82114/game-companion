@@ -1,6 +1,12 @@
 # The Talos Principle II · 本體白金 Roadmap
 
-2026-11-04，模組 1.2.3，內容版本 `2026.11.04.2`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+2026-11-04，模組 1.3.0，內容版本 `2026.11.04.3`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+
+新增「收集清單」頁與 Roadmap 各區收集區塊。12 區分別顯示實驗室、Trevor／Lifthrasir 錄音、人物光影與星星的已收集／總數；固定追蹤共 80 項（12＋12＋12＋20＋24）。E1／E2 各 5 項，其餘每區 7 項；全部勾選才顯示該區已收齊。56 個新項目直接附中文位置、互動動作與來源位置圖，24 顆星星共用原解題進度，沒有重複保存。舊版已完成的區域不代填新收集。
+
+文字與人類遺物在各區輸入實際數量，城市／巨構文字另有一欄；全域加總對照 30 份文字、10 件遺物的獎盃目標。這兩個數字不是遊戲全部物件總量，不列入固定 80 項或自動勾獎盃。遺物另列 19 個攻略候選位置；出現點可能變動，N1／W3 位置仍待查證，不能視為零。各區文字總量也未核實。
+
+新勾選沿用 `steps['collectible-'+id]`，手動計數沿用 `settings['collection-text-'+region]`／`settings['collection-artifact-'+region]`；schema、IndexedDB 與 Drive 協定不變，保護式匯入、跨分頁更新與手動同步沿用既有機制。
 
 各區探索拆成可辨識的動作：進入失落實驗室、操作電腦開啟文字、下載兩位人物的錄音，以及碰觸戶外的過去人物光影。E1／E2 明示沒有光影，W2 明示先備份才進實驗室；P7 收尾核對採相同用語。
 
@@ -20,7 +26,7 @@ Purple 的位置改為考古花園，以中央塔電梯出口往左的方向與�
 
 本次補強三市長：Doge 七題英文、Rand N1／S1 私訊、城市 Damien／Atal／Malduc 與簡報、W2 三條完整決策順序及 PS5 入口備份／還原。58 筆逐項選項分別標記英文證據與適用性；缺少原文直接顯示待查證，不用翻譯冒充英文。現有 57 步驟 ID、schema 1 與同步契約不變，合成 1.0.0 進度可繼續使用。
 
-入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=trophies`、`?view=backup`、`#step-w2-backup` 與 `#puzzle-E2-main-8` 等穩定深連結。Portal 由既有 build 自動列入。
+入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=collectibles`、`?view=trophies`、`?view=backup`、`#step-w2-backup`、`#puzzle-E2-main-8`、`#collection-region-E1` 與 `#collectible-e1-lab` 等穩定深連結。Portal 由既有 build 自動列入。
 
 2026-10-31 使用者已授權 commit、push 及正式發布。模組已接入既有 main 的 Pages 流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)；PS5 與真實 Google 的驗收仍由使用者執行。
 
@@ -45,6 +51,8 @@ node scripts/verify-talos2-browser.mjs
 
 - `dist/data.js`：八階段、58 步驟、60 本體獎盃、三市長與查證來源。保留原 57 步驟 ID，新增 Prometheus 救援節點。
 - `dist/puzzle-data.js`：212 個解題項目、順序、中文操作摘要、逐題來源與九面拼塊盤格形。
+- `dist/collection-data.js`：12 區、56 個固定收集項目、19 個遺物候選位置與來源圖片連結。
+- `dist/roadmap/collections.js`：區域勾選、共用星星進度、固定 80 項及手動計數的衍生合計與查證頁。
 - `dist/roadmap/solutions.js`：逐題勾選與劇透控制、原創 SVG 呈現；關閉時不輸出解法 DOM。
 - `dist/trophy-names.js`：本體 60 盃的來源中英名稱與統一顯示文字。
 - `dist/mayor-research.js`：三市長逐項查證、來源衝突與 PS5 手動備份順序，以原 ID 補強資料。
