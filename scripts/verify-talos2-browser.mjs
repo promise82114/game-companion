@@ -29,11 +29,13 @@ try{
  });
  await page.goto(base);
  // 合成舊版進度：攻略更新只增加內容，不重建 DB 或清除已發布步驟／筆記。
- await page.evaluate(async()=>{const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('game-companion.talos2.progress.v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('records');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put({gameId:'talos2',schema:1,moduleVersion:'1.0.0',revision:3,updatedAt:1,steps:{calibration:{status:'completed',note:'synthetic pre-research note'}},trophies:{},backups:{},branches:{},settings:{},futureFromOld:{keep:true}},'progress');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();});
+ await page.evaluate(async()=>{const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('game-companion.talos2.progress.v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('records');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put({gameId:'talos2',schema:1,moduleVersion:'1.0.0',revision:3,updatedAt:1,steps:{calibration:{status:'completed',note:'synthetic pre-research note'},chicken:{status:'missed',legacyExtra:'keep'},petition:{status:'skipped'},schuyler:{status:'unknown'}},trophies:{},backups:{},branches:{rand:{status:'unknown',legacyExtra:'keep'}},settings:{},futureFromOld:{keep:true}},'progress');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});db.close();});
  await page.locator('.open-game[href="games/talos2/"]').click();await page.locator('#trophy-count').waitFor();
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
  assert.equal(await page.locator('.branch-lane').count(),3);assert.equal(await page.locator('.stage').count(),8);
  assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),true);
+ for(const [id,status]of [['chicken','missed'],['petition','skipped'],['schuyler','unknown']]){assert.equal(await page.locator('#step-'+id+' .step-state').textContent(),'未開始');assert.equal((await getData(page)).steps[id].status,status);}
+ assert.equal(await page.locator('[data-branch="rand"]').isChecked(),false);assert.equal((await getData(page)).branches.rand.legacyExtra,'keep');
  assert.equal(await page.locator('[data-detail]').count(),0);assert.equal(await page.locator('.step textarea').count(),0);await page.locator('#step-calibration .instructions').waitFor({state:'visible'});
  assert.doesNotMatch(await page.locator('#step-calibration').textContent(),/完成確認|錯過[／/]復原|本步驟筆記|以名稱對照/);
 
@@ -49,17 +51,15 @@ try{
  await page.reload();await page.locator('#puzzle-BOOT-2').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.activeElement.dataset.puzzleComplete),'BOOT-2');
  await page.locator('#filter').selectOption('pending');await page.locator('#step-calibration').waitFor({state:'visible'});assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),true);await page.locator('#filter').selectOption('all');
  await page.locator('#search').fill('Seesaw');await page.locator('#puzzle-E2-main-8').waitFor({state:'visible'});assert.match(await page.locator('#puzzle-E2-main-8').textContent(),/Single Rod|只拿入口/);assert.equal(await page.locator('[data-solution="E2-main-8"] svg[role="img"]:visible').count(),1);
+ await page.goto(url+'?view=roadmap#puzzle-TEXT-atlantis');await page.locator('[data-solution="TEXT-atlantis"]').waitFor({state:'visible'});assert.match(await page.locator('#puzzle-TEXT-atlantis').textContent(),/Then find another way to witness the Sublime without being annihilated\./);assert.equal(await page.locator('#puzzle-TEXT-atlantis .solution-pending').count(),0);assert.equal(await page.locator('#puzzle-TEXT-atlantis a[href*="pB1VTo02kB4&t=239s"]').count(),1);
  await page.goto(url+'?view=roadmap#puzzle-S1-main-8');await page.locator('[data-solution="S1-main-8"]').waitFor({state:'visible'});assert.match(await page.locator('[data-solution="S1-main-8"]').textContent(),/到目前都不要選光源/);
  for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'puzzle solution overflow '+width);await page.locator('#puzzle-S1-main-8').scrollIntoViewIfNeeded();await page.screenshot({path:'outputs/talos2/solutions-'+width+'.png'});}
  await page.setViewportSize({width:1440,height:1000});await page.locator('#show-solutions').uncheck();await page.waitForFunction(()=>!document.querySelector('[data-solution]'));await page.reload();assert.equal(await page.locator('#show-solutions').isChecked(),false);assert.equal((await getData(page)).steps['puzzle-BOOT-1'].status,'completed');
  await page.goto(url+'?view=roadmap#step-calibration');await page.locator('#step-calibration .instructions').waitFor({state:'visible'});
  assert.equal(await page.locator('select[data-status]').count(),0);
- const statusButton=status=>page.locator(`[data-status-action="calibration"][data-status-value="${status}"]`);
- await statusButton('unknown').focus();await page.keyboard.press('Space');await page.waitForFunction(()=>document.querySelector('[data-status-action="calibration"][data-status-value="unknown"]')?.getAttribute('aria-pressed')==='true');
- assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('data-status-value')),'unknown');assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),false);
- await page.reload();await page.waitForFunction(()=>document.querySelector('[data-status-action="calibration"][data-status-value="unknown"]')?.getAttribute('aria-pressed')==='true');
- for(const status of ['skipped','missed']){await statusButton(status).click();await page.waitForFunction(status=>document.querySelector(`[data-status-action="calibration"][data-status-value="${status}"]`)?.getAttribute('aria-pressed')==='true',status);}
- await statusButton('missed').click();await page.waitForFunction(()=>document.querySelector('#step-calibration .step-state')?.textContent==='未開始');
+ assert.equal(await page.locator('[data-status-action],select[data-branch]').count(),0);assert.doesNotMatch(await page.locator('.step-status').allTextContents().then(v=>v.join(' ')),/略過|不確定|已錯過/);
+ await page.locator('[data-complete="calibration"]').focus();await page.keyboard.press('Space');await page.waitForFunction(()=>document.querySelector('#step-calibration .step-state')?.textContent==='未開始');assert.equal(await page.evaluate(()=>document.activeElement.dataset.complete),'calibration');
+ await page.reload();await page.waitForFunction(()=>document.querySelector('#step-calibration .step-state')?.textContent==='未開始');
  await page.locator('label[for="complete-calibration"]').click();await page.locator('[data-complete="calibration"]:checked').waitFor();
  const research=await context.newPage();research.on('pageerror',e=>errors.push(e.message));await research.goto(url+'?view=roadmap#step-doge-survey');await research.locator('#step-doge-survey .dialogue-list').waitFor({state:'visible'});assert.equal(await research.locator('#step-doge-survey [data-dialogue]').count(),7);assert.match(await research.locator('#step-doge-survey [data-dialogue="doge-prayer"]').textContent(),/No, prayer has no effect on the world/);
  await research.goto(url+'?view=roadmap#step-mayor-rand');await research.locator('#step-mayor-rand .dialogue-list').waitFor({state:'visible'});assert.ok(await research.locator('#step-mayor-rand .dialogue-missing').count()>0);assert.match(await research.locator('#step-mayor-rand [data-dialogue="rand-wake"]').textContent(),/I think so/);assert.match(await research.locator('#step-mayor-rand').textContent(),/Download to Console Storage/);
@@ -84,6 +84,7 @@ try{
  await page.locator('[data-view="branches"]').click();assert.match(await page.locator('.branch-grid').textContent(),/A New Morality（新的道德規範）/);assert.match(await page.locator('.branch-grid').textContent(),/A New Beginning（新的開始）/);assert.match(await page.locator('.branch-grid').textContent(),/Balance（平衡）/);
  await page.locator('[data-view="roadmap"]').click();await page.locator('#search').fill('膽小鬼');await page.locator('#step-chicken').waitFor({state:'visible'});assert.match(await page.locator('#step-chicken .step-trophies').textContent(),/Chicken（膽小鬼）/);await page.locator('#search').fill('');
  await page.locator('[data-view="roadmap"]').click();assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
+ await page.goto(url+'?view=roadmap#step-chicken');await page.locator('[data-complete="chicken"]').check();await page.waitForFunction(()=>document.querySelector('#step-chicken .step-state').textContent==='完成');assert.equal((await getData(page)).steps.chicken.legacyExtra,'keep');await page.locator('[data-complete="chicken"]').uncheck();await page.waitForFunction(()=>document.querySelector('#step-chicken .step-state').textContent==='未開始');await page.reload();assert.equal((await getData(page)).steps.chicken.status,'not_started');
 
  // 同一獎盃的兩張方塊與清單雙向反映；勾獎盃不代填攻略，重整保留並維持鍵盤焦點。
  await page.goto(url+'?view=roadmap#step-ending');await page.locator('#step-ending .step-trophies').waitFor({state:'visible'});
@@ -100,7 +101,9 @@ try{
  await page.locator('#chapter-select').selectOption('P1');await page.waitForFunction(()=>document.querySelector('[data-stage="P1"]').getAttribute('aria-current')==='step');
  assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
  await page.locator('.branch-overview>summary').click();
- await page.locator('[data-branch="rand"]').selectOption('completed');await page.waitForFunction(()=>document.querySelector('[data-branch="rand"]').value==='completed');assert.equal(await page.locator('[data-branch="byron"]').inputValue(),'not_started');
+ await page.locator('[data-branch="rand"]').focus();await page.keyboard.press('Space');await page.locator('[data-branch="rand"]:checked').waitFor();assert.equal(await page.evaluate(()=>document.activeElement.dataset.branch),'rand');assert.equal(await page.locator('[data-branch="byron"]').isChecked(),false);
+ assert.equal((await getData(page)).branches.rand.legacyExtra,'keep');
+ await page.reload();await page.locator('.branch-overview>summary').click();await page.locator('[data-branch="rand"]:checked').waitFor();await page.locator('[data-branch="rand"]').uncheck();await page.waitForFunction(()=>document.querySelector('[data-branch="rand"]').parentElement.textContent==='未開始');await page.locator('[data-branch="rand"]').check();
  await page.locator('#filter').selectOption('backup');assert.ok(await page.locator('.step').count()>0);await page.locator('#filter').selectOption('all');
  await page.locator('#search').fill('synthetic-no-match-834');assert.equal(await page.locator('.stage-list .empty').isVisible(),true);await page.locator('#search').fill('');
  await page.locator('[data-stage="P0"]').click();await page.waitForFunction(()=>document.getElementById('chapter-select').value==='P0');

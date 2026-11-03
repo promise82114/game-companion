@@ -9,7 +9,7 @@ export function blockers(data, progress, targetStage) {
 }
 export function overview(data, progress) {
   const stage = data.stages.some(s=>s.id===progress.settings.currentStage) ? progress.settings.currentStage : data.stages[0].id;
-  const pending = data.steps.filter(s=>!done(progress,s.id) && !['missed','skipped'].includes(statusOf(progress,s.id)));
+  const pending = data.steps.filter(s=>!done(progress,s.id));
   const start = data.stages.findIndex(s=>s.id===stage);
   const upcoming = pending.filter(s=>data.stages.findIndex(t=>t.id===s.stageId)>=start);
   const base = data.trophies.filter(t=>t.category==='base');

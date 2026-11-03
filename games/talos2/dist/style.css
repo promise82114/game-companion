@@ -29,10 +29,8 @@ label.step-title{display:inline-block;cursor:pointer}
 label.step-title:hover{text-decoration:underline;text-underline-offset:3px}
 .step-status{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
 .step-state{font-size:12px;color:var(--muted);min-width:3.5em}
-.step-status button{min-height:32px;padding:3px 10px;font-size:12px;border-color:var(--border);background:transparent}
-.step-status button[aria-pressed=true]{background:#e2e9e0;border-color:#aabda5;color:var(--ink);font-weight:600}
-.step-status button:hover{background:var(--raised)}
-@media(max-width:640px){.step-status{gap:4px}.step-state{min-width:3em}.step-status button{min-height:44px;padding:5px 7px}.step-top{grid-template-columns:24px minmax(0,1fr)}}
+.branch-complete{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:13px}
+@media(max-width:640px){.step-state{min-width:3em}.step-top{grid-template-columns:24px minmax(0,1fr)}}
 
 /* 與 EDF WB1／WB2 相同的主內容寬度、側欄寬度與水平內距。 */
 body>main,.workspace-bar{width:auto;max-width:1620px;margin-left:244px;margin-right:0;padding-left:46px;padding-right:46px}

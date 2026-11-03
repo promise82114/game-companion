@@ -4,6 +4,18 @@
 
 ## 已取得證據
 
+### 2026-11-03 二態完成勾選／Atlantis 實際畫面核對（模組 1.2.1）
+
+內容版本 `2026.11.03.5`。依使用者要求，步驟移除略過、不確定、已錯過操作，三市長路線也由多狀態選單改為完成核取方塊。只顯示「未開始／完成」，以核取方塊或標題切換；重繪保留鍵盤焦點，步驟與分支仍各自記錄。
+
+保留 schema 1、舊狀態 enum、ID 及所有未知欄位，不批次改寫舊進度。舊 `missed`／`skipped`／`unknown` 顯示為未開始並納入下一步／未完成篩選，勾選後才寫 `completed`、取消勾選才寫 `not_started`。匯入與 Drive 仍能保留舊狀態原文及附加欄位；IndexedDB、namespace、Auth／Drive adapter 及保護式同步未改。
+
+**Ghosts of Atlantis 原文已確認**：直接以一般瀏覽器播放 [Game Guides Channel 的實玩影片](https://www.youtube.com/watch?v=pB1VTo02kB4&t=239s)，略過廣告後檢視 03:49 的底部可選句與 03:59 的終端已選取紀錄。完整文字為「Then find another way to witness the Sublime without being annihilated.」。畫面確認是 **without**，因此 [Item Level](https://itemlevel.net/the-talos-principle-2-all-text-adventures-solution-text-adventurer-achievement/) 的 with 是誤植。已補入該步詳細解法、加入帶時間來源、移除 `pending` 並將該題標為 `confirmed`；逐字畫面核對限這一句，其餘選項鏈仍為既有攻略摘要。不是僅依搜尋結果或其他文章推斷，也不是 PS5 實機驗收。新加入的 212 個解題項目目前沒有未補內容，既有三市長與 PS5 的未核實項目仍保留。
+
+本輪資料與瀏覽器回歸加入：三種舊狀態可保留、顯示未開始、下一步不跳過；步驟與分支的勾選／取消／重整／鍵盤焦點；舊筆記與未知欄位保留；Atlantis 原文、時間來源與待查證標記移除。全模組資料、合成同步、建置、產物與 Talos 隔離瀏覽器檢查通過，使用全新 context 與合成進度。真實 Google Drive 與 PS5 未測。
+
+變更來源 lint 與 1440／768／390px inspector 均為 0 FAIL／0 WARN；桌面步驟及手機市長路線畫面已人工檢視，320px 解法與清單無水平溢出。
+
 ### 2026-11-03 全本體逐題路線／拒絕謎語（模組 1.2.0）
 
 內容版本 `2026.11.03.4`。依使用者補充的「本體全部謎題、沿路知道現在解什麼與怎麼解」，新增 `dist/puzzle-data.js` 與 `dist/roadmap/solutions.js`，將逐題清單接回既有 Roadmap，另增 `prometheus-rescue` 主步驟，保留原 57 個已發布 ID。目前八階段 58 主步驟，212 個可獨立勾選的解題項目；這是工具拆分數，不宣稱官方共有 212 題。

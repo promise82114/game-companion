@@ -4567,7 +4567,8 @@ export const puzzles=[
     "stepId": "text-adventures",
     "title": "Ghosts of Atlantis",
     "actions": [
-      "開始朝聖，去破塔找魔法師：否定自我毀滅，建議另找見證崇高的方法，邀請同行。",
+      "開始朝聖，去破塔找魔法師，先選否定自我毀滅的回答。",
+      "接著選：Then find another way to witness the Sublime without being annihilated.（那就另找不必自我毀滅，也能見證崇高的方法。）再邀請魔法師同行。",
       "繼續到失落海岸找詩人：不接受死亡、完成偉業，邀請同行。",
       "繼續到貓頭鷹神殿找科學家：真相最重要。",
       "繼續到蛇神殿找醫師：無論未來如何，每條生命都值得救，邀請同行。",
@@ -4577,13 +4578,16 @@ export const puzzles=[
     ],
     "sources": [
       {
+        "title": "Game Guides Channel · 遊戲終端原文 03:59",
+        "url": "https://www.youtube.com/watch?v=pB1VTo02kB4&t=239s"
+      },
+      {
         "title": "Margareth · 三部文字冒險成功路線",
         "url": "https://itemlevel.net/the-talos-principle-2-all-text-adventures-solution-text-adventurer-achievement/"
       }
     ],
-    "verificationStatus": "unverified",
-    "researchNote": "來源中魔法師的第二答有 with／without 語義誤植；僅摘要為另尋不自我毀滅的途徑，完整英文仍需遊戲畫面核對。",
-    "pending": "魔法師第二句選項的完整英文待查證：來源疑似把 without 誤寫為 with。下列中文依上下文摘要，請以遊戲選項核對。"
+    "verificationStatus": "confirmed",
+    "researchNote": "2026-11-03 直接檢視 Game Guides Channel 實玩影片：03:49 底部選項、03:59 終端已選取紀錄均為 without being annihilated；Item Level 的 with 是誤植。英文逐字核對限魔法師這句，其餘路線仍依攻略摘要，並非 PS5 實機驗收。"
   },
   {
     "id": "TEXT-argument",
