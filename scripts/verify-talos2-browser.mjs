@@ -38,6 +38,21 @@ try{
  assert.doesNotMatch(await page.locator('#step-calibration').textContent(),/完成確認|錯過[／/]復原|本步驟筆記|以名稱對照/);
 
  assert.equal(await page.locator('[data-edit-note],#note-dialog,.step-note').count(),0);assert.doesNotMatch(await page.locator('#app').textContent(),/加註記|編輯註記|synthetic pre-research note/);assert.equal((await getData(page)).steps.calibration.note,'synthetic pre-research note');
+ // 全域劇透開關：預設沒有解法 DOM；選擇與逐題進度使用同一份受保護進度。
+ assert.equal(await page.locator('#show-solutions').isChecked(),false);assert.equal(await page.locator('[data-solution]').count(),0);assert.equal(await page.locator('[data-puzzle-complete]').count(),212);
+ await page.locator('#show-solutions').focus();await page.keyboard.press('Space');await page.locator('[data-solution="BOOT-1"]').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.activeElement.id),'show-solutions');
+ assert.equal(await page.locator('[data-solution]').count(),212);assert.equal(await page.locator('.arranger-diagram svg[role="img"]').count(),9);
+ await page.locator('[data-puzzle-complete="BOOT-1"]').focus();await page.keyboard.press('Space');await page.locator('[data-puzzle-complete="BOOT-1"]:checked').waitFor();assert.equal(await page.evaluate(()=>document.activeElement.dataset.puzzleComplete),'BOOT-1');
+ let solutionProgress=await getData(page);assert.equal(solutionProgress.steps['puzzle-BOOT-1'].status,'completed');assert.equal(solutionProgress.steps.calibration.status,'completed');assert.deepEqual(solutionProgress.trophies,{});assert.equal(solutionProgress.settings.showSolutions,true);
+ await page.reload();await page.locator('[data-puzzle-complete="BOOT-1"]:checked').waitFor();assert.equal(await page.locator('#show-solutions').isChecked(),true);
+ await page.locator('#continue').click();assert.equal(new URL(page.url()).hash,'#puzzle-BOOT-2');assert.equal(await page.evaluate(()=>document.activeElement.dataset.puzzleComplete),'BOOT-2');
+ await page.reload();await page.locator('#puzzle-BOOT-2').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.activeElement.dataset.puzzleComplete),'BOOT-2');
+ await page.locator('#filter').selectOption('pending');await page.locator('#step-calibration').waitFor({state:'visible'});assert.equal(await page.locator('[data-complete="calibration"]').isChecked(),true);await page.locator('#filter').selectOption('all');
+ await page.locator('#search').fill('Seesaw');await page.locator('#puzzle-E2-main-8').waitFor({state:'visible'});assert.match(await page.locator('#puzzle-E2-main-8').textContent(),/Single Rod|只拿入口/);assert.equal(await page.locator('[data-solution="E2-main-8"] svg[role="img"]:visible').count(),1);
+ await page.goto(url+'?view=roadmap#puzzle-S1-main-8');await page.locator('[data-solution="S1-main-8"]').waitFor({state:'visible'});assert.match(await page.locator('[data-solution="S1-main-8"]').textContent(),/到目前都不要選光源/);
+ for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'puzzle solution overflow '+width);await page.locator('#puzzle-S1-main-8').scrollIntoViewIfNeeded();await page.screenshot({path:'outputs/talos2/solutions-'+width+'.png'});}
+ await page.setViewportSize({width:1440,height:1000});await page.locator('#show-solutions').uncheck();await page.waitForFunction(()=>!document.querySelector('[data-solution]'));await page.reload();assert.equal(await page.locator('#show-solutions').isChecked(),false);assert.equal((await getData(page)).steps['puzzle-BOOT-1'].status,'completed');
+ await page.goto(url+'?view=roadmap#step-calibration');await page.locator('#step-calibration .instructions').waitFor({state:'visible'});
  assert.equal(await page.locator('select[data-status]').count(),0);
  const statusButton=status=>page.locator(`[data-status-action="calibration"][data-status-value="${status}"]`);
  await statusButton('unknown').focus();await page.keyboard.press('Space');await page.waitForFunction(()=>document.querySelector('[data-status-action="calibration"][data-status-value="unknown"]')?.getAttribute('aria-pressed')==='true');

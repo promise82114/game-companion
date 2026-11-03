@@ -8,6 +8,7 @@ import {overview,blockers,matches} from './dist/roadmap/model.js';
 import {createStore} from './dist/roadmap/store.js';
 import {dialogueHtml} from './dist/roadmap/evidence.js';
 import {trophyNamesZhTW,trophyNameSource,trophyLabel} from './dist/trophy-names.js';
+import {puzzles,puzzleGroups,puzzleProgressId,puzzleHtml} from './dist/roadmap/solutions.js';
 import {mockDrive} from '../../scripts/fixtures/drive.mjs';
 const config=JSON.parse(await fs.readFile(new URL('module.json',import.meta.url),'utf8'));
 assert.equal(data.gameId,config.gameId);assert.equal(data.storagePrefix,config.storagePrefix);assert.equal(data.driveFileName,config.driveFileName);
@@ -21,6 +22,22 @@ const ids=new Set(data.steps.map(s=>s.id)),trophyIds=new Set(data.trophies.map(t
 const mapped=new Set(data.steps.flatMap(s=>s.trophyRefs));assert.ok(data.trophies.every(t=>mapped.has(t.id)),'所有本體獎盃都要有名稱對照');
 const publishedStepIds='calibration save-safety doge-intro chicken petition schuyler museum purple neutral-route departure-check region-e1 doge-survey team field-basics chase puzzle-time region-e2 single-rod one-lap region-e3 doge-match first-megastructure region-n1 rand-north region-n2 broken-somnodrome region-n3 north-exit sinner text-adventures city-tour city-politics city-exit region-s1 hard-way rand-south region-s2 region-s3 artifacts west-arrival region-w1 region-w3 region-w2 w2-backup working-somnodrome mayor-rand mayor-byron mayor-hermanubis final-city all-puzzles miranda collectibles stars story-audit final-backup ending platinum-audit'.split(' ');
 assert.ok(publishedStepIds.every(id=>ids.has(id)),'已發布的 57 步驟 ID 不得因攻略更新消失');
+assert.equal(puzzles.length,212);assert.equal(new Set(puzzles.map(p=>p.id)).size,puzzles.length);
+for(const region of 'E1 E2 E3 N1 N2 N3 S1 S2 S3 W1 W2 W3'.split(' ')){
+ for(const [kind,count]of [['main',8],['lost',2],['gold',1],['bridge',1],['star',2]])assert.equal(puzzles.filter(p=>p.region===region&&p.kind===kind).length,count,region+' '+kind);
+}
+assert.equal(puzzles.filter(p=>p.kind==='tutorial').length,12);assert.equal(puzzles.filter(p=>p.kind==='arranger').length,9);
+for(const puzzle of puzzles){assert.ok(ids.has(puzzle.stepId),puzzle.id+' owner');assert.ok(puzzle.actions.length||puzzle.pending,puzzle.id+' content');assert.ok(puzzle.sources.length);for(const source of puzzle.sources)assert.ok(new URL(source.url).protocol==='https:');if(puzzle.verificationStatus==='unverified')assert.ok(puzzle.pending,puzzle.id+' uncertainty');assert.ok(puzzleGroups[puzzle.stepId]);assert.ok(!ids.has(puzzleProgressId(puzzle.id)),'子謎題不覆蓋原步驟');}
+const solutionEscape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const syntheticPuzzle={...puzzles[0],title:'<script>synthetic</script>',actions:['secret <script>synthetic</script>']},solutionState={steps:{}};
+assert.ok(!puzzleHtml(syntheticPuzzle,{escape:solutionEscape,progress:solutionState,showSolutions:false}).includes('secret'));
+const visibleSolution=puzzleHtml(syntheticPuzzle,{escape:solutionEscape,progress:solutionState,showSolutions:true});assert.ok(visibleSolution.includes('secret &lt;script&gt;'));assert.ok(!visibleSolution.includes('<script>'));
+// 拼門圖必須完整鋪滿、每塊四格且邊連通；尺寸與來源解圖另由人工核對。
+for(const p of puzzles.filter(p=>p.diagramCells)){
+ const rows=p.diagramCells;assert.ok(rows.every(row=>row.length===rows[0].length));const letters=[...new Set(rows.join(''))];assert.equal(letters.length,rows.length*rows[0].length/4);
+ for(const letter of letters){const cells=rows.flatMap((row,y)=>[...row].map((v,x)=>v===letter?[x,y]:null).filter(Boolean));assert.equal(cells.length,4);const seen=new Set([cells[0].join(',')]);for(let i=0;i<4;i++)for(const[x,y]of cells)if([[x-1,y],[x+1,y],[x,y-1],[x,y+1]].some(c=>seen.has(c.join(','))))seen.add([x,y].join(','));assert.equal(seen.size,4);}
+}
+assert.match(puzzles.find(p=>p.id==='E2-main-8').warning,/另一根不要碰/);assert.match(puzzles.find(p=>p.id==='E2-lost-2').warning,/只送一趟/);assert.ok(puzzles.find(p=>p.id==='S1-main-8').sources.some(s=>s.url.includes('switcheroo')));
 const survey=data.steps.find(s=>s.id==='doge-survey');assert.equal(survey.dialogue.length,7);assert.equal(survey.dialogue.at(-1).id,'doge-prayer');assert.ok(survey.dialogue.every(row=>typeof row.english==='string'&&row.english.length));
 assert.ok(data.steps.find(s=>s.id==='rand-north').location.startsWith('N1 '));
 assert.ok(data.steps.find(s=>s.id==='doge-match').location.includes('E2–E3'));
@@ -63,5 +80,5 @@ const unsafe=new ctx.window.SideProjectDrive.DriveAppData(auth,config.driveFileN
 auth.generation++;assert.equal(drive.verified,false);await assert.rejects(drive.write({},null),e=>e.code==='write-disabled');
 // 未修改三個既有模組的底層同步／身份／格式程式。
 for(const file of ['google-auth','drive-appdata','progress-envelope'])assert.equal(await fs.readFile(new URL('dist/shared/'+file+'.js',import.meta.url),'utf8'),await fs.readFile(new URL('../edf-wb/dist/shared/'+file+'.js',import.meta.url),'utf8'));
-for(const file of ['app.js','data.js','trophy-names.js','mayor-research.js','roadmap/model.js','roadmap/evidence.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
-console.log(JSON.stringify({passed:true,gameId:data.gameId,stages:8,steps:data.steps.length,baseTrophies:60,dlcExcluded:9,checks:['schema/source/dependency/ID guards','DLC excluded','trophy/step/backup separation','async three-way merge','first pairing','stale preview','in-flight edit preservation','lost acknowledgement recovery','quota before upload','412/racing CAS','unsafe server/grant rejection','unchanged auth/adapter/envelope','syntax']}));
+for(const file of ['app.js','data.js','puzzle-data.js','trophy-names.js','mayor-research.js','roadmap/model.js','roadmap/evidence.js','roadmap/solutions.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+console.log(JSON.stringify({passed:true,gameId:data.gameId,stages:8,steps:data.steps.length,puzzleItems:puzzles.length,puzzlePending:puzzles.filter(p=>p.verificationStatus==='unverified').length,baseTrophies:60,dlcExcluded:9,checks:['schema/source/dependency/ID guards','132 regional puzzles/212 route items','spoiler DOM exclusion/escaping','nine arranger tilings/connected tetrominoes','DLC excluded','trophy/step/backup separation','async three-way merge','first pairing','stale preview','in-flight edit preservation','lost acknowledgement recovery','quota before upload','412/racing CAS','unsafe server/grant rejection','unchanged auth/adapter/envelope','syntax']}));

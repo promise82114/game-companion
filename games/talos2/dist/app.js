@@ -4,6 +4,7 @@ import {statuses,warnings,verificationLabels,statusOf,done,overview,matches} fro
 import {createStore} from './roadmap/store.js';
 import {setupSync} from './roadmap/sync.js';
 import {dialogueHtml} from './roadmap/evidence.js';
+import {puzzles,puzzleProgressId,puzzlesForStep,puzzleListHtml} from './roadmap/solutions.js';
 const $=id=>document.getElementById(id),core=window.SideProjectSync;
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let progress,activeStage,branchExpanded=false,filter='all',query='',view=new URL(location.href).searchParams.get('view')||'roadmap',importReview,backupTarget,sync,rendering=false,refreshQueued=false;
@@ -15,6 +16,8 @@ function message(text){$('feedback').textContent=text;clearTimeout(messageTimer)
 async function action(fn){try{await fn();}catch(e){message(e.message);}}
 const sourceLinks=keys=>keys.map(k=>`<a href="${escape(data.sources[k].url)}" target="_blank" rel="noopener noreferrer">${escape(data.sources[k].title)} ↗</a>`).join('');
 const evidence=step=>dialogueHtml(step,{escape,sourceLinks,labels:verificationLabels,showSources:false});
+const puzzleDone=p=>progress.steps[puzzleProgressId(p.id)]?.status==='completed';
+const needsAttention=step=>!done(progress,step.id)||puzzlesForStep(step.id).some(p=>!puzzleDone(p));
 const rowLink=s=>s?`<a href="#step-${s.id}" data-step-link="${s.id}">${escape(s.title)}</a>`:'目前沒有待處理項目';
 function selectOptions(map,value){return Object.entries(map).map(([id,label])=>`<option value="${id}" ${value===id?'selected':''}>${label}</option>`).join('');}
 async function refresh(){
@@ -41,6 +44,7 @@ function stepHtml(step){
  ${step.trigger&&step.trigger!=='抵達上述地點，離開前查看本步驟。'?'<p class="step-trigger">'+escape(step.trigger)+'</p>':''}
  ${step.prerequisites.length?'<p class="step-prerequisites">前置：'+step.prerequisites.map(id=>`<a href="#step-${id}" data-step-link="${id}">${escape(data.steps.find(s=>s.id===id)?.title||id)}</a>`).join('、')+'</p>':''}
  <ol class="instructions">${step.actions.map(s=>'<li>'+escape(s)+'</li>').join('')}</ol>${evidence(step)}
+ ${puzzleListHtml(step.id,{escape,progress,showSolutions:progress.settings.showSolutions===true})}
  ${trophies.length?'<div class="step-trophies" role="group" aria-label="'+escape(step.title)+' 獎盃">'+trophies.map(t=>trophyCheckbox(t,step.id,true)).join('')+'</div>':''}
  ${step.backupRecommended?`<div class="backup-check"><span>${backup?.confirmedAt?'已記錄備份：'+escape(new Date(backup.confirmedAt).toLocaleString('zh-TW'))+(backup.note?' · '+escape(backup.note):''):'此處先備份'}</span><button data-backup="${step.id}">${backup?.confirmedAt?'更新備份紀錄':'記錄 PS5 備份'}</button></div>`:''}
  </div></article>`;
@@ -51,10 +55,11 @@ function branchHtml(branch){
 }
 function roadmapHtml(){
  const o=currentOverview(),current=data.stages.find(s=>s.id===o.stage),local=data.steps.filter(s=>s.stageId===o.stage),risk=local.find(s=>!done(progress,s.id)&&['irreversible','branch'].includes(s.warningLevel));
- return `<nav class="chapter-picker" aria-label="選擇攻略階段"><label>直接選章節<select id="chapter-select">${data.stages.map(s=>`<option value="${s.id}" ${s.id===o.stage?'selected':''}>${s.id} · ${escape(s.title)}</option>`).join('')}</select></label><div class="stage-nav">${data.stages.map(s=>`<button data-stage="${s.id}" ${s.id===o.stage?'aria-current="step"':''} aria-label="${escape(s.title)}">${s.id}</button>`).join('')}</div></nav>
+ return `<div class="solution-toggle"><label for="show-solutions"><input id="show-solutions" type="checkbox" ${progress.settings.showSolutions===true?'checked':''}>拒絕謎語 <span>顯示詳細解法與圖解</span></label><span id="puzzle-count">解題紀錄 ${puzzles.filter(p=>progress.steps[puzzleProgressId(p.id)]?.status==='completed').length} / ${puzzles.length}</span></div><nav class="chapter-picker" aria-label="選擇攻略階段"><label>直接選章節<select id="chapter-select">${data.stages.map(s=>`<option value="${s.id}" ${s.id===o.stage?'selected':''}>${s.id} · ${escape(s.title)}</option>`).join('')}</select></label><div class="stage-nav">${data.stages.map(s=>`<button data-stage="${s.id}" ${s.id===o.stage?'aria-current="step"':''} aria-label="${escape(s.title)}">${s.id}</button>`).join('')}</div></nav>
+ ${progress.settings.showSolutions===true?'<p class="puzzle-glossary">同類設備依取得順序稱 A、B、C。橋樑拼塊以每段開始時左上形狀由左到右編號；「轉」表示旋轉到預覽與路面相合再放下。</p>':''}
  <section class="checkpoint" aria-label="本章提醒"><div><strong>${risk?'本章留意':'本章進度'} · ${escape(current.title)}</strong><p>${risk?escape(risk.title):'可直接從這一章開始，前面章節的狀態會保持原樣。'}</p></div>${risk?`<button data-step-link="${risk.id}">查看提醒</button>`:''}</section>
  <div class="toolbar"><label>搜尋所有章節<input id="search" type="search" value="${escape(query)}" placeholder="地點、角色、獎盃名稱…"></label><label>顯示<select id="filter">${selectOptions({all:'全部',pending:'未完成',missable:'容易錯過',backup:'備份節點',recommended:'推薦體驗',completed:'已完成',unverified:'待查證'},filter)}</select></label><button id="continue">繼續下一步</button></div>
- <div class="stage-list">${data.stages.map(s=>{const all=data.steps.filter(step=>step.stageId===s.id),items=all.filter(step=>matches(step,progress,filter)&&(!query||JSON.stringify([step,step.trophyRefs.map(id=>trophyLabel(data.trophies.find(t=>t.id===id)))]).toLocaleLowerCase().includes(query.toLocaleLowerCase())));if(!items.length&&(query||filter!=='all'))return '';return `<details class="stage" id="stage-${s.id}" data-stage-detail="${s.id}" ${expanded.has(s.id)||query||filter!=='all'?'open':''}><summary><span>${s.id}</span><strong>${escape(s.title)}</strong><small>${all.filter(step=>done(progress,step.id)).length}/${all.length}</small></summary><p class="stage-description">${escape(s.description)}</p>${items.length?items.map(stepHtml).join(''):'<p class="empty">此階段沒有符合條件的步驟。</p>'}</details>`;}).join('')||'<p class="empty">沒有符合條件的步驟。請清除搜尋或改回「全部」。</p>'}</div>
+ <div class="stage-list">${data.stages.map(s=>{const all=data.steps.filter(step=>step.stageId===s.id),items=all.filter(step=>(matches(step,progress,filter)||(filter==='pending'&&needsAttention(step)))&&(!query||JSON.stringify([step,puzzlesForStep(step.id).map(p=>[p.title,p.label]),step.trophyRefs.map(id=>trophyLabel(data.trophies.find(t=>t.id===id)))]).toLocaleLowerCase().includes(query.toLocaleLowerCase())));if(!items.length&&(query||filter!=='all'))return '';return `<details class="stage" id="stage-${s.id}" data-stage-detail="${s.id}" ${expanded.has(s.id)||query||filter!=='all'?'open':''}><summary><span>${s.id}</span><strong>${escape(s.title)}</strong><small>${all.filter(step=>done(progress,step.id)).length}/${all.length}</small></summary><p class="stage-description">${escape(s.description)}</p>${items.length?items.map(stepHtml).join(''):'<p class="empty">此階段沒有符合條件的步驟。</p>'}</details>`;}).join('')||'<p class="empty">沒有符合條件的步驟。請清除搜尋或改回「全部」。</p>'}</div>
  <details class="branch-overview" ${branchExpanded?'open':''}><summary>三市長分歧追蹤 · ${data.branches.length} 條路線</summary><p>各自追蹤，不保證單一 W2 備份可全拿。</p><div class="branch-grid">${data.branches.map(branchHtml).join('')}</div></details>`;
 }
 function trophiesHtml(){return `<h2>本體獎盃 · ${data.baseCount} 個</h2><p>${escape(data.classification)}</p><div class="trophy-list">${data.trophies.filter(t=>t.category==='base').map(t=>trophyCheckbox(t,'list')).join('')}</div>`;}
@@ -63,20 +68,23 @@ function researchHtml(){
  return `<section class="research-register"><h3>攻略查證紀錄</h3><p>${escape(data.officialIdNote)}</p><p>獎盃名稱來源：${sourceLinks(['psn','psnZhTW'])}</p>${data.steps.map(step=>`<article id="research-${step.id}"><h4>${escape(step.title)}</h4>${paragraph(step.verification)}${paragraph(step.recovery)}<div class="sources">${sourceLinks(step.sources)}</div>${step.dialogue?.length?'<ul>'+step.dialogue.map(row=>'<li>'+escape(row.speaker+' · '+row.context)+'：'+sourceLinks(row.sources)+'</li>').join('')+'</ul>':''}</article>`).join('')}</section>`;
 }
 function backupHtml(){return `<div class="backup-tools transfer-tools"><section><h3>本機</h3><div class="actions"><button id="export-progress">匯出 JSON</button><button id="import-open">匯入 JSON</button><button id="export-recovery">匯出完整備份</button></div><input id="import-file" type="file" accept="application/json,.json" hidden></section><section><h3>雲端</h3><button id="open-cloud-sync">Google Drive 同步</button></section></div>`;}
-function sourcesHtml(){return `<div class="source-tools"><p>攻略查證：${data.checkedAt} · ${data.steps.filter(s=>s.verificationStatus==='confirmed').length} 已確認／${data.steps.filter(s=>s.verificationStatus==='consensus').length} 攻略共識／${data.steps.filter(s=>s.verificationStatus==='unverified').length} 待查證</p><div class="sources">${sourceLinks(Object.keys(data.sources))}</div>${researchHtml()}</div>`;}
+function sourcesHtml(){return `<div class="source-tools"><p>攻略查證：${data.checkedAt} · ${data.steps.filter(s=>s.verificationStatus==='confirmed').length} 已確認／${data.steps.filter(s=>s.verificationStatus==='consensus').length} 攻略共識／${data.steps.filter(s=>s.verificationStatus==='unverified').length} 待查證</p><div class="sources">${sourceLinks(Object.keys(data.sources))}</div>${researchHtml()}<section class="research-register"><h3>謎題解法查證 · 2026-11-03</h3><p>${puzzles.length} 個解題項目；${puzzles.filter(p=>p.verificationStatus==='unverified').length} 項仍有缺漏。操作摘要依逐題來源整理，未在 PS5 實機逐題重現。</p>${puzzles.map(p=>`<article><h4>${escape(p.label+' · '+p.title)}</h4>${p.pending?'<p>待查證：'+escape(p.pending)+'</p>':''}${p.researchNote?'<p>'+escape(p.researchNote)+'</p>':''}<div class="sources">${p.sources.map(s=>'<a href="'+escape(s.url)+'" target="_blank" rel="noopener noreferrer">'+escape(s.title)+(s.revision?' · rev '+escape(s.revision):'')+' ↗</a>').join('')}</div></article>`).join('')}</section></div>`;}
 function render(){
- const focus=document.activeElement,focusId=focus?.getAttribute('data-complete')||focus?.getAttribute('data-status-action')||focus?.getAttribute('data-trophy');
+ const focus=document.activeElement,focusId=focus?.getAttribute('data-complete')||focus?.getAttribute('data-status-action')||focus?.getAttribute('data-trophy'),puzzleFocus=focus?.getAttribute('data-puzzle-complete'),solutionFocus=focus?.id==='show-solutions';
  $('app').innerHTML=shell()+(view==='trophies'?trophiesHtml():view==='backup'?sourcesHtml():view==='branches'?`<h2>三市長分歧</h2><p>三條路線各自追蹤；清單進度與 PS5 存檔分開。</p><div class="branch-grid">${data.branches.map(branchHtml).join('')}</div>`:roadmapHtml());
  document.querySelectorAll('[data-view]').forEach(el=>view===el.dataset.view?el.setAttribute('aria-current','page'):el.removeAttribute('aria-current'));
  if(focusId){const attr=focus.hasAttribute('data-complete')?'data-complete':focus.hasAttribute('data-status-action')?'data-status-action':'data-trophy';const value=focus.getAttribute("data-status-value"),selector=`[${attr}="${focusId}"]`+(value?`[data-status-value="${value}"]`:"");const context=focus.getAttribute("data-trophy-context");document.querySelector(selector+(context?'[data-trophy-context="'+context+'"]':''))?.focus({preventScroll:true});}
+ if(puzzleFocus)document.querySelector('[data-puzzle-complete="'+puzzleFocus+'"]')?.focus({preventScroll:true});
+ if(solutionFocus)$('show-solutions')?.focus({preventScroll:true});
  $('open-sync').onclick=()=>sync.open();$('open-backup').onclick=()=>{
   $('backup-tools-content').innerHTML=backupHtml();bindBackupTools();$('backup-tools-dialog').showModal();
  };
  if(view==='roadmap'){
+  $('show-solutions').onchange=event=>{const checked=event.target.checked;void action(()=>store.update(p=>{p.settings.showSolutions=checked;return p;}));};
   $('chapter-select').onchange=e=>action(()=>requestStage(e.target.value));
   $('search').oninput=e=>{const pos=e.target.selectionStart;query=e.target.value;render();$('search').focus();try{$('search').setSelectionRange(pos,pos);}catch{}};
   $('filter').onchange=e=>{filter=e.target.value;render();$('filter').focus();};
-  $('continue').onclick=()=>{const stageIndex=data.stages.findIndex(s=>s.id===currentOverview().stage),next=data.steps.find(s=>data.stages.findIndex(t=>t.id===s.stageId)>=stageIndex&&!done(progress,s.id)&&!['skipped','missed'].includes(statusOf(progress,s.id)));if(next)goStep(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
+  $('continue').onclick=()=>{const stageIndex=data.stages.findIndex(s=>s.id===currentOverview().stage),next=data.steps.find(s=>data.stages.findIndex(t=>t.id===s.stageId)>=stageIndex&&needsAttention(s)&&!['skipped','missed'].includes(statusOf(progress,s.id)));if(next){const puzzle=puzzlesForStep(next.id).find(p=>!puzzleDone(p));if(puzzle)goPuzzle(puzzle.id);else goStep(next.id);}else message('本章與後續步驟已記錄，可從章節選單回看。');};
   document.querySelector('.branch-overview')?.addEventListener('toggle',event=>{branchExpanded=event.target.open;});
  }
  document.querySelectorAll('[data-stage-detail]').forEach(el=>el.addEventListener('toggle',()=>el.open?expanded.add(el.dataset.stageDetail):expanded.delete(el.dataset.stageDetail)));
@@ -95,6 +103,8 @@ async function exportProgress(){download(await store.get(),'progress');await sto
 async function saveStep(id,status){await store.update(p=>{p.steps[id]={...p.steps[id],status};return p;});}
 async function requestStage(id){if(!data.stages.some(s=>s.id===id))return;await store.update(p=>{p.settings.currentStage=id;return p;});activeStage=id;expanded.clear();expanded.add(id);query='';filter='all';history.replaceState(null,'','?view=roadmap&stage='+id);await refresh();document.querySelector('.chapter-picker')?.scrollIntoView({block:'start'});}
 function goStep(id){const step=data.steps.find(s=>s.id===id);if(!step)return;activeStage=step.stageId;view='roadmap';filter='all';query='';expanded.add(step.stageId);history.replaceState(null,'','?view=roadmap#step-'+id);render();$('step-'+id)?.scrollIntoView({block:'start'});$('step-'+id)?.querySelector('input')?.focus({preventScroll:true});}
+function goPuzzle(id){const puzzle=puzzles.find(p=>p.id===id);if(!puzzle)return;goStep(puzzle.stepId);history.replaceState(null,'','?view=roadmap#'+puzzleProgressId(id));$(puzzleProgressId(id))?.scrollIntoView({block:'start'});document.querySelector('[data-puzzle-complete="'+id+'"]')?.focus({preventScroll:true});}
+function followHash(){if(location.hash.startsWith('#puzzle-')){goPuzzle(location.hash.slice(8));return true;}if(location.hash.startsWith('#step-')){goStep(location.hash.slice(6));return true;}return false;}
 document.addEventListener('click',event=>{
  const el=event.target.closest('button,a');if(!el)return;
  if(el.dataset.view){event.preventDefault();view=el.dataset.view;history.pushState(null,'','?view='+view);render();}
@@ -106,13 +116,14 @@ document.addEventListener('click',event=>{
  if(el.dataset.close)$(el.dataset.close).close();
 });
 document.addEventListener('change',event=>{const el=event.target;
+ if(el.dataset.puzzleComplete)void action(()=>saveStep(puzzleProgressId(el.dataset.puzzleComplete),el.checked?'completed':'not_started'));
  if(el.dataset.complete)void action(()=>saveStep(el.dataset.complete,el.checked?'completed':'not_started'));
  if(el.dataset.status)void action(()=>saveStep(el.dataset.status,el.value));
  if(el.dataset.trophy)void action(()=>store.update(p=>{p.trophies[el.dataset.trophy]={...p.trophies[el.dataset.trophy],earned:el.checked};return p;}));
  if(el.dataset.branch)void action(()=>store.update(p=>{p.branches[el.dataset.branch]={...p.branches[el.dataset.branch],status:el.value};return p;}));
 });
-window.addEventListener('popstate',()=>{const url=new URL(location.href);view=url.searchParams.get('view')||'roadmap';const stage=url.searchParams.get('stage');if(data.stages.some(s=>s.id===stage)){activeStage=stage;expanded.clear();expanded.add(stage);}if(url.hash.startsWith('#step-'))goStep(url.hash.slice(6));else render();});
-window.addEventListener('hashchange',()=>{if(progress&&location.hash.startsWith('#step-'))goStep(location.hash.slice(6));});
+window.addEventListener('popstate',()=>{const url=new URL(location.href);view=url.searchParams.get('view')||'roadmap';const stage=url.searchParams.get('stage');if(data.stages.some(s=>s.id===stage)){activeStage=stage;expanded.clear();expanded.add(stage);}if(!followHash())render();});
+window.addEventListener('hashchange',()=>{if(progress)followHash();});
 window.addEventListener('focus',()=>{void refresh();});
 $('backup-ack').onchange=()=>{$('backup-confirm').disabled=!$('backup-ack').checked;};
 $('backup-confirm').onclick=()=>action(async()=>{if(!$('backup-ack').checked)return;await store.update(p=>{p.backups[backupTarget]={...p.backups[backupTarget],confirmedAt:new Date().toISOString(),note:$('backup-note').value,method:'user-confirmed-ps5'};return p;});$('backup-dialog').close();message('已保存你的手動確認；網站沒有驗證 PS5 雲端存檔。');});
@@ -139,5 +150,5 @@ for(const [id,choice]of [['import-local','local'],['import-source','remote']])$(
 $('import-download').onclick=async()=>{try{if(!importReview||await store.stamp()!==importReview.stamp)throw Error('預覽已過期，請重新比較。');download({recoveryBundle:importReview.bundle},'before-import');importReview.downloaded=true;$('import-ack').disabled=false;$('import-status').textContent='下載已發起，請實際開啟檔案確認保存；瀏覽器不能保證檔案已落盤。';}catch(e){importReview.downloaded=false;$('import-ack').disabled=true;$('import-status').textContent='備份失敗：'+e.message;}importReady();};
 $('import-ack').onchange=importReady;
 $('import-apply').onclick=async()=>{try{if($('import-apply').disabled)return;const next=store.validate(core.resolve(importReview.plan,importReview.choices)).data;await store.checkpoint('匯入前');await store.update(()=>next,importReview.stamp);$('import-dialog').close();message('匯入完成；未知資料與兩端原文保留。');}catch(e){importReview.invalid=true;$('import-status').textContent=e.message;importReady();}};
-try{progress=await store.open();const stage=new URL(location.href).searchParams.get('stage');if(data.stages.some(s=>s.id===stage))await store.update(p=>{p.settings.currentStage=stage;return p;});expanded.clear();expanded.add(overview(data,progress).stage);sync=setupSync(data,store,core,()=>{void refresh();});render();if(location.hash.startsWith('#step-'))goStep(location.hash.slice(6));}
+try{progress=await store.open();const stage=new URL(location.href).searchParams.get('stage');if(data.stages.some(s=>s.id===stage))await store.update(p=>{p.settings.currentStage=stage;return p;});expanded.clear();expanded.add(overview(data,progress).stage);sync=setupSync(data,store,core,()=>{void refresh();});render();followHash();}
 catch(e){$('app').innerHTML='<h1>無法讀取本機進度</h1><p class="error">'+escape(e.message)+'</p><p>沒有重設資料。可先下載原始資料，再處理瀏覽器儲存設定。</p><button id="raw-recovery">下載原始儲存資料</button>';$('raw-recovery').onclick=()=>action(async()=>download(await store.exportAll(),'raw-recovery'));}

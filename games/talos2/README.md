@@ -1,6 +1,10 @@
 # The Talos Principle II · 本體白金 Roadmap
 
-2026-11-03，模組 1.1.1，內容版本 `2026.11.03.3`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+2026-11-03，模組 1.2.0，內容版本 `2026.11.03.4`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+
+上方「拒絕謎語」預設關閉，勾選一次就直接顯示各題解法與 SVG，不需逐題展開。八階段共 58 個主步驟，沿路排列 212 個可勾選解題項目：12 區全部 132 題正規／遺失／金門、序章 12 題與 3 道拼門、12 組橋樑、24 顆星星、巨構與終局、Miranda、文字冒險、Rand 測試及博物館可選謎題。212 是本網站拆分的追蹤數，不是遊戲官方謎題總數。
+
+逐題完成與主步驟、獎盃各自記錄；「繼續下一步」可回到已完成主步驟內尚未勾選的謎題。選擇與進度沿用 schema 1：`settings.showSolutions` 與 `steps['puzzle-'+id]`，不重建 IndexedDB、不改同步協定；舊版未知欄位仍保留。九面拼塊盤有字母格 SVG，Seesaw／Loop／Switcheroo 有桌面及手機流程圖。每題附查證來源；Ghosts of Atlantis 魔法師第二句完整英文因來源疑似誤字仍標待查證，所有解法未經 PS5 逐題實測。
 
 攻略步驟直接顯示操作與前置，不再逐步收合；來源、驗證與補救紀錄集中於「來源與查證」。步驟下的獎盃方塊可直接勾選，與獎盃清單及其他出現位置共用既有 `trophies` 狀態，不代填步驟完成。個人註記介面已移除，舊筆記仍隨原進度與備份保留。
 
@@ -10,7 +14,7 @@
 
 本次補強三市長：Doge 七題英文、Rand N1／S1 私訊、城市 Damien／Atal／Malduc 與簡報、W2 三條完整決策順序及 PS5 入口備份／還原。58 筆逐項選項分別標記英文證據與適用性；缺少原文直接顯示待查證，不用翻譯冒充英文。現有 57 步驟 ID、schema 1 與同步契約不變，合成 1.0.0 進度可繼續使用。
 
-入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=trophies`、`?view=backup` 與 `#step-w2-backup` 等穩定深連結。Portal 由既有 build 自動列入。
+入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=trophies`、`?view=backup`、`#step-w2-backup` 與 `#puzzle-E2-main-8` 等穩定深連結。Portal 由既有 build 自動列入。
 
 2026-10-31 使用者已授權 commit、push 及正式發布。模組已接入既有 main 的 Pages 流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)；PS5 與真實 Google 的驗收仍由使用者執行。
 
@@ -33,7 +37,9 @@ node scripts/verify-talos2-browser.mjs
 
 ## 檔案與資料
 
-- `dist/data.js`：八階段、57 步驟、60 本體獎盃、三市長與查證來源。內容更新不得改已發布步驟 ID。
+- `dist/data.js`：八階段、58 步驟、60 本體獎盃、三市長與查證來源。保留原 57 步驟 ID，新增 Prometheus 救援節點。
+- `dist/puzzle-data.js`：212 個解題項目、順序、中文操作摘要、逐題來源與九面拼塊盤格形。
+- `dist/roadmap/solutions.js`：逐題勾選與劇透控制、原創 SVG 呈現；關閉時不輸出解法 DOM。
 - `dist/trophy-names.js`：本體 60 盃的來源中英名稱與統一顯示文字。
 - `dist/mayor-research.js`：三市長逐項查證、來源衝突與 PS5 手動備份順序，以原 ID 補強資料。
 - `dist/roadmap/evidence.js`：可重用原文／待查證／來源呈現，不增加進度欄位。

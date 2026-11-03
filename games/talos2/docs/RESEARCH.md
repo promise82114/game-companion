@@ -4,6 +4,40 @@
 
 ## 已取得證據
 
+### 2026-11-03 全本體逐題路線／拒絕謎語（模組 1.2.0）
+
+內容版本 `2026.11.03.4`。依使用者補充的「本體全部謎題、沿路知道現在解什麼與怎麼解」，新增 `dist/puzzle-data.js` 與 `dist/roadmap/solutions.js`，將逐題清單接回既有 Roadmap，另增 `prometheus-rescue` 主步驟，保留原 57 個已發布 ID。目前八階段 58 主步驟，212 個可獨立勾選的解題項目；這是工具拆分數，不宣稱官方共有 212 題。
+
+| 範圍 | 項目數 | 來源與查證方式 |
+| --- | ---: | --- |
+| 12 區正規、遺失與金門 | 132 | 各區 8＋2＋1；[Talos Wiki](https://taloswiki.org/wiki/The_Talos_Principle_2) 逐題條目與 revision、[Dick Leeuw／Louis Koot 的完整實玩圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/talos_2_index.htm)，來源 URL 保存在每題資料中 |
+| 序章與拼門 | 15 | 12 題操作摘要、3 面四格拼門排法，對照 Wiki 條目與遊戲畫面 |
+| 橋樑、星星 | 36 | 12 組橋樑的分段順序、24 顆星星的路線／光線／開關；每組分開記錄 |
+| 巨構、Miranda、終局 | 16 | 東巨構 3、北巨構 2、南巨構插銷 1、Miranda 1、最終入口及八輪盤 9，依圖文實玩順序銜接 |
+| 城市與博物館 | 13 | 3 部文字冒險、Rand 終端測試、3 個重現展示謎題、6 面可選拼塊盤 |
+
+新增九面拼塊盤的字母格 SVG，依原始遊戲畫面的分塊重繪；每個字母四格，資料測試檢查完整覆蓋及四向連通。另為 Seesaw、Loop、Switcheroo 製作原創連線／搬運示意，窄螢幕改直式；不是宣稱等比例場地平面圖。沒有將外站遊戲截圖複製到部署來源。
+
+重點查證與修正：
+
+- Seesaw 採 Wiki Alternative solution（rev 4641）的同一連接器、切換兩側鑽孔；Loop 採另一 Alternative solution（rev 4642）的方塊一趟與落地後改孔。對應獎盃風險始終可見，關閉解法仍保留提醒。
+- Switcheroo 一般 Wiki 解法使用 Keep Connections，不適合 The Hard Way。本版改採 [Gamepressure 的獎盃解法](https://www.gamepressure.com/the-talos-principle-2/how-to-solve-switcheroo-puzzle/zc11118)：先搬設備，最後才接紅光，不按保留連線。未進行 PS5 跳盃實測。
+- Above 的圖文把 Driller 誤稱 Gravshifter，依圖 2309／2312／2313 確認是鑽孔器；Transfer 的一處 red receiver 依圖 2213 確認為紅光源；Imprisoned 的 red inverter 以紅輸入、藍輸出的實際關係說明。修正理由保留於各題 `researchNote`。
+- High Ground 補上第三身體與雙托盤疊高的完整順序，依 [Luke Lawrie 實玩攻略](https://www.gamepur.com/guides/how-to-solve-high-ground-puzzle-in-the-talos-principle-2-n1-puzzle-4)；S1 Sphinx 採 [EIP Graves 實玩解法](https://eip.gg/guides/the-talos-principle-2-south-1-star-statue-puzzles/) 的面向與欄列座標。
+- 三部文字冒險依 [Margareth 的逐項成功路線](https://itemlevel.net/the-talos-principle-2-all-text-adventures-solution-text-adventurer-achievement/) 以自有中文摘要；Ghosts of Atlantis 魔法師第二句的 with／without 疑似誤字沒有可靠畫面核對，整題標 `unverified`，題旁及解法中直接顯示待查證。
+- Rand 博物館測試採圖文實玩及[開發者回覆所在的終端討論](https://steamcommunity.com/app/835960/discussions/0/3936769163102066579/)，回答到模擬結束後回報 Rand，沒有編造必勝選項。
+- [博物館 Wiki](https://taloswiki.org/wiki/Museum_of_the_Simulation)（rev 5128）與六張 solved arranger 畫面確認是六面可選拼塊盤；未採其他攻略的「五面」記述。
+
+原有主步驟潤飾為地點、目標與動作，移除抽象的「帳／核對」措辭及夾雜的設備英文，保留必須逐字對照的分支選項與終端指令。橋樑編號／旋轉及 A、B、C 設備命名只在上方說明一次。
+
+「拒絕謎語」預設關閉，關閉時解法與 SVG 不輸出到 DOM；開啟後直接顯示，不增加逐題收合。使用既有 `settings.showSolutions` 與 `steps['puzzle-'+id].status` 保存，主步驟、獎盃與分支獨立。「繼續下一步」會找到主步驟內未勾選的題目，支援 `#puzzle-E2-main-8` 深連結。沒有更動 schema、IndexedDB、namespace、匯入／同步元件與 Google 寫入門檻；舊筆記與未知資料仍保留。
+
+本輪全模組資料、合成同步、建置與產物檢查通過。Talos 隔離瀏覽器回歸通過，新增 212 題完整呈現、預設無解法 DOM、鍵盤開關與焦點、偏好／逐題進度重整、已完成主步驟內的未完成題目、繼續／深連結、名稱搜尋、九面拼塊 SVG、1440／768／390／320px 解法無水平溢出；既有匯入／跨分頁／合成 OAuth／CAS／損壞資料與配額防護亦通過。測試僅用合成資料與全新 context。
+
+設計 skill 的變更來源 lint、1440／768／390px inspector 皆為 0 FAIL／0 WARN；人工檢視上方開關、桌面／手機獎盃解法與最大 8 × 8 拼塊盤。最後補上西側巨構救 Byron、過載與 Act V 回城的轉場，來源同表內圖文流程；內容與程式最終建置後重跑資料、產物及隔離瀏覽器回歸通過。
+
+限制：以上是攻略內容查證與網站行為測試，未在 PS5 逐題重現，也未驗收真實 Google Drive。Ghosts of Atlantis 上述一句英文、既有三市長的部分英文／適用性、PS5 分支與備份還原、官方 PSN 數字 ID 仍待查證。舊報告下方「沒有全題解答」描述只適用初版，已由本節範圍取代；每個收集物點位的全地圖導航不屬於本輪謎題解法。
+
 ### 2026-11-03 精簡備份工具／移除個人註記（模組 1.1.1）
 
 依使用者要求移除加註記按鈕、筆記顯示與編輯對話框；未清除 `steps[id].note`，舊筆記仍可匯出、匯入及同步。右上「備份與還原」僅含本機 JSON 匯入／匯出、完整備份匯出與雲端 Google Drive 同步入口，移除 PS5、IndexedDB 與攻略來源說明。攻略證據仍保留在獨立「來源與查證」頁，`?view=backup` 舊連結仍有效。

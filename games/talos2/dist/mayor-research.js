@@ -32,33 +32,33 @@ export function applyMayorResearch(roadmap) {
  ];
  patch('doge-survey',{
   trigger:'E1 Grasslands Ring 的 PDA 私訊；先接受資料分享，再依序回答六題與追加第七題。',
-  actions:['先同意分享資料，再依下方七題順序選答。這是已發布 Rand 配對路線的答法，不是任意選都有效。','逐字稿先稱六題，之後追加祈禱題；不要漏掉第七題。宇宙題逐字稿有 full／fully 拼字差異，保留玩家紀錄與攻略的 fully，對照遊戲文字辨識。','法文 PS5 指南漏列懲罰題，不能將其六行清單當完整問卷。備份與配對結果仍須自行核對。'],
+  actions:['同意 Doge 分享資料，依下方七題選答，目標是配對到 Rand。','不要漏掉最後的祈禱題。各版本可能有拼字或排序差異，請認句子內容，不要只記第幾項。','作答後仍要確認介紹對象，問卷填完不代表已配對成功。'],
   dialogue:survey.map(([id,english,meaning,refs],i)=>choice('doge-'+id,'Doge（666）','第 '+(i+1)+' 題',english,meaning,refs,i===3?'Wiki 轉錄 full／fully 不一致；PS5 畫面字形仍待核對。':'')),
   sources:['dogeTranscript','guide','survey','ps5Guide'],verificationStatus:'consensus'
  });
  patch('doge-match',{
   location:'東區 E2–E3 · PDA / Connecting you to a friend',
   trigger:'Doge 第二封配對私訊出現時立即處理；不同指南分別放在 E2 或 E3，不等到固定區域才查看。',
-  actions:['配對時以學者／Rand（303）身份核對，接受介紹並確認後續私訊署名。Not What It Seems 跳盃只代表介紹完成。','英文逐字稿把學者放第二位；法文 PS5 指南寫第五位且放在 E2，Xbox 流程放 E3。這些是實際來源矛盾，不能照固定第幾項或只等 E3。'],
+  actions:['E2 起就留意 Doge 配對私訊；看到學者／Rand（303）時接受介紹，並確認後續訊息的署名。','不同攻略的出現區域與選項排序不一致。請找學者身分，不要固定選第二或第五項，也不要只等到 E3。'],
   sources:['friend','walkthrough','ps5Guide'],verificationStatus:'unverified'
  });
  patch('museum',{
-  actions:[...find('museum').actions,'三市長共用準備另核對：左室與 Rand 交談→完成他請你測試的中央終端 exercise→回報測試結果。進博物館或拿 Museum Explorer 都不能代替這段回報。'],
+  actions:[...find('museum').actions,'準備 Rand 路線：先在左室與他交談，再到中央終端做他請你測試的練習，最後回去向他回報。只參觀或取得獎盃，不能代替這段任務。'],
   sources:['guide','steam','election','ps5Guide']
  });
  patch('rand-north',{
   title:'N1：接受 Rand 的組織邀請',location:'N1 Desolate Island · PDA / Rand（303）',
   trigger:'Xbox 流程定位在 N1 遊玩途中，約該區中段；不是已驗證的固定解題數觸發。',
-  actions:['收到 Rand（303）的首次私訊時接受合作／加入組織，繼續追查 Somnodrome。先確認署名確實是 Rand。','N1 是文獻定位；精確觸發謎題數、訊息標題與完整英文選項仍未取得逐字稿。不要將「約中途」改寫成第幾題必定發信。'],
+  actions:['收到 Rand（303）的首次私訊時，同意合作並加入組織，繼續調查 Somnodrome。','攻略把這封信放在 N1，但確切觸發時機與完整英文尚未核實；每次收到新私訊都查看。'],
   dialogue:[choice('rand-invitation','Rand（303）','N1 初次邀請',null,'接受合作與組織邀請',['walkthrough','randReport'],'中文方向有玩家紀錄；英文原文及精確觸發旗標待查證。')],
   sources:['walkthrough','randReport','ps5Guide'],verificationStatus:'unverified'
  });
  patch('broken-somnodrome',{
-  actions:['N2 Lost Lab：選擇親自嘗試使用 Somnodrome；不要只研究或停用。使用後故障不等於任務失敗，也不會跳正常機器的 Gnothi Seauton。','這是保留本頁 Rand／共用備份路線的保守做法；不宣稱其他市長或所有存檔都硬性需要這個選擇。'],
+  actions:['到 N2 Lost Lab，選擇親自嘗試 Somnodrome。機器故障是這段流程的一部分，此處不會取得 Gnothi Seauton。','本頁的 Rand 準備路線採這個選擇，其他市長是否也需要如此仍待確認。'],
   sources:['election','steam','randReport','ps5Guide']
  });
  patch('city-politics',{
-  actions:['回訪時依序核對 Damien（博物館右側）的支持、城中心 Atal 的演說回應，再回塔前找 Malduc；這三人不能省成一個「政治對話」。','Malduc：詢問 Athena 名字與樂觀小說的關係，再表示會考慮他的看法。這是原路線的平衡答法，不等於隨便支持任一陣營。','塔內原簡報桌：依下表回答島上科技、善用機會、追問原因、向公眾分享。若未出現，先回查 N2 與前期介紹，不假設這段可跳過。','第二項在兩份指南有 good on／good of 文句差異；目前僅中文意義可確定，不將其中一個拼法冒充 PS5 官方逐字原文。'],
+  actions:['回城先找博物館右側的 Damien，表示支持；再回應城中心 Atal 的演說，最後到塔前找 Malduc。','問 Malduc：Athena 的名字是否和樂觀小說有關，接著表示會考慮他的看法。','回塔內原本的簡報桌，依下方順序回答。若沒有簡報，先檢查 N2 調查與 Rand 任務是否完成。','第二句英文在指南間有 good on／good of 差異，目前保留中文意思，英文原句仍待核對。'],
   dialogue:[
    choice('city-damien','Damien（903）','博物館右側',null,'明確表示支持',['walkthrough','ps5Guide']),
    choice('city-atal','Atal（890）','城中心／聽演說後',null,'支持他的立場',['election','ps5Guide']),
@@ -71,11 +71,11 @@ export function applyMayorResearch(roadmap) {
  });
  patch('rand-south',{
   trigger:'本頁簡報答法不站 Rand 一邊時，Xbox 流程在 S1 遊玩中收到關係訊息；PS5 指南僅記城市簡報後／更晚。',
-  actions:['查看 Rand 關係私訊，回應說謊是為了維護與他的關係；不要把已讀訊息當作答覆完成。','N1 邀請與此封關係私訊是兩件事，兩者皆應在筆記留下實際畫面／回覆。英文逐字、所有條件分支及最晚期限仍待查證。'],
+  actions:['查看 Rand 的關係私訊，回覆你說謊是為了維護彼此的關係。只讀取訊息還不算答覆。','這和 N1 的組織邀請是兩封不同的信。完整英文、所有觸發條件與最晚回覆期限仍待查證。'],
   dialogue:[choice('rand-relationship','Rand（303）','簡報後的關係私訊',null,'我說謊是為了保護我們的關係',['walkthrough','election','ps5Guide'],'S1／更晚的時機有歧異；沒有英文原文就不反向翻譯填入。')],sources:['walkthrough','election','ps5Guide'],verificationStatus:'unverified'
  });
  patch('west-arrival',{
-  actions:['西區開始與 Hermanubis 談幻象時，PS5 路線記錄採尚未決定的中立回應；Hanni 流程採肯定幻象真實，兩者屬不同準備法。','本頁使用入口備份的路線，先核對中立方向的實際選項並記錄。未取得此處英文截圖，不提供自創英文。接著完成 W1、W3、W2 其他內容，W2 Lost Lab 留最後。'],
+  actions:['西區開始時，Hermanubis 會問幻象是否真實。本頁採「尚未決定」的中立方向；Hanni 攻略則採肯定，兩套準備法不同。','先對照下方中文意思作答；此處完整英文仍待查證。接著完成 W1、W3，再清 W2，把 W2 Lost Lab 留到備份之後。'],
   dialogue:[choice('west-hermanubis','Hermanubis（452）','西區交通系統',null,'本頁路線採尚未作決定的中立方向',['ps5Guide','steam'],'另一套流程使用肯定幻象；不可當成通用必要條件。')],sources:['ps5Guide','steam'],verificationStatus:'unverified'
  });
  patch('w2-backup',{
@@ -92,7 +92,7 @@ export function applyMayorResearch(roadmap) {
  });
  const terminal=choice('somnodrome-command','Somnodrome 終端','進入熱帶島嶼後的 MILTON terminal','/rm → Force run somnodrome_v2_final_final.bat','開啟 emergency root menu，再強制執行畫面上的批次檔',['w2Terminal'],'僅為遊戲內選單／指令，不是要在電腦終端執行。','confirmed');
  patch('working-somnodrome',{
-  actions:['先決定本次市長路線，查看 P6 的「入機前」與公共社群選項，再進行本步驟。不要先做完共同劇情才讀分歧。','親自入機後到熱帶島嶼 MILTON 終端開 emergency root menu，依下列畫面原文執行，與 Miltohim 對話後離開。原攻略寫 final.final 是簡述，不能當精確檔名。','Miltohim 的大哉問在攻略中被記作不影響這條選舉路線；目前沒有窮舉驗證，先依你的路線筆記保留。回來後對 Hermanubis、配對聯絡人、Cryer 的回答仍會分歧。','Hanni 備份點在出機後，與本頁 A 的入口點及前期社群策略不同；不要用後面的節點覆蓋唯一 A，再期待能重選先前對話。'],
+  actions:['進機器前先選本次市長路線，照 P6 處理公共社群與 Hermanubis 的「入機前」回答。','親自入機後，到熱帶島嶼的 MILTON 終端，開緊急管理選單，依下方原文執行程式。和 Miltohim 談完再離開。','攻略認為 Miltohim 的問題不影響這條選舉路線，但尚未逐種實測。回來後，Hermanubis、Rand 與 Cryer 的回答要依選定路線繼續。','本頁保留的是入機前的 A 存檔。Hanni 的出機後備份屬另一套流程，不要用後面的存檔覆蓋 A。'],
   dialogue:[choice('somnodrome-plug','Hermanubis（452）','決定親自使用',"I'm going to plug in and find out for myself.",'我要親自接入並確認',['w2Plug'],'畫面原文已核對；入機前第一輪回應須另看該市長路線。','confirmed'),terminal],
   sources:['w2Plug','w2Terminal','manorW2','walkthrough','steam'],verificationStatus:'consensus'
  });
