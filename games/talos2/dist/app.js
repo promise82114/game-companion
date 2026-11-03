@@ -6,7 +6,7 @@ import {setupSync} from './roadmap/sync.js';
 import {dialogueHtml} from './roadmap/evidence.js';
 const $=id=>document.getElementById(id),core=window.SideProjectSync;
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let progress,activeStage,branchExpanded=false,filter='all',query='',view=new URL(location.href).searchParams.get('view')||'roadmap',importReview,backupTarget,noteTarget,sync,rendering=false,refreshQueued=false;
+let progress,activeStage,branchExpanded=false,filter='all',query='',view=new URL(location.href).searchParams.get('view')||'roadmap',importReview,backupTarget,sync,rendering=false,refreshQueued=false;
 const currentOverview=()=>overview(data,{...progress,settings:{...progress.settings,currentStage:activeStage||progress.settings.currentStage}});
 const expanded=new Set(['P0']),openBranches=new Set();
 const store=createStore(data,core,()=>{void refresh();});
@@ -24,17 +24,17 @@ async function refresh(){
 }
 function shell(){
  const o=currentOverview();
- return `<div class="title-row"><div><p class="subtitle">${escape(data.title)} · PS5 本體</p><h1>${{roadmap:'遊玩 Roadmap',branches:'分歧追蹤',trophies:'獎盃清單',backup:'來源與備份'}[view]||'遊玩 Roadmap'}</h1></div><span class="save-status">進度儲存在此裝置</span></div>
+ return `<div class="title-row"><div><p class="subtitle">${escape(data.title)} · PS5 本體</p><h1>${{roadmap:'遊玩 Roadmap',branches:'分歧追蹤',trophies:'獎盃清單',backup:'來源與查證'}[view]||'遊玩 Roadmap'}</h1></div><span class="save-status">進度儲存在此裝置</span></div>
  <section class="summary-grid" aria-label="目前進度"><div><span>攻略步驟完成</span><strong>${o.completed} <small>/ ${data.steps.length}</small></strong></div><div><span>獎盃實際取得</span><strong id="trophy-count">${o.earned} <small>/ ${o.total}</small></strong></div><div><span>目前瀏覽章節</span><strong class="current">${escape(data.stages.find(s=>s.id===o.stage).title)}</strong></div></section>`;
 }
 function stepStatusHtml(step,state){
- return `<div class="step-status" role="group" aria-label="${escape(step.title)} 進度"><span class="step-state">${statuses[state]}</span>${['skipped','unknown','missed'].map(status=>`<button type="button" data-status-action="${step.id}" data-status-value="${status}" aria-pressed="${state===status}">${statuses[status]}</button>`).join('')}<button class="quiet-button" data-edit-note="${step.id}">${progress.steps[step.id]?.note?'編輯註記':'加註記'}</button></div>`;
+ return `<div class="step-status" role="group" aria-label="${escape(step.title)} 進度"><span class="step-state">${statuses[state]}</span>${['skipped','unknown','missed'].map(status=>`<button type="button" data-status-action="${step.id}" data-status-value="${status}" aria-pressed="${state===status}">${statuses[status]}</button>`).join('')}</div>`;
 }
 function trophyCheckbox(trophy,context,card=false){
  return `<label class="${card?'trophy-card':'trophy-row'}"><input type="checkbox" data-trophy="${trophy.id}" data-trophy-context="${context}" ${progress.trophies[trophy.id]?.earned?'checked':''}><span class="trophy-name">${escape(trophyLabel(trophy))}</span></label>`;
 }
 function stepHtml(step){
- const state=statusOf(progress,step.id),backup=progress.backups[step.id],trophies=step.trophyRefs.map(id=>data.trophies.find(t=>t.id===id)),note=progress.steps[step.id]?.note||'';
+ const state=statusOf(progress,step.id),backup=progress.backups[step.id],trophies=step.trophyRefs.map(id=>data.trophies.find(t=>t.id===id));
  return `<article id="step-${step.id}" class="step ${state}" data-step="${step.id}">
  <div class="step-top"><input id="complete-${step.id}" type="checkbox" data-complete="${step.id}" aria-label="完成 ${escape(step.title)}" ${state==='completed'?'checked':''}><div><label class="step-title" for="complete-${step.id}">${escape(step.title)}</label><div class="metadata"><span class="${step.warningLevel}">${warnings[step.warningLevel]}</span>${step.verificationStatus==='unverified'?'<span>待查證</span>':''}<span>${escape(step.location)}</span></div>${stepStatusHtml(step,state)}</div></div>
  <div class="step-body">
@@ -43,7 +43,6 @@ function stepHtml(step){
  <ol class="instructions">${step.actions.map(s=>'<li>'+escape(s)+'</li>').join('')}</ol>${evidence(step)}
  ${trophies.length?'<div class="step-trophies" role="group" aria-label="'+escape(step.title)+' 獎盃">'+trophies.map(t=>trophyCheckbox(t,step.id,true)).join('')+'</div>':''}
  ${step.backupRecommended?`<div class="backup-check"><span>${backup?.confirmedAt?'已記錄備份：'+escape(new Date(backup.confirmedAt).toLocaleString('zh-TW'))+(backup.note?' · '+escape(backup.note):''):'此處先備份'}</span><button data-backup="${step.id}">${backup?.confirmedAt?'更新備份紀錄':'記錄 PS5 備份'}</button></div>`:''}
- ${note?'<div class="step-note"><p>'+escape(note)+'</p></div>':''}
  </div></article>`;
 }
 function branchHtml(branch){
@@ -63,15 +62,15 @@ function researchHtml(){
  const seen=new Set(),paragraph=text=>{if(!text||seen.has(text))return '';seen.add(text);return '<p>'+escape(text)+'</p>';};
  return `<section class="research-register"><h3>攻略查證紀錄</h3><p>${escape(data.officialIdNote)}</p><p>獎盃名稱來源：${sourceLinks(['psn','psnZhTW'])}</p>${data.steps.map(step=>`<article id="research-${step.id}"><h4>${escape(step.title)}</h4>${paragraph(step.verification)}${paragraph(step.recovery)}<div class="sources">${sourceLinks(step.sources)}</div>${step.dialogue?.length?'<ul>'+step.dialogue.map(row=>'<li>'+escape(row.speaker+' · '+row.context)+'：'+sourceLinks(row.sources)+'</li>').join('')+'</ul>':''}</article>`).join('')}</section>`;
 }
-function backupHtml(includeResearch=true){return `<div class="backup-tools"><h2>備份與查證</h2><section><h3>清單資料保護</h3><p>IndexedDB 保存此遊戲的獨立進度；未知欄位／ID 隨 JSON 保留。瀏覽器資料可被清除，請下載備份。匯入需比較差異、下載復原包並確認。</p><p>清單備份提醒：${progress.settings.jsonDownloadRequestedAt?"最後發起下載 "+escape(new Date(progress.settings.jsonDownloadRequestedAt).toLocaleString("zh-TW"))+"，請確認檔案已保存。":"尚未發起清單 JSON 下載，建議現在保存一份。"}</p><div class="actions"><button id="export-progress">下載清單 JSON</button><button id="export-recovery">匯出全部復原原文／快照</button></div><label>選擇此遊戲的清單 JSON<input id="import-file" type="file" accept="application/json,.json"></label></section><section><h3>PS5 遊戲存檔</h3><p>此站無法備份 PS5 遊戲存檔。PS Plus 自動同步與上傳／下載都可能替換原副本；每條分支前先在主機核對方向與時間。不要套用 Xbox 刪檔手法，也不要以 Google Drive 同步成功推斷 PS5 已備份。</p>${sourceLinks(['ps5'])}</section><section><h3>攻略查證 · ${data.checkedAt}</h3><p>${data.steps.filter(s=>s.verificationStatus==='confirmed').length} 已確認／${data.steps.filter(s=>s.verificationStatus==='consensus').length} 攻略共識／${data.steps.filter(s=>s.verificationStatus==='unverified').length} 待查證步驟。共識是來源敘述，不代表本機遊戲實測。</p><p>三市長已逐項列出可核對英文、中文方向與來源；仍有英文選項／適用性、Rand 精確觸發旗標、PS5 還原後三結果與官方逐盃數字 ID 待查證。Museum／Schuyler 時機、特殊解法重試存在來源衝突，已就地標示。</p><div class="sources">${sourceLinks(Object.keys(data.sources))}</div></section>${includeResearch?researchHtml():''}</div>`;}
+function backupHtml(){return `<div class="backup-tools transfer-tools"><section><h3>本機</h3><div class="actions"><button id="export-progress">匯出 JSON</button><button id="import-open">匯入 JSON</button><button id="export-recovery">匯出完整備份</button></div><input id="import-file" type="file" accept="application/json,.json" hidden></section><section><h3>雲端</h3><button id="open-cloud-sync">Google Drive 同步</button></section></div>`;}
+function sourcesHtml(){return `<div class="source-tools"><p>攻略查證：${data.checkedAt} · ${data.steps.filter(s=>s.verificationStatus==='confirmed').length} 已確認／${data.steps.filter(s=>s.verificationStatus==='consensus').length} 攻略共識／${data.steps.filter(s=>s.verificationStatus==='unverified').length} 待查證</p><div class="sources">${sourceLinks(Object.keys(data.sources))}</div>${researchHtml()}</div>`;}
 function render(){
- const focus=document.activeElement,focusId=focus?.getAttribute('data-complete')||focus?.getAttribute('data-status-action')||focus?.getAttribute('data-trophy')||focus?.getAttribute('data-edit-note');
- $('app').innerHTML=shell()+(view==='trophies'?trophiesHtml():view==='backup'?backupHtml():view==='branches'?`<h2>三市長分歧</h2><p>三條路線各自追蹤；清單進度與 PS5 存檔分開。</p><div class="branch-grid">${data.branches.map(branchHtml).join('')}</div>`:roadmapHtml());
+ const focus=document.activeElement,focusId=focus?.getAttribute('data-complete')||focus?.getAttribute('data-status-action')||focus?.getAttribute('data-trophy');
+ $('app').innerHTML=shell()+(view==='trophies'?trophiesHtml():view==='backup'?sourcesHtml():view==='branches'?`<h2>三市長分歧</h2><p>三條路線各自追蹤；清單進度與 PS5 存檔分開。</p><div class="branch-grid">${data.branches.map(branchHtml).join('')}</div>`:roadmapHtml());
  document.querySelectorAll('[data-view]').forEach(el=>view===el.dataset.view?el.setAttribute('aria-current','page'):el.removeAttribute('aria-current'));
- if(focusId){const attr=focus.hasAttribute('data-complete')?'data-complete':focus.hasAttribute('data-status-action')?'data-status-action':focus.hasAttribute('data-edit-note')?'data-edit-note':'data-trophy';const value=focus.getAttribute("data-status-value"),selector=`[${attr}="${focusId}"]`+(value?`[data-status-value="${value}"]`:"");const context=focus.getAttribute("data-trophy-context");document.querySelector(selector+(context?'[data-trophy-context="'+context+'"]':''))?.focus({preventScroll:true});}
+ if(focusId){const attr=focus.hasAttribute('data-complete')?'data-complete':focus.hasAttribute('data-status-action')?'data-status-action':'data-trophy';const value=focus.getAttribute("data-status-value"),selector=`[${attr}="${focusId}"]`+(value?`[data-status-value="${value}"]`:"");const context=focus.getAttribute("data-trophy-context");document.querySelector(selector+(context?'[data-trophy-context="'+context+'"]':''))?.focus({preventScroll:true});}
  $('open-sync').onclick=()=>sync.open();$('open-backup').onclick=()=>{
-  if(view==='backup'){document.querySelector('.backup-tools')?.scrollIntoView({block:'start'});return;}
-  $('backup-tools-content').innerHTML=backupHtml(false);bindBackupTools();$('backup-tools-dialog').showModal();
+  $('backup-tools-content').innerHTML=backupHtml();bindBackupTools();$('backup-tools-dialog').showModal();
  };
  if(view==='roadmap'){
   $('chapter-select').onchange=e=>action(()=>requestStage(e.target.value));
@@ -80,16 +79,19 @@ function render(){
   $('continue').onclick=()=>{const stageIndex=data.stages.findIndex(s=>s.id===currentOverview().stage),next=data.steps.find(s=>data.stages.findIndex(t=>t.id===s.stageId)>=stageIndex&&!done(progress,s.id)&&!['skipped','missed'].includes(statusOf(progress,s.id)));if(next)goStep(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
   document.querySelector('.branch-overview')?.addEventListener('toggle',event=>{branchExpanded=event.target.open;});
  }
- if(view==='backup')bindBackupTools();
  document.querySelectorAll('[data-stage-detail]').forEach(el=>el.addEventListener('toggle',()=>el.open?expanded.add(el.dataset.stageDetail):expanded.delete(el.dataset.stageDetail)));
  document.querySelectorAll('[data-branch-detail]').forEach(el=>el.addEventListener('toggle',()=>el.open?openBranches.add(el.dataset.branchDetail):openBranches.delete(el.dataset.branchDetail)));
 }
-function bindBackupTools(){$('export-progress').onclick=()=>action(exportProgress);$('export-recovery').onclick=()=>action(async()=>download(await store.exportAll(),'recovery-archive'));$('import-file').onchange=event=>action(()=>previewImport(event.target.files[0]));}
-$('note-save').onclick=()=>action(async()=>{const id=noteTarget,note=$('step-note-text').value;await store.update(p=>{p.steps[id]={status:'not_started',...p.steps[id],note};return p;});$('note-dialog').close();});
-$('note-dialog').addEventListener('close',()=>document.querySelector('[data-edit-note="'+noteTarget+'"]')?.focus({preventScroll:true}));
+function bindBackupTools(){
+ $('export-progress').onclick=()=>action(exportProgress);
+ $('export-recovery').onclick=()=>action(async()=>download(await store.exportAll(),'recovery-archive'));
+ $('import-open').onclick=()=>$('import-file').click();
+ $('import-file').onchange=event=>{const file=event.target.files[0];if(!file)return;$('backup-tools-dialog').close();void action(()=>previewImport(file));};
+ $('open-cloud-sync').onclick=()=>{$('backup-tools-dialog').close();sync.open();};
+}
 $('backup-tools-dialog').addEventListener('close',()=>$('backup-tools-content').replaceChildren());
 function download(value,name){const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=data.gameId+'-'+name+'-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
-async function exportProgress(){download(await store.get(),'progress');await store.update(p=>{p.settings.jsonDownloadRequestedAt=new Date().toISOString();return p;});message('已發起清單下載，請自行確認檔案已保存。這不包含 PS5 遊戲存檔。');}
+async function exportProgress(){download(await store.get(),'progress');await store.update(p=>{p.settings.jsonDownloadRequestedAt=new Date().toISOString();return p;});message('已開始下載。');}
 async function saveStep(id,status){await store.update(p=>{p.steps[id]={...p.steps[id],status};return p;});}
 async function requestStage(id){if(!data.stages.some(s=>s.id===id))return;await store.update(p=>{p.settings.currentStage=id;return p;});activeStage=id;expanded.clear();expanded.add(id);query='';filter='all';history.replaceState(null,'','?view=roadmap&stage='+id);await refresh();document.querySelector('.chapter-picker')?.scrollIntoView({block:'start'});}
 function goStep(id){const step=data.steps.find(s=>s.id===id);if(!step)return;activeStage=step.stageId;view='roadmap';filter='all';query='';expanded.add(step.stageId);history.replaceState(null,'','?view=roadmap#step-'+id);render();$('step-'+id)?.scrollIntoView({block:'start'});$('step-'+id)?.querySelector('input')?.focus({preventScroll:true});}
@@ -101,7 +103,6 @@ document.addEventListener('click',event=>{
  if(el.dataset.stage)void action(()=>requestStage(el.dataset.stage));
  if(el.dataset.stepLink){event.preventDefault();goStep(el.dataset.stepLink);}
  if(el.dataset.backup){backupTarget=el.dataset.backup;$('backup-node').textContent=data.steps.find(s=>s.id===backupTarget).title;$('backup-note').value=progress.backups[backupTarget]?.note||'';$('backup-ack').checked=false;$('backup-confirm').disabled=true;$('backup-dialog').showModal();}
- if(el.dataset.editNote){noteTarget=el.dataset.editNote;$('note-step').textContent=data.steps.find(s=>s.id===noteTarget).title;$('step-note-text').value=progress.steps[noteTarget]?.note||'';$('note-dialog').showModal();}
  if(el.dataset.close)$(el.dataset.close).close();
 });
 document.addEventListener('change',event=>{const el=event.target;
