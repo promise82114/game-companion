@@ -148,6 +148,5 @@ export function applyMayorResearch(roadmap) {
   patch(branch.stepId,{actions:[...content.actions,restore],dialogue:content.dialogue,prerequisites:branch.prerequisites,recovery:restore,sources:[...new Set(content.dialogue.flatMap(row=>row.sources))],verificationStatus:'unverified'});
  }
  patch('w2-backup',{prerequisites:branches[0].prerequisites.filter(id=>id!=='w2-backup')});
- roadmap.version='2026.10.31.2';roadmap.moduleVersion='1.0.1';
  roadmap.mayorResearch={checkedAt,route:'W2 入口 A／XboxAchievements 分支；不混用 Hanni 出機後備份法',transcriptionNote:'已核對的英文有逐項來源；英文空白與人物適用性未證實者均標待查證。影片僅讀取頁面與章節，未取得可播放影格，不算逐字驗證。',ps5Acceptance:'未在 PS5 實機還原三結果，不保證一份備份可補救錯誤前置。'};
 }

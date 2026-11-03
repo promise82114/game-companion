@@ -1,6 +1,8 @@
 # The Talos Principle II · 本體白金 Roadmap
 
-2026-10-31，模組 1.0.1，攻略版本 `2026.10.31.2`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+2026-11-03，模組 1.0.2，內容版本 `2026.11.03.1`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+
+本體 60 盃依使用者提供的 Exophase 英文／繁中頁，以同一獎盃連結 ID 配對名稱。清單、攻略獎盃對照與三市長顯示「英文（繁中）」，攻略搜尋支援繁中名稱。`dist/trophy-names.js` 保存原文與來源日期；`exophaseId` 僅為來源識別，不冒充官方 PSN ID，進度鍵不變。
 
 本次補強三市長：Doge 七題英文、Rand N1／S1 私訊、城市 Damien／Atal／Malduc 與簡報、W2 三條完整決策順序及 PS5 入口備份／還原。58 筆逐項選項分別標記英文證據與適用性；缺少原文直接顯示待查證，不用翻譯冒充英文。現有 57 步驟 ID、schema 1 與同步契約不變，合成 1.0.0 進度可繼續使用。
 
@@ -28,6 +30,7 @@ node scripts/verify-talos2-browser.mjs
 ## 檔案與資料
 
 - `dist/data.js`：八階段、57 步驟、60 本體獎盃、三市長與查證來源。內容更新不得改已發布步驟 ID。
+- `dist/trophy-names.js`：本體 60 盃的來源中英名稱與統一顯示文字。
 - `dist/mayor-research.js`：三市長逐項查證、來源衝突與 PS5 手動備份順序，以原 ID 補強資料。
 - `dist/roadmap/evidence.js`：可重用原文／待查證／來源呈現，不增加進度欄位。
 - `dist/roadmap/model.js`：可重用的步驟狀態、篩選、摘要與階段風險計算，不包含 Talos 專屬判斷。

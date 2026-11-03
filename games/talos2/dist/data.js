@@ -1,10 +1,13 @@
 import {applyMayorResearch} from './mayor-research.js';
-// 靜態攻略版本與使用者進度分離；所有查證日期為 2026-10-31。
+import {trophyNamesZhTW,trophyNameSource} from './trophy-names.js';
+const localizedTrophies=new Map(trophyNamesZhTW.map(t=>[t.officialName,t]));
+// 靜態攻略版本與使用者進度分離；攻略與獎盃名稱各自記錄查證日期。
 const trophyNames = [
  'Philosopher','Ab Initio','Wanderers','Not What It Seems','Overload','Grasslands Ring','Wooded Plateau','Eastern Wetlands','Desolate Island','Flooded Valley','Lost Marshes','Southern Coast','Verdant Canyon','Circular Oasis','Western Delta','Anthropic Hills','High Plain','Into the Machine','Prometheus Unbound','Break the Loop','The Future','Puzzle Fiend','Ab Aeterno','Renaissance Robot','Good Citizen','Museum Visitor','Museum Explorer','The Word Endures','Scientia Vincere Tenebras','The Spark','Discovery','The Thief of Fire','The All-Gifted','Mistress of Riddles','The Edge of Forever','Remnants of the Past','The Hard Way','Just One Lap','Single Rod','Persistent','Becoming Smarter','Chasing the Light','Bridge Builder','Team Spirit','Touch Grass',"Trevor's Biographer",'Ecstatic Truth','Gnothi Seauton','A New Beginning','Balance','A New Morality','Sinner','Excellent','Text Adventurer','Chicken','Lord of the Files','Mnemosyne','Archaeologist','Signatory','Your Biggest Fan'
 ];
 const trophyKey=name=>name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'');
 const sources = {
+ psnZhTW:{title:'PS5 繁中獎盃名稱（Exophase · 2026-11-03）',url:trophyNameSource.zhTW,kind:'trophy-list'},
  psn:{title:'PS5 獎盃清單（Exophase）',url:'https://www.exophase.com/game/the-talos-principle-2-psn/trophies/',kind:'trophy-list'},
  groups:{title:'PS5 本體／DLC 分組（Platinum Pursuit）',url:'https://platpursuit.com/games/NPWR34440_00/',kind:'trophy-list'},
  list:{title:'PlayStationTrophies 獎盃清單',url:'https://www.playstationtrophies.org/game/the-talos-principle-2/print-list/',kind:'trophy-list'},
@@ -119,5 +122,5 @@ const flowOrders={
 };
 for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),order=flowOrders[stage.id];list.sort((a,b)=>order?order.indexOf(a.id)-order.indexOf(b.id):a.order-b.order).forEach((s,i)=>s.order=i+1);}
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
-export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.10.31.1',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.0.0',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','list']}))};
+export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.03.1',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.0.2',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);

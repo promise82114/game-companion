@@ -7,9 +7,15 @@ import {roadmap as data} from './dist/data.js';
 import {overview,blockers,matches} from './dist/roadmap/model.js';
 import {createStore} from './dist/roadmap/store.js';
 import {dialogueHtml} from './dist/roadmap/evidence.js';
+import {trophyNamesZhTW,trophyNameSource,trophyLabel} from './dist/trophy-names.js';
 import {mockDrive} from '../../scripts/fixtures/drive.mjs';
 const config=JSON.parse(await fs.readFile(new URL('module.json',import.meta.url),'utf8'));
 assert.equal(data.gameId,config.gameId);assert.equal(data.storagePrefix,config.storagePrefix);assert.equal(data.driveFileName,config.driveFileName);
+assert.equal(data.moduleVersion,config.moduleVersion);
+assert.equal(trophyNamesZhTW.length,60);assert.equal(new Set(trophyNamesZhTW.map(t=>t.exophaseId)).size,60);
+assert.equal(new Set(trophyNamesZhTW.map(t=>t.officialName)).size,60);
+for(const t of data.trophies){const localized=trophyNamesZhTW.find(row=>row.officialName===t.officialName);assert.ok(localized,t.officialName);assert.equal(t.nameZhTW,localized.nameZhTW);assert.match(t.nameZhTW,/\p{Script=Han}/u);assert.equal(t.exophaseId,localized.exophaseId);assert.equal(t.nameCheckedAt,trophyNameSource.checkedAt);assert.equal(t.officialId,null);assert.equal(t.id,t.officialName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,''));}
+assert.equal(trophyLabel(data.trophies.find(t=>t.id==='chicken')),'Chicken（膽小鬼）');
 assert.equal(data.stages.length,8);assert.equal(data.trophies.filter(t=>t.category==='base').length,60);assert.equal(data.dlcCount,9);
 const ids=new Set(data.steps.map(s=>s.id)),trophyIds=new Set(data.trophies.map(t=>t.id));assert.equal(ids.size,data.steps.length);assert.equal(trophyIds.size,60);
 const mapped=new Set(data.steps.flatMap(s=>s.trophyRefs));assert.ok(data.trophies.every(t=>mapped.has(t.id)),'所有本體獎盃都要有名稱對照');
@@ -57,5 +63,5 @@ const unsafe=new ctx.window.SideProjectDrive.DriveAppData(auth,config.driveFileN
 auth.generation++;assert.equal(drive.verified,false);await assert.rejects(drive.write({},null),e=>e.code==='write-disabled');
 // 未修改三個既有模組的底層同步／身份／格式程式。
 for(const file of ['google-auth','drive-appdata','progress-envelope'])assert.equal(await fs.readFile(new URL('dist/shared/'+file+'.js',import.meta.url),'utf8'),await fs.readFile(new URL('../edf-wb/dist/shared/'+file+'.js',import.meta.url),'utf8'));
-for(const file of ['app.js','data.js','mayor-research.js','roadmap/model.js','roadmap/evidence.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','trophy-names.js','mayor-research.js','roadmap/model.js','roadmap/evidence.js','roadmap/store.js','roadmap/sync.js','shared/sync-core.js','shared/sync-session.js']){const check=spawnSync(process.execPath,['--check',new URL('dist/'+file,import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,gameId:data.gameId,stages:8,steps:data.steps.length,baseTrophies:60,dlcExcluded:9,checks:['schema/source/dependency/ID guards','DLC excluded','trophy/step/backup separation','async three-way merge','first pairing','stale preview','in-flight edit preservation','lost acknowledgement recovery','quota before upload','412/racing CAS','unsafe server/grant rejection','unchanged auth/adapter/envelope','syntax']}));

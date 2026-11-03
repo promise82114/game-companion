@@ -48,7 +48,15 @@ try{
  await page.locator('[data-complete="calibration"]').check();await page.reload();await page.locator('[data-complete="calibration"]:checked').waitFor();
  assert.match(await page.locator('#trophy-count').textContent(),/0\s*\/\s*60/);
  await page.locator('#open-backup').click();await page.locator('#backup-tools-dialog').waitFor();const quickBackup=page.waitForEvent('download');await page.locator('#export-progress').click();assert.equal(await (await quickBackup).failure(),null);await page.locator('[data-close="backup-tools-dialog"]').click();
- await page.locator('[data-view="trophies"]').click();await page.locator('[data-trophy="chicken"]').check();await page.waitForFunction(()=>document.getElementById('trophy-count').textContent.includes('1 '));
+ await page.locator('[data-view="trophies"]').click();
+ const {roadmap:localizedData}=await import('../games/talos2/dist/data.js');
+ for(const trophy of localizedData.trophies)assert.equal(await page.locator(`[data-trophy="${trophy.id}"]`).locator('..').innerText(),`${trophy.officialName}（${trophy.nameZhTW}）`);
+ for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'localized trophy overflow '+width);await page.screenshot({path:`outputs/talos2/trophies-zh-${width}.png`});}
+ await page.setViewportSize({width:1440,height:1000});
+ await page.locator('[data-trophy="chicken"]').check();await page.waitForFunction(()=>document.getElementById('trophy-count').textContent.includes('1 '));
+ await page.reload();await page.locator('[data-trophy="chicken"]:checked').waitFor();assert.match(await page.locator('[data-trophy="chicken"]').locator('..').textContent(),/Chicken（膽小鬼）/);
+ await page.locator('[data-view="branches"]').click();assert.match(await page.locator('.branch-grid').textContent(),/A New Morality（新的道德規範）/);assert.match(await page.locator('.branch-grid').textContent(),/A New Beginning（新的開始）/);assert.match(await page.locator('.branch-grid').textContent(),/Balance（平衡）/);
+ await page.locator('[data-view="roadmap"]').click();await page.locator('#search').fill('膽小鬼');await page.locator('#step-chicken').waitFor({state:'visible'});await page.locator('[data-detail="chicken"] summary').click();assert.match(await page.locator('#step-chicken .detail-info').textContent(),/Chicken（膽小鬼）/);await page.locator('#search').fill('');
  await page.locator('[data-view="roadmap"]').click();assert.equal(await page.locator('[data-complete="chicken"]').isChecked(),false);
  // 只看後期章節也可直接開始；切換只寫 currentStage，不代填早期進度或要求確認。
  await page.locator('#chapter-select').selectOption('P7');await page.waitForFunction(()=>document.querySelector('[data-stage="P7"]').getAttribute('aria-current')==='step');assert.equal(await page.locator('dialog[open]').count(),0);

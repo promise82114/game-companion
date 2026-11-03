@@ -4,6 +4,16 @@
 
 ## 已取得證據
 
+### 2026-11-03 獎盃繁中名稱（模組 1.0.2）
+
+以一般瀏覽器讀取使用者提供的 [Exophase 英文頁](https://www.exophase.com/game/the-talos-principle-2-psn/trophies/) 與 [繁中頁](https://www.exophase.com/game/the-talos-principle-2-psn/trophies/zh-TW/)，兩頁 69 盃皆可按相同 `/trophy/` 連結配對。本次僅納入本體 60 盃，DLC 9 盃仍不納入；名稱逐字保存於 `dist/trophy-names.js`，不是自行翻譯。一般 HTTP 與 headless Edge 未能讀取清單，改用 in-app browser 正常讀取，未繞過網站驗證。
+
+新增 `nameZhTW`、`nameCheckedAt` 與來源 `exophaseId` metadata；`officialName`、既有獎盃 ID／步驟 ID、schema、IndexedDB 與 Drive 同步不變。`exophaseId` 是第三方來源連結 ID，官方 `officialId` 仍為 null。名稱查證日期與原攻略日期分開，不將這次補名當成三市長實機驗證。內容／模組版本統一由 `data.js` 宣告，市長補強不覆寫版本。
+
+清單、攻略的獎盃對照與三市長路線顯示「英文（繁中）」，攻略搜尋包含關聯獎盃的中英名稱。沿用原顯示樣式，長名稱可換行、核取方塊不壓縮。驗證包含 60 盃名稱完整對照、來源 ID 唯一、進度 ID 不變、中文搜尋、勾選後重整與手機版面；測試均用合成資料與新 context。
+
+本輪 `scripts/verify.mjs`、build、site 產物檢查與 Talos 瀏覽器回歸均通過；1440／768／390／320px 雙語清單無水平溢出。變更來源 lint 為 0 FAIL／0 WARN，瀏覽器設計量測為 0 FAIL／1 WARN（既有主面板的 44px 上下留白，保留跨遊戲一致內距）；六張桌面／平板／手機截圖與手機 320px 畫面已人工檢視。未變更同步實作，未操作真實 PS5／Google 資料。
+
 ### 1.0.1 三市長補強（攻略 2026.10.31.2）
 
 新增 58 筆選項查證列，沿用全部 57 個已發布步驟 ID。英文逐字、中文操作方向、人物／版本適用性分開標示；選項無原文時 `english: null`，頁面直接顯示「英文原文待查證」。以下是本輪取得的證據，並不代表 PS5 三結果已實機重現。
