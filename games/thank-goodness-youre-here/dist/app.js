@@ -30,7 +30,10 @@
   const stageFor = id => guide.stages.find(stage => stage.steps.some(step => step.id === id));
   activeStage = guide.stages.find(stage => stage.id === location.hash.slice(1))?.id || guide.stages.find(stage => stage.steps.some(step => !store.data.stepDone[step.id]))?.id || guide.stages[0].id;
   function sourceLinks(refs) { return refs.map(id => {const source = guide.sources.find(value => value.id === id); return `<a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)}</a>`;}).join(' · '); }
-  function trophyInput(id) { return `<label><input type="checkbox" data-group="trophyEarned" data-id="${id}" ${store.data.trophyEarned[id] ? 'checked' : ''}>已跳盃：${escape(trophyMap.get(id).officialName)}</label>`; }
+  function trophyNameHtml(trophy) { return `<span class="trophy-name-en">${escape(trophy.officialName)}</span><span class="trophy-name-zh" lang="zh-Hant">｜${escape(trophy.nameZhTW)}</span>`; }
+  function trophyProgressText(trophy) { const progress=trophy.progress;return `${progress.label} (${progress.stepIds.filter(id=>store.data.stepDone[id]===true).length}/${progress.stepIds.length})`; }
+  function trophyProgressHtml(trophy) { return trophy.progress ? `<span class="trophy-progress" data-trophy-progress="${trophy.id}" title="${escape(trophy.progress.note)}">${escape(trophyProgressText(trophy))}</span>` : ''; }
+  function trophyInput(id) { const trophy=trophyMap.get(id);return `<label><input type="checkbox" data-group="trophyEarned" data-id="${id}" ${store.data.trophyEarned[id] ? 'checked' : ''}><span>已跳盃：${trophyNameHtml(trophy)} ${trophyProgressHtml(trophy)}</span></label>`; }
   // taste-skill-ignore: 保留原攻略指定的紅／橙風險符號，與文字一起說明不可逆事項。
   function stepHtml(step, compact = false) {
     return `<article class="step ${store.data.stepDone[step.id] ? 'done' : ''}" data-step-row="${step.id}" id="${compact ? 'track-' : 'step-'}${step.id}"><div class="step-head"><label><input type="checkbox" data-group="stepDone" data-id="${step.id}" ${store.data.stepDone[step.id] ? 'checked' : ''}><span>${characterText(step.action)}</span></label></div><p class="step-location">${characterText(step.location)}</p><p class="step-trigger"><span>時機：</span>${characterText(step.trigger)}</p>${step.warningLevel === 'critical' || step.verificationStatus === 'unverified' ? `<span class="warning ${step.warningLevel === 'critical' ? 'critical' : 'branch'}">${step.warningLevel === 'critical' ? '🔴 ' : '🟠 '}${warningNames[step.warningLevel]}${step.verificationStatus === 'unverified' ? ' · 待查證' : ''}</span>` : ''}${step.trophyIds.length ? `<div class="trophy-inline">${step.trophyIds.map(trophyInput).join('')}</div>` : ''}</article>`; // taste-skill-ignore: 既有攻略使用紅／橙風險符號。
@@ -40,7 +43,7 @@
   }
   function matches(item, group) {
     const query = $('search').value.trim().toLocaleLowerCase(), filter = $('filter').value;
-    const text = JSON.stringify(item) + (item.trophyIds || []).map(id => trophyMap.get(id).officialName).join(' ');
+    const text = JSON.stringify(item) + (item.trophyIds || []).map(id => trophyMap.get(id).officialName+' '+trophyMap.get(id).nameZhTW).join(' ');
     if (query && !text.toLocaleLowerCase().includes(query)) return false;
     if (filter === 'pending' && store.data[group][item.id]) return false;
     if (filter === 'completed' && !store.data[group][item.id]) return false;
@@ -57,6 +60,7 @@
     $('checkpoint').innerHTML = checkpoint ? `<div><strong>本章留意 · ${escape(current.title)}</strong><p>${characterText(checkpoint.trigger)}</p></div><button data-jump="${checkpoint.id}">查看提醒</button>` : '<div><strong>本章進度</strong><p>本章檢查點已記錄；可直接切換章節繼續攻略。</p></div>';
     document.querySelectorAll('[data-stage-count]').forEach(node => {const stage=guide.stages.find(value=>value.id===node.dataset.stageCount);node.textContent=stage.steps.filter(step=>data.stepDone[step.id]).length+'/'+stage.steps.length;});
     document.querySelectorAll('[data-tracker-count]').forEach(node => {const tracker=guide.trackers.find(value=>value.id===node.dataset.trackerCount);node.textContent=tracker.stepIds.filter(id=>data.stepDone[id]).length+'/'+tracker.stepIds.length;});
+    document.querySelectorAll('[data-trophy-progress]').forEach(node => {node.textContent=trophyProgressText(trophyMap.get(node.dataset.trophyProgress));});
   }
   function render() {
     document.querySelectorAll('[data-view]').forEach(button => {if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});
@@ -75,11 +79,12 @@
         return `<details class="tracker"><summary><strong>${characterText(tracker.title)}</strong><span class="count" data-tracker-count="${tracker.id}"></span></summary><div class="tracker-body"><p class="meta">${characterText(tracker.note)}</p>${visible.map(step=>stepHtml(step,true)).join('')}</div></details>`;
       }).join('');
     } else if (view === 'trophies') {
-      $('content').innerHTML = '<p class="meta">33 個獎盃均有流程映射；勾步驟不會自動勾獎盃。白金也需手動確認。</p>' + guide.trophies.filter(trophy=>matches(trophy,'trophyEarned')).map(trophy=>`<article class="trophy-row"><input id="trophy-${trophy.id}" type="checkbox" data-group="trophyEarned" data-id="${trophy.id}" ${store.data.trophyEarned[trophy.id]?'checked':''}><div><label for="trophy-${trophy.id}">${escape(trophy.officialName)}</label><p>${characterText(trophy.description)}</p><div class="links">${steps.filter(step=>step.trophyIds.includes(trophy.id)).map(step=>`<button data-jump="${step.id}">${characterText(step.location)}</button>`).join('')}</div></div><small>${{platinum:'白金',story:'主線',optional:'支線／收集'}[trophy.category]}</small></article>`).join('');
+      $('content').innerHTML = '<p class="meta">33 個獎盃均有流程映射；勾步驟不會自動勾獎盃。白金也需手動確認。</p>' + guide.trophies.filter(trophy=>matches(trophy,'trophyEarned')).map(trophy=>`<article class="trophy-row"><input id="trophy-${trophy.id}" type="checkbox" data-group="trophyEarned" data-id="${trophy.id}" ${store.data.trophyEarned[trophy.id]?'checked':''}><div><label for="trophy-${trophy.id}">${trophyNameHtml(trophy)} ${trophyProgressHtml(trophy)}</label>${trophy.progress ? `<p class="trophy-progress-note">${escape(trophy.progress.note)}</p>` : ''}<p>${characterText(trophy.description)}</p><div class="links">${steps.filter(step=>step.trophyIds.includes(trophy.id)).map(step=>`<button data-jump="${step.id}">${characterText(step.location)}</button>`).join('')}</div></div><small>${{platinum:'白金',story:'主線',optional:'支線／收集'}[trophy.category]}</small></article>`).join('');
     } else {
       $('content').innerHTML = `<h2>資料查證範圍</h2><p>${escape(guide.verificationNote)}</p><p>${escape(guide.estimatedTime)}</p><p>九扇門、每門三下、17 塊肉、七隻蝸牛的位置與固定回訪次數，都不能視為本工具已實測。動物以五組來源共識列出；蚯蚓另保留提醒。未宣稱「22 個可錯過」為確定總數。</p><p>工具資料備份與主機遊戲存檔不同；本工具不提供遊戲內回溯。</p>${guide.sources.map(source=>`<article class="source"><a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)} ↗</a><p>${escape(source.limitation)}</p><small>查閱 ${source.accessedAt}</small></article>`).join('')}${sourceAuditHtml()}`;
     }
     if(!$('content').children.length)$('content').innerHTML='<p class="empty">沒有符合條件的項目。請清除搜尋或改回「全部」。</p>';
+    if(view!=='sources'&&!$('content').querySelector('.empty'))$('content').insertAdjacentHTML('afterbegin','<p class="trophy-progress-hint">獎盃計數以攻略勾選為準；回訪／路線檢查滿格不代表已跳盃。</p>');
     stats();
   }
   function syncUi() {
@@ -108,6 +113,7 @@
   $('chapter-select').onchange=event=>selectStage(event.target.value);
   $('continue').onclick=()=>{const start=guide.stages.findIndex(stage=>stage.id===activeStage),next=guide.stages.slice(start).flatMap(stage=>stage.steps).find(step=>!store.data.stepDone[step.id]);if(next)jump(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
   window.addEventListener('popstate',()=>{view=new URL(location.href).searchParams.get('view')||'roadmap';activeStage=guide.stages.find(stage=>stage.id===location.hash.slice(1))?.id||activeStage;render();});
+  $('platinum-name').innerHTML=trophyNameHtml(trophyMap.get('t00'));
   $('guide-version').textContent=`攻略 v${guide.guideVersion} · 文獻核對 ${guide.lastVerifiedAt}`;
   function download(value,name) {
     const href=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),link=document.createElement('a');

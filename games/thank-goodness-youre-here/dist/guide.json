@@ -2,7 +2,7 @@
   "gameId": "thank-goodness-youre-here",
   "platform": "PS5",
   "scope": "base",
-  "guideVersion": "1.0.0",
+  "guideVersion": "1.1.0",
   "lastVerifiedAt": "2026-10-31",
   "verificationNote": "此日期是文獻查證，不是 PS5 實機驗收。verified 僅指獎盃列表；consensus 為攻略交叉比對；unverified 仍待查。",
   "estimatedTime": "來源估計約 3–6 小時；另有約 15 分鐘短結局。主線一次可規劃全收集，短結局後需重新開局。",
@@ -15,7 +15,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760823,
+      "nameZhTW": "巴恩茲沃最強之人"
     },
     {
       "id": "t01",
@@ -25,7 +27,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760824,
+      "nameZhTW": "一不做二不休"
     },
     {
       "id": "t02",
@@ -35,7 +39,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760825,
+      "nameZhTW": "開張大吉"
     },
     {
       "id": "t03",
@@ -45,7 +51,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760826,
+      "nameZhTW": "萬中選一"
     },
     {
       "id": "t04",
@@ -55,7 +63,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760827,
+      "nameZhTW": "人人有份"
     },
     {
       "id": "t05",
@@ -65,7 +75,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760828,
+      "nameZhTW": "就是要牛奶"
     },
     {
       "id": "t06",
@@ -75,7 +87,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760829,
+      "nameZhTW": "逍遙法外"
     },
     {
       "id": "t07",
@@ -85,7 +99,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760830,
+      "nameZhTW": "床上早餐"
     },
     {
       "id": "t08",
@@ -95,7 +111,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760831,
+      "nameZhTW": "幸好結束了！"
     },
     {
       "id": "t09",
@@ -105,7 +123,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760832,
+      "nameZhTW": "耐心是種美德"
     },
     {
       "id": "t10",
@@ -115,7 +135,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760833,
+      "nameZhTW": "豆灑滿地"
     },
     {
       "id": "t11",
@@ -125,7 +147,18 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760834,
+      "nameZhTW": "魚滿盆滿",
+      "progress": {
+        "label": "互動",
+        "stepIds": [
+          "fish-first",
+          "fish-second",
+          "fish-final"
+        ],
+        "note": "依三次魚販互動的攻略勾選計算；實際跳盃仍需手動確認。"
+      }
     },
     {
       "id": "t12",
@@ -135,7 +168,20 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760835,
+      "nameZhTW": "森林之友",
+      "progress": {
+        "label": "動物",
+        "stepIds": [
+          "rats-park",
+          "mole-invite",
+          "stoat",
+          "owl",
+          "ducks"
+        ],
+        "note": "計算五組動物的攻略項目；蚯蚓是否必要仍待查證，另列提醒，不加入此分母。"
+      }
     },
     {
       "id": "t13",
@@ -145,7 +191,21 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760836,
+      "nameZhTW": "週餓不送信",
+      "progress": {
+        "label": "郵筒",
+        "stepIds": [
+          "post-town-hall",
+          "post-nick",
+          "post-chippy",
+          "post-market-flower",
+          "post-market-crossword",
+          "post-blue-house"
+        ],
+        "note": "計算六處郵筒的攻略勾選；不讀取遊戲內判定。"
+      }
     },
     {
       "id": "t14",
@@ -155,7 +215,24 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760837,
+      "nameZhTW": "警察，快開門",
+      "progress": {
+        "label": "路線檢查",
+        "stepIds": [
+          "door-reception",
+          "door-chicken",
+          "door-chippy-one",
+          "door-chippy-two",
+          "door-shed",
+          "door-garden-house",
+          "door-travel",
+          "door-pies",
+          "door-blue-house"
+        ],
+        "note": "這是攻略列出的九處檢查進度，並非已實測的必要敲門次數；沿途其他關門也應檢查。"
+      }
     },
     {
       "id": "t15",
@@ -165,7 +242,18 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760838,
+      "nameZhTW": "親密接觸",
+      "progress": {
+        "label": "互動",
+        "stepIds": [
+          "cheek-first",
+          "cheek-second",
+          "cheek-final"
+        ],
+        "note": "依三次餐車互動的攻略勾選計算；實際跳盃仍需手動確認。"
+      }
     },
     {
       "id": "t16",
@@ -175,7 +263,18 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760839,
+      "nameZhTW": "鼠群",
+      "progress": {
+        "label": "鼠群",
+        "stepIds": [
+          "rats-park",
+          "rats-chippy",
+          "rats-market"
+        ],
+        "note": "計算三組老鼠的攻略項目；每組需聽到合唱。"
+      }
     },
     {
       "id": "t17",
@@ -185,7 +284,17 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760840,
+      "nameZhTW": "鼴鼠大餐",
+      "progress": {
+        "label": "流程步驟",
+        "stepIds": [
+          "mole-invite",
+          "mole-cancel"
+        ],
+        "note": "記錄收到與取消邀請兩個事件；不是需要兩次晚餐或重複拍打的意思。"
+      }
     },
     {
       "id": "t18",
@@ -195,7 +304,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760841,
+      "nameZhTW": "神仙眷偶"
     },
     {
       "id": "t19",
@@ -205,7 +316,21 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760842,
+      "nameZhTW": "臉難中打",
+      "progress": {
+        "label": "回訪檢查",
+        "stepIds": [
+          "pub-first",
+          "pub-before-hole",
+          "pub-tools",
+          "pub-beans",
+          "pub-milk",
+          "pub-final"
+        ],
+        "note": "這是六次路線回訪的檢查進度，未證實固定互動次數；只勾已聽完新對話的項目。"
+      }
     },
     {
       "id": "t20",
@@ -215,7 +340,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760843,
+      "nameZhTW": "亂中有序"
     },
     {
       "id": "t21",
@@ -225,7 +352,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760844,
+      "nameZhTW": "熄燈"
     },
     {
       "id": "t22",
@@ -235,7 +364,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760845,
+      "nameZhTW": "豆子在窗台上！"
     },
     {
       "id": "t23",
@@ -245,7 +376,17 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760846,
+      "nameZhTW": "全民公主",
+      "progress": {
+        "label": "流程步驟",
+        "stepIds": [
+          "first-hole",
+          "plate"
+        ],
+        "note": "記錄首次經過管道與最後打破紀念盤；不是兩趟管道就會跳盃，也不推定重走管道的固定次數。"
+      }
     },
     {
       "id": "t24",
@@ -255,7 +396,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760847,
+      "nameZhTW": "拜訪巴恩茲沃"
     },
     {
       "id": "t25",
@@ -265,7 +408,19 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760848,
+      "nameZhTW": "一個不剩",
+      "progress": {
+        "label": "開店檢查",
+        "stepIds": [
+          "nick-open",
+          "nick-return",
+          "nick-mid",
+          "nick-wall"
+        ],
+        "note": "計算四個店面變化的路線檢查；不包含另一獎盃的窮困男子豆罐事件，也不代表固定購買或拍打次數。"
+      }
     },
     {
       "id": "t26",
@@ -275,7 +430,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760849,
+      "nameZhTW": "最終型態"
     },
     {
       "id": "t27",
@@ -285,7 +442,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760850,
+      "nameZhTW": "三角關係"
     },
     {
       "id": "t28",
@@ -295,7 +454,22 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760851,
+      "nameZhTW": "連兩中",
+      "progress": {
+        "label": "回訪檢查",
+        "stepIds": [
+          "police-first",
+          "police-after-pub",
+          "police-before-hole",
+          "police-tools",
+          "police-beans",
+          "police-milk",
+          "police-final"
+        ],
+        "note": "這是七次路線回訪的檢查進度，並非已證實的必要敲亭次數；出現丟蛋把戲後再手動記錄獎盃。"
+      }
     },
     {
       "id": "t29",
@@ -305,7 +479,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760852,
+      "nameZhTW": "強悍馬鈴薯"
     },
     {
       "id": "t30",
@@ -315,7 +491,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760853,
+      "nameZhTW": "園藝高手"
     },
     {
       "id": "t31",
@@ -325,7 +503,22 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760854,
+      "nameZhTW": "極度驚嚇",
+      "progress": {
+        "label": "蝸牛",
+        "stepIds": [
+          "snail-sue",
+          "snail-crops",
+          "snail-gate",
+          "snail-stone",
+          "snail-tree",
+          "snail-bench",
+          "snail-well"
+        ],
+        "note": "計算攻略列出的七個蝸牛檢查項目；部分位置仍待實機核對，先巡完地面再跳井。"
+      }
     },
     {
       "id": "t32",
@@ -335,7 +528,9 @@
       "sourceRefs": [
         "ps5"
       ],
-      "verificationStatus": "verified"
+      "verificationStatus": "verified",
+      "exophaseId": 760855,
+      "nameZhTW": "疫病纏身"
     }
   ],
   "stages": [
@@ -2518,6 +2713,15 @@
       "url": "https://www.youtube.com/watch?v=1anI7-Uoo8A",
       "limitation": "只核對作者發布的章節與時間，未逐格觀看影片",
       "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "ps5-zh-tw",
+      "title": "PS5 繁中獎盃名稱（Exophase）",
+      "url": "https://www.exophase.com/game/thank-goodness-you-re-here-psn/trophies/zh-TW/",
+      "limitation": "只核對 33 個繁中名稱，依中英文頁的同一獎盃連結 ID 對照；不驗證跳盃條件或互動次數",
+      "accessedAt": "2026-11-03"
     }
-  ]
+  ],
+  "namesVerifiedAt": "2026-11-03",
+  "nameSourceRef": "ps5-zh-tw"
 }

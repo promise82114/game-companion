@@ -9,6 +9,21 @@ assert.equal(guide.trophies.length,33);assert.equal(trophyIds.size,33);assert.eq
 const expected="Barnsworth's Best;In For A Penny;Open For Business;Cream of the Crop;Enough For Everyone;Milk Shy No More;Still at Large;Breakfast In Bed;Thank Goodness it's Over!;Patience is a Virtue;Spill the Beans;Done Up Like a Kipper;Friend of the Forest;No Post on Thuesdays;Bobby Knocker;Cheek to Cheek;The Rat Pack;Mole Supper;A Lovely Pair;Think F.A.S.T.;A Fine Mess;Lights Out;The Beans are on the Windowsill!;The People's Princess;Visit Barnsworth;Everything Must Go;Final Form;Ménage à trois;The Ol' One Two;Tough Tatties;Green Fingers;Shell Shocked;Sick as a Fig".split(';');
 assert.deepEqual(guide.trophies.map(trophy=>trophy.officialName),expected);
 for(const trophy of guide.trophies)assert.ok(steps.some(step=>step.trophyIds.includes(trophy.id)),trophy.officialName+' 未映射');
+const names=JSON.parse(await fs.readFile(new URL('./docs/EXOPHASE_TROPHY_NAMES.json',import.meta.url),'utf8'));
+assert.equal(names.entries.length,33);assert.equal(new Set(names.entries.map(value=>value.exophaseId)).size,33);
+assert.equal(names.sourceZhTW,guide.sources.find(source=>source.id==='ps5-zh-tw').url);
+assert.equal(guide.nameSourceRef,'ps5-zh-tw');assert.equal(guide.namesVerifiedAt,names.accessedAt);
+for(const trophy of guide.trophies){
+ const name=names.entries.find(entry=>entry.exophaseId===trophy.exophaseId);assert.ok(name,trophy.id+' 繁中對照缺漏');
+ assert.equal(trophy.officialName,name.officialName);assert.equal(trophy.nameZhTW,name.nameZhTW);assert.ok(trophy.nameZhTW.trim());
+ if(trophy.progress){const progress=trophy.progress;assert.ok(progress.label&&progress.note);assert.ok(progress.stepIds.length>1);assert.equal(new Set(progress.stepIds).size,progress.stepIds.length);for(const id of progress.stepIds)assert.ok(steps.some(step=>step.id===id&&step.trophyIds.includes(trophy.id)),trophy.id+' 計數誤連 '+id);}
+}
+const progress=id=>guide.trophies.find(trophy=>trophy.id===id).progress;
+assert.equal(guide.trophies.filter(trophy=>trophy.progress).length,12);
+assert.equal(progress('t11').stepIds.length,3);assert.equal(progress('t12').stepIds.length,5);assert.ok(progress('t12').stepIds.every(id=>!id.startsWith('worm-')));
+assert.equal(progress('t25').stepIds.length,4);assert.ok(!progress('t25').stepIds.includes('spill'));
+assert.match(progress('t19').label,/回訪檢查/);assert.match(progress('t28').label,/回訪檢查/);assert.match(progress('t14').label,/路線檢查/);assert.match(progress('t23').note,/不是兩趟/);
+assert.equal(guide.trophies[13].nameZhTW,'週餓不送信');assert.equal(guide.trophies[19].nameZhTW,'臉難中打');
 for(const [index,stage]of guide.stages.entries()){
  assert.equal(stage.order,index);assert.ok(stage.checkpoint);
  for(const [order,step]of stage.steps.entries()){

@@ -66,3 +66,5 @@ Mycopunk 的五項主功能移入固定左側欄；裝備分類仍沿用原 dire
 2026-11-03 Thank Goodness 閱讀調整（模組 1.1.1，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：攻略與追蹤的步驟直接顯示地點及觸發時機，本章提醒不再折疊。逐步驗證方式、錯過後說明與來源連結集中於既有「來源與查證」頁的查證紀錄，主攻略保留容易錯過／不可逆與待查證警示。只改呈現方式，攻略資料、步驟／獎盃 ID、schema、namespace、IndexedDB 與 Drive 同步邏輯均不變；本模組 SW cache 遞增為 v6，清理前綴不變。
 
 2026-11-03 Thank Goodness 角色小圖（模組 1.1.2，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：新增模組內 `characters.js` 名字／別名對照與 `characters.svg` 的 19 個共用辨識圖，在攻略文字中的英文角色名字旁以 24px 呈現。原文安全跳脫，完整名字比對，圖示排除於輔助朗讀與焦點順序；名字仍可搜尋及操作核取。沒有新增進度欄位、修改攻略 JSON 或觸及其他遊戲，schema／namespace／IndexedDB／Drive 邏輯不變；SW cache v7 納入兩個本機素材，清理前綴不變。造型依據與人工核對限制見模組 `docs/CHARACTER_PORTRAITS.md`。
+
+2026-11-03 Thank Goodness 中英名稱與計數（模組 1.2.0、攻略 1.1.0，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：33 盃新增依 Exophase 同一獎盃連結 ID 核對的 `nameZhTW`，保留 `officialName` 與既有 t00–t32；來源核對紀錄在模組 `docs/EXOPHASE_TROPHY_NAMES.json`。12 個多步驟獎盃於攻略 metadata 明列 `progress.stepIds`／標籤／限制，由 UI 直接從現有 `stepDone` 計算並同步更新所有出現位置，不另存計數或改寫 `trophyEarned`。排除動物的蚯蚓保守提醒、Nick 另一獎盃的豆罐步驟；回訪／路線標籤不表示已證實的必要互動次數。IndexedDB、schema、namespace、Drive 及其他遊戲邏輯不變，SW cache v8 保留原清理前綴。

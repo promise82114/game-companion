@@ -1,6 +1,6 @@
 # Thank Goodness You're Here! 白金 Roadmap
 
-PS5 本體；模組版本 1.1.2、攻略版本 1.0.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
+PS5 本體；模組版本 1.2.0、攻略版本 1.1.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
 
 入口：`/game-companion/games/thank-goodness-youre-here/`。根目錄 `node scripts/build.mjs` 自動產生 Portal 入口，不需修改路由或集中登入。2026-10-31 使用者授權將本模組獨立 commit、push 並透過既有 main 分支 Pages 流程發布，排除其他未完成工作。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)；部署結果以對應提交的 GitHub Actions 為準。
 
@@ -14,6 +14,33 @@ PS5 本體；模組版本 1.1.2、攻略版本 1.0.0，進度 schema 1。新遊�
 - 同步 Base／pending／結果未知復原資料沿用 localStorage，但只使用 `game-companion.thank-goodness-youre-here.sync.*`。每款遊戲／帳號的 Base 分開。Drive 名稱 `game-companion.thank-goodness-youre-here.progress.v1.json`，不是中央同步服務。
 - 匯入先將兩端原文持久化，預覽重疊值的差異，要求下載復原檔並確認保存。單邊欄位保留；預覽過期、持久化或下載 API 失敗不套用。復原檔可直接選擇本機／來源端再走相同預覽流程。完整匯出包含所有 archives 與此 namespace 的 sync recovery；不包含 OAuth token。
 - `dist/sw.js` 只快取本模組資源，只清自己的 `game-companion.thank-goodness-youre-here.assets.*` 前綴。Google OAuth 不做離線快取。新版本更新 ASSETS 或攻略時須遞增 CACHE 版本，確保離線內容一起更新。
+
+## 獎盃中英名稱與計數
+
+2026-11-03 新增（模組 1.2.0，攻略 1.1.0，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）。33 個獎盃以「英文｜繁中」並列於攻略、追蹤、獎盃清單與白金目標，並可用兩種名稱搜尋。依使用者提供的 [英文列表](https://www.exophase.com/game/thank-goodness-you-re-here-psn/trophies/) 與 [繁中列表](https://www.exophase.com/game/thank-goodness-you-re-here-psn/trophies/zh-TW/)，用一般瀏覽器讀取並以相同獎盃連結的 Exophase 數字 ID 核對。保留來源的「週餓不送信」「臉難中打」等原字樣，未由簡中轉換或自行翻譯。[33 項核對紀錄](docs/EXOPHASE_TROPHY_NAMES.json)保留兩頁網址、查閱日期與對照。Exophase ID 只用於來源核對，不是 PSN ID，也不取代已發布的 t00–t32。
+
+12 個在多個步驟提及的獎盃，於每一處名稱後顯示全域計數；計數直接由該獎盃列明的 stepDone 推導，不因目前章節、搜尋／篩選或重複出現而改變分母。勾選加一、取消扣一，重整、跨分頁、匯入、初始化及手動同步後依現有步驟狀態重算；不額外保存另一份計數，也不自動改寫 trophyEarned。已跳盃與步驟滿格仍是獨立狀態。
+
+| 獎盃 | 類型／分母 | 計數範圍與限制 |
+| --- | --- | --- |
+| Done Up Like a Kipper／魚滿盆滿 | 互動／3 | 依三次魚販互動的攻略勾選計算；實際跳盃仍需手動確認。 |
+| Friend of the Forest／森林之友 | 動物／5 | 計算五組動物的攻略項目；蚯蚓是否必要仍待查證，另列提醒，不加入此分母。 |
+| No Post on Thuesdays／週餓不送信 | 郵筒／6 | 計算六處郵筒的攻略勾選；不讀取遊戲內判定。 |
+| Bobby Knocker／警察，快開門 | 路線檢查／9 | 這是攻略列出的九處檢查進度，並非已實測的必要敲門次數；沿途其他關門也應檢查。 |
+| Cheek to Cheek／親密接觸 | 互動／3 | 依三次餐車互動的攻略勾選計算；實際跳盃仍需手動確認。 |
+| The Rat Pack／鼠群 | 鼠群／3 | 計算三組老鼠的攻略項目；每組需聽到合唱。 |
+| Mole Supper／鼴鼠大餐 | 流程步驟／2 | 記錄收到與取消邀請兩個事件；不是需要兩次晚餐或重複拍打的意思。 |
+| Think F.A.S.T.／臉難中打 | 回訪檢查／6 | 這是六次路線回訪的檢查進度，未證實固定互動次數；只勾已聽完新對話的項目。 |
+| The People's Princess／全民公主 | 流程步驟／2 | 記錄首次經過管道與最後打破紀念盤；不是兩趟管道就會跳盃，也不推定重走管道的固定次數。 |
+| Everything Must Go／一個不剩 | 開店檢查／4 | 計算四個店面變化的路線檢查；不包含另一獎盃的窮困男子豆罐事件，也不代表固定購買或拍打次數。 |
+| The Ol' One Two／連兩中 | 回訪檢查／7 | 這是七次路線回訪的檢查進度，並非已證實的必要敲亭次數；出現丟蛋把戲後再手動記錄獎盃。 |
+| Shell Shocked／極度驚嚇 | 蝸牛／7 | 計算攻略列出的七個蝸牛檢查項目；部分位置仍待實機核對，先巡完地面再跳井。 |
+
+森林動物只計五組，蚯蚓保守提醒不加入；Nick 的開店進度不含另一個豆罐獎盃事件。路線／回訪計數代表攻略檢查項目，未升級為已證實的遊戲內必要次數。紀念盤的兩個流程事件也不代表兩次經過即可跳盃。肉塊與花朵仍為原本的整段操作步驟，沒有逐物件勾選，因此不捏造肉塊／花朵分母。
+
+此批僅新增攻略 metadata 與顯示，100 步的操作、順序、既有警示與查證狀態不變。儲存 schema／namespace、IndexedDB／Drive 邏輯及其他遊戲維持原樣；舊版備份可直接沿用原有匯入保護流程。SW cache 遞增為 v8，名字與計數可隨攻略離線使用。真實 PS5 跳盃與 Google Drive 仍須人工驗收。
+
+本機驗證（2026-11-03）：根 verify／build／verify-site、模組完整隔離瀏覽器回歸通過，pageerror 0。新增檢查涵蓋 33 盃依 Exophase ID 對照、繁中搜尋、12 組計數的跨章／搜尋範圍／取消勾選／重整／跨分頁一致性、蚯蚓與未知項目排除、Nick 的豆罐不誤計、滿格與跳盃獨立；原有匯入、初始化與合成 Drive 回歸亦通過。攻略與獎盃清單於 1440／768／390px 無橫向溢出，已查看桌面與手機截圖；只使用合成進度及新 contexts。
 
 ## 初始化紀錄與下一輪遊玩
 
