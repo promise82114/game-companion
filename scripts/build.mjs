@@ -19,6 +19,9 @@ for(const item of await fs.readdir(path.join(root,'games'),{withFileTypes:true})
  await fs.cp(path.join(moduleRoot,'dist'),path.join(output,'games',config.slug),{recursive:true});modules.push(config);
 }
 await fs.cp(path.join(root,'tools/sync-safety'),path.join(output,'sync-safety'),{recursive:true});
+await fs.cp(path.join(root,'shared'),path.join(output,'shared'),{recursive:true});
+// Grounded 僅使用既有純合併 core，不載入登入或 Drive adapter。
+await fs.copyFile(path.join(root,'games/talos2/dist/shared/sync-core.js'),path.join(output,'shared/merge-core.js'));
 assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,modules.length);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
@@ -27,6 +30,7 @@ const presentation={
  'edf-wb2':{kind:'checklist',features:['救出分布','關卡筆記','手動 Drive 同步']},
  mycopunk:{kind:'checklist',features:['雙語裝備攻略','隱藏解鎖','配裝模擬']},
  talos2:{kind:'roadmap',features:['60 個本體獎盃','8 階段','三市長分歧']},
+ grounded:{kind:'roadmap',features:['46 個本體獎盃','庭院示意圖','周目與成員隔離']},
  'thank-goodness-youre-here':{kind:'roadmap',features:['33 個本體獎盃','8 階段','跨階段追蹤']}
 };
 html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>{

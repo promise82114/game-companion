@@ -1,0 +1,14 @@
+{
+  "gameId": "grounded",
+  "slug": "grounded",
+  "title": "Grounded",
+  "description": "庭院探索 Roadmap、46 項獎盃、收集追蹤與原創區域示意圖",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/grounded/",
+  "storagePrefix": "game-companion.grounded.",
+  "driveProjectId": "game-companion.grounded",
+  "driveFileName": "game-companion.grounded.progress.v1.json",
+  "cloudWritesEnabled": false
+}

@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-04 Grounded 1.0.0 本機整合：原生 ES modules，`game-companion.grounded.progress.v1` 獨立 IndexedDB，`schemaVersion:1`；worlds 下以世界 UUID、玩家 UUID、周目 UUID／base 分離共同與個人進度。Talos 的交易 store 抽為根 `shared/roadmap-store.js` 單一來源，原預設 fresh／validator 不變；Talos 入口按 source／artifact 層級載入，Grounded 使用可配置 fresh／validator。build 另發布 `_site/shared/`，並從既有 Talos core 發布純合併函式。Grounded 不載入 OAuth／adapter、沒有 SW 或即時多人同步。匯入沿用兩端原文、差異選擇、下載確認及預覽條件寫入規則。53 項部分收集資料、七階段、46 盃、原創概念 SVG 與限制見 `games/grounded/README.md`。2026-11-04 使用者已授權提交／推送本批，沿用 main 的 Pages 流程；部署結果以對應 GitHub Actions 為準。
+
 日期：2026-10-31；EDF 模組版本 1.1.0，Mycopunk 1.0.0，均納入 main 分支的靜態發布流程。
 
 原始基準為 `GAME_COMPANION_ARCHITECTURE.md`。使用者後續「加速整合任務」明確改為一次連續實作 EDF WB／WB2，不需逐階段批准；資料保護、獨立模組及正式雲端／切換須確認的要求仍有效。原始規格與 P0 保留作歷史，不改寫成已驗收。

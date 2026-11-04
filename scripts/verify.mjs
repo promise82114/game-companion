@@ -44,5 +44,7 @@ results.push({slug:'mycopunk',items:842,legacyIds:660,equipment:27,hiddenPaths:7
 const thankGoodnessCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/thank-goodness-youre-here'),encoding:'utf8'});assert.equal(thankGoodnessCheck.status,0,thankGoodnessCheck.stderr);console.log(thankGoodnessCheck.stdout.trim());
 results.push({slug:'thank-goodness-youre-here',trophies:33,roadmap:'independent IndexedDB steps and trophies',cloudWrite:'blocked-until-current-grant-proven'});
 const talosCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/talos2'),encoding:'utf8'});assert.equal(talosCheck.status,0,talosCheck.stderr);console.log(talosCheck.stdout.trim());
+const groundedCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/grounded'),encoding:'utf8'});assert.equal(groundedCheck.status,0,groundedCheck.stderr);console.log(groundedCheck.stdout.trim());
+results.push({slug:'grounded',baseTrophies:46,stages:7,collectibles:53,collectionDatabase:'partial',cloudWrite:'not implemented'});
 results.push({slug:'talos2',baseTrophies:60,dlcExcluded:9,roadmap:'independent steps/trophies/backups/branches in IndexedDB',cloudWrite:'blocked-until-current-grant-proven'});
 console.log(JSON.stringify({passed:true,modules:results}));

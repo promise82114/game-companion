@@ -2,7 +2,7 @@
 
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
-目前包含 EDF World Brothers、EDF World Brothers 2、Mycopunk、The Talos Principle II 與 Thank Goodness You're Here!。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
+目前包含 EDF World Brothers、EDF World Brothers 2、Mycopunk、The Talos Principle II、Thank Goodness You're Here! 與 Grounded。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
 
 2026-10-31 入口與 Roadmap 介面改版：遊戲目錄提供原創 SVG 主題插畫、功能摘要、搜尋與工具類型篩選；兩款新 Roadmap 對齊功能導覽、右上 Drive／備份、章節直達、搜尋與下一步。章節可以直接切換，提醒依目前瀏覽章節呈現，早期步驟不會被自動填寫或強制完成。2026-11-01 使用者已授權提交與推送本批 UI／文件，並透過既有 main 分支 Pages 流程發布至正式站；部署結果以對應提交的 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。詳見 [介面驗證報告](docs/reports/UI_UX_REPORT.md)。
 
@@ -62,6 +62,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 建置與資料驗證沿用上述命令；隔離瀏覽器執行 `node scripts/verify-talos2-browser.mjs`，`TEST_BASE_URL` 可設定本機網址。詳見 [Talos 模組](games/talos2/README.md) 與 [攻略查證／驗證報告](games/talos2/docs/RESEARCH.md)。官方逐盃數字 ID、部分英文對話與 PS5 分支重現仍待查證，已在介面標示。已接入 main 的 Pages 發布流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)。
 
 ## 維護文件
+
+Grounded 已完成本機整合：`/game-companion/games/grounded/` 提供七階段 Roadmap、公開 PlayStation 46 盃、十類收集、Super Win 核對、原創庭院示意圖、多世界／成員／周目隔離。收集資料庫目前為 53 個具名項目的部分清單，沒有未核實精確座標；尚未接入 Drive 或即時共享。2026-11-04 使用者已授權 commit／push，沿用 main 的 Pages 流程；部署結果以對應 GitHub Actions 為準。執行 `node scripts/verify-grounded-browser.mjs` 驗證，詳見 [模組說明](games/grounded/README.md)、[P0 報告](GROUNDED_P0_REPORT.md) 與 [實作報告](GROUNDED_IMPLEMENTATION_REPORT.md)。
 
 Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[模組說明](games/thank-goodness-youre-here/README.md)。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)包含 PS5 本體 33 獎盃、8 階段、100 個獨立步驟與 13 組跨階段追蹤。IndexedDB 分開保存攻略與獎盃狀態，Drive 沿用既有安全同步核心。執行 `node scripts/verify-thank-goodness-browser.mjs` 驗證新模組；真實 PS5 跳盃與正式 Google Drive 尚待人工驗收。
 
