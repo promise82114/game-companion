@@ -4,6 +4,26 @@
 
 ## 已取得證據
 
+### 2026-11-05 城市回訪、巨構行走指引與預設地圖放大（1.5.0）
+
+內容 `2026.11.05.1`。使用者授權實作、測試、commit、push 與正式部署。保留已發布 58 個主步驟及全部 212 題的 ID，新增北側巨構／西側救援兩步，共 60 步、26 片段；沒有調整 schema 1、IndexedDB、匯入或 Drive adapter。31 個路標以 `steps[waypoint-ID]` 沿用既有狀態保存；父項不代填，舊完成也不自動填新路標。
+
+**東側路線**：依 [Dick Leeuw／Louis Koot 東側上篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_1.htm)、[下篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_2.htm) 的逐段文字與遊戲畫面核對入口大廳四側口；L1 的 NOEMA-01 去程 Melville 使用中，回程才讀 Rust；L2 Byron 與 R1 水池 NOEMA-2 是盡頭，R2 等遠端開門後才深入。畫面 `Talos_2_757.jpg` 可辨識面向電梯的四口關係。入口／中央區分圖，中央按照同一攻略綠→紅→藍，完成仍須進三色門讀 NOEMA-03，再回 L1、VTOL、基地交通艙 N1。橋塊已提供，不誤導回戶外收拼塊。
+
+**其餘巨構**：同作者 [北側上篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_1/mega_north_1.htm)、[下篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/mega_north_2.htm) 確認正前階梯的 Door override、Byron 自行啟動紅光、玩家藍／綠、事故後撤離再回城；[南側上篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_1.htm)、[下篇](https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_2.htm) 確認入口右終端／左空井、電梯／纜車、先拉正面拉桿出現 0/5、Yaqut 操作攻略第 4 銷、5/5 再拉並原路離開。五銷仍共用原解題項目，不冒充新增五個已發布謎題 ID。[西側救援與回城](https://mysterymanor.net/walkthroughs/Talos_Principle_2/19_Megastructure_West/megastructure_west_1.htm) 與 [最終流程](https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm) 分開，避免把救 Byron 與雙世界八輪盤混在一起。室內圖僅畫拓樸／流程；沒有未核實的北向、完整平面與樓層比例。
+
+**城市與基地**：以 [Cognition 城市圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536) 的三次到訪標記核對 Purple、Rand、Cornelius、Schuyler、Damien、Atal、Malduc、Neith 與城市地標；直接觀看作者圖，未下載、部署或複製圖像。[初訪圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/02_New_Jerusalem_1/jerusalem_1_1.htm) 補 Josephus／Melville 停電／塔上左轉 Doge 與簡報、館內 Rand 終端，及基地與 VTOL 的區別。[第二次回訪](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/new_jerusalem_2.htm) 核對先向 Neith 要工作終端許可、Notes／Rec_final_2，再 Thecla、城市探索與政治對話，最後簡報登機。該作者走 Helga 配對，不能把其個別代碼當成 Rand 路線通用答案；本版只標位置。Act V 的 `Talos_2_3098.jpg` 與 `Talos_2_3100.jpg` 可辨識 Melville 花圃涼亭、Yaqut 環形階梯，但不足以鎖定城市座標，所以只在流程圖與文字提醒黃色三角，城市圖不落假點。基地將交通艙／VTOL、Golden Gate／星星神殿分開辨識，不把 24 星誤寫成黃金門條件。
+
+**更正舊結論**：本報告 1.4.0 區段與舊版獎盃摘要將 Overload 放在西側，是錯誤。查閱 [SuperSoluce 作者 E2 圖文](https://video-game-guide-walkthrough.supersoluce.com/solution/the-talos-principle-2-guide-walkthrough/collectibles/tp2-lost-labs/lost-lab-wooded-plateau-east-2/) 明列最深處首台終端 Schematic_108、Miranda 幻象後跳 Overload；已移至 E2 的主步驟、獎盃取得條件及驗收文字。西側仍有劇情過載，但不把它當該獎盃的首次觸發。
+
+**呈現與驗證**：沿用 design-taste-frontend 的既有 app 樣式、字型與色彩；桌面原 300px 地圖改為 clamp(400px,31vw,520px)，平板／手機直接顯示行內圖，仍有常駐 modal。14 張新增圖加戶外 12 張共 26 張；圖層隨路標／解題閱讀切換，手動選圖不立即被觀察器改回。行走指引即使關閉「拒絕謎語」也顯示，設備解法仍由開關控制；路標完成可收合／回看、保留焦點與未知資料、支援下一步與深連結。
+
+新增回歸 `scripts/verify-talos2-navigation-browser.mjs`：六寬 1440／1280／1024／768／390／320 無溢出、行內地圖尺寸、14 張 SVG 標籤邊界、分次 NPC、未知位置不落點、三色題完成後仍返回終端、北側舊題深連結、路標收合／取消／焦點／重載／未知欄位保留、手機定位與 Escape，全部通過。既有 Talos 瀏覽器回歸通過，含合成匯入／同步／配額／跨分頁隔離。Source lint 0 FAIL／0 WARN。正式發布以本次 commit 的 Pages 結果為準；所有測試均為合成資料及新 context，不是 PS5 或真實 Google 驗收。
+
+本輪最終檢查：`node scripts/verify.mjs`、`node scripts/verify-sync.mjs`、`node scripts/build.mjs`、`node scripts/verify-site.mjs`（618 檔／121 本機連結）、既有 Talos 完整瀏覽器回歸及新增導航回歸全部通過。東側頁三寬設計 inspector 為 0 FAIL／0 WARN，已檢視桌面、平板、手機截圖與長頁閱讀圖。
+
+**保留待查證**：北側完整撤離轉角／樓層、南側四份文字與每台終端的逐一對照、Cornelius 工作電腦房內座位、工地精確入口、Act V Melville／Yaqut 地理座標、早期限定事件能否在 Act V 補拿；各次回訪人物／同行條件不保證跨分支通用。
+
 ### 2026-11-04 獎盃條件、分章與漸進式收斂、區域 SVG（模組 1.4.0）
 
 內容版本 `2026.11.04.4`。本輪使用者明確要求實作分章、完成收合與地圖，故依本輪指示直接實作，取代 `docs/PROGRESSIVE_ROADMAP_UX.md` 第 7 節的第一階段唯讀流程；沿用該文件核心互動與驗收規則。只改 Talos 模組，沒有將其他遊戲轉成共用框架。

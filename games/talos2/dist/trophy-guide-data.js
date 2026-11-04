@@ -11,7 +11,7 @@ export const trophyConditions=descriptions.map((descriptionZhTW,i)=>({exophaseId
 export const trophyGuides={
  'philosopher':{steps:['platinum-audit'],summary:['取得其餘 59 個本體獎盃；DLC 不計入白金。'],track:'platinum'},
  'ab-initio':{steps:['calibration'],summary:['依序完成 Calibration 的 12 個教學謎題，拿齊三色拼塊並打開三道門。','最後穿過傳送門，在 New Jerusalem 醒來。']},'wanderers':{steps:['departure-check'],summary:['序章簡報接受遠征；先完成城市裡的限定對話與請願。','返回 VTOL，隨遠征隊出發。']},'not-what-it-seems':{steps:['doge-intro','doge-survey','doge-match']},
- 'overload':{steps:['final-city'],summary:['在西側巨構救援 Byron 後，依黃色目標撤回 VTOL。','隨主線經歷過載、於 Act V 在城市醒來；核對跳盃。']},
+ 'overload':{steps:['region-e2'],summary:['E2 第 6 題 Passage 西南方上坡進 Lost Lab。','到最深處第一台終端讀 Schematic_108；Miranda 幻象結束後核對 Overload。階梯上還有另一台可讀終端。']},
  'into-the-machine':{steps:['first-megastructure']},'prometheus-unbound':{steps:['prometheus-rescue']},'break-the-loop':{steps:['final-backup','ending']},
  'the-future':{steps:['all-puzzles','miranda','ending'],summary:['親自完成全部 12 個黃金謎題，在 Golden Gate 後救回 Miranda。','保留救回她的同一份遊戲進度，再完成主結局。'],track:'future'},
  'puzzle-fiend':{steps:['all-puzzles'],summary:['親自解完每區 8 個正規與 2 個 Lost 謎題，共 120 題。','曾用 Spark 跳過的題目也要回去親自解；本網站勾選只記錄你的確認。'],track:'regular'},

@@ -1,3 +1,4 @@
+import {storySources} from './story-data.js';
 import {applyMayorResearch} from './mayor-research.js';
 import {trophyNamesZhTW,trophyNameSource} from './trophy-names.js';
 import {trophyConditions} from './trophy-guide-data.js';
@@ -118,17 +119,20 @@ for(const [stageId,code,name] of regions) add(stageId,'region-'+code.toLowerCase
  ...(code==='W2'?['Lost Lab 先不要進入；保留下方入口備份，再繼續市長路線。']:[])
 ],{trophyRefs:refs(name),sources:['guide','wiki','steam','remnants'],warningLevel:'recommended',verificationStatus:'consensus'});
 // 區域帳插在轉場驗收之前；每階段順序明確，不依顯示標題生成 ID。
+Object.assign(sources,storySources);
+add('P2','north-megastructure','北側巨構：開門、重力區與撤離','N3 後 → Base Camp VTOL → 北側巨構',['先讀下方入口指引：Door override 在正前階梯上，不是左梯關閉的大門。','Byron 啟動紅光後，依路線解藍／綠；主線終端事故後轉撤離，接著才是第二次回城。'],{sources:['megaNorth1','megaNorth2','megaNorthWiki'],verificationStatus:'consensus'});
+add('P7','west-megastructure','西側巨構：解救 Byron，再回城','市長路線處理後 → 西側 VTOL',['這次先救 Byron；最終雙世界八輪盤在城市回訪與島上清理後才進行。','跟隨下方地標與黃色三角，撤離途中會由劇情帶回 Neith 實驗室。'],{sources:['megaWest'],verificationStatus:'consensus'});
 const flowOrders={
  P0:['calibration','save-safety','neutral-route','doge-intro','chicken','petition','schuyler','museum','purple','departure-check'],
  P1:['doge-survey','team','field-basics','puzzle-time','chase','region-e1','single-rod','one-lap','doge-match','region-e2','region-e3','first-megastructure'],
- P2:['rand-north','region-n1','broken-somnodrome','region-n2','region-n3','north-exit'],
+ P2:['rand-north','region-n1','broken-somnodrome','region-n2','region-n3','north-exit','north-megastructure'],
  P4:['hard-way','rand-south','artifacts','region-s1','region-s2','region-s3','prometheus-rescue'],
  P5:['west-arrival','region-w1','region-w3','w2-backup','region-w2','working-somnodrome'],
- P7:['final-city','all-puzzles','miranda','collectibles','stars','story-audit','final-backup','ending','platinum-audit']
+ P7:['west-megastructure','final-city','all-puzzles','miranda','collectibles','stars','story-audit','final-backup','ending','platinum-audit']
 };
 for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),order=flowOrders[stage.id];list.sort((a,b)=>order?order.indexOf(a.id)-order.indexOf(b.id):a.order-b.order).forEach((s,i)=>s.order=i+1);}
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
-export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.5',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.4.1',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,...trophyConditions.find(t=>t.exophaseId===localizedTrophies.get(name).exophaseId),descriptionCheckedAt:'2026-11-04',category:'base',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
+export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.05.1',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.5.0',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,...trophyConditions.find(t=>t.exophaseId===localizedTrophies.get(name).exophaseId),descriptionCheckedAt:'2026-11-04',category:'base',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);
 // 首次可取得的獎盃放在事件之前；P7 僅保留收尾驗收。
 const editStep=(id,patch)=>Object.assign(steps.find(s=>s.id===id),patch);
@@ -140,5 +144,8 @@ for(const id of ['single-rod','one-lap','hard-way']){const step=steps.find(s=>s.
 editStep('artifacts',{trophyRefs:refs('Archaeologist'),title:'沿路累計人類遺物，目標十件',actions:['E1 起就可以辨識遺物並取得第一件的 Discovery；從各區清單累計到十件，再核對 Archaeologist。','遺物可能有替代出現點，同一物品已在前區取得後，後區可能不再出現。候選位置不保證有物品；找到後勾選該物品，其他區的同一物品與地圖會連動，不必在每區重找。']});
 editStep('collectibles',{trophyRefs:refs("Trevor's Biographer",'Ecstatic Truth','Mnemosyne','Scientia Vincere Tenebras','Lord of the Files')});
 editStep('stars',{trophyRefs:refs('The Edge of Forever','Renaissance Robot')});
-const finalCity=steps.find(s=>s.id==='final-city');finalCity.trophyRefs.push(trophyKey('Overload'));
-editStep('story-audit',{title:'核對沿途取得的主線獎盃',actions:['Prometheus Unbound 在南側巨構釋放 Prometheus 時取得；Overload 在西側巨構救援後的過載劇情取得。','這裡只補核對 PS5 通知；實際操作已放在相應章節。'],verificationStatus:'consensus',sources:['steam','manorWest','wiki']});
+editStep('first-megastructure',{title:'東側巨構：入口支線、三色門與回程',actions:['從 E3 交通艙回 Base Camp，再搭 VTOL 進巨構；不是在基地尋找三色雷射。','照下方順序走入口支線、中央三色門、主線終端及回程 NOEMA-01。行走指引直接顯示；設備解法由「拒絕謎語」開啟。'],sources:['megaEast1','megaEast2','megaEastWiki']});
+editStep('north-exit',{title:'N3 離區前：核對收集，再回基地',actions:['離區前核對 N3 收集與塔已啟動，並確認 Byron 對話、N2 嘗試 Somnodrome 與 Rand 私訊已處理；再搭交通艙回 Base Camp。','接著搭 VTOL 進北側巨構；入口、重力區與撤離在下一個片段。']});
+editStep('final-city',{title:'Act V 城市回訪：醒來、招募與登機',location:'Neith 實驗室 → 中央塔 → 城市',actions:['西側救援後在 Neith 實驗室醒來，先核對本輪市長。','依下方順序回城市、找 Melville／Yaqut，再登機回島；最終進巨構前仍可處理島上收集。'],sources:['megaWest','cityMap']});
+const e2=steps.find(s=>s.id==='region-e2');e2.trophyRefs.push(trophyKey('Overload'));e2.actions.unshift('沿路先找 Lost Lab：第 6 題 Passage 西南方上坡的入口。到最深處第一台終端讀 Schematic_108，看到 Miranda 幻象後核對 Overload；上階梯還有另一台終端。');e2.sources.push('overloadEarly');
+editStep('story-audit',{title:'核對沿途取得的主線獎盃',actions:['Prometheus Unbound 在南側巨構釋放 Prometheus 時取得；Overload 在 E2 Lost Lab 讀 Schematic_108 並看 Miranda 幻象後取得。','這裡只補核對 PS5 通知；實際操作已放在相應章節。'],verificationStatus:'consensus',sources:['overloadEarly','megaSouth2']});

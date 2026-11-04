@@ -59,6 +59,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 2026-11-04 模組 1.3.0 新增區域收集清單、位置圖連結與計數：12 區固定追蹤 80 項（12 實驗室、兩種錄音各 12、20 人物光影、24 星星）。文字／遺物另以各區實際數量加總至獎盃目標，不以目標數冒充遊戲總量；N1／W3 遺物位置及各區文字總量仍待查證。
 
+2026-11-05 模組 1.5.0 補入三次城市到訪與巨構導航：60 主步驟、26 閱讀片段、31 個沿路目標，新增 14 張城市／室內／基地原創示意圖（共 26 張），與既有 212 題穿插閱讀。桌面行內地圖放大至約 400～520px，窄螢幕直接顯示；未核對轉角／人物精確座標保留待查證。Overload 更正為 E2 實驗室 Schematic_108 後取得。新導航回歸另執行 `node scripts/verify-talos2-navigation-browser.mjs`。
+
 建置與資料驗證沿用上述命令；隔離瀏覽器執行 `node scripts/verify-talos2-browser.mjs`，`TEST_BASE_URL` 可設定本機網址。詳見 [Talos 模組](games/talos2/README.md) 與 [攻略查證／驗證報告](games/talos2/docs/RESEARCH.md)。官方逐盃數字 ID、部分英文對話與 PS5 分支重現仍待查證，已在介面標示。已接入 main 的 Pages 發布流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)。
 
 ## 維護文件

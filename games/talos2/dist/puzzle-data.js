@@ -1,3 +1,4 @@
+import {storyPuzzleDetails} from './story-data.js';
 // 本體謎題與逐題來源；中文操作摘要不是官方譯名。
 export const puzzleCheckedAt="2026-11-03";
 export const puzzleGroups={
@@ -4869,3 +4870,6 @@ export const puzzles=[
     ]
   }
 ];
+
+for(const puzzle of puzzles)if(storyPuzzleDetails[puzzle.id])Object.assign(puzzle,storyPuzzleDetails[puzzle.id]);
+puzzleGroups['north-megastructure']={title:'北側巨構・藍與綠雷射',intro:'Byron 處理紅光；沿下方路線處理另外兩色，再進終端並撤離。'};
