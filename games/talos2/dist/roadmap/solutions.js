@@ -1,11 +1,14 @@
 import {puzzles,puzzleGroups} from '../puzzle-data.js';
+import {revealButton,completionBody} from './completion.js';
+import {mapLocateButton,regionMaps} from './maps.js';
 
 export {puzzles,puzzleGroups};
 export const puzzleProgressId=id=>'puzzle-'+id;
 export const puzzlesForStep=id=>puzzles.filter(p=>p.stepId===id);
 export function puzzleHtml(puzzle,{escape,progress,showSolutions}){
  const id=puzzleProgressId(puzzle.id),complete=progress.steps[id]?.status==='completed';
- return `<article class="puzzle${complete?' puzzle-done':''}" id="${id}" data-puzzle="${escape(puzzle.id)}"><div class="puzzle-heading"><input type="checkbox" id="check-${id}" data-puzzle-complete="${escape(puzzle.id)}" ${complete?'checked':''}><label for="check-${id}"><span class="puzzle-number">${escape(puzzle.label)}</span><strong>${escape(puzzle.title)}</strong>${puzzle.verificationStatus==='unverified'?'<span class="solution-pending">待查證</span>':''}</label></div>${puzzle.warning?'<p class="puzzle-warning">'+escape(puzzle.warning)+'</p>':''}${showSolutions?`<div class="puzzle-solution" data-solution="${escape(puzzle.id)}">${puzzle.actions.length?'<ol>'+puzzle.actions.map(text=>'<li>'+escape(text)+'</li>').join('')+'</ol>':''}${puzzle.verificationStatus==='unverified'?'<p class="solution-pending">待查證：'+escape(puzzle.pending||'尚未核對完整操作，請先看下方攻略。')+'</p>':''}${puzzle.diagram?diagramHtml(puzzle.diagram):''}${puzzle.diagramCells?gridHtml(puzzle.diagramCells,escape):''}<div class="solution-sources">${puzzle.sources.map(source=>'<a href="'+escape(source.url)+'" target="_blank" rel="noopener noreferrer">'+escape(source.title)+' ↗</a>').join('')}</div></div>`:''}</article>`;
+ const body=(regionMaps[puzzle.region]?mapLocateButton(id,escape):'')+(showSolutions?`<div class="puzzle-solution" data-solution="${escape(puzzle.id)}">${puzzle.actions.length?'<ol>'+puzzle.actions.map(text=>'<li>'+escape(text)+'</li>').join('')+'</ol>':''}${puzzle.verificationStatus==='unverified'?'<p class="solution-pending">待查證：'+escape(puzzle.pending||'尚未核對完整操作，請先看下方攻略。')+'</p>':''}${puzzle.diagram?diagramHtml(puzzle.diagram):''}${puzzle.diagramCells?gridHtml(puzzle.diagramCells,escape):''}<div class="solution-sources">${puzzle.sources.map(source=>'<a href="'+escape(source.url)+'" target="_blank" rel="noopener noreferrer">'+escape(source.title)+' ↗</a>').join('')}</div></div>`:'');
+ return `<article class="puzzle${complete?' puzzle-done':''}" id="${id}" data-puzzle="${escape(puzzle.id)}"><div class="puzzle-heading"><input type="checkbox" id="check-${id}" data-puzzle-complete="${escape(puzzle.id)}" ${complete?'checked':''}><label for="check-${id}"><span class="puzzle-number">${escape(puzzle.label)}</span><strong>${escape(puzzle.title)}</strong>${puzzle.verificationStatus==='unverified'?'<span class="solution-pending">待查證</span>':''}</label>${revealButton(id,complete,escape)}</div>${puzzle.warning?'<p class="puzzle-warning">'+escape(puzzle.warning)+'</p>':''}${completionBody(id,complete,body)}</article>`;
 }
 function gridHtml(rows,escape){
  const colors=['#dce5d8','#f1ddad','#d7e6ed','#ebcfc3','#dfd9ed'],letters=[...new Set(rows.join(''))];

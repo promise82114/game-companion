@@ -1,5 +1,7 @@
 import {collectionRegions,collectionItems,artifactCandidates} from '../collection-data.js';
 import {puzzles,puzzleProgressId} from './solutions.js';
+import {revealButton,completionBody} from './completion.js';
+import {mapLocateButton} from './maps.js';
 
 export {collectionRegions,collectionItems,artifactCandidates};
 export const collectionProgressId=id=>'collectible-'+id;
@@ -27,10 +29,11 @@ export function regionCollectionsHtml(code,{escape,progress}){
  const region=collectionRegions.find(r=>r.code===code);if(!region)return '';
  const c=regionCounts(progress,code),list=itemsForRegion(code),stars=starsForRegion(code),candidates=artifactCandidates.filter(item=>item.region===code);
  return `<section class="region-collections" id="collection-region-${code}" data-region-collection="${code}"><div class="collection-heading"><h3>本區收集</h3><strong data-region-total="${code}">${c.done} / ${c.total} · ${c.complete?'已收齊':'未收齊'}</strong></div><dl class="collection-counts">${Object.entries(labels).map(([kind,label])=>`<div><dt>${label}</dt><dd data-region-count="${code}-${kind}">${c[kind].total?c[kind].done+' / '+c[kind].total:'無'}</dd></div>`).join('')}</dl>
- ${list.map(item=>`<article class="collection-item${collectionDone(progress,item.id)?' collection-done':''}" id="${collectionProgressId(item.id)}"><label><input type="checkbox" data-collection-complete="${item.id}" ${collectionDone(progress,item.id)?'checked':''}><strong>${escape(item.title)}</strong></label>${item.warning?'<p class="puzzle-warning">'+escape(item.warning)+'</p>':''}<p class="collection-location">${escape(item.location)}</p><p class="collection-action">${escape(item.action)} ${imageLink(item,escape)}</p></article>`).join('')}
+ <p class="collection-preflight">開始本區謎題前先看位置，沿路順手完成；錄音需下載，光影需碰觸，電腦文字需逐份開啟。${['E1','E2'].includes(code)?'本區沒有一般人物光影。':'本區有 2 個人物光影。'}</p>
+ ${list.map(item=>{const id=collectionProgressId(item.id),complete=collectionDone(progress,item.id);return `<article class="collection-item${complete?' collection-done':''}" id="${id}"><div class="collection-item-heading"><label><input type="checkbox" data-collection-complete="${item.id}" ${complete?'checked':''}><strong>${escape(item.title)}</strong></label>${revealButton(id,complete,escape)}</div>${item.warning?'<p class="puzzle-warning">'+escape(item.warning)+'</p>':''}${completionBody(id,complete,`<p class="collection-location">${escape(item.location)}</p><p class="collection-action">${escape(item.action)} ${imageLink(item,escape)} ${mapLocateButton(id,escape)}</p>`)}</article>`;}).join('')}
  <div class="collection-stars">${stars.map(p=>`<div><label><input type="checkbox" data-collection-star="${p.id}" ${progress.steps[puzzleProgressId(p.id)]?.status==='completed'?'checked':''}><span>${escape(p.title)}</span></label><a href="#puzzle-${p.id}" data-puzzle-link="${p.id}">前往雕像題目</a></div>`).join('')}</div>
  <div class="collection-counters">${counterHtml(code,'text','本區已讀文字',progress)}${counterHtml(code,'artifact','本區已發現遺物',progress)}</div>
- <div class="artifact-candidates"><h4>遺物候選位置</h4><p>出現點可能變動；找到並完成遊戲中的辨識後，再記入上方數量。</p>${candidates.length?'<ul>'+candidates.map(item=>'<li>'+escape(item.location)+' '+imageLink(item,escape)+'</li>').join('')+'</ul>':'<p class="solution-pending">本區的遺物位置待查證，不能當成沒有遺物；找到後仍可記數。</p>'}</div></section>`;
+ <div class="artifact-candidates"><h4>遺物候選位置</h4><p>同一物品已在其他區取得後，替代點可能不再出現。完成辨識後再記入上方數量。</p>${candidates.length?'<ul>'+candidates.map(item=>'<li id="artifact-'+item.id+'"><strong>'+escape(item.title)+'</strong> · '+escape(item.location)+' '+imageLink(item,escape)+' '+mapLocateButton('artifact-'+item.id,escape)+'</li>').join('')+'</ul>':'<p class="solution-pending">本區的遺物位置待查證，不能當成沒有遺物；找到後仍可記數。</p>'}</div></section>`;
 }
 export function collectionMiniHtml(progress){const c=collectionTotals(progress);return `<p class="collection-mini"><a href="?view=collectibles" data-view="collectibles">收集 ${c.done} / ${c.total} · ${c.regions} / 12 區已收齊</a></p>`;}
 export function collectionOverviewHtml({escape,progress}){

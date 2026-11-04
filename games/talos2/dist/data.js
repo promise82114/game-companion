@@ -1,5 +1,6 @@
 import {applyMayorResearch} from './mayor-research.js';
 import {trophyNamesZhTW,trophyNameSource} from './trophy-names.js';
+import {trophyConditions} from './trophy-guide-data.js';
 const localizedTrophies=new Map(trophyNamesZhTW.map(t=>[t.officialName,t]));
 // 靜態攻略版本與使用者進度分離；攻略與獎盃名稱各自記錄查證日期。
 const trophyNames = [
@@ -118,13 +119,26 @@ for(const [stageId,code,name] of regions) add(stageId,'region-'+code.toLowerCase
 ],{trophyRefs:refs(name),sources:['guide','wiki','steam','remnants'],warningLevel:'recommended',verificationStatus:'consensus'});
 // 區域帳插在轉場驗收之前；每階段順序明確，不依顯示標題生成 ID。
 const flowOrders={
- P1:['region-e1','doge-survey','team','field-basics','chase','puzzle-time','region-e2','single-rod','one-lap','region-e3','doge-match','first-megastructure'],
- P2:['region-n1','rand-north','region-n2','broken-somnodrome','region-n3','north-exit'],
- P4:['region-s1','hard-way','rand-south','region-s2','region-s3','artifacts','prometheus-rescue'],
- P5:['west-arrival','region-w1','region-w3','region-w2','w2-backup','working-somnodrome'],
+ P0:['calibration','save-safety','neutral-route','doge-intro','chicken','petition','schuyler','museum','purple','departure-check'],
+ P1:['doge-survey','team','field-basics','puzzle-time','chase','region-e1','single-rod','one-lap','doge-match','region-e2','region-e3','first-megastructure'],
+ P2:['rand-north','region-n1','broken-somnodrome','region-n2','region-n3','north-exit'],
+ P4:['hard-way','rand-south','artifacts','region-s1','region-s2','region-s3','prometheus-rescue'],
+ P5:['west-arrival','region-w1','region-w3','w2-backup','region-w2','working-somnodrome'],
  P7:['final-city','all-puzzles','miranda','collectibles','stars','story-audit','final-backup','ending','platinum-audit']
 };
 for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),order=flowOrders[stage.id];list.sort((a,b)=>order?order.indexOf(a.id)-order.indexOf(b.id):a.order-b.order).forEach((s,i)=>s.order=i+1);}
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
-export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.3',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.3.0',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,category:'base',grade:name==='Philosopher'?'platinum':'unverified',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
+export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.04.4',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.4.0',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,...trophyConditions.find(t=>t.exophaseId===localizedTrophies.get(name).exophaseId),descriptionCheckedAt:'2026-11-04',category:'base',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);
+// 首次可取得的獎盃放在事件之前；P7 僅保留收尾驗收。
+const editStep=(id,patch)=>Object.assign(steps.find(s=>s.id===id),patch);
+editStep('region-e1',{trophyRefs:refs('Grasslands Ring','Discovery','The All-Gifted'),actions:['邊解 1–8 題邊完成下方收集：1 座實驗室、兩種錄音各 1、2 顆星星；本區沒有人物光影。','從現在開始辨識人類遺物。第一件即可取得 Discovery，繼續累計 10 件可取得 Archaeologist；不要等到收尾才找。','首次完成 Pandora 雕像即可取得 The All-Gifted。先看下方位置與清單，再開始沿路解題。黃金門等 P7 再回來。']});
+editStep('region-e2',{trophyRefs:refs('Wooded Plateau','Mistress of Riddles'),actions:['本區同樣有 1 座實驗室、兩種錄音各 1、2 顆星星，沒有人物光影。先看收集清單，沿路完成。','首次完成 Sphinx 雕像即可取得 Mistress of Riddles；第 8 題 Seesaw 與 Lost Loop 的特殊解法，請先看本區前方警示。']});
+editStep('region-e3',{trophyRefs:refs('Eastern Wetlands','Remnants of the Past'),actions:['本區起每區多了 2 個人物光影；加上 1 座實驗室、兩種錄音各 1、2 顆星星，共 7 項固定收集。','最早可在第 2 題前方碰觸 Future Cat；第一個光影就能取得 Remnants of the Past。全部 20 個則對應 Mnemosyne。先看位置，再沿路解題。']});
+editStep('region-w2',{trophyRefs:refs('Anthropic Hills','Puzzle Fiend'),actions:['先解本區正規與 Lost 謎題、啟動塔並完成其他探索；Lost Lab 留到最後，回入口時才按前方「W2 Lost Lab 前」的完整順序備份。','如果前十一區正規與 Lost 都已親自解完，本區最後一題完成時就可能取得 Puzzle Fiend：共 120 題。曾用 Spark 跳題的仍須補解；不用等到 P7 才核對。','本區有兩種錄音各 1、2 個人物光影、2 顆星星；實驗室另 1 項。先看下方位置，再沿路完成。']});
+for(const id of ['single-rod','one-lap','hard-way']){const step=steps.find(s=>s.id===id);step.actions=step.actions.map(text=>text.replace('上方 E2 謎題清單','本區 E2 謎題清單').replace('上方 E2 清單','本區 E2 清單').replace('上方 S1 清單','本區 S1 清單'));}
+editStep('artifacts',{trophyRefs:refs('Archaeologist'),title:'沿路累計人類遺物，目標十件',actions:['E1 起就可以辨識遺物並取得第一件的 Discovery；從各區清單累計到十件，再核對 Archaeologist。','遺物可能有替代出現點，同一物品已在前區取得後，後區可能不再出現。查看本區候選位置，找到後記數。']});
+editStep('collectibles',{trophyRefs:refs("Trevor's Biographer",'Ecstatic Truth','Mnemosyne','Scientia Vincere Tenebras','Lord of the Files')});
+editStep('stars',{trophyRefs:refs('The Edge of Forever','Renaissance Robot')});
+const finalCity=steps.find(s=>s.id==='final-city');finalCity.trophyRefs.push(trophyKey('Overload'));
+editStep('story-audit',{title:'核對沿途取得的主線獎盃',actions:['Prometheus Unbound 在南側巨構釋放 Prometheus 時取得；Overload 在西側巨構救援後的過載劇情取得。','這裡只補核對 PS5 通知；實際操作已放在相應章節。'],verificationStatus:'consensus',sources:['steam','manorWest','wiki']});

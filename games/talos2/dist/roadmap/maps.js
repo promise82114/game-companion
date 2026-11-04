@@ -1,0 +1,17 @@
+import {regionMaps,mapSource} from '../region-maps.js';
+import {puzzles} from '../puzzle-data.js';
+import {collectionItems,artifactCandidates} from '../collection-data.js';
+export {regionMaps,mapSource};
+export function mapNodeTitle(node){const puzzle=puzzles.find(p=>'puzzle-'+p.id===node.target),item=collectionItems.find(c=>'collectible-'+c.id===node.target),artifact=artifactCandidates.find(a=>'artifact-'+a.id===node.target);return puzzle?puzzle.label+' · '+puzzle.title:item?item.title:artifact?artifact.title:node.description||node.label;}
+export function mapSvg(region,{escape,progress,selected}){
+ const map=regionMaps[region];if(!map)return '';
+ const [nx,ny]=map.north,end=[nx*45,ny*45],back=[nx*29,ny*29],wing=[-ny*9,nx*9];
+ const compass=`<g class="map-compass" transform="translate(920 85)" aria-label="大致北向"><path d="M0 0L${end.join(' ')}M${back[0]+wing[0]} ${back[1]+wing[1]}L${end.join(' ')}L${back[0]-wing[0]} ${back[1]-wing[1]}"/><text x="${nx*67}" y="${ny*67+10}" text-anchor="middle">N</text></g>`;
+ return `<svg class="region-map-svg" viewBox="0 0 1000 650" role="group" aria-label="${region} 區域位置示意圖" xmlns="http://www.w3.org/2000/svg"><title>${region} 區域位置示意圖</title>${compass}<g class="map-paths" fill="none">${map.paths.map(path=>'<polyline points="'+path.map(xy=>xy.join(',')).join(' ')+'"/>').join('')}</g>${map.nodes.map(node=>`<a href="#${escape(node.target||'map-'+node.id)}" data-map-node="${escape(node.id)}" ${node.target?'data-map-target="'+escape(node.target)+'"':''} class="map-node map-${node.kind}${progress.steps[node.target]?.status==='completed'?' map-done':''}${selected===node.id?' map-selected':''}" aria-label="${escape(node.label+' · '+mapNodeTitle(node))}"><title>${escape(mapNodeTitle(node)+(node.description?' · '+node.description:''))}</title><circle cx="${node.x}" cy="${node.y}" r="25"/><text x="${node.x}" y="${node.y+1}" text-anchor="middle" dominant-baseline="central">${escape(node.label)}</text></a>`).join('')}</svg>`;
+}
+export function regionMapHtml(region,options,{dialog=false}={}){
+ const map=regionMaps[region];if(!map)return '';
+ const node=map.nodes.find(n=>n.id===options.selected);
+ return `<section class="region-map-panel" data-map-region="${region}" aria-label="${region} 區域地圖"><div class="map-heading"><h2>${region} 區域示意圖</h2>${dialog?'<label class="map-fit-label"><input type="checkbox" data-map-fit checked>全圖</label>':'<button type="button" data-open-map>放大地圖</button>'}</div><div class="map-canvas map-fit">${mapSvg(region,options)}</div><p class="map-selection" data-map-selection>${node?options.escape(mapNodeTitle(node)):'點圖上標記，或在下方選擇位置。'}</p><label class="map-select-label">定位<select data-map-select><option value="">選擇謎題或收集品…</option>${map.nodes.map(n=>'<option value="'+options.escape(n.id)+'" '+(n.id===options.selected?'selected':'')+'>'+options.escape(n.label+' · '+mapNodeTitle(n))+'</option>').join('')}</select></label><p class="map-legend">1–8 正規 · L1／L2 遺失 · G 黃金<br>實 實驗室 · T／L 錄音 · M 光影<br>★ 雕像 · A 遺物候選 · 火 Spark · 文 終端</p><p class="map-orientation">${options.escape(map.orientation)}</p>${dialog?'<p class="map-note">'+options.escape(map.note)+'</p><a href="'+mapSource.url+'" target="_blank" rel="noopener noreferrer">地標查證來源 ↗</a>':''}</section>`; // taste-skill-ignore: ★ 是本遊戲星星收集的既有識別，非裝飾 emoji。
+}
+export const mapLocateButton=(target,escape)=>`<button type="button" class="map-locate" data-map-locate="${escape(target)}" aria-label="在區域地圖定位">定位</button>`;

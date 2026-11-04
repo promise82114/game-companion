@@ -1,6 +1,16 @@
 # The Talos Principle II · 本體白金 Roadmap
 
-2026-11-04，模組 1.3.0，內容版本 `2026.11.04.3`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+2026-11-04，模組 1.4.0，內容版本 `2026.11.04.4`。本體 60 獎盃（含白金），Road to Elysium 的 9 個 PS5 獎盃排除。本模組是新工具，沒有搬動舊 repo、攻略或既有 ID。
+
+左列「遊玩 Roadmap」下提供 P0～P7，當前章節再列區域／劇情子分類，共 24 個閱讀片段。正文只渲染所選片段；全域搜尋顯示跨章節結果，點擊後進入對應片段。舊步驟、謎題與收集深連結仍可直接使用。「繼續下一步」由本片段往後找；「回到遊玩進度」依實際勾選／計數時保存的 `settings.playAnchor` 返回，不把提前閱讀視為完成。
+
+依 `docs/PROGRESSIVE_ROADMAP_UX.md` 的漸進式收斂規則：未完成主步驟、謎題與固定收集物直接顯示內容；完成後只保留標題與狀態，可臨時查看詳情，取消完成即恢復。臨時展開不寫入進度，重新載入後按完成狀態收斂；目標深連結會展開必要父項。主步驟勾選不代填子項，若尚有子項未勾會明示數量；下一步仍可找到它們。不可逆／分歧與特殊解法警示保留，收合也不自動捲往下一項。內容縮短時以原勾選位置維持視窗，必要尾部空間會在展開或換頁時釋放。
+
+獎盃清單新增同一 Exophase 連結 ID 核對的 60 盃繁中說明與等級，附自有取得步驟、相關路線和特殊題完整操作。錄音、實驗室、光影、文字、遺物、社群閱讀、文字冒險及解題目標由既有紀錄衍生；不自動勾選實際獎盃。社群實讀數量另存 `settings['collection-text-SOCIAL']`，不混入終端文字。名稱／已發布進度 ID 不變。
+
+十二個戶外區域提供原創 SVG 示意圖，逐張參照 Cognition 的地圖核對交通艙、塔、正規／Lost／黃金謎題、錄音、實驗室、光影與已知遺物候選點；不部署或嵌入原圖。桌面正文旁固定顯示，手機以常駐地圖按鈕開啟，可看全圖或放大捲動。閱讀到謎題／收集物時會標出對應位置，圖上標記可跳回該項；P7 黃金謎題也可切換對應區域地圖。線條與間距經簡化，不代表精確路徑、距離或高低差；上方沿用來源的抵達朝向，不等於北方，N 箭頭標示概略北向。
+
+時間順序也調整為先提示再操作：E2 的 Seesaw／Loop、S1 Switcheroo、N2 Somnodrome 與 W2 備份均在相關區域題目之前；Doge 配對由 E2 起提示，不固定等 E3。第一件遺物與首座 Pandora 提前至 E1、首座 Sphinx 至 E2、第一個人物光影至 E3；全標準謎題的 120 題目標在 W2 先提醒，P7 保留收尾核對。
 
 新增「收集清單」頁與 Roadmap 各區收集區塊。12 區分別顯示實驗室、Trevor／Lifthrasir 錄音、人物光影與星星的已收集／總數；固定追蹤共 80 項（12＋12＋12＋20＋24）。E1／E2 各 5 項，其餘每區 7 項；全部勾選才顯示該區已收齊。56 個新項目直接附中文位置、互動動作與來源位置圖，24 顆星星共用原解題進度，沒有重複保存。舊版已完成的區域不代填新收集。
 
@@ -18,7 +28,7 @@ Purple 的位置改為考古花園，以中央塔電梯出口往左的方向與�
 
 逐題完成與主步驟、獎盃各自記錄；「繼續下一步」可回到已完成主步驟內尚未勾選的謎題。選擇與進度沿用 schema 1：`settings.showSolutions` 與 `steps['puzzle-'+id]`，不重建 IndexedDB、不改同步協定；舊版未知欄位仍保留。九面拼塊盤有字母格 SVG，Seesaw／Loop／Switcheroo 有桌面及手機流程圖。每題附查證來源；Ghosts of Atlantis 魔法師第二句已由[實際遊戲終端紀錄 03:59](https://www.youtube.com/watch?v=pB1VTo02kB4&t=239s)確認為 without being annihilated，補上原文並移除該題待查證。所有解法未經 PS5 逐題實測。
 
-攻略步驟直接顯示操作與前置，不再逐步收合；來源、驗證與補救紀錄集中於「來源與查證」。步驟下的獎盃方塊可直接勾選，與獎盃清單及其他出現位置共用既有 `trophies` 狀態，不代填步驟完成。個人註記介面已移除，舊筆記仍隨原進度與備份保留。
+未完成攻略直接顯示操作與前置，完成後按上述規則收斂；來源、驗證與補救紀錄集中於「來源與查證」。步驟下的獎盃方塊可直接勾選，與獎盃清單及其他出現位置共用既有 `trophies` 狀態，不代填步驟完成。個人註記介面已移除，舊筆記仍隨原進度與備份保留。
 
 右上「備份與還原」只保留本機 JSON 匯入／匯出、完整備份匯出與 Google Drive 同步入口。選檔後直接進既有差異預覽；保留兩端原文、下載復原包、確認與過期檢查。雲端沿用原本的手動同步及每次授權安全閘門，未新增單向無條件覆寫。
 
@@ -26,7 +36,7 @@ Purple 的位置改為考古花園，以中央塔電梯出口往左的方向與�
 
 本次補強三市長：Doge 七題英文、Rand N1／S1 私訊、城市 Damien／Atal／Malduc 與簡報、W2 三條完整決策順序及 PS5 入口備份／還原。58 筆逐項選項分別標記英文證據與適用性；缺少原文直接顯示待查證，不用翻譯冒充英文。現有 57 步驟 ID、schema 1 與同步契約不變，合成 1.0.0 進度可繼續使用。
 
-入口 `/game-companion/games/talos2/`，支援 `?view=roadmap`、`?view=collectibles`、`?view=trophies`、`?view=backup`、`#step-w2-backup`、`#puzzle-E2-main-8`、`#collection-region-E1` 與 `#collectible-e1-lab` 等穩定深連結。Portal 由既有 build 自動列入。
+入口 `/game-companion/games/talos2/`，支援 `?view=roadmap&stage=P1&section=E2`、`?view=collectibles`、`?view=trophies`、`?view=backup`、`#step-w2-backup`、`#puzzle-E2-main-8`、`#collection-region-E1` 與 `#collectible-e1-lab` 等穩定深連結。Portal 由既有 build 自動列入。
 
 2026-10-31 使用者已授權 commit、push 及正式發布。模組已接入既有 main 的 Pages 流程；部署結果以 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/talos2/)；PS5 與真實 Google 的驗收仍由使用者執行。
 
@@ -53,6 +63,9 @@ node scripts/verify-talos2-browser.mjs
 - `dist/puzzle-data.js`：212 個解題項目、順序、中文操作摘要、逐題來源與九面拼塊盤格形。
 - `dist/collection-data.js`：12 區、56 個固定收集項目、19 個遺物候選位置與來源圖片連結。
 - `dist/roadmap/collections.js`：區域勾選、共用星星進度、固定 80 項及手動計數的衍生合計與查證頁。
+- `dist/region-maps.js`、`dist/roadmap/maps.js`：逐區地標／來源資料、原創 SVG、定位與地圖面板。
+- `dist/trophy-guide-data.js`、`dist/roadmap/trophies.js`：60 盃繁中說明、自有取得摘要與衍生計數。
+- `dist/roadmap/navigation.js`、`dist/roadmap/completion.js`：24 個片段的穩定分組與只影響呈現的臨時展開。
 - `dist/roadmap/solutions.js`：逐題勾選與劇透控制、原創 SVG 呈現；關閉時不輸出解法 DOM。
 - `dist/trophy-names.js`：本體 60 盃的來源中英名稱與統一顯示文字。
 - `dist/mayor-research.js`：三市長逐項查證、來源衝突與 PS5 手動備份順序，以原 ID 補強資料。
