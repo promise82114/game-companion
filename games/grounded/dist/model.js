@@ -5,7 +5,7 @@ const assert=(ok,message)=>{if(!ok)throw Error(message+'；未修改原始進度
 export const newRun=level=>({level,storyStage:'start',createdAt:Date.now(),steps:{},collectibles:{},conditions:{},customMarkers:{},notes:'',ngMolars:{status:'unknown',count:0}});
 export const newPlayer=name=>({playerId:crypto.randomUUID(),name,trophies:{},upgrades:{},notes:''});
 export function newWorld(name){const player=newPlayer('玩家 1');const worldId=crypto.randomUUID();return {worldId,name,createdAt:Date.now(),players:{[player.playerId]:player},currentPlayerId:player.playerId,currentRunId:'base',runs:{base:newRun(0)},inherited:{},notes:''};}
-export function fresh(){const w=newWorld('我的庭院');return {gameId:'grounded',schema:1,schemaVersion:1,moduleVersion:'1.0.0',revision:0,updatedAt:Date.now(),currentWorldId:w.worldId,worlds:{[w.worldId]:w},settings:{goal:'experience',currentStage:'start'}};}
+export function fresh(){const w=newWorld('我的庭院');return {gameId:'grounded',schema:1,schemaVersion:1,moduleVersion:'1.1.1',revision:0,updatedAt:Date.now(),currentWorldId:w.worldId,worlds:{[w.worldId]:w},settings:{goal:'experience',currentStage:'start'}};}
 const statuses=['obtained','missing','unknown'];
 const checkMap=(map,validator,label)=>{assert(object(map),label+' 格式不符');for(const row of Object.values(map))validator(row);};
 export function validateProgress(p){
@@ -33,7 +33,7 @@ export function validateProgress(p){
  for(const w of Object.values(p.worlds))for(const [id,player]of Object.entries(w.players))assert(id===player.playerId,'playerId 與索引不符');
  return p;
 }
-export const config={gameId:'grounded',moduleVersion:'1.0.0',storagePrefix,driveProjectId:'game-companion.grounded',fresh,validateProgress};
+export const config={gameId:'grounded',moduleVersion:'1.1.1',storagePrefix,driveProjectId:'game-companion.grounded',fresh,validateProgress};
 export const world=p=>p.worlds[p.currentWorldId];
 export const run=p=>world(p).runs[world(p).currentRunId];
 export const player=p=>world(p).players[world(p).currentPlayerId];
