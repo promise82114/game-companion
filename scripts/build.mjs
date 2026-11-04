@@ -30,7 +30,7 @@ const presentation={
  'edf-wb2':{kind:'checklist',features:['救出分布','關卡筆記','手動 Drive 同步']},
  mycopunk:{kind:'checklist',features:['雙語裝備攻略','隱藏解鎖','配裝模擬']},
  talos2:{kind:'roadmap',features:['60 個本體獎盃','8 階段','三市長分歧']},
- grounded:{kind:'roadmap',features:['46 個本體獎盃','庭院示意圖','章節直達與周目追蹤']},
+ grounded:{kind:'roadmap',features:['46 個本體獎盃','庭院示意圖','周目與成員隔離']},
  'thank-goodness-youre-here':{kind:'roadmap',features:['33 個本體獎盃','8 階段','跨階段追蹤']}
 };
 html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>{

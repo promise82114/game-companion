@@ -1,9 +1,5 @@
 # Game Companion 目前架構
 
-2026-11-04 Grounded 1.1.1 依 `docs/PROGRESSIVE_ROADMAP_UX.md` 採漸進式收斂：新 `roadmap-progress.js` 從現有步驟目標、獎盃及相關收集推導完整度；所有事項完成才精簡步驟，取消任一項即恢復全文。暫時回看只存於頁面記憶體，搜尋不改完成資料；原位 DOM 更新維持焦點／捲動，章節顯示完成數並可返回第一個未完成步驟。schema、進度欄位、ID、儲存及其他遊戲模組不變；2026-11-04 使用者已授權提交／推送本批，部署結果以對應 GitHub Actions 為準。
-
-2026-11-04 Grounded 1.1.0 操作簡化：七章節放入左側導覽，步驟依「目標、完整體驗、白金需求」完整展開；獎盃與相關收集在原處勾選，沿用同一筆進度與跨分頁更新。移除目標切換、內容區章節下拉、耗時、自訂備註、個人標記和世界／成員介面。schema、namespace、ID、交易與匯入保護不變；歷史資料完整保存，不做遷移或清除。此調整與 1.1.1 一同依使用者授權提交／推送，部署結果以對應 GitHub Actions 為準。
-
 2026-11-04 Grounded 1.0.0 本機整合：原生 ES modules，`game-companion.grounded.progress.v1` 獨立 IndexedDB，`schemaVersion:1`；worlds 下以世界 UUID、玩家 UUID、周目 UUID／base 分離共同與個人進度。Talos 的交易 store 抽為根 `shared/roadmap-store.js` 單一來源，原預設 fresh／validator 不變；Talos 入口按 source／artifact 層級載入，Grounded 使用可配置 fresh／validator。build 另發布 `_site/shared/`，並從既有 Talos core 發布純合併函式。Grounded 不載入 OAuth／adapter、沒有 SW 或即時多人同步。匯入沿用兩端原文、差異選擇、下載確認及預覽條件寫入規則。53 項部分收集資料、七階段、46 盃、原創概念 SVG 與限制見 `games/grounded/README.md`。2026-11-04 使用者已授權提交／推送本批，沿用 main 的 Pages 流程；部署結果以對應 GitHub Actions 為準。
 
 日期：2026-10-31；EDF 模組版本 1.1.0，Mycopunk 1.0.0，均納入 main 分支的靜態發布流程。

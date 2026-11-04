@@ -72,35 +72,7 @@ export const regions=[
  ['grass','草地起點',500,490],['oak','橡樹／Oak Lab',480,330],['hedge','樹籬／Hedge',760,555],['pond','池塘／Pond',510,210],['haze','霧區／Haze',280,460],['black-ant','黑蟻丘',180,550],['sandbox','沙盒',120,410],['picnic','野餐桌',135,260],['upper','上層庭院',640,95],['undershed','棚下／Undershed',330,90],['moldorc','Moldorc 城堡',815,280]
 ].map(([id,name,x,y])=>({id,name,anchor:{x,y},precision:'schematic'}));
 export const stages=[['start','01','Oak Lab 起步'],['labs','02','四大實驗室'],['upper','03','Upper Yard 與棚下'],['boss','04','隱藏 Boss 與蟻后'],['ending','05','JavaMatic 與結局'],['audit','06','100% 查漏'],['remix','07','REMIX.R 與 NG+']].map(([id,number,title])=>({id,number,title}));
-// 本站的探索順序與閱讀建議；不新增遊戲達成條件或虛構收集數量。
-const experienceNotes={
- 'first-camp':'先把營地當成探索起點，沿途認識資源、食物與飲水來源；不用為了趕主線跳過開場的生存操作。',
- 'oak-rescue':'讀完 BURG.L 的對話與任務提示，再查看實驗室和商店，了解後續要回收晶片的目標。',
- 'field-habits':'探索時順手查看生物、文件、錄音與配色；以遊戲 Data 頁確認新發現，避免最後才一次補找。',
- hedge:'沿樹枝路線探索實驗室與周邊小站，留意配色和研究筆記；跳躍前先確認可安全落腳的位置。',
- pond:'先熟悉水下的呼吸與返回路線，再探索實驗室及支線空間；不要只拿到主線物品就忽略周邊。',
- haze:'探索實驗室時閱讀研究資料。完成實驗室與封住毒氣罐是不同事項，封罐留到確認環境變化後再決定。',
- 'black-ant':'取得新權限後回看先前無法進入的實驗室區段，並確認晶片是否已回交 BURG.L。',
- 'haze-choice':'先探索目前的庭院環境，再作封罐選擇；重要變化前保留能辨識的遊戲存檔。',
- 'tier-three':'開拓新區域時建立穩定的補給與返回路線，依新取得的材料試作裝備，不必把探索壓縮成直衝任務點。',
- undershed:'沿主線探索棚下與實驗室，閱讀研究資料和 Wendell 的對話，完成這段故事後再整理後續目標。',
- broodmother:'先閱讀召喚研究筆記，再準備材料與補給；保留探索樹籬及體驗 Boss 戰的完整過程。',
- mantis:'把 Stump Lab 的探索與召喚配方一起完成，備好材料後再挑戰 Mantis，避免來回補跑。',
- 'wasp-queen':'依遊戲提示探索 Brawny Boy Bin，確認召喚物與補給後再進入挑戰，不把開啟區域當成擊敗 Boss。',
- schmector:'與 Wendell 推進隱藏實驗室劇情，閱讀對話與研究內容，將這條故事線和一般主線一起體驗。',
- 'infected-broodmother':'把這場戰鬥留作後期挑戰，先整理已解鎖的裝備、召喚物和補給，再進行嘗試。',
- 'ant-queens':'閱讀每位蟻后提供的選項再作決定；完整體驗不代表同一輪要把互斥的選擇全部做完。',
- javamatic:'把基地建造與防守準備帶進主線事件，先巡查裝置周邊的防線與補給，再啟動防守。',
- ending:'閱讀結局與 Report Card 提示，保留結局前存檔，方便回到庭院補看尚未體驗的內容。',
- 'mix-audit':'逐區體驗普通 MIX.R 和 Super MIX.R 的防守；先修築防禦，再挑戰尚未完成的裝置。',
- 'collect-audit':'依分類回訪已探索的區域，對照遊戲 Data 頁查漏；本站只有部分清單，不能代替遊戲內的完整核對。',
- 'burgl-quests':'隨探索進度查看 BURG.L 的任務清單，確認還有哪些任務未完成，不用把日常任務數量當作結束條件。',
- 'personal-audit':'把製作、基地、格擋、遠距攻擊與照片模式穿插在探索中體驗；下方清單直接列出尚需確認的獎盃。',
- 'super-win':'依遊戲提示完成最後查漏後，再回到結局檢查評分；保留第一輪的完整成果後才考慮下一周目。',
- 'remix-check':'完成第一輪想體驗的探索與故事，再檢查 REMIX.R 的進入條件。網站備份和遊戲存檔都要分別保存。',
- 'ng-ending':'在新周目重新體驗主線與挑戰，普通乳牙使用本周目的獨立記錄，不沿用第一輪固定位置的取得狀態。'
-};
-const step=(id,stageId,title,regionId,action,prerequisites,trophyIds,warning='prep',options={})=>({id,stageId,title,regionId,action,experienceNote:experienceNotes[id],prerequisites,trophyIds,warning,collectibleIds:[],gear:'依遊戲配方準備當前最高可用裝備、治療與撤退路線。',sourceUrls:[sources.ps.url,sources.official.url],verification:'verified',platinum:true,spoiler:!['start','labs'].includes(stageId),...options});
+const step=(id,stageId,title,regionId,action,prerequisites,trophyIds,warning='prep',options={})=>({id,stageId,title,regionId,action,prerequisites,trophyIds,warning,collectibleIds:[],gear:'依遊戲配方準備當前最高可用裝備、治療與撤退路線。',duration:'依難度與探索時間而異；未提供無來源的時數。',sourceUrls:[sources.ps.url,sources.official.url],verification:'verified',platinum:true,spoiler:!['start','labs'].includes(stageId),...options});
 export const steps=[
  step('first-camp','start','建立第一個營地','grass','完成開場引導；設置重生點、飲水和食物，分析遇到的新資源。',[],['resourceful','fine-dining'],'prep'),
  step('oak-rescue','start','調查爆炸並救起 BURG.L','oak','跟隨主線前往 Oak Lab，救起 BURG.L；確認任務與 ASL 商店。',['first-camp'],['burgl-flipper','science-rules']),
