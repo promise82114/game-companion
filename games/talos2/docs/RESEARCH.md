@@ -220,3 +220,9 @@ P7 收集核對採同一組動詞，既有步驟／獎盃 ID、進度、IndexedD
 - 根文件：`README.md`、`docs/ARCHITECTURE.md` 的 Talos 專節；保留另一遊戲的並行變更。
 
 `_site/` 與 `outputs/talos2/` 是忽略的建置／驗證產物，未作為追蹤來源。`games/talos2/dist/` 是正式可維護網站來源，應保留。
+
+## 2026-11-04 · 遺物候選點與物品共用紀錄
+
+重新閱讀 [Hanni 收集攻略](https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588) 的 Human Artifacts 段落，來源明示遺物從預設位置中變動且列表不完整；既有 19 點的標題、區域、位置原文及圖片連結保留。Scenario 配對整理為五組共用身分：Tricycle E1／E2、Unknown Machine E1／E2、Anchor N2／N3、Van N3／S1、Arcade Machine S1／S2；其餘九種各一個已列候選點，共 14 個網站具名項目，不能當成遊戲全部物品總量。N1／W3 缺漏仍待查證。
+
+共用勾選是使用者要求的工具紀錄規則，沒有聲稱 PS5 本輪每一點必然出生。介面直接標示候選點不保證有物品，並顯示已在他區記錄取得、此處不用再找；同物品的圖上替代點也標為已取得。新進度使用原 steps 群組，不重建 DB。舊手動件數保留，不推斷物品身分；與新具名勾選取較大值作獎盃核對進度、不相加。匯入與合成 Drive 有保存新取得紀錄、取消狀態仍可沿原同步機制傳遞的回歸證據，實際 Google／PS5 驗收未完成。

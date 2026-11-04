@@ -688,7 +688,8 @@ export const artifactCandidates=[
     "title": "Radiator",
     "location": "散熱器：塔的右側。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206040860/1E4FE6B1E9FC0453E0D2C9BE4482B31B3C6079F5/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "radiator"
   },
   {
     "id": "artifact-site-1",
@@ -696,7 +697,8 @@ export const artifactCandidates=[
     "title": "Tricycle (Scenario 1)",
     "location": "三輪車候選點：塔左側，沿湖走到末端。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206047588/A4EDE0A3C9CBA657C41E692FC0492FEF01CA7654/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "tricycle"
   },
   {
     "id": "artifact-site-2",
@@ -704,7 +706,8 @@ export const artifactCandidates=[
     "title": "Unknown Machine (Scenario 1)",
     "location": "不明機器候選點：第 6 號謎題西北側。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206023638/76019BE23F90364CD94D1DFCB0F4FBF9A1DD6FA7/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "unknown-machine"
   },
   {
     "id": "artifact-site-3",
@@ -712,7 +715,8 @@ export const artifactCandidates=[
     "title": "Unknown Machine (Scenario 2)",
     "location": "不明機器候選點：第 1 號謎題西北側。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2209640068195299571/8B4AEDEEE5E182ECFFE058CE02690A922A56292A/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "unknown-machine"
   },
   {
     "id": "artifact-site-4",
@@ -720,7 +724,8 @@ export const artifactCandidates=[
     "title": "Tank",
     "location": "戰車：第 4 號謎題與 Lost 謎題 Keeping Connections 之間。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210222916935/2D01B4F2C583DA75468049135E82D1FEB5953121/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "tank"
   },
   {
     "id": "artifact-site-5",
@@ -728,7 +733,8 @@ export const artifactCandidates=[
     "title": "Tricycle (Scenario 2)",
     "location": "三輪車候選點：第 8 號謎題前方的岩石後。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210222981084/B2E51137B12442F4C84C921FD2D1856BD752A777/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "tricycle"
   },
   {
     "id": "artifact-site-6",
@@ -736,7 +742,8 @@ export const artifactCandidates=[
     "title": "Slide",
     "location": "溜滑梯：Sphinx 與 Pandora 雕像之間。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210223064395/C49DA3A6ABDE25E07681CF0F471CF0B4675E3DB2/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "slide"
   },
   {
     "id": "artifact-site-7",
@@ -744,7 +751,8 @@ export const artifactCandidates=[
     "title": "Satellite Dish",
     "location": "衛星天線：Lost 謎題 Lateral Inhibition 附近。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206059420/76BCE2A513BD58233B51A99B03CB57014731E5FC/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "satellite-dish"
   },
   {
     "id": "artifact-site-8",
@@ -752,7 +760,8 @@ export const artifactCandidates=[
     "title": "Anchor (Scenario 1)",
     "location": "船錨候選點：第 3 號謎題東南側、Prometheus 雕像附近。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2265935516827369554/4ECA53F29B3D1550C139861689A0815634E0A64F/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "anchor"
   },
   {
     "id": "artifact-site-9",
@@ -760,7 +769,8 @@ export const artifactCandidates=[
     "title": "Van (Scenario 1)",
     "location": "廂型車候選點：第 6 號謎題東北側。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2181491846255140741/37045E2D45CE9DAB15CA3AD7E480EFA7A3F0C573/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "van"
   },
   {
     "id": "artifact-site-10",
@@ -768,7 +778,8 @@ export const artifactCandidates=[
     "title": "Anchor (Scenario 2)",
     "location": "船錨候選點：區域東南側，Lost 謎題 Elegance 旁。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210203090584/DA814E8032877094447E0072F78E5316B320C050/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "anchor"
   },
   {
     "id": "artifact-site-11",
@@ -776,7 +787,8 @@ export const artifactCandidates=[
     "title": "Bomber Plane",
     "location": "轟炸機：塔前方的水下。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206626167/3EB8E97594EAA979854CD5C7186EB81CB6DF99E0/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "bomber-plane"
   },
   {
     "id": "artifact-site-12",
@@ -784,7 +796,8 @@ export const artifactCandidates=[
     "title": "Van (Scenario 2)",
     "location": "廂型車候選點：第 6 號謎題下方。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210201378023/F6173B2849A977560A81F094445CF2BF3B12FEA4/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "van"
   },
   {
     "id": "artifact-site-13",
@@ -792,7 +805,8 @@ export const artifactCandidates=[
     "title": "Arcade Machine (Scenario 1)",
     "location": "大型電玩機台候選點：黃金謎題與第 8 號謎題之間。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210201430224/B7DCECFFF8C8C39F8D26D48C9FE24F82CA1C6663/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "arcade-machine"
   },
   {
     "id": "artifact-site-14",
@@ -800,7 +814,8 @@ export const artifactCandidates=[
     "title": "Washing Machine",
     "location": "洗衣機：第 5 號謎題北側、戶外電腦附近。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210206541013/C9E731FEBF50114E899D7D6AB1A42D9EF736EE7F/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "washing-machine"
   },
   {
     "id": "artifact-site-15",
@@ -808,7 +823,8 @@ export const artifactCandidates=[
     "title": "Arcade Machine (Scenario 2)",
     "location": "大型電玩機台候選點：第 5 號與第 7 號謎題之間。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210216485940/7A2AA3AC5794B6AA89F57711445FA635F342FD88/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "arcade-machine"
   },
   {
     "id": "artifact-site-16",
@@ -816,7 +832,8 @@ export const artifactCandidates=[
     "title": "Unknown Vehicle",
     "location": "不明載具：Pandora 雕像西側。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210223356278/5082BDC8DE1F4507F57218807EEAB3850174825B/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "unknown-vehicle"
   },
   {
     "id": "artifact-site-17",
@@ -824,7 +841,8 @@ export const artifactCandidates=[
     "title": "Oil Pump",
     "location": "抽油機：第 4 號謎題建築後方。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2181491846238043736/930F02BA42731E65B94F6BD474E5AF86228DE94A/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "oil-pump"
   },
   {
     "id": "artifact-site-18",
@@ -832,6 +850,81 @@ export const artifactCandidates=[
     "title": "Classic Vehicle",
     "location": "老式汽車：第 4 號謎題前方的圓形空地。",
     "imageUrl": "https://images.steamusercontent.com/ugc/2158973210204919815/D92A3A8A9821FA8EA42FD53D98BB6803AF7845CA/",
-    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588"
+    "sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3069750588",
+    "artifactId": "classic-vehicle"
+  }
+];
+
+// 具名物品識別與候選點分開；同一物品各位置共用一個進度鍵。清單並非全遊戲物品總表。
+export const humanArtifacts=[
+  {
+    "id": "radiator",
+    "title": "Radiator",
+    "nameZhTW": "散熱器"
+  },
+  {
+    "id": "tricycle",
+    "title": "Tricycle",
+    "nameZhTW": "三輪車"
+  },
+  {
+    "id": "unknown-machine",
+    "title": "Unknown Machine",
+    "nameZhTW": "不明機器"
+  },
+  {
+    "id": "tank",
+    "title": "Tank",
+    "nameZhTW": "戰車"
+  },
+  {
+    "id": "slide",
+    "title": "Slide",
+    "nameZhTW": "溜滑梯"
+  },
+  {
+    "id": "satellite-dish",
+    "title": "Satellite Dish",
+    "nameZhTW": "衛星天線"
+  },
+  {
+    "id": "anchor",
+    "title": "Anchor",
+    "nameZhTW": "船錨"
+  },
+  {
+    "id": "van",
+    "title": "Van",
+    "nameZhTW": "廂型車"
+  },
+  {
+    "id": "bomber-plane",
+    "title": "Bomber Plane",
+    "nameZhTW": "轟炸機"
+  },
+  {
+    "id": "arcade-machine",
+    "title": "Arcade Machine",
+    "nameZhTW": "大型電玩機台"
+  },
+  {
+    "id": "washing-machine",
+    "title": "Washing Machine",
+    "nameZhTW": "洗衣機"
+  },
+  {
+    "id": "unknown-vehicle",
+    "title": "Unknown Vehicle",
+    "nameZhTW": "不明載具"
+  },
+  {
+    "id": "oil-pump",
+    "title": "Oil Pump",
+    "nameZhTW": "抽油機"
+  },
+  {
+    "id": "classic-vehicle",
+    "title": "Classic Vehicle",
+    "nameZhTW": "老式汽車"
   }
 ];

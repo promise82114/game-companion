@@ -9,14 +9,15 @@ import {collectionRegions,collectionItems,itemsForRegion,collectionProgressId,co
 import {roadmapSections,sectionsForStage,sectionForStep,resolveSection,sectionUrl,chapterNavigation} from './roadmap/navigation.js';
 import {revealedItems,revealButton,isCompact} from './roadmap/completion.js';
 import {regionMaps,regionMapHtml,mapNodeTitle,mapSource} from './roadmap/maps.js';
-import {trophyDetailHtml,trophyGuides,trophyConditionSource} from './roadmap/trophies.js';
+import {humanArtifacts,artifactCandidates,artifactProgressId} from './roadmap/artifacts.js';
+import {trophyDetailHtml,trophyGuides,trophyConditionSource,trophyProgress} from './roadmap/trophies.js';
 const $=id=>document.getElementById(id),core=window.SideProjectSync;
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let progress,activeStage,activeSection=new URL(location.href).searchParams.get('section'),filter='all',query='',view=new URL(location.href).searchParams.get('view')||'roadmap',importReview,backupTarget,sync,rendering=false,refreshQueued=false,trophyQuery='',trophyFilter='all',mapSelection='',mapContextRegion='',mapObserver;
 const currentOverview=()=>overview(data,{...progress,settings:{...progress.settings,currentStage:activeStage||progress.settings.currentStage}});
 const currentSection=()=>resolveSection(currentOverview().stage,activeSection),openBranches=new Set();
 const mapRegion=()=>currentSection().region||mapContextRegion;
-let readingTail=0;
+let readingTail=0,mapManualSelection=false;
 function resetReadingTail(){readingTail=0;$('app').style.removeProperty('--reading-tail');}
 const store=createStore(data,core,()=>{void refresh();});
 let messageTimer;
@@ -43,23 +44,24 @@ function stepStatusHtml(state){
  return `<div class="step-status"><span class="step-state">${state==='completed'?'完成':'未開始'}</span></div>`;
 }
 function trophyCheckbox(trophy,context,card=false){
- return `<label class="${card?'trophy-card':'trophy-row'}"><input type="checkbox" data-trophy="${trophy.id}" data-trophy-context="${context}" ${progress.trophies[trophy.id]?.earned?'checked':''}><span class="trophy-name">${escape(trophyLabel(trophy))}</span></label>`;
+ return `<label class="${card?'trophy-card':'trophy-row'}"><input type="checkbox" data-trophy="${trophy.id}" data-trophy-context="${context}" ${progress.trophies[trophy.id]?.earned?'checked':''}><span class="trophy-name">${escape(trophyLabel(trophy))}${card?trophyProgress(trophy,progress,data).map(c=>`<span class="inline-trophy-progress">${escape(c.label)} (${c.done}/${c.total})</span>`).join(''):''}</span></label>`;
 }
 function stepHtml(step){
  const state=done(progress,step.id)?'completed':'not_started',complete=state==='completed',id='step-'+step.id,backup=progress.backups[step.id],trophies=step.trophyRefs.map(id=>data.trophies.find(t=>t.id===id)),children=[...puzzlesForStep(step.id).map(p=>puzzleProgressId(p.id)),...collectionsForStep(step.id).map(c=>collectionProgressId(c.id))],pending=children.filter(id=>progress.steps[id]?.status!=='completed').length;
  return `<article id="step-${step.id}" class="step ${state}" data-step="${step.id}">
  <div class="step-top"><input id="complete-${step.id}" type="checkbox" data-complete="${step.id}" aria-label="完成 ${escape(step.title)}" ${complete?'checked':''}><div><label class="step-title" for="complete-${step.id}">${escape(step.title)}</label><div class="metadata"><span class="${step.warningLevel}">${warnings[step.warningLevel]}</span>${step.verificationStatus==='unverified'?'<span>待查證</span>':''}<span>${escape(step.location)}</span></div>${stepStatusHtml(state)}${complete&&pending?'<span class="child-pending">子項目尚有 '+pending+' 項未勾選</span>':''}</div>${revealButton(id,complete,escape)}</div>
  ${complete&&['irreversible','branch'].includes(step.warningLevel)?'<p class="persistent-warning">'+escape(step.id==='w2-backup'?'W2 實驗室進入前仍須確認 PS5 入口備份；網站勾選不能代替遊戲存檔。':step.warningLevel==='branch'?'分歧選擇與前期條件仍需核對；完成勾選不保證遊戲結果。':'此處有不可逆事件；返回重選前，先核對遊戲存檔與下方詳情。')+'</p>':''}
+ ${trophies.length?'<div class="step-trophies" role="group" aria-label="'+escape(step.title)+' 獎盃">'+trophies.map(t=>trophyCheckbox(t,step.id,true)).join('')+'</div>':''}
  <div class="step-body completion-body" id="body-${id}" ${isCompact(id,complete)?'hidden':''}>
  ${step.trigger&&step.trigger!=='抵達上述地點，離開前查看本步驟。'?'<p class="step-trigger">'+escape(step.trigger)+'</p>':''}
  ${step.prerequisites.length?'<p class="step-prerequisites">前置：'+step.prerequisites.map(id=>`<a href="#step-${id}" data-step-link="${id}">${escape(data.steps.find(s=>s.id===id)?.title||id)}</a>`).join('、')+'</p>':''}
  <ol class="instructions">${step.actions.map(s=>'<li>'+escape(s)+'</li>').join('')}</ol>${evidence(step)}
- ${trophies.length?'<div class="step-trophies" role="group" aria-label="'+escape(step.title)+' 獎盃">'+trophies.map(t=>trophyCheckbox(t,step.id,true)).join('')+'</div>':''}
  ${step.id.startsWith('region-')?regionCollectionsHtml(step.id.slice(7).toUpperCase(),{escape,progress}):''}${step.id==='collectibles'?collectionOverviewHtml({escape,progress}):''}
  ${puzzleListHtml(step.id,{escape,progress,showSolutions:progress.settings.showSolutions===true})}
  ${step.id==='field-basics'?'<label class="social-counter">已讀公共貼文<input type="number" min="0" step="1" data-collection-counter="text" data-counter-region="SOCIAL" value="'+(Number.isSafeInteger(progress.settings[counterKey('SOCIAL','text')])?progress.settings[counterKey('SOCIAL','text')]:0)+'"></label>':''}
  ${step.backupRecommended?`<div class="backup-check"><span>${backup?.confirmedAt?'已記錄備份：'+escape(new Date(backup.confirmedAt).toLocaleString('zh-TW'))+(backup.note?' · '+escape(backup.note):''):'此處先備份'}</span><button data-backup="${step.id}">${backup?.confirmedAt?'更新備份紀錄':'記錄 PS5 備份'}</button></div>`:''}
- </div></article>`;
+ </div>
+ </article>`;
 }
 function branchHtml(branch){
  const complete=progress.branches[branch.id]?.status==='completed',count=branch.prerequisites.filter(id=>done(progress,id)).length;
@@ -90,9 +92,11 @@ function researchHtml(){
 function backupHtml(){return `<div class="backup-tools transfer-tools"><section><h3>本機</h3><div class="actions"><button id="export-progress">匯出 JSON</button><button id="import-open">匯入 JSON</button><button id="export-recovery">匯出完整備份</button></div><input id="import-file" type="file" accept="application/json,.json" hidden></section><section><h3>雲端</h3><button id="open-cloud-sync">Google Drive 同步</button></section></div>`;}
 function sourcesHtml(){return `<div class="source-tools"><p>攻略查證：${data.checkedAt} · ${data.steps.filter(s=>s.verificationStatus==='confirmed').length} 已確認／${data.steps.filter(s=>s.verificationStatus==='consensus').length} 攻略共識／${data.steps.filter(s=>s.verificationStatus==='unverified').length} 待查證</p><div class="sources">${sourceLinks(Object.keys(data.sources))}</div>${researchHtml()}<section class="research-register"><h3>獎盃條件與區域示意圖 · 2026-11-04</h3><p>60 盃繁中說明依同一 Exophase 連結 ID 配對；攻略操作摘要與計數另外呈現。十二區原創 SVG 僅整理已查證地標與相對位置，未複製來源圖片，非等比例或實機 GPS。</p><div class="sources"><a href="${trophyConditionSource.url}" target="_blank" rel="noopener noreferrer">繁中獎盃說明</a><a href="${mapSource.url}" target="_blank" rel="noopener noreferrer">Cognition 地圖查證來源</a></div></section>${collectionResearchHtml({escape})}<section class="research-register"><h3>謎題解法查證 · 2026-11-03</h3><p>${puzzles.length} 個解題項目；${puzzles.filter(p=>p.verificationStatus==='unverified').length} 項仍有缺漏。操作摘要依逐題來源整理，未在 PS5 實機逐題重現。</p>${puzzles.map(p=>`<article><h4>${escape(p.label+' · '+p.title)}</h4>${p.pending?'<p>待查證：'+escape(p.pending)+'</p>':''}${p.researchNote?'<p>'+escape(p.researchNote)+'</p>':''}<div class="sources">${p.sources.map(s=>'<a href="'+escape(s.url)+'" target="_blank" rel="noopener noreferrer">'+escape(s.title)+(s.revision?' · rev '+escape(s.revision):'')+' ↗</a>').join('')}</div></article>`).join('')}</section></div>`;}
 function render(){
- const focus=document.activeElement,attrs=['data-complete','data-trophy','data-branch','data-collection-complete','data-collection-star','data-collection-counter','data-puzzle-complete','data-reveal'],focusAttr=attrs.find(attr=>focus?.hasAttribute(attr)),focusId=focusAttr?focus.getAttribute(focusAttr):null,focusTop=focusAttr?focus.getBoundingClientRect().top:null,solutionFocus=focus?.id==='show-solutions';
+ const manualOpen=[...document.querySelectorAll('.artifact-manual[open]')].map(node=>node.closest('[data-region-collection]').dataset.regionCollection);
+ const focus=document.activeElement,attrs=['data-complete','data-trophy','data-branch','data-collection-complete','data-artifact-complete','data-collection-star','data-collection-counter','data-puzzle-complete','data-reveal'],focusAttr=attrs.find(attr=>focus?.hasAttribute(attr)),focusId=focusAttr?focus.getAttribute(focusAttr):null,focusTop=focusAttr?focus.getBoundingClientRect().top:null,solutionFocus=focus?.id==='show-solutions';
  const focusContext=focus?.getAttribute('data-trophy-context'),counterRegion=focus?.getAttribute('data-counter-region'),navScroll=$('handbook-nav').scrollTop;
  $('app').innerHTML=shell()+(view==='trophies'?trophiesHtml():view==='backup'?sourcesHtml():view==='collectibles'?collectionOverviewHtml({escape,progress}):view==='branches'?`<h2>三市長分歧</h2><p>三條路線各自追蹤；清單進度與 PS5 存檔分開。</p><div class="branch-grid">${data.branches.map(branchHtml).join('')}</div>`:roadmapHtml());
+ for(const region of manualOpen){const panel=document.querySelector('[data-region-collection="'+region+'"] .artifact-manual');if(panel)panel.open=true;}
  $('roadmap-chapters').hidden=view!=='roadmap';$('roadmap-chapters').innerHTML=view==='roadmap'?chapterNavigation(data,currentOverview().stage,currentSection().id,progress,escape):'';$('handbook-nav').scrollTop=navScroll;
  document.querySelectorAll('[data-view]').forEach(el=>view===el.dataset.view?el.setAttribute('aria-current','page'):el.removeAttribute('aria-current'));
  if(focusId){const selector=`[${focusAttr}="${focusId}"]`+(focusContext?'[data-trophy-context="'+focusContext+'"]':counterRegion?'[data-counter-region="'+counterRegion+'"]':'');const next=document.querySelector(selector);if(next){next.focus({preventScroll:true});if(focusTop>=0&&focusTop<innerHeight){const desired=scrollY+next.getBoundingClientRect().top-focusTop,baseMaximum=document.documentElement.scrollHeight-innerHeight-readingTail;readingTail=Math.max(0,Math.ceil(desired-baseMaximum));$('app').style.setProperty('--reading-tail',readingTail+'px');if(Math.abs(scrollY-desired)>1)window.scrollTo(0,desired);}}}
@@ -112,6 +116,7 @@ function render(){
   $('trophy-filter').onchange=e=>{trophyFilter=e.target.value;render();$('trophy-filter').focus();};
  }
  document.querySelectorAll('[data-branch-detail]').forEach(el=>el.addEventListener('toggle',()=>el.open?openBranches.add(el.dataset.branchDetail):openBranches.delete(el.dataset.branchDetail)));
+ if($('map-dialog').open&&mapRegion())$('map-dialog-content').innerHTML=regionMapHtml(mapRegion(),{escape,progress,selected:mapSelection},{dialog:true});
  bindMapSelection();
 }
 function ownerStep(anchor){
@@ -127,16 +132,17 @@ function continueFrom(part,stepId){
  const puzzle=puzzlesForStep(next.id).find(p=>!puzzleDone(p)),item=collectionsForStep(next.id).find(item=>!collectionDone(progress,item.id));
  if(puzzle)goPuzzle(puzzle.id);else if(item)goCollection(item.id);else goStep(next.id);
 }
-function updateMapSelection(id){
+function updateMapSelection(id,manual=false){
  const map=regionMaps[mapRegion()],node=map?.nodes.find(n=>n.id===id);if(!node)return;mapSelection=id;
+ if(manual)mapManualSelection=true;
  document.querySelectorAll('[data-map-node]').forEach(el=>el.classList.toggle('map-selected',el.dataset.mapNode===id));
  document.querySelectorAll('[data-map-selection]').forEach(el=>el.textContent=mapNodeTitle(node)+(node.description?' · '+node.description:''));
  document.querySelectorAll('[data-map-select]').forEach(el=>el.value=id);
 }
 function bindMapSelection(){
  mapObserver?.disconnect();if(view!=='roadmap'||!mapRegion()||query)return;
- const map=regionMaps[mapRegion()];mapObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(visible.length){const node=map.nodes.find(n=>n.target===visible[0].target.id);if(node)updateMapSelection(node.id);}},{rootMargin:'-12% 0px -60% 0px',threshold:0});
- document.querySelectorAll('.puzzle,.collection-item').forEach(el=>{if(map.nodes.some(n=>n.target===el.id))mapObserver.observe(el);});
+ const map=regionMaps[mapRegion()];mapObserver=new IntersectionObserver(entries=>{if(mapManualSelection)return;const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(visible.length){const node=map.nodes.find(n=>n.target===visible[0].target.id);if(node)updateMapSelection(node.id);}},{rootMargin:'-12% 0px -60% 0px',threshold:0});
+ document.querySelectorAll('.puzzle,.collection-item,.artifact-item').forEach(el=>{if(map.nodes.some(n=>n.target===el.id))mapObserver.observe(el);});
 }
 function openMap(){const part=currentSection();if(view!=='roadmap'||!mapRegion())return;$('map-dialog-title').textContent=mapRegion()+' 區域地圖';$('map-dialog-content').innerHTML=regionMapHtml(mapRegion(),{escape,progress,selected:mapSelection},{dialog:true});$('map-dialog').showModal();}
 function bindBackupTools(){
@@ -152,13 +158,13 @@ async function exportProgress(){download(await store.get(),'progress');await sto
 async function saveStep(id,status){revealedItems.delete(data.steps.some(s=>s.id===id)?'step-'+id:id);await store.update(p=>{p.steps[id]={...p.steps[id],status};p.settings.playAnchor=data.steps.some(s=>s.id===id)?'step-'+id:id;return p;});}
 async function requestStage(id){const parts=sectionsForStage(id);if(!parts.length)return;const part=parts.find(s=>s.id===activeSection)||parts.find(s=>s.steps.some(id=>needsAttention(data.steps.find(step=>step.id===id))))||parts[0];await requestSection(part.id);}
 async function requestSection(id){const part=roadmapSections.find(s=>s.id===id);if(!part)return;setReadingSection(part);history.pushState(null,'',sectionUrl(part));render();document.querySelector('.chapter-picker')?.scrollIntoView({block:'start'});$('section-select')?.focus({preventScroll:true});await store.update(p=>{p.settings.currentStage=part.stage;p.settings.currentSection=part.id;return p;});}
-function setReadingSection(part){resetReadingTail();if(currentSection().id!==part.id)mapSelection='';mapContextRegion='';activeStage=part.stage;activeSection=part.id;view='roadmap';filter='all';query='';}
+function setReadingSection(part){mapManualSelection=false;resetReadingTail();if(currentSection().id!==part.id)mapSelection='';mapContextRegion='';activeStage=part.stage;activeSection=part.id;view='roadmap';filter='all';query='';}
 function goStep(id,regionOverride=''){const step=data.steps.find(s=>s.id===id);if(!step)return false;setReadingSection(sectionForStep(id));mapContextRegion=regionMaps[regionOverride]?regionOverride:'';revealedItems.add('step-'+id);history.replaceState(null,'',sectionUrl(currentSection())+'#step-'+id);render();$('step-'+id)?.scrollIntoView({block:'start'});$('step-'+id)?.querySelector('input')?.focus({preventScroll:true});return true;}
 function goPuzzle(id){const puzzle=puzzles.find(p=>p.id===id);if(!puzzle)return false;revealedItems.add(puzzleProgressId(id));goStep(puzzle.stepId,puzzle.region);history.replaceState(null,'',sectionUrl(currentSection())+'#'+puzzleProgressId(id));$(puzzleProgressId(id))?.scrollIntoView({block:'start'});document.querySelector('[data-puzzle-complete="'+id+'"]')?.focus({preventScroll:true});return true;}
 function goCollection(id){const item=collectionItems.find(item=>item.id===id);if(!item)return false;revealedItems.add(collectionProgressId(id));goStep('region-'+item.region.toLowerCase());history.replaceState(null,'',sectionUrl(currentSection())+'#'+collectionProgressId(id));$(collectionProgressId(id))?.scrollIntoView({block:'start'});document.querySelector('[data-collection-complete="'+id+'"]')?.focus({preventScroll:true});return true;}
 function goCollectionRegion(code){const region=collectionRegions.find(r=>r.code===code);if(!region)return false;goStep(region.stepId);history.replaceState(null,'',sectionUrl(currentSection())+'#collection-region-'+code);$('collection-region-'+code)?.scrollIntoView({block:'start'});$('collection-region-'+code)?.querySelector('input')?.focus({preventScroll:true});return true;}
-function goMapTarget(target){if(target.startsWith('puzzle-'))return goPuzzle(target.slice(7));if(target.startsWith('collectible-'))return goCollection(target.slice(12));if(target.startsWith('step-'))return goStep(target.slice(5));if(target.startsWith('artifact-')){const code=mapRegion(),node=regionMaps[code]?.nodes.find(n=>n.target===target);if(node){goStep('region-'+code.toLowerCase());$(target)?.scrollIntoView({block:'start'});$(target)?.querySelector('button')?.focus({preventScroll:true});}}}
-function followHash(){if(location.hash.startsWith('#collectible-'))return goCollection(location.hash.slice(13));if(location.hash.startsWith('#collection-region-'))return goCollectionRegion(location.hash.slice(19));if(location.hash.startsWith('#puzzle-'))return goPuzzle(location.hash.slice(8));if(location.hash.startsWith('#step-'))return goStep(location.hash.slice(6));return false;}
+function goMapTarget(target){if(target.startsWith('puzzle-'))return goPuzzle(target.slice(7));if(target.startsWith('collectible-'))return goCollection(target.slice(12));if(target.startsWith('step-'))return goStep(target.slice(5));if(target.startsWith('artifact-')){const code=mapRegion(),node=regionMaps[code]?.nodes.find(n=>n.target===target);if(node){goStep('region-'+code.toLowerCase());$(target)?.scrollIntoView({block:'start'});$(target)?.querySelector('input,button')?.focus({preventScroll:true});}}}
+function followHash(){if(location.hash.startsWith('#artifact-')){const site=artifactCandidates.find(a=>'artifact-'+a.id===location.hash.slice(1));if(site){goStep('region-'+site.region.toLowerCase());history.replaceState(null,'',sectionUrl(currentSection())+'#artifact-'+site.id);$('artifact-'+site.id)?.scrollIntoView({block:'start'});$('artifact-'+site.id)?.querySelector('input')?.focus({preventScroll:true});return true;}}if(location.hash.startsWith('#collectible-'))return goCollection(location.hash.slice(13));if(location.hash.startsWith('#collection-region-'))return goCollectionRegion(location.hash.slice(19));if(location.hash.startsWith('#puzzle-'))return goPuzzle(location.hash.slice(8));if(location.hash.startsWith('#step-'))return goStep(location.hash.slice(6));return false;}
 document.addEventListener('click',event=>{
  const el=event.target.closest('button,a');if(!el)return;
  if(el.dataset.view){event.preventDefault();resetReadingTail();view=el.dataset.view;history.pushState(null,'',view==='roadmap'?sectionUrl(currentSection()):'?view='+view);render();window.scrollTo(0,0);}
@@ -167,8 +173,8 @@ document.addEventListener('click',event=>{
  if(el.dataset.section){event.preventDefault();void action(()=>requestSection(el.dataset.section));}
  if(el.dataset.reveal){event.preventDefault();if(revealedItems.has(el.dataset.reveal))revealedItems.delete(el.dataset.reveal);else revealedItems.add(el.dataset.reveal);render();}
  if(el.hasAttribute('data-open-map')){event.preventDefault();openMap();}
- if(el.dataset.mapLocate){event.preventDefault();const target=el.dataset.mapLocate,code=puzzles.find(p=>puzzleProgressId(p.id)===target)?.region||collectionItems.find(c=>collectionProgressId(c.id)===target)?.region||mapRegion();if(regionMaps[code]){if(mapRegion()!==code){mapContextRegion=code;render();}const node=regionMaps[code].nodes.find(n=>n.target===target);if(node){updateMapSelection(node.id);if(innerWidth<1280)openMap();}}}
- if(el.dataset.mapNode){event.preventDefault();updateMapSelection(el.dataset.mapNode);if(el.dataset.mapTarget){$('map-dialog').close();goMapTarget(el.dataset.mapTarget);updateMapSelection(el.dataset.mapNode);}}
+ if(el.dataset.mapLocate){event.preventDefault();const target=el.dataset.mapLocate,code=puzzles.find(p=>puzzleProgressId(p.id)===target)?.region||collectionItems.find(c=>collectionProgressId(c.id)===target)?.region||mapRegion();if(regionMaps[code]){if(mapRegion()!==code){mapContextRegion=code;render();}const node=regionMaps[code].nodes.find(n=>n.target===target);if(node){updateMapSelection(node.id,true);if(innerWidth<1280)openMap();}}}
+ if(el.dataset.mapNode){event.preventDefault();updateMapSelection(el.dataset.mapNode,true);if(el.dataset.mapTarget){$('map-dialog').close();goMapTarget(el.dataset.mapTarget);updateMapSelection(el.dataset.mapNode);}}
  if(el.dataset.stepLink){event.preventDefault();goStep(el.dataset.stepLink);}
  if(el.dataset.collectionRegionLink){event.preventDefault();goCollectionRegion(el.dataset.collectionRegionLink);}
  if(el.dataset.puzzleLink){event.preventDefault();goPuzzle(el.dataset.puzzleLink);}
@@ -177,8 +183,9 @@ document.addEventListener('click',event=>{
 });
 document.addEventListener('change',event=>{const el=event.target;
  if(el.hasAttribute('data-map-fit'))el.closest('.region-map-panel').querySelector('.map-canvas').classList.toggle('map-fit',el.checked);
- if(el.hasAttribute('data-map-select'))updateMapSelection(el.value);
+ if(el.hasAttribute('data-map-select'))updateMapSelection(el.value,true);
  if(el.dataset.collectionComplete)void action(()=>saveStep(collectionProgressId(el.dataset.collectionComplete),el.checked?'completed':'not_started'));
+ if(el.dataset.artifactComplete)void action(()=>store.update(p=>{const id=el.dataset.artifactComplete,region=el.dataset.artifactRegion;if(!humanArtifacts.some(item=>item.id===id)||!artifactCandidates.some(site=>site.artifactId===id&&site.region===region))throw Error('遺物項目不相容，未寫入。');const key=artifactProgressId(id);p.steps[key]={...p.steps[key],status:el.checked?'completed':'not_started',...(el.checked?{foundIn:region}:{})};p.settings.playAnchor='step-region-'+region.toLowerCase();return p;}));
  if(el.dataset.collectionStar)void action(()=>saveStep(puzzleProgressId(el.dataset.collectionStar),el.checked?'completed':'not_started'));
  if(el.dataset.collectionCounter)void action(async()=>{const kind=el.dataset.collectionCounter,region=el.dataset.counterRegion,value=Number(el.value);if(!['text','artifact'].includes(kind)||!['STORY','SOCIAL',...collectionRegions.map(r=>r.code)].includes(region)||(['STORY','SOCIAL'].includes(region)&&kind!=='text')||!el.value.trim()||!Number.isSafeInteger(value)||value<0)throw Error('請輸入 0 或正整數。');await store.update(p=>{p.settings[counterKey(region,kind)]=value;if(collectionRegions.some(r=>r.code===region))p.settings.playAnchor='step-region-'+region.toLowerCase();else if(region==='SOCIAL')p.settings.playAnchor='step-field-basics';return p;});});
  if(el.dataset.puzzleComplete)void action(()=>saveStep(puzzleProgressId(el.dataset.puzzleComplete),el.checked?'completed':'not_started'));
@@ -189,6 +196,8 @@ document.addEventListener('change',event=>{const el=event.target;
 window.addEventListener('popstate',()=>{resetReadingTail();const url=new URL(location.href);view=url.searchParams.get('view')||'roadmap';activeStage=url.searchParams.get('stage')||progress.settings.currentStage;activeSection=url.searchParams.get('section')||progress.settings.currentSection;mapSelection='';mapContextRegion='';if(!followHash())render();});
 window.addEventListener('hashchange',()=>{if(progress)followHash();});
 window.addEventListener('focus',()=>{void refresh();});
+for(const type of ['wheel','touchmove'])window.addEventListener(type,()=>{mapManualSelection=false;},{passive:true});
+window.addEventListener('keydown',event=>{if(['PageDown','PageUp','Home','End','ArrowDown','ArrowUp'].includes(event.key)&&!event.target.matches('input,select,textarea'))mapManualSelection=false;});
 $('backup-ack').onchange=()=>{$('backup-confirm').disabled=!$('backup-ack').checked;};
 $('backup-confirm').onclick=()=>action(async()=>{if(!$('backup-ack').checked)return;await store.update(p=>{p.backups[backupTarget]={...p.backups[backupTarget],confirmedAt:new Date().toISOString(),note:$('backup-note').value,method:'user-confirmed-ps5'};return p;});$('backup-dialog').close();message('已保存你的手動確認；網站沒有驗證 PS5 雲端存檔。');});
 async function previewImport(file){
