@@ -2,7 +2,7 @@
   "gameId": "thank-goodness-youre-here",
   "platform": "PS5",
   "scope": "base",
-  "guideVersion": "1.1.0",
+  "guideVersion": "1.2.0",
   "lastVerifiedAt": "2026-10-31",
   "verificationNote": "此日期是文獻查證，不是 PS5 實機驗收。verified 僅指獎盃列表；consensus 為攻略交叉比對；unverified 仍待查。",
   "estimatedTime": "來源估計約 3–6 小時；另有約 15 分鐘短結局。主線一次可規劃全收集，短結局後需重新開局。",
@@ -615,6 +615,24 @@
           "verificationStatus": "consensus",
           "checkpoint": true
         }
+      ],
+      "sections": [
+        {
+          "id": "short-ending",
+          "title": "先看短結局",
+          "stepIds": [
+            "reception-wait",
+            "main-run"
+          ]
+        },
+        {
+          "id": "leave-office",
+          "title": "重新開局，離開接待室",
+          "stepIds": [
+            "door-reception",
+            "leave-reception"
+          ]
+        }
       ]
     },
     {
@@ -948,6 +966,49 @@
           ],
           "verificationStatus": "consensus",
           "checkpoint": true
+        }
+      ],
+      "sections": [
+        {
+          "id": "square-garden",
+          "title": "廣場巡查與花園",
+          "stepIds": [
+            "post-town-hall",
+            "door-chicken",
+            "nick-open",
+            "post-nick",
+            "rats-park",
+            "mow",
+            "mole-invite"
+          ]
+        },
+        {
+          "id": "pub-first-round",
+          "title": "警察亭、酒館與 Ronny",
+          "stepIds": [
+            "police-first",
+            "pub-first",
+            "police-after-pub",
+            "ronny"
+          ]
+        },
+        {
+          "id": "cold-store",
+          "title": "冷藏庫與 Charlie",
+          "stepIds": [
+            "stoat",
+            "butter"
+          ]
+        },
+        {
+          "id": "before-first-hole",
+          "title": "回訪廣場，準備跳洞",
+          "stepIds": [
+            "nick-return",
+            "pub-before-hole",
+            "police-before-hole",
+            "first-hole"
+          ]
         }
       ]
     },
@@ -1391,6 +1452,62 @@
           ],
           "verificationStatus": "unverified"
         }
+      ],
+      "sections": [
+        {
+          "id": "chippy-shop",
+          "title": "薯條店周邊與首次清貨架",
+          "stepIds": [
+            "tool-spanner",
+            "rats-chippy",
+            "door-chippy-one",
+            "door-chippy-two",
+            "post-chippy",
+            "shelves"
+          ]
+        },
+        {
+          "id": "roof-garden",
+          "title": "煙囪、花園與井道",
+          "stepIds": [
+            "chimney-first",
+            "door-shed",
+            "door-garden-house",
+            "worm-first"
+          ]
+        },
+        {
+          "id": "fish-market",
+          "title": "魚販扳手與市場入口",
+          "stepIds": [
+            "fish-first",
+            "market-access"
+          ]
+        },
+        {
+          "id": "market-first-round",
+          "title": "市場收集、餐車與派店",
+          "stepIds": [
+            "rats-market",
+            "post-market-flower",
+            "post-market-crossword",
+            "door-travel",
+            "door-pies",
+            "cheek-first",
+            "pie-request"
+          ]
+        },
+        {
+          "id": "river-return",
+          "title": "河岸、房屋與返回廣場",
+          "stepIds": [
+            "river-first",
+            "owl",
+            "post-blue-house",
+            "door-blue-house",
+            "gutter-return"
+          ]
+        }
       ]
     },
     {
@@ -1798,6 +1915,60 @@
           ],
           "verificationStatus": "consensus"
         }
+      ],
+      "sections": [
+        {
+          "id": "tools-return",
+          "title": "廣場回訪與螺絲起子",
+          "stepIds": [
+            "nick-mid",
+            "pub-tools",
+            "police-tools",
+            "screwdriver",
+            "hammer-request"
+          ]
+        },
+        {
+          "id": "fence-meat",
+          "title": "Charlie 柵欄、魚販與肉世界",
+          "stepIds": [
+            "charlie-fence",
+            "worm-second",
+            "fish-second",
+            "meat-all"
+          ]
+        },
+        {
+          "id": "pie-beans",
+          "title": "巨大派、Rog 與陽台豆罐",
+          "stepIds": [
+            "big-pie",
+            "rog",
+            "cheek-second",
+            "beans-balcony"
+          ]
+        },
+        {
+          "id": "gull-route",
+          "title": "沿途六處海鷗",
+          "stepIds": [
+            "gull-bin",
+            "gull-pie",
+            "gull-veg",
+            "gull-fish",
+            "gull-burger",
+            "gull-oily"
+          ]
+        },
+        {
+          "id": "square-after-beans",
+          "title": "地下室回酒館，再巡廣場",
+          "stepIds": [
+            "pub-beans",
+            "police-beans",
+            "nick-wall"
+          ]
+        }
       ]
     },
     {
@@ -1918,6 +2089,32 @@
             "walk"
           ],
           "verificationStatus": "consensus"
+        }
+      ],
+      "sections": [
+        {
+          "id": "house-fertiliser",
+          "title": "先拜訪房屋，再開肥料袋",
+          "stepIds": [
+            "polly-paul",
+            "fertiliser-bag"
+          ]
+        },
+        {
+          "id": "hammer-ducks",
+          "title": "河岸取槌子與鴨子",
+          "stepIds": [
+            "hammer-river",
+            "ducks"
+          ]
+        },
+        {
+          "id": "flowers-fryer",
+          "title": "花朵與修理炸鍋",
+          "stepIds": [
+            "flowers",
+            "fryer"
+          ]
         }
       ]
     },
@@ -2074,6 +2271,34 @@
             "walk"
           ],
           "verificationStatus": "consensus"
+        }
+      ],
+      "sections": [
+        {
+          "id": "milk-square",
+          "title": "牛奶委託與廣場回訪",
+          "stepIds": [
+            "milk-request",
+            "pub-milk",
+            "police-milk"
+          ]
+        },
+        {
+          "id": "arm-plate",
+          "title": "病人的手臂與紀念盤",
+          "stepIds": [
+            "sick-arm",
+            "plate"
+          ]
+        },
+        {
+          "id": "potatoes-tea",
+          "title": "馬鈴薯對話、薯條與牛奶",
+          "stepIds": [
+            "potato-wait",
+            "chips-cow",
+            "tea"
+          ]
         }
       ]
     },
@@ -2267,6 +2492,36 @@
           ],
           "verificationStatus": "consensus"
         }
+      ],
+      "sections": [
+        {
+          "id": "bubble-shopping",
+          "title": "氣泡事件與購物",
+          "stepIds": [
+            "bubble",
+            "shopping"
+          ]
+        },
+        {
+          "id": "garden-snails",
+          "title": "跳井前，巡完地面六處蝸牛",
+          "stepIds": [
+            "snail-sue",
+            "snail-crops",
+            "snail-gate",
+            "snail-stone",
+            "snail-tree",
+            "snail-bench"
+          ]
+        },
+        {
+          "id": "well-farewell",
+          "title": "最後跳井與鼴鼠道別",
+          "stepIds": [
+            "snail-well",
+            "mole-cancel"
+          ]
+        }
       ]
     },
     {
@@ -2444,6 +2699,35 @@
             "ps5"
           ],
           "verificationStatus": "verified"
+        }
+      ],
+      "sections": [
+        {
+          "id": "last-visits",
+          "title": "最後一圈：魚販、餐車與廣場",
+          "stepIds": [
+            "fish-final",
+            "cheek-final",
+            "pub-final",
+            "police-final",
+            "spill"
+          ]
+        },
+        {
+          "id": "ending-review",
+          "title": "送湯前，核對收集與備份",
+          "stepIds": [
+            "before-ending"
+          ]
+        },
+        {
+          "id": "soup-ending",
+          "title": "送湯、結局與白金確認",
+          "stepIds": [
+            "soup",
+            "ending",
+            "platinum"
+          ]
         }
       ]
     }

@@ -28,6 +28,11 @@
   }
   const steps = guide.stages.flatMap(stage => stage.steps), stepMap = new Map(steps.map(step => [step.id, step])), trophyMap = new Map(guide.trophies.map(trophy => [trophy.id, trophy]));
   const stageFor = id => guide.stages.find(stage => stage.steps.some(step => step.id === id));
+  // Temporary reading state stays in this page; completion remains in stepDone only.
+  const expandedSteps = new Set();
+  let readingAnchor = null;
+  const sectionMap = new Map(guide.stages.flatMap(stage => stage.sections.map(section => [section.id, section])));
+  const completed = ids => ids.every(id => store.data.stepDone[id] === true);
   activeStage = guide.stages.find(stage => stage.id === location.hash.slice(1))?.id || guide.stages.find(stage => stage.steps.some(step => !store.data.stepDone[step.id]))?.id || guide.stages[0].id;
   function sourceLinks(refs) { return refs.map(id => {const source = guide.sources.find(value => value.id === id); return `<a href="${escape(source.url)}" target="_blank" rel="noopener">${escape(source.title)}</a>`;}).join(' · '); }
   function trophyNameHtml(trophy) { return `<span class="trophy-name-en">${escape(trophy.officialName)}</span><span class="trophy-name-zh" lang="zh-Hant">｜${escape(trophy.nameZhTW)}</span>`; }
@@ -36,7 +41,41 @@
   function trophyInput(id) { const trophy=trophyMap.get(id);return `<label><input type="checkbox" data-group="trophyEarned" data-id="${id}" ${store.data.trophyEarned[id] ? 'checked' : ''}><span>已跳盃：${trophyNameHtml(trophy)} ${trophyProgressHtml(trophy)}</span></label>`; }
   // taste-skill-ignore: 保留原攻略指定的紅／橙風險符號，與文字一起說明不可逆事項。
   function stepHtml(step, compact = false) {
-    return `<article class="step ${store.data.stepDone[step.id] ? 'done' : ''}" data-step-row="${step.id}" id="${compact ? 'track-' : 'step-'}${step.id}"><div class="step-head"><label><input type="checkbox" data-group="stepDone" data-id="${step.id}" ${store.data.stepDone[step.id] ? 'checked' : ''}><span>${characterText(step.action)}</span></label></div><p class="step-location">${characterText(step.location)}</p><p class="step-trigger"><span>時機：</span>${characterText(step.trigger)}</p>${step.warningLevel === 'critical' || step.verificationStatus === 'unverified' ? `<span class="warning ${step.warningLevel === 'critical' ? 'critical' : 'branch'}">${step.warningLevel === 'critical' ? '🔴 ' : '🟠 '}${warningNames[step.warningLevel]}${step.verificationStatus === 'unverified' ? ' · 待查證' : ''}</span>` : ''}${step.trophyIds.length ? `<div class="trophy-inline">${step.trophyIds.map(trophyInput).join('')}</div>` : ''}</article>`; // taste-skill-ignore: 既有攻略使用紅／橙風險符號。
+    const done = store.data.stepDone[step.id] === true, open = !done || expandedSteps.has(step.id), rowId = (compact ? 'track-' : 'step-') + step.id;
+    return `<article class="step ${done ? 'done' : ''}" data-step-row="${step.id}" data-done="${done}" id="${rowId}"><div class="step-head"><label><input type="checkbox" data-group="stepDone" data-id="${step.id}" ${done ? 'checked' : ''}><span class="step-location">${characterText(step.location)}</span></label><button class="step-reveal" data-step-details="${step.id}" aria-controls="${rowId}-body" aria-expanded="${open}" aria-label="${escape(step.location)}：查看或收起詳情" ${done ? '' : 'hidden'}>${open ? '收起詳情' : '查看詳情'}</button></div>${step.warningLevel === 'critical' || step.verificationStatus === 'unverified' ? `<span class="warning ${step.warningLevel === 'critical' ? 'critical' : 'branch'}">${step.warningLevel === 'critical' ? '🔴 ' : '🟠 '}${warningNames[step.warningLevel]}${step.verificationStatus === 'unverified' ? ' · 待查證' : ''}</span>` : ''}<div class="step-body" id="${rowId}-body" ${open ? '' : 'hidden'}><p class="step-action">${characterText(step.action)}</p><p class="step-trigger"><span>時機：</span>${characterText(step.trigger)}</p>${step.trophyIds.length ? `<div class="trophy-inline">${step.trophyIds.map(trophyInput).join('')}</div>` : ''}</div></article>`; // taste-skill-ignore: 既有攻略使用紅／橙風險符號。
+  }
+  function sectionHtml(section, visible) {
+    const done = completed(section.stepIds), reveal = $('search').value.trim() || $('filter').value !== 'all';
+    return `<details class="roadmap-section" id="section-${section.id}" data-section="${section.id}" data-complete="${done}" ${!done || reveal ? 'open' : ''}><summary><strong>${characterText(section.title)}</strong><span class="count" data-section-count="${section.id}"></span></summary><div class="section-body">${visible.map(step => stepHtml(step)).join('')}</div></details>`;
+  }
+  function preserveReadingPosition(update) {
+    const focus = document.activeElement;
+    let anchor = readingAnchor || focus?.closest('.step-head, summary');
+    const fromEdit = !!readingAnchor;readingAnchor=null;
+    if (!anchor || !anchor.closest('#content')) anchor = [...$('content').querySelectorAll('.step-head, summary')].find(node => {const rect=node.getBoundingClientRect();return rect.height && rect.top >= 0 && rect.top < innerHeight;});
+    const top = anchor?.getBoundingClientRect().top;
+    update();
+    if (!anchor) return;
+    // Closing a finished section must not leave keyboard focus inside hidden content.
+    for (let parent = anchor.parentElement; parent && parent !== $('content'); parent = parent.parentElement) {
+      if (parent.matches('details:not([open])')) anchor = parent.querySelector(':scope > summary');
+    }
+    if ((focus && !focus.getClientRects().length) || (fromEdit && anchor.tagName === 'SUMMARY')) anchor.focus({preventScroll:true});
+    window.scrollBy({top:anchor.getBoundingClientRect().top-top,behavior:'instant'});
+  }
+  function converge() {
+    document.querySelectorAll('[data-step-row]').forEach(row => {
+      const id=row.dataset.stepRow, done=store.data.stepDone[id]===true;
+      if (row.dataset.done !== String(done)) expandedSteps.delete(id);
+      row.dataset.done=String(done);row.classList.toggle('done',done);
+      const open=!done || expandedSteps.has(id), button=row.querySelector('[data-step-details]');
+      row.querySelector('.step-body').hidden=!open;button.hidden=!done;button.setAttribute('aria-expanded',String(open));button.textContent=open?'收起詳情':'查看詳情';
+    });
+    for (const selector of ['[data-section]','[data-stage-panel]']) document.querySelectorAll(selector).forEach(panel => {
+      const ids=panel.dataset.section ? sectionMap.get(panel.dataset.section).stepIds : guide.stages.find(stage=>stage.id===panel.dataset.stagePanel).steps.map(step=>step.id), done=completed(ids);
+      if (panel.dataset.complete !== String(done)) panel.open=!done;
+      panel.dataset.complete=String(done);
+    });
   }
   function sourceAuditHtml() {
     return `<details class="source-audit"><summary>逐步查證紀錄（${steps.length} 項）</summary>${guide.stages.map(stage=>`<section class="source-audit-stage"><h3>${escape(stage.title)}</h3>${stage.steps.map(step=>`<article class="source-step" data-source-step="${step.id}"><h4>${characterText(step.action)}</h4><p class="meta">${characterText(step.location)} · ${statusNames[step.verificationStatus]}</p><dl><dt>驗證方式</dt><dd>${characterText(step.verification)}</dd><dt>錯過後</dt><dd>${characterText(step.recovery)}</dd><dt>來源</dt><dd>${sourceLinks(step.sourceRefs)}</dd></dl></article>`).join('')}</section>`).join('')}</details>`;
@@ -59,19 +98,24 @@
     const checkpoint = current.steps.find(step => step.checkpoint && !data.stepDone[step.id]);
     $('checkpoint').innerHTML = checkpoint ? `<div><strong>本章留意 · ${escape(current.title)}</strong><p>${characterText(checkpoint.trigger)}</p></div><button data-jump="${checkpoint.id}">查看提醒</button>` : '<div><strong>本章進度</strong><p>本章檢查點已記錄；可直接切換章節繼續攻略。</p></div>';
     document.querySelectorAll('[data-stage-count]').forEach(node => {const stage=guide.stages.find(value=>value.id===node.dataset.stageCount);node.textContent=stage.steps.filter(step=>data.stepDone[step.id]).length+'/'+stage.steps.length;});
+    document.querySelectorAll('[data-section-count]').forEach(node => {const section=sectionMap.get(node.dataset.sectionCount);node.textContent=section.stepIds.filter(id=>data.stepDone[id]).length+'/'+section.stepIds.length;});
     document.querySelectorAll('[data-tracker-count]').forEach(node => {const tracker=guide.trackers.find(value=>value.id===node.dataset.trackerCount);node.textContent=tracker.stepIds.filter(id=>data.stepDone[id]).length+'/'+tracker.stepIds.length;});
     document.querySelectorAll('[data-trophy-progress]').forEach(node => {node.textContent=trophyProgressText(trophyMap.get(node.dataset.trophyProgress));});
   }
   function render() {
+    expandedSteps.clear();
     document.querySelectorAll('[data-view]').forEach(button => {if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});
     $('view-title').textContent = {roadmap:'遊玩 Roadmap',trackers:'跨階段追蹤',trophies:'獎盃清單',sources:'來源與查證'}[view];
     $('chapter-picker').hidden = view !== 'roadmap'; $('checkpoint').hidden = view !== 'roadmap'; $('search').closest('.toolbar').hidden = view === 'sources';$('continue').hidden = view !== 'roadmap';
     $('chapter-select').innerHTML = guide.stages.map(stage=>`<option value="${stage.id}" ${activeStage===stage.id?'selected':''}>${escape(stage.title)}</option>`).join('');
+    $('section-select').innerHTML = '<option value="">本章段落…</option>' + guide.stages.find(stage=>stage.id===activeStage).sections.map(section=>`<option value="${section.id}">${escape(section.title)}</option>`).join('');
     $('stage-nav').innerHTML = guide.stages.map(stage => `<button data-stage="${stage.id}" aria-label="${escape(stage.title)}" ${activeStage===stage.id?'aria-current="step"':''}>${stage.title.slice(0,2)}</button>`).join('');
     if (view === 'roadmap') {
+      if ($('search').value.trim() || $('filter').value !== 'all') steps.filter(step=>matches(step,'stepDone')&&store.data.stepDone[step.id]).forEach(step=>expandedSteps.add(step.id));
       $('content').innerHTML = guide.stages.map(stage => {
         const visible = stage.steps.filter(step=>matches(step,'stepDone')); if(!visible.length)return '';
-        return `<details class="stage" data-stage-panel="${stage.id}" ${activeStage===stage.id || $('search').value || $('filter').value!=='all'?'open':''}><summary><span class="number">${stage.title.slice(0,2)}</span><strong>${characterText(stage.title.slice(3))}</strong><span class="count" data-stage-count="${stage.id}"></span></summary><div class="stage-body"><p class="stage-description">${characterText(stage.description)}</p><p class="stage-reminder"><strong>離開本章前：</strong>${characterText(stage.checkpoint)}</p>${visible.map(step=>stepHtml(step)).join('')}</div></details>`;
+        const done=completed(stage.steps.map(step=>step.id));
+        return `<details class="stage" data-stage-panel="${stage.id}" data-complete="${done}" ${!done || $('search').value || $('filter').value!=='all'?'open':''}><summary><span class="number">${stage.title.slice(0,2)}</span><strong>${characterText(stage.title.slice(3))}</strong><span class="count" data-stage-count="${stage.id}"></span></summary><div class="stage-body"><p class="stage-description">${characterText(stage.description)}</p><p class="stage-reminder"><strong>離開本章前：</strong>${characterText(stage.checkpoint)}</p>${stage.sections.map(section=>{const items=visible.filter(step=>section.stepIds.includes(step.id));return items.length ? sectionHtml(section,items) : '';}).join('')}</div></details>`;
       }).join('');
     } else if (view === 'trackers') {
       $('content').innerHTML = guide.trackers.map(tracker=>{
@@ -88,29 +132,36 @@
     stats();
   }
   function syncUi() {
+    preserveReadingPosition(()=>{
     document.querySelectorAll('input[data-group]').forEach(input=>input.checked=!!store.data[input.dataset.group][input.dataset.id]);
-    document.querySelectorAll('[data-step-row]').forEach(row=>row.classList.toggle('done',!!store.data.stepDone[row.dataset.stepRow]));
+    converge();
     stats(); message('已儲存在此裝置');
+    });
   }
   function jump(id) {
-    const stage=stageFor(id);if(!stage)return;view='roadmap';activeStage=stage.id;$('search').value='';$('filter').value='all';history.replaceState(null,'','#'+stage.id);render();
-    const row=$('step-'+id);row.scrollIntoView({block:'center'});row.querySelector('input').focus({preventScroll:true});
+    const stage=stageFor(id);if(!stage)return;view='roadmap';activeStage=stage.id;$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+stage.id);render();
+    const row=$('step-'+id);for(let parent=row.parentElement;parent&&parent!==$('content');parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
+    if(store.data.stepDone[id])expandedSteps.add(id);converge();row.scrollIntoView({block:'center'});row.querySelector('input').focus({preventScroll:true});
   }
   document.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
     if(button.dataset.view){view=button.dataset.view;history.pushState(null,'','?view='+view+'#'+activeStage);render();}
     if(button.dataset.jump)jump(button.dataset.jump);
     if(button.dataset.stage)selectStage(button.dataset.stage);
+    if(button.dataset.stepDetails)preserveReadingPosition(()=>{const id=button.dataset.stepDetails;if(expandedSteps.has(id))expandedSteps.delete(id);else expandedSteps.add(id);converge();});
   });
   document.addEventListener('change',async event=>{
     const input=event.target;if(!input.matches('input[data-group]'))return;
-    input.disabled=true;message('儲存中…');try{await store.toggle(input.dataset.group,input.dataset.id,input.checked);syncUi();}catch(error){syncUi();fatal(error);}finally{input.disabled=false;}
+    const hadFocus=document.activeElement===input;readingAnchor=input.closest('.step-head');
+    input.disabled=true;message('儲存中…');try{await store.toggle(input.dataset.group,input.dataset.id,input.checked);syncUi();}catch(error){syncUi();fatal(error);}finally{input.disabled=false;readingAnchor=null;if(hadFocus&&input.getClientRects().length)input.focus({preventScroll:true});}
   });
   window.addEventListener('roadmap-progress-change',()=>{syncUi();cloudRender();});
   window.addEventListener('focus',()=>store.refresh().then(syncUi).catch(fatal));
   $('search').oninput=render;$('filter').onchange=render;
-  function selectStage(id){activeStage=id;view='roadmap';$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+id);render();$('chapter-picker').scrollIntoView({block:'start'});}
+  function selectStage(id){activeStage=id;view='roadmap';$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+id);render();const panel=document.querySelector('[data-stage-panel="'+id+'"]');panel.open=true;const heading=panel.querySelector('summary');heading.scrollIntoView({block:'start'});heading.focus({preventScroll:true});}
   $('chapter-select').onchange=event=>selectStage(event.target.value);
+  $('section-select').onchange=event=>{const id=event.target.value;if(!id)return;selectStage(activeStage);const panel=$('section-'+id);panel.open=true;const heading=panel.querySelector('summary');heading.scrollIntoView({block:'start'});heading.focus({preventScroll:true});$('section-select').value=id;};
+  $('resume-progress').onclick=()=>{const next=steps.find(step=>!store.data.stepDone[step.id]);if(next)jump(next.id);else message('所有攻略步驟已完成，可展開標題回看；獎盃仍需各自確認。');};
   $('continue').onclick=()=>{const start=guide.stages.findIndex(stage=>stage.id===activeStage),next=guide.stages.slice(start).flatMap(stage=>stage.steps).find(step=>!store.data.stepDone[step.id]);if(next)jump(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
   window.addEventListener('popstate',()=>{view=new URL(location.href).searchParams.get('view')||'roadmap';activeStage=guide.stages.find(stage=>stage.id===location.hash.slice(1))?.id||activeStage;render();});
   $('platinum-name').innerHTML=trophyNameHtml(trophyMap.get('t00'));

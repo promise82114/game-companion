@@ -11,6 +11,43 @@ async function state(page){return page.evaluate(()=>ROADMAP_APP.store.refresh())
 async function edit(page,group,id,value){await page.evaluate(({group,id,value})=>ROADMAP_APP.store.toggle(group,id,value),{group,id,value});}
 try{
  {
+  const progressiveContext=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'}),p=await progressiveContext.newPage();p.on('pageerror',error=>errors.push(error.message));
+  await p.goto(url);await ready(p);
+  assert.equal(await p.locator('.stage[open]').count(),8);assert.equal(await p.locator('.roadmap-section[open]').count(),28);assert.equal(await p.locator('.step-body:not([hidden])').count(),100);
+  const row=id=>p.locator('[data-step-row="'+id+'"]'),section=id=>p.locator('[data-section="'+id+'"]'),chapter=id=>p.locator('[data-stage-panel="'+id+'"]');
+  const opening=row('reception-wait');await opening.locator('input[data-group="stepDone"]').check();await p.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['reception-wait']===true);
+  assert.equal(await opening.locator('.step-body').isVisible(),false);assert.equal(await opening.locator('.warning').isVisible(),true);assert.equal(await opening.locator('.step-head label').isVisible(),true);
+  assert.equal((await state(p)).trophyEarned.t09,undefined);const afterCheck=await state(p);
+  await opening.locator('[data-step-details]').focus();await p.keyboard.press('Space');assert.equal(await opening.locator('.step-body').isVisible(),true);assert.deepEqual(await state(p),afterCheck);
+  await opening.locator('[data-step-details]').click();assert.equal(await opening.locator('.step-body').isVisible(),false);
+  await row('main-run').locator('input[data-group="stepDone"]').check();await p.waitForFunction(()=>!document.querySelector('[data-section="short-ending"]').open);
+  assert.equal(await section('short-ending').locator('[data-section-count]').textContent(),'2/2');assert.equal(await chapter('reception').getAttribute('open'),'');
+  assert.equal(await p.evaluate(()=>document.activeElement===document.querySelector('[data-section="short-ending"]>summary')),true);
+  const beforeRead=await state(p);await section('short-ending').locator(':scope>summary').click();await opening.locator('[data-step-details]').click();assert.equal(await opening.locator('.step-body').isVisible(),true);assert.deepEqual(await state(p),beforeRead);
+  await opening.locator('input[data-group="stepDone"]').uncheck();await p.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['reception-wait']===false);assert.equal(await opening.locator('.step-body').isVisible(),true);assert.equal(await opening.locator('[data-step-details]').isVisible(),false);
+  await opening.locator('input[data-group="stepDone"]').check();await p.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['reception-wait']===true);await edit(p,'stepDone','door-reception',true);await edit(p,'stepDone','leave-reception',true);
+  assert.equal(await chapter('reception').getAttribute('open'),null);await p.reload();await ready(p);assert.equal(await chapter('reception').getAttribute('open'),null);assert.equal(await section('short-ending').getAttribute('open'),null);
+  const beforeNavigation=await state(p);await p.locator('#chapter-select').selectOption('reception');assert.equal(await chapter('reception').getAttribute('open'),'');assert.equal(await section('short-ending').getAttribute('open'),null);
+  await p.locator('#section-select').selectOption('short-ending');assert.equal(await section('short-ending').getAttribute('open'),'');assert.equal(await opening.locator('.step-body').isVisible(),false);
+  await p.locator('#resume-progress').click();assert.equal(await p.locator('#chapter-select').inputValue(),'square');assert.equal(await row('post-town-hall').locator('.step-body').isVisible(),true);assert.deepEqual(await state(p),beforeNavigation);
+  await p.locator('#search').fill('市長接待室');assert.equal(await opening.locator('.step-body').isVisible(),true);await p.locator('#search').fill('');await p.locator('#filter').selectOption('completed');assert.equal(await opening.locator('.step-body').isVisible(),true);assert.equal(await chapter('reception').locator('[data-stage-count]').textContent(),'4/4');await p.locator('#filter').selectOption('all');
+  const peer=await progressiveContext.newPage();await peer.goto(url);await ready(peer);await edit(peer,'stepDone','leave-reception',false);await p.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['leave-reception']===false);
+  assert.equal(await chapter('reception').getAttribute('open'),'');assert.equal(await section('leave-office').getAttribute('open'),'');assert.equal(await row('leave-reception').locator('.step-body').isVisible(),true);await peer.close();
+  // Complete a row in the middle of a long page: its header stays at the same viewport position.
+  for(const width of [1440,768,390]){
+   await p.setViewportSize({width,height:1000});await edit(p,'stepDone','rats-park',false);await p.evaluate(()=>ROADMAP_APP.jump('rats-park'));
+   await row('rats-park').locator('input[data-group="stepDone"]').focus();const beforeTop=await row('rats-park').locator('.step-head').evaluate(node=>node.getBoundingClientRect().top);
+   await p.keyboard.press('Space');await p.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['rats-park']===true);
+   const afterTop=await row('rats-park').locator('.step-head').evaluate(node=>node.getBoundingClientRect().top);assert.ok(Math.abs(afterTop-beforeTop)<=3,JSON.stringify({width,beforeTop,afterTop}));
+   assert.equal(await p.evaluate(()=>document.activeElement.dataset.id),'rats-park');assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+   await p.screenshot({path:`outputs/thank-goodness/progressive-${width}.png`});
+  }
+  await p.evaluate(()=>ROADMAP_APP.store.transact(data=>({...data,stepDone:Object.fromEntries(ROADMAP_APP.guide.stages.flatMap(stage=>stage.steps).map(step=>[step.id,true])),revision:data.revision+1})));
+  assert.equal(await p.locator('.stage[open]').count(),0);assert.equal(await p.locator('.roadmap-section[open]').count(),0);assert.equal(Object.values((await state(p)).trophyEarned).filter(Boolean).length,0);
+  const allDone=await state(p);await p.locator('#resume-progress').click();assert.deepEqual(await state(p),allDone);
+  await progressiveContext.close();checks.push('漸進收斂：8 章／28 段／100 步完整閱讀，逐步／整段／整章收合、鍵盤回看不改進度、取消恢復、重整／跨頁、搜尋篩選、段落與遊玩進度定位、三種寬度勾選位置與焦點穩定');
+ }
+ {
   const counterContext=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'}),counterPage=await counterContext.newPage();counterPage.on('pageerror',error=>errors.push(error.message));
   await counterPage.goto(url);await ready(counterPage);
   async function counter(id,expected){const values=await counterPage.locator('[data-trophy-progress="'+id+'"]').allTextContents();assert.ok(values.length>0,id+' 計數未顯示');assert.ok(values.every(value=>value.endsWith(expected)),JSON.stringify({id,values,expected}));}
@@ -47,19 +84,19 @@ try{
  assert.equal(await page.locator('.step details').count(),0);assert.equal(await openingRow.locator('.step-trigger').isVisible(),true);assert.equal(await openingRow.locator('.step-trigger').textContent(),'時機：'+openingStep.trigger);assert.equal(await openingRow.locator('.step-location').textContent(),openingStep.location);assert.equal(await openingRow.locator('a').count(),0);assert.match(await openingRow.locator('.warning').textContent(),/容易錯過/);assert.equal(await page.locator('.stage[open] .stage-reminder').first().isVisible(),true);assert.match(await page.locator('[data-step-row="main-run"] .warning').textContent(),/待查證/);
  assert.equal(Object.values((await state(page)).trophyEarned).filter(Boolean).length,0);
  const beforePortraits=await state(page);await page.locator('#search').fill('Larry');
- const pub=page.locator('[data-step-row="pub-first"]');assert.equal(await pub.locator('.step-head [data-character="larry"]').count(),1);assert.equal(await pub.locator('.step-head [data-character="ronny"]').count(),1);
- assert.equal(await pub.locator('.step-head label').textContent(),await page.evaluate(()=>ROADMAP_APP.guide.stages.flatMap(stage=>stage.steps).find(step=>step.id==='pub-first').action));
+ const pub=page.locator('[data-step-row="pub-first"]');assert.equal(await pub.locator('.step-action [data-character="larry"]').count(),1);assert.equal(await pub.locator('.step-action [data-character="ronny"]').count(),1);
+ assert.equal(await pub.locator('.step-action').textContent(),await page.evaluate(()=>ROADMAP_APP.guide.stages.flatMap(stage=>stage.steps).find(step=>step.id==='pub-first').action));
  const avatar=pub.locator('[data-character="larry"] svg').first();assert.equal(await avatar.getAttribute('aria-hidden'),'true');assert.equal(await avatar.getAttribute('focusable'),'false');assert.equal(await avatar.evaluate(node=>node.getBoundingClientRect().width),24);
  assert.equal((await page.request.get(url+'characters.svg')).ok(),true);
- await pub.locator('.step-head [data-character="larry"]').click();await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['pub-first']===true);assert.deepEqual((await state(page)).trophyEarned,beforePortraits.trophyEarned);await pub.locator('.step-head [data-character="larry"]').click();await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['pub-first']===false);
+ await pub.locator('.step-head label').click();await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['pub-first']===true);assert.deepEqual((await state(page)).trophyEarned,beforePortraits.trophyEarned);await pub.locator('.step-head label').click();await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['pub-first']===false);
  for(const width of [1440,390]){await page.setViewportSize({width,height:1000});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/thank-goodness/characters-${width}.png`,fullPage:true});}
  await page.setViewportSize({width:1440,height:1000});await page.locator('#search').fill('');checks.push('19 組極簡角色圖、名字文字保留、搜尋、24px／手機換行、點名字勾選且獎盃獨立');
  await page.locator('[data-group="stepDone"][data-id="reception-wait"]').check();
  await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['reception-wait']===true);
  assert.equal((await state(page)).trophyEarned.t09,undefined);
- await page.locator('[data-group="trophyEarned"][data-id="t09"]').check();await page.waitForFunction(()=>ROADMAP_APP.store.data.trophyEarned.t09===true);
+ await openingRow.locator('[data-step-details]').click();await page.locator('[data-group="trophyEarned"][data-id="t09"]').check();await page.waitForFunction(()=>ROADMAP_APP.store.data.trophyEarned.t09===true);
  await page.reload();await ready(page);assert.equal((await state(page)).stepDone['reception-wait'],true);assert.equal((await state(page)).trophyEarned.t09,true);assert.equal((await state(page)).stepDone['leave-reception'],undefined);
- await page.locator('[data-group="trophyEarned"][data-id="t09"]').uncheck();await page.waitForFunction(()=>ROADMAP_APP.store.data.trophyEarned.t09===false);
+ await openingRow.locator('[data-step-details]').click();await page.locator('[data-group="trophyEarned"][data-id="t09"]').uncheck();await page.waitForFunction(()=>ROADMAP_APP.store.data.trophyEarned.t09===false);
  assert.equal((await state(page)).stepDone['reception-wait'],true);checks.push('步驟與獎盃獨立、重整與取消勾選');
  await page.locator('#search').fill('synthetic-no-match-834');assert.equal(await page.locator('.empty').isVisible(),true);await page.locator('#search').fill('');
  await page.locator('[data-view="trackers"]').click();assert.equal(await page.locator('.tracker').count(),13);await page.locator('.tracker summary').first().click();assert.equal(await page.locator('.tracker').first().locator('[data-group="stepDone"]').count(),3);assert.equal(await page.locator('.tracker').first().locator('.step-trigger').first().isVisible(),true);assert.equal(await page.locator('.step details').count(),0);
@@ -92,12 +129,13 @@ try{
  const beforeFailure=await state(page);await page.evaluate(()=>{window.__put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(...args){if(this.name==='state')throw new DOMException('synthetic quota','QuotaExceededError');return window.__put.apply(this,args);};});
  await page.evaluate(()=>ROADMAP_APP.jump('main-run'));await page.locator('[data-group="stepDone"][data-id="main-run"]').check();await page.locator('#fatal').waitFor();await page.evaluate(()=>IDBObjectStore.prototype.put=window.__put);assert.deepEqual(await state(page),beforeFailure);assert.equal(await page.locator('[data-group="stepDone"][data-id="main-run"]').isChecked(),false);await page.reload();await ready(page);
  checks.push('IndexedDB 儲存失敗交易回復');
- for(const width of [1920,1440,768,390]){await page.setViewportSize({width,height:width===390?844:1000});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/thank-goodness/roadmap-${width}.png`,fullPage:true});}
+ // All unfinished chapters are now open; capture the viewport instead of a >32k-pixel full page.
+ for(const width of [1920,1440,768,390]){await page.setViewportSize({width,height:width===390?844:1000});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`outputs/thank-goodness/roadmap-${width}.png`});}
  // Keyboard can focus and toggle a checkbox; native details remain operable.
  const checkbox=page.locator('[data-group="stepDone"][data-id="main-run"]');await checkbox.focus();await page.keyboard.press('Space');await page.waitForFunction(()=>ROADMAP_APP.store.data.stepDone['main-run']===true);checks.push('390/768/1440 響應式與鍵盤操作');
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
  await context.setOffline(true);await page.reload();await ready(page);assert.equal((await state(page)).stepDone['main-run'],true);await context.setOffline(false);checks.push('Service Worker 離線重整');
- const offlineAssets=await page.evaluate(async()=>{const cache=await caches.open('game-companion.thank-goodness-youre-here.assets.v8');return Promise.all(['characters.js','characters.svg'].map(async name=>!!await cache.match(new URL(name,location.href).href)));});assert.deepEqual(offlineAssets,[true,true]);
+ const offlineAssets=await page.evaluate(async()=>{const cache=await caches.open('game-companion.thank-goodness-youre-here.assets.v9');return Promise.all(['characters.js','characters.svg'].map(async name=>!!await cache.match(new URL(name,location.href).href)));});assert.deepEqual(offlineAssets,[true,true]);
  // A second playthrough clears only known progress, with a downloaded and atomic backup.
  async function openReset(target=page){await target.locator('#backupOpen').click();await target.locator('#resetOpen').click();await target.locator('#resetDialog').waitFor();}
  async function resetBackup(target=page,acknowledge=true){const pending=target.waitForEvent('download');await target.locator('#reset-backup').click();const result=await pending;assert.equal(await result.failure(),null);assert.match(result.suggestedFilename(),/^thank-goodness-before-reset-/);const data=JSON.parse(await fs.readFile(await result.path(),'utf8'));if(acknowledge)await target.locator('#reset-ack').check();return data;}

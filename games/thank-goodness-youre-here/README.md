@@ -1,6 +1,6 @@
 # Thank Goodness You're Here! 白金 Roadmap
 
-PS5 本體；模組版本 1.2.0、攻略版本 1.1.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
+PS5 本體；模組版本 1.3.0、攻略版本 1.2.0，進度 schema 1。新遊戲識別碼為 `thank-goodness-youre-here`；沒有改動既有遊戲或獎盃 ID。33 個獎盃完整映射到 8 階段、100 個步驟，13 組跨階段追蹤的子項直接引用同一步驟，不重複建立進度。
 
 入口：`/game-companion/games/thank-goodness-youre-here/`。根目錄 `node scripts/build.mjs` 自動產生 Portal 入口，不需修改路由或集中登入。2026-10-31 使用者授權將本模組獨立 commit、push 並透過既有 main 分支 Pages 流程發布，排除其他未完成工作。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)；部署結果以對應提交的 GitHub Actions 為準。
 
@@ -14,6 +14,22 @@ PS5 本體；模組版本 1.2.0、攻略版本 1.1.0，進度 schema 1。新遊�
 - 同步 Base／pending／結果未知復原資料沿用 localStorage，但只使用 `game-companion.thank-goodness-youre-here.sync.*`。每款遊戲／帳號的 Base 分開。Drive 名稱 `game-companion.thank-goodness-youre-here.progress.v1.json`，不是中央同步服務。
 - 匯入先將兩端原文持久化，預覽重疊值的差異，要求下載復原檔並確認保存。單邊欄位保留；預覽過期、持久化或下載 API 失敗不套用。復原檔可直接選擇本機／來源端再走相同預覽流程。完整匯出包含所有 archives 與此 namespace 的 sync recovery；不包含 OAuth token。
 - `dist/sw.js` 只快取本模組資源，只清自己的 `game-companion.thank-goodness-youre-here.assets.*` 前綴。Google OAuth 不做離線快取。新版本更新 ASSETS 或攻略時須遞增 CACHE 版本，確保離線內容一起更新。
+
+## 漸進式 Roadmap 收斂
+
+2026-11-04 實作（模組 1.3.0、攻略 1.2.0，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）。依 [漸進收斂規則](../../docs/PROGRESSIVE_ROADMAP_UX.md) 與使用者本次直接實作授權，將既有 8 章、100 步按原路線分為 28 段，每段 1–7 步。`guide.json` 的 `stage.sections` 只新增標題及既有 `stepIds` 引用；不拆改原有步驟、順序、獎盃映射、警示或查證狀態。
+
+- 未完成章節／段落／步驟預設完整呈現，可連續閱讀全部攻略並任意勾選；地點作為步驟標題，操作與時機留在內文。
+- 完成一步，立即只留勾選、標題與必要風險標記；「查看詳情」可臨時回看完整操作及獨立獎盃勾選。回看不改進度，取消完成會恢復全文。
+- 一段的全部已知步驟完成後，收起該段，只留標題與完成數；全章同理。判斷使用完整段落清單，不依搜尋結果或獎盃數計算。收起不代表已跳盃。
+- 章節／段落選單可直接定位；「返回遊玩進度」前往全攻略第一個未完成步驟。「繼續下一步」保留原本從瀏覽章節往後找的規則。跳轉會開啟必要祖先；搜尋／篩選會展開符合內容，清除條件後恢復預設收斂。
+- 以原位 DOM 更新與閱讀錨點補償減少勾選跳動；整段收起時將鍵盤焦點交回該段標題，不自動跳往下一步。臨時展開僅存在此頁記憶體，重整後依既有 `stepDone` 還原。
+
+沿用各模組獨立介面，沒有共用中央 Roadmap 元件；本次只改 Thank Goodness。`stepDone`／`trophyEarned`、進度 schema、IndexedDB、匯入、初始化及手動 Drive 同步契約不變，`model.js` 只遞增模組版本。SW cache v9 保留原 namespace，離線也使用新版分段。真實 Google Drive、PS5 事件及個人裝置觸控手感仍待人工驗收。
+
+介面維持現有綠灰 Framed sheet（技能 seed 167606527）；選用理由是既有外框及長時間單欄攻略，保留既有外框與字體。畫面回答「接下來還有哪段要做？」；辨識元素沿用角色小圖與路線分段，不新增裝飾或示範玩家資料。
+
+本機驗證（2026-11-04）：資料驗證確認 28 段完整、唯一且依原序覆蓋 100 步；原攻略、獎盃、追蹤及來源逐項與 HEAD 比對不變。模組完整隔離瀏覽器回歸通過（17 組檢查，pageerror 0），含三層收合／回看／取消／重整／跨頁、搜尋／定位、1440／768／390px 勾選位置與焦點、原有備份／初始化／離線與合成 Drive 保護。技能 lint、三種寬度 inspector 均為 0 FAIL／0 WARN，已查看新進度與完成步驟截圖；完整長頁以多段及 viewport 截圖檢查，避免超出瀏覽器截圖高度限制。
 
 ## 獎盃中英名稱與計數
 

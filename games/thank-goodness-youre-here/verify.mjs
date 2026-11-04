@@ -19,6 +19,12 @@ for(const trophy of guide.trophies){
  if(trophy.progress){const progress=trophy.progress;assert.ok(progress.label&&progress.note);assert.ok(progress.stepIds.length>1);assert.equal(new Set(progress.stepIds).size,progress.stepIds.length);for(const id of progress.stepIds)assert.ok(steps.some(step=>step.id===id&&step.trophyIds.includes(trophy.id)),trophy.id+' 計數誤連 '+id);}
 }
 const progress=id=>guide.trophies.find(trophy=>trophy.id===id).progress;
+const sections=guide.stages.flatMap(stage=>stage.sections);
+assert.equal(sections.length,28);assert.equal(new Set(sections.map(section=>section.id)).size,sections.length);
+for(const stage of guide.stages){
+ assert.deepEqual(stage.sections.flatMap(section=>section.stepIds),stage.steps.map(step=>step.id),'段落必須依原順序完整覆蓋本章，不能漏項或重複');
+ for(const section of stage.sections){assert.ok(section.title.trim());assert.ok(section.stepIds.length>0&&section.stepIds.length<=7);}
+}
 assert.equal(guide.trophies.filter(trophy=>trophy.progress).length,12);
 assert.equal(progress('t11').stepIds.length,3);assert.equal(progress('t12').stepIds.length,5);assert.ok(progress('t12').stepIds.every(id=>!id.startsWith('worm-')));
 assert.equal(progress('t25').stepIds.length,4);assert.ok(!progress('t25').stepIds.includes('spill'));
