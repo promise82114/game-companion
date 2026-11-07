@@ -101,7 +101,8 @@ export const puzzles=[
       "將一個方塊放上壓板，讓門保持開啟。",
       "把另一方塊疊到場內另一個方塊上；利用一層、兩層的高度跳上平台，拿取綠色拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-2",
@@ -122,7 +123,8 @@ export const puzzles=[
       "把方塊放在低柵欄旁，站上去，隔著柵欄拿出另一個方塊。",
       "用三個方塊排出一層、兩層的階梯，越過高柵欄拿拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-3",
@@ -137,14 +139,19 @@ export const puzzles=[
         "title": "Talos Wiki · Within Reach",
         "url": "https://taloswiki.org/wiki/Within_Reach",
         "revision": "4770"
+      },
+      {
+        "title": "Dick Leeuw / Louis Koot · 操作順序圖文",
+        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/01_Calibration/calibration_1.htm"
       }
     ],
     "actions": [
       "用方塊壓住入口壓板。",
-      "踩另一方塊跳上高台，轉身把腳下方塊拿上來。",
+      "走過已開門，踩房內第二個方塊跳上高台，再轉身把這個方塊拿上來；入口壓板上的第一塊留原處。",
       "把它放到下一段高牆旁，當墊腳石跳到拼塊處。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-arranger-Green",
@@ -170,7 +177,8 @@ export const puzzles=[
       "ACB",
       "ACC"
     ],
-    "after": "BOOT-3"
+    "after": "BOOT-3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-4",
@@ -185,14 +193,19 @@ export const puzzles=[
         "title": "Talos Wiki · Static Pressure",
         "url": "https://taloswiki.org/wiki/Static_Pressure",
         "revision": "4771"
+      },
+      {
+        "title": "Dick Leeuw / Louis Koot · 操作順序圖文",
+        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/01_Calibration/callibration_2.htm"
       }
     ],
     "actions": [
-      "拆下扇葉壓住門前壓板，把兩個方塊搬出來。",
-      "裝回扇葉，把一個方塊放在風扇上。",
-      "抱著另一方塊跳上去，從高處把它放到上層壓板，然後跳向拼塊。"
+      "拆下扇葉，放門前壓板，將房內兩個方塊逐一搬到風扇旁。",
+      "取回扇葉裝好風扇，將一個方塊放風扇上。抱另一個方塊，跳到風扇上的方塊頂。",
+      "人留在方塊頂，轉向風扇旁地面的壓板，把手中方塊放到該板。風扇啟動後，連人帶腳下方塊升高，再跳到拼塊平台。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-5",
@@ -214,7 +227,8 @@ export const puzzles=[
       "帶方塊回地面，換下壓板上的扇葉。",
       "抱扇葉回高台，裝到上層風扇，再搭風取得拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-6",
@@ -235,7 +249,8 @@ export const puzzles=[
       "搭風扇上平台，開啟牆上開關，把方塊送出。",
       "回地面移動方塊，擋住紅色光束；風扇停止後拿取後方拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-7",
@@ -257,7 +272,8 @@ export const puzzles=[
       "取第二台干擾器，接手干擾前方同一道門。",
       "取第三台干擾器，停用風扇，走進去拿拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-arranger-Yellow",
@@ -283,7 +299,8 @@ export const puzzles=[
       "CDDB",
       "CCDD"
     ],
-    "after": "BOOT-7"
+    "after": "BOOT-7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-8",
@@ -305,7 +322,8 @@ export const puzzles=[
       "調整第一根的位置，保持原有供電，讓走廊另一頭也看得見它。",
       "第二根連接第一根與藍色接收器，打開通往拼塊的門。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-9",
@@ -326,7 +344,8 @@ export const puzzles=[
       "用「保留連線」拿起原本有供電的連接器。",
       "加選雕像上的固定連接器，放回能看見全部目標的位置，沿已開啟的門走到拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-10",
@@ -348,7 +367,8 @@ export const puzzles=[
       "第二根接紅光源與紅色接收器，拿出第三根。",
       "改第一根去開拼塊前的藍色門；第三根接第二根的紅光，再接紅色接收器，維持通路。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-11",
@@ -369,7 +389,8 @@ export const puzzles=[
       "把方塊移到同時看得見藍光源、藍色接收器的位置。",
       "用方塊墊高連接器，接通藍光源與藍色接收器，避免光線相交，再取拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-12",
@@ -390,7 +411,8 @@ export const puzzles=[
       "方塊放在風扇上，連接器選紅光源與紅色接收器，再放到方塊頂。",
       "開啟開關，讓設備升空供電；走過打開的門，拿最後拼塊。"
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "BOOT-arranger-Red",
@@ -416,7 +438,8 @@ export const puzzles=[
       "ADEEC",
       "ADDEE"
     ],
-    "after": "BOOT-12"
+    "after": "BOOT-12",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-1",
@@ -438,7 +461,8 @@ export const puzzles=[
       "改接紅＋藍，輸出綠光開最後一道門；兩個方塊各壓一塊壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 1"
+    "label": "E1 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-2",
@@ -460,7 +484,8 @@ export const puzzles=[
       "B 接 A 的綠光與藍光源，輸出紅光到終點接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 2"
+    "label": "E1 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-3",
@@ -482,7 +507,8 @@ export const puzzles=[
       "B 接綠光源與 A 的藍光，輸出紅光到紅接收器；B 壓住壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 3"
+    "label": "E1 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-4",
@@ -504,7 +530,8 @@ export const puzzles=[
       "保留連線拿起轉換器，放到方塊頂；重新開風扇，升空後就能接通。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 4"
+    "label": "E1 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-5",
@@ -527,7 +554,8 @@ export const puzzles=[
       "干擾器改開壓板旁的門；轉換器接藍色連接器＋紅光源，輸出綠光開終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 5"
+    "label": "E1 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-6",
@@ -550,7 +578,8 @@ export const puzzles=[
       "D 接 A＋C，輸出紅光到第二道門的紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 6"
+    "label": "E1 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-7",
@@ -573,7 +602,8 @@ export const puzzles=[
       "扇葉先移到藍光源旁壓板，再裝回風扇；沿開啟通路完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 7"
+    "label": "E1 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-main-8",
@@ -597,7 +627,8 @@ export const puzzles=[
       "自己踩第一板讓設備升空，再用連接器把空中的綠光接到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 正規 8"
+    "label": "E1 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-lost-1",
@@ -619,7 +650,8 @@ export const puzzles=[
       "取下連接器，方塊改壓板；連接器把轉換器的藍光接到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · Lost 1"
+    "label": "E1 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-lost-2",
@@ -642,7 +674,8 @@ export const puzzles=[
       "第三根把遠處藍光接終點，放壓板右側；轉換器接紅光源、遠處藍光與綠接收器，再壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · Lost 2"
+    "label": "E1 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-bridge",
@@ -653,6 +686,7 @@ export const puzzles=[
     "stepId": "region-e1",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：1 → 2 → 3（轉）。",
       "第 2 段：2（轉）→ 3（轉）→ 1（轉）。",
       "第 3 段：2（轉）→ 1（轉）。",
@@ -664,7 +698,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/03_East_1_Grassland/grassland_3.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "E1-star-prometheus",
@@ -684,7 +720,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Grasslands_Ring#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-star-pandora",
@@ -703,7 +740,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Grasslands_Ring#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E1-gold-1",
@@ -727,7 +765,8 @@ export const puzzles=[
       "取連接器，把空中 K 的綠光接終點綠接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E1 · 黃金 1"
+    "label": "E1 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-1",
@@ -750,7 +789,8 @@ export const puzzles=[
       "繞過紫屏，用另一台反向維持同一孔，再拿回第一台；兩台各壓一塊終點壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 1"
+    "label": "E2 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-2",
@@ -773,7 +813,8 @@ export const puzzles=[
       "鑽孔器壓住最後壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 2"
+    "label": "E2 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-3",
@@ -795,7 +836,8 @@ export const puzzles=[
       "重新鑽藍側；轉換器接孔後藍光源＋紅色連接器，輸出綠光到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 3"
+    "label": "E2 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-4",
@@ -818,7 +860,8 @@ export const puzzles=[
       "開風扇，再把孔改到接收器那側的牆，接通光線。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 4"
+    "label": "E2 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-5",
@@ -841,7 +884,8 @@ export const puzzles=[
       "搭風回房，將干擾器遞出孔外；鑽孔器改開終點牆，再用干擾器隔孔開終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 5"
+    "label": "E2 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-6",
@@ -866,7 +910,8 @@ export const puzzles=[
       "用剩下鑽孔器開扇葉旁牆，回上層把扇葉從孔遞下，裝回最後風扇，搭風到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 6"
+    "label": "E2 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-7",
@@ -889,7 +934,8 @@ export const puzzles=[
       "連接器隔孔接藍光源與終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 正規 7"
+    "label": "E2 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-main-8",
@@ -915,7 +961,8 @@ export const puzzles=[
     "verificationStatus": "consensus",
     "label": "E2 · 正規 8",
     "diagram": "seesaw",
-    "warning": "Single Rod：全程只拿入口那一根連接器，另一根不要碰。"
+    "warning": "Single Rod：全程只拿入口那一根連接器，另一根不要碰。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-lost-1",
@@ -938,7 +985,8 @@ export const puzzles=[
       "一根靠紫屏作紅光中繼，另一根接它與終點紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · Lost 1"
+    "label": "E2 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-lost-2",
@@ -965,7 +1013,8 @@ export const puzzles=[
     "verificationStatus": "consensus",
     "label": "E2 · Lost 2",
     "diagram": "loop",
-    "warning": "Just One Lap：方塊只送一趟；停到遠牆後才改鑽孔。"
+    "warning": "Just One Lap：方塊只送一趟；停到遠牆後才改鑽孔。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-bridge",
@@ -976,6 +1025,7 @@ export const puzzles=[
     "stepId": "region-e2",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：2 → 3 → 1 → 4（轉）。",
       "第 2 段：3 → 4 → 1（轉）→ 2。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -986,7 +1036,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/04_East_2_Plateau/East_2_2/east_2_platform_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "E2-star-sphinx",
@@ -1005,7 +1057,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Wooded_Plateau#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-star-pandora",
@@ -1025,7 +1078,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Wooded_Plateau#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E2-gold-1",
@@ -1049,7 +1103,8 @@ export const puzzles=[
       "鑽孔器維持天花板孔並壓板，把整組送高，紅光到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E2 · 黃金 1"
+    "label": "E2 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-1",
@@ -1070,7 +1125,8 @@ export const puzzles=[
       "A 改接紅光源與藍接收器；B 接 A 的藍光，輸出紅光到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 1"
+    "label": "E3 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-2",
@@ -1092,7 +1148,8 @@ export const puzzles=[
       "A 接 B 與第一門接收器，讓紅光持續供電；反相器改接紅光源，輸出藍光開終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 2"
+    "label": "E3 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-3",
@@ -1115,7 +1172,8 @@ export const puzzles=[
       "轉換器接紅光源＋反相器的藍光，輸出綠光到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 3"
+    "label": "E3 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-4",
@@ -1132,12 +1190,13 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "反相器 A 先接紅接收器。",
-      "B 同時選 A、紅光源，輸出藍光；A 改接 B 的藍光，兩台互相供電。",
-      "C 接 A 的紅光，輸出藍光到終點。"
+      "第一台反相器 A 先接藍光源與紅接收器，打開第一門，取出第二台 B。",
+      "B 選紅光源、A 與下一門藍接收器，放下輸出藍光。A 清除原藍光源連線，改接 B 與原紅接收器，讓第一門改由 B 的藍光經 A 反相後維持。",
+      "取出第三台 C，接 A 的紅光與終點藍接收器，放下。A、B 留原處，自己走到輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 4"
+    "label": "E3 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-5",
@@ -1160,7 +1219,8 @@ export const puzzles=[
     ],
     "verificationStatus": "consensus",
     "label": "E3 · 正規 5",
-    "researchNote": "Wiki 的 red inverter 是供電色描述誤植；以另一份逐步圖文核對為紅入、藍出。"
+    "researchNote": "Wiki 的 red inverter 是供電色描述誤植；以另一份逐步圖文核對為紅入、藍出。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-6",
@@ -1203,12 +1263,13 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "反相器 A 壓板。B 接藍光源，產生紅光。",
-      "A 選紅光源與門後 B；自己踩板，等紅光接通。",
-      "A 改選 B 的紅光與兩個藍接收器；自己再踩板，等兩道門都接通。"
+      "反相器 A 壓門板。B 選藍光源與紅接收器，放下輸出紅光。",
+      "拿 A，選紅光源與門後 B，放下；自己踩門板，等紅接收器發出啟動聲後才離開。",
+      "A 清除舊目標，改選 B 的紅光與兩個藍接收器，放下；自己再踩門板，等兩個藍接收器都啟動、通路自持後再走到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 7"
+    "label": "E3 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-main-8",
@@ -1231,7 +1292,8 @@ export const puzzles=[
       "連接器帶入終點走廊，接空中反相器與終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 正規 8"
+    "label": "E3 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-lost-1",
@@ -1255,7 +1317,8 @@ export const puzzles=[
       "干擾器最後隔窗開門。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · Lost 1"
+    "label": "E3 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-lost-2",
@@ -1278,7 +1341,8 @@ export const puzzles=[
       "A 接 B 的藍光，輸出紅光到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · Lost 2"
+    "label": "E3 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-bridge",
@@ -1289,6 +1353,7 @@ export const puzzles=[
     "stepId": "region-e3",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：4（轉）→ 3（轉）→ 1（轉）→ 2（轉）。",
       "第 2 段：1 → 2（轉）→ 3（轉）→ 4。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -1299,7 +1364,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/05_East%203_Eastern_Wetlands/Wetlands_part_4/wetlands_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "E3-star-sphinx",
@@ -1318,7 +1385,8 @@ export const puzzles=[
         "url": "https://www.gamespot.com/articles/the-talos-principle-2-sphinx-statue-guide-all-sphinx-puzzles-and-stars/1100-6518920/"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-star-pandora",
@@ -1338,7 +1406,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Eastern_Wetlands#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "E3-gold-1",
@@ -1361,7 +1430,8 @@ export const puzzles=[
       "B 改直接接紅光源與藍接收器。此時門由它與連接器接手，A 可先取出壓終點板，再取 B、連接器各壓一板。"
     ],
     "verificationStatus": "consensus",
-    "label": "E3 · 黃金 1"
+    "label": "E3 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-1",
@@ -1383,7 +1453,8 @@ export const puzzles=[
       "切回 A，沿已開啟的門到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 1"
+    "label": "N1 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-2",
@@ -1405,7 +1476,8 @@ export const puzzles=[
       "A 從高處拿走托盤，放終點壓板。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 2"
+    "label": "N1 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-3",
@@ -1427,7 +1499,8 @@ export const puzzles=[
       "A 移向另一座風扇，讓左接收器通電；切 B 進終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 3"
+    "label": "N1 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-4",
@@ -1440,6 +1513,10 @@ export const puzzles=[
       {
         "title": "Luke Lawrie · High Ground 三身體堆疊",
         "url": "https://www.gamepur.com/guides/how-to-solve-high-ground-puzzle-in-the-talos-principle-2-n1-puzzle-4"
+      },
+      {
+        "title": "Dick Leeuw / Louis Koot · 操作順序圖文",
+        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/07_North%201_%20Desolated_Island/Desolated_2/desolated%20island_2.htm"
       }
     ],
     "actions": [
@@ -1450,7 +1527,8 @@ export const puzzles=[
       "切最底下 B 踩方塊。逐層切到最上面 C，跳上終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 4"
+    "label": "N1 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-5",
@@ -1472,7 +1550,8 @@ export const puzzles=[
       "A 把方塊改壓風扇板，搭風回高台踩終點板；B 啟動輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 5"
+    "label": "N1 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-6",
@@ -1488,14 +1567,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "A 在外側鑽開銅牆，留在能看見內側壓板的位置；切 B。",
-      "B 用方塊壓板取出內側連接器，再改壓開紅光源的板，把連接器從洞遞給 A。B 自己踩紅光源板。",
-      "A 隔孔接紅光源與紅接收器，取出另一根；兩根都從孔遞回內側。",
-      "B 用一根選孔外終點藍接收器；另一根接藍光源與它。方塊壓開藍光源的板，B 自己踩另一板。",
-      "保持兩身體可互看，切 A 去終點。"
+      "外側身體 A 拿鑽孔器，在銅牆中間、能看見內側紅光源處開孔，鑽孔器留外側。A 站中間柵欄左側，能看見內側三塊壓板與 B，再切 B。",
+      "內側 B 用方塊壓連接器房門板（板 1），取連接器先放中央門旁；方塊改壓中央通路板（板 2），再將連接器遞過洞給 A。B 自己踩紅光源門前板（板 3），留在能和 A 互看的位置。",
+      "切 A，拿孔邊連接器，隔孔接紅光源與外側紅接收器，取出另一根連接器。兩根都遞回洞內；A 回中間柵欄原位，再切 B。",
+      "B 拿一根到洞前，先選洞外終點藍接收器，放下。另一根搬到藍光源房門旁，選藍光源與洞前連接器。方塊從板 2 移回板 1，保持藍光源房門開。",
+      "B 自己踩板 2，讓兩根連接器間藍光通過中央門。確認藍光穿洞打開終點後，B 留板上，切 A 到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 6"
+    "label": "N1 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-7",
@@ -1517,7 +1597,8 @@ export const puzzles=[
       "A 托設備走向右側柱子，讓紅光接通；切 B 進終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 7"
+    "label": "N1 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-main-8",
@@ -1540,7 +1621,8 @@ export const puzzles=[
       "C 穿過新開門，踩終點門板；A 改鑽最右側銅牆。B 把自己那根從新孔遞給 C，C 用它換壓終點板後完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 正規 8"
+    "label": "N1 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-lost-1",
@@ -1561,7 +1643,8 @@ export const puzzles=[
       "切 A，托著仍在干擾的設備走出門，再放下托盤，改用干擾器開終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · Lost 1"
+    "label": "N1 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-lost-2",
@@ -1584,7 +1667,8 @@ export const puzzles=[
       "B 到第二院，讓方塊上的連接器再選終點藍接收器。A 爬梯回第二院踩風扇板，切 B 完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · Lost 2"
+    "label": "N1 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-bridge",
@@ -1595,6 +1679,7 @@ export const puzzles=[
     "stepId": "region-n1",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：3（轉）→ 7 → 5（轉）→ 6（轉）→ 1 → 4（轉）→ 8（轉）→ 2。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
     ],
@@ -1604,7 +1689,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/07_North%201_%20Desolated_Island/Desolated_5/desolated%20island_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "N1-star-sphinx",
@@ -1630,7 +1717,8 @@ export const puzzles=[
       }
     ],
     "verificationStatus": "consensus",
-    "researchNote": "T 的按鈕 1/2/3/5/8 與 A、C 原始畫面交叉核對；A 第一行是三格，不是一般字型的單格尖頂。"
+    "researchNote": "T 的按鈕 1/2/3/5/8 與 A、C 原始畫面交叉核對；A 第一行是三格，不是一般字型的單格尖頂。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-star-prometheus",
@@ -1655,7 +1743,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/07_North%201_%20Desolated_Island/Desolated_2/desolated%20island_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N1-gold-1",
@@ -1679,7 +1768,8 @@ export const puzzles=[
       "外側身體用方塊開門，連接器改選紅光源與紅接收器；方塊再壓風扇板，外側身體飛後院踩板，切終點前身體完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "N1 · 黃金 1"
+    "label": "N1 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-1",
@@ -1695,12 +1785,13 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "蓄能器 A 充紅，搬去接紅接收器開第一門。",
-      "B 從 A 充紅，再同時接兩個紅接收器，維持第一門。",
-      "清空 A 的顏色，改充藍並接藍接收器，開終點。"
+      "將入口蓄能器命名 A，內房那台命名 B。A 先連紅光源，放下等它充滿紅色，再拿去接第一門的紅接收器。",
+      "進內房，B 連到 A，放下充紅；充滿後重新選兩個紅接收器，放到兩條光線都暢通的位置。確認第一門仍開著，再去拿 A。",
+      "清空 A 的儲存顏色，再接內房藍光源充滿藍色。拿起藍色 A，改接終點藍接收器；B 留原處維持兩個紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 正規 1"
+    "label": "N2 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-2",
@@ -1721,7 +1812,8 @@ export const puzzles=[
       "轉換器改接綠蓄能器＋紅光源，輸出藍光給兩個藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 正規 2"
+    "label": "N2 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-3",
@@ -1763,13 +1855,14 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "兩根連接器隔窗接力送藍光，開蓄能器房。",
-      "蓄能器取到左窗旁。外側連接器改接紅光源，隔窗替它充紅。",
-      "外側連接器接紅蓄能器與入口紅接收器。",
-      "內側連接器移左走廊，隔窗接同一蓄能器與終點紅接收器。"
+      "外側連接器叫 A；先空手穿紫屏，拿內側 B 到拐角窗口，選蓄能器房的藍接收器，放在外側窗口也看得見的位置。",
+      "空手回外側，用 A 接藍光源與窗口後的 B。門開後，空手穿紫屏、沿左走廊取蓄能器，搬到紫屏左邊窗口內側，放到紅光源一側能看見的位置。",
+      "空手回外側，A 改接紅光源與蓄能器，放下等充紅。充滿後 A 改接紅蓄能器與藍光源旁那道門的紅接收器。",
+      "穿過新開的門，先看清終點紅接收器的位置。再空手回紫屏內側取 B，搬到原蓄能器房的左走廊；隔窗選紅蓄能器與終點紅接收器，放下。A 留原處，自己繞回終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 正規 4"
+    "label": "N2 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-5",
@@ -1785,13 +1878,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "抱方塊搭第一風扇越門，關內側開關，方塊壓板開門。",
-      "蓄能器在紫屏邊充藍，先選終點藍接收器，再帶回第二風扇側，加選另一藍接收器。",
-      "方塊從板移到第二風扇，保留連線的蓄能器放方塊頂。",
-      "開開關讓設備往返飛行，爬梯出去，繞紫屏到已開終點。"
+      "抱方塊搭第一風扇，越過門落到第二風扇。先放下方塊，關掉旁邊開關，再用方塊壓門板，讓第一門保持開啟。",
+      "回外側拿蓄能器，在紫屏外選藍光源，放下充滿。拿起後先到原蓄能器位置，隔柵欄與終點門選終點藍接收器，保留這條連線。",
+      "抱蓄能器穿過已開的第一門，到第二風扇旁，加選右側另一個藍接收器。先放下蓄能器，再把方塊從壓板移到第二風扇上；第一門會關閉。",
+      "保留兩個藍接收器連線，把蓄能器放到風扇上的方塊頂。打開開關，等設備在兩座風扇間往返、終點門開啟。",
+      "自己由這一側的梯子爬出去，空手繞到紫屏走廊，穿過終點門啟動輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 正規 5"
+    "label": "N2 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-6",
@@ -1846,7 +1941,8 @@ export const puzzles=[
       "B 接 A 的綠光＋紅蓄能器，輸出到兩個藍接收器；放在兩條綠光之間，避開交叉。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 正規 7"
+    "label": "N2 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-main-8",
@@ -1893,7 +1989,8 @@ export const puzzles=[
       "搬紅蓄能器去另一側紅接收器；反相器再移右上窗口，接紅蓄能器，輸出到藍接收器，開後門。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · Lost 1"
+    "label": "N2 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-lost-2",
@@ -1915,7 +2012,8 @@ export const puzzles=[
       "抱蓄能器進門，放內側壓板，開第二門完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · Lost 2"
+    "label": "N2 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-bridge",
@@ -1926,6 +2024,7 @@ export const puzzles=[
     "stepId": "region-n2",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：1 → 4 → 2 → 3（轉）。",
       "第 2 段：3 → 2（轉）→ 4（轉）→ 1（轉）。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -1936,7 +2035,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_4/flooded_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "N2-star-sphinx",
@@ -1956,7 +2057,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_4/flooded_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-star-prometheus",
@@ -1976,7 +2078,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_2/flooded_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N2-gold-1",
@@ -2000,7 +2103,8 @@ export const puzzles=[
       "紅蓄能器接終點紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "N2 · 黃金 1"
+    "label": "N2 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-1",
@@ -2020,7 +2124,8 @@ export const puzzles=[
       "用方塊換回扇葉，裝回風扇；搭風到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 1"
+    "label": "N3 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-2",
@@ -2036,12 +2141,14 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "搭風取高台方塊，換蓄能器；抱蓄能器搭風到高台充藍。",
-      "回地面把蓄能器換回方塊，移方塊到終點平台旁，踩它登台並從上方取回。",
-      "站平台上把方塊換回已充藍的蓄能器，接藍接收器並壓板，同開兩門。"
+      "搭風扇到高台拿方塊，跳下來，用方塊交換蓄能器。抱蓄能器再搭風扇上台，站在台上選藍光源後放下：它會落到地面，並在下方充成藍色。",
+      "跳下拿已充藍的蓄能器，換回方塊。把方塊放終點平台邊，踩方塊上平台，再轉身把方塊拿上來。",
+      "留在平台上，隔著交換台用方塊換回藍蓄能器。選兩道終點門之間的藍接收器，將蓄能器放在平台壓板上；一台設備同時供電、壓板，兩門都開後完成。",
+      "離開前先準備 Pandora：保留連線取藍蓄能器，跳下再搭風到高台，回望壓板方向，將蓄能器接戶外柱頂 RGB，留高台送藍光。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 2"
+    "label": "N3 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-3",
@@ -2057,12 +2164,16 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "方塊換鑽孔器，鑽銅牆；紫屏另一側連接器換干擾器。",
-      "隔孔將干擾器換方塊，再用方塊換連接器；接紅光源、紅接收器。",
-      "回入口用鑽孔器換出干擾器，開終點門。"
+      "入口側的方塊換鑽孔器，鑽開交換台後方銅牆。鑽孔器留在入口側維持孔洞，自己空手穿紫屏到紅光源房。",
+      "紅光源房的連接器換干擾器；抱干擾器走到洞前，隔洞交換入口側交換台上的方塊。再用拿到的方塊，換回紅光源房交換台上的連接器。",
+      "連接器接紅光源與入口側紅接收器，放下供電。自己空手回入口側，取鑽孔器換出干擾器；此時洞會消失。",
+      "干擾器開終點門，啟動輪盤。",
+      "完成正規 3 後，用干擾器換回鑽孔器，再鑽開交換台後方銅牆。自己空手穿紫屏，用紅光源房的連接器隔洞換干擾器，先放下；回入口側拿鑽孔器換出連接器。",
+      "帶連接器到正規 3 紫色入口內側，選柱頂同一台 RGB 與 Pandora 手中的綠接收器，放到兩者都看得見的位置。暫時沒有綠光是正常的，還缺紅光。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 3"
+    "label": "N3 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-4",
@@ -2075,17 +2186,26 @@ export const puzzles=[
       {
         "title": "Dick Leeuw / Louis Koot · 圖文解法",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_2/north_3_2.htm"
+      },
+      {
+        "title": "RagingTasmanian · Prison 逐步解法（統一採本路線）",
+        "url": "https://www.neoseeker.com/the-talos-principle-2/guides/Prison_Puzzle"
       }
     ],
     "actions": [
-      "A 接紅光開入口；內房方塊換 B，B 接 A 開另一連接器房。",
-      "把取出的連接器換方塊，方塊墊入口旁；另一根放方塊頂接藍光與入口藍接收器，接手開門。",
-      "把多餘連接器都換方塊，三個方塊疊成階梯翻到柵欄後，按開關降柵欄。",
-      "取柵欄後連接器，選紅光源與後段紅接收器。",
-      "再換兩根出來：一根墊方塊開入口藍接收器；另一根接這條藍光與終點藍接收器。"
+      "入口連接器叫 A。A 接入口紅光源與第一門紅接收器，放門邊，讓內房能看見它。進門拿地上方塊，到交換台換連接器 B；B 接 A 與右側小房紅接收器，開房取連接器 C。",
+      "拿 B，清除紅色中繼連線，用 B 換出方塊，放第一門內側。C 選入口藍光源與第一門內側藍接收器，放方塊頂；確認藍光已接手開門，才去拿入口 A。",
+      "A 帶進內房，換出第二個方塊。再取方塊頂的 C，換出第三個方塊，第一門會關閉；三根連接器都留在交換台。此時你在內房，有三個可搬的方塊。",
+      "到另一間有開關、被柵欄封住的連接器房前，兩個方塊疊高，第三個放旁邊當階梯。踩一層、兩層後翻入柵欄房，先按開關降下兩邊柵欄；現在進出內外房不必經第一門。取出房內第四根連接器 D。",
+      "三個方塊中，留一個在地上，另外兩個分別換回兩根連接器。其中一根先搬到入口房，接紅光源與第一門紅接收器，重新打開第一門；另一根帶到內房。",
+      "剩下方塊放第一門內側、靠門邊。內房那根連接器選入口藍光源與第一門內側藍接收器，放方塊頂；以下稱它為「藍線連接器」，保持它不動，避免末段紅藍光相交。",
+      "回入口拿暫時開紅門的連接器，帶到後段紅接收器前，改接入口紅光源與這個紅接收器，打開通往終點的前一道門。第一門仍由方塊上的藍線連接器維持。",
+      "D 帶到後段，選方塊上的藍線連接器與最後藍接收器，放下接力。三條供電線留原處，自己沿兩道已開門到終點輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 4"
+    "label": "N3 · 正規 4",
+    "checkedAt": "2026-11-08",
+    "researchNote": "原作者圖文中 connector 3／4 的稱呼不一致；本頁依 Neoseeker 的先換下紅光中繼、讓第三根在方塊上接藍光路線重新編排，不要求取走已留在交換台的設備。"
   },
   {
     "id": "N3-main-5",
@@ -2101,14 +2221,16 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "蓄能器換干擾器，開第一門取第二台干擾器；第二台開紅光源前門。",
-      "第一台換反相器，放紅光源房壓板並選紅光源。第二台換回蓄能器，從反相器充藍。",
-      "蓄能器先換干擾器維持紅光源房門；再把反相器換另一台干擾器。",
-      "兩台先後從外、內側接手開終點第一門，騰出一台換回藍蓄能器。",
-      "藍蓄能器選內側藍接收器，干擾器開第二門，光線接通後前進。"
+      "終點連續兩道門稱 1、2，紅光源房兩門稱 3、4。蓄能器先換干擾器 A，開門 1，取兩門之間的干擾器 B；B 改開門 3。",
+      "A 換反相器，帶進門 3，在門 4 前選紅光源並放壓板上。門 3、4 都保持開啟後，B 換回蓄能器，連反相器充滿藍色。",
+      "藍蓄能器換一台干擾器，讓它接手開門 3；再拿壓板上的反相器換另一台干擾器。紅光源房接下來可以關閉，藍蓄能器留在交換台。",
+      "一台干擾器從外側開門 1，另一台帶進門 1，從內側接手干擾同一扇門。確認內側那台已接手，才取外側那台換回藍蓄能器。",
+      "藍蓄能器帶到門 2 前，選門後藍接收器，放下；光暫被門 2 擋住。將內側干擾器改開門 2，藍光接通後前進啟動輪盤。",
+      "離開前接 Pandora 紅光：用干擾器從門 2 內側維持出口，蓄能器清空藍色、改接紅光源充紅。帶到本題紫色入口內側，接紅光源上方、戶外柱頂 RGB；2、3 的連線仍在時，現在就能回 Pandora 拿星星。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 5"
+    "label": "N3 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-6",
@@ -2124,13 +2246,14 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "拆第一風扇扇葉壓板，反相器換方塊；裝回扇葉，抱方塊連搭兩座風扇到高台，換轉換器。",
-      "轉換器帶下壓板；再搭第一風扇上屋頂，拆第二風扇扇葉，帶下換反相器。",
-      "反相器選終點藍接收器，放綠光源前矮柵旁。",
-      "抱轉換器搭第一風扇回屋頂，選藍＋綠光源與反相器，放高方塊上，送紅光給反相器。"
+      "拆第一風扇扇葉壓入口門板，拿地上反相器換方塊，帶出門先放地上。取回扇葉裝第一風扇；抱方塊連搭第一、屋頂第二風扇，到高台交換 RGB 轉換器。",
+      "抱 RGB 跳下，壓入口門板。空手搭第一風扇回屋頂，拆第二風扇扇葉，帶下來換回反相器；屋頂第二風扇接下來不再使用。",
+      "反相器選終點藍接收器，放綠光源前的矮柵旁。取門板上的 RGB，抱它搭第一風扇回屋頂。",
+      "留在屋頂，RGB 選下方藍光源、高處綠光源與地面反相器，放屋頂高方塊上。確認 RGB 輸出紅光、反相器輸出藍光後，自己跳下到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 6"
+    "label": "N3 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-7",
@@ -2146,13 +2269,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "第二房鑽牆；把反相器隔孔遞入，換蓄能器後遞回第一房。",
-      "第一風扇扇葉換方塊，墊高蓄能器接藍光充滿；蓄能器遞回第二房。",
-      "方塊換回扇葉並裝回。第二房用藍蓄能器換反相器，隔孔遞回，抱它搭風到高台，選終點紅接收器。",
-      "鑽孔器換回藍蓄能器，接上高台反相器，輸出紅光。"
+      "把紫屏入口側稱第一房，終點側稱第二房。空手進第二房，用鑽孔器開銅牆；鑽孔器留原處。回第一房，把反相器遞過孔，再空手過紫屏，在第二房拿它換蓄能器，將蓄能器遞回第一房。",
+      "回第一房，拆風扇扇葉換方塊，方塊放藍光源前柵欄旁。蓄能器選藍光源，放方塊頂充滿藍色，再拿起遞回第二房。",
+      "方塊換回扇葉、裝好第一房風扇。空手到第二房，藍蓄能器換回反相器，再把反相器遞回第一房。自己回第一房拿反相器，搭風飛到第二房高台。",
+      "在高台上，反相器先選終點紅接收器，放下。自己跳下，用仍在地面的鑽孔器換出藍蓄能器；洞消失無妨，已不需搬設備過孔。",
+      "藍蓄能器接高台反相器，放到兩者能互見的位置。反相器紅光開門，走到輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 7"
+    "label": "N3 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-main-8",
@@ -2174,7 +2299,8 @@ export const puzzles=[
       "搭第二風扇到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 正規 8"
+    "label": "N3 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-lost-1",
@@ -2197,7 +2323,8 @@ export const puzzles=[
       "RGB 接紅光源＋反相器的藍光，輸出綠光到窗口綠接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · Lost 1"
+    "label": "N3 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-lost-2",
@@ -2213,13 +2340,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "干擾器開入口；搭風到平台取鑽孔器，換第二台干擾器，從內側接手開門。",
-      "外側干擾器換扇葉，再拿到內側換鑽孔器；抱鑽孔器搭風上平台開左牆。",
-      "抱干擾器上平台，隔孔換連接器，選孔後紅光源與第二風扇紅接收器；保留連線把連接器遞過孔。",
-      "鑽孔器換扇葉，裝第二風扇，搭風到牆另一側；連接器換回干擾器，開終點門。"
+      "入口干擾器 A 開第一門；進去搭第一風扇上平台，取鑽孔器跳下，換出干擾器 B。B 從內側接手開第一門，讓自己能回入口拿 A。",
+      "A 換入口交換台的扇葉，帶進內側換回鑽孔器。抱鑽孔器搭第一風扇上平台，鑽左側銅牆，保持孔洞。",
+      "跳下拿 B，抱它搭第一風扇上平台，隔洞交換牆後連接器。選洞後紅光源與第二風扇紅接收器，放下接通；再保留連線拿起，將連接器遞過洞、放牆後地面，別放回交換台。",
+      "取鑽孔器跳下，換出扇葉，裝到第二風扇。洞消失後連接器仍在牆後，仍能啟動第二風扇。",
+      "搭第二風扇飛到牆後平台，取連接器換干擾器，干擾終點門，走到輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · Lost 2"
+    "label": "N3 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-bridge",
@@ -2230,6 +2359,7 @@ export const puzzles=[
     "stepId": "region-n3",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：2 → 6 → 3 → 5 → 8 → 1 → 4 → 7。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
     ],
@@ -2239,7 +2369,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_4/north_3_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-star-pandora",
@@ -2250,9 +2381,11 @@ export const puzzles=[
     "stepId": "region-n3",
     "title": "Pandora 星星",
     "actions": [
-      "正規 2 Possibilities：藍蓄能器放高台，接戶外柱頂 RGB。",
-      "正規 3 The Wall：連接器接戶外 RGB 與 Pandora 綠接收器。",
-      "正規 5 Twice：蓄能器改充紅，從入口接同一戶外 RGB。紅＋藍合成綠後，到像底拿星星。"
+      "完成正規 2 後，保留連線取藍蓄能器，跳下再搭風扇上另一座高台。回望終點壓板方向，選戶外混凝土柱頂的固定 RGB，將蓄能器留高台送藍光。",
+      "完成正規 3 後，用干擾器換回鑽孔器，再鑽開交換台後方銅牆。自己空手穿紫屏，用紅光源房的連接器隔洞換干擾器，先放下；回入口側拿鑽孔器換出連接器。",
+      "帶連接器到正規 3 紫色入口內側，選柱頂同一台 RGB 與 Pandora 手中的綠接收器，放到兩者都看得見的位置。暫時沒有綠光是正常的，還缺紅光。",
+      "完成正規 5 後，先用干擾器從門內側維持出口，取藍蓄能器清空顏色，改接紅光源充紅。帶到該題紫色入口內側，選紅光源上方、柱頂的同一台 RGB，放下。",
+      "RGB 同時收到紅、藍後輸出綠光；回正規 3 附近 Pandora 像底拿星星。中途若重啟題目或退出遊戲造成設備重置，需回 2、3、5 恢復這三段連線。"
     ],
     "sources": [
       {
@@ -2260,7 +2393,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_2/north_3_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-star-prometheus",
@@ -2281,7 +2415,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_3/north_3_3.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "N3-gold-1",
@@ -2304,7 +2439,8 @@ export const puzzles=[
       "B 調到光束穿孔的位置，反相器移孔旁；繞到牆另一側隔孔取反相器，接藍色連接器，輸出紅光開終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "N3 · 黃金 1"
+    "label": "N3 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-1",
@@ -2327,7 +2463,8 @@ export const puzzles=[
       "傳送器與方塊各壓一板，搭風到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 正規 1"
+    "label": "S1 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-2",
@@ -2350,7 +2487,8 @@ export const puzzles=[
       "連接器隔窗接藍接收器；鑽開第一房的牆，將傳送器遞入孔，再傳送到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 正規 2"
+    "label": "S1 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-3",
@@ -2400,7 +2538,8 @@ export const puzzles=[
       "回第三房抱方塊，自己留在壓板上，傳送第四房；方塊壓最後一板。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 正規 4"
+    "label": "S1 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-5",
@@ -2424,7 +2563,8 @@ export const puzzles=[
       "回第一房，干擾通室外門並把傳送器放窗旁；抱干擾器傳送室外，隔窗干擾終點門，傳送進去。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 正規 5"
+    "label": "S1 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-6",
@@ -2478,7 +2618,8 @@ export const puzzles=[
       "到第四房取干擾器，隔窗傳送回第一房；從角落干擾室外門，爬梯到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 正規 7"
+    "label": "S1 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-main-8",
@@ -2496,6 +2637,10 @@ export const puzzles=[
       {
         "title": "Gamepressure · The Hard Way 專用解法",
         "url": "https://www.gamepressure.com/the-talos-principle-2/how-to-solve-switcheroo-puzzle/zc11118"
+      },
+      {
+        "title": "Gamepressure · The Hard Way 不保留連線完整路線",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/how-to-solve-switcheroo-puzzle/zc11118"
       }
     ],
     "actions": [
@@ -2510,7 +2655,8 @@ export const puzzles=[
     "label": "S1 · 正規 8",
     "diagram": "switcheroo",
     "warning": "The Hard Way：每次都用一般拾取，不按「保留連線」。最後才選光源。",
-    "researchNote": "Wiki 一般解法第 12 步會使用 Keep Connections，不能用於此盃；採 Gamepressure 獎盃流程，延後至最後才接紅光。"
+    "researchNote": "Wiki 一般解法第 12 步會使用 Keep Connections，不能用於此盃；採 Gamepressure 獎盃流程，延後至最後才接紅光。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-lost-1",
@@ -2567,7 +2713,8 @@ export const puzzles=[
       "自己下樓踩板，等充滿、紅色充電光斷開再回上層。抱蓄能器下樓，接終點紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · Lost 2"
+    "label": "S1 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-bridge",
@@ -2578,6 +2725,7 @@ export const puzzles=[
     "stepId": "region-s1",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：1（轉）→ 2 → 3（轉）→ 4。",
       "第 2 段：4（轉）→ 1 → 3 → 2（轉）。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -2588,7 +2736,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/12_South_%201/South_1_5/south_1_page_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "S1-star-sphinx",
@@ -2608,7 +2758,8 @@ export const puzzles=[
         "url": "https://eip.gg/guides/the-talos-principle-2-south-1-star-statue-puzzles/"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-star-pandora",
@@ -2628,7 +2779,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Southern_Coast#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S1-gold-1",
@@ -2652,7 +2804,8 @@ export const puzzles=[
       "方塊壓板，搭風到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S1 · 黃金 1"
+    "label": "S1 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-1",
@@ -2673,7 +2826,8 @@ export const puzzles=[
       "進門跳上重力牆，拿連接器，選藍光源與藍接收器，放牆面供電。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 1"
+    "label": "S2 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-2",
@@ -2695,7 +2849,8 @@ export const puzzles=[
       "要順便準備 Pandora，再加選接收器上方洞口外、岩石上的固定連接器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 2"
+    "label": "S2 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-3",
@@ -2717,7 +2872,8 @@ export const puzzles=[
       "改對角 1 牆磚發橫向光，將 B 移到終點角，紅光接通。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 3"
+    "label": "S2 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-4",
@@ -2738,7 +2894,8 @@ export const puzzles=[
       "選這兩個藍色目標，把連接器穩放牆面凸塊上；通路打開後進房，在重力牆上啟動輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 4"
+    "label": "S2 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-5",
@@ -2761,7 +2918,8 @@ export const puzzles=[
       "轉換器壓最後門板，前進。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 5"
+    "label": "S2 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-6",
@@ -2783,7 +2941,8 @@ export const puzzles=[
       "將鑽孔器留在牆面，回地面取重力轉換器；兩台各壓終點一板。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 6"
+    "label": "S2 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-7",
@@ -2799,15 +2958,16 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "拆扇葉換下門板上的連接器；連接器接紅光源開重力房。方塊換重力轉換器。",
-      "先橫向、再向下發射重力，將牆上第二方塊移入重力房地面。",
-      "重力轉換器換壓門板，取扇葉裝回風扇；第二方塊放風扇上。",
-      "連接器選紅光源與終點紅接收器，放方塊頂，開風升空。",
-      "房內取重力轉換器，隔窗把空中設備吸回原先牆上，再換扇葉壓板取出轉換器。",
-      "到重力房對上層牆磚發橫向重力，將方塊與連接器吸過來，紅光接通終點。"
+      "拆扇葉，換下第一房門板上的連接器，扇葉留板上。連接器接紅光源與第二房紅接收器開門；地上方塊換重力轉換器。",
+      "在第二房先對上層重力磚發橫向重力，把牆上第二方塊吸來；再對下層地磚發向下重力，將第二方塊移到地面。",
+      "重力轉換器換壓第一房門板，扇葉裝回風扇。第二方塊放風扇，連接器改選紅光源與終點紅接收器，放方塊頂；開開關把設備吹高。",
+      "回第一房拿重力轉換器，此時門會關、自己留在房內。隔窗對原方塊所在的牆上重力磚發光，把空中方塊與連接器一起吸到牆上；轉換器再放回門板，自己走出去。",
+      "先關風扇開關，等風扇旁屏障打開，才拆扇葉。拿扇葉換壓第一房門板，取出重力轉換器。",
+      "走到第二房外，對該房上層重力磚發橫向重力，將牆上方塊與連接器吸過來；即使第二房門關著，也能完成這次移動。紅光接通後到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 7"
+    "label": "S2 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-main-8",
@@ -2823,14 +2983,16 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "拆扇葉，走重力牆換重力轉換器。對蓄能器發橫向重力，一台設備壓板、自己踩另一板，把蓄能器吸出。",
-      "改向天花板發重力；抱蓄能器走牆換扇葉，再抱扇葉登頂換干擾器。",
-      "干擾器壓左板；重力轉換器換回蓄能器，放右板。干擾器同時開紅光源門；自己踩右板，讓蓄能器充紅。",
-      "蓄能器換回重力轉換器，建立上天花板光束；干擾器換回扇葉，裝風扇。",
-      "重力轉換器再換紅蓄能器；留在重力牆上接風扇紅接收器，放穩後下樓搭風。"
+      "拆風扇扇葉，走重力牆到第一交換台，換重力轉換器。對蓄能器旁重力磚發橫向重力，轉換器放一塊壓板，自己踩另一塊，將蓄能器吸出。",
+      "轉換器改對天花板、第二交換台旁的磚發向上重力。抱蓄能器走重力牆，到第一交換台換回扇葉；回地面，抱扇葉搭重力柱上天花板，換出干擾器。",
+      "干擾器先壓左板；拿重力轉換器，走牆到第一交換台換回蓄能器，帶下放右板。取干擾器時自己站左板，干擾紅光源前的第二門，再把仍在干擾的設備放回左板。",
+      "拿右板蓄能器，選紅光源後放下。自己站右板，等蓄能器充滿紅色；此時左板仍由干擾器壓住。",
+      "紅蓄能器到第一交換台換回重力轉換器，回地面再建通往天花板交換台的向上光束。抱干擾器登頂換回扇葉，帶下裝風扇。",
+      "拿重力轉換器，走牆到第一交換台換紅蓄能器。留在牆面上，選風扇紅接收器並把蓄能器放穩在重力磚上；自己跳下搭已啟動的風扇到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 正規 8"
+    "label": "S2 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-lost-1",
@@ -2852,7 +3014,8 @@ export const puzzles=[
       "帶重力轉換器進門，對終點上方重力磚發橫向光；方塊移光束下當墊腳石，跳入光束，落到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · Lost 1"
+    "label": "S2 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-lost-2",
@@ -2875,7 +3038,8 @@ export const puzzles=[
       "重力轉換器換下壓板上的連接器；方塊墊高連接器，接紅光源與終點紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · Lost 2"
+    "label": "S2 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-bridge",
@@ -2886,6 +3050,7 @@ export const puzzles=[
     "stepId": "region-s2",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：2 → 3（轉）→ 1 → 4（轉）。",
       "第 2 段：1 → 3（轉）→ 2（轉）→ 4（轉）。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -2896,7 +3061,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/13_South_2/South_2_5/south_2_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "S2-star-pandora",
@@ -2918,7 +3085,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/13_South_2/South_2_2/south_2_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-star-prometheus",
@@ -2940,7 +3108,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/13_South_2/South_2_5/south_2_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S2-gold-1",
@@ -2964,7 +3133,8 @@ export const puzzles=[
       "再把反相器吸向另一側，光線接通；最後對金屬天花板發重力，自己登頂到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S2 · 黃金 1"
+    "label": "S2 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-1",
@@ -2985,7 +3155,8 @@ export const puzzles=[
       "反相器接紅連接器，輸出到終點藍接收器；轉換器接紅連接器＋藍反相器，輸出到綠接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 1"
+    "label": "S3 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-2",
@@ -3001,15 +3172,17 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "入口 A 接藍光開第一門。到轉盤轉半圈，讓入口與兩根連接器房可見；把 A 搬轉盤上。",
-      "轉盤轉到紅光源與連接器房相通；A 接紅光開門取 B。轉回入口與連接器房相通。",
-      "A 搬回入口接藍光源，B 在轉盤上接 A 與另一藍接收器，取 C。",
-      "轉盤轉到入口、出口方向；C 在內側接藍光源與入口、後門兩個藍接收器，接手供電。",
-      "B 改選紅光源並留轉盤；A 也先放轉盤，將它轉到紅光源與出口相通。",
-      "A 搬過已開藍門，接 B 的紅光與最後紅接收器。"
+      "入口連接器 A 接藍光源與第一門藍接收器。進門到轉盤，轉半圈打開入口與兩根連接器房的方向，回入口拿 A，帶到轉盤。",
+      "將轉盤轉到紅光源與連接器房相通；A 接紅光源與房門紅接收器，取連接器 B 放轉盤。轉回入口與連接器房相通。",
+      "B 先選另一間連接器房的藍接收器；A 搬到入口，接藍光源與 B，取出第三根 C。",
+      "轉盤改到入口、出口方向相通。B 改接入口 A 與第一門內側藍接收器，放轉盤，先把第一門重新打開；C 才能帶到門內側。",
+      "C 在第一門內側選入口藍光源、第一門藍接收器與後段藍接收器，放到能同時照到的位置，接手兩扇門。確認 C 供電後，A、B 才能移走。",
+      "B 清除藍線，改選紅光源，留轉盤；A 也搬到轉盤。將轉盤轉到紅光源與出口相通，B 開始送紅光。",
+      "A 搬過已開的後段藍門，選 B 與最後紅接收器，放下開終點門。C、B 留原處供電。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 2"
+    "label": "S3 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-3",
@@ -3031,7 +3204,8 @@ export const puzzles=[
       "把第一方塊從上層第一板移第二板，平台 B 帶傳送器到終點；走平台 A 看見傳送器後傳送。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 3"
+    "label": "S3 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-4",
@@ -3055,7 +3229,8 @@ export const puzzles=[
       "B 最後隔孔選藍光源、側門藍接收器與終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 4"
+    "label": "S3 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-5",
@@ -3077,7 +3252,8 @@ export const puzzles=[
       "兩根連接器各壓終點一板；從岸邊取另一根，避免再踏上平台。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 5"
+    "label": "S3 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-6",
@@ -3100,7 +3276,8 @@ export const puzzles=[
       "站室外從梯旁取蓄能器，帶去終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 6"
+    "label": "S3 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-7",
@@ -3123,7 +3300,8 @@ export const puzzles=[
     ],
     "verificationStatus": "consensus",
     "label": "S3 · 正規 7",
-    "researchNote": "原文誤把鑽孔器稱為 Gravshifter；已核對 Talos_2_2309、2312、2313 圖，實際為 Driller。"
+    "researchNote": "原文誤把鑽孔器稱為 Gravshifter；已核對 Talos_2_2309、2312、2313 圖，實際為 Driller。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-main-8",
@@ -3145,7 +3323,8 @@ export const puzzles=[
       "轉盤再左轉一次。保留連線移 A 到 C 附近，讓藍光接通轉盤，從紫屏繞回走向終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 正規 8"
+    "label": "S3 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-lost-1",
@@ -3169,7 +3348,8 @@ export const puzzles=[
     ],
     "verificationStatus": "consensus",
     "label": "S3 · Lost 1",
-    "researchNote": "已核對 Talos_2_2213 圖的發光紅色光源；正文把 emitter 寫為 receiver，已依畫面修正。"
+    "researchNote": "已核對 Talos_2_2213 圖的發光紅色光源；正文把 emitter 寫為 receiver，已依畫面修正。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-lost-2",
@@ -3191,7 +3371,8 @@ export const puzzles=[
       "進蓄能器房拿它，從側窗接房門藍接收器；B 搬到內側，接蓄能器與終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · Lost 2"
+    "label": "S3 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-bridge",
@@ -3202,6 +3383,7 @@ export const puzzles=[
     "stepId": "region-s3",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：1（轉）→ 2（轉）→ 3（轉）→ 4。",
       "第 2 段：1 → 2（轉）→ 4 → 3。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -3212,7 +3394,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_5/south_3_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "S3-star-sphinx",
@@ -3232,7 +3416,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Circular_Oasis#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-star-pandora",
@@ -3254,7 +3439,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_3/south_3_3.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "S3-gold-1",
@@ -3277,7 +3463,8 @@ export const puzzles=[
       "平台把 A 推下後，第二紅門關、最後藍門開，走終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "S3 · 黃金 1"
+    "label": "S3 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-1",
@@ -3300,7 +3487,8 @@ export const puzzles=[
       "B 改接 A 的藍光與終點藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 1"
+    "label": "W1 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-2",
@@ -3324,7 +3512,8 @@ export const puzzles=[
       "方塊移牆角，B 站方塊上，接平台 A 的紅光與終點接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 2"
+    "label": "W1 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-3",
@@ -3347,7 +3536,8 @@ export const puzzles=[
       "平台繼續移動，等紅色終點門打開後完成。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 3"
+    "label": "W1 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-4",
@@ -3370,7 +3560,8 @@ export const puzzles=[
       "驅動平台到風扇，讓它被抬高。另一根開右房門，沿已開通路到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 4"
+    "label": "W1 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-5",
@@ -3392,7 +3583,8 @@ export const puzzles=[
       "平台擋光時門關、風扇啟動，把你吹過終點柵欄。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 5"
+    "label": "W1 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-6",
@@ -3414,7 +3606,8 @@ export const puzzles=[
       "另一根連接器從小房角落驅動紅平台；紅平台飛起後再托高藍平台，接通終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 6"
+    "label": "W1 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-7",
@@ -3438,7 +3631,8 @@ export const puzzles=[
       "紅、藍接收器同時啟動，內門打開；踩平台登終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 7"
+    "label": "W1 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-main-8",
@@ -3462,7 +3656,8 @@ export const puzzles=[
       "爬梯回外側，抱鑽孔器從左角傳送上高台，鑽終點牆；遞傳送器進去再傳送。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 正規 8"
+    "label": "W1 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-lost-1",
@@ -3479,13 +3674,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "A 接藍光源與第二房藍接收器，放平台上。B 接第一房外紅接收器與固定連接器，驅動平台到第三房。",
-      "平台壓板時，用連接器換壓該板；從外側驅動平台，自己到第四房踩板讓它進來。",
-      "回第三房，連接器選平台並壓板；外側另一根接光源、第三房連接器與盡頭紅接收器，放平台上。",
-      "自己踩板讓平台走出，開始橫移後離開板。取下平台連接器，踩平台登終點。"
+      "把入口可移動連接器叫 A，另一根叫 B。A 接藍光源與第二房藍接收器，放移動平台上。B 接第一房外紅接收器與固定連接器，等平台走到第三房、壓住門板。",
+      "拿下平台上的 A，放到第三房門板，B 在外側直接接光源與平台，讓它繼續前進。自己到第四房踩板，放平台進來。",
+      "回第三房，板上的連接器只選平台，放回板中央。外側另一根接光源與板上連接器；自己再次踩第四房門板，等平台到該房盡頭。",
+      "外側連接器再加選盡頭紅接收器，保留光源、第三房連接器這兩條線，放平台上。自己踩門板，等平台走出房間、開始橫移後才離開板。",
+      "從岸邊拿下平台上的連接器，使平台停住。踩平台跳上終點高台，啟動輪盤。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · Lost 1"
+    "label": "W1 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-lost-2",
@@ -3509,7 +3706,8 @@ export const puzzles=[
       "回去抱連接器，自己站壓板傳送上去，把連接器壓另一板。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · Lost 2"
+    "label": "W1 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-bridge",
@@ -3520,6 +3718,7 @@ export const puzzles=[
     "stepId": "region-w1",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：3（轉）→ 8（轉）→ 1（轉）→ 2 → 4 → 5（轉）→ 6（轉）→ 7（轉）。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
     ],
@@ -3529,7 +3728,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/16_West_1/West_1_4/west_1_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "W1-star-prometheus",
@@ -3540,8 +3741,8 @@ export const puzzles=[
     "stepId": "region-w1",
     "title": "Prometheus 星星",
     "actions": [
-      "正規 6 Elements：方塊／移動平台帶你升到風扇上方，碰天花板光團。",
-      "依序追到題外、正規 5 與 6 之間終端、交通系統軌道、雕像前。軌道上用走路與跳躍，避免衝刺掉下。"
+      "完成正規 6 Elements 後，搭已疊高的移動平台上到終點高台，從高台碰上方藍光團；這題使用兩個移動平台，沒有方塊要另外搬。",
+      "接著追到正規 6 題外、5 與 6 之間終端、交通系統軌道，最後到 Prometheus 像前。上軌道後用走路與跳躍前進，避免衝刺掉下。"
     ],
     "sources": [
       {
@@ -3549,7 +3750,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Western_Delta#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-star-sphinx",
@@ -3568,7 +3770,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/16_West_1/West_1_4/west_1_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W1-gold-1",
@@ -3592,7 +3795,8 @@ export const puzzles=[
       "傳送器放平台，開開關、踩板送到最右；抱連接器傳送，接藍光源與藍接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "W1 · 黃金 1"
+    "label": "W1 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-1",
@@ -3614,7 +3818,8 @@ export const puzzles=[
       "藍啟動器拿去壓終點板。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 1"
+    "label": "W2 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-2",
@@ -3636,7 +3841,8 @@ export const puzzles=[
       "A 帶入 C 的範圍內，延伸到第三房外；B 移到 A 範圍內，再延伸罩住終點柵欄。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 2"
+    "label": "W2 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-3",
@@ -3658,7 +3864,8 @@ export const puzzles=[
       "A 搬到終點門角落，放進 B 範圍，使它接力開終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 3"
+    "label": "W2 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-4",
@@ -3681,7 +3888,8 @@ export const puzzles=[
       "平台進終點時，用干擾器停住平台，保持柵欄開啟。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 4"
+    "label": "W2 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-5",
@@ -3704,7 +3912,8 @@ export const puzzles=[
       "下樓拿啟動器，接高處連接器，移到終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 5"
+    "label": "W2 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-6",
@@ -3727,7 +3936,8 @@ export const puzzles=[
       "方塊移終點風扇；自己抱紅啟動器踩上方塊，再把紅設備放藍設備範圍內，接力啟動風扇上高台。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 6"
+    "label": "W2 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-7",
@@ -3750,7 +3960,8 @@ export const puzzles=[
       "干擾器隔窗重新開光源房，啟動器通電啟動風扇。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 7"
+    "label": "W2 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-main-8",
@@ -3773,7 +3984,8 @@ export const puzzles=[
       "第二方塊搬入口風扇板，維持第一方塊升空。啟動器最後保留連線移終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 正規 8"
+    "label": "W2 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-lost-1",
@@ -3796,7 +4008,8 @@ export const puzzles=[
       "回外側踩風扇板，B 升空供電，使內風扇把第二方塊與啟動器吹出。拿啟動器接藍光源，移終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · Lost 1"
+    "label": "W2 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-lost-2",
@@ -3818,7 +4031,8 @@ export const puzzles=[
       "進去取反相器，保留藍色輸入，加選紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · Lost 2"
+    "label": "W2 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-bridge",
@@ -3829,6 +4043,7 @@ export const puzzles=[
     "stepId": "region-w2",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：1 → 2 → 4（轉）→ 3。",
       "第 2 段：1 → 2（轉）→ 4（轉）→ 3。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -3839,7 +4054,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_5/west_2_5.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "W2-star-pandora",
@@ -3861,7 +4078,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_2/west_2_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-star-prometheus",
@@ -3872,9 +4090,10 @@ export const puzzles=[
     "stepId": "region-w2",
     "title": "Prometheus 星星",
     "actions": [
-      "從正規 8 往終端走，再上正規 2 上方，找到起點。",
-      "依序追風扇旁、交通站到正規 3 的階梯、黃金門下方、正規 8 到 7 的路、正規 6 右側崖壁。",
-      "最後跟光團跳下崖，落到 Prometheus 前，碰最後光團拿星星。"
+      "從正規 8 沿路到戶外終端，走到正規 2 上方、巨手下方的岩石找藍光團，碰它開始追逐。",
+      "先追到附近風扇，搭風到上方階梯；再碰階梯上的光團，從下一段階梯右側邊緣走上岩石，找到下方光團後逐段下去。",
+      "繼續下到峽谷底，碰光團後跟到峽谷邊緣。下一團停在崖外：先站在它正上方，再朝光團跳下；碰中後會把你往上送到 Prometheus 路線旁的岩石。",
+      "落到上方岩石後跳回步道，到 Prometheus 像底碰最後光團，等星星出現再拿取。"
     ],
     "sources": [
       {
@@ -3882,7 +4101,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/Anthropic_Hills#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W2-gold-1",
@@ -3899,14 +4119,15 @@ export const puzzles=[
       }
     ],
     "actions": [
-      "RGB 接紅＋藍，輸出綠光給綠啟動器，開外門；綠設備移內門旁。",
-      "紅啟動器接紅光源，範圍同時涵蓋外門與綠設備。RGB 換連接器，搬到外側牆角、紫屏旁。",
-      "紅啟動器接連接器，移到開內門的位置；綠啟動器換 RGB，搬出去。",
-      "紅啟動器在外房重新調位，直接加選紅光源維持自供電。",
-      "連接器改接藍光源與藍接收器，開走廊第一門；RGB 接紅光源＋藍連接器，輸出到兩個綠接收器。"
+      "RGB 轉換器選紅光源、藍光源與綠啟動器，打開外門。綠啟動器移到內門旁，開內門。",
+      "紅啟動器直接選紅光源，放在範圍同時罩住外門與綠啟動器的位置。RGB 換普通連接器；連接器搬外側，隔紫屏選紅光源並放下，建立紅光中繼。",
+      "紅啟動器保留連線移到能開內門的位置，再選外側連接器。綠啟動器換回 RGB，帶到紅啟動器所在房。",
+      "紅啟動器移到能維持外門的位置，同時選紅光源與連接器，放下後確認門能保持開啟。RGB 帶出，接下來不需綠啟動器。",
+      "普通連接器清除紅線，改接藍光源與走廊藍接收器，開第一門。RGB 選紅光源、藍色連接器與兩個綠接收器，輸出綠光開後面兩門，到終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W2 · 黃金 1"
+    "label": "W2 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-1",
@@ -3926,7 +4147,8 @@ export const puzzles=[
       "帶干擾器回兩座風扇的巷道，隔窗干擾同一道門，使藍光重新通過，走終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 1"
+    "label": "W3 · 正規 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-2",
@@ -3947,7 +4169,8 @@ export const puzzles=[
       "B 取下改壓最後壓板，走終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 2"
+    "label": "W3 · 正規 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-3",
@@ -3968,7 +4191,8 @@ export const puzzles=[
       "前門開啟，風扇將連接器吹到窗口前，光線穿窗打開終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 3"
+    "label": "W3 · 正規 3",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-4",
@@ -3989,7 +4213,8 @@ export const puzzles=[
       "B 清除原連線，改選內房紅光源與 A；光色切紅，終點門打開。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 4"
+    "label": "W3 · 正規 4",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-5",
@@ -4011,7 +4236,8 @@ export const puzzles=[
       "A 再帶過門，隔第二窗接 B 與最後紅接收器。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 5"
+    "label": "W3 · 正規 5",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-6",
@@ -4033,7 +4259,8 @@ export const puzzles=[
       "托著整組走入方塊房，到窗口放下，兩條藍光接通。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 6"
+    "label": "W3 · 正規 6",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-7",
@@ -4056,7 +4283,8 @@ export const puzzles=[
       "從窗口改干擾紅光源門，光色切紅後過紅門；下一窗口再改藍光源門，最後用干擾器開終點門。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 7"
+    "label": "W3 · 正規 7",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-main-8",
@@ -4079,7 +4307,8 @@ export const puzzles=[
       "第二方塊同法搬上來。站在方塊上，交替把另一方塊往前放、跳過去、取回後方方塊，一路走過紫屏。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 正規 8"
+    "label": "W3 · 正規 8",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-lost-1",
@@ -4101,7 +4330,8 @@ export const puzzles=[
       "自己過紫屏，等第一門開先進去，再等第二門開走終點。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · Lost 1"
+    "label": "W3 · Lost 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-lost-2",
@@ -4123,7 +4353,8 @@ export const puzzles=[
       "抱方塊走第二門，墊到終點高台旁跳上去。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · Lost 2"
+    "label": "W3 · Lost 2",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-bridge",
@@ -4134,6 +4365,7 @@ export const puzzles=[
     "stepId": "region-w3",
     "title": "通往塔的拼塊橋",
     "actions": [
+      "各段拼塊以左上清單由左至右編號，放過一塊後不重新編號。（轉）表示轉到預覽變綠、可放置的方向；來源沒有列固定旋轉次數，不代表只按一次。",
       "第 1 段：4 → 2（轉）→ 1 → 3（轉）。",
       "第 2 段：4 → 3 → 1 → 2（轉）。",
       "完成後進塔，搭紫色升降柱上去啟動光束，再回交通站前往下一區。"
@@ -4144,7 +4376,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_4/west_3_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "W3-star-sphinx",
@@ -4163,7 +4397,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_4/west_3_4.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-star-prometheus",
@@ -4184,7 +4419,8 @@ export const puzzles=[
         "url": "https://taloswiki.org/wiki/High_Plain#Star_monuments"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "W3-gold-1",
@@ -4206,7 +4442,8 @@ export const puzzles=[
       "A 選紅光源與紅接收器，放風扇正前方；被風吹到後方後，紅光接通。"
     ],
     "verificationStatus": "consensus",
-    "label": "W3 · 黃金 1"
+    "label": "W3 · 黃金 1",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-E-green",
@@ -4227,7 +4464,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-E-red",
@@ -4248,7 +4486,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-E-blue",
@@ -4269,7 +4508,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-N-blue",
@@ -4291,7 +4531,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_1/mega_north_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-N-green",
@@ -4313,7 +4554,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/mega_north_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MEGA-S-pins",
@@ -4342,7 +4584,9 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_2.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "unverified",
+    "checkedAt": "2026-11-08",
+    "pending": "拼塊選取順序已核對；各塊從目前朝向需旋轉幾次，來源沒有逐一列明，仍待查證。請以綠色可放置預覽確認方向。"
   },
   {
     "id": "MIRANDA",
@@ -4355,9 +4599,9 @@ export const puzzles=[
     "actions": [
       "在交通站附近 Golden Gate 找 Cornelius，談完後選擇合作並進機器。",
       "第一段窄道靠右，避開左側地雷；下一房等兩顆地雷離開中央路線，分次通過。",
-      "三雷房等左右地雷錯開，先到左柵欄前，再趁右雷通過缺口後進右走廊；末端右轉。",
-      "跟著下一顆雷到第一缺口左轉，再右轉；下一缺口等雷通過，再繼續向右。",
-      "到雕像房取右側方塊，墊低柵欄翻過去。最後一段等雷向右經過，左轉進房，再沿右側靠近 Miranda 並喚醒她。"
+      "三雷房等左右地雷錯開，先到左柵欄前，再趁右雷通過缺口後進右走廊，走到底右轉。",
+      "跟著下一顆雷，在第一缺口左轉，再右轉。到下一缺口先等雷通過，接著向右、再向左；走到底看到高柵欄後的方塊時，先別找路拿它，向左走另一個通道到雕像房。",
+      "雕像房取右側方塊，墊低柵欄翻過去。到有雕像的通道，等地雷向右經過再左轉；下一房可看見 Miranda，沿右側避雷接近並喚醒她。"
     ],
     "sources": [
       {
@@ -4365,7 +4609,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/21_Free_Miranda/free_miranda.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-gate",
@@ -4389,7 +4634,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-u1",
@@ -4413,7 +4659,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-d1",
@@ -4437,7 +4684,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-d2",
@@ -4461,7 +4709,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-d3",
@@ -4511,7 +4760,8 @@ export const puzzles=[
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-d4",
@@ -4559,7 +4809,8 @@ export const puzzles=[
       }
     ],
     "verificationStatus": "consensus",
-    "researchNote": "採圖文攻略的 Dystopia 四輪盤先完成、再回 Utopia 的順序；不混用 Gamepressure 先解 Utopia 第二輪盤的另一套中間狀態。"
+    "researchNote": "採圖文攻略的 Dystopia 四輪盤先完成、再回 Utopia 的順序；不混用 Gamepressure 先解 Utopia 第二輪盤的另一套中間狀態。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "FINAL-u4",
@@ -4609,7 +4860,8 @@ export const puzzles=[
         "url": "https://itemlevel.net/the-talos-principle-2-all-text-adventures-solution-text-adventurer-achievement/"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "TEXT-atlantis",
@@ -4640,7 +4892,8 @@ export const puzzles=[
       }
     ],
     "verificationStatus": "confirmed",
-    "researchNote": "2026-11-03 直接檢視 Game Guides Channel 實玩影片：03:49 底部選項、03:59 終端已選取紀錄均為 without being annihilated；Item Level 的 with 是誤植。英文逐字核對限魔法師這句，其餘路線仍依攻略摘要，並非 PS5 實機驗收。"
+    "researchNote": "2026-11-03 直接檢視 Game Guides Channel 實玩影片：03:49 底部選項、03:59 終端已選取紀錄均為 without being annihilated；Item Level 的 with 是誤植。英文逐字核對限魔法師這句，其餘路線仍依攻略摘要，並非 PS5 實機驗收。",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "TEXT-argument",
@@ -4659,7 +4912,8 @@ export const puzzles=[
         "url": "https://itemlevel.net/the-talos-principle-2-all-text-adventures-solution-text-adventurer-achievement/"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-exercise",
@@ -4684,7 +4938,8 @@ export const puzzles=[
         "url": "https://steamcommunity.com/app/835960/discussions/0/3936769163102066579/"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-ruins",
@@ -4705,7 +4960,8 @@ export const puzzles=[
         "revision": "5128"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-death",
@@ -4727,7 +4983,8 @@ export const puzzles=[
         "revision": "5128"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-faith",
@@ -4749,7 +5006,8 @@ export const puzzles=[
         "revision": "5128"
       }
     ],
-    "verificationStatus": "consensus"
+    "verificationStatus": "consensus",
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-1",
@@ -4775,7 +5033,8 @@ export const puzzles=[
       "CAAB",
       "CCDB",
       "CDDD"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-2",
@@ -4802,7 +5061,8 @@ export const puzzles=[
       "CCCD",
       "EECD",
       "EEDD"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-3",
@@ -4829,7 +5089,8 @@ export const puzzles=[
       "GAHICEEF",
       "GHHIIJEF",
       "GGHIJJJF"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-4",
@@ -4857,7 +5118,8 @@ export const puzzles=[
       "EEHDFG",
       "IIHDFG",
       "IIHHFG"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-5",
@@ -4889,7 +5151,8 @@ export const puzzles=[
       "GGGH",
       "IIII",
       "JJJJ"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   },
   {
     "id": "MUSEUM-arranger-6",
@@ -4919,7 +5182,8 @@ export const puzzles=[
       "KKKKLLLL",
       "MMNNOOPP",
       "MMNNOOPP"
-    ]
+    ],
+    "checkedAt": "2026-11-08"
   }
 ];
 

@@ -82,7 +82,7 @@ node scripts/verify-talos2-browser.mjs
 ## 檔案與資料
 
 - `dist/data.js`：八階段、60 步驟、60 本體獎盃、三市長與查證來源。保留原 57 步驟 ID，新增 Prometheus 救援節點。
-- `dist/puzzle-audit.js`：固定本輪文字檢視 ID、逐步來源比對 ID 與九項修正紀錄；新題目不會自動繼承覆核狀態，不寫入玩家進度。
+- `dist/puzzle-audit.js`：固定文字檢視／已覆核 ID、完整對照與細節缺口分類、歷次修正紀錄；新題目不會自動繼承覆核狀態，不寫入玩家進度。
 - `dist/puzzle-data.js`：212 個解題項目、順序、中文操作摘要、逐題來源與九面拼塊盤格形。
 - `dist/collection-data.js`：12 區、56 個固定收集項目、14 個已列具名遺物與 19 個候選位置、來源圖片連結。
 - `dist/roadmap/artifacts.js`：物品共用身分、原有步驟狀態鍵與舊件數相容計數，供清單及地圖共用。
@@ -106,6 +106,12 @@ node scripts/verify-talos2-browser.mjs
 本次內容更新不需儲存遷移。schema 1 保留未知欄位及未知步驟／獎盃 ID；版本不相容或損壞時停止，不用空資料覆蓋。可匯出原始記錄。匯入在寫入前保存兩端原文、顯示新增欄位與衝突、逐筆／批次選擇、下載復原包、手動確認，再以原始版本交易條件套用；過期或備份失敗停止。完整復原匯出含快照、匯入原文與本模組 sync 原文；復原包本身不直接覆寫，需將選定的 progress／sourceRaw 經一般匯入預覽。
 
 Drive 保留每次 grant 合成檔驗證、strong If-Match、412、競爭測試、首次配對、三方衝突、過期預覽、同步期間新編輯與結果未知修訂核對。沒有自動登入／上傳；正式 Google 驗證仍須使用者在正式網域進行。
+
+## 1.6.0 逐題來源覆核（2026-11-08）
+
+接續上輪 29 項，剩餘 183 項已全部閱讀現有操作並逐步比對來源。合計 212 項：200 項有完整流程對照；12 項的拼塊選取順序已對照，但來源未逐一列固定旋轉次數，保留待查證（十一座戶外橋與南側巨構五銷，N3 橋不在其中）。可依綠色預覽放置，不把「轉」當成固定按一次。沒有 PS5 逐題實機驗收。
+
+優先展開 N2／N3 的換色、換壓、交換台與跨紫屏搬運；N3 Pandora 準備回到第 2／3／5 題當下。另修正序章 Static Pressure、E3 Refraction／Backward Propagation、N1 Two-Body Problem、S2 Delivery／Step and Release、S3 Passageway、W1 Jailbreak、W2 Hollow 及兩處星星／Miranda 的漏步或歧義。完整項目與來源見 [查證紀錄](docs/RESEARCH.md)。所有 ID、schema 1、IndexedDB、匯入與 Drive 不變。
 
 ## 攻略限制
 

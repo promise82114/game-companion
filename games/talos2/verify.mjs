@@ -1,4 +1,4 @@
-import {textScreenedIds,sourceComparedIds,puzzleReviewLevel,puzzleReviewCounts,correctedFindings} from './dist/puzzle-audit.js';
+import {textScreenedIds,sourceComparedIds,puzzleReviewLevel,puzzleReviewCounts,correctedFindings,sourceGapIds,reviewedIds} from './dist/puzzle-audit.js';
 import {storyMaps} from './dist/story-maps.js';
 import {storySources,storyRoutes} from './dist/story-data.js';
 import {storyWaypoints,waypointProgressId,routeItemsForStep,storyRouteHtml} from './dist/roadmap/story.js';
@@ -39,10 +39,11 @@ for(const[step,trophy]of [['region-e1','discovery'],['region-e1','the-all-gifted
 assert.equal(trophyConditions.length,60);assert.equal(Object.keys(trophyGuides).length,60);assert.equal(data.trophies.filter(t=>t.grade==='silver').length,6);assert.equal(data.trophies.filter(t=>t.grade==='gold').length,1);
 for(const trophy of data.trophies){assert.ok(trophy.descriptionZhTW.length>4);assert.equal(trophy.descriptionCheckedAt,'2026-11-04');const guide=trophyGuides[trophy.id];assert.ok(guide.steps.every(id=>ids.has(id)));if(guide.puzzle)assert.ok(puzzles.some(p=>p.id===guide.puzzle));}
 assert.equal(new Set(textScreenedIds).size,textScreenedIds.length);assert.equal(new Set(sourceComparedIds).size,sourceComparedIds.length);
-for(const id of [...textScreenedIds,...sourceComparedIds,...Object.keys(correctedFindings)])assert.ok(puzzles.some(p=>p.id===id),'覆核紀錄必須對應既有題目：'+id);
-assert.ok(sourceComparedIds.every(id=>textScreenedIds.includes(id)));assert.ok(Object.keys(correctedFindings).every(id=>sourceComparedIds.includes(id)));
-const reviewCounts=puzzleReviewCounts(puzzles);assert.equal(reviewCounts.total,212);assert.equal(reviewCounts.textScreened,212);assert.equal(reviewCounts.sourceCompared+reviewCounts.pending,212);assert.equal(reviewCounts.sourceCompared,sourceComparedIds.length,'覆核計數須依明列紀錄，不能從有來源或文字檢視推定');
-assert.equal(puzzleReviewLevel('future-synthetic-puzzle'),'not_reviewed');assert.deepEqual(puzzleReviewCounts([{id:'future-synthetic-puzzle'}]),{total:1,textScreened:0,sourceCompared:0,pending:1});
+for(const id of [...textScreenedIds,...sourceComparedIds,...Object.keys(correctedFindings),...reviewedIds,...sourceGapIds])assert.ok(puzzles.some(p=>p.id===id),'覆核紀錄必須對應既有題目：'+id);
+assert.ok(sourceComparedIds.every(id=>textScreenedIds.includes(id)));assert.ok(Object.keys(correctedFindings).every(id=>reviewedIds.includes(id)));
+const reviewCounts=puzzleReviewCounts(puzzles);assert.equal(reviewCounts.total,212);assert.equal(reviewCounts.textScreened,212);assert.equal(reviewCounts.sourceCompared+reviewCounts.sourceGaps+reviewCounts.pending,212);assert.equal(reviewCounts.sourceCompared,sourceComparedIds.length,'覆核計數須依明列紀錄，不能從有來源或文字檢視推定');
+assert.equal(new Set(reviewedIds).size,reviewedIds.length);assert.equal(reviewCounts.pending,0);assert.ok(sourceGapIds.every(id=>puzzles.find(p=>p.id===id)?.verificationStatus==='unverified'));assert.ok(sourceGapIds.every(id=>puzzles.find(p=>p.id===id)?.pending));
+assert.equal(puzzleReviewLevel('future-synthetic-puzzle'),'not_reviewed');assert.deepEqual(puzzleReviewCounts([{id:'future-synthetic-puzzle'}]),{total:1,textScreened:0,sourceCompared:0,sourceGaps:0,pending:1});
 assert.equal(puzzles.length,212);assert.equal(new Set(puzzles.map(p=>p.id)).size,puzzles.length);
 assert.equal(collectionRegions.length,12);assert.equal(collectionItems.length,56);assert.equal(new Set(collectionItems.map(item=>item.id)).size,56);assert.equal(new Set(collectionItems.map(item=>item.imageUrl)).size,56);assert.equal(artifactCandidates.length,19);
 assert.equal(humanArtifacts.length,14);assert.equal(new Set(humanArtifacts.map(item=>item.id)).size,14);

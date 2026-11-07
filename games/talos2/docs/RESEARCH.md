@@ -4,6 +4,41 @@
 
 ## 已取得證據
 
+### 2026-11-08 剩餘 183 項逐步來源覆核（1.6.0）
+
+接續下節 1.5.2 的 29 項，本輪先閱讀 N2、N3 尚未對照的 22 項，再逐題閱讀其他 161 項的現有操作與來源正文／拼塊截圖，檢查設備取得、遞孔／本人繞行、交換台物品、壓板接手、換色、光源與接收器、操作先後和終點狀態。合計 **212 項已做來源覆核，200 項有完整流程對照、12 項仍缺拼塊精確轉向，0 項尚未覆核**。這是公開攻略與畫面對照，不是 PS5 逐題實機通關，也沒有驗收真實 Google。
+
+固定 ID 清單存於 puzzle-audit.js 的 reviewedIds；完整對照與細節缺口分開計數，新增題目不因有來源／做過文字檢視而自動視為已覆核。查證頁逐項列來源、已覆核或仍有缺口；不在每個遊玩題目塞固定覆核冗言。
+
+**N2／N3 優先**：逐步重讀 [N2 第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_1/flooded_1.htm) 至第 4 頁及 [N3 第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_1/north_3_1.htm) 至第 4 頁，同區金門題另讀 Wiki 完整解法。N2 Absorption 補清 A／B 充滿與接手，Wellspring 分開紫屏內外連接器及兩窗路徑，Balance of Force 分開先選兩接收器、上方塊、開風扇與爬梯離開。N3 Possibilities 說清蓄能器會落地充藍；The Wall 分開兩側交換；Prison 明列三個方塊與四根連接器的取得／回收；Twice 明列門 1～4 與兩台干擾器接手；Up and Down、Propulsion、Elegance 分開扇葉、鑽孔器與孔洞消失前後。Pandora 三處準備也放回正規 2／3／5 當下，退出／重置後需恢復三段連線。上輪已更正的 N2-6 等 29 項維持原 ID 與路線。
+
+本輪其他具體修正／補漏：
+
+| 項目 | 核對結果與處理 |
+| --- | --- |
+| N3-4 Prison | 原作者 connector 3／4 表述混用；直接看 Talos_2_1380.jpg／1381.jpg 確認交換與方塊頂藍光配置。改統一採 [RagingTasmanian 完整路線](https://www.neoseeker.com/the-talos-principle-2/guides/Prison_Puzzle)：紅光中繼先換方塊、第三根改藍光，三塊回收後翻柵欄，再重建終點供電。 |
+| BOOT-4 Static Pressure | [序章第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/01_Calibration/callibration_2.htm)：人站風扇上的方塊，手中方塊放地面風扇板才升高；原摘要誤寫上層板。 |
+| E3-4 Refraction | Wiki 完整解法要求首台先藍入紅出開門，第二台還須選藍接收器；兩者補回。 |
+| E3-7 Backward Propagation | 第二台不是只選藍光源，還須接紅接收器，讓後續踩板能啟動自持。 |
+| N1-6 Two-Body Problem | [第 3 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/07_North%201_%20Desolated_Island/Desolated_3/desolated%20island_3.htm)：方塊移板 2、身體踩紅光源前板 3，再遞連接器，不能將兩板混為一板。 |
+| S2-7 Delivery | [第 5 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/13_South_2/South_2_5/south_2_5.htm)：設備吸上牆後，先關風扇使旁邊屏障開，再取扇葉換壓。 |
+| S2-8 Step and Release | 同頁：蓄能器選紅光源後，自己踩右板等充滿；左板由持續干擾的設備維持。 |
+| S3-2 Passageway | [第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_1/south_3_1.htm)：轉盤改入口／出口後，B 先恢復第一藍門，C 才能帶到內側接手。 |
+| W1 Lost Jailbreak | Wiki 完整九步：第三房板上中繼先驅動平台，自己踩第四房板等平台到盡頭，再搬外側供電連接器到平台。 |
+| W2 gold Hollow | Wiki 有兩套路線；統一採完整第二套，連接器先隔紫屏接紅光源，紅啟動器才有中繼輸入。 |
+| W1 Prometheus | [區域路線](https://taloswiki.org/wiki/Western_Delta#Star_monuments)：Elements 是兩個移動平台疊高，刪去不屬本題的方塊說法。 |
+| W2 Prometheus | [原作者第 5 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_5/west_2_5.htm)：展開風扇、階梯、峽谷；最後跳中崖外光團才會上送，不是任意跳下就到像旁。 |
+| Miranda | [原作者迷宮](https://mysterymanor.net/walkthroughs/Talos_Principle_2/21_Free_Miranda/free_miranda.htm)：補高柵欄方塊前向左找通道，才到雕像房取可用方塊。 |
+
+其他一般／Lost／金門題逐一比對 sources.json 所存 Wiki 正文（非 TODO、提示或影片搜尋連結）與原作者 75 頁公開圖文快取；提示不足者另讀原作者對應段落，例如 N1 High Ground、S3 Transfer／Convolution、W2 Slide／Two of Three、W3 Alternator／Hexahedral Stacking。未把不同作者中途設備配置混接。S1-8 另外重讀 [Gamepressure 不保留連線圖文](https://www.gamepressure.com/the-talos-principle-2/how-to-solve-switcheroo-puzzle/zc11118)，確認最後升高才選紅光源與接收器的既有特殊盃路線，補入逐題來源。
+
+**其他追蹤項目**：12 區共 24 顆星的接點／開關／光團路徑逐一對照區域 Wiki 與原作者正文；N1 字母板另讀 GameSpot，S1 六根柱子座標另讀 EIP。12 座橋的選塊順序逐段對照。東／北側三色門、南側五銷與 Miranda 讀原作者完整段落；三部文字冒險重讀 Item Level 的全部選項，Atlantis 先前影片核對的 without 更正保留，沒有恢復文章的 with 誤植。Rand 測試維持原作者「測試後回話」路線。博物館三間展示題重讀 Wiki 完整解法；序章三面＋博物館六面拼塊，重新觀看九張原遊戲截圖，比對盤面尺寸、四格形狀與數量；既有九張原創字母格均相符，沒有發布來源圖片。
+
+**保留待查證（12 項）**：E1／E2／E3／N1／N2／S1／S2／S3／W1／W2／W3 的 bridge，加 MEGA-S-pins。來源有選塊順序、指出哪些需旋轉，沒有逐一列固定旋轉次數；明示依當下綠色可放置預覽確認，不能把「轉」解讀成固定按一次。N3 bridge 的八塊原文皆直接放置，不列此缺口。來源頁的「待逐步覆核」與「已覆核但缺細節」已分開，不再拿 0 項未覆核表示沒有不確定性。城市地圖／分支及收集總量等既有待查證不因本輪解題覆核而取消。
+
+內容 2026.11.08.3、模組 1.6.0；所有 212 個題目 ID、60 主步驟、schema 1、IndexedDB、備份及 Drive 契約保持相容。全模組資料／同步合成檢查、建置、產物（619 檔／121 本機連結）、Talos 完整隔離瀏覽器與導航六寬回歸通過。另以新 context 核對 58 項（含 N2／N3 全項、歷次修正與待查證題）的桌面／手機解法、來源分類與零溢出；網站測試不代替遊戲實機通關。正式發布依本次 main 提交的 Pages 結果。
+
+
 ### 2026-11-08 全表風險檢視與逐步來源覆核（1.5.2）
 
 使用者擔心 N2-6 之外仍有漏步。逐一閱讀本體 212 個追蹤項目的現有操作文字，檢視紫屏／孔洞搬運、壓板換物、蓄能換色、反相／轉換器來源與前後設備狀態；**這只是全表文字風險檢視，不能當成 212 題都已與來源完整核對或實機通關**。本輪選出 29 項逐步比對原作者圖文／Wiki 正文，精確 ID 存於 `dist/puzzle-audit.js`；其餘 183 項仍待逐步覆核。既有 TEXT-atlantis 的 confirmed 僅有其中英文句子的畫面證據，也不因此把整題所有步驟算進這份逐步覆核清單。
