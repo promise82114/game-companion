@@ -4,6 +4,30 @@
 
 ## 已取得證據
 
+### 2026-11-08 全表風險檢視與逐步來源覆核（1.5.2）
+
+使用者擔心 N2-6 之外仍有漏步。逐一閱讀本體 212 個追蹤項目的現有操作文字，檢視紫屏／孔洞搬運、壓板換物、蓄能換色、反相／轉換器來源與前後設備狀態；**這只是全表文字風險檢視，不能當成 212 題都已與來源完整核對或實機通關**。本輪選出 29 項逐步比對原作者圖文／Wiki 正文，精確 ID 存於 `dist/puzzle-audit.js`；其餘 183 項仍待逐步覆核。既有 TEXT-atlantis 的 confirmed 僅有其中英文句子的畫面證據，也不因此把整題所有步驟算進這份逐步覆核清單。
+
+本次新增修正共九項，分類如下：
+
+| 題目 | 發現與處理 |
+| --- | --- |
+| E3-6 Hidden | 「移到紫屏另一側」容易誤導抱設備穿屏；依 [rev 6765](https://taloswiki.org/index.php?title=Hidden&oldid=6765) 補明沿走廊／藍門繞行，再搬兩件設備壓終點兩板。 |
+| N2-3 Crossing | 蓄能器與方塊需分兩趟搭風取回；換色前要由內側干擾器接手開門，依 [原作者第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_1/flooded_1.htm) 展開。 |
+| N2-8 Remember | 送設備跨紫屏時須先疊方塊＋蓄能器再踩內風扇板；搬走蓄能器後要重新開門，再用轉向接收器／連接器接手，依 [第 4 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_4/flooded_4.htm) 補齊。 |
+| S1-3 Through the Wall | 「利用孔和兩台傳送器搬運」不足以操作；依 [rev 4687](https://taloswiki.org/index.php?title=Through_the_Wall&oldid=4687) 分開隔孔回收兩台、留戶外中繼與攜鑽孔器繞行。 |
+| S1-6 Translocator | 交替換壓的概括不足；依 [rev 4412](https://taloswiki.org/index.php?title=Translocator&oldid=4412) 與 [原作者第 4 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/12_South_%201/South_1_4/south_1_page_4.htm) 補三塊板的換物及高台先後。 |
+| S1 Lost Aerial Warp | 舊五句略過扇葉跨藍門、第二方塊回收及兩座外風扇；依同一作者第 4 頁分配 F1～F4、A～C、H1／H2 的攻略辨識標記，展開同一路線，沒有把不同攻略的中段配置混接。 |
+| FINAL-d3 | 第四個總輪盤被寫在綠門開啟／兩身體會合之前；依 [終局原作者](https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm) 將 RGB 產綠、隔孔遞連接器與原身體過門放回本段。 |
+| FINAL-d4 | 接續前段已開綠門，只處理兩身體、方塊及托盤疊高至第五個總輪盤，避免重複前段工作。 |
+| FINAL-u4 | 本頁順序已在 U2 將 RGB 換回反相器、U3 已替啟動器供藍；原文要求再換一次互相矛盾，改為保留藍線移啟動器到最後門。 |
+
+其他疑似問題沒有憑通用規則硬改：N3 Transmission 的抱干擾器從屋頂孔落下，以及 S2 Other Side 的重力穿孔，原作者確有這些特殊操作；不能只用「孔通常拿來遞設備」判錯。W3 Mobile Instruments 依同一圖文走托盤托起方塊＋連接器，沒有混入早期翻出謎題的漏洞路線。29 項來源對照包含九項新增修正、上輪 N2-6 與其餘 19 項核對；未發現差異的項目不改成成功保證。
+
+修正數九項包含漏步／易誤讀與終局順序矛盾，不表示九題原本都必然無解，也不把其餘 183 項宣稱安全。查證頁移除「0 項仍有缺漏」的誤導性總結，改為分開顯示全表文字檢視、29 項來源逐步對照、183 項待覆核；逐題列狀態與本輪修正原因。未在遊玩頁添加重複提醒或新操作。覆核資料與玩家進度完全分離；所有題目／步驟 ID、schema、IndexedDB 與 Drive 契約不變。
+
+驗證：全模組 `verify.mjs`、建置、產物（619 檔／121 本機連結）、Talos 完整隔離瀏覽器及導航六寬回歸均通過；新增覆核紀錄唯一性／有效 ID、未來新題不自動標為已覆核、來源頁總數與逐題層級一致的回歸。一次性新 context 逐一開啟九項修正於 1440／390px，操作清單與來源完整顯示，沒有水平溢出或 page error。這些是資料與網站功能檢查，不能代替遊戲解法驗證。
+
 ### 2026-11-08 N2 正規 6 Reconnaissance 解說修正（1.5.1）
 
 使用者實際遊玩指出解法不清楚。舊四句摘要省略先空手穿紫屏拿鑽孔器、搬 RGB 時必須經小房藍門→藍光源房→內側側門、兩塊壓板換物的順序，且沒有說清單一藍輸入尚不能產紅；不是單憑舊資料宣稱遊戲路線失效。已以相同 `N2-main-6` 改為逐步操作，A／B 明示為網站辨識標記。
