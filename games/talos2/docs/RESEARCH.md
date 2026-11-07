@@ -4,6 +4,18 @@
 
 ## 已取得證據
 
+### 2026-11-08 N2 正規 6 Reconnaissance 解說修正（1.5.1）
+
+使用者實際遊玩指出解法不清楚。舊四句摘要省略先空手穿紫屏拿鑽孔器、搬 RGB 時必須經小房藍門→藍光源房→內側側門、兩塊壓板換物的順序，且沒有說清單一藍輸入尚不能產紅；不是單憑舊資料宣稱遊戲路線失效。已以相同 `N2-main-6` 改為逐步操作，A／B 明示為網站辨識標記。
+
+依 [Dick Leeuw／Louis Koot 實玩圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_3/flooded_3.htm) 與 [Talos Wiki 房間配置 rev 5324](https://taloswiki.org/index.php?title=Reconnaissance&oldid=5324) 核對。瀏覽器直接觀看前者 `Talos_2_1229.jpg`（轉換器小房與雙紫屏）、`Talos_2_1236.jpg`（RGB 壓內板、直接選藍光源）、`Talos_2_1243.jpg`（綠蓄能器供 RGB 產紅、普通連接器另接終點藍），沒有複製或發布圖片。
+
+本版維持原作者的 RGB 壓內側 B、鑽孔器壓入口 A 配置；Neoseeker 搜尋摘要另有普通連接器壓 B、再供 RGB 的解法，但正文 403，沒有把兩套中途配置混接。新增本題查證日期與來源，維持共識標記；未在 PS5 實機操作，也沒有猜測控制器按鍵。schema、儲存、同步與其他題目內容不變。
+
+先前 `ac9846c` 的 1.5.0 發布已於本輪查詢確認 Actions 成功、正式站實際為 1.5.0；不再沿用 11/5 當時排隊的結論。
+
+本輪通過 `scripts/verify.mjs`、`scripts/build.mjs`、`scripts/verify-site.mjs`（618 檔／121 本機連結）與一次性隔離瀏覽器檢查（1440／390px）：解法關閉時不輸出操作 DOM、開啟顯示十步與來源、原 ID 完成後收合／重載仍保留、獎盃不代填、頁面無錯誤／水平溢出。沒有新增鏡像文案的永久測試或改動 renderer。
+
 ### 2026-11-05 城市回訪、巨構行走指引與預設地圖放大（1.5.0）
 
 內容 `2026.11.05.1`。使用者授權實作、測試、commit、push 與正式部署。保留已發布 58 個主步驟及全部 212 題的 ID，新增北側巨構／西側救援兩步，共 60 步、26 片段；沒有調整 schema 1、IndexedDB、匯入或 Drive adapter。31 個路標以 `steps[waypoint-ID]` 沿用既有狀態保存；父項不代填，舊完成也不自動填新路標。
