@@ -263,6 +263,7 @@ export const sourceGapIds=[
 const gaps=new Set(sourceGapIds);
 export const sourceComparedIds=reviewedIds.filter(id=>!gaps.has(id));
 export const correctedFindings={
+ "W1-main-6": "Prometheus 起點先由藍色移動平台載玩家搭風扇升空，碰光後再解題；不必等兩平台疊高。",
  "N3-main-4": "原作者中途連接器編號混用；改採另一份完整來源，明列 B 先換方塊、C 接藍光，再回收三個方塊。",
  "E3-main-6": "紫屏兩側應沿走廊／藍門繞行；不能把「另一側」當作抱設備穿紫屏。",
  "N2-main-3": "補上分兩趟取回蓄能器與方塊、換色前由內側干擾器接手開門。",
@@ -282,7 +283,7 @@ export const correctedFindings={
 "S3-main-2": "轉盤切到入口／出口後，先用 B 重新開第一藍門，C 才能搬到門內接手。",
 "W1-lost-1": "補回透過第三房連接器驅動平台，自己踩第四房門板、等平台到盡頭，再搬供電連接器上平台。",
 "W2-gold-1": "改用同一來源完整第二路線，明列普通連接器隔紫屏接紅光源，避免中繼沒有輸入。",
-"W1-star-prometheus": "Elements 使用兩個移動平台；刪去不屬於本題的方塊說法。",
+"W1-star-prometheus": "起點需由單一藍色平台載人搭風扇，升空後再向上跳碰光；補回開關、供電、登平台與回軌道路線。",
 "W2-star-prometheus": "最後一跳要瞄準崖外光團，碰中才會上送；展開風扇、階梯、峽谷與回像路線。",
 "MIRANDA": "補回看到高柵欄後方方塊時先向左找通道，才會到有可取方塊的雕像房。",
 "N3-star-pandora": "把正規 3 重新鑽孔、跨孔交換連接器，以及正規 5 紅光前的內側干擾接手補齊；準備也放回 2／3／5 當下。",

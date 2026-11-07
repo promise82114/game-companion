@@ -4,7 +4,7 @@
 
 ## 已取得證據
 
-### 2026-11-08 剩餘 183 項逐步來源覆核（1.6.0）
+### 2026-11-08 剩餘 183 項逐步來源覆核（1.6.1）
 
 接續下節 1.5.2 的 29 項，本輪先閱讀 N2、N3 尚未對照的 22 項，再逐題閱讀其他 161 項的現有操作與來源正文／拼塊截圖，檢查設備取得、遞孔／本人繞行、交換台物品、壓板接手、換色、光源與接收器、操作先後和終點狀態。合計 **212 項已做來源覆核，200 項有完整流程對照、12 項仍缺拼塊精確轉向，0 項尚未覆核**。這是公開攻略與畫面對照，不是 PS5 逐題實機通關，也沒有驗收真實 Google。
 
@@ -26,7 +26,7 @@
 | S3-2 Passageway | [第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_1/south_3_1.htm)：轉盤改入口／出口後，B 先恢復第一藍門，C 才能帶到內側接手。 |
 | W1 Lost Jailbreak | Wiki 完整九步：第三房板上中繼先驅動平台，自己踩第四房板等平台到盡頭，再搬外側供電連接器到平台。 |
 | W2 gold Hollow | Wiki 有兩套路線；統一採完整第二套，連接器先隔紫屏接紅光源，紅啟動器才有中繼輸入。 |
-| W1 Prometheus | [區域路線](https://taloswiki.org/wiki/Western_Delta#Star_monuments)：Elements 是兩個移動平台疊高，刪去不屬本題的方塊說法。 |
+| W1 Prometheus | [區域路線](https://taloswiki.org/wiki/Western_Delta#Star_monuments)：另讀 [原作者 Elements 起點段](https://mysterymanor.net/walkthroughs/Talos_Principle_2/16_West_1/West_1_3/west_1_3.htm)：起點先開風扇，連接器驅動藍色平台，玩家跳上平台搭風升空再向上跳碰光；此準備也放回 W1-6 開頭。接著解完題，再追題外、終端、交通軌道與雕像。 |
 | W2 Prometheus | [原作者第 5 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_5/west_2_5.htm)：展開風扇、階梯、峽谷；最後跳中崖外光團才會上送，不是任意跳下就到像旁。 |
 | Miranda | [原作者迷宮](https://mysterymanor.net/walkthroughs/Talos_Principle_2/21_Free_Miranda/free_miranda.htm)：補高柵欄方塊前向左找通道，才到雕像房取可用方塊。 |
 
@@ -36,7 +36,7 @@
 
 **保留待查證（12 項）**：E1／E2／E3／N1／N2／S1／S2／S3／W1／W2／W3 的 bridge，加 MEGA-S-pins。來源有選塊順序、指出哪些需旋轉，沒有逐一列固定旋轉次數；明示依當下綠色可放置預覽確認，不能把「轉」解讀成固定按一次。N3 bridge 的八塊原文皆直接放置，不列此缺口。來源頁的「待逐步覆核」與「已覆核但缺細節」已分開，不再拿 0 項未覆核表示沒有不確定性。城市地圖／分支及收集總量等既有待查證不因本輪解題覆核而取消。
 
-內容 2026.11.08.3、模組 1.6.0；所有 212 個題目 ID、60 主步驟、schema 1、IndexedDB、備份及 Drive 契約保持相容。全模組資料／同步合成檢查、建置、產物（619 檔／121 本機連結）、Talos 完整隔離瀏覽器與導航六寬回歸通過。另以新 context 核對 58 項（含 N2／N3 全項、歷次修正與待查證題）的桌面／手機解法、來源分類與零溢出；網站測試不代替遊戲實機通關。正式發布依本次 main 提交的 Pages 結果。
+內容 2026.11.08.4、模組 1.6.1；所有 212 個題目 ID、60 主步驟、schema 1、IndexedDB、備份及 Drive 契約保持相容。全模組資料／同步合成檢查、建置、產物（619 檔／121 本機連結）、Talos 完整隔離瀏覽器與導航六寬回歸通過。另以新 context 核對 59 項（含 N2／N3 全項、歷次修正與待查證題）的桌面／手機解法、來源分類與零溢出；網站測試不代替遊戲實機通關。正式發布依本次 main 提交的 Pages 結果。
 
 
 ### 2026-11-08 全表風險檢視與逐步來源覆核（1.5.2）

@@ -3601,6 +3601,7 @@ export const puzzles=[
       }
     ],
     "actions": [
+      "先取本題風扇上方的 Prometheus 起點光團：打開風扇開關，連接器選藍光源與藍色移動平台，放軌道旁；趁平台前進跳上去，隨它到風扇升空，再向上跳碰光團。光團飛出題外後會等候，先跳下關風扇開關、取連接器斷電，再接著解題。",
       "驅動藍色平台到風扇後斷電。連接器選室外藍光源、藍接收器，放藍平台上；暫時被擋住正常。",
       "開開關讓藍平台升高。",
       "另一根連接器從小房角落驅動紅平台；紅平台飛起後再托高藍平台，接通終點。"
@@ -3741,13 +3742,19 @@ export const puzzles=[
     "stepId": "region-w1",
     "title": "Prometheus 星星",
     "actions": [
-      "完成正規 6 Elements 後，搭已疊高的移動平台上到終點高台，從高台碰上方藍光團；這題使用兩個移動平台，沒有方塊要另外搬。",
-      "接著追到正規 6 題外、5 與 6 之間終端、交通系統軌道，最後到 Prometheus 像前。上軌道後用走路與跳躍前進，避免衝刺掉下。"
+      "進正規 6 Elements，先處理風扇上方的起點光團。打開牆上風扇開關；一根連接器選藍光源與藍色移動平台，放軌道旁，不要擋住平台。",
+      "平台開始移動後，趕快跳上去，隨它到風扇上方升空，再向上跳碰藍光團。光團會飛到題外等候；跳下後先解完本題，再到外面繼續追。",
+      "接著追到正規 6 題外、5 與 6 之間終端，再到交通系統軌道。從軌道貼近岩石處爬上去，沿軌道走、跳到光團；碰光後沿軌道回到木橋上方，再跳回木橋。",
+      "走到 Prometheus 像前碰最後光團，等星星出現後拿取。"
     ],
     "sources": [
       {
         "title": "Talos Wiki · W1 雕像",
         "url": "https://taloswiki.org/wiki/Western_Delta#Star_monuments"
+      },
+      {
+        "title": "Dick Leeuw / Louis Koot · 起點搭藍平台升空與後續追光",
+        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/16_West_1/West_1_3/west_1_3.htm"
       }
     ],
     "verificationStatus": "consensus",
