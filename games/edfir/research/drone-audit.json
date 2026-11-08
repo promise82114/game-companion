@@ -1,0 +1,154 @@
+{
+  "checkedAt": "2026-11-08",
+  "method": "比對日文 Wiki 正文／留言、英文攻略與玩家勘誤；定位線索可收斂不等於實機重走。TrueTrophies 本次 403，未以先前摘要冒充本次重新讀取。",
+  "sources": [],
+  "updates": [
+    {
+      "id": "drone-m08",
+      "route": "從起點往右側高架前進；利用高架高度接近旁邊建築，查看朝高架的凸起屋頂。",
+      "direction": "起點右側 → 高架旁屋頂",
+      "directionFrame": "mission-start-and-landmark",
+      "landmark": "高架旁、與高架相近高度的凸起屋頂",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "建築顏色與『回頭』說法不一致，取消顏色與絕對方位作必要條件；採高架與凸起屋頂定位。尚未實機核對。",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "來源共同指向高架旁屋頂；無法由文字證明所有顏色說法指同一棟，故不保留顏色導航。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "起點右前高架旁，淺綠建築凸頂。"},
+          {"sourceId": "drone-faq", "finding": "起點右轉，經高架接近尖拱屋頂。"},
+          {"sourceId": "drone-reddit", "finding": "黃建築低平台。"}
+        ],
+        "pending": ["建築顏色與確切立面待畫面核對"]
+      }
+    },
+    {
+      "id": "drone-m11",
+      "route": "從起點向右找基地外牆的升降機，登上升降機上方的小頂棚；Drone 在頂棚上，不在乘坐平台。",
+      "direction": "起點右側 → 升降機頂棚",
+      "directionFrame": "mission-start",
+      "landmark": "基地牆升降機上方的遮棚",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "英文摘要分別寫西南／東南，未採為導航；以起點右側升降機『上方頂棚』為共同定位。絕對方位仍待核對。",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "日文與詳細英文路線同指起點右側升降機頂棚；羅盤角落分歧仍保留，不能宣稱已證實東南或西南。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "右側基地牆升降機屋頂。"},
+          {"sourceId": "drone-faq", "finding": "右側升降機上方小遮棚。"},
+          {"sourceId": "drone-reddit", "finding": "最高平台標為西南。"},
+          {"sourceId": "drone-gameranx", "finding": "最高平台標為東南。"}
+        ],
+        "pending": ["雷達方位待畫面核對"]
+      }
+    },
+    {
+      "id": "drone-m19",
+      "route": "從起點略向左前進，找斷裂高架下方的黑垃圾袋；在袋堆和輪胎周圍檢查。",
+      "direction": "起點左前方 → 斷高架下",
+      "directionFrame": "mission-start",
+      "landmark": "斷高架下的垃圾袋與輪胎",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "Reddit 原文的東南已有玩家留言更正為東北；Gameranx 仍寫東南，不能視為另一份獨立確認。本站採兩份詳細路線一致的左前斷高架。",
+      "resolution": {
+        "status": "erratum-applied",
+        "conclusion": "保留玩家勘誤，棄用有爭議的東南指引；改以起點朝向與斷高架實體地標導航。",
+        "evidence": [
+          {"sourceId": "drone-reddit", "finding": "Tyrranis 留言明確更正東南為東北。"},
+          {"sourceId": "drone-wiki", "finding": "起點左前高架下黑垃圾袋。"},
+          {"sourceId": "drone-faq", "finding": "起點略向左，前進至高架殘骸。"}
+        ],
+        "pending": ["未實機複核雷達方向"]
+      }
+    },
+    {
+      "id": "drone-m26",
+      "route": "起點回頭走向邊界，沿路找深藍帆布／網罩貨櫃與藍色車；Drone 在相鄰路口的斑馬線。",
+      "direction": "起點後方 → 邊界路口",
+      "directionFrame": "mission-start-and-landmark",
+      "landmark": "藍車、帆布貨櫃與斑馬線",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "Wiki 本文的『左下角再向右』與留言的『應向左』未能證實何者正確；本站不採這段微調方向，保留藍車與斑馬線定位。",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "多源可收斂到邊界藍車旁路口；角落左右細節仍未知，沒有把留言直接升級成確定事實。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "正文與2023-09-24留言對左／右不同。"},
+          {"sourceId": "drone-faq", "finding": "起點回頭，藍車旁斑馬線。"},
+          {"sourceId": "drone-reddit", "finding": "南界藍車旁T形路口。"}
+        ],
+        "pending": ["邊界角落左右微調待實機"]
+      }
+    },
+    {
+      "id": "drone-m28",
+      "route": "先清除附近威脅，再沿邊界找最靠近邊界的施工起重機，檢查機座周圍地面。",
+      "direction": "邊界 → 施工起重機機座",
+      "directionFrame": "landmark; radar-white-marker-up for west references",
+      "landmark": "靠邊界的施工起重機機座",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "Wiki 有左右反置的舊留言；正文及英文來源共同支持邊界起重機底部，不將進建築內列為必要操作。",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "正文與不同英文路線一致描述起重機機座，可用物件取代左右爭議。文字共識不等於實測座標。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "雷達白線朝上，左邊界起重機根部。"},
+          {"sourceId": "drone-reddit", "finding": "西界、建築群最靠邊界的起重機。"},
+          {"sourceId": "drone-gameranx", "finding": "西界黃色起重機底部。"}
+        ],
+        "pending": ["尚未實機重走"]
+      }
+    },
+    {
+      "id": "drone-m32",
+      "route": "穿過起點右前方基地牆缺口，到牆外固定式起重機。先飛上頂端檢查；若要拆除，先確認落點仍在任務邊界內。",
+      "direction": "基地牆缺口外 → 起重機頂端／底座候選",
+      "directionFrame": "mission-start-and-landmark",
+      "landmark": "基地缺口外的固定式起重機",
+      "verification": "conflict",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "obstacle": {"name": "固定式起重機", "action": "可選擇拆除後在邊界內檢查落物；原始高度仍有來源衝突", "required": false},
+      "warning": "高度仍未釐清：Wiki／Reddit 寫頂端，GameFAQs 寫底座；Gameranx 只說拆除後落地，不能證明原始高度。保留兩個候選，不宣稱衝突已解決。",
+      "candidateRoutes": [
+        {"label": "頂端候選", "text": "Jet Lifter 飛到固定式起重機頂端檢查。", "sourceIds": ["drone-wiki", "drone-reddit"]},
+        {"label": "底座候選", "text": "保留結構時也檢查機座；若已拆除，沿殘骸外側、任務邊界內查落物。", "sourceIds": ["drone-faq", "drone-gameranx", "drone-reddit"]}
+      ],
+      "resolution": {
+        "status": "unresolved-elevation",
+        "conclusion": "物件已核對為固定式起重機（Wiki 2019-04-20留言修正『鐵塔』），原始高度仍需影像或遊戲驗證。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "頂端；留言確認物件是固定式起重機。"},
+          {"sourceId": "drone-reddit", "finding": "頂端，拆除可落到邊界內。"},
+          {"sourceId": "drone-faq", "finding": "底座附近。"},
+          {"sourceId": "drone-gameranx", "finding": "拆起重機後回收，未交代原高度。"}
+        ],
+        "pending": ["原始位置在頂端或底座的畫面證據", "拆除後落點與邊界實測"]
+      }
+    },
+    {
+      "id": "drone-m44",
+      "route": "用 Jet Lifter 繞到船尾，從外露引擎往下找幾乎浸入海面的下層噴口，停在噴口上方回收；避免直接落海。",
+      "direction": "船尾 → 半沉水的下層引擎",
+      "directionFrame": "ship-stern-and-engine-level; no viewer-left/right",
+      "landmark": "船尾半沉水的下層噴口",
+      "verification": "source-reconciled",
+      "sourceIds": ["drone-wiki", "drone-faq", "drone-reddit", "drone-gameranx"],
+      "warning": "左／右與引擎序號尚未實機對照；採多源共同的船尾、下層、半沉水三條件定位。跌入海會強制復歸並降低最大 HP。",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "以船尾與上下層定位，避免把觀看者左右與船體右舷混用；引擎序號仍未知。",
+        "evidence": [
+          {"sourceId": "drone-wiki", "finding": "船尾靠右舷，下層近海面噴口。"},
+          {"sourceId": "drone-faq", "finding": "面向船尾的左上引擎之下，另有半沉水引擎。"},
+          {"sourceId": "drone-gameranx", "finding": "船尾近乎沉水的引擎上方。"}
+        ],
+        "pending": ["船體右舷與觀看者左右的影像對照", "引擎序號與落腳點實測"]
+      }
+    }
+  ]
+}

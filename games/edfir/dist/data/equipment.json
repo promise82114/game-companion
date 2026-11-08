@@ -1,0 +1,5314 @@
+{
+  "checkedAt": "2026-11-08",
+  "coverage": {
+    "weapons": "partial",
+    "weaponCount": 52,
+    "items": "partial",
+    "appearance": "partial",
+    "paGear": "four-base-game-types",
+    "mercenary": "structure-and-basic-rules",
+    "challenges": "trophy-targets-only",
+    "warning": "這是可擴充的代表項目部分庫；本庫全數購買不代表 Complete Arsenal、Fully Stocked 或 Elite Customizer 已滿足。",
+    "weaponTypes": 14
+  },
+  "sources": [
+    {
+      "id": "equip-faq-names",
+      "title": "GameFAQs v1.01 — English weapon names",
+      "url": "https://gamefaqs.gamespot.com/ps4/221717-earth-defense-force-iron-rain/faqs/77192"
+    },
+    {
+      "id": "equip-assault",
+      "title": "IRON RAIN @Wiki — アサルトライフル / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/40.html"
+    },
+    {
+      "id": "equip-missile",
+      "title": "IRON RAIN @Wiki — ミサイルランチャー / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/43.html"
+    },
+    {
+      "id": "equip-energy",
+      "title": "IRON RAIN @Wiki — エナジースロウワー / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/53.html"
+    },
+    {
+      "id": "equip-special",
+      "title": "IRON RAIN @Wiki — 特殊兵器 / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/85.html"
+    },
+    {
+      "id": "equip-aa",
+      "title": "solaris32 — Best missions to farm enemies for AA weapons",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1899921392"
+    },
+    {
+      "id": "equip-revive",
+      "title": "IRON RAIN @Wiki — 蘇生装置",
+      "url": "https://w.atwiki.jp/edfir/pages/103.html"
+    },
+    {
+      "id": "gear-trooper",
+      "title": "D3 PUBLISHER — Trooper",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_trooper.html"
+    },
+    {
+      "id": "gear-jet",
+      "title": "D3 PUBLISHER — Jet Lifter",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_jetlifter.html"
+    },
+    {
+      "id": "gear-heavy",
+      "title": "D3 PUBLISHER — Heavy Striker",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_heavystriker.html"
+    },
+    {
+      "id": "gear-prowl",
+      "title": "D3 PUBLISHER — Prowl Rider",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_prowl.html"
+    },
+    {
+      "id": "equip-battle",
+      "title": "D3 PUBLISHER — Mercenary",
+      "url": "https://www.d3p.co.jp/edfir/en/battle.html"
+    },
+    {
+      "id": "equip-disaster",
+      "title": "TrueTrophies — The Soldier Who Resisted Despair",
+      "url": "https://www.truetrophies.com/t252213/the-soldier-who-resisted-despair-trophy"
+    },
+    {
+      "id": "equip-online",
+      "title": "PlayStationTrophies — Solo platinum discussion",
+      "url": "https://www.playstationtrophies.org/forum/topic/311199-possible-to-solo-platinum/"
+    },
+    {
+      "id": "equip-trophy-conditions",
+      "title": "PSPrices — NPWR14625_00 trophy conditions",
+      "url": "https://psprices.com/game-trophies/8950-earth-defense-force-iron-rain"
+    },
+    {
+      "id": "exp-assault",
+      "title": "IRON RAIN @Wiki — Assault Rifle / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/40.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-shotgun",
+      "title": "IRON RAIN @Wiki — Shotgun / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/45.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-sniper",
+      "title": "IRON RAIN @Wiki — Sniper Rifle / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/50.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-rocket",
+      "title": "IRON RAIN @Wiki — Rocket Launcher / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/44.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-missile",
+      "title": "IRON RAIN @Wiki — Missile Launcher / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/43.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-laser-rifle",
+      "title": "IRON RAIN @Wiki — Laser Rifle / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/42.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-grenade-launcher",
+      "title": "IRON RAIN @Wiki — Grenade Launcher / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/48.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-sword",
+      "title": "IRON RAIN @Wiki — Sword / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/51.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-minigun",
+      "title": "IRON RAIN @Wiki — Minigun / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/52.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-energy",
+      "title": "IRON RAIN @Wiki — Energy Thrower / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/53.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-railgun",
+      "title": "IRON RAIN @Wiki — Railgun / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/77.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-satellite",
+      "title": "IRON RAIN @Wiki — Satellite Weapon / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/54.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-laser-cannon",
+      "title": "IRON RAIN @Wiki — Laser Cannon / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/55.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-special",
+      "title": "IRON RAIN @Wiki — Special Weapon / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/85.html",
+      "checkedAt": "2026-11-08",
+      "scope": "本體代表武器的名稱、等級、表列解鎖及購買成本；未轉載性能攻略長文。"
+    },
+    {
+      "id": "exp-grenade-items",
+      "title": "IRON RAIN @Wiki — グレネード",
+      "url": "https://w.atwiki.jp/edfir/pages/62.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-deployed-items",
+      "title": "IRON RAIN @Wiki — 設置兵器",
+      "url": "https://w.atwiki.jp/edfir/pages/65.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-vehicles",
+      "title": "IRON RAIN @Wiki — ビークル",
+      "url": "https://w.atwiki.jp/edfir/pages/56.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-support-requests",
+      "title": "IRON RAIN @Wiki — 支援要請",
+      "url": "https://w.atwiki.jp/edfir/pages/99.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-support-devices",
+      "title": "IRON RAIN @Wiki — サポート装置",
+      "url": "https://w.atwiki.jp/edfir/pages/104.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-recovery-items",
+      "title": "IRON RAIN @Wiki — 回復装置",
+      "url": "https://w.atwiki.jp/edfir/pages/106.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    },
+    {
+      "id": "exp-appearance",
+      "title": "IRON RAIN @Wiki — カスタマイズ-服装",
+      "url": "https://w.atwiki.jp/edfir/pages/58.html",
+      "checkedAt": "2026-11-08",
+      "scope": "部分本體條目的原名、解鎖與購買資源；使用扣款不作購買價格。"
+    }
+  ],
+  "conventions": {
+    "verification": "價格與解鎖依公開資料逐欄轉錄，未經目前遊戲版本實機核對；未知欄位為 null。",
+    "cost": "Credits 是購買價；red/blue/yellow 分別為三色 Energy Gems，0 表示來源明列不需要。",
+    "status": "資料庫不預填使用者的已解鎖／已購買狀態；推薦用途均為編輯建議。",
+    "dlc": "排除 Ex 任務、Golden Storm 與特典裝備。"
+  },
+  "weapons": [
+    {
+      "id": "weapon-ae-2038",
+      "officialName": "AE-2038",
+      "type": "Assault Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "先用現有武器熟悉瞄準，再依關卡需求選購。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "exp-assault"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "AE-2038",
+      "aliases": [
+        "AE-2038"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "AE-2038",
+      "price": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "missionIds": [],
+      "recommendedUse": "先用現有武器熟悉瞄準，再依關卡需求選購。",
+      "unlockCondition": "初始裝備；以遊戲內庫存確認。",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-aw-outrage",
+      "officialName": "AW-Outrage",
+      "type": "Assault Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m02",
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null,
+        "reportedDifficulty": "Normal"
+      },
+      "cost": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m02"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "入門連射武器候選；先在 Practice 試射再決定購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "exp-assault"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "nameJa": "AW-アウトレイジ",
+      "aliases": [
+        "AW-アウトレイジ"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "AW-Outrage",
+      "price": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m02"
+      ],
+      "recommendedUse": "入門連射武器候選；先在 Practice 試射再決定購買。 價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "unlockCondition": "M02 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-aw-furious-2",
+      "officialName": "AW-Furious 2",
+      "type": "Assault Rifle",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m01",
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null,
+        "reportedDifficulty": "Hard"
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 400,
+        "blue": 400,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m01"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "已有穩定配裝後回頭挑戰 M01 Hard，作為主線升級候選。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "exp-assault"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "來源表列難度僅為充分條件；最低難度尚未確認。",
+      "nameJa": "AW-フューリアス2",
+      "aliases": [
+        "AW-フューリアス2"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "AW-Furious 2",
+      "price": {
+        "credits": 48000,
+        "red": 400,
+        "blue": 400,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m01"
+      ],
+      "recommendedUse": "已有穩定配裝後回頭挑戰 M01 Hard，作為主線升級候選。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "unlockCondition": "M01 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-ae-2030",
+      "officialName": "AE-2030",
+      "type": "Assault Rifle",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Storm Ant",
+        "killCount": 2500
+      },
+      "cost": {
+        "credits": 850000,
+        "red": 0,
+        "blue": 5000,
+        "yellow": 2000
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m01"
+      ],
+      "recommendation": "高階連射候選；先核對累計擊殺，再規劃購買資源。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "equip-aa",
+        "exp-assault"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "nameJa": "AE-2030",
+      "aliases": [
+        "AE-2030"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "AE-2030",
+      "price": {
+        "credits": 850000,
+        "red": 0,
+        "blue": 5000,
+        "yellow": 2000
+      },
+      "missionIds": [
+        "m01"
+      ],
+      "recommendedUse": "高階連射候選；先核對累計擊殺，再規劃購買資源。 擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "unlockCondition": "累計擊倒 2500 隻 Storm Ant，並成功完成任務。",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-aw-furious-ares",
+      "officialName": "AW-Furious Ares",
+      "type": "Assault Rifle",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Crazy Ant",
+        "killCount": 1200
+      },
+      "cost": {
+        "credits": 850000,
+        "red": 3500,
+        "blue": 3500,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m17",
+        "m23"
+      ],
+      "recommendation": "高階突擊步槍候選；確認解鎖後再納入資源目標。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "equip-aa",
+        "exp-assault"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "nameJa": "AW-フューリアス・アレス",
+      "aliases": [
+        "AW-フューリアス・アレス"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "AW-Furious Ares",
+      "price": {
+        "credits": 850000,
+        "red": 3500,
+        "blue": 3500,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m17",
+        "m23"
+      ],
+      "recommendedUse": "高階突擊步槍候選；確認解鎖後再納入資源目標。 擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "unlockCondition": "累計擊倒 1200 隻 Crazy Ant，並成功完成任務。",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-sq-sky-tango",
+      "officialName": "SQ-Sky Tango",
+      "type": "Missile Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m01",
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null,
+        "reportedDifficulty": "Normal"
+      },
+      "cost": {
+        "credits": 800,
+        "red": 5,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m01"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "前期飛彈候選；以 Practice 確認鎖定操作。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "equip-missile",
+        "equip-faq-names",
+        "exp-missile"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "nameJa": "SQ-スカイタンゴ",
+      "aliases": [
+        "SQ-スカイタンゴ"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "SQ-Sky Tango",
+      "price": {
+        "credits": 800,
+        "red": 5,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m01"
+      ],
+      "recommendedUse": "前期飛彈候選；以 Practice 確認鎖定操作。 價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "unlockCondition": "M01 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t17"
+      ]
+    },
+    {
+      "id": "weapon-sq-curtain-call",
+      "officialName": "SQ-Curtain Call",
+      "type": "Missile Launcher",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Harvester",
+        "killCount": 150
+      },
+      "cost": {
+        "credits": 1000000,
+        "red": 10000,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m10",
+        "m38"
+      ],
+      "recommendation": "高階飛彈候選；刷擊殺時一併記錄自己的收益。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "equip-missile",
+        "equip-faq-names",
+        "equip-aa",
+        "exp-missile"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "nameJa": "SQ-カーテンコール",
+      "aliases": [
+        "SQ-カーテンコール"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "SQ-Curtain Call",
+      "price": {
+        "credits": 1000000,
+        "red": 10000,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m10",
+        "m38"
+      ],
+      "recommendedUse": "高階飛彈候選；刷擊殺時一併記錄自己的收益。 擊殺後必須成功完成任務；推薦關卡不代表保證效率。",
+      "unlockCondition": "累計擊倒 150 隻 Harvester，並成功完成任務。",
+      "trophyIds": [
+        "t10",
+        "t17"
+      ]
+    },
+    {
+      "id": "weapon-bl-catalaunica",
+      "officialName": "BL-Catalaunica",
+      "type": "Energy Thrower",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 1,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 25,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "首次收集 Drone 後可檢查商店，作為 Energy Thrower 類型入門。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "equip-energy",
+        "equip-faq-names",
+        "exp-energy"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "BL-カタラウヌム",
+      "aliases": [
+        "BL-カタラウヌム"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "BL-Catalaunica",
+      "price": {
+        "credits": 2500,
+        "red": 25,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "首次收集 Drone 後可檢查商店，作為 Energy Thrower 類型入門。",
+      "unlockCondition": "確認回收 1 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t22"
+      ]
+    },
+    {
+      "id": "weapon-bl-gaugamela",
+      "officialName": "BL-Gaugamela",
+      "type": "Energy Thrower",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 3,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 0,
+        "blue": 25,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "equip-energy",
+        "equip-faq-names",
+        "exp-energy"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "BL-ガウガメラ",
+      "aliases": [
+        "BL-ガウガメラ"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "BL-Gaugamela",
+      "price": {
+        "credits": 2500,
+        "red": 0,
+        "blue": 25,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "unlockCondition": "確認回收 3 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t22"
+      ]
+    },
+    {
+      "id": "weapon-mr-glue-launcher",
+      "officialName": "MR-Glue Launcher",
+      "type": "Special Weapon",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 25,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 50,
+        "blue": 50,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "特殊武器體驗候選；勿當成已解鎖就已購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names",
+        "exp-special"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "MR-グルーランチャー",
+      "aliases": [
+        "MR-グルーランチャー"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "MR-Glue Launcher",
+      "price": {
+        "credits": 8000,
+        "red": 50,
+        "blue": 50,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "特殊武器體驗候選；勿當成已解鎖就已購買。",
+      "unlockCondition": "確認回收 25 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10"
+      ]
+    },
+    {
+      "id": "weapon-er-super-chainsaw",
+      "officialName": "ER-Super Chainsaw",
+      "type": "Special Weapon",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 42,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 0,
+        "blue": 500,
+        "yellow": 500
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "近距離特殊武器候選；到 Practice 熟悉距離後再實戰。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names",
+        "exp-special"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "ER-スーパーチェーンソー",
+      "aliases": [
+        "ER-スーパーチェーンソー"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "ER-Super Chainsaw",
+      "price": {
+        "credits": 48000,
+        "red": 0,
+        "blue": 500,
+        "yellow": 500
+      },
+      "missionIds": [],
+      "recommendedUse": "近距離特殊武器候選；到 Practice 熟悉距離後再實戰。",
+      "unlockCondition": "確認回收 42 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10"
+      ]
+    },
+    {
+      "id": "weapon-er-super-chainsaw-edf-spec",
+      "officialName": "ER-Super Chainsaw EDF Spec",
+      "type": "Special Weapon",
+      "rank": "A",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 55,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 480000,
+        "red": 0,
+        "blue": 2500,
+        "yellow": 2500
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "全 Drone 後檢查商店；保留 Credits 與兩色 Gems 完成購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names",
+        "exp-special"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null,
+      "nameJa": "ER-スーパーチェーンソーEDF仕様",
+      "aliases": [
+        "ER-スーパーチェーンソーEDF仕様"
+      ],
+      "nameJaVerification": "single-source-transcription",
+      "displayName": "ER-Super Chainsaw EDF Spec",
+      "price": {
+        "credits": 480000,
+        "red": 0,
+        "blue": 2500,
+        "yellow": 2500
+      },
+      "missionIds": [],
+      "recommendedUse": "全 Drone 後檢查商店；保留 Credits 與兩色 Gems 完成購買。",
+      "unlockCondition": "確認回收 55 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10"
+      ]
+    },
+    {
+      "id": "weapon-ae-2032gd-i",
+      "officialName": "AE-2032GD-I",
+      "nameJa": "AE-2032GD-I",
+      "type": "Assault Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m08",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1200,
+        "red": null,
+        "blue": 10,
+        "yellow": null
+      },
+      "relatedMissionIds": [
+        "m08"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "exp-assault"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "AE-2032GD-I",
+      "price": {
+        "credits": 1200,
+        "red": null,
+        "blue": 10,
+        "yellow": null
+      },
+      "missionIds": [
+        "m08"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "M08 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-ae-2040a",
+      "officialName": "AE-2040A",
+      "nameJa": "AE-2040A",
+      "type": "Assault Rifle",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m15",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": null,
+        "blue": 80,
+        "yellow": null
+      },
+      "relatedMissionIds": [
+        "m15"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "exp-assault"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "AE-2040A",
+      "price": {
+        "credits": 8000,
+        "red": null,
+        "blue": 80,
+        "yellow": null
+      },
+      "missionIds": [
+        "m15"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "M15 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-ae-20nn",
+      "officialName": "AE-20NN",
+      "nameJa": "AE-20NN",
+      "type": "Assault Rifle",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m23",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": null,
+        "blue": 100,
+        "yellow": null
+      },
+      "relatedMissionIds": [
+        "m23"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "exp-assault"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "AE-20NN",
+      "price": {
+        "credits": 10000,
+        "red": null,
+        "blue": 100,
+        "yellow": null
+      },
+      "missionIds": [
+        "m23"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "M23 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t13"
+      ]
+    },
+    {
+      "id": "weapon-sp-20x",
+      "officialName": "SP-20X",
+      "nameJa": "SP-20X",
+      "type": "Shotgun",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Defeat 100 enemies using a Shotgun (Campaign)"
+      ],
+      "sourceIds": [
+        "exp-shotgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "初始可用／可購買資格不等於使用者已實際購買；不預填取得。",
+      "displayName": "SP-20X",
+      "price": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 初始可用／可購買資格不等於使用者已實際購買；不預填取得。",
+      "unlockCondition": "初始裝備；以遊戲內庫存確認。",
+      "trophyIds": [
+        "t10",
+        "t14"
+      ]
+    },
+    {
+      "id": "weapon-sp-cornet",
+      "officialName": null,
+      "nameJa": "SP-コルネット",
+      "type": "Shotgun",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m06",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1200,
+        "red": 5,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m06"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Defeat 100 enemies using a Shotgun (Campaign)"
+      ],
+      "sourceIds": [
+        "exp-shotgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "SP-コルネット",
+      "price": {
+        "credits": 1200,
+        "red": 5,
+        "blue": 5,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m06"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M06 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t14"
+      ]
+    },
+    {
+      "id": "weapon-sp-30y-da",
+      "officialName": "SP-30Y-DA",
+      "nameJa": "SP-30Y-DA",
+      "type": "Shotgun",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m13",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 40,
+        "blue": 40,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m13"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Defeat 100 enemies using a Shotgun (Campaign)"
+      ],
+      "sourceIds": [
+        "exp-shotgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "SP-30Y-DA",
+      "price": {
+        "credits": 8000,
+        "red": 40,
+        "blue": 40,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m13"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M13 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t14"
+      ]
+    },
+    {
+      "id": "weapon-sh-2033",
+      "officialName": "SH-2033",
+      "nameJa": "SH-2033",
+      "type": "Sniper Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 800,
+        "red": null,
+        "blue": 5,
+        "yellow": null
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Sharpshooter"
+      ],
+      "sourceIds": [
+        "exp-sniper"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "初始可用／可購買資格不等於使用者已實際購買；不預填取得。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "SH-2033",
+      "price": {
+        "credits": 800,
+        "red": null,
+        "blue": 5,
+        "yellow": null
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 初始可用／可購買資格不等於使用者已實際購買；不預填取得。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "初始裝備；以遊戲內庫存確認。",
+      "trophyIds": [
+        "t10",
+        "t15"
+      ]
+    },
+    {
+      "id": "weapon-sh-2033gd",
+      "officialName": "SH-2033GD",
+      "nameJa": "SH-2033GD",
+      "type": "Sniper Rifle",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m19",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": 80,
+        "blue": 20,
+        "yellow": null
+      },
+      "relatedMissionIds": [
+        "m19"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Sharpshooter"
+      ],
+      "sourceIds": [
+        "exp-sniper"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "SH-2033GD",
+      "price": {
+        "credits": 10000,
+        "red": 80,
+        "blue": 20,
+        "yellow": null
+      },
+      "missionIds": [
+        "m19"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "M19 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t15"
+      ]
+    },
+    {
+      "id": "weapon-sh-allegretto",
+      "officialName": null,
+      "nameJa": "SH-アレグレット",
+      "type": "Sniper Rifle",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m15",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": 80,
+        "blue": 20,
+        "yellow": null
+      },
+      "relatedMissionIds": [
+        "m15"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Sharpshooter"
+      ],
+      "sourceIds": [
+        "exp-sniper"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "SH-アレグレット",
+      "price": {
+        "credits": 10000,
+        "red": 80,
+        "blue": 20,
+        "yellow": null
+      },
+      "missionIds": [
+        "m15",
+        "m17"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "M15 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t15"
+      ]
+    },
+    {
+      "id": "weapon-fx-cyrus-ii",
+      "officialName": null,
+      "nameJa": "FX-キュロスII",
+      "type": "Rocket Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Smoke and Flames"
+      ],
+      "sourceIds": [
+        "exp-rocket"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "partial"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "初始可用／可購買資格不等於使用者已實際購買；不預填取得。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "displayName": "FX-キュロスII",
+      "price": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 初始可用／可購買資格不等於使用者已實際購買；不預填取得。 來源破折號或未列購買資源維持 null，不當作確認的 0。",
+      "unlockCondition": "初始裝備；以遊戲內庫存確認。",
+      "trophyIds": [
+        "t10",
+        "t16"
+      ]
+    },
+    {
+      "id": "weapon-fx-naughty-boy",
+      "officialName": null,
+      "nameJa": "FX-ノーティボーイ",
+      "type": "Rocket Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1200,
+        "red": 0,
+        "blue": 10,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m03"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Smoke and Flames"
+      ],
+      "sourceIds": [
+        "exp-rocket"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "FX-ノーティボーイ",
+      "price": {
+        "credits": 1200,
+        "red": 0,
+        "blue": 10,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m03"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M03 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t16"
+      ]
+    },
+    {
+      "id": "weapon-fx-darius-i",
+      "officialName": null,
+      "nameJa": "FX-ダレイオスI",
+      "type": "Rocket Launcher",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": 0,
+        "blue": 100,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m12"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Smoke and Flames"
+      ],
+      "sourceIds": [
+        "exp-rocket"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "FX-ダレイオスI",
+      "price": {
+        "credits": 10000,
+        "red": 0,
+        "blue": 100,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m12"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M12 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t16"
+      ]
+    },
+    {
+      "id": "weapon-sq-sky-waltz",
+      "officialName": null,
+      "nameJa": "SQ-スカイワルツ",
+      "type": "Missile Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m10",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2400,
+        "red": 20,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m10"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "exp-missile"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "SQ-スカイワルツ",
+      "price": {
+        "credits": 2400,
+        "red": 20,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m10",
+        "m29"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M10 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t17"
+      ]
+    },
+    {
+      "id": "weapon-sq-multiple-missile-six",
+      "officialName": null,
+      "nameJa": "6連装マルチプルミサイル",
+      "type": "Missile Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m11",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2400,
+        "red": 20,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m11"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "exp-missile"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "6連装マルチプルミサイル",
+      "price": {
+        "credits": 2400,
+        "red": 20,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m11"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M11 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t17"
+      ]
+    },
+    {
+      "id": "weapon-sq-sky-rumba",
+      "officialName": null,
+      "nameJa": "SQ-スカイルンバ",
+      "type": "Missile Launcher",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m27",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 14000,
+        "red": 140,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m27"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "exp-missile"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "SQ-スカイルンバ",
+      "price": {
+        "credits": 14000,
+        "red": 140,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m27"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M27 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t17"
+      ]
+    },
+    {
+      "id": "weapon-bs-opx-a1-alice",
+      "officialName": "BS-Opx.A1\"Alice\"",
+      "nameJa": "BS-Opx.A1\"Alice\"",
+      "type": "Laser Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m10",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1800,
+        "red": 10,
+        "blue": 0,
+        "yellow": 5
+      },
+      "relatedMissionIds": [
+        "m10"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Optical Expert"
+      ],
+      "sourceIds": [
+        "exp-laser-rifle"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "BS-Opx.A1\"Alice\"",
+      "price": {
+        "credits": 1800,
+        "red": 10,
+        "blue": 0,
+        "yellow": 5
+      },
+      "missionIds": [
+        "m10"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M10 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t18"
+      ]
+    },
+    {
+      "id": "weapon-bs-opx-c1-celia",
+      "officialName": "BS-Opx.C1\"Celia\"",
+      "nameJa": "BS-Opx.C1\"Celia\"",
+      "type": "Laser Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m24",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1800,
+        "red": 0,
+        "blue": 10,
+        "yellow": 5
+      },
+      "relatedMissionIds": [
+        "m24"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Optical Expert"
+      ],
+      "sourceIds": [
+        "exp-laser-rifle"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "BS-Opx.C1\"Celia\"",
+      "price": {
+        "credits": 1800,
+        "red": 0,
+        "blue": 10,
+        "yellow": 5
+      },
+      "missionIds": [
+        "m24"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M24 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t18"
+      ]
+    },
+    {
+      "id": "weapon-bs-opx-c2-charlotte",
+      "officialName": "BS-Opx.C2\"Charlotte\"",
+      "nameJa": "BS-Opx.C2\"Charlotte\"",
+      "type": "Laser Rifle",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 23,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 25,
+        "blue": 75,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Optical Expert"
+      ],
+      "sourceIds": [
+        "exp-laser-rifle"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "source-checked-code",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "來源使用相同英數型號；未逐項實機核對。",
+      "warning": null,
+      "displayName": "BS-Opx.C2\"Charlotte\"",
+      "price": {
+        "credits": 8000,
+        "red": 25,
+        "blue": 75,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 23 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t18"
+      ]
+    },
+    {
+      "id": "weapon-tf-anger",
+      "officialName": null,
+      "nameJa": "TF-アンガー",
+      "type": "Grenade Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m05",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1200,
+        "red": 10,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m05"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Loose Cannon"
+      ],
+      "sourceIds": [
+        "exp-grenade-launcher"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "TF-アンガー",
+      "price": {
+        "credits": 1200,
+        "red": 10,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m05"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M05 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t19"
+      ]
+    },
+    {
+      "id": "weapon-tf-grudge",
+      "officialName": null,
+      "nameJa": "TF-グラッジ",
+      "type": "Grenade Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m07",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1800,
+        "red": 15,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m07"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Loose Cannon"
+      ],
+      "sourceIds": [
+        "exp-grenade-launcher"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "TF-グラッジ",
+      "price": {
+        "credits": 1800,
+        "red": 15,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m07"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M07 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t19"
+      ]
+    },
+    {
+      "id": "weapon-tf-anger-3way",
+      "officialName": null,
+      "nameJa": "TF-アンガー3way",
+      "type": "Grenade Launcher",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m14",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m14"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Loose Cannon"
+      ],
+      "sourceIds": [
+        "exp-grenade-launcher"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "displayName": "TF-アンガー3way",
+      "price": {
+        "credits": 10000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m14"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M14 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t19"
+      ]
+    },
+    {
+      "id": "weapon-mc-proto-arc-sword",
+      "officialName": null,
+      "nameJa": "MC-プロト・アークソード",
+      "type": "Sword",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m07",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m07"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Legendary Swordsman"
+      ],
+      "sourceIds": [
+        "exp-sword"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "MC-プロト・アークソード",
+      "price": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m07"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M07 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t20"
+      ]
+    },
+    {
+      "id": "weapon-mc-arc-sword-type-w",
+      "officialName": null,
+      "nameJa": "MC-アークソードType.W",
+      "type": "Sword",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m14",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 80,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m14"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Legendary Swordsman"
+      ],
+      "sourceIds": [
+        "exp-sword"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "MC-アークソードType.W",
+      "price": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 80,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m14"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M14 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t20"
+      ]
+    },
+    {
+      "id": "weapon-mc-arc-sword",
+      "officialName": null,
+      "nameJa": "MC-アークソード",
+      "type": "Sword",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m20",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 80,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m20"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Legendary Swordsman"
+      ],
+      "sourceIds": [
+        "exp-sword"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "MC-アークソード",
+      "price": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 80,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m20"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M20 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t20"
+      ]
+    },
+    {
+      "id": "weapon-ec-rodeo",
+      "officialName": null,
+      "nameJa": "EC-ロデオ",
+      "type": "Minigun",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m09",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1200,
+        "red": 5,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m09"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Trigger Happy"
+      ],
+      "sourceIds": [
+        "exp-minigun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "EC-ロデオ",
+      "price": {
+        "credits": 1200,
+        "red": 5,
+        "blue": 5,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m09"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M09 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t21"
+      ]
+    },
+    {
+      "id": "weapon-ec-rodeo-ss",
+      "officialName": null,
+      "nameJa": "EC-ロデオSS",
+      "type": "Minigun",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m32",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 20,
+        "blue": 60,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m32"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Trigger Happy"
+      ],
+      "sourceIds": [
+        "exp-minigun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "EC-ロデオSS",
+      "price": {
+        "credits": 8000,
+        "red": 20,
+        "blue": 60,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m32"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M32 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t21"
+      ]
+    },
+    {
+      "id": "weapon-ec-exterminator",
+      "officialName": null,
+      "nameJa": "EC-エクスターミネーター",
+      "type": "Minigun",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m22",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 10000,
+        "red": 25,
+        "blue": 75,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m22"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Trigger Happy"
+      ],
+      "sourceIds": [
+        "exp-minigun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "EC-エクスターミネーター",
+      "price": {
+        "credits": 10000,
+        "red": 25,
+        "blue": 75,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m22"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M22 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t21"
+      ]
+    },
+    {
+      "id": "weapon-bl-catalaunica-upgrade",
+      "officialName": null,
+      "nameJa": "BL-カタラウヌム改",
+      "type": "Energy Thrower",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 15,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "exp-energy"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "BL-カタラウヌム改",
+      "price": {
+        "credits": 8000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 15 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t22"
+      ]
+    },
+    {
+      "id": "weapon-bl-corinth",
+      "officialName": null,
+      "nameJa": "BL-コリントス",
+      "type": "Energy Thrower",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 5,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 0,
+        "blue": 0,
+        "yellow": 25
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "exp-energy"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "BL-コリントス",
+      "price": {
+        "credits": 2500,
+        "red": 0,
+        "blue": 0,
+        "yellow": 25
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 5 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t22"
+      ]
+    },
+    {
+      "id": "weapon-bl-gaugamela-upgrade",
+      "officialName": null,
+      "nameJa": "BL-ガウガメラ改",
+      "type": "Energy Thrower",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 19,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 100,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "exp-energy"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "BL-ガウガメラ改",
+      "price": {
+        "credits": 8000,
+        "red": 0,
+        "blue": 100,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 19 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t22"
+      ]
+    },
+    {
+      "id": "weapon-sl-sonic-pile-preproduction",
+      "officialName": null,
+      "nameJa": "SL-ソニックパイル先行量産型",
+      "type": "Railgun",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 11,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 15,
+        "blue": 5,
+        "yellow": 5
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Lorentz's Fist"
+      ],
+      "sourceIds": [
+        "exp-railgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "SL-ソニックパイル先行量産型",
+      "price": {
+        "credits": 2500,
+        "red": 15,
+        "blue": 5,
+        "yellow": 5
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 11 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t23"
+      ]
+    },
+    {
+      "id": "weapon-sl-sonic-pile",
+      "officialName": null,
+      "nameJa": "SL-ソニックパイル",
+      "type": "Railgun",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 31,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 50,
+        "blue": 25,
+        "yellow": 25
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Lorentz's Fist"
+      ],
+      "sourceIds": [
+        "exp-railgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "SL-ソニックパイル",
+      "price": {
+        "credits": 8000,
+        "red": 50,
+        "blue": 25,
+        "yellow": 25
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 31 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t23"
+      ]
+    },
+    {
+      "id": "weapon-sl-sonic-pile-plus",
+      "officialName": null,
+      "nameJa": "SL-ソニックパイルPlus",
+      "type": "Railgun",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m10",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 400,
+        "blue": 200,
+        "yellow": 200
+      },
+      "relatedMissionIds": [
+        "m10"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Lorentz's Fist"
+      ],
+      "sourceIds": [
+        "exp-railgun"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "displayName": "SL-ソニックパイルPlus",
+      "price": {
+        "credits": 48000,
+        "red": 400,
+        "blue": 200,
+        "yellow": 200
+      },
+      "missionIds": [
+        "m10"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M10 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t23"
+      ]
+    },
+    {
+      "id": "weapon-mr-chandra",
+      "officialName": null,
+      "nameJa": "MR-連装レーザー/チャンドラ",
+      "type": "Satellite Weapon",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 13,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 10,
+        "blue": 0,
+        "yellow": 15
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Unspoken Promise"
+      ],
+      "sourceIds": [
+        "exp-satellite"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "MR-連装レーザー/チャンドラ",
+      "price": {
+        "credits": 2500,
+        "red": 10,
+        "blue": 0,
+        "yellow": 15
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 13 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t24"
+      ]
+    },
+    {
+      "id": "weapon-mr-chandra-a",
+      "officialName": null,
+      "nameJa": "MR-連装レーザー/チャンドラA",
+      "type": "Satellite Weapon",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m45",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 20000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 100
+      },
+      "relatedMissionIds": [
+        "m45"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Unspoken Promise"
+      ],
+      "sourceIds": [
+        "exp-satellite"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "MR-連装レーザー/チャンドラA",
+      "price": {
+        "credits": 20000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 100
+      },
+      "missionIds": [
+        "m45"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M45 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t24"
+      ]
+    },
+    {
+      "id": "weapon-mr-kepler",
+      "officialName": null,
+      "nameJa": "MR-連装ミサイル/ケプラー",
+      "type": "Satellite Weapon",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m49",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 20000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 100
+      },
+      "relatedMissionIds": [
+        "m49"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Unspoken Promise"
+      ],
+      "sourceIds": [
+        "exp-satellite"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "MR-連装ミサイル/ケプラー",
+      "price": {
+        "credits": 20000,
+        "red": 100,
+        "blue": 0,
+        "yellow": 100
+      },
+      "missionIds": [
+        "m49"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M49 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t24"
+      ]
+    },
+    {
+      "id": "weapon-sn-iguazu-1",
+      "officialName": null,
+      "nameJa": "SN-イグアス1号基",
+      "type": "Laser Cannon",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m45",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 14000,
+        "red": 50,
+        "blue": 45,
+        "yellow": 45
+      },
+      "relatedMissionIds": [
+        "m45"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Beam of Hope"
+      ],
+      "sourceIds": [
+        "exp-laser-cannon"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "displayName": "SN-イグアス1号基",
+      "price": {
+        "credits": 14000,
+        "red": 50,
+        "blue": 45,
+        "yellow": 45
+      },
+      "missionIds": [
+        "m45"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Normal 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M45 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t25"
+      ]
+    },
+    {
+      "id": "weapon-sn-iguazu-2",
+      "officialName": null,
+      "nameJa": "SN-イグアス2号基",
+      "type": "Laser Cannon",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m17",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 66000,
+        "red": 800,
+        "blue": 600,
+        "yellow": 600
+      },
+      "relatedMissionIds": [
+        "m17"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Beam of Hope"
+      ],
+      "sourceIds": [
+        "exp-laser-cannon"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": "來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "displayName": "SN-イグアス2号基",
+      "price": {
+        "credits": 66000,
+        "red": 800,
+        "blue": 600,
+        "yellow": 600
+      },
+      "missionIds": [
+        "m17"
+      ],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。 來源表列 Hard 為可取得條件，未確認為最低難度。",
+      "unlockCondition": "M17 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10",
+        "t25"
+      ]
+    },
+    {
+      "id": "weapon-sn-nile-1",
+      "officialName": null,
+      "nameJa": "SN-ナイル1号基",
+      "type": "Laser Cannon",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 7,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 15,
+        "blue": 5,
+        "yellow": 5
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Beam of Hope"
+      ],
+      "sourceIds": [
+        "exp-laser-cannon"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "SN-ナイル1号基",
+      "price": {
+        "credits": 2500,
+        "red": 15,
+        "blue": 5,
+        "yellow": 5
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 7 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10",
+        "t25"
+      ]
+    },
+    {
+      "id": "weapon-mr-glue-launcher-ultra",
+      "officialName": null,
+      "nameJa": "MR-グルーランチャー・ウルトラ",
+      "type": "Special Weapon",
+      "rank": "B",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": 52,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 180000,
+        "red": 1600,
+        "blue": 1600,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-special"
+      ],
+      "verification": "single-source-transcription",
+      "fieldVerification": {
+        "nameJa": "source-checked",
+        "officialName": "unverified",
+        "rank": "source-checked",
+        "unlock": "reported-sufficient-condition",
+        "cost": "source-checked"
+      },
+      "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
+      "warning": null,
+      "displayName": "MR-グルーランチャー・ウルトラ",
+      "price": {
+        "credits": 180000,
+        "red": 1600,
+        "blue": 1600,
+        "yellow": 0
+      },
+      "missionIds": [],
+      "recommendedUse": "編輯建議：購買前先比較目前同類武器與關卡需求，取得後於 Practice 試用。",
+      "unlockCondition": "確認回收 52 架 M.I.A. Drone 後解鎖購買資格。",
+      "trophyIds": [
+        "t10"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item-rebooter",
+      "officialName": "Rebooter",
+      "type": "Resurrection Device",
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 30,
+        "yellow": 0
+      },
+      "effect": "復活倒下的玩家；不對 NPC 生效。",
+      "trophyNames": [
+        "Fully Stocked",
+        "Courageous Defender"
+      ],
+      "sourceIds": [
+        "equip-revive",
+        "equip-faq-names"
+      ],
+      "verification": "conflict",
+      "warning": "解鎖關卡有歧異：日文 Wiki 表列 M01，英文攻略列 M02；保留未知。此欄 Credits 為購買價，不能拿使用時報酬扣款代替。",
+      "displayName": "Rebooter",
+      "title": "Rebooter",
+      "unlockCondition": "解鎖條件待查證。",
+      "description": "復活倒下的玩家；不對 NPC 生效。 解鎖關卡有歧異：日文 Wiki 表列 M01，英文攻略列 M02；保留未知。此欄 Credits 為購買價，不能拿使用時報酬扣款代替。"
+    },
+    {
+      "id": "item-quick-rebooter",
+      "officialName": "Quick Rebooter",
+      "type": "Resurrection Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m04",
+        "minimumDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 50,
+        "yellow": 0
+      },
+      "effect": "復活倒下的玩家並立即恢復部分 HP；不對 NPC 生效。",
+      "trophyNames": [
+        "Fully Stocked",
+        "Courageous Defender"
+      ],
+      "sourceIds": [
+        "equip-revive",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "warning": "購買 Credits 未核實；使用時的任務扣款是另一欄，不能視為購買價格。",
+      "displayName": "Quick Rebooter",
+      "title": "Quick Rebooter",
+      "unlockCondition": "M04 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "復活倒下的玩家並立即恢復部分 HP；不對 NPC 生效。 購買 Credits 未核實；使用時的任務扣款是另一欄，不能視為購買價格。"
+    },
+    {
+      "id": "item-al-grenade-12",
+      "officialName": null,
+      "nameJa": "AL-グレネード×12",
+      "type": "Grenade",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m01",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 90,
+        "blue": 0,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "投擲爆破手榴彈；避開自己與隊友。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-grenade-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "AL-グレネード×12",
+      "title": "AL-グレネード×12",
+      "unlockCondition": "M01 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "投擲爆破手榴彈；避開自己與隊友。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-al-flame-grenade-8",
+      "officialName": null,
+      "nameJa": "AL-火炎グレネード×8",
+      "type": "Grenade",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m14",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 60,
+        "blue": 0,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "火炎手榴彈；先確認敵人位置再投擲。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-grenade-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "AL-火炎グレネード×8",
+      "title": "AL-火炎グレネード×8",
+      "unlockCondition": "M14 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "火炎手榴彈；先確認敵人位置再投擲。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-al-freeze-grenade-6",
+      "officialName": null,
+      "nameJa": "AL-冷凍グレネード×6",
+      "type": "Grenade",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 210,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "冷凍手榴彈；注意近距離誤爆會影響自己。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-grenade-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Hard 為充分解鎖條件，未確認最低難度。",
+      "displayName": "AL-冷凍グレネード×6",
+      "title": "AL-冷凍グレネード×6",
+      "unlockCondition": "M12 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "冷凍手榴彈；注意近距離誤爆會影響自己。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Hard 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-np-landmine-upgrade",
+      "officialName": null,
+      "nameJa": "NP-ランドマイン改",
+      "type": "Deployed Weapon",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m50",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 80,
+        "blue": 0,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "部署地雷後先離開爆炸範圍。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-deployed-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "NP-ランドマイン改",
+      "title": "NP-ランドマイン改",
+      "unlockCondition": "M50 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "部署地雷後先離開爆炸範圍。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-np-freeze-landmine-2",
+      "officialName": null,
+      "nameJa": "NP-冷凍ランドマイン×2",
+      "type": "Deployed Weapon",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m42",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 15,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "冷凍地雷；部署後保留離開路線。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-deployed-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "NP-冷凍ランドマイン×2",
+      "title": "NP-冷凍ランドマイン×2",
+      "unlockCondition": "M42 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "冷凍地雷；部署後保留離開路線。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-np-recovery-landmine-2",
+      "officialName": null,
+      "nameJa": "NP-回復ランドマイン×2",
+      "type": "Deployed Weapon",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m34",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 50,
+        "blue": 75,
+        "yellow": 75
+      },
+      "purchaseRequired": true,
+      "effect": "回復用地雷；自軍接觸觸發。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-deployed-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "NP-回復ランドマイン×2",
+      "title": "NP-回復ランドマイン×2",
+      "unlockCondition": "M34 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "回復用地雷；自軍接觸觸發。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-vehicle-caddy",
+      "officialName": null,
+      "nameJa": "キャディ",
+      "type": "Vehicle",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m07",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 250,
+        "blue": 250,
+        "yellow": 400
+      },
+      "purchaseRequired": true,
+      "effect": "戰鬥車輛；購買後在裝備欄選擇並於任務請求。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-vehicles"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "キャディ",
+      "title": "キャディ",
+      "unlockCondition": "M07 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "戰鬥車輛；購買後在裝備欄選擇並於任務請求。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-vehicle-skyfish",
+      "officialName": null,
+      "nameJa": "スカイフィッシュ",
+      "type": "Vehicle",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m07",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 250,
+        "blue": 250,
+        "yellow": 500
+      },
+      "purchaseRequired": true,
+      "effect": "航空機；先於可安全使用的場地熟悉操作。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-vehicles"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "スカイフィッシュ",
+      "title": "スカイフィッシュ",
+      "unlockCondition": "M07 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "航空機；先於可安全使用的場地熟悉操作。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-vehicle-bigfoot",
+      "officialName": null,
+      "nameJa": "ビッグフット",
+      "type": "Vehicle",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m21",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 2250,
+        "yellow": 2250
+      },
+      "purchaseRequired": true,
+      "effect": "步行兵器；保留呼叫與登乘的安全空間。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-vehicles"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "ビッグフット",
+      "title": "ビッグフット",
+      "unlockCondition": "M21 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "步行兵器；保留呼叫與登乘的安全空間。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-supply-plan-1",
+      "officialName": null,
+      "nameJa": "物資輸送プラン1",
+      "type": "Support Request",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m24",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 3000,
+        "blue": 3000,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "投擲信號標記請求支援物資。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-requests"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "物資輸送プラン1",
+      "title": "物資輸送プラン1",
+      "unlockCondition": "M24 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "投擲信號標記請求支援物資。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-strafing-plan-1",
+      "officialName": null,
+      "nameJa": "掃射プラン1-機関砲",
+      "type": "Support Request",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m24",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 800,
+        "blue": 800,
+        "yellow": 1200
+      },
+      "purchaseRequired": true,
+      "effect": "請求機關砲掃射，先選擇支援落點。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-requests"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "掃射プラン1-機関砲",
+      "title": "掃射プラン1-機関砲",
+      "unlockCondition": "M24 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "請求機關砲掃射，先選擇支援落點。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-bombardment-plan-1",
+      "officialName": null,
+      "nameJa": "砲撃プラン1-主砲",
+      "type": "Support Request",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m52",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 2500,
+        "blue": 2500,
+        "yellow": 4500
+      },
+      "purchaseRequired": true,
+      "effect": "請求艦砲攻擊；等待前次支援返回再再次要請。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-requests"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "砲撃プラン1-主砲",
+      "title": "砲撃プラン1-主砲",
+      "unlockCondition": "M52 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "請求艦砲攻擊；等待前次支援返回再再次要請。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-or-dummy-balloon-alpha-3",
+      "officialName": null,
+      "nameJa": "OR-ダミーバルーンα×3",
+      "type": "Support Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 25,
+        "blue": 175,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "設置誘餌吸引敵人；避免己方射擊破壞誘餌。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-devices"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "OR-ダミーバルーンα×3",
+      "title": "OR-ダミーバルーンα×3",
+      "unlockCondition": "M03 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "設置誘餌吸引敵人；避免己方射擊破壞誘餌。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-pr-healer-2",
+      "officialName": null,
+      "nameJa": "PR-ヒーラー×2",
+      "type": "Support Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m13",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 100,
+        "blue": 150,
+        "yellow": 150
+      },
+      "purchaseRequired": true,
+      "effect": "部署回復系場域裝置。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-devices"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "PR-ヒーラー×2",
+      "title": "PR-ヒーラー×2",
+      "unlockCondition": "M13 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "部署回復系場域裝置。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-pr-guardian",
+      "officialName": null,
+      "nameJa": "PR-ガーディアン",
+      "type": "Support Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m28",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 150,
+        "blue": 100,
+        "yellow": 150
+      },
+      "purchaseRequired": true,
+      "effect": "部署防禦強化場域裝置。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-support-devices"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "PR-ガーディアン",
+      "title": "PR-ガーディアン",
+      "unlockCondition": "M28 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "部署防禦強化場域裝置。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-green-feeder",
+      "officialName": null,
+      "nameJa": "グリーン・フィーダー",
+      "type": "Recovery Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "reportedDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 30,
+        "yellow": 10
+      },
+      "purchaseRequired": true,
+      "effect": "使用後逐漸回復，不是立即大量回血。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-recovery-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 初始購買資格不表示已購買。",
+      "displayName": "グリーン・フィーダー",
+      "title": "グリーン・フィーダー",
+      "unlockCondition": "初始裝備；以遊戲內庫存確認。",
+      "description": "使用後逐漸回復，不是立即大量回血。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 初始購買資格不表示已購買。"
+    },
+    {
+      "id": "item-green-feeder-3",
+      "officialName": null,
+      "nameJa": "グリーン・フィーダー×3",
+      "type": "Recovery Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 60,
+        "yellow": 20
+      },
+      "purchaseRequired": true,
+      "effect": "可多次使用的持續回復道具。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-recovery-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "グリーン・フィーダー×3",
+      "title": "グリーン・フィーダー×3",
+      "unlockCondition": "M12 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "可多次使用的持續回復道具。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    },
+    {
+      "id": "item-quick-feeder-3",
+      "officialName": null,
+      "nameJa": "クイック・フィーダー×3",
+      "type": "Recovery Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 20,
+        "blue": 60,
+        "yellow": 0
+      },
+      "purchaseRequired": true,
+      "effect": "即時回復道具；與持續回復型分開選擇。",
+      "trophyNames": [
+        "Fully Stocked"
+      ],
+      "sourceIds": [
+        "exp-recovery-items"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文原名已核對；英文名未查證。",
+      "warning": "此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。",
+      "displayName": "クイック・フィーダー×3",
+      "title": "クイック・フィーダー×3",
+      "unlockCondition": "M12 · Normal 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "即時回復道具；與持續回復型分開選擇。 此表列 Gems 為購買資源；Credits 購買欄未列，保持未知。任務中使用扣款不當作購買價。 表列 Normal 為充分解鎖條件，未確認最低難度。"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "appearance-symbol-1",
+      "officialName": "Symbol 1",
+      "category": "emblem",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 1,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": null,
+      "trophyNames": [],
+      "sourceIds": [
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "warning": "僅確認收集獎勵名稱；不把此紀錄當作全部可購買外觀庫。",
+      "displayName": "Symbol 1",
+      "title": "Symbol 1",
+      "unlockCondition": "確認回收 1 架 M.I.A. Drone 後解鎖購買資格。",
+      "description": "僅確認收集獎勵名稱；不把此紀錄當作全部可購買外觀庫。"
+    },
+    {
+      "id": "appearance-head-acanthus",
+      "officialName": null,
+      "nameJa": "空挺兵装「アカンサス」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m06",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 200,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "空挺兵装「アカンサス」",
+      "title": "空挺兵装「アカンサス」",
+      "unlockCondition": "M06 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-head-bamboo",
+      "officialName": null,
+      "nameJa": "防衛兵装「バンブー」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 400,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "防衛兵装「バンブー」",
+      "title": "防衛兵装「バンブー」",
+      "unlockCondition": "M12 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-head-rhododendron",
+      "officialName": null,
+      "nameJa": "潜入兵装「シャクナゲ」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m15",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 400,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "潜入兵装「シャクナゲ」",
+      "title": "潜入兵装「シャクナゲ」",
+      "unlockCondition": "M15 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-chamomile",
+      "officialName": null,
+      "nameJa": "軽装戦闘服「カモミール」",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 600,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "軽装戦闘服「カモミール」",
+      "title": "軽装戦闘服「カモミール」",
+      "unlockCondition": "M03 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-platanus",
+      "officialName": null,
+      "nameJa": "化学防護服「プラタナス」",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m18",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 4500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "化学防護服「プラタナス」",
+      "title": "化学防護服「プラタナス」",
+      "unlockCondition": "M18 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-commando-sweater",
+      "officialName": null,
+      "nameJa": "コマンドセーター",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m27",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "コマンドセーター",
+      "title": "コマンドセーター",
+      "unlockCondition": "M27 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-chamomile",
+      "officialName": null,
+      "nameJa": "軽装戦闘服「カモミール」",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 600,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "軽装戦闘服「カモミール」",
+      "title": "軽装戦闘服「カモミール」",
+      "unlockCondition": "M03 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-platanus",
+      "officialName": null,
+      "nameJa": "化学防護服「プラタナス」",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m18",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 4500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "化学防護服「プラタナス」",
+      "title": "化学防護服「プラタナス」",
+      "unlockCondition": "M18 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-guerilla",
+      "officialName": null,
+      "nameJa": "ゲリラスタイル",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m40",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2250,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "ゲリラスタイル",
+      "title": "ゲリラスタイル",
+      "unlockCondition": "M40 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-glasses",
+      "officialName": null,
+      "nameJa": "グラス",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m08",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 100,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "グラス",
+      "title": "グラス",
+      "unlockCondition": "M08 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-sunglasses",
+      "officialName": null,
+      "nameJa": "サングラス",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m34",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 750,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "サングラス",
+      "title": "サングラス",
+      "unlockCondition": "M34 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-goggles",
+      "officialName": null,
+      "nameJa": "ゴーグル",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m21",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 170,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "ゴーグル",
+      "title": "ゴーグル",
+      "unlockCondition": "M21 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    }
+  ],
+  "paGear": [
+    {
+      "id": "gear-trooper",
+      "officialName": "Trooper",
+      "energyMove": "E-Dodge",
+      "description": "地面型 PA-Gear；E-Dodge 用於緊急迴避。 以地面移動與迴避為主的玩家可先熟悉此型。",
+      "recommendation": "以地面移動與迴避為主的玩家可先熟悉此型。",
+      "trophyNames": [
+        "Ace Trooper",
+        "Don’t Get a Concussion!"
+      ],
+      "sourceIds": [
+        "gear-trooper"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial",
+      "displayName": "Trooper",
+      "title": "Trooper",
+      "unlockCondition": "解鎖條件待查證。"
+    },
+    {
+      "id": "gear-jet-lifter",
+      "officialName": "Jet Lifter",
+      "energyMove": "E-Flight",
+      "description": "飛行型 PA-Gear；機動性高，防護較 Trooper 低。 收集高處 Drone 時的優先候選，注意剩餘能量與落點。",
+      "recommendation": "收集高處 Drone 時的優先候選，注意剩餘能量與落點。",
+      "trophyNames": [
+        "Lifter Captain",
+        "It’s a Bird! It’s a Plane! It’s..."
+      ],
+      "sourceIds": [
+        "gear-jet"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial",
+      "displayName": "Jet Lifter",
+      "title": "Jet Lifter",
+      "unlockCondition": "解鎖條件待查證。"
+    },
+    {
+      "id": "gear-heavy-striker",
+      "officialName": "Heavy Striker",
+      "energyMove": "E-Field",
+      "description": "雙持重裝型；護盾可擋射擊、雷射與爆炸，不能擋踩踏等物理接觸。 以能量管理及防禦為重心；換裝前考慮較長的裝填時間。",
+      "recommendation": "以能量管理及防禦為重心；換裝前考慮較長的裝填時間。",
+      "trophyNames": [
+        "Master Striker",
+        "Energy Phalanx"
+      ],
+      "sourceIds": [
+        "gear-heavy"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial",
+      "displayName": "Heavy Striker",
+      "title": "Heavy Striker",
+      "unlockCondition": "解鎖條件待查證。"
+    },
+    {
+      "id": "gear-prowl-rider",
+      "officialName": "Prowl Rider",
+      "energyMove": "E-Needle",
+      "description": "利用纜線高速移動，Overdrive 可使用 G-L.I.A.R.。 先於 Practice 練習連續位移，再用於跨地形移動。",
+      "recommendation": "先於 Practice 練習連續位移，再用於跨地形移動。",
+      "trophyNames": [
+        "Ultimate Rider",
+        "Your Friendly Neighborhood Prowl Rider"
+      ],
+      "sourceIds": [
+        "gear-prowl"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial",
+      "displayName": "Prowl Rider",
+      "title": "Prowl Rider",
+      "unlockCondition": "解鎖條件待查證。"
+    }
+  ],
+  "mercenary": [
+    {
+      "id": "mercenary-scavenger",
+      "officialName": "Mercenary",
+      "mode": "online-versus",
+      "minimumPlayers": 2,
+      "maximumPlayers": 8,
+      "steps": [
+        "選擇線上 Mercenary。",
+        "擊倒 Aggressors 收集 Energy Gems。",
+        "把 Gems 送到黃色回收 Drone；綠色 Drone 用來強化武器。",
+        "以先取得三個 Wave 勝利為目標。"
+      ],
+      "rankTarget": "Ensign",
+      "rankPoints": null,
+      "trophyNames": [
+        "Welcome to Dystopia",
+        "Defending the Earth Ain’t Easy!"
+      ],
+      "sourceIds": [
+        "equip-battle",
+        "equip-online"
+      ],
+      "verification": "official-reference",
+      "warning": "配對人數為官方模式規格；未驗證目前 PSN 配對狀況或到達 Ensign 的確切點數，不顯示確定工時。",
+      "displayName": "Mercenary",
+      "title": "Mercenary",
+      "unlockCondition": "解鎖條件待查證。",
+      "description": "配對人數為官方模式規格；未驗證目前 PSN 配對狀況或到達 Ensign 的確切點數，不顯示確定工時。 選擇線上 Mercenary。 擊倒 Aggressors 收集 Energy Gems。 把 Gems 送到黃色回收 Drone；綠色 Drone 用來強化武器。 以先取得三個 Wave 勝利為目標。"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "challenge-disaster-offline",
+      "name": "Disaster 離線一關",
+      "mode": "offline",
+      "difficulty": "Disaster",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [
+        "m02"
+      ],
+      "trophyNames": [
+        "The Soldier Who Resisted Despair"
+      ],
+      "sourceIds": [
+        "equip-disaster"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "可從敵人較少的 M02 開始試裝；以自己的實測結果判斷是否適合。",
+      "displayName": "Disaster 離線一關",
+      "title": "Disaster 離線一關",
+      "unlockCondition": "解鎖條件待查證。",
+      "description": "可從敵人較少的 M02 開始試裝；以自己的實測結果判斷是否適合。"
+    },
+    {
+      "id": "challenge-disaster-online",
+      "name": "Disaster 線上一關",
+      "mode": "online",
+      "difficulty": "Disaster",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [],
+      "trophyNames": [
+        "Forged in Fire"
+      ],
+      "sourceIds": [
+        "equip-trophy-conditions",
+        "equip-online"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "確認線上模式及配裝後，再選自己熟悉的關卡。",
+      "displayName": "Disaster 線上一關",
+      "title": "Disaster 線上一關",
+      "unlockCondition": "解鎖條件待查證。",
+      "description": "確認線上模式及配裝後，再選自己熟悉的關卡。"
+    },
+    {
+      "id": "challenge-hardest-online",
+      "name": "Hardest 線上一關",
+      "mode": "online",
+      "difficulty": "Hardest",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [],
+      "trophyNames": [
+        "Friends Through Iron and Smoke"
+      ],
+      "sourceIds": [
+        "equip-trophy-conditions"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "先完成熟悉的本體任務；關卡勾選不能代替 PSN 獎盃確認。",
+      "displayName": "Hardest 線上一關",
+      "title": "Hardest 線上一關",
+      "unlockCondition": "解鎖條件待查證。",
+      "description": "先完成熟悉的本體任務；關卡勾選不能代替 PSN 獎盃確認。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "ninja-cosmetic-drone-threshold",
+      "status": "conflict",
+      "sourceUrls": [
+        "https://w.atwiki.jp/edfir/pages/58.html",
+        "https://w.atwiki.jp/edfir/pages/26.html"
+      ],
+      "description": "服裝表列ホオズキ與センニチコウ於51架Drone，Drone獎勵表列53架；未確定前不新增假確認解鎖。"
+    },
+    {
+      "id": "laser-aisha-model-number",
+      "status": "conflict",
+      "sourceUrls": [
+        "https://w.atwiki.jp/edfir/pages/42.html",
+        "https://w.atwiki.jp/edfir/pages/26.html"
+      ],
+      "description": "Laser Rifle 表列 Aisha 型號為 BS-Opx.A3，Drone獎勵表列 BS-Opx.A2；本輪選取其他型號，未以猜測消除此差異。"
+    }
+  ],
+  "contentVersion": "1.1.0",
+  "cosmetics": [
+    {
+      "id": "appearance-symbol-1",
+      "officialName": "Symbol 1",
+      "category": "emblem",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 1,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": null,
+      "trophyNames": [],
+      "sourceIds": [
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "warning": "僅確認收集獎勵名稱；不把此紀錄當作全部可購買外觀庫。",
+      "displayName": "Symbol 1",
+      "title": "Symbol 1",
+      "unlockCondition": "確認回收 1 架 M.I.A. Drone 後解鎖購買資格。",
+      "description": "僅確認收集獎勵名稱；不把此紀錄當作全部可購買外觀庫。"
+    },
+    {
+      "id": "appearance-head-acanthus",
+      "officialName": null,
+      "nameJa": "空挺兵装「アカンサス」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m06",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 200,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "空挺兵装「アカンサス」",
+      "title": "空挺兵装「アカンサス」",
+      "unlockCondition": "M06 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-head-bamboo",
+      "officialName": null,
+      "nameJa": "防衛兵装「バンブー」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m12",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 400,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "防衛兵装「バンブー」",
+      "title": "防衛兵装「バンブー」",
+      "unlockCondition": "M12 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-head-rhododendron",
+      "officialName": null,
+      "nameJa": "潜入兵装「シャクナゲ」",
+      "category": "head",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m15",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 400,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "潜入兵装「シャクナゲ」",
+      "title": "潜入兵装「シャクナゲ」",
+      "unlockCondition": "M15 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-chamomile",
+      "officialName": null,
+      "nameJa": "軽装戦闘服「カモミール」",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 600,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "軽装戦闘服「カモミール」",
+      "title": "軽装戦闘服「カモミール」",
+      "unlockCondition": "M03 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-platanus",
+      "officialName": null,
+      "nameJa": "化学防護服「プラタナス」",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m18",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 4500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "化学防護服「プラタナス」",
+      "title": "化学防護服「プラタナス」",
+      "unlockCondition": "M18 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-upper-commando-sweater",
+      "officialName": null,
+      "nameJa": "コマンドセーター",
+      "category": "upper",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m27",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 1500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "コマンドセーター",
+      "title": "コマンドセーター",
+      "unlockCondition": "M27 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-chamomile",
+      "officialName": null,
+      "nameJa": "軽装戦闘服「カモミール」",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m03",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 600,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "軽装戦闘服「カモミール」",
+      "title": "軽装戦闘服「カモミール」",
+      "unlockCondition": "M03 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-platanus",
+      "officialName": null,
+      "nameJa": "化学防護服「プラタナス」",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m18",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 4500,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "化学防護服「プラタナス」",
+      "title": "化学防護服「プラタナス」",
+      "unlockCondition": "M18 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-lower-guerilla",
+      "officialName": null,
+      "nameJa": "ゲリラスタイル",
+      "category": "lower",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m40",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2250,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "ゲリラスタイル",
+      "title": "ゲリラスタイル",
+      "unlockCondition": "M40 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-glasses",
+      "officialName": null,
+      "nameJa": "グラス",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m08",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 100,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "グラス",
+      "title": "グラス",
+      "unlockCondition": "M08 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-sunglasses",
+      "officialName": null,
+      "nameJa": "サングラス",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m34",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 750,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "サングラス",
+      "title": "サングラス",
+      "unlockCondition": "M34 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    },
+    {
+      "id": "appearance-accessory-goggles",
+      "officialName": null,
+      "nameJa": "ゴーグル",
+      "category": "accessory",
+      "baseGame": true,
+      "entryScope": "model-family",
+      "variantCount": null,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m21",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 170,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": true,
+      "trophyNames": [
+        "Elite Customizer"
+      ],
+      "sourceIds": [
+        "exp-appearance"
+      ],
+      "verification": "single-source-transcription",
+      "nameVerification": "日文款式名已核對；英文名與配色逐項 ID 未核實。",
+      "warning": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。",
+      "displayName": "ゴーグル",
+      "title": "ゴーグル",
+      "unlockCondition": "M21 · Easy 完成（來源列出的充分條件，未推定最低限制）",
+      "description": "以款式列示，未逐一拆分配色，不得用此部分庫筆數計算全部外觀完成率。來源僅列 Credits，未列 Gems 維持未知。"
+    }
+  ]
+}

@@ -1,0 +1,4574 @@
+{
+  "checkedAt": "2026-11-08",
+  "scope": "PS4 本體 M27–M52；逐關公開文字查證，沒有實機驗證。",
+  "sources": [
+    {
+      "id": "mission-wiki-27",
+      "title": "IRON RAIN @Wiki — ミッション攻略/27",
+      "url": "https://w.atwiki.jp/edfir/pages/158.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-28",
+      "title": "IRON RAIN @Wiki — ミッション攻略/28",
+      "url": "https://w.atwiki.jp/edfir/pages/159.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-29",
+      "title": "IRON RAIN @Wiki — ミッション攻略/29",
+      "url": "https://w.atwiki.jp/edfir/pages/160.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-30",
+      "title": "IRON RAIN @Wiki — ミッション攻略/30",
+      "url": "https://w.atwiki.jp/edfir/pages/161.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-31",
+      "title": "IRON RAIN @Wiki — ミッション攻略/31",
+      "url": "https://w.atwiki.jp/edfir/pages/163.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-32",
+      "title": "IRON RAIN @Wiki — ミッション攻略/32",
+      "url": "https://w.atwiki.jp/edfir/pages/169.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "search-result"
+    },
+    {
+      "id": "mission-wiki-34",
+      "title": "IRON RAIN @Wiki — ミッション攻略/34",
+      "url": "https://w.atwiki.jp/edfir/pages/170.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-35",
+      "title": "IRON RAIN @Wiki — ミッション攻略/35",
+      "url": "https://w.atwiki.jp/edfir/pages/171.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-36",
+      "title": "IRON RAIN @Wiki — ミッション攻略/36",
+      "url": "https://w.atwiki.jp/edfir/pages/166.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "search-result"
+    },
+    {
+      "id": "mission-wiki-37",
+      "title": "IRON RAIN @Wiki — ミッション攻略/37",
+      "url": "https://w.atwiki.jp/edfir/pages/167.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-39",
+      "title": "IRON RAIN @Wiki — ミッション攻略/39",
+      "url": "https://w.atwiki.jp/edfir/pages/173.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-40",
+      "title": "IRON RAIN @Wiki — ミッション攻略/40",
+      "url": "https://w.atwiki.jp/edfir/pages/174.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-41",
+      "title": "IRON RAIN @Wiki — ミッション攻略/41",
+      "url": "https://w.atwiki.jp/edfir/pages/175.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-42",
+      "title": "IRON RAIN @Wiki — ミッション攻略/42",
+      "url": "https://w.atwiki.jp/edfir/pages/176.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-43",
+      "title": "IRON RAIN @Wiki — ミッション攻略/43",
+      "url": "https://w.atwiki.jp/edfir/pages/177.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-44",
+      "title": "IRON RAIN @Wiki — ミッション攻略/44",
+      "url": "https://w.atwiki.jp/edfir/pages/178.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-45",
+      "title": "IRON RAIN @Wiki — ミッション攻略/45",
+      "url": "https://w.atwiki.jp/edfir/pages/149.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-46",
+      "title": "IRON RAIN @Wiki — ミッション攻略/46",
+      "url": "https://w.atwiki.jp/edfir/pages/148.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-47",
+      "title": "IRON RAIN @Wiki — ミッション攻略/47",
+      "url": "https://w.atwiki.jp/edfir/pages/147.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-48",
+      "title": "IRON RAIN @Wiki — ミッション攻略/48",
+      "url": "https://w.atwiki.jp/edfir/pages/179.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-49",
+      "title": "IRON RAIN @Wiki — ミッション攻略/49",
+      "url": "https://w.atwiki.jp/edfir/pages/180.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-50",
+      "title": "IRON RAIN @Wiki — ミッション攻略/50",
+      "url": "https://w.atwiki.jp/edfir/pages/181.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-51",
+      "title": "IRON RAIN @Wiki — ミッション攻略/51",
+      "url": "https://w.atwiki.jp/edfir/pages/182.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-52",
+      "title": "IRON RAIN @Wiki — ミッション攻略/52",
+      "url": "https://w.atwiki.jp/edfir/pages/183.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wiki-31-40",
+      "title": "IRON RAIN @Wiki — ミッション攻略/31-40",
+      "url": "https://w.atwiki.jp/edfir/pages/144.html",
+      "checkedAt": "2026-11-08",
+      "readVia": "article"
+    },
+    {
+      "id": "mission-wazap-31-40",
+      "title": "ワザップ! — EDF:IR ミッション31–40",
+      "url": "https://wazap.com/cheat/%E3%80%90EDF%EF%BC%9AIR%E3%80%91%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B331~40%E6%94%BB%E7%95%A5/588675/",
+      "checkedAt": "2026-11-08",
+      "readVia": "search-result"
+    },
+    {
+      "id": "mission-hororo-35-39",
+      "title": "ホロロ通信 — ミッション35～39攻略",
+      "url": "https://angry-mhm.com/%E3%80%90edfir%E3%80%91%E3%83%9F%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B335%EF%BD%9E39%E3%81%AE%E6%94%BB%E7%95%A5%E5%BC%B1%E7%82%B9%E3%83%BB%E3%83%9C%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%AD%E3%83%83/?type=AMP",
+      "checkedAt": "2026-11-08",
+      "readVia": "search-result"
+    }
+  ],
+  "missions": [
+    {
+      "id": "m27",
+      "enemies": [
+        "ピラー",
+        "ウルフスパイダー",
+        "ハイヴクラフト",
+        "ラズニード",
+        "コントロール装置",
+        "ストームアント",
+        "アタックポッド"
+      ],
+      "bosses": [
+        "ラズニード",
+        "ハイヴクラフト"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先處理親蜘蛛與逼近的小蜘蛛，清空初波才推進事件。",
+        "事件後改瞄ハイヴクラフト下方的綠色控制球；反覆打掉五次控制裝置。",
+        "每次出現的螞蟻或アタックポッド靠近時先清，再回頭狙擊控制球。",
+        "母艦爆炸時避開正下方，落下殘骸仍會造成傷害。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "長射程狙擊武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-27"
+        },
+        {
+          "name": "能迅速處理近身蜘蛛／飛行小型敵的副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-27"
+        }
+      ],
+      "warnings": [
+        "本關ピラー、ラズニード及ハイヴクラフト不是可直接擊殺的目標；進度靠控制裝置。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-パンチャー",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイルンパ",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマアイシクル×2",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマアイシクル×3",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "コマンドセーター",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-オングストロームγ",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-アルマゲドン",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型改×6",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型改×8",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型改×10",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ワッチキャップ",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイサルサGD",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-エクスターミネーターMk.III",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーランチャー改×2",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーランチャー改×3",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "心眼",
+          "sourceId": "mission-wiki-27",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-フォトンサプライア[銀鷲勲章]",
+          "sourceId": "mission-wiki-27",
+          "baseGame": null,
+          "reason": "DLC／範圍待查，未納入本體"
+        }
+      ],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-27"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m28",
+      "enemies": [
+        "巨大生物の巣",
+        "シルバーアント",
+        "デスストーカー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場就用長射程火力瞄準蟻巢，優先停止シルバーアント增援。",
+        "巢破後維持距離，清理先後到場的デスストーカー。",
+        "若要近身用手榴彈拆巢，先評估四周敵群；高難度可準備設置式火力支援。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "長射程高傷害武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-28"
+        },
+        {
+          "name": "高難度用セントリー類設置火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-28"
+        }
+      ],
+      "warnings": [
+        "不把後期 AA 武器當作初次到達 M28 的必備裝備。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-道化師",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ダークスナイパー",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアン",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアン×2",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアン×3",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-PAギア直結型電磁放射銃",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-マクスゥエル",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマアイシクル改×10",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.D3\"Dolph\"",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-火炎-指向性地雷2型改×6",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-火炎-指向性地雷2型改×8",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-フォトンサプライアX",
+          "sourceId": "mission-wiki-28",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-28"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m29",
+      "enemies": [
+        "シルバーアント",
+        "ボムビートル",
+        "グリーンボムビートル",
+        "ナイトクロウラー",
+        "ナイトクロウラー・カスタム"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "出發前改用實彈／爆炸類主武器，避免以光學武器對付銀蟻與綠甲蟲。",
+        "沿洞窟主通道逐段推進，清理途中銀蟻及甲蟲。",
+        "最終廣場除了グリーンボムビートル，也要擊毀敵對的レベリオン機甲。",
+        "若綠甲蟲持續補充，檢查是否仍有存活的敵對ナイトクロウラー。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "實彈武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-29"
+        },
+        {
+          "name": "可在洞穴內使用的近中程副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-29"
+        }
+      ],
+      "warnings": [
+        "地下禁用航空支援、載具、G-L.I.A.R. 與衛星兵器。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイワルツ",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-エーテライト",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-有毒-指向性地雷1型×4",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-有毒-指向性地雷1型×6",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-有毒-指向性地雷1型×8",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-ハード・パンチャー",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイワルツ・アンコール",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド改",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-サーサーン・センチュリー",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-バリオンS",
+          "sourceId": "mission-wiki-29",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-29"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m30",
+      "enemies": [
+        "シディロス・試験体",
+        "ボムビートル",
+        "グリーンボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場立即往場地左側移動，避免同時承受整群シディロス火力。",
+        "用近距離高火力或誘餌逐一清理正追擊自己的試驗體。",
+        "シディロス減少後，甲蟲從右側牆缺口入場；先收掉貼身試驗體再轉火。",
+        "看到地上殘留炸彈就移開；試驗體投彈會延遲爆炸。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "近距離高火力武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-30"
+        },
+        {
+          "name": "ダミー類誘餌",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-30"
+        }
+      ],
+      "warnings": [
+        "甲蟲入場初期可能尚未在雷達標紅，不能只憑雷達判定四周安全。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-フューリアス改",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "キャディアドバンス",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "物資輸送プラン2",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-グリーン・メガクロス",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ユークリッドθ",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "サンダーバードアドバンス",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-マクスウェル・デーモン",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "カーバンクル",
+          "sourceId": "mission-wiki-30",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-30"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m31",
+      "enemies": [
+        "ウィングアント",
+        "グリーンボムビートル",
+        "クィーンアント"
+      ],
+      "bosses": [
+        "クィーンアント"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "以對空武器清理第一批ウィングアント，站離坦克的行車路線。",
+        "追加綠甲蟲時，用設置式火力或近身副武器處理，保留對空能力。",
+        "最後クィーンアント與飛蟻同時出現；趁蟻后尚未貼近，以高火力或載具集中擊殺。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對空導引武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-31"
+        },
+        {
+          "name": "近身高火力副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-31"
+        },
+        {
+          "name": "設置式火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-31"
+        }
+      ],
+      "warnings": [
+        "友軍坦克移動也可能撞倒玩家，勿緊貼車身。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2040",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-ガウス",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーAr",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーAr",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "コマンドアーマー",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2041",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着冷凍グレネード×6",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド改×2",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド改×3",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-20XX",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-タイフーン",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カタラウヌム・トライアンフ",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネードZS×2",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ショートパンツB",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "電脳兵装「ローレル」",
+          "sourceId": "mission-wiki-31",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-31"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m32",
+      "enemies": [
+        "アタックポッド",
+        "スコージャー・ビースト",
+        "ラズニード・ラーヴァ"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "先用狙擊或對空武器清空アタックポッド。",
+        "機甲加入時先轉火，用高傷害武器瞄準眼部。",
+        "ラズニード・ラーヴァ破門時，以群體火力攔截；別讓爆炸波及控制中心。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ワザップ ミッション32攻略ポイント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對空狙擊武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wazap-31-40"
+        },
+        {
+          "name": "高火力武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wazap-31-40"
+        }
+      ],
+      "warnings": [
+        "控制中心會被自己的爆炸物傷害。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-グリーン・クロス",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-ロデオSS",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイルンバ:Re",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-メーザーライフル威力試験型",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限火炎グレネード×6",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限火炎グレネード×8",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着冷凍グレネード×9",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ダークスナイパーL.M.I.",
+          "sourceId": "mission-wiki-32",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-32",
+        "mission-wazap-31-40",
+        "mission-wiki-31-40"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "Wazap search-result summary; core warning checked in wiki aggregate",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ],
+      "fieldSources": {
+        "enemies": [
+          "mission-wiki-31-40"
+        ],
+        "bosses": [
+          "mission-wiki-31-40"
+        ],
+        "tactics": [
+          [
+            "mission-wazap-31-40"
+          ],
+          [
+            "mission-wazap-31-40"
+          ],
+          [
+            "mission-wazap-31-40",
+            "mission-wiki-31-40"
+          ]
+        ],
+        "warnings": [
+          "mission-wiki-31-40"
+        ],
+        "unlockRewards": [
+          "mission-wiki-32"
+        ]
+      }
+    },
+    {
+      "id": "m33",
+      "enemies": [
+        "ラズニード・ラーヴァ",
+        "レイドシップ",
+        "スーパースコージャー",
+        "グリーンボムビートル",
+        "デスストーカー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場先清貼近的ラズニード・ラーヴァ。",
+        "迅速轉火運輸船，優先打掉投放スーパースコージャー的一艘。",
+        "再清其他運輸船及已落地敵人，避免持續補兵。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "長射程火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-31-40"
+        }
+      ],
+      "warnings": [],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-オングストロームβ",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-シグマスフィア",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリースナイパー×2",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリースナイパー×3",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-フォトンサプライア・ヘリオス",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ヘイスティングズ",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマレイン改×2",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-回復-指向性地雷2型×4",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-回復-指向性地雷2型×6",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-回復-指向性地雷2型×8",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "サングラスB",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ユークリッドφ",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装レーザー/チャンドラB*",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷3型Z×3",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-31-40"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "官方英文及星號獎勵名稱",
+        "目前 PS4 版本、各難度與多人縮放實測",
+        "獨立任務頁本輪讀取失敗；已讀合頁"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m34",
+      "enemies": [
+        "ラズニード",
+        "ラズニード・ラーヴァ",
+        "シディロス・変異種"
+      ],
+      "bosses": [
+        "ラズニード"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "用群體清理武器持續攔截ラズニード・ラーヴァ，不必浪費彈藥打本關不可擊殺的ラズニード。",
+        "空曠地帶用誘餌分流，避免幼體從多方向貼身。",
+        "變異シディロス出場時迅速集中火力處理，並躲開ラズニード對坦克群的吐息。",
+        "利用攻勢間隔裝填，逐波清完剩餘幼體。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "清群能力強的武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-34"
+        },
+        {
+          "name": "ダミーバルーン類誘餌",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-34"
+        }
+      ],
+      "warnings": [
+        "ラズニード在本關無法擊殺；吐息可能連續造成傷害。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-6連想マルチプルミサイル甲",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-回復ランドマイン×2",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-回復ランドマイン×3",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-回復ランドマイン×4",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "サングラス",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.A4\"Aya\"",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-ハイロゥビーム改",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-パワーフィールド改×2",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2040GD-III",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-ラグナロク・パニッシュメント",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-イモータル・ガーディアン",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-イモータル・ガーディアン×2",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-イモータル・ガーディアン×3",
+          "sourceId": "mission-wiki-34",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-フェルミ[銀鷲勲章]",
+          "sourceId": "mission-wiki-34",
+          "baseGame": null,
+          "reason": "DLC／範圍待查，未納入本體"
+        }
+      ],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-34"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m35",
+      "enemies": [
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム",
+        "ベイザル"
+      ],
+      "bosses": [
+        "ベイザル"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先清理レベリオン機甲，並準備能對巨大敵人集中輸出的武器或載具。",
+        "第一隻ベイザル登場後集中攻擊；其受傷會引出第二隻。",
+        "盡量在第二隻加入前解決第一隻，避免同時承受兩隻攻擊。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對大型目標的集中火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-35"
+        },
+        {
+          "name": "可用於拉距離的車輛",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-35"
+        }
+      ],
+      "warnings": [
+        "兩隻ベイザル不是同時開場；第一隻受損會推進第二隻出場。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-エキゾチックレイ",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-バリオンD",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマレイン×2",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-チェイサーライフル",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ガウガメラ・トライアンフ",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-ショックグレネードZ×40",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "掃射プラン3-爆雷",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "スイムスーツ",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-アウトレイジ・クルーエル",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-キュロスII・コンクェスト",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマレインZ×6",
+          "sourceId": "mission-wiki-35",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-35"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m36",
+      "enemies": [
+        "スコージャー",
+        "スコージャー・ビースト",
+        "レイドシップ",
+        "スーパースコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "先打附近已啟動的スコージャー，別貿然鑽進其他待機敵人之間。",
+        "運輸船出現後用長射程武器擊落，避免持續投放機甲。",
+        "警戒獸形衝撞，預設設置式火力減少被撞倒時的空窗；兩船落下後處理追加強化機甲。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "長射程狙擊武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-36"
+        },
+        {
+          "name": "セントリー類設置火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-36"
+        }
+      ],
+      "warnings": [
+        "スコージャー會依序啟動並變形；向船底衝刺容易同時引來地面與空投敵人。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2040Ex",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-量産型チェイサー",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラー",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラー×2",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラー×3",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ショートパンツ",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-エーテライトL.M.I.",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-アラベスクII",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールドZ",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールドZ×2",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールドZ×3",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-PAギア直結型超電磁放射銃",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ボニエ・トライアンフ",
+          "sourceId": "mission-wiki-36",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-36"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ],
+      "sourceReadNote": "獨立頁 open 失敗；本輪已取得同頁搜尋結果主文。"
+    },
+    {
+      "id": "m37",
+      "enemies": [
+        "巨大生物の巣",
+        "シルバーアント",
+        "ウィングアント",
+        "シディロス・変異種",
+        "ラズニード・ラーヴァ"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場敵人待機時，先用長射程武器拆掉正前與左側的兩個巢。",
+        "清掉剩餘銀蟻與飛蟻，再迎擊對話後出現的變異シディロス。",
+        "變異シディロス清完會追加ラズニード・ラーヴァ；預留清群副武器處理。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能快速拆巢的長射程武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-37"
+        },
+        {
+          "name": "清群副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-37"
+        }
+      ],
+      "warnings": [
+        "拆巢並不等於本關結束，後面還有變異シディロス與幼體。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-20X-SS",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-ハイロゥビーム",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-強酸-指向性地雷3型×6",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-強酸-指向性地雷3型×8",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-強酸-指向性地雷3型×10",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-インテグラルレイFdX",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-超大型ミサイル/ガリレオ",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "物資輸送プラン3",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ノーティボーイJr.",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイタンゴ・ファイナルヒート",
+          "sourceId": "mission-wiki-37",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-37"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m38",
+      "enemies": [
+        "アタックポッド",
+        "スーパーアタックポッド",
+        "ハーヴェスター",
+        "スーパーハーヴェスター"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "先清初波的ハーヴェスター與飛行敵人。",
+        "勝利條件改為殲滅アグレッサー時，確認計時延長。",
+        "在空襲倒數歸零前清完後續敵人；不要把倒數當作等待勝利。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ホロロ通信 ミッション38攻略摘要",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能兼顧飛行敵人與大型地面敵人的武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-hororo-35-39"
+        }
+      ],
+      "warnings": [
+        "禁用支援要請、載具及衛星兵器。空襲倒數歸零會失敗。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-インテグラルレイ",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-エーテライトII",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷3型×6",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷3型×9",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "マスク",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-テスラV型",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カデシュ・オラクル",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-レジェンダリー・ヒーラー×3",
+          "sourceId": "mission-hororo-35-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-ゲンナイ弐",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ジョーカー",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-回復-指向性地雷2型×4",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-回復-指向性地雷2型×6",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイルンバ[銀鷲勲章]",
+          "sourceId": "mission-wiki-31-40",
+          "baseGame": null,
+          "reason": "DLC／範圍待查，未納入本體"
+        }
+      ],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-hororo-35-39",
+        "mission-wiki-31-40"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "官方英文逐項對照",
+        "各難度／多人版本實測",
+        "獨立任務頁本輪讀取失敗；已讀合頁與另一攻略摘要"
+      ],
+      "fieldSources": {
+        "enemies": [
+          "mission-hororo-35-39"
+        ],
+        "bosses": [
+          "mission-hororo-35-39"
+        ],
+        "tactics": [
+          [
+            "mission-hororo-35-39"
+          ],
+          [
+            "mission-hororo-35-39"
+          ],
+          [
+            "mission-wiki-31-40"
+          ]
+        ],
+        "warnings": [
+          "mission-wiki-31-40"
+        ],
+        "unlockRewards": [
+          "mission-hororo-35-39",
+          "mission-wiki-31-40"
+        ]
+      }
+    },
+    {
+      "id": "m39",
+      "enemies": [
+        "ゾンビアント",
+        "ゾンビスコーピオン"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "趁長篇無線期間先打掉道路上的蟻屍，減少隨後復活的敵人。",
+        "也檢查前方橋墩後左右兩棟樓的屋頂蟻屍。",
+        "回到起點附近施工中的建築內抵擋酸液，盡量不用會拆掉掩體的爆炸物。",
+        "使用回復屬性武器／裝置攻擊殭屍敵人，並警戒會破壞建築的殭屍蠍。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "回復屬性武器或回復裝置",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-39"
+        },
+        {
+          "name": "不會破壞掩體的副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-39"
+        }
+      ],
+      "warnings": [
+        "施工樓可擋部分酸液，但不是無敵；ゾンビスコーピオン能破壞建築。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-トルネード",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-メーザーライフル量産試験型",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "サンダーバード",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ウィルオウィスプ",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-グランドジャイブQ",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ポエニ",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ウィルオウィスプアドバンス",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-マッドネス",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-30X",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ライジュウ",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "触角",
+          "sourceId": "mission-wiki-39",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-39"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m40",
+      "enemies": [
+        "シルバーアント",
+        "アタックポッド",
+        "スーパースコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "先用適合銀蟻的武器攔截第一波，避免與後續強化機甲同時貼身。",
+        "第二波到來，迅速削減スーパースコージャー，再處理空中的アタックポッド。",
+        "第三波仍有銀蟻與強化機甲；保持移動，別停在原地等待遠處援軍救場。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對銀蟻有效的實彈火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-40"
+        },
+        {
+          "name": "可處理機甲的高火力武器或載具",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-40"
+        }
+      ],
+      "warnings": [
+        "第三波盟軍在離起點較遠的位置出現，不能預設站在起點就能受援。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-クセルクセス・ラルゴ",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-マウナケア",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーAr×2",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーAr×2",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ゲリラスタイル",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.RX",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カタラウヌムDA",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-回復ランドマイン改×2",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-回復ランドマイン改×3",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-2041A",
+          "sourceId": "mission-wiki-40",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-40"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m41",
+      "enemies": [
+        "ミスティックスパイダー",
+        "ベビースパイダー",
+        "クィーンアント",
+        "クレイジーアント"
+      ],
+      "bosses": [
+        "クィーンアント"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先用可清小蜘蛛的武器開路；若被大量幼體纏住，可提早開 Overdrive 脫困。",
+        "抵達第一批物資後再逐段跟隨通道推進，不要一直衝在隊友無線之前。",
+        "蟻后出現就退到通道轉角，以牆面擋酸，先清クレイジーアント再打蟻后。",
+        "後段遠處的蜘蛛屬可略過陷阱；抵達最後物資室時，仍從轉角處迎擊兩隻蟻后。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "Energy Thrower 類清小蜘蛛武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-41"
+        },
+        {
+          "name": "可持續攻擊蟻后的主武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-41"
+        }
+      ],
+      "warnings": [
+        "地下禁用航空支援、載具、G-L.I.A.R. 及衛星兵器；來源提及 DLC／特典 Shaman 的打法未納入。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-フォトンサプライア",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-グランドジャイブ",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード改×3",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード改×4",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード改×5",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.SX",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.A3\"Arthur\"",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-冷凍-指向性地雷3型×6",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-冷凍-指向性地雷3型×8",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-6連装マルチプルミサイル甲二式",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ヘイスティングズ・オラクル",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "カモフラージュヘッド",
+          "sourceId": "mission-wiki-41",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-41"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m42",
+      "enemies": [
+        "スーパースコージャー",
+        "ゾンビアント",
+        "グリーンボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場先準備載具或火力；避免亂射爆炸物把各處待機機甲一起叫醒。",
+        "準備好才攻擊／接近起點蟻屍，引出ゾンビアント並就近清理。",
+        "處理行動遲緩的綠甲蟲後，再逐批打掉仍在待機的スーパースコージャー。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能單點攻擊待機機甲的武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-42"
+        },
+        {
+          "name": "回復屬性或清蟻副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-42"
+        }
+      ],
+      "warnings": [
+        "綠甲蟲死亡爆炸可能叫醒附近機甲；保持距離，勿把待機等同無威脅。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ヘイルスティンガー",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-ネイピアレーザーS",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-冷凍ランドマイン×2",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-冷凍ランドマイン×3",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-シグマスフィアLimit",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-冷凍ランドマインZ×2",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ゲリラスタイルB",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ラス・アルテミス",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ヘイルスティンガー・デュオ",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-冷凍-指向性地雷3型改×6",
+          "sourceId": "mission-wiki-42",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-42"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m43",
+      "enemies": [
+        "スーパーアタックポッド",
+        "ラズニード・ラーヴァ",
+        "スーパースコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "以對空武器清理第一波スーパーアタックポッド，必要時用誘餌分攤攻擊。",
+        "下一批ラズニード・ラーヴァ來時，保持移動並集中清群，不要在無遮蔽沙灘硬站。",
+        "最後交給ヴァーベナ削減部分強化機甲，自己警戒仍快速逼近的殘存敵人並用高火力／載具處理。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對空武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-43"
+        },
+        {
+          "name": "處理大型機甲的武器或載具",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-43"
+        },
+        {
+          "name": "誘餌",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-43"
+        }
+      ],
+      "warnings": [
+        "別把友軍砲擊當作全殲保證；高難度機甲可能在砲擊期間就貼近。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-テスラR型",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.A1\"Ahmed\"",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンβ×2",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンβ×3",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンβ×4",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ワイルドヘルメット",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-50Y-GD",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.D2\"Diego\"",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンα",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンα×2",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンα×3",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-エーテライトFJ",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-アラベスクIII",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "隠密マスク",
+          "sourceId": "mission-wiki-43",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-43"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m44",
+      "enemies": [
+        "レイドシップ",
+        "ウィングアント",
+        "アタックポッド",
+        "ガーガント",
+        "スーパーアタックポッド"
+      ],
+      "bosses": [
+        "ガーガント"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "利用艦上手動砲台或自備長射程武器擊落前半運輸船，再清飛行敵群。",
+        "進入後半事件後，先在砲台／掩體旁避敵，等第二架ガーガント成為可攻擊目標。",
+        "集中火力打掉第二架ガーガント即可推進結束，不必為清全部追加小兵停留。",
+        "擊毀目標後仍須撐過收尾無線；保持機動，別提早放下控制器。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "艦上可操作砲台",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-44"
+        },
+        {
+          "name": "長射程高傷害武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-44"
+        }
+      ],
+      "warnings": [
+        "必須防衛ヴァーベナ；第一架ガーガント是事件處理，第二架才由玩家擊毀。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-傀儡師",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カタラウヌム・オラクル",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネードZ×6",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネードZ×8",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-パワーフィールド×2",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-2040",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.G2\"Grace\"",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "カウボーイハット",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-テスラ・イリュージョン",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-アルマゲドン・ジャッジメント",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-アモル量産型×3",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-プシュケ量産型×3",
+          "sourceId": "mission-wiki-44",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-チェイサーライフル[銀鷲勲章]",
+          "sourceId": "mission-wiki-44",
+          "baseGame": null,
+          "reason": "DLC／範圍待查，未納入本體"
+        }
+      ],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-44"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m45",
+      "enemies": [
+        "スーパースコージャー",
+        "ラズニード・ラーヴァ",
+        "シディロス・変異種",
+        "アタックポッド",
+        "スーパーアタックポッド"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "先壓低逼近的強化機甲與幼體數量，維持逃離包圍的空間。",
+        "幼體全滅會叫出變異シディロス；清強化機甲則叫出飛行小兵，推進前先裝填並看好周圍。",
+        "變異シディロス加入時用高火力及誘餌快速減員，別讓多隻近身連續擊倒。",
+        "看到友軍主砲預警即離開落點；若用誘餌引敵進砲區，玩家本身仍須退開。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "對機甲的高火力武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-45"
+        },
+        {
+          "name": "清空中敵人的副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-45"
+        },
+        {
+          "name": "ダミーバルーン類誘餌",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-45"
+        }
+      ],
+      "warnings": [
+        "自備航空支援不可用；不要等待遠處友軍空襲替自己清場。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装レーザー/チャンドラA",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-イグアス1号基",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-アモル",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-プシュケ",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ランページL.M.I.",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-フレイムアンガー・ペルセポネ",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷3型改×6",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷3型改×9",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-グランドジャイブ・ペア",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カデシュ・トライアンフ",
+          "sourceId": "mission-wiki-45",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-45"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m46",
+      "enemies": [
+        "レイドシップ",
+        "ラズニード・ラーヴァ",
+        "スーパーアタックポッド",
+        "スーパースコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "優先找安全落腳處，操作艦上砲台清理甲板附近幼體與機甲。",
+        "船移動換到下一批運輸船時，用自備長射程武器補打頭頂死角。",
+        "持續處理後續飛行敵人與強化機甲；砲台受損或角度不夠就換位置，勿退到艦緣。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "艦上手動砲台",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-46"
+        },
+        {
+          "name": "可攻擊高處運輸船的長射程武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-46"
+        }
+      ],
+      "warnings": [
+        "禁用支援要請、載具、衛星兵器；艦上砲台有仰角與旋轉範圍限制，亦可能損壞。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-コリントス・トライアンフ",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-アポカリプス",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "タンクトップ",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-レクイエム",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-強襲型アンガー",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ビッグフットマローダー",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガンMk.III×2",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガンMk.III×3",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-インテグラルレイDivergence",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-ボルケーノ",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンβ",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンβ×2",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-スーパーダミーバルーンβ×3",
+          "sourceId": "mission-wiki-46",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-46"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m47",
+      "enemies": [
+        "クイーンアント",
+        "ウィングアント",
+        "ストームアント",
+        "シルバーアント",
+        "クレイジーアント",
+        "ゾンビアント"
+      ],
+      "bosses": [
+        "クイーンアント"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先擊倒開場蟻后，再清隨後出現的飛蟻；飛蟻減員會引出大型混戰。",
+        "可退守起點左側施工樓二樓，利用建築減少直接受酸。",
+        "每次擊殺追加蟻后後都重新檢查東側邊界增援，先清逼近的小蟻，再轉火下一隻蟻后。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "可快速處理蟻后的高火力武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-47"
+        },
+        {
+          "name": "處理混合蟻群的副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-47"
+        }
+      ],
+      "warnings": [
+        "蟻后減員會觸發更多增援，不能只盯著大型目標。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-アウトレイジ・ゴースト",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.WX",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーAr×3",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーAr×3",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-サーサーン後期型",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-ロデオII",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネードZ×3",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネードZ×5",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.A5\"Anastasia\"",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-照射レーザー/ハッブルX",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "面頬",
+          "sourceId": "mission-wiki-47",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-47"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m48",
+      "enemies": [
+        "巨大生物の巣",
+        "ストームアント",
+        "シルバーアント",
+        "クレイジーアント",
+        "ウィングアント",
+        "ゾンビアント",
+        "ボムビートル",
+        "グリーンボムビートル",
+        "デスストーカー",
+        "ベイザル",
+        "ミスティックスパイダー",
+        "ゾンビスコーピオン"
+      ],
+      "bosses": [
+        "ベイザル"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先拆可攻擊的蟻巢；最遠飛蟻巢由友軍空襲處理。",
+        "每拆巢就清新生殭屍蟻，接著處理甲蟲與蠍子。",
+        "最後兩隻ベイザル及蜘蛛、殭屍蠍出場，保留大型火力。",
+        "友軍支援可能未殺死巨獸；確認倒下再收尾。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能迅速拆巢的火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-48"
+        },
+        {
+          "name": "對大型目標的持續火力",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-48"
+        }
+      ],
+      "warnings": [
+        "玩家不能叫航空支援；腳本友軍空襲仍會發生。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-シグマスフィアXi",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-滞空型チェイサー",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型改×6",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型改×9",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "掃射プラン2-榴弾砲",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WA-ゲキド",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WA-ラスSS",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-強酸-指向性地雷3型改×4",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-強酸-指向性地雷3型改×6",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "バイカージーンズ",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-ネイピアレーザーHyperbolic",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-アケメネス・インペリアル",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーXe",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーXe×2",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーXe×3",
+          "sourceId": "mission-wiki-48",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装ミサイル/ケプラー[銀鷲勲章]",
+          "sourceId": "mission-wiki-48",
+          "baseGame": null,
+          "reason": "DLC／範圍待查，未納入本體"
+        }
+      ],
+      "rewardIssues": [
+        "Hard 武器字首 WA 待核，保留來源原文。"
+      ],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-48"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    },
+    {
+      "id": "m49",
+      "enemies": [
+        "ラズニード・ラーヴァ",
+        "スコージャー",
+        "スーパースコージャー",
+        "レイドシップ",
+        "アタックポッド",
+        "スーパーアタックポッド",
+        "ハーヴェスター",
+        "スーパーハーヴェスター",
+        "スコージャー・ビースト",
+        "シディロス",
+        "シディロス・変異種"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "tactics": [
+        "開場一邊清幼體一邊拉距離，先削弱逼近的兩種機甲。",
+        "運輸船進場後優先打會投放機甲、ハーヴェスター的船，減少地面壓力。",
+        "シディロス直接增援無法靠拆船阻止；出現時拉開距離並集中處理。",
+        "後續船團仍會交替到場；清理追上的幼體，警戒強化ハーヴェスター追蹤彈，直到撤退船團與殘敵收尾。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "清幼體的武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-49"
+        },
+        {
+          "name": "可打運輸船的長射程武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-49"
+        },
+        {
+          "name": "機甲對策用高火力或載具",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-49"
+        }
+      ],
+      "warnings": [
+        "運輸船之外也有直接出場敵人；擊落船團不代表所有增援都停止。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ノーティボーイFJ",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装ミサイル/ケプラー",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネード改×8",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネード改×12",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネード改×16",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ガスマスク",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ラッキーガールSB",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-グラッジ・エピメテウス",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-ミシカル・アモル",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PE-ミシカル・プシュケ",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-アンガー・プロメテウス",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.A4\"Ali\"",
+          "sourceId": "mission-wiki-49",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-49"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "none-listed-is-not-proof-of-absence",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m50",
+      "enemies": [
+        "ラズニード・ラーヴァ",
+        "シディロス",
+        "シディロス・変異種",
+        "ベイザル"
+      ],
+      "bosses": [
+        "ベイザル"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "開場先退進後方施工樓清幼體；下一波機甲會拆樓，別把此處當全程據點。",
+        "進入機甲波後轉向地圖角落貨櫃後方，逐一減少追來的シディロス。",
+        "兩隻ベイザル出場時集中火力擊殺，牠們存在時貨櫃掩體無法保證安全。",
+        "巨獸倒下後再用貨櫃與機動清理最終幼體，最後收掉未啟動或殘餘的變異シディロス。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "機甲／巨獸用高火力實彈武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-50"
+        },
+        {
+          "name": "清幼體副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-50"
+        },
+        {
+          "name": "可用的戰鬥載具",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-50"
+        }
+      ],
+      "warnings": [
+        "ベイザル出場初期有無敵時間；電磁攻擊可能清空光學武器能量。不要貼越界線，衝撞可能將人推離戰區。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ユークリッド",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-インテグラルレイF",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン改",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン改×2",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン改×3",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-トランペット",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-冷凍グレネード改×6",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-マウナケアDA",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-ブラスターガンV",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-イグアス・シンギュラリテイ",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーXe",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーXe×2",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーXe×3",
+          "sourceId": "mission-wiki-50",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-50"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m51",
+      "enemies": [
+        "ラズニード",
+        "ラズニード・ラーヴァ"
+      ],
+      "bosses": [
+        "ラズニード"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "先處理艦上的幼體，保護ヴァーベナ；空檔攻擊ラズニード。",
+        "瞄右角或臉右側紅色部位才有有效傷害，藉傷害推進 HQ 砲充能。",
+        "看到大型電漿球或拍擊預備動作，就轉火阻止；首次拍擊由劇本攔截，後面仍要自己留意。",
+        "聽到裝填完成後，沿船首樓梯到維修艙的藍色圓圈，進入主砲瞄準。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能打到大型敵人弱點的長射程武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-51"
+        },
+        {
+          "name": "清理艦上幼體的副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-51"
+        },
+        {
+          "name": "艦上手動砲台",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-51"
+        }
+      ],
+      "warnings": [
+        "禁用航空支援、載具及衛星兵器。單純等待不會充完主砲，必須對ラズニード造成傷害。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.A2\"Adam\"",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-ナイル2号基",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-ショックグレネード改×20",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーレーザー×4",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーレーザー×6",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-クセルクセス・アンビション",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーレーザー改×4",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーレーザー改×6",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "付け髭",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2041FJ",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-反陽子雲・2mol",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ソウルシーカーMO",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "重装戦闘服「ナスタチウム」(上半身)",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "重装戦闘服「ナスタチウム」(下半身)",
+          "sourceId": "mission-wiki-51",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-51"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ],
+      "noListedRewards": [
+        "Disaster"
+      ]
+    },
+    {
+      "id": "m52",
+      "enemies": [
+        "ハイヴクラフト",
+        "ラズニード・ネフィリム",
+        "ラズニード・ラーヴァ",
+        "ゾンビアント",
+        "ゾンビスコーピオン"
+      ],
+      "bosses": [
+        "ラズニード・ネフィリム",
+        "ハイヴクラフト"
+      ],
+      "bossStatus": "listed",
+      "tactics": [
+        "帶可重複裝填的主武器與清群副武器。",
+        "利用ヴァーベナ船體遮擋範圍攻擊；避免長時間站在中央廣場。",
+        "ハイヴクラフト出現時優先破壞控制裝置，使巨型敵人暫時倒下、降低防禦，再集中輸出。",
+        "形態變化後會有持續增援的殭屍蟻與蠍；可依艦橋附近地形清群，再回頭打 Boss。",
+        "有誘餌時可放在通往艦橋的樓梯背面分流；裝填與生存穩定後持續攻擊到結算。"
+      ],
+      "strategyScope": {
+        "difficulties": [
+          "unspecified"
+        ],
+        "mode": "Campaign",
+        "section": "ミッション全体コメント",
+        "note": "來源沒有逐一指定難度／單人或多人；只作一般戰術摘要，不保證所有配裝與難度皆可照做。"
+      },
+      "recommendedEquipment": [
+        {
+          "name": "能持續裝填的主武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-52"
+        },
+        {
+          "name": "清群副武器",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-52"
+        },
+        {
+          "name": "ダミー類誘餌",
+          "officialName": null,
+          "availability": "類型建議；從目前已購買裝備挑選，不要求本關之後才解鎖的特定武器。",
+          "basis": "editorial-from-source",
+          "sourceId": "mission-wiki-52"
+        }
+      ],
+      "warnings": [
+        "禁用載具。小兵持續增援，不能靠全清小兵結束戰鬥。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "paGear",
+          "officialName": null,
+          "nameJa": "プロトタイプ：プロールライダー",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "砲撃プラン1-主砲",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーター×2",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーター×2",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "アント・ソルジャー",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "スパイダー・ウィッチ",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "スコーピオン・ウォーリアー",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "レスラーマスク",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "砲撃プラン2-艦対地ミサイル",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ワイルドスタイル(上半身)",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "砲撃プラン3-HQ拡散粒子砲",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ワイルドスタイル(下半身)",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "隠密兵装「ジンチョウゲ」",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "砲撃プラン4-HQキャノン",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "タイツスカート",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ディザスタークリア(ステッカー)",
+          "sourceId": "mission-wiki-52",
+          "baseGame": true
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "rewardCoverage": "列出來源表中所有具名獎勵列；[銀鷲勲章]另列排除，不擴展衣服顏色或樣式變體。",
+      "sourceIds": [
+        "mission-wiki-52"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "source-checked-ja; official-en-pending",
+        "bosses": "source-listed-large-target; official-en-pending",
+        "tactics": "original-zh-TW-summary; not-playtested",
+        "unlockRewards": "source-table-ja; official-en-and-current-version-pending"
+      },
+      "pendingFields": [
+        "敵人／獎勵官方英文逐項實機對照",
+        "目前 PS4 版本、各難度與多人縮放實測"
+      ]
+    }
+  ]
+}

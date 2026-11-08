@@ -1,0 +1,808 @@
+{
+  "checkedAt": "2026-11-08",
+  "coverage": {
+    "weapons": "partial",
+    "weaponCount": 12,
+    "items": "partial",
+    "appearance": "partial",
+    "paGear": "four-base-game-types",
+    "mercenary": "structure-and-basic-rules",
+    "challenges": "trophy-targets-only",
+    "warning": "這是可擴充的代表項目部分庫；本庫全數購買不代表 Complete Arsenal、Fully Stocked 或 Elite Customizer 已滿足。"
+  },
+  "sources": [
+    {
+      "id": "equip-faq-names",
+      "title": "GameFAQs v1.01 — English weapon names",
+      "url": "https://gamefaqs.gamespot.com/ps4/221717-earth-defense-force-iron-rain/faqs/77192"
+    },
+    {
+      "id": "equip-assault",
+      "title": "IRON RAIN @Wiki — アサルトライフル / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/40.html"
+    },
+    {
+      "id": "equip-missile",
+      "title": "IRON RAIN @Wiki — ミサイルランチャー / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/43.html"
+    },
+    {
+      "id": "equip-energy",
+      "title": "IRON RAIN @Wiki — エナジースロウワー / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/53.html"
+    },
+    {
+      "id": "equip-special",
+      "title": "IRON RAIN @Wiki — 特殊兵器 / 入手方法・必要ジェム",
+      "url": "https://w.atwiki.jp/edfir/pages/85.html"
+    },
+    {
+      "id": "equip-aa",
+      "title": "solaris32 — Best missions to farm enemies for AA weapons",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1899921392"
+    },
+    {
+      "id": "equip-revive",
+      "title": "IRON RAIN @Wiki — 蘇生装置",
+      "url": "https://w.atwiki.jp/edfir/pages/103.html"
+    },
+    {
+      "id": "gear-trooper",
+      "title": "D3 PUBLISHER — Trooper",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_trooper.html"
+    },
+    {
+      "id": "gear-jet",
+      "title": "D3 PUBLISHER — Jet Lifter",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_jetlifter.html"
+    },
+    {
+      "id": "gear-heavy",
+      "title": "D3 PUBLISHER — Heavy Striker",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_heavystriker.html"
+    },
+    {
+      "id": "gear-prowl",
+      "title": "D3 PUBLISHER — Prowl Rider",
+      "url": "https://www.d3p.co.jp/edfir/en/soldier_prowl.html"
+    },
+    {
+      "id": "equip-battle",
+      "title": "D3 PUBLISHER — Mercenary",
+      "url": "https://www.d3p.co.jp/edfir/en/battle.html"
+    },
+    {
+      "id": "equip-disaster",
+      "title": "TrueTrophies — The Soldier Who Resisted Despair",
+      "url": "https://www.truetrophies.com/t252213/the-soldier-who-resisted-despair-trophy"
+    },
+    {
+      "id": "equip-online",
+      "title": "PlayStationTrophies — Solo platinum discussion",
+      "url": "https://www.playstationtrophies.org/forum/topic/311199-possible-to-solo-platinum/"
+    },
+    {
+      "id": "equip-trophy-conditions",
+      "title": "PSPrices — NPWR14625_00 trophy conditions",
+      "url": "https://psprices.com/game-trophies/8950-earth-defense-force-iron-rain"
+    }
+  ],
+  "conventions": {
+    "verification": "價格與解鎖依公開資料逐欄轉錄，未經目前遊戲版本實機核對；未知欄位為 null。",
+    "cost": "Credits 是購買價；red/blue/yellow 分別為三色 Energy Gems，0 表示來源明列不需要。",
+    "status": "資料庫不預填使用者的已解鎖／已購買狀態；推薦用途均為編輯建議。",
+    "dlc": "排除 Ex 任務、Golden Storm 與特典裝備。"
+  },
+  "weapons": [
+    {
+      "id": "weapon-ae-2038",
+      "officialName": "AE-2038",
+      "type": "Assault Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "initial",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "先用現有武器熟悉瞄準，再依關卡需求選購。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-aw-outrage",
+      "officialName": "AW-Outrage",
+      "type": "Assault Rifle",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m02",
+        "minimumDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 800,
+        "red": 0,
+        "blue": 5,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m02"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "入門連射武器候選；先在 Practice 試射再決定購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。"
+    },
+    {
+      "id": "weapon-aw-furious-2",
+      "officialName": "AW-Furious 2",
+      "type": "Assault Rifle",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m01",
+        "minimumDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 400,
+        "blue": 400,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m01"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "已有穩定配裝後回頭挑戰 M01 Hard，作為主線升級候選。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-ae-2030",
+      "officialName": "AE-2030",
+      "type": "Assault Rifle",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Storm Ant",
+        "killCount": 2500
+      },
+      "cost": {
+        "credits": 850000,
+        "red": 0,
+        "blue": 5000,
+        "yellow": 2000
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m01"
+      ],
+      "recommendation": "高階連射候選；先核對累計擊殺，再規劃購買資源。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "equip-aa"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。"
+    },
+    {
+      "id": "weapon-aw-furious-ares",
+      "officialName": "AW-Furious Ares",
+      "type": "Assault Rifle",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Crazy Ant",
+        "killCount": 1200
+      },
+      "cost": {
+        "credits": 850000,
+        "red": 3500,
+        "blue": 3500,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m17",
+        "m23"
+      ],
+      "recommendation": "高階突擊步槍候選；確認解鎖後再納入資源目標。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Valiant Defender"
+      ],
+      "sourceIds": [
+        "equip-assault",
+        "equip-faq-names",
+        "equip-aa"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。"
+    },
+    {
+      "id": "weapon-sq-sky-tango",
+      "officialName": "SQ-Sky Tango",
+      "type": "Missile Launcher",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m01",
+        "minimumDifficulty": "Normal",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 800,
+        "red": 5,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m01"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "前期飛彈候選；以 Practice 確認鎖定操作。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "equip-missile",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。"
+    },
+    {
+      "id": "weapon-sq-curtain-call",
+      "officialName": "SQ-Curtain Call",
+      "type": "Missile Launcher",
+      "rank": "AA",
+      "baseGame": true,
+      "unlock": {
+        "kind": "enemy-kills",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": null,
+        "enemy": "Harvester",
+        "killCount": 150
+      },
+      "cost": {
+        "credits": 1000000,
+        "red": 10000,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [
+        "m10",
+        "m38"
+      ],
+      "recommendation": "高階飛彈候選；刷擊殺時一併記錄自己的收益。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Appetite for Destruction"
+      ],
+      "sourceIds": [
+        "equip-missile",
+        "equip-faq-names",
+        "equip-aa"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": "擊殺後必須成功完成任務；推薦關卡不代表保證效率。"
+    },
+    {
+      "id": "weapon-bl-catalaunica",
+      "officialName": "BL-Catalaunica",
+      "type": "Energy Thrower",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 1,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 25,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "首次收集 Drone 後可檢查商店，作為 Energy Thrower 類型入門。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "equip-energy",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-bl-gaugamela",
+      "officialName": "BL-Gaugamela",
+      "type": "Energy Thrower",
+      "rank": "E",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 3,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 2500,
+        "red": 0,
+        "blue": 25,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal",
+        "Field Chemist"
+      ],
+      "sourceIds": [
+        "equip-energy",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-mr-glue-launcher",
+      "officialName": "MR-Glue Launcher",
+      "type": "Special Weapon",
+      "rank": "D",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 25,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 8000,
+        "red": 50,
+        "blue": 50,
+        "yellow": 0
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "特殊武器體驗候選；勿當成已解鎖就已購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-er-super-chainsaw",
+      "officialName": "ER-Super Chainsaw",
+      "type": "Special Weapon",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 42,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 0,
+        "blue": 500,
+        "yellow": 500
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "近距離特殊武器候選；到 Practice 熟悉距離後再實戰。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    },
+    {
+      "id": "weapon-er-super-chainsaw-edf-spec",
+      "officialName": "ER-Super Chainsaw EDF Spec",
+      "type": "Special Weapon",
+      "rank": "A",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 55,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 480000,
+        "red": 0,
+        "blue": 2500,
+        "yellow": 2500
+      },
+      "relatedMissionIds": [],
+      "farmMissionIds": [],
+      "recommendation": "全 Drone 後檢查商店；保留 Credits 與兩色 Gems 完成購買。",
+      "recommendationBasis": "editorial",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "equip-special",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依英文攻略轉錄，尚未逐項實機核對",
+      "warning": null
+    }
+  ],
+  "items": [
+    {
+      "id": "item-rebooter",
+      "officialName": "Rebooter",
+      "type": "Resurrection Device",
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 30,
+        "yellow": 0
+      },
+      "effect": "復活倒下的玩家；不對 NPC 生效。",
+      "trophyNames": [
+        "Fully Stocked",
+        "Courageous Defender"
+      ],
+      "sourceIds": [
+        "equip-revive",
+        "equip-faq-names"
+      ],
+      "verification": "conflict",
+      "warning": "解鎖關卡有歧異：日文 Wiki 表列 M01，英文攻略列 M02；保留未知。此欄 Credits 為購買價，不能拿使用時報酬扣款代替。"
+    },
+    {
+      "id": "item-quick-rebooter",
+      "officialName": "Quick Rebooter",
+      "type": "Resurrection Device",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m04",
+        "minimumDifficulty": "Easy",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": 0,
+        "blue": 50,
+        "yellow": 0
+      },
+      "effect": "復活倒下的玩家並立即恢復部分 HP；不對 NPC 生效。",
+      "trophyNames": [
+        "Fully Stocked",
+        "Courageous Defender"
+      ],
+      "sourceIds": [
+        "equip-revive",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "warning": "購買 Credits 未核實；使用時的任務扣款是另一欄，不能視為購買價格。"
+    }
+  ],
+  "appearance": [
+    {
+      "id": "appearance-symbol-1",
+      "officialName": "Symbol 1",
+      "category": "emblem",
+      "baseGame": true,
+      "unlock": {
+        "kind": "drone-count",
+        "missionId": null,
+        "minimumDifficulty": null,
+        "droneCount": 1,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "purchaseRequired": null,
+      "trophyNames": [],
+      "sourceIds": [
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "warning": "僅確認收集獎勵名稱；不把此紀錄當作全部可購買外觀庫。"
+    }
+  ],
+  "paGear": [
+    {
+      "id": "gear-trooper",
+      "officialName": "Trooper",
+      "energyMove": "E-Dodge",
+      "description": "地面型 PA-Gear；E-Dodge 用於緊急迴避。",
+      "recommendation": "以地面移動與迴避為主的玩家可先熟悉此型。",
+      "trophyNames": [
+        "Ace Trooper",
+        "Don’t Get a Concussion!"
+      ],
+      "sourceIds": [
+        "gear-trooper"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial"
+    },
+    {
+      "id": "gear-jet-lifter",
+      "officialName": "Jet Lifter",
+      "energyMove": "E-Flight",
+      "description": "飛行型 PA-Gear；機動性高，防護較 Trooper 低。",
+      "recommendation": "收集高處 Drone 時的優先候選，注意剩餘能量與落點。",
+      "trophyNames": [
+        "Lifter Captain",
+        "It’s a Bird! It’s a Plane! It’s..."
+      ],
+      "sourceIds": [
+        "gear-jet"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial"
+    },
+    {
+      "id": "gear-heavy-striker",
+      "officialName": "Heavy Striker",
+      "energyMove": "E-Field",
+      "description": "雙持重裝型；護盾可擋射擊、雷射與爆炸，不能擋踩踏等物理接觸。",
+      "recommendation": "以能量管理及防禦為重心；換裝前考慮較長的裝填時間。",
+      "trophyNames": [
+        "Master Striker",
+        "Energy Phalanx"
+      ],
+      "sourceIds": [
+        "gear-heavy"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial"
+    },
+    {
+      "id": "gear-prowl-rider",
+      "officialName": "Prowl Rider",
+      "energyMove": "E-Needle",
+      "description": "利用纜線高速移動，Overdrive 可使用 G-L.I.A.R.。",
+      "recommendation": "先於 Practice 練習連續位移，再用於跨地形移動。",
+      "trophyNames": [
+        "Ultimate Rider",
+        "Your Friendly Neighborhood Prowl Rider"
+      ],
+      "sourceIds": [
+        "gear-prowl"
+      ],
+      "baseGame": true,
+      "unlock": null,
+      "cost": {
+        "credits": null,
+        "red": null,
+        "blue": null,
+        "yellow": null
+      },
+      "verification": "official-reference",
+      "recommendationBasis": "editorial"
+    }
+  ],
+  "mercenary": [
+    {
+      "id": "mercenary-scavenger",
+      "officialName": "Mercenary",
+      "mode": "online-versus",
+      "minimumPlayers": 2,
+      "maximumPlayers": 8,
+      "steps": [
+        "選擇線上 Mercenary。",
+        "擊倒 Aggressors 收集 Energy Gems。",
+        "把 Gems 送到黃色回收 Drone；綠色 Drone 用來強化武器。",
+        "以先取得三個 Wave 勝利為目標。"
+      ],
+      "rankTarget": "Ensign",
+      "rankPoints": null,
+      "trophyNames": [
+        "Welcome to Dystopia",
+        "Defending the Earth Ain’t Easy!"
+      ],
+      "sourceIds": [
+        "equip-battle",
+        "equip-online"
+      ],
+      "verification": "official-reference",
+      "warning": "配對人數為官方模式規格；未驗證目前 PSN 配對狀況或到達 Ensign 的確切點數，不顯示確定工時。"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "challenge-disaster-offline",
+      "name": "Disaster 離線一關",
+      "mode": "offline",
+      "difficulty": "Disaster",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [
+        "m02"
+      ],
+      "trophyNames": [
+        "The Soldier Who Resisted Despair"
+      ],
+      "sourceIds": [
+        "equip-disaster"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "可從敵人較少的 M02 開始試裝；以自己的實測結果判斷是否適合。"
+    },
+    {
+      "id": "challenge-disaster-online",
+      "name": "Disaster 線上一關",
+      "mode": "online",
+      "difficulty": "Disaster",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [],
+      "trophyNames": [
+        "Forged in Fire"
+      ],
+      "sourceIds": [
+        "equip-trophy-conditions",
+        "equip-online"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "確認線上模式及配裝後，再選自己熟悉的關卡。"
+    },
+    {
+      "id": "challenge-hardest-online",
+      "name": "Hardest 線上一關",
+      "mode": "online",
+      "difficulty": "Hardest",
+      "requiredCompletions": 1,
+      "recommendedMissionIds": [],
+      "trophyNames": [
+        "Friends Through Iron and Smoke"
+      ],
+      "sourceIds": [
+        "equip-trophy-conditions"
+      ],
+      "verification": "secondary-reference",
+      "recommendation": "先完成熟悉的本體任務；關卡勾選不能代替 PSN 獎盃確認。"
+    }
+  ]
+}

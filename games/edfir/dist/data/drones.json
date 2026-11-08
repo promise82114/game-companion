@@ -1,0 +1,1191 @@
+{
+  "checkedAt": "2026-11-08",
+  "sources": [
+    {
+      "id": "drone-wiki",
+      "title": "IRON RAIN @Wiki — ドローン探索",
+      "url": "https://w.atwiki.jp/edfir/pages/26.html"
+    },
+    {
+      "id": "drone-tt",
+      "title": "TrueTrophies — Drone Buff / Slayer1189",
+      "url": "https://www.truetrophies.com/t252208/drone-buff-trophy"
+    },
+    {
+      "id": "drone-ranbu",
+      "title": "ゲーム乱舞 — MIAドローンの場所一覧",
+      "url": "https://gameranbu.jp/edfir/6bc0bc7da1b753f81cca"
+    },
+    {
+      "id": "drone-reddit",
+      "title": "trickywardude — All MIA drone locations",
+      "url": "https://www.reddit.com/r/EDF/comments/bd1owl/all_mia_drone_locations_edf_iron_rain/"
+    },
+    {
+      "id": "drone-gameranx",
+      "title": "Gameranx — Hidden Drone Locations",
+      "url": "https://gameranx.com/features/id/172936/article/earth-defense-force-iron-rain-unlock-weapons-emblems-with-these-hidden-drone-locations-collectibles-guide/"
+    },
+    {
+      "id": "drone-faq",
+      "title": "Brian Nii / JulieSu — GameFAQs v1.01 / MIA Drones",
+      "url": "https://gamefaqs.gamespot.com/ps4/221717-earth-defense-force-iron-rain/faqs/77192"
+    }
+  ],
+  "conventions": {
+    "scope": "本體 M01–M52 各 1 架、Practice 3 架；不含 DLC。",
+    "direction": "前後左右以任務開始時朝向為準；東南西北以雷達白色短線朝上為基準。",
+    "verification": "cross-referenced 表示文字資料互相比對，非實機走查；conflict 表示至少一項來源描述有歧異。",
+    "completion": "戰役拾取後仍須成功完成該任務；勾選應代表使用者已核對登錄，不推定 PSN 跳盃。",
+    "obstacle": "null 表示來源未確認需要破壞障礙物，不能解讀為已實測不需要。",
+    "gear": "Jet Lifter 是依 Wiki 建議及高低差的編輯建議，非限制或唯一可行配裝。",
+    "maps": "文字只提供相對位置；尚無實測座標，禁止由這份資料產生假精確地形圖。"
+  },
+  "drones": [
+    {
+      "id": "drone-m01",
+      "missionId": "m01",
+      "practiceNumber": null,
+      "route": "前進兩個街口，在右側路障背面找。",
+      "direction": "前方偏右",
+      "landmark": "街角路障",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m02",
+      "missionId": "m02",
+      "practiceNumber": null,
+      "route": "前往正面的高塔，飛至塔頂回收。",
+      "direction": "前方上方",
+      "landmark": "高塔頂端",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "高塔",
+        "action": "可選擇破壞使 Drone 落下",
+        "required": false
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m03",
+      "missionId": "m03",
+      "practiceNumber": null,
+      "route": "沿坡上行後右轉，找草地上皮卡車的車頭。",
+      "direction": "上坡後右轉",
+      "landmark": "公園皮卡車",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m04",
+      "missionId": "m04",
+      "practiceNumber": null,
+      "route": "起點向左，檢查最近的獨立樹下。",
+      "direction": "左方",
+      "landmark": "獨立樹",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m05",
+      "missionId": "m05",
+      "practiceNumber": null,
+      "route": "向右到擱淺船隻的船首，沿岸找。",
+      "direction": "右方",
+      "landmark": "船首沙灘",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m06",
+      "missionId": "m06",
+      "practiceNumber": null,
+      "route": "到公園南側樓群背巷；可飛越或拆樓進入。",
+      "direction": "右方／南側",
+      "landmark": "公園對街背巷",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "樓群",
+        "action": "飛越或破壞後進入",
+        "required": false
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m07",
+      "missionId": "m07",
+      "practiceNumber": null,
+      "route": "以雷達白線為北，到西南角的旗幟旁。",
+      "direction": "西南角",
+      "landmark": "EDF 旗幟",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-wiki"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m08",
+      "missionId": "m08",
+      "practiceNumber": null,
+      "route": "從起點往右側高架前進；利用高架高度接近旁邊建築，查看朝高架的凸起屋頂。",
+      "direction": "起點右側 → 高架旁屋頂",
+      "landmark": "高架旁、與高架相近高度的凸起屋頂",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "樓房",
+        "action": "可選擇破壞後回收",
+        "required": false
+      },
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "建築顏色與『回頭』說法不一致，取消顏色與絕對方位作必要條件；採高架與凸起屋頂定位。尚未實機核對。",
+      "directionFrame": "mission-start-and-landmark",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "來源共同指向高架旁屋頂；無法由文字證明所有顏色說法指同一棟，故不保留顏色導航。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "起點右前高架旁，淺綠建築凸頂。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "起點右轉，經高架接近尖拱屋頂。"
+          },
+          {
+            "sourceId": "drone-reddit",
+            "finding": "黃建築低平台。"
+          }
+        ],
+        "pending": [
+          "建築顏色與確切立面待畫面核對"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m09",
+      "missionId": "m09",
+      "practiceNumber": null,
+      "route": "起點直接回頭，找粉紅色 Drone。",
+      "direction": "後方",
+      "landmark": "起點地面",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m10",
+      "missionId": "m10",
+      "practiceNumber": null,
+      "route": "往前到廢墟，從公車旁碎樓底下找。",
+      "direction": "前方",
+      "landmark": "公車旁廢墟",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m11",
+      "missionId": "m11",
+      "practiceNumber": null,
+      "route": "從起點向右找基地外牆的升降機，登上升降機上方的小頂棚；Drone 在頂棚上，不在乘坐平台。",
+      "direction": "起點右側 → 升降機頂棚",
+      "landmark": "基地牆升降機上方的遮棚",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "英文摘要分別寫西南／東南，未採為導航；以起點右側升降機『上方頂棚』為共同定位。絕對方位仍待核對。",
+      "directionFrame": "mission-start",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "日文與詳細英文路線同指起點右側升降機頂棚；羅盤角落分歧仍保留，不能宣稱已證實東南或西南。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "右側基地牆升降機屋頂。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "右側升降機上方小遮棚。"
+          },
+          {
+            "sourceId": "drone-reddit",
+            "finding": "最高平台標為西南。"
+          },
+          {
+            "sourceId": "drone-gameranx",
+            "finding": "最高平台標為東南。"
+          }
+        ],
+        "pending": [
+          "雷達方位待畫面核對"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m12",
+      "missionId": "m12",
+      "practiceNumber": null,
+      "route": "到基地大缺口右側，檢查較低的外側平台。",
+      "direction": "前方偏右",
+      "landmark": "缺口旁平台",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m13",
+      "missionId": "m13",
+      "practiceNumber": null,
+      "route": "繞到大岩山背面，在小岩群邊找。",
+      "direction": "岩山另一側",
+      "landmark": "平矮岩群",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m14",
+      "missionId": "m14",
+      "practiceNumber": null,
+      "route": "往左過河進樹林，找三個帳篷之間。",
+      "direction": "左方過河",
+      "landmark": "林中帳篷群",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m15",
+      "missionId": "m15",
+      "practiceNumber": null,
+      "route": "遇到箭頭向右的岔口改走左路，查小瀑布底。",
+      "direction": "岔口左方",
+      "landmark": "瀑布水池",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m16",
+      "missionId": "m16",
+      "practiceNumber": null,
+      "route": "前進到高架後左轉，在紅車旁瓦礫找。",
+      "direction": "前進後左轉",
+      "landmark": "高架下紅車",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m17",
+      "missionId": "m17",
+      "practiceNumber": null,
+      "route": "以雷達白線為北，前往沙漠西北角邊界。",
+      "direction": "西北角",
+      "landmark": "沙丘邊界",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m18",
+      "missionId": "m18",
+      "practiceNumber": null,
+      "route": "沿東側道路越過路障，右轉進垃圾箱旁巷道。",
+      "direction": "東側右轉",
+      "landmark": "背巷垃圾箱",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m19",
+      "missionId": "m19",
+      "practiceNumber": null,
+      "route": "從起點略向左前進，找斷裂高架下方的黑垃圾袋；在袋堆和輪胎周圍檢查。",
+      "direction": "起點左前方 → 斷高架下",
+      "landmark": "斷高架下的垃圾袋與輪胎",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "Reddit 原文的東南已有玩家留言更正為東北；Gameranx 仍寫東南，不能視為另一份獨立確認。本站採兩份詳細路線一致的左前斷高架。",
+      "directionFrame": "mission-start",
+      "resolution": {
+        "status": "erratum-applied",
+        "conclusion": "保留玩家勘誤，棄用有爭議的東南指引；改以起點朝向與斷高架實體地標導航。",
+        "evidence": [
+          {
+            "sourceId": "drone-reddit",
+            "finding": "Tyrranis 留言明確更正東南為東北。"
+          },
+          {
+            "sourceId": "drone-wiki",
+            "finding": "起點左前高架下黑垃圾袋。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "起點略向左，前進至高架殘骸。"
+          }
+        ],
+        "pending": [
+          "未實機複核雷達方向"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m20",
+      "missionId": "m20",
+      "practiceNumber": null,
+      "route": "往前越過河床，到邊界山坡拆帳篷。",
+      "direction": "前方越河",
+      "landmark": "邊界山坡帳篷",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "帳篷",
+        "action": "破壞帳篷後回收",
+        "required": true
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m21",
+      "missionId": "m21",
+      "practiceNumber": null,
+      "route": "繞過大岩山，到另一面的加油機之間。",
+      "direction": "岩山另一側",
+      "landmark": "加油機",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m22",
+      "missionId": "m22",
+      "practiceNumber": null,
+      "route": "到起點附近停車場角落，查收費亭後。",
+      "direction": "東南角",
+      "landmark": "停車場收費亭",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m23",
+      "missionId": "m23",
+      "practiceNumber": null,
+      "route": "沿岸走到西南邊界，查海水內漂流物旁。",
+      "direction": "西南角",
+      "landmark": "海岸漂流物",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m24",
+      "missionId": "m24",
+      "practiceNumber": null,
+      "route": "起點向左，檢查停車旁地面。",
+      "direction": "左方",
+      "landmark": "起點車輛",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m25",
+      "missionId": "m25",
+      "practiceNumber": null,
+      "route": "穿過前方塔區，找大公寓前乾噴水池頂端。",
+      "direction": "前方偏右",
+      "landmark": "公寓前噴水池",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m26",
+      "missionId": "m26",
+      "practiceNumber": null,
+      "route": "起點回頭走向邊界，沿路找深藍帆布／網罩貨櫃與藍色車；Drone 在相鄰路口的斑馬線。",
+      "direction": "起點後方 → 邊界路口",
+      "landmark": "藍車、帆布貨櫃與斑馬線",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "Wiki 本文的『左下角再向右』與留言的『應向左』未能證實何者正確；本站不採這段微調方向，保留藍車與斑馬線定位。",
+      "directionFrame": "mission-start-and-landmark",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "多源可收斂到邊界藍車旁路口；角落左右細節仍未知，沒有把留言直接升級成確定事實。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "正文與2023-09-24留言對左／右不同。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "起點回頭，藍車旁斑馬線。"
+          },
+          {
+            "sourceId": "drone-reddit",
+            "finding": "南界藍車旁T形路口。"
+          }
+        ],
+        "pending": [
+          "邊界角落左右微調待實機"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m27",
+      "missionId": "m27",
+      "practiceNumber": null,
+      "route": "爬起點右側岩台，到藍色帳篷內回收。",
+      "direction": "右方上層",
+      "landmark": "岩台藍帳篷",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "藍帳篷",
+        "action": "破壞帳篷後回收",
+        "required": true
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m28",
+      "missionId": "m28",
+      "practiceNumber": null,
+      "route": "先清除附近威脅，再沿邊界找最靠近邊界的施工起重機，檢查機座周圍地面。",
+      "direction": "邊界 → 施工起重機機座",
+      "landmark": "靠邊界的施工起重機機座",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "Wiki 有左右反置的舊留言；正文及英文來源共同支持邊界起重機底部，不將進建築內列為必要操作。",
+      "directionFrame": "landmark; radar-white-marker-up for west references",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "正文與不同英文路線一致描述起重機機座，可用物件取代左右爭議。文字共識不等於實測座標。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "雷達白線朝上，左邊界起重機根部。"
+          },
+          {
+            "sourceId": "drone-reddit",
+            "finding": "西界、建築群最靠邊界的起重機。"
+          },
+          {
+            "sourceId": "drone-gameranx",
+            "finding": "西界黃色起重機底部。"
+          }
+        ],
+        "pending": [
+          "尚未實機重走"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m29",
+      "missionId": "m29",
+      "practiceNumber": null,
+      "route": "進最後交戰洞室，找右側照明與蜘蛛網旁。",
+      "direction": "終點洞室右側",
+      "landmark": "洞室照明蜘蛛網",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m30",
+      "missionId": "m30",
+      "practiceNumber": null,
+      "route": "穿基地牆缺口到外側，找藍貨櫃右邊地面。",
+      "direction": "缺口外右側",
+      "landmark": "藍貨櫃",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-ranbu"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m31",
+      "missionId": "m31",
+      "practiceNumber": null,
+      "route": "到東南方的獨立樹，再查樹南側小坑。",
+      "direction": "東南角",
+      "landmark": "樹南方小坑",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m32",
+      "missionId": "m32",
+      "practiceNumber": null,
+      "route": "穿過起點右前方基地牆缺口，到牆外固定式起重機。先飛上頂端檢查；若要拆除，先確認落點仍在任務邊界內。",
+      "direction": "基地牆缺口外 → 起重機頂端／底座候選",
+      "landmark": "基地缺口外的固定式起重機",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "固定式起重機",
+        "action": "可選擇拆除後在邊界內檢查落物；原始高度仍有來源衝突",
+        "required": false
+      },
+      "verification": "conflict",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "高度仍未釐清：Wiki／Reddit 寫頂端，GameFAQs 寫底座；Gameranx 只說拆除後落地，不能證明原始高度。保留兩個候選，不宣稱衝突已解決。",
+      "directionFrame": "mission-start-and-landmark",
+      "candidateRoutes": [
+        {
+          "label": "頂端候選",
+          "text": "Jet Lifter 飛到固定式起重機頂端檢查。",
+          "sourceIds": [
+            "drone-wiki",
+            "drone-reddit"
+          ]
+        },
+        {
+          "label": "底座候選",
+          "text": "保留結構時也檢查機座；若已拆除，沿殘骸外側、任務邊界內查落物。",
+          "sourceIds": [
+            "drone-faq",
+            "drone-gameranx",
+            "drone-reddit"
+          ]
+        }
+      ],
+      "resolution": {
+        "status": "unresolved-elevation",
+        "conclusion": "物件已核對為固定式起重機（Wiki 2019-04-20留言修正『鐵塔』），原始高度仍需影像或遊戲驗證。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "頂端；留言確認物件是固定式起重機。"
+          },
+          {
+            "sourceId": "drone-reddit",
+            "finding": "頂端，拆除可落到邊界內。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "底座附近。"
+          },
+          {
+            "sourceId": "drone-gameranx",
+            "finding": "拆起重機後回收，未交代原高度。"
+          }
+        ],
+        "pending": [
+          "原始位置在頂端或底座的畫面證據",
+          "拆除後落點與邊界實測"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m33",
+      "missionId": "m33",
+      "practiceNumber": null,
+      "route": "沿東界沙丘中段，找倒地腳踏車旁。",
+      "direction": "東側邊界",
+      "landmark": "沙丘腳踏車",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-tt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m34",
+      "missionId": "m34",
+      "practiceNumber": null,
+      "route": "沿海灘走到沒有船的盡頭，在陽傘下找。",
+      "direction": "海灘遠端",
+      "landmark": "岸邊陽傘",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m35",
+      "missionId": "m35",
+      "practiceNumber": null,
+      "route": "起點右轉上坡，到邊界住宅露台照明旁。",
+      "direction": "右方上坡",
+      "landmark": "住宅露台照明",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m36",
+      "missionId": "m36",
+      "practiceNumber": null,
+      "route": "起點向右，檢查最近的樹根。",
+      "direction": "右方",
+      "landmark": "最近的樹",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m37",
+      "missionId": "m37",
+      "practiceNumber": null,
+      "route": "到東南角樓群中庭，在死去甲蟲旁找。",
+      "direction": "東南角",
+      "landmark": "中庭甲蟲殘骸",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m38",
+      "missionId": "m38",
+      "practiceNumber": null,
+      "route": "從起點往右登坑沿最高處，找西側照明。",
+      "direction": "右方高處／西側",
+      "landmark": "坑沿照明",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m39",
+      "missionId": "m39",
+      "practiceNumber": null,
+      "route": "沿路前進越過高架，在燃燒物旁公車亭前找。",
+      "direction": "正前方",
+      "landmark": "燃燒物旁公車亭",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m40",
+      "missionId": "m40",
+      "practiceNumber": null,
+      "route": "往南界加油站，在站內陽傘下找。",
+      "direction": "南側邊界",
+      "landmark": "加油站陽傘",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-reddit"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m41",
+      "missionId": "m41",
+      "practiceNumber": null,
+      "route": "到第一批物資房間，在右側籠內回收。",
+      "direction": "首間物資房右側",
+      "landmark": "物資房籠子",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m42",
+      "missionId": "m42",
+      "practiceNumber": null,
+      "route": "起點往左到公園外側，在 CRAZY 塗鴉右邊找。",
+      "direction": "左方公園外側",
+      "landmark": "CRAZY 塗鴉牆",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m43",
+      "missionId": "m43",
+      "practiceNumber": null,
+      "route": "飛上起點後方崖頂，在照明旁樹下找。",
+      "direction": "後方崖頂",
+      "landmark": "照明旁樹木",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m44",
+      "missionId": "m44",
+      "practiceNumber": null,
+      "route": "用 Jet Lifter 繞到船尾，從外露引擎往下找幾乎浸入海面的下層噴口，停在噴口上方回收；避免直接落海。",
+      "direction": "船尾 → 半沉水的下層引擎",
+      "landmark": "船尾半沉水的下層噴口",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "source-reconciled",
+      "sourceIds": [
+        "drone-wiki",
+        "drone-faq",
+        "drone-reddit",
+        "drone-gameranx"
+      ],
+      "warning": "左／右與引擎序號尚未實機對照；採多源共同的船尾、下層、半沉水三條件定位。跌入海會強制復歸並降低最大 HP。",
+      "directionFrame": "ship-stern-and-engine-level; no viewer-left/right",
+      "resolution": {
+        "status": "landmark-reconciled",
+        "conclusion": "以船尾與上下層定位，避免把觀看者左右與船體右舷混用；引擎序號仍未知。",
+        "evidence": [
+          {
+            "sourceId": "drone-wiki",
+            "finding": "船尾靠右舷，下層近海面噴口。"
+          },
+          {
+            "sourceId": "drone-faq",
+            "finding": "面向船尾的左上引擎之下，另有半沉水引擎。"
+          },
+          {
+            "sourceId": "drone-gameranx",
+            "finding": "船尾近乎沉水的引擎上方。"
+          }
+        ],
+        "pending": [
+          "船體右舷與觀看者左右的影像對照",
+          "引擎序號與落腳點實測"
+        ]
+      },
+      "checkedAt": "2026-11-08"
+    },
+    {
+      "id": "drone-m45",
+      "missionId": "m45",
+      "practiceNumber": null,
+      "route": "回頭往南界，在右側樓後照明與碎石旁找。",
+      "direction": "後方南界右側",
+      "landmark": "樓後照明碎石",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m46",
+      "missionId": "m46",
+      "practiceNumber": null,
+      "route": "登戰艦艦橋，在艦橋後方小平台回收。",
+      "direction": "艦橋後方高處",
+      "landmark": "艦橋後平台",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m47",
+      "missionId": "m47",
+      "practiceNumber": null,
+      "route": "起點往右到邊界混凝土空地，在圓形植台間找。",
+      "direction": "右方／西側",
+      "landmark": "四個圓形植台",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m48",
+      "missionId": "m48",
+      "practiceNumber": null,
+      "route": "從起點前進下坡，在樹旁探照燈與設備旁找。",
+      "direction": "前方下坡",
+      "landmark": "探照燈設備",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m49",
+      "missionId": "m49",
+      "practiceNumber": null,
+      "route": "往前方加油站對街，查停放的車輛之間。",
+      "direction": "加油站對街",
+      "landmark": "停車列",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m50",
+      "missionId": "m50",
+      "practiceNumber": null,
+      "route": "直走到高架下，破壞路左側藍布棚。",
+      "direction": "前方左側",
+      "landmark": "高架下藍布棚",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "藍布棚",
+        "action": "破壞布棚後回收",
+        "required": true
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-gameranx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m51",
+      "missionId": "m51",
+      "practiceNumber": null,
+      "route": "往右側跑道區，在樓梯附近降至下層支架。",
+      "direction": "右方下層",
+      "landmark": "跑道下支架",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-faq"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-m52",
+      "missionId": "m52",
+      "practiceNumber": null,
+      "route": "到船後東南角，查接近邊界的下層引擎旁。",
+      "direction": "東南角",
+      "landmark": "船尾下層引擎",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-faq"
+      ],
+      "warning": null
+    },
+    {
+      "id": "drone-practice-1",
+      "missionId": null,
+      "practiceNumber": 1,
+      "route": "前往射擊場，在 200m 標誌下回收。",
+      "direction": "前方",
+      "landmark": "200m 標誌",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": null,
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-faq"
+      ],
+      "warning": "Practice 無一般戰役結算；回到裝備畫面核對回收登錄，勿把練習場回收當作任務完成。"
+    },
+    {
+      "id": "drone-practice-2",
+      "missionId": null,
+      "practiceNumber": 2,
+      "route": "越過靶場外牆，飛至管制塔頂端。",
+      "direction": "靶場外上方",
+      "landmark": "管制塔頂",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "管制塔",
+        "action": "可選擇破壞後回收",
+        "required": false
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-faq"
+      ],
+      "warning": "Practice 無一般戰役結算；回到裝備畫面核對回收登錄，勿把練習場回收當作任務完成。"
+    },
+    {
+      "id": "drone-practice-3",
+      "missionId": null,
+      "practiceNumber": 3,
+      "route": "從左後方牆缺口出基地，拆外側帳篷。",
+      "direction": "左後方基地外",
+      "landmark": "外牆帳篷",
+      "recommendedGear": "Jet Lifter",
+      "gearBasis": "editorial",
+      "obstacle": {
+        "name": "帳篷",
+        "action": "破壞帳篷後回收",
+        "required": true
+      },
+      "verification": "cross-referenced",
+      "sourceIds": [
+        "drone-faq"
+      ],
+      "warning": "Practice 無一般戰役結算；回到裝備畫面核對回收登錄，勿把練習場回收當作任務完成。"
+    }
+  ],
+  "audit": {
+    "checkedAt": "2026-11-08",
+    "method": "比對日文 Wiki 正文／留言、英文攻略與玩家勘誤；定位線索可收斂不等於實機重走。TrueTrophies 本次 403，未以先前摘要冒充本次重新讀取。",
+    "reviewed": [
+      "drone-m08",
+      "drone-m11",
+      "drone-m19",
+      "drone-m26",
+      "drone-m28",
+      "drone-m32",
+      "drone-m44"
+    ],
+    "landmarkReconciled": 6,
+    "unresolved": [
+      "drone-m32"
+    ]
+  },
+  "contentVersion": "1.1.0"
+}

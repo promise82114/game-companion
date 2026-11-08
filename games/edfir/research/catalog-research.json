@@ -1,0 +1,2626 @@
+{
+  "checkedAt": "2026-11-08",
+  "platform": "PS4",
+  "counts": {
+    "missions": 52,
+    "trophies": 44,
+    "platinum": 1,
+    "gold": 4,
+    "silver": 7,
+    "bronze": 32,
+    "dlcIncluded": false
+  },
+  "sources": [
+    {
+      "id": "mission-list",
+      "title": "Push Square · How Many Missions Are There?",
+      "url": "https://www.pushsquare.com/news/2019/04/guide_earth_defense_force_iron_rain_-_how_many_missions_are_there",
+      "checkedAt": "2026-11-08",
+      "scope": "本體52關編號／英文名稱；M15、M41 拼字以GameFAQs交叉核對。"
+    },
+    {
+      "id": "gamefaqs",
+      "title": "GameFAQs · JulieSu / Brian Nii FAQ 1.01",
+      "url": "https://gamefaqs.gamespot.com/ps4/221717-earth-defense-force-iron-rain/faqs/77192",
+      "checkedAt": "2026-11-08",
+      "scope": "任務英文名稱交叉核對；序章不併入52關。本文不轉載完整攻略。"
+    },
+    {
+      "id": "ps4-exophase",
+      "title": "Exophase · PS4 trophy metadata",
+      "url": "https://www.exophase.com/game/earth-defense-force-iron-rain-psn/trophies/",
+      "checkedAt": "2026-11-08",
+      "scope": "44個本體獎盃的功能性名稱、條件與PS4平台差異。"
+    },
+    {
+      "id": "ps4-truetrophies",
+      "title": "TrueTrophies · PS4 trophies",
+      "url": "https://www.truetrophies.com/game/EARTH-DEFENSE-FORCE-IRON-RAIN/trophies",
+      "checkedAt": "2026-11-08",
+      "scope": "44盃總數、各項功能性名稱與條件。個別頁部分無法讀取，不宣稱逐頁驗證。"
+    },
+    {
+      "id": "ps4-pst",
+      "title": "PlayStationTrophies · PS4 list",
+      "url": "https://www.playstationtrophies.org/game/earth-defense-force-iron-rain/trophies/",
+      "checkedAt": "2026-11-08",
+      "scope": "44盃與分級；Earth Angel 的舊英文條件與其他來源有異，以Exophase／日文條件保守處理。"
+    },
+    {
+      "id": "ps4-prices",
+      "title": "PSPrices · NPWR14625_00 trophies",
+      "url": "https://psprices.com/game-trophies/8950-earth-defense-force-iron-rain",
+      "checkedAt": "2026-11-08",
+      "scope": "PS4霰彈獎盃的異常英文名稱與取得條件交叉核對。"
+    },
+    {
+      "id": "steam-achievements",
+      "title": "Steam · official global achievements",
+      "url": "https://steamcommunity.com/stats/1039890/achievements/",
+      "checkedAt": "2026-11-08",
+      "scope": "平台比較：Steam使用Lead Poisoning／Guardian of the Field；不替換PS4名稱。"
+    },
+    {
+      "id": "no-missables",
+      "title": "TrueTrophies · hard platinum trophies (Iron Rain section)",
+      "url": "https://www.truetrophies.com/news/hard-platinum-trophies-updated-ps-store-january-sale?from=more-stories",
+      "checkedAt": "2026-11-08",
+      "scope": "來源列無可錯過獎盃；線上服務與配對可用性另行確認。"
+    },
+    {
+      "id": "multiplayer",
+      "title": "PlayStationTrophies forum · Possible to solo platinum? (2019)",
+      "url": "https://www.playstationtrophies.org/forum/topic/311199-possible-to-solo-platinum/",
+      "checkedAt": "2026-11-08",
+      "scope": "歷史實測：本機雙人可救援、Mercenary至少兩位玩家、線上Disaster可私人單人房。非目前服務可用性保證。"
+    },
+    {
+      "id": "revive-cost",
+      "title": "ゲーム乱舞 · 仲間を蘇生する方法",
+      "url": "https://gameranbu.jp/edfir/0fa77832a0d53871f708",
+      "checkedAt": "2026-11-08",
+      "scope": "Rebooter救援及支援道具費用從任務報酬扣除。"
+    },
+    {
+      "id": "wiki-faq",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · よくある質問",
+      "url": "https://w.atwiki.jp/edfir/pages/5.html",
+      "checkedAt": "2026-11-08",
+      "scope": "武器需購買、PA-Gear armor升級、難度清單；Disaster確切開放判定來源本身標待查。"
+    }
+  ],
+  "missions": [
+    {
+      "id": "m01",
+      "number": 1,
+      "officialName": "Assignment: Blast Team",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m02",
+      "number": 2,
+      "officialName": "Sleeping Disaster",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m03",
+      "number": 3,
+      "officialName": "The Earth Reshapen",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m04",
+      "number": 4,
+      "officialName": "\"Routine Work\"",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m05",
+      "number": 5,
+      "officialName": "Steel Flowers on the Coast",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m06",
+      "number": 6,
+      "officialName": "Quake Team: M.I.A.",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m07",
+      "number": 7,
+      "officialName": "Desert Defense Line",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m08",
+      "number": 8,
+      "officialName": "Shadow of Doom",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m09",
+      "number": 9,
+      "officialName": "Kindred Rebellion Sighted",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m10",
+      "number": 10,
+      "officialName": "Harvesting Fear",
+      "stage": "M01–M10",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m11",
+      "number": 11,
+      "officialName": "Hyenas",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m12",
+      "number": 12,
+      "officialName": "Warning: Gargant",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m13",
+      "number": 13,
+      "officialName": "Battle at the Badlands",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m14",
+      "number": 14,
+      "officialName": "Glowing Pincers",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m15",
+      "number": 15,
+      "officialName": "Scavenging the Sewers",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [
+        "英文名稱使用Scavenging the Sewers；部分任務表拼成Scavening，已與GameFAQs交叉核對。"
+      ],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m16",
+      "number": 16,
+      "officialName": "Rescue Mission",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m17",
+      "number": 17,
+      "officialName": "Swarm in the Dunes",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m18",
+      "number": 18,
+      "officialName": "The Hivecraft Returns",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m19",
+      "number": 19,
+      "officialName": "Remnants Amongst the Ruins",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m20",
+      "number": 20,
+      "officialName": "A Giant Appears",
+      "stage": "M11–M20",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m21",
+      "number": 21,
+      "officialName": "The Nightmare Continues",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m22",
+      "number": 22,
+      "officialName": "Danger on All Sides",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m23",
+      "number": 23,
+      "officialName": "A Mysterious Pillar",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m24",
+      "number": 24,
+      "officialName": "Silver Army",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m25",
+      "number": 25,
+      "officialName": "Triple Threat",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m26",
+      "number": 26,
+      "officialName": "Pillar Raid",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m27",
+      "number": 27,
+      "officialName": "An Ominous Sign",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m28",
+      "number": 28,
+      "officialName": "Back to \"Normal\"",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m29",
+      "number": 29,
+      "officialName": "Return to the Caves",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m30",
+      "number": 30,
+      "officialName": "The Cost of Experimentation",
+      "stage": "M21–M30",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m31",
+      "number": 31,
+      "officialName": "Tank Concerto",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m32",
+      "number": 32,
+      "officialName": "Standoff at the Base",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m33",
+      "number": 33,
+      "officialName": "Dual Battle",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m34",
+      "number": 34,
+      "officialName": "Desperate Stand",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m35",
+      "number": 35,
+      "officialName": "Rebellion Counterstrike",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m36",
+      "number": 36,
+      "officialName": "City of Giants",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m37",
+      "number": 37,
+      "officialName": "Towers of Doom",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m38",
+      "number": 38,
+      "officialName": "Off the Record",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m39",
+      "number": 39,
+      "officialName": "One Night's Resolve",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m40",
+      "number": 40,
+      "officialName": "A Common Goal",
+      "stage": "M31–M40",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m41",
+      "number": 41,
+      "officialName": "Cave Complex, Revisited",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [
+        "英文名稱使用Cave Complex, Revisited；部分任務表拼成Revisted，已與GameFAQs交叉核對。"
+      ],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m42",
+      "number": 42,
+      "officialName": "Battle in the Snow",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m43",
+      "number": 43,
+      "officialName": "An Iron Army",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m44",
+      "number": 44,
+      "officialName": "The Flagship Verbena",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m45",
+      "number": 45,
+      "officialName": "Smoke Signal",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m46",
+      "number": 46,
+      "officialName": "Battle in the Sky",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m47",
+      "number": 47,
+      "officialName": "All Hail the Queen",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m48",
+      "number": 48,
+      "officialName": "Exterminate",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m49",
+      "number": 49,
+      "officialName": "Showdown at the Badlands",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m50",
+      "number": 50,
+      "officialName": "Gathering at the High-Rise Area",
+      "stage": "M41–M50",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m51",
+      "number": 51,
+      "officialName": "Operation: Iron Rain",
+      "stage": "M51–M52",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    },
+    {
+      "id": "m52",
+      "number": 52,
+      "officialName": "The Earth Ablaze",
+      "stage": "M51–M52",
+      "stageKind": "editorial-navigation",
+      "enemies": [],
+      "bosses": [],
+      "difficulty": null,
+      "unlocks": [],
+      "recommendedEquipment": [],
+      "trophyIds": [
+        "t02"
+      ],
+      "warnings": [],
+      "sourceIds": [
+        "mission-list",
+        "gamefaqs"
+      ],
+      "verification": "name-source-checked",
+      "pendingFields": [
+        "逐波敵人／Boss",
+        "各難度解鎖武器及道具",
+        "建議裝備",
+        "關卡戰術"
+      ]
+    }
+  ],
+  "trophies": [
+    {
+      "id": "t00",
+      "officialName": "Total Completion",
+      "officialDescription": "Unlock all trophies",
+      "grade": "platinum",
+      "category": "作業",
+      "howTo": [
+        "先清點另外43個本體獎盃，依仍未取得項目安排收集、購買與線上清理。",
+        "最後在PSN獎盃頁確認白金，再手動標記；網站推測條件不會代勾。"
+      ],
+      "timing": "全部其他本體獎盃完成後",
+      "missable": false,
+      "onlineRequired": true,
+      "multiplayerRequired": true,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "白金間接包含線上／多人要求；DLC不納入。"
+      ]
+    },
+    {
+      "id": "t01",
+      "officialName": "Doom from the Skies",
+      "officialDescription": "Complete the prologue",
+      "grade": "bronze",
+      "category": "主線",
+      "howTo": [
+        "完成新遊戲開頭的教學序章，等到任務結算。"
+      ],
+      "timing": "開始新遊戲",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "序章另列，不占本體M01–M52的任務數。"
+      ]
+    },
+    {
+      "id": "t02",
+      "officialName": "N.o.z.o.m.i.",
+      "officialDescription": "Complete the story",
+      "grade": "silver",
+      "category": "主線",
+      "howTo": [
+        "沿已開放任務繼續推進，完成M52後觀看結局並等候結算。"
+      ],
+      "timing": "主線終盤",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [
+        "m52"
+      ],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t03",
+      "officialName": "Ace Trooper",
+      "officialDescription": "Complete 10 missions using the Trooper PA-Gear",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "裝備Trooper出擊，成功完成10場任務。",
+        "只計實際完成的任務；收集或挑戰時可同時累積。"
+      ],
+      "timing": "Trooper已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本工具未保存每一場出擊使用的PA-Gear，因此不以單純任務勾選推測10場完成。"
+      ]
+    },
+    {
+      "id": "t04",
+      "officialName": "Lifter Captain",
+      "officialDescription": "Complete 10 missions using the Jet Lifter PA-Gear",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "裝備Jet Lifter出擊，成功完成10場任務。",
+        "只計實際完成的任務；收集或挑戰時可同時累積。"
+      ],
+      "timing": "Jet Lifter已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本工具未保存每一場出擊使用的PA-Gear，因此不以單純任務勾選推測10場完成。"
+      ]
+    },
+    {
+      "id": "t05",
+      "officialName": "Ultimate Rider",
+      "officialDescription": "Complete 10 missions using the Prowl Rider PA-Gear",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "裝備Prowl Rider出擊，成功完成10場任務。",
+        "只計實際完成的任務；收集或挑戰時可同時累積。"
+      ],
+      "timing": "Prowl Rider已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本工具未保存每一場出擊使用的PA-Gear，因此不以單純任務勾選推測10場完成。"
+      ]
+    },
+    {
+      "id": "t06",
+      "officialName": "Master Striker",
+      "officialDescription": "Complete 10 missions using the Heavy Striker PA-Gear",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "裝備Heavy Striker出擊，成功完成10場任務。",
+        "只計實際完成的任務；收集或挑戰時可同時累積。"
+      ],
+      "timing": "Heavy Striker已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本工具未保存每一場出擊使用的PA-Gear，因此不以單純任務勾選推測10場完成。"
+      ]
+    },
+    {
+      "id": "t07",
+      "officialName": "Immortal Soldier",
+      "officialDescription": "Reach 10,000 Hit Points",
+      "grade": "silver",
+      "category": "作業",
+      "howTo": [
+        "進入裝備的PA-Gear頁面，查看armor／Hit Points升級。",
+        "逐次購買升級直到遊戲顯示10,000 HP；不要把網站上的資源餘額當成已升級。"
+      ],
+      "timing": "主線後依資源補齊",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "wiki-faq"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "總花費本次未逐級查證，不提供固定估價。"
+      ]
+    },
+    {
+      "id": "t08",
+      "officialName": "Fully Stocked",
+      "officialDescription": "Purchase all items",
+      "grade": "silver",
+      "category": "收集",
+      "howTo": [
+        "在遊戲道具商店逐類檢查未購買項目。",
+        "依其解鎖要求補關，再實際購買；僅解鎖購買資格不算完成。"
+      ],
+      "timing": "後期清理",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "完整本體道具目錄與總成本待逐筆查證。"
+      ]
+    },
+    {
+      "id": "t09",
+      "officialName": "Elite Customizer",
+      "officialDescription": "Purchase all customization parts",
+      "grade": "gold",
+      "category": "收集",
+      "howTo": [
+        "在角色自訂商店逐類檢查未購買的本體外觀。",
+        "先解鎖再購買；最後回PSN核對獎盃是否取得。"
+      ],
+      "timing": "後期清理",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "完整外觀解鎖表與總價未查齊。"
+      ]
+    },
+    {
+      "id": "t10",
+      "officialName": "Complete Arsenal",
+      "officialDescription": "Obtain all weapons",
+      "grade": "gold",
+      "category": "收集",
+      "howTo": [
+        "把武器圖鑑中的「未解鎖」和「未購買」分開清理。",
+        "依遊戲顯示的任務／難度或其他解鎖條件取得購買資格，並實際買下；已直接取得的武器另外記錄取得狀態。"
+      ],
+      "timing": "主線後逐類清理",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "wiki-faq"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "目錄尚未完整時不能以部分武器全買宣稱Complete Arsenal完成。"
+      ]
+    },
+    {
+      "id": "t11",
+      "officialName": "Wartime Tycoon",
+      "officialDescription": "Earn a cumulative total of 1,000,000 Credits",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "持續完成任務累積收入，直到遊戲的累計Credits達到1,000,000。"
+      ],
+      "timing": "推進主線時順路",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "這是累計獲得，與目前剩餘Credits不同；資源規劃器餘額不直接推測本盃。"
+      ]
+    },
+    {
+      "id": "t12",
+      "officialName": "Wealth of Gems",
+      "officialDescription": "Earn a cumulative total of 15,000 Energy Gems",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "任務中拾取Energy Gems，持續累積至15,000。"
+      ],
+      "timing": "推進主線時順路",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "累計獲得與現有寶石餘額不同，不能只用目前背包數量判定。"
+      ]
+    },
+    {
+      "id": "t13",
+      "officialName": "Valiant Defender",
+      "officialDescription": "Defeat 100 enemies using an Assault Rifle (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Assault Rifle，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Assault Rifle"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t14",
+      "officialName": "Defeat 100 enemies using a Shotgun (Campaign)",
+      "officialDescription": "Defeat 100 enemies using a Shotgun",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Shotgun，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Shotgun"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables",
+        "ps4-prices",
+        "steam-achievements"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。",
+        "PS4英文名稱確為此長句；Steam別名是Lead Poisoning。保留PS4原名，不把網站名稱修正當成官方資料。"
+      ]
+    },
+    {
+      "id": "t15",
+      "officialName": "Sharpshooter",
+      "officialDescription": "Defeat 100 enemies using a Sniper Rifle (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Sniper Rifle，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Sniper Rifle"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t16",
+      "officialName": "Smoke and Flames",
+      "officialDescription": "Defeat 100 enemies using a Rocket Launcher (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Rocket Launcher，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Rocket Launcher"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t17",
+      "officialName": "Appetite for Destruction",
+      "officialDescription": "Defeat 100 enemies using a Missile Launcher (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Missile Launcher，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Missile Launcher"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t18",
+      "officialName": "Optical Expert",
+      "officialDescription": "Defeat 100 enemies using a Laser Rifle (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Laser Rifle，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Laser Rifle"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t19",
+      "officialName": "Loose Cannon",
+      "officialDescription": "Defeat 100 enemies using a Grenade Launcher (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Grenade Launcher，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Grenade Launcher"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t20",
+      "officialName": "Legendary Swordsman",
+      "officialDescription": "Defeat 100 enemies using a Sword (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Sword，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Sword"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t21",
+      "officialName": "Trigger Happy",
+      "officialDescription": "Defeat 100 enemies using a Minigun (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Minigun，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Minigun"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t22",
+      "officialName": "Field Chemist",
+      "officialDescription": "Defeat 100 enemies using an Energy Thrower (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Energy Thrower，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Energy Thrower"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t23",
+      "officialName": "Lorentz's Fist",
+      "officialDescription": "Defeat 100 enemies using a Railgun (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Railgun，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Railgun"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t24",
+      "officialName": "Unspoken Promise",
+      "officialDescription": "Defeat 100 enemies using a Satellite Weapon (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Satellite Weapon，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Satellite Weapon"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t25",
+      "officialName": "Beam of Hope",
+      "officialDescription": "Defeat 100 enemies using a Laser Cannon (Campaign)",
+      "grade": "bronze",
+      "category": "作業",
+      "howTo": [
+        "在Campaign裝備Laser Cannon，用該類武器完成敵人擊殺，累計100個。",
+        "切換其他武器可繼續通關；清理時優先補尚未取得的類別，PSN跳盃後再勾。"
+      ],
+      "timing": "解鎖且買下對應類別武器後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [
+        "Laser Cannon"
+      ],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
+      ]
+    },
+    {
+      "id": "t26",
+      "officialName": "All I Need's a Shirt",
+      "officialDescription": "Complete a mission without receiving any damage",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "選擇自己能穩定通關的任務與較低難度，維持距離清敵。",
+        "全程未受傷後完成任務；若受到任何傷害，重新開始該次嘗試。"
+      ],
+      "timing": "熟悉關卡與裝備後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本文未指定未驗證的保證無傷裝備或關卡。"
+      ]
+    },
+    {
+      "id": "t27",
+      "officialName": "Don't Get a Concussion!",
+      "officialDescription": "Perform 30 E-Dodges using the Trooper PA-Gear",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "裝備Trooper，在同一場任務中施放E-Dodge至少30次。",
+        "保留能量與安全距離，確認跳盃後再結束任務。"
+      ],
+      "timing": "Trooper練習時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables",
+        "steam-achievements"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "PS4英文描述未寫single mission；Steam和日文版本明列同一場，採同一場30次的保守操作。"
+      ]
+    },
+    {
+      "id": "t28",
+      "officialName": "It's a Bird! It's a Plane! It's...",
+      "officialDescription": "Travel 2,000 meters during a single mission using the Jet Lifter PA-Gear",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "裝備Jet Lifter，在同一場任務持續使用飛行移動，累積2,000公尺。",
+        "需要時在安全位置回復能量，繼續同一場直到條件達成。"
+      ],
+      "timing": "Jet Lifter已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t29",
+      "officialName": "Your Friendly Neighborhood Prowl Rider",
+      "officialDescription": "Travel 200 meters without touching the ground in a single mission using the Prowl Rider PA-Gear",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "裝備Prowl Rider，用E-Needle在可連接的建築或地形之間連續移動。",
+        "同一場內連續200公尺不觸地；落地就重新嘗試連續一段。"
+      ],
+      "timing": "熟悉E-Needle操作後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t30",
+      "officialName": "Energy Phalanx",
+      "officialDescription": "Stop one enemy's attack during a mission using the Heavy Striker's E-Field",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "裝備Heavy Striker，面向敵人開啟E-Field。",
+        "讓E-Field實際擋下一次敵方攻擊；只有開啟護盾還不足以確認完成。"
+      ],
+      "timing": "Heavy Striker已可使用時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t31",
+      "officialName": "Courageous Defender",
+      "officialDescription": "Resurrect a total of 10 players",
+      "grade": "bronze",
+      "category": "線上／多人",
+      "howTo": [
+        "裝備Rebooter，與另一位玩家進入合作任務，靠近倒下的玩家後使用救援道具。",
+        "累計成功救援10次。可採本機分割畫面或線上合作；自動再出擊不等於由你救援。"
+      ],
+      "timing": "有人合作或可開本機雙人時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": true,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "multiplayer",
+        "revive-cost"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "本機雙人使用兩支控制器及不同PS4使用者的做法有2019實測來源；網站未以真實PSN重驗。"
+      ]
+    },
+    {
+      "id": "t32",
+      "officialName": "Earth Angel",
+      "officialDescription": "Complete a mission in which not a single NPC ally retreats due to damage (Campaign)",
+      "grade": "bronze",
+      "category": "順路",
+      "howTo": [
+        "選有NPC盟友的Campaign任務，在所有NPC盟友因受傷撤退前完成。",
+        "優先處理正攻擊盟友的敵人；結算後到PSN確認是否跳盃。"
+      ],
+      "timing": "推進主線時順路",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables",
+        "steam-achievements"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "PS4早期列表曾寫成不殺NPC，Exophase與日文條件為無盟友因傷撤退，本文採後者。",
+        "Steam別名：Guardian of the Field。"
+      ]
+    },
+    {
+      "id": "t33",
+      "officialName": "God of War",
+      "officialDescription": "Defeat a total of 3000 enemies (Campaign)",
+      "grade": "silver",
+      "category": "順路",
+      "howTo": [
+        "在Campaign累計擊敗3,000個敵人，可與各武器100擊殺一起累積。"
+      ],
+      "timing": "推進主線與清理時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t34",
+      "officialName": "Iron Annihilator",
+      "officialDescription": "Use a field support item (Campaign)",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "在Campaign裝備並實際使用一個field support／支援要請道具。",
+        "確認呼叫成功，再檢查PSN獎盃；只有買下或裝備道具不算使用。"
+      ],
+      "timing": "已解鎖支援道具時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "revive-cost"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "支援費用會扣任務報酬，刷資源時先評估成本。"
+      ]
+    },
+    {
+      "id": "t35",
+      "officialName": "Big Spender",
+      "officialDescription": "Complete a mission with a reward of 0 at the Result Screen",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "挑選可穩定完成的低難度任務，裝備會扣結算報酬的道具或載具。",
+        "在任務中使用足夠道具讓費用抵銷收入，再完成任務，核對Result Screen的獲得報酬為0。"
+      ],
+      "timing": "有多種支援道具後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables",
+        "revive-cost"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "依實際結算核對，沒有固定道具組合或未驗證成本保證。"
+      ]
+    },
+    {
+      "id": "t36",
+      "officialName": "That Might've Been Important!",
+      "officialDescription": "Destroy a \"mysterious machine\" (Campaign)",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "在Campaign找到遊戲中的「mysterious machine」，使用武器摧毀。"
+      ],
+      "timing": "遇到mysterious machine時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "機械的精確位置與推薦任務本次尚未核實，不以Pillar或M.I.A. Drone冒充。"
+      ]
+    },
+    {
+      "id": "t37",
+      "officialName": "Letter of Apology",
+      "officialDescription": "Play a mission during which a vehicle you requested gets destroyed (Campaign)",
+      "grade": "bronze",
+      "category": "特殊挑戰",
+      "howTo": [
+        "在Campaign呼叫自己的載具，並讓該載具在同一場任務被摧毀。",
+        "到PSN確認獎盃；戰場原本就有的載具不符合「你呼叫」條件。"
+      ],
+      "timing": "已解鎖可呼叫載具時",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "revive-cost"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "呼叫費用依所選載具不同，未提供固定成本。"
+      ]
+    },
+    {
+      "id": "t38",
+      "officialName": "Drone Buff",
+      "officialDescription": "Recover 55 M.I.A. drones",
+      "grade": "gold",
+      "category": "收集",
+      "howTo": [
+        "依Drone收集中心回收M01–M52各一架與Practice三架。",
+        "主線關卡拾取後必須成功完成該次任務才計入；等遊戲記錄確認後再勾。",
+        "55筆勾選只代表你確認的收集紀錄；PSN實際跳盃仍須另行標記。"
+      ],
+      "timing": "可在低難度回訪補齊",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    },
+    {
+      "id": "t39",
+      "officialName": "Welcome to Dystopia",
+      "officialDescription": "Play Mercenary for the first time",
+      "grade": "bronze",
+      "category": "線上／多人",
+      "howTo": [
+        "進入Mercenary並實際參加一場對戰。",
+        "此模式需要至少兩位玩家才能開局；先確認目前服務與可配對對象。"
+      ],
+      "timing": "有可配對玩家時",
+      "missable": false,
+      "onlineRequired": true,
+      "multiplayerRequired": true,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables",
+        "multiplayer"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "至少兩位玩家是歷史實測資料，現行線上服務未實測。"
+      ]
+    },
+    {
+      "id": "t40",
+      "officialName": "Defending the Earth Ain't Easy!",
+      "officialDescription": "Earn the Title of Ensign in Mercenary",
+      "grade": "silver",
+      "category": "線上／多人",
+      "howTo": [
+        "在Mercenary累積模式進度，直到取得Ensign稱號。",
+        "先查看遊戲內稱號解鎖畫面，再安排合作或對戰場次；網站不使用未查證固定勝場數。"
+      ],
+      "timing": "有固定對手或可配對玩家時",
+      "missable": false,
+      "onlineRequired": true,
+      "multiplayerRequired": true,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "multiplayer"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "Ensign的精確點數／資源條件本次未核實；不提供網路傳聞的固定費用或場次。"
+      ]
+    },
+    {
+      "id": "t41",
+      "officialName": "Friends Through Iron and Smoke",
+      "officialDescription": "Complete 1 mission on the Hardest difficulty level (Online)",
+      "grade": "silver",
+      "category": "高難度",
+      "howTo": [
+        "切到Online Campaign並選Hardest，成功完成一關。",
+        "確認選的是Hardest與Online；Offline完成或只選到Hard不算本盃。"
+      ],
+      "timing": "裝備足以穩定打Hardest時",
+      "missable": false,
+      "onlineRequired": true,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-pst",
+        "ps4-exophase",
+        "no-missables",
+        "multiplayer"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "條件要求線上模式，不直接要求其他玩家協助；現行私人單人房可用性未實測。"
+      ]
+    },
+    {
+      "id": "t42",
+      "officialName": "Forged in Fire",
+      "officialDescription": "Complete 1 mission on the Disaster difficulty level (Online)",
+      "grade": "gold",
+      "category": "高難度",
+      "howTo": [
+        "確認Disaster已開放，切到Online Campaign，完成任意一關Disaster。",
+        "以能穩定通關的裝備嘗試，必要時請玩家協助。"
+      ],
+      "timing": "Disaster開放且裝備成熟後",
+      "missable": false,
+      "onlineRequired": true,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-exophase",
+        "no-missables",
+        "multiplayer",
+        "wiki-faq"
+      ],
+      "verification": "source-checked",
+      "notes": [
+        "歷史來源有私人單人房成功紀錄，不表示必須多人；目前連線服務仍待實測。",
+        "Disaster的確切解鎖判定來源自身標待查，依遊戲選單實際可用狀態為準。"
+      ]
+    },
+    {
+      "id": "t43",
+      "officialName": "The Soldier Who Resisted Despair",
+      "officialDescription": "Complete 1 mission on the Disaster difficulty level (Offline)",
+      "grade": "silver",
+      "category": "高難度",
+      "howTo": [
+        "切到Offline Campaign，確認難度是Disaster並完成任意一關。",
+        "與Online的Disaster完成分開記錄，不能互相代填。"
+      ],
+      "timing": "Disaster開放且裝備成熟後",
+      "missable": false,
+      "onlineRequired": false,
+      "multiplayerRequired": false,
+      "missionIds": [],
+      "weaponTypes": [],
+      "extraCost": null,
+      "sourceIds": [
+        "ps4-truetrophies",
+        "ps4-exophase",
+        "no-missables",
+        "wiki-faq"
+      ],
+      "verification": "source-checked",
+      "notes": []
+    }
+  ],
+  "issues": [
+    {
+      "id": "trophy-count",
+      "status": "source-conflict-with-brief",
+      "description": "使用者原規格45盃與PS4實際44盃（43+白金）不符。多源一致44，不加入假獎盃。"
+    },
+    {
+      "id": "mission-detail",
+      "status": "pending",
+      "description": "52關名稱已核對，完整敵人／解鎖表／戰術本次未完成；空欄位表示待查而非沒有。"
+    },
+    {
+      "id": "live-psn",
+      "status": "not-tested",
+      "description": "尚未使用真實PSN、目前Mercenary服務或遊戲存檔重驗；來源核對不等同跳盃驗收。"
+    },
+    {
+      "id": "official-id",
+      "status": "not-claimed",
+      "description": "t00–t43為本工具本地穩定ID，未宣稱是官方PSN trophyId。"
+    }
+  ]
+}

@@ -1,0 +1,5273 @@
+{
+  "checkedAt": "2026-11-08",
+  "platform": "PS4",
+  "scope": "base-campaign-m01-m26",
+  "contentStatus": "來源查閱；非PS4實機驗收",
+  "sources": [
+    {
+      "id": "wiki-m01",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M01",
+      "url": "https://w.atwiki.jp/edfir/pages/95.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2024年12月13日 16:13",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m02",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M02",
+      "url": "https://w.atwiki.jp/edfir/pages/94.html",
+      "section": "ミッション攻略/02 嵌入內容",
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": null,
+      "accessNote": "獨立頁 /pages/120.html 無法由web工具讀取；核對索引頁中同一關卡嵌入段落。",
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m03",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M03",
+      "url": "https://w.atwiki.jp/edfir/pages/121.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 00:50",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m04",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M04",
+      "url": "https://w.atwiki.jp/edfir/pages/122.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月15日 20:15",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m05",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M05",
+      "url": "https://w.atwiki.jp/edfir/pages/123.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 00:50",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m06",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M06",
+      "url": "https://w.atwiki.jp/edfir/pages/124.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 00:41",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m07",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M07",
+      "url": "https://w.atwiki.jp/edfir/pages/125.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 00:51",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m08",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M08",
+      "url": "https://w.atwiki.jp/edfir/pages/126.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 21:52",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m09",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M09",
+      "url": "https://w.atwiki.jp/edfir/pages/127.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 21:59",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m10",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M10",
+      "url": "https://w.atwiki.jp/edfir/pages/128.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 22:05",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m11",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M11",
+      "url": "https://w.atwiki.jp/edfir/pages/130.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 22:13",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m12",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M12",
+      "url": "https://w.atwiki.jp/edfir/pages/129.html",
+      "section": "ミッション攻略/12 嵌入內容",
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": null,
+      "accessNote": "獨立頁 /pages/131.html 無法由web工具讀取；核對索引頁中同一關卡嵌入段落。",
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m13",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M13",
+      "url": "https://w.atwiki.jp/edfir/pages/132.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 22:43",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m14",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M14",
+      "url": "https://w.atwiki.jp/edfir/pages/134.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 22:52",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m15",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M15",
+      "url": "https://w.atwiki.jp/edfir/pages/135.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 23:04",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m16",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M16",
+      "url": "https://w.atwiki.jp/edfir/pages/137.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2026年04月09日 10:05",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m17",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M17",
+      "url": "https://w.atwiki.jp/edfir/pages/139.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 23:23",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m18",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M18",
+      "url": "https://w.atwiki.jp/edfir/pages/140.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月13日 23:32",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m19",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M19",
+      "url": "https://w.atwiki.jp/edfir/pages/141.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月14日 21:22",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m20",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M20",
+      "url": "https://w.atwiki.jp/edfir/pages/129.html",
+      "section": "ミッション攻略/20 嵌入內容",
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": null,
+      "accessNote": "獨立頁 /pages/142.html 無法由web工具讀取；核對索引頁中同一關卡嵌入段落。",
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m21",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M21",
+      "url": "https://w.atwiki.jp/edfir/pages/151.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2019年06月19日 00:24",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m22",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M22",
+      "url": "https://w.atwiki.jp/edfir/pages/143.html",
+      "section": "ミッション攻略/22 嵌入內容",
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": null,
+      "accessNote": "獨立頁 /pages/152.html 無法由web工具讀取；核對索引頁中同一關卡嵌入段落。",
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m23",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M23",
+      "url": "https://w.atwiki.jp/edfir/pages/153.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月14日 21:34",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m24",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M24",
+      "url": "https://w.atwiki.jp/edfir/pages/154.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月14日 21:49",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m25",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M25",
+      "url": "https://w.atwiki.jp/edfir/pages/162.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月14日 22:01",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "wiki-m26",
+      "title": "EARTH DEFENSE FORCE: IRON RAIN @Wiki · M26",
+      "url": "https://w.atwiki.jp/edfir/pages/156.html",
+      "section": null,
+      "checkedAt": "2026-11-08",
+      "sourceUpdatedAt": "2022年12月14日 22:12",
+      "accessNote": null,
+      "scope": "本體關卡一般說明、敵波表與難度解鎖表；本站為短摘要，不轉載長文。"
+    },
+    {
+      "id": "official-enemy-names",
+      "title": "D3PUBLISHER · English enemy index",
+      "url": "https://www.d3p.co.jp/edfir/en/sp/about.html",
+      "checkedAt": "2026-11-08",
+      "scope": "僅核對敵人英文專名；官方頁也列DLC，本檔不把NEW敵人加入任務。"
+    },
+    {
+      "id": "wiki-clothing",
+      "title": "IRON RAIN @Wiki · カスタマイズ-服装",
+      "url": "https://w.atwiki.jp/edfir/pages/58.html",
+      "checkedAt": "2026-11-08",
+      "scope": "核對M04チューベローズ、M15ベレー的解鎖衝突；來源按收集數而非任務列。"
+    },
+    {
+      "id": "vehicle-category",
+      "title": "ファミ通 · publisher vehicle information (2019-03-20)",
+      "url": "https://www.famitsu.com/news/201903/20173557.html",
+      "checkedAt": "2026-11-08",
+      "scope": "載具屬道具裝備類；只用分類事實。"
+    },
+    {
+      "id": "shadow-people-category",
+      "title": "enjoi8 · スカイフィッシュ series",
+      "url": "https://enjoi8.sakura.ne.jp/edfir/bg_3.html",
+      "checkedAt": "2026-11-08",
+      "scope": "シャドーピープル屬航空載具，不是外觀。"
+    }
+  ],
+  "enemyEnglishMapping": {
+    "ストームアント": "Storm Ants",
+    "スコージャー": "Scourger",
+    "ボムビートル": "Bomb Beetle",
+    "シディロス": "Sideros",
+    "ウルフスパイダー": "Wolf Spider",
+    "ハーヴェスター": "Harvester",
+    "ガーガント": "Gargant",
+    "アタックポッド": "Attack Pod",
+    "デスストーカー": "Deathstalker",
+    "レイドシップ": "Raidship",
+    "クィーンアント": "Queen Ant",
+    "クレイジーアント": "Crazy Ants",
+    "ハイヴクラフト": "Hivecraft",
+    "スコージャー・ビースト": "Scourger Beast",
+    "ベイザル": "Beizal",
+    "ウィングアント": "Winged Ants",
+    "ピラー": "Pillar",
+    "グリーンボムビートル": "Green Bomb Beetles"
+  },
+  "missions": [
+    {
+      "id": "m01",
+      "enemies": [
+        "Storm Ants",
+        "巨大生物の巣",
+        "Scourger"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "巨大生物の巣",
+        "スコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先在起點附近邊退邊清Storm Ants，避免原地被咬住。",
+        "保持距離射擊蟻巢，減少接近蟻巢時被右側增援夾擊的壓力。",
+        "每批蟻群出現後先清近身敵，再推進；別一次衝到巢旁。",
+        "巢與蟻群清完後會出現一台Scourger，維持距離集中火力。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：遠距離直射武器＋清蟻範圍武器；選目前已購買品。"
+      ],
+      "warnings": [
+        "不要原地承受蟻群咬住；NPC不保證吸走全部敵人。",
+        "v1.07新增PL-ブルーローズ的DLC範圍未核，已排除於本體獎勵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイタンゴ",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネード×12",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-グレネード×16",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-フューリアス2",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-火炎グレネード改×8",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-火炎グレネード改×12",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-エクスターミネーターShogun",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーター×3",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーター×3",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "突撃戦闘服「アネモネ」(上半身)",
+          "sourceId": "wiki-m01",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "PL-ブルーローズ(v1.07以降)",
+          "reason": "DLC或更新追加範圍尚未核定",
+          "sourceId": "wiki-m01"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m01",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m02",
+      "enemies": [
+        "Scourger"
+      ],
+      "enemyNamesJa": [
+        "スコージャー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先挑一台休眠Scourger攻擊，其他機體先別碰。",
+        "利用距離把目前這台單獨處理，再接近下一台。",
+        "啟動第三台後其餘會一起起身，提前留好退路。",
+        "最後兩台同時追來時，利用建物遮線，避免站在兩者中間。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：能單點集中傷害的中遠距離武器。"
+      ],
+      "warnings": [
+        "第三台啟動後其餘同時啟動，與一開始的單挑節奏不同。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-アウトレイジ",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーター",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーターIII",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正リブーターIII",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-アンガーGD",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型改×12",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型改×6",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型改×9",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-イタリア・トゥリッタ",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマインZ",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマインZ×2",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマインZ×3",
+          "sourceId": "wiki-m02",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m02",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m03",
+      "enemies": [
+        "Storm Ants",
+        "Scourger",
+        "Bomb Beetle"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "スコージャー",
+        "ボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先削減Storm Ants數量，替即將啟動的Scourger留出周旋空間。",
+        "Scourger陸續活動後繼續移動，別讓蟻群封住退路。",
+        "第一波將盡時準備迎接六隻Bomb Beetle；保留可即時射擊的武器。",
+        "避開正面突進，擊殺後也離開屍體，防止爆炸波及。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：範圍火力清蟻＋可立即應付突進的副武器。"
+      ],
+      "warnings": [
+        "Bomb Beetle死亡仍會爆炸。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ノーティボーイ",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンα×3",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンα×5",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OR-ダミーバルーンα×7",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "軽装戦闘服「カモミール」(上半身)",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "軽装戦闘服「カモミール」(下半身)",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ボムビートルハンター(ステッカー)",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.S",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガンMk.II×4",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガンMk.II×6",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガンMk.II×8",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "軽装戦闘服「カモミール」胸開き",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-トルネード・ミリオネア",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーターV",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーターV",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ヘッドバンド",
+          "sourceId": "wiki-m03",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m03",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m04",
+      "enemies": [
+        "Storm Ants",
+        "Sideros"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "シディロス"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "開火前留意身後；攻擊正面蟻群會讓起點後方也出現蟻。",
+        "用範圍攻擊削蟻並後退，別向起點右側荒野衝太深。",
+        "蟻群清完後連續處理兩台單獨降落的Sideros，移動避開爆彈。",
+        "最後十二台降落時維持遠距離，等友軍空襲削弱後再收尾。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：範圍武器清蟻＋長射程武器處理Sideros。"
+      ],
+      "warnings": [
+        "開火會在起點背後觸發蟻增援。",
+        "本關不能使用火器支援要請。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032-ゴーストBDN",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーター",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーターIII",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正クイック・リブーターIII",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "クリーチャーハンター(ステッカー)",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032-ゴーストPNT",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード改×6",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード改×8",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード改×10",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-傀儡師・ほつれ",
+          "sourceId": "wiki-m04",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "広報戦闘服「チューベローズ」(上半身)",
+          "reason": "任務表與服裝解鎖表衝突；未當作任務解鎖",
+          "sourceId": "wiki-m04",
+          "conflictingSourceId": "wiki-clothing"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "広報戦闘服「チューベローズ」(下半身)",
+          "reason": "任務表與服裝解鎖表衝突；未當作任務解鎖",
+          "sourceId": "wiki-m04",
+          "conflictingSourceId": "wiki-clothing"
+        }
+      ],
+      "rewardIssues": [
+        "広報戦闘服「チューベローズ」(上半身)：服裝表列收集數條件，未確認為本關解鎖。",
+        "広報戦闘服「チューベローズ」(下半身)：服裝表列收集數條件，未確認為本關解鎖。"
+      ],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m04",
+        "official-enemy-names",
+        "wiki-clothing"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m05",
+      "enemies": [
+        "Sideros",
+        "Wolf Spider"
+      ],
+      "enemyNamesJa": [
+        "シディロス",
+        "ウルフスパイダー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先分別叫醒並擊敗三台Sideros，別只帶低射速的單發武器。",
+        "第二波蜘蛛從起點與左前較低處出現，轉向處理並維持移動。",
+        "第三波注意起點後方道路；增援會分幾次到場。",
+        "優先削減母蜘蛛並清理追來的子蜘蛛，不要只靠預放地雷。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：中距離火力＋可清子蜘蛛的範圍／連射武器。"
+      ],
+      "warnings": [
+        "需要處理子蜘蛛的副武器；第三波不是一次出完。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-アンガー",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマクラウド×2",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマクラウド×3",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "スパイダーハンター(ステッカー)",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ラッキーガール",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーKr",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーKr×2",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダーKr×3",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-戦略的自壊型決戦用轟砲",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-多弾倉セントリーガンZ×3",
+          "sourceId": "wiki-m05",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m05",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m06",
+      "enemies": [
+        "Harvester",
+        "Wolf Spider"
+      ],
+      "enemyNamesJa": [
+        "ハーヴェスター",
+        "ウルフスパイダー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先處理依序出現的三台Harvester，留意後一台會到起點附近。",
+        "攻擊頭部或腿部，避免火力被腹部Human Capsule擋住。",
+        "下一波四台Harvester與Wolf Spider同來，邊移動邊清近身子蜘蛛。",
+        "避開紅色誘導彈，分別處理Harvester後再清剩下蜘蛛。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：能精準射頭腿的武器＋子蜘蛛應急火力。"
+      ],
+      "warnings": [
+        "Human Capsule是防衛目標；近距離攻擊可能打到膠囊。",
+        "[銀鷲勲章]變體範圍未核，未納本體獎勵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-コルネット",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型×6",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型×9",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型×12",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "空艇兵装「アカンサス」",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-2039SS",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-有毒-指向性地雷1型×4",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-有毒-指向性地雷1型×6",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "空艇兵装「アカンサス」マスクオフ",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-ゲンナイ",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型Z×6",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型Z×9",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷1型Z×12",
+          "sourceId": "wiki-m06",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "officialName": null,
+          "nameJa": "AE-2032-ゴースト[銀鷲勲章]",
+          "reason": "銀鷲變體的本體／DLC範圍尚未核定",
+          "sourceId": "wiki-m06"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m06",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m07",
+      "enemies": [
+        "Storm Ants",
+        "Bomb Beetle",
+        "Sideros"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "ボムビートル",
+        "シディロス"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "開場先取用面前補給，低難度可利用其中的地雷、誘餌與機槍。",
+        "先削蟻群，兼顧會突進的Bomb Beetle，避免同時近身。",
+        "Sideros群到場後繼續後撤，別穿過敵群中央。",
+        "等場上投下Caddy後視情況搭乘，逐一處理剩餘Sideros。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：取用現場補給；攜帶可邊退邊打的武器。"
+      ],
+      "warnings": [
+        "不能自行呼叫載具；場上Caddy支援要等劇情投放。",
+        "補給裝備在Hardest以上不保證仍有足夠火力。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-グラッジ",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-プロト・アークソード",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "キャディ",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "スカイフィッシュ",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "四輪駆動車(EDF仕様)",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ライドマスター(ステッカー)",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-エクスターミネーターMk.II",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "オゴポゴ",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-ファラデー",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正リブーターV",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正クイック・リブーターV",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ホッケーマスク",
+          "sourceId": "wiki-m07",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m07",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m08",
+      "enemies": [
+        "Scourger",
+        "Attack Pod",
+        "Gargant",
+        "Bomb Beetle"
+      ],
+      "enemyNamesJa": [
+        "スコージャー",
+        "アタックポッド",
+        "ガーガント",
+        "ボムビートル"
+      ],
+      "bosses": [
+        "Gargant"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "大型登場敵；本關不可擊破",
+      "tactics": [
+        "帶能打空中目標的武器，先處理Attack Pod與附近Scourger。",
+        "Gargant出現後保持距離，避開踩踏與砲擊；這關無法擊破它。",
+        "集中處理Gargant投下的Bomb Beetle，留意後續多波增援。",
+        "清完可擊破敵人推進任務，不把彈藥浪費在Gargant外殼。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：可穩定命中Attack Pod的對空武器＋清Bomb Beetle副武器。"
+      ],
+      "warnings": [
+        "Gargant在本關無法擊破；不要靠近腳下。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032GD-I",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "GK-アサルトチェイサー",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガン×4",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガン×6",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーガン×8",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "グラス",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ドッペルアドラー",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ヒーラーII×2",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ヒーラーII×3",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-サハラ改",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-アンガーGD-II",
+          "sourceId": "wiki-m08",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m08",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m09",
+      "enemies": [
+        "Storm Ants",
+        "Sideros",
+        "Wolf Spider",
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "シディロス",
+        "ウルフスパイダー",
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "開場蟻群將盡前先離開起點周圍，避免Sideros直接落在身邊。",
+        "對付Sideros時保持退路，必要時使用誘餌、支援或已購買載具。",
+        "之後清Wolf Spider與殘留子蜘蛛，別在母蜘蛛倒下後鬆懈。",
+        "最後應付Rebellion機甲，合計擊倒三台會觸發撤退。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：可移動射擊的範圍火力；已購買誘餌或載具可作保險。"
+      ],
+      "warnings": [
+        "起點容易被Sideros落點包圍。",
+        "母蜘蛛倒下後仍須處理子蜘蛛。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-フェルミ",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-ロデオ",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド×2",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ガードフィールド×3",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイタンゴ・セカンドヒート",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード改×6",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード改×8",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード改×10",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "グラス(スマート)",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-プレスト",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネードZ×6",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネードZ×8",
+          "sourceId": "wiki-m09",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "アイパッチ(右目)",
+          "reason": "任務表刪除線；服裝表列配件收集數條件",
+          "sourceId": "wiki-m09"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "アイパッチ(左目)",
+          "reason": "任務表刪除線；服裝表列配件收集數條件",
+          "sourceId": "wiki-m09"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m09",
+        "official-enemy-names",
+        "wiki-clothing"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m10",
+      "enemies": [
+        "Harvester",
+        "Scourger",
+        "Bomb Beetle"
+      ],
+      "enemyNamesJa": [
+        "ハーヴェスター",
+        "スコージャー",
+        "ボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "利用起點屋頂與長射程武器，逐批射擊Harvester。",
+        "Harvester共有三批、每批四台；別為回收寶石太早跳下去。",
+        "第三批清完後回頭注意後方與左後方出現的Scourger。",
+        "先處理Scourger，再避開右後方Bomb Beetle突進並收尾。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：長射程主武器，從起點屋頂交戰。"
+      ],
+      "warnings": [
+        "本關Harvester不要求保護Human Capsule，別與M06混淆。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイワルツ",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.A1\"Alice\"",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード×4",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード×6",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネード×8",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "レールキャップ",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "レールキャップ(後)",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.A3\"Abigail\"",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ソニックパイルPlus",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷1型×6",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷1型×8",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032-サンタクロース",
+          "sourceId": "wiki-m10",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m10",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m11",
+      "enemies": [
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム",
+        "Storm Ants",
+        "Bomb Beetle"
+      ],
+      "enemyNamesJa": [
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム",
+        "ストームアント",
+        "ボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先攻擊Rebellion機甲；擊倒兩台後蟻群會出現。",
+        "剩下的Rebellion機甲會暫時協助對付蟻群，可保留其火力。",
+        "利用起重機高處或升降區樓梯拉開距離，仍要監視近身敵。",
+        "第三波先清蟻，再處理Bomb Beetle，避開其衝撞與屍體爆炸。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：範圍武器對付狹窄路線上密集蟻群；留副武器防突進。"
+      ],
+      "warnings": [
+        "安全位置只是相對減傷，並非無敵點。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-オングストロームα",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-6連装マルチプルミサイル",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ナイトクローラー",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-フレイムアンガー改",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装レーザー/チャンドラB",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "リブーターIV",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・リブーターIV",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ヘイルバスター",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールドZ",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールドZ×2",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールドZ×3",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ねこみみ",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "鉢金",
+          "sourceId": "wiki-m11",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m11",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m12",
+      "enemies": [
+        "Gargant",
+        "Scourger",
+        "Attack Pod"
+      ],
+      "enemyNamesJa": [
+        "ガーガント",
+        "スコージャー",
+        "アタックポッド"
+      ],
+      "bosses": [
+        "Gargant"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "大型登場敵；本關不可擊破",
+      "tactics": [
+        "控制中心需要防衛；Gargant不能擊破，不要追打。",
+        "Scourger會逐台投下，優先擊敗它們以保護設施。",
+        "同時清Attack Pod；最後還有兩批空中增援。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：能快速處理Scourger的單點武器＋對空副武器。"
+      ],
+      "warnings": [
+        "防衛目標是Control Center；Gargant不能擊破。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "paGear",
+          "officialName": null,
+          "nameJa": "ヘビーストライカー(PAギア)",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-ダレイオスI",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダー×3",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダー×3",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "防衛兵装「バンプー」",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-ロデオ・パワード",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-カデシュ",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-冷凍グレネード×6",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-冷凍グレネード×9",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "防衛兵装「バンプー」マスクオフ",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-サッカー・パンチ",
+          "sourceId": "wiki-m12",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m12",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m13",
+      "enemies": [
+        "Gargant",
+        "Scourger",
+        "Attack Pod"
+      ],
+      "enemyNamesJa": [
+        "ガーガント",
+        "スコージャー",
+        "アタックポッド"
+      ],
+      "bosses": [
+        "Gargant"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "關卡主要大型目標",
+      "tactics": [
+        "先清Attack Pod並接近Gargant，保留處理地面敵人的手段。",
+        "腿部放出口打開時正面攻擊，盡早阻止Scourger持續出現。",
+        "清剩餘Scourger，別讓它們在瞄準本體時包圍你。",
+        "腹部放出Attack Pod的艙門打開才集中打內部；門關上就換目標。",
+        "重複清空中敵與等艙門開啟，直到Gargant倒下。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：Heavy Striker（M12解鎖後）；能打艙門的遠距離武器＋對空火力。"
+      ],
+      "warnings": [
+        "腿部放出口要正面射擊；側面護蓋可能擋傷害。",
+        "腹部艙門受傷後會關閉，不保證一次開門擊殺。",
+        "[銀鷲勲章]變體範圍未核，未納本體獎勵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ランページ",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-30Y-DA",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ヒーラー×2",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ヒーラー×3",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ヒーラー×4",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032GD-II",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソード改",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド改",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド改×2",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド改×3",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-ダブル・ヴィクトリー",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着冷凍グレネード改×6",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-メーザーライフル",
+          "sourceId": "wiki-m13",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "officialName": null,
+          "nameJa": "PG-ヴィクトリー[銀鷲勲章]",
+          "reason": "銀鷲變體的本體／DLC範圍尚未核定",
+          "sourceId": "wiki-m13"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m13",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m14",
+      "enemies": [
+        "Deathstalker",
+        "Attack Pod",
+        "Scourger",
+        "Raidship"
+      ],
+      "enemyNamesJa": [
+        "デスストーカー",
+        "アタックポッド",
+        "スコージャー",
+        "レイドシップ"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先擊敗開場Deathstalker，再清會持續干擾操作的Attack Pod。",
+        "Raidship開始輸送後沿外圍移動，射掉近身空中敵，避免停在蠍群中。",
+        "這批Raidship在空襲前會補充，別把清空運輸船當成唯一目標。",
+        "看到友軍轟炸區域立即撤出；空襲結束後再清剩餘地面敵。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：已解鎖的機動PA-Gear、可移動使用的對空武器與回復道具。"
+      ],
+      "warnings": [
+        "Raidship在空襲前持續補充；自選航空支援要請禁用。",
+        "友軍轟炸不是保證殲滅；空襲後仍要清殘敵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-カラハリ",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-アンガー3way",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.W",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-火炎グレネード×8",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-火炎グレネード×12",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-ユーフォニアムGD",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-グラッジP/3way",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-多弾倉セントリーガン改×4",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-多弾倉セントリーガン改×6",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-アポカリプス・セカンド",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷1型改×6",
+          "sourceId": "wiki-m14",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "スコーピオンハンター(ステッカー)",
+          "reason": "任務表刪除線，未作本體任務解鎖",
+          "sourceId": "wiki-m14"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m14",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m15",
+      "enemies": [
+        "ストームアント・スカウト",
+        "Storm Ants",
+        "Queen Ant"
+      ],
+      "enemyNamesJa": [
+        "ストームアント・スカウト",
+        "ストームアント",
+        "クィーンアント"
+      ],
+      "bosses": [
+        "Queen Ant"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "關卡主要大型目標",
+      "tactics": [
+        "沿地下通道推進，準備能處理密集蟻群的武器。",
+        "遇到岔路與蟻群時回看身後；其中一批會在你接近前方敵群後從後面出現。",
+        "抵達最深處豎井，先投下可用機槍，再下到女王房。",
+        "落地立即攻擊或橫移避酸，集中處理Queen Ant並兼顧周圍蟻群。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：洞窟用範圍／反彈武器、對女王主武器；已購買機槍可先投下。"
+      ],
+      "warnings": [
+        "地下禁用支援要請、載具、G-L.I.A.R.與Satellite Weapon。",
+        "豎井落點正對女王，落地後不可停住。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "paGear",
+          "officialName": null,
+          "nameJa": "プロールライダー(PAギア)",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2040A",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-バリオン",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ナイトクローラーアドバンス",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "物資輸送プランE",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "試験体No.1 ストームアント",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "試験体No.2 ウルフスパイダー",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "試験体No.3 デスストーカー",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "潜入兵装「シャクナゲ」",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-サハラ",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BL-ガウガメラ・ジェノサイド",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-火炎-指向性地雷2型×6",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-火炎-指向性地雷2型×8",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-火炎-指向性地雷2型×10",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "潜入兵装「シャクナゲ」ゴーグルオフ",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ヴィオラ・カルテット",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ヒーローゴーグル",
+          "sourceId": "wiki-m15",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "officialName": null,
+          "nameJa": "ベレー",
+          "reason": "任務表與服裝解鎖表衝突；未當作任務解鎖",
+          "sourceId": "wiki-m15",
+          "conflictingSourceId": "wiki-clothing"
+        }
+      ],
+      "rewardIssues": [
+        "ベレー：服裝表列收集數條件，未確認為本關解鎖。"
+      ],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m15",
+        "official-enemy-names",
+        "wiki-clothing"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m16",
+      "enemies": [
+        "Storm Ants",
+        "Crazy Ants",
+        "Wolf Spider"
+      ],
+      "enemyNamesJa": [
+        "ストームアント",
+        "クレイジーアント",
+        "ウルフスパイダー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先清第一台受圍戰車周圍的蟻；攻擊後還會有增援。",
+        "第二個救援點加入Crazy Ants，維持距離逐批清理。",
+        "第三點會同時出現蟻與Wolf Spider，把誘餌和範圍火力留給這波。",
+        "利用起點旁施工建物遮線，但別只帶會被子蜘蛛干擾的誘導武器。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：Trooper或Heavy Striker；清子蜘蛛副武器與誘餌。"
+      ],
+      "warnings": [
+        "空襲可能被高樓遮擋；不要把支援費用視為必定有效。",
+        "[銀鷲勲章]變體範圍未核，未納本體獎勵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-サーサーン",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-ソナチネ",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "チャンプ",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "シャドーピープル",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ラス",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.E1\"Elizabeth\"",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ウィラタック",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-ナイル・ジェットパルサー",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "モケーレムベンベ",
+          "sourceId": "wiki-m16",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "officialName": null,
+          "nameJa": "SP-サハラ[銀鷲勲章]",
+          "reason": "銀鷲變體的本體／DLC範圍尚未核定",
+          "sourceId": "wiki-m16"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m16",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m17",
+      "enemies": [
+        "Attack Pod",
+        "Raidship",
+        "Crazy Ants",
+        "Sideros"
+      ],
+      "enemyNamesJa": [
+        "アタックポッド",
+        "レイドシップ",
+        "クレイジーアント",
+        "シディロス"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先清開場Attack Pod，準備可打Raidship開口的遠距離武器。",
+        "四艘Raidship出現後，優先打開艙門且離自己較近的船。",
+        "若已投下Crazy Ants或Sideros，先處理近身威脅再繼續打船。",
+        "下一批四艘同樣處理，另留一把武器給空中敵與有限彈藥耗盡後的收尾。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節與DISASTER回刷段落補充的運輸船處理順序",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：能打開艙門內部的遠距離武器＋對空副武器。"
+      ],
+      "warnings": [
+        "第三波運輸船投放是否隨機，來源表本身仍加問號；不宣稱固定順序。",
+        "高火力有限彈藥武器必須搭配可收尾副武器。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-アレグレット",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-グラッジP",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-多弾倉セントリーガン×2",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-多弾倉セントリーガン×3",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-アレグロ",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-イグアス2号基",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアンII",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアンII×2",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ガーディアンII×3",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装レーザー/チャンドラA*",
+          "sourceId": "wiki-m17",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [
+        "HARDEST的MR-連装レーザー/チャンドラA*名稱末尾*照錄來源；英文正式名稱待核。"
+      ],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m17",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m18",
+      "enemies": [
+        "Hivecraft",
+        "隕石",
+        "Crazy Ants",
+        "Scourger"
+      ],
+      "enemyNamesJa": [
+        "ハイヴクラフト",
+        "隕石",
+        "クレイジーアント",
+        "スコージャー"
+      ],
+      "bosses": [
+        "Hivecraft"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "大型登場敵；本關不可擊破",
+      "tactics": [
+        "立即離開受包圍的起點，朝前方地圖邊緣找能看見天空的位置。",
+        "隕石還在高處時就射掉，等它降到樓群間會被建物擋住射線。",
+        "分配非破壞建物的機槍或直射火力處理Crazy Ants與Scourger，自己繼續攔隕石。",
+        "保護城市建物至事件結束；Hivecraft不能擊破，別以炸平城市換射線。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：不破壞建物的遠距離直射武器；同樣不破壞建物的防衛道具。"
+      ],
+      "warnings": [
+        "防衛對象是城市建物；玩家自己破壞建物也可能導致任務失敗。",
+        "Hivecraft不能擊破。",
+        "[銀鷲勲章]變體範圍未核，未納本體獎勵。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-2032-ゴーストSTL",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-フレイムアンガー",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン×2",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-ランドマイン×3",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "Tシャツ",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-70X",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-アラベスク",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限火炎グレネード改×6",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限火炎グレネード改×8",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "化学防護服「プラタナス」(上半身)",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "化学防護服「プラタナス」(下半身)",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-イグアス3号基",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマクラウドZ×2",
+          "sourceId": "wiki-m18",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [
+        {
+          "difficulty": "Disaster",
+          "officialName": null,
+          "nameJa": "SH-カノン[銀鷲勲章]",
+          "reason": "銀鷲變體的本體／DLC範圍尚未核定",
+          "sourceId": "wiki-m18"
+        }
+      ],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "source-table-with-withheld-entries",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m18",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "疑DLC／更新追加與已知衝突另列，不計入本體解鎖"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測",
+        "excludedRewards的本體範圍或來源衝突覆核"
+      ]
+    },
+    {
+      "id": "m19",
+      "enemies": [
+        "Raidship",
+        "Attack Pod",
+        "Scourger",
+        "Scourger Beast"
+      ],
+      "enemyNamesJa": [
+        "レイドシップ",
+        "アタックポッド",
+        "スコージャー",
+        "スコージャー・ビースト"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "開場前方三艘Raidship優先打開口，減少Attack Pod持續投放。",
+        "借骨架建物或貨櫃遮線，清完第一批空中敵再迎接下一階段。",
+        "起點背後海面會來五台Scourger並變形；準備遠距離高傷武器。",
+        "擊倒其中兩台後又有Attack Pod增援，回到遮蔽物旁分別清除。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節與兵科段落中的通用流程；未沿用後期武器傷害保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：對空武器＋長射程高傷武器；可利用Railgun配Overdrive加快清Scourger。"
+      ],
+      "warnings": [
+        "Scourger將變成Scourger Beast；兩台擊破後還有空中增援。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-2033GD",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "DD-テスラI型",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド×2",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-ソーサリーフィールド×3",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-ラ・マルセイエーズ",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.G1\"Gabriela\"",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーKr",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーKr×2",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "クイック・フィーダーKr×3",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-連装ミサイル/ケプラーII",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型Z×6",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型Z×9",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "EDF極東支部制服(上半身)",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "EDF極東支部制服(下半身)",
+          "sourceId": "wiki-m19",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m19",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m20",
+      "enemies": [
+        "Beizal",
+        "Deathstalker",
+        "ストームアント・スカウト",
+        "ナイトクローラー",
+        "Bomb Beetle",
+        "Hivecraft"
+      ],
+      "enemyNamesJa": [
+        "ベイザル",
+        "デスストーカー",
+        "ストームアント・スカウト",
+        "ナイトクローラー",
+        "ボムビートル",
+        "ハイヴクラフト"
+      ],
+      "bosses": [
+        "Beizal",
+        "Hivecraft"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "大型登場敵；本關不可擊破",
+      "tactics": [
+        "先留距離避開Beizal的EMP與吐息，邊退邊處理近身小怪。",
+        "對Beizal造成足夠傷害以推進事件，聽到本部報告北美據點後停止追打。",
+        "等Hivecraft登場及Beizal撤退，再清剩餘Deathstalker；本關不能殺死Beizal。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：機動PA-Gear與可邊退邊打的武器；現場乘用車可輔助撤離。"
+      ],
+      "warnings": [
+        "Beizal與Hivecraft本關都不能擊破；依傷害門檻與通訊推進。",
+        "EMP與吐息爆炸範圍大，別為開場寶石貼近Beizal。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SP-コルネットEx",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソード",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型×6",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型×8",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-電撃-指向性地雷2型×10",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ジェスター2",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-ネイピアレーザーSC",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリースナイパー改×2",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリースナイパー改×3",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-ナイト・スナイパー",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ホーリー・ソーサラー",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ホーリー・ソーサラー×2",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ホーリー・ソーサラー×3",
+          "sourceId": "wiki-m20",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m20",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m21",
+      "enemies": [
+        "Winged Ants",
+        "Deathstalker",
+        "Sideros"
+      ],
+      "enemyNamesJa": [
+        "ウィングアント",
+        "デスストーカー",
+        "シディロス"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先打接近的Winged Ants，避免上下同時受酸液夾擊。",
+        "Deathstalker到場後優先削減它們；只清飛蟻會陷入補充循環。",
+        "Sideros降落時離開其落點，撐到Bigfoot支援的過場。",
+        "Easy至Hard可利用投下的Bigfoot；Hardest以上保留Overdrive給過場後敵群。"
+      ],
+      "strategyScope": {
+        "difficulty": "一般流程；載具建議限Easy至Hard，高難另提醒",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：對空武器＋能快速削Deathstalker的副武器；Overdrive留給過場後。"
+      ],
+      "warnings": [
+        "自行呼叫載具禁用，Bigfoot由劇情投下。",
+        "投下的Bigfoot能力不隨難度提高，Hardest以上不能只靠它。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-フューリアス",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "FX-クセルクセス",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-ショックグレネード×20",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "ビッグフット",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "ゴーグル",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-フューリアスGD",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MR-照射レーザー/ハッブル",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマクラウド改×2",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマクラウド改×3",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "レトロゴーグル",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-アルマゲドン・セカンド",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "サスカッチ",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "スフィンクス",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Disaster",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "スイムスーツB",
+          "sourceId": "wiki-m21",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m21",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m22",
+      "enemies": [
+        "Sideros"
+      ],
+      "enemyNamesJa": [
+        "シディロス"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "若要使用Bigfoot等載具，開場立即呼叫。",
+        "一次只叫醒一台Sideros，等變形後集中攻擊。",
+        "每批剩一台時有下一批增援，避免繞場把多台一起喚醒。",
+        "遠離紅色油桶，逐台清完四批共二十一台。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：M21解鎖並購買後的ビッグフット可作支援；另帶單點武器。"
+      ],
+      "warnings": [
+        "紅色油桶受擊會爆炸；援軍在每批剩一台時觸發。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "WS-ネイピアレーザー",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-エクスターミネーター",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード×6",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード×8",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "AL-時限グレネード×10",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-スカイサルサ",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-ブラスターガンIII",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネードZ×2",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着回復グレネードZ×3",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-ローレンツ",
+          "sourceId": "wiki-m22",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m22",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m23",
+      "enemies": [
+        "Pillar",
+        "Storm Ants",
+        "Crazy Ants",
+        "Green Bomb Beetles"
+      ],
+      "enemyNamesJa": [
+        "ピラー",
+        "ストームアント",
+        "クレイジーアント",
+        "グリーンボムビートル"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先準備實彈範圍武器，開火後起點附近也會湧出蟻。",
+        "退離Pillar周圍，先清追來的Storm Ants、Crazy Ants與Green Bomb Beetle。",
+        "Pillar受攻擊會反擊且無法破壞；別貼在柱底連射。",
+        "任務目標更新後再處理新增蟻群，最後清柱旁不主動追來的蟻。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：實彈範圍武器；把Pillar排除在射線外。"
+      ],
+      "warnings": [
+        "Pillar不能破壞且會反擊，並非mysterious machine獎盃目標。",
+        "第二波Green Bomb Beetle確切觸發數，來源仍標問號。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AE-20NN",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PC-ハリケーン",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型×6",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型×9",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "SR-指向性地雷2型×12",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-ガウスL.M.I.",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-Opx.D1\"David\"",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーランチャー×2",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "OW-セントリーランチャー×3",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-アレグリッシモ",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "EC-マタドール",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-電撃ランドマイン改×2",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "EDF極東支部スカート",
+          "sourceId": "wiki-m23",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m23",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m24",
+      "enemies": [
+        "Pillar",
+        "シルバーアント",
+        "Deathstalker",
+        "Wolf Spider"
+      ],
+      "enemyNamesJa": [
+        "ピラー",
+        "シルバーアント",
+        "デスストーカー",
+        "ウルフスパイダー"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "用實彈或已購買的廣域火力削Silver Ants，光學武器效率較差。",
+        "退到不會誤擊Pillar的位置，別讓蟻群從四周近身。",
+        "Deathstalker出現後先留空間處理，再迎接Wolf Spider增援。",
+        "母蜘蛛到場後用能直接清子蜘蛛的副武器開路，別只依賴誘導彈。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節、任務敵波表；不採一擊擊殺或固定裝備保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：實彈主武器＋能直接清子蜘蛛的副武器；已購買誘餌／機槍可補壓力。"
+      ],
+      "warnings": [
+        "Silver Ants對光學武器較耐受。",
+        "Pillar不能破壞；別把攻擊線穿過它。",
+        "SQ-6連想マルチプルミサイルFJ的「連想」照錄來源疑似錯字，英文名待查。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-ヴィクトリー",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "BS-Opx.C1\"Cella\"",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "物資輸送プラン1",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "掃射プラン1-機関砲",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "旧式鉄帽",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-フェルミ・フィーネ",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-6連想マルチプルミサイルFJ",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラーII",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラーII×2",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "PR-ソーサラーII×3",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "cosmetic",
+          "officialName": null,
+          "nameJa": "精鋭兵装「サクラ」",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.SXS",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "RF-パワーフィールドZ×2",
+          "sourceId": "wiki-m24",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [
+        "Hard的SQ-6連想マルチプルミサイルFJ疑似來源錯字，未猜英譯。"
+      ],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m24",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m25",
+      "enemies": [
+        "Pillar",
+        "Scourger",
+        "Scourger Beast",
+        "Winged Ants"
+      ],
+      "enemyNamesJa": [
+        "ピラー",
+        "スコージャー",
+        "スコージャー・ビースト",
+        "ウィングアント"
+      ],
+      "bosses": [],
+      "bossStatus": "none-listed",
+      "bossRole": "來源主要敵人表未列Boss；不等於實機證明無Boss",
+      "tactics": [
+        "先離開三座Pillar包圍的起點，沿面前坡道下到平地。",
+        "擊倒第一台Scourger後會有Winged Ants，優先清空中威脅。",
+        "初始Scourger再減少會觸發更多Scourger Beast；呼叫載具要提早。",
+        "飛蟻可能斷續補來，確認空中安全後再用載具或高傷武器處理Beast。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節與兵科段落中的通用流程；未沿用後期武器傷害保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：對空火力＋處理Scourger Beast的主武器；已購買載具提早呼叫。"
+      ],
+      "warnings": [
+        "起點被三座Pillar包圍；先離開該區。",
+        "來源的「グイック・フィーダー×5」疑似「クイック」錯字，未自行改成官方名稱。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "AW-ラス試作型",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "CM-メーザーライフル試作型",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グリーン・フィーダー×5",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "グイック・フィーダー×5",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SQ-マウナケア改",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SL-アケメネスVII",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-電撃ランドマイン×2",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "NP-電撃ランドマイン×3",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PG-ピノッキオ",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "TF-グラッジP/X",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "KK-プラズマアイシクル×2",
+          "sourceId": "wiki-m25",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [
+        "Easy / Normal的グイック・フィーダー×5疑似來源錯字，保留原文待核。"
+      ],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m25",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "none-listed；不宣稱已證無Boss",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    },
+    {
+      "id": "m26",
+      "enemies": [
+        "Pillar",
+        "Crazy Ants",
+        "Scourger",
+        "Beizal",
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム"
+      ],
+      "enemyNamesJa": [
+        "ピラー",
+        "クレイジーアント",
+        "スコージャー",
+        "ベイザル",
+        "ナイトクローラー",
+        "ナイトクローラー・カスタム"
+      ],
+      "bosses": [
+        "Beizal"
+      ],
+      "bossStatus": "listed",
+      "bossRole": "關卡主要大型目標",
+      "tactics": [
+        "先利用離海岸較遠的施工建物遮住Crazy Ants，使用不會拆掉掩體的武器。",
+        "蟻群減少後六台Scourger從海側來，保持掩體並分批處理。",
+        "新一波Crazy Ants出現後再清理，保留對大型敵的火力。",
+        "Beizal登場後集中打它；Rebellion機甲加入不要求全滅。",
+        "最後檢查殘留Crazy Ants，清掉後結算。"
+      ],
+      "strategyScope": {
+        "difficulty": "依Wiki一般關卡說明整理；未逐難度實測",
+        "mode": "Campaign；線上人數對傷害／敵耐久的影響未核",
+        "basis": "一般章節與兵科段落中的通用流程；未沿用後期武器傷害保證",
+        "availability": "推薦配置是用途描述；只使用已解鎖且已購買裝備，沒有要求初次推進持有後期武器。"
+      },
+      "recommendedEquipment": [
+        "初次推進：不破壞施工建物的清蟻武器＋打大型敵的武器；已購買載具可輔助。"
+      ],
+      "warnings": [
+        "Pillar不能破壞；不要用會拆建物的武器毀掉自己的掩體。",
+        "Rebellion機甲不要求擊破；通關還要清理殘留蟻群。"
+      ],
+      "unlockRewards": [
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "RC-フェルミ・コーダ",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "MC-アークソードType.R",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード×6",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード×8",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Easy / Normal",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "CR-吸着グレネード×10",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "PT-シャドウ・スナイパーGD",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SN-ナイル3号基",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正リブーターIV",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hard",
+          "kind": "item",
+          "officialName": null,
+          "nameJa": "不正クイック・リブーターIV",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        },
+        {
+          "difficulty": "Hardest",
+          "kind": "weapon",
+          "officialName": null,
+          "nameJa": "SH-戦略的自壊型最終決戦用轟砲",
+          "sourceId": "wiki-m26",
+          "verification": "single-source-table",
+          "scope": "base-campaign-table",
+          "ownershipEffect": "unlocks-eligibility-not-purchase"
+        }
+      ],
+      "excludedRewards": [],
+      "rewardIssues": [],
+      "unlockRewardCoverage": {
+        "coverage": "full-source-table",
+        "meaning": "只列來源表的解鎖資格，不表示已購買或已取得；不是Credits結算報酬。",
+        "noAdditionalRewardListed": [
+          "Disaster"
+        ],
+        "difficultyInheritance": "只有M01來源明言高難包含低難；本檔不自動套用到所有關卡。"
+      },
+      "sourceIds": [
+        "wiki-m26",
+        "official-enemy-names"
+      ],
+      "verification": "source-checked",
+      "fieldVerification": {
+        "enemies": "Wiki敵波表查閱；可對到官方索引者使用英文，其餘保留日文",
+        "bosses": "大型目標依任務表與流程核對",
+        "tactics": "本站原創短摘要；未PS4實機重驗",
+        "recommendedEquipment": "依來源所需用途整理；非固定數值／成功保證",
+        "unlockRewards": "single-source-table；英文名稱／逐筆遊戲內顯示尚待核對",
+        "dlcScope": "取自本體Campaign關卡表；未借DLC任務表"
+      },
+      "pendingFields": [
+        "獎勵英文正式名稱與遊戲內逐筆核對",
+        "PS4各難度／多人條件實測"
+      ]
+    }
+  ],
+  "summary": {
+    "missionCount": 26,
+    "unlockRewardCount": 316,
+    "excludedRewardCount": 11,
+    "sourceLimit": "各關僅保留必要事實表與短原創操作摘要；沒有整段翻譯GameFAQs或複製原圖。"
+  }
+}

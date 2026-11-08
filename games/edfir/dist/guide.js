@@ -1,0 +1,26 @@
+// EDFIR 專屬內容呈現；來源查證與玩家進度分開，不在這裡寫入完成狀態。
+export const itemName=row=>row?.displayName||row?.officialName||row?.nameJa||row?.name||row?.title||'名稱待查證';
+const textOf=value=>typeof value==='string'?value:value?.text||value?.action||value?.description||itemName(value);
+const scopeText=value=>typeof value==='string'?value:value?[value.mode,value.difficulty||(value.difficulties||[]).map(d=>d==='unspecified'?'來源未指定難度':d).join(' / '),value.note||value.basis].filter(Boolean).join(' · '):'依來源註記；未實機驗證。';
+function rewardGroupHtml(rows,difficulty,{escape,sourceLinks}){
+ const kinds={weapon:'武器',item:'道具',cosmetic:'外觀',appearance:'外觀',paGear:'PA-Gear'};
+ return `<section class="reward-group"><h4>${escape(difficulty)}</h4><ul>${rows.map(row=>`<li><span>${escape(kinds[row.kind]||row.kind||'分類待查')} · </span>${row.weaponId?`<a href="?view=weapons#weapon-${escape(row.weaponId)}" data-weapon-link="${escape(row.weaponId)}">${escape(itemName(row))}</a>`:escape(itemName(row))}${row.officialName===null&&row.nameJa?'<small>（日文原名；英名待核）</small>':''}${row.note||row.warning?`<p class="unknown">${escape(row.note||row.warning)}</p>`:''}</li>`).join('')}</ul>${sourceLinks([...new Set(rows.flatMap(row=>row.sourceIds))])}</section>`;
+}
+export function missionGuideHtml(m,{escape,sourceLinks}){
+ const enemies=m.enemies.map(row=>escape(typeof row==='string'?row:itemName(row))).join('、');
+ const bosses=m.bosses.map(row=>escape(typeof row==='string'?row:itemName(row))).join('、');
+ const bossText=bosses|| (m.bossStatus==='none-listed'?'來源敵人表未列 Boss；不等於實機證實沒有。':'待查證，未填入猜測資料。');
+ const groups=[...new Set((m.unlockRewards||[]).map(row=>row.difficulty||'難度待查'))];
+ const names={weapon:'武器',item:'道具',cosmetic:'外觀',appearance:'外觀',paGear:'PA-Gear'};
+ return `<section class="mission-combat" data-mission-guide="${escape(m.id)}"><h3>戰鬥與通關步驟</h3><p class="unknown">攻略適用：${escape(scopeText(m.strategyScope))}</p><dl class="mission-facts"><div><dt>主要敵人</dt><dd>${enemies||'待查證'}</dd></div><div><dt>Boss／大型威脅</dt><dd>${bossText}${m.bossRole&&m.bossStatus!=='none-listed'?' · '+escape(m.bossRole):''}</dd></div><div><dt>裝備建議</dt><dd>${m.recommendedEquipment.length?m.recommendedEquipment.map(row=>escape(textOf(row))).join('；'):'待查證，請用目前能穩定操作的裝備。'}</dd></div></dl>${m.tactics?.length?`<ol class="tactics">${m.tactics.map((step,i)=>`<li>${escape(textOf(step))}${typeof step==='object'&&step.sourceIds?sourceLinks(step.sourceIds):''}</li>`).join('')}</ol>`:'<p class="unknown">此關具體戰術仍待來源核對，沒有使用通用三步代替。</p>'}<p>回收 Drone 後仍須成功完成任務，再在任務選擇畫面確認登錄。</p><h3>本關解鎖獎勵</h3><p class="unknown">以下為來源表列的解鎖資格，不代表已購買。英文未核實者保留日文原名；高難度是否補低難度不作推定。</p><div class="mission-rewards" data-rewards="${escape(m.id)}">${groups.map(difficulty=>rewardGroupHtml(m.unlockRewards.filter(row=>(row.difficulty||'難度待查')===difficulty),difficulty,{escape,sourceLinks})).join('')||'<p class="unknown">來源未提供可確認的本體獎勵，仍待查證；不表示沒有獎勵。</p>'}</div>${m.excludedRewards?.length?`<details class="excluded-rewards"><summary>DLC／範圍待查獎勵：${m.excludedRewards.length} 項，未納入本體</summary><p>來源含銀鷲勳章、追加內容標記或範圍不明，保留核對紀錄，不當作本體白金需求。</p><ul>${m.excludedRewards.map(row=>`<li>${escape(row.difficulty||'難度待查')} · ${escape(itemName(row))} ${escape(row.reason||row.note||row.warning||'內容範圍待核')}${sourceLinks(row.sourceIds)}</li>`).join('')}</ul></details>`:''}${m.rewardIssues?.length?`<div class="warning"><strong>獎勵來源待核</strong><ul>${m.rewardIssues.map(row=>`<li>${escape(textOf(row))}</li>`).join('')}</ul></div>`:''}${m.pendingFields?.length?`<p class="unknown" data-mission-pending="${escape(m.id)}">仍待查證：${m.pendingFields.map(row=>escape(textOf(row))).join('；')}</p>`:''}<details class="mission-evidence"><summary>本關來源與查證範圍</summary><p>敵人、獎勵及步驟依公開資料整理，沒有使用遊戲存檔實測。只列主要敵人，未保證涵蓋所有增援數量及版本差異。</p>${sourceLinks(m.sourceIds)}</details></section>`;
+}
+export function droneAuditHtml(d,{escape,sourceLinks}){
+ if(!d.resolution)return '';
+ return `<details class="drone-audit"><summary>這筆位置差異如何處理</summary><p>${escape(d.resolution.conclusion)}</p><ul>${d.resolution.evidence.map(row=>`<li>${escape(row.finding)}${sourceLinks([row.sourceId])}</li>`).join('')}</ul>${d.candidateRoutes?.length?`<h4>保留候選位置</h4><ol>${d.candidateRoutes.map(row=>`<li><strong>${escape(row.label)}</strong>：${escape(row.text)}${sourceLinks(row.sourceIds)}</li>`).join('')}</ol>`:''}<p class="unknown">尚待確認：${d.resolution.pending.map(escape).join('；')}</p></details>`;
+}
+export function equipmentDescriptionHtml(item,{escape,sourceLinks}){
+ return `<p>${escape(item.description||item.effect||'效果待查證')}</p>${item.unlock?`<p>解鎖：${escape(item.unlockCondition)}</p>`:''}${item.cost?`<p class="unknown">購買資源：Credits ${item.cost.credits??'待查'} · 紅 ${item.cost.red??'待查'} · 藍 ${item.cost.blue??'待查'} · 黃 ${item.cost.yellow??'待查'}</p>`:''}${item.officialName===null&&item.nameJa?'<p class="unknown">日文原名；英文名稱尚未核實。</p>':''}${sourceLinks(item.sourceIds)}`;
+}
+export function researchIssuesHtml(issues,{escape}){
+ return issues?.length?`<section class="equipment-research-issues"><h2>仍有差異的裝備資料</h2>${issues.map(row=>`<p class="warning">${escape(row.description)}</p><div class="sources">${row.sourceUrls.map((url,i)=>`<a href="${escape(url)}" target="_blank" rel="noopener noreferrer">差異來源 ${i+1} ↗</a>`).join('')}</div>`).join('')}</section>`:'';
+}

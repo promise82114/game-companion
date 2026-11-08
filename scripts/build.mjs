@@ -31,6 +31,7 @@ const presentation={
  mycopunk:{kind:'checklist',features:['雙語裝備攻略','隱藏解鎖','配裝模擬']},
  talos2:{kind:'roadmap',features:['60 個本體獎盃','8 階段','三市長分歧']},
  grounded:{kind:'roadmap',features:['46 個本體獎盃','庭院示意圖','章節直達與周目追蹤']},
+ edfir:{kind:'roadmap',features:['52 關任務','55 架 Drone','44 盃含白金']},
  'thank-goodness-youre-here':{kind:'roadmap',features:['33 個本體獎盃','8 階段','跨階段追蹤']}
 };
 html=html.replace('<!--GAME_COUNT-->',String(modules.length)).replace('<!--GAME_LIST-->',modules.map(m=>{
