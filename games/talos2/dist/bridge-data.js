@@ -1,3 +1,4 @@
+import {attachBridgeVideoEvidence,bridgeVideoSources} from './bridge-video-data.js';
 // 各段從去程金環開始編號；不把回走同一座橋算成新的拼塊題。
 // r：原圖文要求旋轉，但未給旋轉軸／方向／次數。?：連需轉哪塊也未確定。
 const pieces=text=>text.split(' ').map(token=>({number:Number(token.replace(/[r?]/g,'')),rotation:token.endsWith('r')?'required':token.endsWith('?')?'unknown':'as-shown'}));
@@ -96,18 +97,20 @@ export const megaBridges=[
   {rotationNotes:'八塊的選取順序有原圖文支持；作者只說一至兩塊可能需轉，未指出塊號、旋轉軸、方向與次數，全部待查證。',alternative:'Dystopia 也有替代出口橋；兩側擇一即可，完成一側會停用另一側。此頁沿 Utopia 路線；Dystopia 橋的塊號、順序與旋轉仍待查證，不套用這組八塊順序。'})
 ];
 megaBridges.at(-1).sourceKeys.push('utopiaWiki');
+attachBridgeVideoEvidence(megaBridges);
 
 export const bridgeCoverage=[
  {area:'east',label:'東側巨構',count:7},
  {area:'north',label:'北側巨構',count:9},
  {area:'south',label:'南側巨構',count:11},
  {area:'west',label:'西側救 Byron',count:0,note:'已核對原圖文，此次路線經既有橋與走廊，沒有列出需要放置拼塊的金環。'},
- {area:'final',label:'最終巨構',count:1,note:'另有 Dystopia 替代出口橋，未取得完整放塊流程；不可當作已覆核。'}
+ {area:'final',label:'最終巨構',count:1,note:'Utopia／Dystopia 兩出口擇一，兩套八塊順序已對照影片；翻面的按鍵方向／次數仍待查證。'}
 ];
 
 export function attachMegaBridges(waypoints,routes,sources){
  for(const item of megaBridges){
-  waypoints.push({...item,sources:item.sourceKeys.map(key=>sources[key]),verificationStatus:'consensus'});
+  const videoKeys=item.bridge.video?[item.bridge.video.source,...(item.bridge.area==='north'?['northExplore']:[]),...(item.bridge.alternatives||[]).map(a=>a.video.source)]:[];
+  waypoints.push({...item,sources:[...item.sourceKeys.map(key=>sources[key]),...[...new Set(videoKeys)].map(key=>bridgeVideoSources[key])],verificationStatus:'consensus'});
   const route=routes[item.stepId],index=route.indexOf(item.beforeId);
   if(index<0)throw Error('巨構橋缺少插入位置：'+item.id);
   route.splice(index,0,item.id);

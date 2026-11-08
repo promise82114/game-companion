@@ -55,10 +55,16 @@ try{
   const bridges=await page.evaluate(async()=>{const {megaBridges}=await import('./bridge-data.js');return megaBridges.map(b=>({id:b.id,mapKey:b.mapKey,stepId:b.stepId,pieces:b.bridge.pieces.map(p=>p.number)}));});
   for(const bridge of bridges){
    await open('?view=roadmap#waypoint-'+bridge.id);const row=page.locator('#waypoint-'+bridge.id),body=page.locator('#body-waypoint-'+bridge.id);
-   await body.waitFor({state:'visible'});assert.ok((await row.locator('.waypoint-location').textContent()).length>10);assert.ok((await row.locator('.bridge-after').textContent()).length>15);
+   await body.waitFor({state:'visible'});assert.ok((await row.locator('.waypoint-location').textContent()).length>10);assert.ok((await row.locator('.bridge-after').last().textContent()).length>15);
    assert.equal(await page.evaluate(async id=>{const {regionMaps,mapNodeMatches}=await import('./roadmap/maps.js');const panel=document.querySelector('.region-map-aside [data-map-region]'),selected=panel?.querySelector('.map-selected')?.getAttribute('data-map-node');return Boolean(regionMaps[panel?.dataset.mapRegion]?.nodes.some(n=>n.id===selected&&mapNodeMatches(n,'waypoint-'+id)));},bridge.id),true,'bridge deep link must select its landmark');
    if(!await page.locator('#show-solutions').isChecked()){assert.equal(await page.locator('[data-bridge-solution]').count(),0);await page.locator('#show-solutions').check();await row.locator('[data-bridge-solution]').waitFor();}
-   assert.deepEqual(await row.locator('.bridge-pieces strong').allTextContents(),bridge.pieces.map(n=>n+' 號'));assert.ok(await row.locator('.solution-sources a').count()>0);await noOverflow();
+   assert.deepEqual(await row.locator('[data-bridge-route="main"] strong').allTextContents(),bridge.pieces.map(n=>n+' 號'));assert.ok(await row.locator('.solution-sources a').count()>0);await noOverflow();
+   if(bridge.id==='bridge-final-01'){
+    assert.deepEqual(await row.locator('[data-bridge-route="dystopia"] strong').allTextContents(),Array.from({length:8},(_,i)=>(i+1)+' 號'));
+    assert.equal(await row.locator('[data-waypoint-complete]').count(),1,'兩側出口共用既有完成紀錄');
+    assert.ok((await row.locator('.bridge-alternative').textContent()).includes('擇一'));
+    for(const routeId of ['main','dystopia'])for(const link of await row.locator('[data-bridge-route="'+routeId+'"] a').all()){const href=await link.getAttribute('href');assert.match(href,/youtube\.com\/watch\?v=.*&t=\d+s/);assert.equal(await link.getAttribute('rel'),'noopener noreferrer');}
+   }
    const before=await state(),locate=row.locator('[data-map-locate]');if(mobileContext)await locate.tap();else await locate.click();
    const map=page.locator(mobileContext?'#map-dialog':'.region-map-aside');assert.equal(await map.locator('[data-map-region]').getAttribute('data-map-region'),bridge.mapKey);assert.equal(await map.locator('.map-selected').count(),1);
    if(mobileContext)await page.locator('#map-dialog [data-close="map-dialog"]').tap();assert.deepEqual((await state()).steps,before.steps,'bridge locator must not write progress');

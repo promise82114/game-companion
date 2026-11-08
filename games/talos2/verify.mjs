@@ -2,6 +2,7 @@ import {textScreenedIds,sourceComparedIds,puzzleReviewLevel,puzzleReviewCounts,c
 import {storyMaps} from './dist/story-maps.js';
 import {storySources,storyRoutes} from './dist/story-data.js';
 import {megaBridges,bridgeCoverage} from './dist/bridge-data.js';
+import {bridgeVideoAudits,bridgeVideoSources,dystopiaBridge} from './dist/bridge-video-data.js';
 import {bridgeHtml} from './dist/roadmap/bridges.js';
 import {storyWaypoints,waypointProgressId,routeItemsForStep,storyRouteHtml} from './dist/roadmap/story.js';
 import assert from 'node:assert/strict';
@@ -99,14 +100,29 @@ assert.equal(new Set(storyWaypoints.map(w=>w.id)).size,59);
 assert.equal(megaBridges.length,28);assert.deepEqual(bridgeCoverage.map(c=>c.count),[7,9,11,0,1]);
 for(const item of megaBridges){
  const b=item.bridge,route=storyRoutes[item.stepId];assert.ok(route.indexOf(item.id)<route.indexOf(item.beforeId));assert.ok(item.location&&b.after);assert.equal(new Set(b.pieces.map(p=>p.number)).size,b.pieces.length);assert.deepEqual([...b.pieces.map(p=>p.number)].sort((a,b)=>a-b),Array.from({length:b.pieces.length},(_,i)=>i+1));
- const waypoint=storyWaypoints.find(w=>w.id===item.id),hidden=bridgeHtml(waypoint,{escape:s=>s,showSolutions:false}),shown=bridgeHtml(waypoint,{escape:s=>s,showSolutions:true});assert.ok(!hidden.includes('data-bridge-solution'));assert.ok(hidden.includes(b.after));assert.equal((shown.match(/<strong>\d+ 號<\/strong>/g)||[]).length,b.pieces.length);if(b.pieces.some(p=>p.rotation!=='as-shown'))assert.match(shown,/待查證/);assert.ok(!shown.includes('<img'));
+ const waypoint=storyWaypoints.find(w=>w.id===item.id),hidden=bridgeHtml(waypoint,{escape:s=>s,showSolutions:false}),shown=bridgeHtml(waypoint,{escape:s=>s,showSolutions:true});assert.ok(!hidden.includes('data-bridge-solution'));assert.ok(!hidden.includes('data-bridge-route'));assert.ok(hidden.includes(b.after));assert.equal((shown.match(/<strong>\d+ 號<\/strong>/g)||[]).length,b.pieces.length+(b.alternatives||[]).reduce((n,a)=>n+a.video.steps.length,0));if(b.pieces.some(p=>p.rotation!=='as-shown'))assert.match(shown,/待查證/);assert.ok(!shown.includes('<img'));
 }
-assert.deepEqual(megaBridges.find(b=>b.id==='bridge-north-01').bridge.pieces.map(p=>p.number),[2,3,1,4]);
+assert.deepEqual(megaBridges.find(b=>b.id==='bridge-north-01').bridge.pieces.map(p=>p.number),[1,4,3,2]);
 assert.deepEqual(megaBridges.find(b=>b.id==='bridge-east-04').bridge.pieces.map(p=>p.number),[2,4,3,1]);
 assert.match(megaBridges.find(b=>b.id==='bridge-north-04').bridge.between[1],/上樓/);
 assert.match(megaBridges.find(b=>b.id==='bridge-south-02').bridge.between[2],/側面/);
 assert.match(megaBridges.find(b=>b.id==='bridge-south-08').bridge.after,/先左轉.*再左轉/);
-assert.match(megaBridges.at(-1).bridge.alternative,/Dystopia.*待查證/);
+assert.match(megaBridges.at(-1).bridge.alternative,/Dystopia.*擇一/);
+assert.equal(Object.keys(bridgeVideoAudits).length,23,'原 23 段各自記錄本輪影片查證結果');
+assert.equal(Object.values(bridgeVideoAudits).filter(v=>v.steps).length,18);
+for(const w of storyWaypoints.filter(w=>w.bridge))assert.equal(new Set(w.sources.map(s=>s.url)).size,w.sources.length,'不重複影片來源');
+for(const video of [...Object.values(bridgeVideoAudits),dystopiaBridge.video]){
+ assert.ok(bridgeVideoSources[video.source]);assert.equal(video.inputVerified,false);assert.ok(video.end>video.start);
+ if(!video.steps){assert.match(video.note,/待查證/);continue;}
+ assert.deepEqual(video.steps.map(p=>p.number).sort((a,b)=>a-b),Array.from({length:video.steps.length},(_,i)=>i+1));
+ for(const p of video.steps){assert.ok(p.at>=video.start&&p.at<video.end);assert.ok(p.instruction);assert.ok(p.rotationPresses===null||p.rotationPresses===0,'不虛構非零按鍵次數');assert.equal(p.rotationDirection,null);}
+}
+assert.deepEqual(megaBridges.at(-1).bridge.pieces.filter(p=>p.rotationDegrees===180).map(p=>p.number),[6,8]);
+assert.deepEqual(dystopiaBridge.video.steps.filter(p=>p.rotationDegrees===180).map(p=>p.number),[3,7]);
+assert.match(dystopiaBridge.location,/沒有方形/);
+assert.deepEqual(megaBridges.find(b=>b.id==='bridge-south-02').bridge.pieces.map(p=>p.number),[4,2,3,1]);
+assert.deepEqual(megaBridges.find(b=>b.id==='bridge-south-03').bridge.pieces.map(p=>p.number),[1,2],'不能採影片重設前的試錯順序');
+const escapedBridge=bridgeHtml({...storyWaypoints.find(w=>w.id==='bridge-final-01'),bridge:{...megaBridges.at(-1).bridge,video:{...megaBridges.at(-1).bridge.video,note:'<script>bad</script>'}}},{escape:s=>String(s).replaceAll('<','&lt;').replaceAll('>','&gt;'),showSolutions:true});assert.ok(!escapedBridge.includes('<script>'));assert.ok(escapedBridge.includes('&lt;script&gt;'));
 for(const w of storyWaypoints){assert.ok(ids.has(w.stepId));assert.ok(storyMaps[w.mapKey]);assert.ok(w.actions.length);assert.ok(w.sources.length);assert.ok(routeItemsForStep(w.stepId).includes(w));assert.ok(storyMaps[w.mapKey].nodes.some(n=>n.target===waypointProgressId(w.id)||n.alsoTargets?.includes(waypointProgressId(w.id))),w.id+' map locator');}
 for(const[stepId,route]of Object.entries(storyRoutes)){assert.ok(ids.has(stepId));const items=routeItemsForStep(stepId);assert.ok(items.every(Boolean),stepId);assert.equal(new Set(items).size,items.length);assert.ok(items.every(i=>i.stepId===stepId));assert.ok(puzzles.filter(p=>p.stepId===stepId).every(p=>items.includes(p)));assert.equal(items.length,route.length+puzzles.filter(p=>p.stepId===stepId&&!route.includes(p.id)).length);}
 assert.deepEqual(routeItemsForStep('first-megastructure').map(i=>i.id),storyRoutes['first-megastructure']);
