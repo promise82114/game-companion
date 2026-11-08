@@ -50,12 +50,7 @@
     return '<aside class="route-check" aria-label="'+escape(check.title)+'"><strong>'+escape(check.title)+(check.verificationStatus==='unverified'?' · 回補風險待查證':'')+'</strong><p>'+escape(check.risk)+'</p><div class="links">'+targets.map(target=>'<button data-jump="'+target.id+'">'+characterText(target.title)+'</button>').join('')+'</div></aside>';
   }
   function instructionHtml(step) {
-    return '<div class="instruction" data-instruction="'+step.id+'"><p class="instruction-location">'+characterText(step.location)+' <span class="instruction-recorded" hidden>· 已記錄</span></p><p class="step-action">'+characterText(step.action)+'</p><p class="step-trigger"><span>時機：</span>'+characterText(step.trigger)+'</p>'+(step.verificationStatus==='unverified'?'<p class="instruction-caution">待查證：此處位置或操作尚未完成實機核對。</p>':'')+(step.verification.startsWith('核對畫面互動已結束')?'':'<p class="instruction-success">判定：'+characterText(step.verification)+'</p>')+'</div>';
-  }
-  function partialText(item) {
-    const count=roadmap.recorded(item,store.data);
-    if(item.trophyId)return count && !done(item) ? '舊流程已記錄；請另確認實際跳盃。' : '';
-    return count>0 && count<item.stepIds.length ? '已記錄 '+count+'/'+item.stepIds.length+' 項；核對其餘說明後再完成此成果。' : '';
+    return '<div class="instruction" data-instruction="'+step.id+'"><p class="instruction-location">'+characterText(step.location)+'</p><p class="step-action">'+characterText(step.action)+'</p><p class="step-trigger"><span>時機：</span>'+characterText(step.trigger)+'</p>'+(step.verificationStatus==='unverified'?'<p class="instruction-caution">待查證：此處位置或操作尚未完成實機核對。</p>':'')+(step.verification.startsWith('核對畫面互動已結束')?'':'<p class="instruction-success">判定：'+characterText(step.verification)+'</p>')+'</div>';
   }
   function warningText(item) {
     const pending=item.steps.filter(step=>!store.data.stepDone[step.id]);
@@ -65,8 +60,8 @@
     const complete=done(item),open=!complete||expandedSteps.has(item.id),rowId=(compact?'track-':'step-')+item.id;
     const trophyIds=[...new Set(item.steps.flatMap(step=>step.trophyIds))];
     const checks=guide.routeChecks.filter(check=>item.stepIds.includes(check.beforeStepId)).map(check=>'<div data-route-check="'+check.id+'">'+routeCheckHtml(check)+'</div>').join('');
-    const control=item.trophyId ? '<input type="checkbox" data-group="trophyEarned" data-id="'+item.trophyId+'" '+(complete?'checked':'')+'>' : '<input type="checkbox" data-group="stepDone" data-id="'+item.id+'" data-milestone="'+item.id+'" '+(complete?'checked':'')+'>';
-    return '<article class="step '+(complete?'done':'')+'" data-step-row="'+item.id+'" data-done="'+complete+'" id="'+rowId+'"><div class="step-head"><label>'+control+'<span class="step-location">'+characterText(item.title)+(item.trophyId?' <span class="trophy-confirm-label">· 確認已跳盃</span>':'')+'</span></label><button class="step-reveal" data-step-details="'+item.id+'" aria-controls="'+rowId+'-body" aria-expanded="'+open+'" '+(complete?'':'hidden')+'>'+(open?'收起詳情':'查看已完成細節')+'</button></div><p class="milestone-partial" '+(partialText(item)?'':'hidden')+'>'+escape(partialText(item))+'</p><p class="warning critical" '+(!complete&&warningText(item)?'':'hidden')+'>'+escape(warningText(item))+'</p>'+checks+'<div class="step-body" id="'+rowId+'-body" '+(open?'':'hidden')+'>'+item.steps.map(instructionHtml).join('')+(item.steps.some(step=>step.warningLevel==='critical'&&step.missable)?'<p class="milestone-recovery">錯過後：'+characterText(item.steps.find(step=>step.warningLevel==='critical'&&step.missable).recovery)+'</p>':'')+(item.trophyId?'<p class="story-trophy">對照 PS5 確認：'+trophyNameHtml(trophyMap.get(item.trophyId))+'</p>':trophyIds.length?'<div class="trophy-inline">'+trophyIds.map(trophyInput).join('')+'</div>':'')+'</div></article>';
+    const control='<input type="checkbox" data-group="stepDone" data-id="'+item.id+'" '+(complete?'checked':'')+'>';
+    return '<article class="step '+(complete?'done':'')+'" data-step-row="'+item.id+'" data-done="'+complete+'" id="'+rowId+'"><div class="step-head"><label>'+control+'<span class="step-order">第 '+item.steps[0].order+' 步</span><span class="step-location">'+characterText(item.title)+'</span></label><button class="step-reveal" data-step-details="'+item.id+'" aria-controls="'+rowId+'-body" aria-expanded="'+open+'" '+(complete?'':'hidden')+'>'+(open?'收起詳情':'查看已完成細節')+'</button></div><p class="warning critical" '+(!complete&&warningText(item)?'':'hidden')+'>'+escape(warningText(item))+'</p>'+checks+'<div class="step-body" id="'+rowId+'-body" '+(open?'':'hidden')+'>'+item.steps.map(instructionHtml).join('')+(item.steps.some(step=>step.warningLevel==='critical'&&step.missable)?'<p class="milestone-recovery">錯過後：'+characterText(item.steps.find(step=>step.warningLevel==='critical'&&step.missable).recovery)+'</p>':'')+(trophyIds.length?'<div class="trophy-inline">'+trophyIds.map(trophyInput).join('')+'</div>':'')+'</div></article>';
   }
   function preserveReadingPosition(update) {
     const focus=document.activeElement;let anchor=readingAnchor||focus?.closest('.step-head, summary');const fromEdit=!!readingAnchor;readingAnchor=null;
@@ -82,9 +77,7 @@
       row.dataset.done=String(complete);row.classList.toggle('done',complete);
       const open=!complete||expandedSteps.has(item.id),button=row.querySelector('[data-step-details]');
       row.querySelector('.step-body').hidden=!open;button.hidden=!complete;button.setAttribute('aria-expanded',String(open));button.textContent=open?'收起詳情':'查看已完成細節';
-      const checkbox=row.querySelector('.step-head input');checkbox.checked=complete;checkbox.indeterminate=!item.trophyId&&!complete&&roadmap.recorded(item,store.data)>0;
-      const partial=row.querySelector('.milestone-partial');partial.textContent=partialText(item);partial.hidden=!partial.textContent;
-      row.querySelectorAll('[data-instruction]').forEach(node=>{node.querySelector('.instruction-recorded').hidden=complete||item.trophyId||!store.data.stepDone[node.dataset.instruction];});
+      row.querySelector('.step-head input').checked=complete;
       const warning=row.querySelector('.warning');warning.textContent=warningText(item);warning.hidden=complete||!warning.textContent;
     });
     document.querySelectorAll('[data-stage-panel]').forEach(panel=>{const complete=stageDone(guide.stages.find(stage=>stage.id===panel.dataset.stagePanel));if(panel.dataset.complete!==String(complete))panel.open=!complete;panel.dataset.complete=String(complete);});
@@ -106,10 +99,10 @@
   }
   function stats() {
     const data=store.data,count=milestones.filter(done).length,earned=guide.trophies.filter(trophy=>data.trophyEarned[trophy.id]).length,current=guide.stages.find(stage=>stage.id===activeStage);
-    $('summary').innerHTML='<div><span>攻略成果完成</span><strong>'+count+' <small>/ '+milestones.length+'</small></strong></div><div><span>獎盃實際取得</span><strong>'+earned+' <small>/ '+guide.trophies.length+'</small></strong></div><div><span>目前瀏覽章節</span><strong class="current">'+escape(current.title)+'</strong></div>';
+    $('summary').innerHTML='<div><span>攻略步驟完成</span><strong>'+count+' <small>/ '+milestones.length+'</small></strong></div><div><span>獎盃實際取得</span><strong>'+earned+' <small>/ '+guide.trophies.length+'</small></strong></div><div><span>目前瀏覽章節</span><strong class="current">'+escape(current.title)+'</strong></div>';
     $('nav-trophies').textContent=earned+'/33';
     const checks=pendingChecks(current),next=roadmap.forStage(current.id).find(item=>!done(item))||roadmap.byStep.get(checks[0]?.beforeStepId),risks=pendingRisks(current);
-    $('checkpoint').innerHTML='<div><strong>'+escape(current.title)+' · '+(next?'接下來：'+characterText(next.title):'本章成果已記錄')+'</strong><p>'+(risks.length?'尚有 '+risks.length+' 個高風險成果待核對；具體離開前提醒列在路線推進處。':checks.length?'尚有離開前核對未完成，請查看路線提醒。':'沒有未記錄的高風險成果；實際獎盃仍以 PS5 為準。')+'</p></div>'+(next?'<button data-jump="'+next.id+'">回到此處</button>':'');
+    $('checkpoint').innerHTML='<div><strong>'+escape(current.title)+' · '+(next?'接下來：'+characterText(next.title):'本章步驟已記錄')+'</strong><p>'+(risks.length?'尚有 '+risks.length+' 個高風險步驟待核對；具體離開前提醒列在路線推進處。':checks.length?'尚有離開前核對未完成，請查看路線提醒。':'沒有未記錄的高風險步驟；實際獎盃仍以 PS5 為準。')+'</p></div>'+(next?'<button data-jump="'+next.id+'">回到此處</button>':'');
     document.querySelectorAll('[data-stage-count]').forEach(node=>{const items=roadmap.forStage(node.dataset.stageCount);node.textContent=items.filter(done).length+'/'+items.length;});
     document.querySelectorAll('[data-stage-risk]').forEach(node=>{const stage=guide.stages.find(stage=>stage.id===node.dataset.stageRisk),risks=pendingRisks(stage),checks=pendingChecks(stage);node.textContent=risks.length?'高風險待核對 '+risks.length:checks.length?'離開前待核對 '+checks.reduce((sum,check)=>sum+roadmap.pending(check,store.data).length,0):'';node.hidden=!node.textContent;});
     document.querySelectorAll('[data-tracker-count]').forEach(node=>{const tracker=guide.trackers.find(value=>value.id===node.dataset.trackerCount);node.textContent=tracker.stepIds.filter(id=>data.stepDone[id]).length+'/'+tracker.stepIds.length;});
@@ -121,7 +114,7 @@
     $('view-title').textContent={roadmap:'遊玩 Roadmap',trackers:'跨階段追蹤',trophies:'獎盃清單',sources:'來源與查證'}[view];
     $('chapter-picker').hidden=view!=='roadmap';$('checkpoint').hidden=view!=='roadmap';$('search').closest('.toolbar').hidden=view==='sources';$('continue').hidden=view!=='roadmap';
     $('chapter-select').innerHTML=guide.stages.map(stage=>'<option value="'+stage.id+'" '+(activeStage===stage.id?'selected':'')+'>'+escape(stage.title)+'</option>').join('');
-    $('section-select').innerHTML='<option value="">本章成果…</option>'+roadmap.forStage(activeStage).map(item=>'<option value="'+item.id+'">'+escape(item.title)+'</option>').join('');
+    $('section-select').innerHTML='<option value="">本章步驟…</option>'+roadmap.forStage(activeStage).map(item=>'<option value="'+item.id+'">'+escape(item.title)+'</option>').join('');
     $('stage-nav').innerHTML=guide.stages.map(stage=>'<button data-stage="'+stage.id+'" aria-label="'+escape(stage.title)+'" '+(activeStage===stage.id?'aria-current="step"':'')+'>'+stage.title.slice(0,2)+'</button>').join('');
     const reveal=$('search').value.trim()||$('filter').value!=='all';
     if(reveal)milestones.filter(item=>matches(item,'milestone')&&done(item)).forEach(item=>expandedSteps.add(item.id));
@@ -137,12 +130,12 @@
         return '<details class="tracker"><summary><strong>'+characterText(tracker.title)+'</strong><span class="count" data-tracker-count="'+tracker.id+'"></span></summary><div class="tracker-body"><p class="meta">'+characterText(tracker.note)+'</p>'+visible.map(item=>stepHtml(item,true)).join('')+'</div></details>';
       }).join('');
     }else if(view==='trophies'){
-      $('content').innerHTML='<p class="meta">攻略操作不會自動宣稱跳盃；主線跳盃確認直接使用同一份獎盃紀錄。</p>'+guide.trophies.filter(trophy=>matches(trophy,'trophyEarned')).map(trophy=>'<article class="trophy-row"><input id="trophy-'+trophy.id+'" type="checkbox" data-group="trophyEarned" data-id="'+trophy.id+'" '+(store.data.trophyEarned[trophy.id]?'checked':'')+'><div><label for="trophy-'+trophy.id+'">'+trophyNameHtml(trophy)+' '+trophyProgressHtml(trophy)+'</label>'+(trophy.progress?'<p class="trophy-progress-note">'+escape(trophy.progress.note)+'</p>':'')+'<p>'+characterText(trophy.description)+'</p><div class="links">'+[...new Set(steps.filter(step=>step.trophyIds.includes(trophy.id)).map(step=>roadmap.byStep.get(step.id)))].map(item=>'<button data-jump="'+item.id+'">'+characterText(item.title)+'</button>').join('')+'</div></div><small>'+{platinum:'白金',story:'主線',optional:'支線／收集'}[trophy.category]+'</small></article>').join('');
+      $('content').innerHTML='<p class="meta">攻略步驟與獎盃分別記錄；勾完步驟不會自動勾選獎盃，白金也需手動確認。</p>'+guide.trophies.filter(trophy=>matches(trophy,'trophyEarned')).map(trophy=>'<article class="trophy-row"><input id="trophy-'+trophy.id+'" type="checkbox" data-group="trophyEarned" data-id="'+trophy.id+'" '+(store.data.trophyEarned[trophy.id]?'checked':'')+'><div><label for="trophy-'+trophy.id+'">'+trophyNameHtml(trophy)+' '+trophyProgressHtml(trophy)+'</label>'+(trophy.progress?'<p class="trophy-progress-note">'+escape(trophy.progress.note)+'</p>':'')+'<p>'+characterText(trophy.description)+'</p><div class="links">'+[...new Set(steps.filter(step=>step.trophyIds.includes(trophy.id)).map(step=>roadmap.byStep.get(step.id)))].map(item=>'<button data-jump="'+item.id+'">'+characterText(item.title)+'</button>').join('')+'</div></div><small>'+{platinum:'白金',story:'主線',optional:'支線／收集'}[trophy.category]+'</small></article>').join('');
     }else{
       $('content').innerHTML='<h2>資料查證範圍</h2><p>'+escape(guide.verificationNote)+'</p><p>'+escape(guide.estimatedTime)+'</p><p>九扇門、每門三下、17 塊肉、七隻蝸牛的位置與固定回訪次數，都不能視為本工具已實測。動物以五組來源共識列出；蚯蚓另保留提醒。未宣稱「22 個可錯過」為確定總數。</p><p>工具資料備份與主機遊戲存檔不同；本工具不提供遊戲內回溯。</p>'+guide.sources.map(source=>'<article class="source"><a href="'+escape(source.url)+'" target="_blank" rel="noopener">'+escape(source.title)+' ↗</a><p>'+escape(source.limitation)+'</p><small>查閱 '+source.accessedAt+'</small></article>').join('')+sourceAuditHtml();
     }
     if(!$('content').children.length)$('content').innerHTML='<p class="empty">沒有符合條件的項目。請清除搜尋或改回「全部」。</p>';
-    if(view!=='sources'&&!$('content').querySelector('.empty'))$('content').insertAdjacentHTML('afterbegin','<p class="trophy-progress-hint">一次記錄一個成果，操作說明不用逐項勾。回訪／路線計數滿格不代表已跳盃。</p>');
+    if(view!=='sources'&&!$('content').querySelector('.empty'))$('content').insertAdjacentHTML('afterbegin','<p class="trophy-progress-hint">每個步驟各自勾選；攻略完成與實際跳盃分別記錄。回訪／路線計數滿格不代表已跳盃。</p>');
     converge();stats();
   }
   function syncUi() {
@@ -161,7 +154,7 @@
   document.addEventListener('change',async event=>{
     const input=event.target;if(!input.matches('input[data-group]'))return;
     const hadFocus=document.activeElement===input;readingAnchor=input.closest('.step-head');input.disabled=true;message('儲存中…');
-    try{if(input.dataset.milestone)await store.setSteps(milestoneMap.get(input.dataset.milestone).stepIds,input.checked);else await store.toggle(input.dataset.group,input.dataset.id,input.checked);}catch(error){syncUi();fatal(error);}finally{input.disabled=false;readingAnchor=null;if(hadFocus&&input.getClientRects().length)input.focus({preventScroll:true});}
+    try{await store.toggle(input.dataset.group,input.dataset.id,input.checked);}catch(error){syncUi();fatal(error);}finally{input.disabled=false;readingAnchor=null;if(hadFocus&&input.getClientRects().length)input.focus({preventScroll:true});}
   });
   window.addEventListener('roadmap-progress-change',()=>{syncUi();cloudRender();});
   window.addEventListener('focus',()=>store.refresh().then(syncUi).catch(fatal));
@@ -169,8 +162,8 @@
   function selectStage(id){activeStage=id;view='roadmap';$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+id);render();const panel=document.querySelector('[data-stage-panel="'+id+'"]');panel.open=true;const heading=panel.querySelector('summary');heading.scrollIntoView({block:'start'});heading.focus({preventScroll:true});}
   $('chapter-select').onchange=event=>selectStage(event.target.value);
   $('section-select').onchange=event=>{const id=event.target.value;if(id){jump(id);$('section-select').value=id;}};
-  $('resume-progress').onclick=()=>{const next=milestones.find(item=>!done(item))||roadmap.byStep.get(guide.routeChecks.find(check=>roadmap.pending(check,store.data).length)?.beforeStepId);if(next)jump(next.id);else message('所有攻略成果已記錄，可展開標題回看；獎盃仍以 PS5 為準。');};
-  $('continue').onclick=()=>{const start=guide.stages.findIndex(stage=>stage.id===activeStage),remaining=guide.stages.slice(start),next=remaining.flatMap(stage=>roadmap.forStage(stage.id)).find(item=>!done(item))||roadmap.byStep.get(remaining.flatMap(stage=>pendingChecks(stage))[0]?.beforeStepId);if(next)jump(next.id);else message('本章與後續成果已記錄，可從章節選單回看。');};
+  $('resume-progress').onclick=()=>{const next=milestones.find(item=>!done(item))||roadmap.byStep.get(guide.routeChecks.find(check=>roadmap.pending(check,store.data).length)?.beforeStepId);if(next)jump(next.id);else message('所有攻略步驟已記錄，可展開標題回看；獎盃仍以 PS5 為準。');};
+  $('continue').onclick=()=>{const start=guide.stages.findIndex(stage=>stage.id===activeStage),remaining=guide.stages.slice(start),next=remaining.flatMap(stage=>roadmap.forStage(stage.id)).find(item=>!done(item))||roadmap.byStep.get(remaining.flatMap(stage=>pendingChecks(stage))[0]?.beforeStepId);if(next)jump(next.id);else message('本章與後續步驟已記錄，可從章節選單回看。');};
   window.addEventListener('popstate',()=>{view=new URL(location.href).searchParams.get('view')||'roadmap';activeStage=guide.stages.find(stage=>stage.id===location.hash.slice(1))?.id||activeStage;render();});
   $('platinum-name').innerHTML=trophyNameHtml(trophyMap.get('t00'));
   $('guide-version').textContent='攻略 v'+guide.guideVersion+' · 文獻核對 '+guide.lastVerifiedAt;
@@ -277,7 +270,7 @@
       if(store.stamp()!==stamp)throw Error('紀錄正在變更，請重新開啟初始化紀錄。');
       if(!$('backupDialog').open)return;
       resetReview={stamp,backup,downloaded:false,acknowledged:false};
-      $('reset-summary').textContent=`目前已完成 ${milestones.filter(item=>roadmap.done(item,snapshot)).length}/${milestones.length} 成果、${guide.trophies.filter(trophy=>snapshot.trophyEarned[trophy.id]).length}/${guide.trophies.length} 獎盃。初始化後顯示 0/${milestones.length}、0/${guide.trophies.length}。`;
+      $('reset-summary').textContent=`目前已完成 ${milestones.filter(item=>roadmap.done(item,snapshot)).length}/${milestones.length} 步驟、${guide.trophies.filter(trophy=>snapshot.trophyEarned[trophy.id]).length}/${guide.trophies.length} 獎盃。初始化後顯示 0/${milestones.length}、0/${guide.trophies.length}。`;
       $('reset-ack').checked=false;$('reset-status').textContent='';$('backupDialog').close();$('resetDialog').showModal();
     }catch(error){$('backup-status').textContent='無法準備初始化：'+error.message;}finally{busyReset=false;cloudRender();}
   };

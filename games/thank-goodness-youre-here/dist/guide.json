@@ -2,7 +2,7 @@
   "gameId": "thank-goodness-youre-here",
   "platform": "PS5",
   "scope": "base",
-  "guideVersion": "1.3.0",
+  "guideVersion": "1.3.1",
   "lastVerifiedAt": "2026-10-31",
   "verificationNote": "此日期是文獻查證，不是 PS5 實機驗收。verified 僅指獎盃列表；consensus 為攻略交叉比對；unverified 仍待查。",
   "estimatedTime": "來源估計約 3–6 小時；另有約 15 分鐘短結局。主線一次可規劃全收集，短結局後需重新開局。",
@@ -633,31 +633,6 @@
             "leave-reception"
           ]
         }
-      ],
-      "milestones": [
-        {
-          "id": "reception-wait",
-          "title": "觀看短結局，再開主線輪次",
-          "stepIds": [
-            "reception-wait",
-            "main-run"
-          ]
-        },
-        {
-          "id": "door-reception",
-          "title": "離開前敲市長辦公室門",
-          "stepIds": [
-            "door-reception"
-          ]
-        },
-        {
-          "id": "leave-reception",
-          "title": "抵達 Barnsworth",
-          "stepIds": [
-            "leave-reception"
-          ],
-          "trophyId": "t24"
-        }
       ]
     },
     {
@@ -1032,110 +1007,6 @@
             "nick-return",
             "pub-before-hole",
             "police-before-hole",
-            "first-hole"
-          ]
-        }
-      ],
-      "milestones": [
-        {
-          "id": "post-town-hall",
-          "title": "廣場初訪：郵筒、店門與 Nick 開店",
-          "stepIds": [
-            "post-town-hall",
-            "door-chicken",
-            "nick-open",
-            "post-nick"
-          ]
-        },
-        {
-          "id": "rats-park",
-          "title": "聽花園老鼠合唱",
-          "stepIds": [
-            "rats-park"
-          ]
-        },
-        {
-          "id": "mow",
-          "title": "割完整片草地",
-          "stepIds": [
-            "mow"
-          ]
-        },
-        {
-          "id": "mole-invite",
-          "title": "收到鼴鼠晚餐邀請",
-          "stepIds": [
-            "mole-invite"
-          ]
-        },
-        {
-          "id": "police-first",
-          "title": "警察亭｜初次對話",
-          "stepIds": [
-            "police-first"
-          ]
-        },
-        {
-          "id": "pub-first",
-          "title": "酒館｜第一輪完整互動",
-          "stepIds": [
-            "pub-first"
-          ]
-        },
-        {
-          "id": "police-after-pub",
-          "title": "警察亭｜酒館後回訪",
-          "stepIds": [
-            "police-after-pub"
-          ]
-        },
-        {
-          "id": "ronny",
-          "title": "完成 Ronny 門外事件",
-          "stepIds": [
-            "ronny"
-          ]
-        },
-        {
-          "id": "stoat",
-          "title": "聽冷藏庫動物對話",
-          "stepIds": [
-            "stoat"
-          ]
-        },
-        {
-          "id": "butter",
-          "title": "救出 Charlie",
-          "stepIds": [
-            "butter"
-          ],
-          "trophyId": "t01"
-        },
-        {
-          "id": "nick-return",
-          "title": "Nick｜回看磚牆缺口",
-          "stepIds": [
-            "nick-return"
-          ]
-        },
-        {
-          "id": "pub-before-hole",
-          "title": "酒館｜跳洞前回訪",
-          "stepIds": [
-            "pub-before-hole"
-          ]
-        },
-        {
-          "id": "police-before-hole",
-          "title": "警察亭｜跳洞前回訪",
-          "stepIds": [
-            "police-before-hole"
-          ]
-        },
-        {
-          "id": "first-hole",
-          "title": "首次走管道，留下紀念盤前置",
-          "stepIds": [
             "first-hole"
           ]
         }
@@ -1637,92 +1508,6 @@
             "gutter-return"
           ]
         }
-      ],
-      "milestones": [
-        {
-          "id": "tool-spanner",
-          "title": "詢問扳手，聽第二組老鼠合唱",
-          "stepIds": [
-            "tool-spanner",
-            "rats-chippy"
-          ]
-        },
-        {
-          "id": "door-chippy-one",
-          "title": "薯條店周邊：兩扇門與郵筒",
-          "stepIds": [
-            "door-chippy-one",
-            "door-chippy-two",
-            "post-chippy"
-          ]
-        },
-        {
-          "id": "shelves",
-          "title": "清空三層貨架",
-          "stepIds": [
-            "shelves"
-          ]
-        },
-        {
-          "id": "chimney-first",
-          "title": "屋頂到井道：花園門與蚯蚓對話",
-          "stepIds": [
-            "chimney-first",
-            "door-shed",
-            "door-garden-house",
-            "worm-first"
-          ]
-        },
-        {
-          "id": "fish-first",
-          "title": "魚販｜第一次整理冰檯",
-          "stepIds": [
-            "fish-first"
-          ]
-        },
-        {
-          "id": "market-access",
-          "title": "進入市場，聽第三組老鼠合唱",
-          "stepIds": [
-            "market-access",
-            "rats-market"
-          ]
-        },
-        {
-          "id": "post-market-flower",
-          "title": "市場巡查：郵筒與關門",
-          "stepIds": [
-            "post-market-flower",
-            "post-market-crossword",
-            "door-travel",
-            "door-pies"
-          ]
-        },
-        {
-          "id": "cheek-first",
-          "title": "餐車｜第一次互動",
-          "stepIds": [
-            "cheek-first"
-          ]
-        },
-        {
-          "id": "pie-request",
-          "title": "接派店委託，沿河岸聽貓頭鷹對話",
-          "stepIds": [
-            "pie-request",
-            "river-first",
-            "owl"
-          ]
-        },
-        {
-          "id": "post-blue-house",
-          "title": "藍門與郵筒巡查，再返回廣場",
-          "stepIds": [
-            "post-blue-house",
-            "door-blue-house",
-            "gutter-return"
-          ]
-        }
       ]
     },
     {
@@ -2184,104 +1969,6 @@
             "nick-wall"
           ]
         }
-      ],
-      "milestones": [
-        {
-          "id": "nick-mid",
-          "title": "Nick｜工具階段回訪",
-          "stepIds": [
-            "nick-mid"
-          ]
-        },
-        {
-          "id": "pub-tools",
-          "title": "酒館｜工具階段回訪",
-          "stepIds": [
-            "pub-tools"
-          ]
-        },
-        {
-          "id": "police-tools",
-          "title": "警察亭｜工具階段回訪",
-          "stepIds": [
-            "police-tools"
-          ]
-        },
-        {
-          "id": "screwdriver",
-          "title": "取得工具，完成 Charlie 柵欄事件",
-          "stepIds": [
-            "screwdriver",
-            "hammer-request",
-            "charlie-fence"
-          ]
-        },
-        {
-          "id": "worm-second",
-          "title": "穿過井道，完成魚販第二次互動",
-          "stepIds": [
-            "worm-second",
-            "fish-second"
-          ]
-        },
-        {
-          "id": "meat-all",
-          "title": "巡完肉世界全部肉塊",
-          "stepIds": [
-            "meat-all"
-          ]
-        },
-        {
-          "id": "big-pie",
-          "title": "做出巨大派",
-          "stepIds": [
-            "big-pie"
-          ],
-          "trophyId": "t04"
-        },
-        {
-          "id": "rog",
-          "title": "Rog 主線後，完成餐車第二次互動",
-          "stepIds": [
-            "rog",
-            "cheek-second"
-          ]
-        },
-        {
-          "id": "beans-balcony",
-          "title": "推落陽台豆罐",
-          "stepIds": [
-            "beans-balcony"
-          ],
-          "trophyId": "t22"
-        },
-        {
-          "id": "gull-bin",
-          "title": "巡完海鷗路線，回酒館聽新對話",
-          "stepIds": [
-            "gull-bin",
-            "gull-pie",
-            "gull-veg",
-            "gull-fish",
-            "gull-burger",
-            "gull-oily",
-            "pub-beans"
-          ]
-        },
-        {
-          "id": "police-beans",
-          "title": "警察亭｜豆罐後回訪",
-          "stepIds": [
-            "police-beans"
-          ]
-        },
-        {
-          "id": "nick-wall",
-          "title": "Nick｜拆牆變成家具店",
-          "stepIds": [
-            "nick-wall"
-          ]
-        }
       ]
     },
     {
@@ -2428,46 +2115,6 @@
             "flowers",
             "fryer"
           ]
-        }
-      ],
-      "milestones": [
-        {
-          "id": "polly-paul",
-          "title": "肥料袋前，先拜訪 Polly 與 Paul",
-          "stepIds": [
-            "polly-paul"
-          ]
-        },
-        {
-          "id": "fertiliser-bag",
-          "title": "打開肥料袋，讓番茄成長",
-          "stepIds": [
-            "fertiliser-bag"
-          ],
-          "trophyId": "t03"
-        },
-        {
-          "id": "hammer-river",
-          "title": "河岸取槌子，聽完鴨子對話",
-          "stepIds": [
-            "hammer-river",
-            "ducks"
-          ]
-        },
-        {
-          "id": "flowers",
-          "title": "拍完所有有臉的花",
-          "stepIds": [
-            "flowers"
-          ]
-        },
-        {
-          "id": "fryer",
-          "title": "修好炸鍋",
-          "stepIds": [
-            "fryer"
-          ],
-          "trophyId": "t02"
         }
       ]
     },
@@ -2652,47 +2299,6 @@
             "chips-cow",
             "tea"
           ]
-        }
-      ],
-      "milestones": [
-        {
-          "id": "milk-request",
-          "title": "接牛奶委託，回訪酒館",
-          "stepIds": [
-            "milk-request",
-            "pub-milk"
-          ]
-        },
-        {
-          "id": "police-milk",
-          "title": "警察亭｜牛奶階段回訪",
-          "stepIds": [
-            "police-milk"
-          ]
-        },
-        {
-          "id": "sick-arm",
-          "title": "跟隨病人手臂，走管道打破紀念盤",
-          "stepIds": [
-            "sick-arm",
-            "plate"
-          ]
-        },
-        {
-          "id": "potato-wait",
-          "title": "切之前，聽完馬鈴薯對話",
-          "stepIds": [
-            "potato-wait"
-          ]
-        },
-        {
-          "id": "chips-cow",
-          "title": "送薯條給牛，完成飲茶事件",
-          "stepIds": [
-            "chips-cow",
-            "tea"
-          ],
-          "trophyId": "t05"
         }
       ]
     },
@@ -2916,37 +2522,6 @@
             "mole-cancel"
           ]
         }
-      ],
-      "milestones": [
-        {
-          "id": "bubble",
-          "title": "完成氣泡與逮捕事件",
-          "stepIds": [
-            "bubble"
-          ],
-          "trophyId": "t06"
-        },
-        {
-          "id": "shopping",
-          "title": "購物後，巡完地面蝸牛位置",
-          "stepIds": [
-            "shopping",
-            "snail-sue",
-            "snail-crops",
-            "snail-gate",
-            "snail-stone",
-            "snail-tree",
-            "snail-bench"
-          ]
-        },
-        {
-          "id": "snail-well",
-          "title": "最後跳井，聽鼴鼠道別",
-          "stepIds": [
-            "snail-well",
-            "mole-cancel"
-          ]
-        }
       ]
     },
     {
@@ -3153,68 +2728,6 @@
             "ending",
             "platinum"
           ]
-        }
-      ],
-      "milestones": [
-        {
-          "id": "fish-final",
-          "title": "魚販｜最後一次互動",
-          "stepIds": [
-            "fish-final"
-          ]
-        },
-        {
-          "id": "cheek-final",
-          "title": "餐車｜最後一次互動",
-          "stepIds": [
-            "cheek-final"
-          ]
-        },
-        {
-          "id": "pub-final",
-          "title": "酒館｜最後一次回訪",
-          "stepIds": [
-            "pub-final"
-          ]
-        },
-        {
-          "id": "police-final",
-          "title": "警察亭｜確認丟蛋把戲",
-          "stepIds": [
-            "police-final"
-          ]
-        },
-        {
-          "id": "spill",
-          "title": "拍落窮困男子豆罐",
-          "stepIds": [
-            "spill"
-          ]
-        },
-        {
-          "id": "before-ending",
-          "title": "送湯前核對，再完成送湯",
-          "stepIds": [
-            "before-ending",
-            "soup"
-          ],
-          "trophyId": "t07"
-        },
-        {
-          "id": "ending",
-          "title": "完成主線結局",
-          "stepIds": [
-            "ending"
-          ],
-          "trophyId": "t08"
-        },
-        {
-          "id": "platinum",
-          "title": "確認白金已解鎖",
-          "stepIds": [
-            "platinum"
-          ],
-          "trophyId": "t00"
         }
       ]
     }

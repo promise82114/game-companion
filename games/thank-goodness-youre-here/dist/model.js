@@ -1,6 +1,6 @@
 (function (global) {
   'use strict';
-  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.', moduleVersion = '1.4.0';
+  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.', moduleVersion = '1.4.1';
   const clone = value => JSON.parse(JSON.stringify(value));
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   function fresh() {

@@ -61,20 +61,21 @@ assert.ok(!/<script|\bon\w+=|(?:href|src)="https?:/i.test(portraitSvg),'頭像�
 for(const file of ['shared/progress-envelope.js','shared/sync-core.js','model.js','roadmap.js'])vm.runInContext(await fs.readFile(new URL(file,dir),'utf8'),context);
 const {RoadmapModel:model,SideProjectSync:core}=context.window,base=model.fresh();
 const roadmap=context.window.RoadmapProgress.create(guide);
-assert.equal(roadmap.milestones.length,60);assert.equal(new Set(roadmap.milestones.map(item=>item.id)).size,60);
-assert.equal(roadmap.milestones.filter(item=>item.trophyId).length,11);
+assert.equal(roadmap.milestones.length,100);assert.equal(new Set(roadmap.milestones.map(item=>item.id)).size,100);
 for(const stage of guide.stages){
- assert.deepEqual(stage.milestones.flatMap(item=>item.stepIds),stage.steps.map(step=>step.id),'成果須依原順序完整覆蓋操作說明');
- for(const item of stage.milestones){assert.ok(item.title.trim());assert.equal(item.id,item.stepIds[0]);if(item.trophyId){assert.ok(trophyIds.has(item.trophyId));assert.ok(item.stepIds.some(id=>steps.find(step=>step.id===id).trophyIds.includes(item.trophyId)));assert.equal(guide.trophies.find(trophy=>trophy.id===item.trophyId).progress,undefined,'跨階段進度不可改用單次跳盃取代');}}
+ assert.deepEqual(roadmap.forStage(stage.id).map(item=>item.id),stage.steps.map(step=>step.id),'每個原始步驟都須依原順序獨立追蹤');
+ for(const item of roadmap.forStage(stage.id)){assert.equal(item.stepIds.length,1);assert.equal(item.steps.length,1);assert.equal(item.id,item.stepIds[0]);assert.equal(item.trophyId,undefined);}
 }
 const snailResult=roadmap.byStep.get('snail-sue'),gullResult=roadmap.byStep.get('gull-oily');
-assert.equal(snailResult,roadmap.byStep.get('snail-bench'));assert.equal(gullResult,roadmap.byStep.get('pub-beans'));assert.equal(gullResult.stepIds.length,7);
+assert.notEqual(snailResult,roadmap.byStep.get('snail-bench'));assert.notEqual(gullResult,roadmap.byStep.get('pub-beans'));
 const partial={...base,stepDone:{'snail-sue':true,'future-step':true},trophyEarned:{t31:true}};
-assert.equal(roadmap.done(snailResult,partial),false);assert.equal(roadmap.recorded(snailResult,partial),1);
-const fullSnails={...partial,stepDone:{...partial.stepDone,...Object.fromEntries(snailResult.stepIds.map(id=>[id,true]))},trophyEarned:{}};
-assert.equal(roadmap.done(snailResult,fullSnails),true);assert.equal(fullSnails.trophyEarned.t31,undefined);
-assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,stepDone:{'leave-reception':true}}),false,'舊操作完成不能冒充跳盃');
-assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,trophyEarned:{t24:true}}),true);
+assert.equal(roadmap.done(snailResult,partial),true);assert.equal(roadmap.done(roadmap.byStep.get('snail-bench'),partial),false);
+const fullSnails={...partial,stepDone:{...partial.stepDone,...Object.fromEntries(['shopping','snail-sue','snail-crops','snail-gate','snail-stone','snail-tree','snail-bench'].map(id=>[id,true]))},trophyEarned:{}};
+for(const id of ['shopping','snail-sue','snail-bench'])assert.equal(roadmap.done(roadmap.byStep.get(id),fullSnails),true);
+const oneCancelled={...fullSnails,stepDone:{...fullSnails.stepDone,'snail-tree':false}};
+assert.equal(roadmap.done(roadmap.byStep.get('snail-tree'),oneCancelled),false);assert.equal(roadmap.done(roadmap.byStep.get('snail-sue'),oneCancelled),true);assert.equal(oneCancelled.stepDone['future-step'],true);
+assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,stepDone:{'leave-reception':true}}),true);
+assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,trophyEarned:{t24:true}}),false,'只確認過獎盃不能代填操作步驟');
 assert.equal(new Set(guide.routeChecks.map(check=>check.id)).size,guide.routeChecks.length);
 for(const check of guide.routeChecks){
  assert.ok(stepIds.has(check.beforeStepId));assert.ok(check.risk.trim());assert.ok(['consensus','unverified'].includes(check.verificationStatus));
