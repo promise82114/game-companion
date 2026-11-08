@@ -795,9 +795,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m01",
       "weaponIds": [
-        "weapon-aw-furious-2",
         "weapon-ae-2030",
-        "weapon-sq-sky-tango"
+        "weapon-aw-furious-2",
+        "weapon-sq-sky-tango",
+        "weapon-wiki-52-d927b280d4cd",
+        "weapon-wiki-85-25ed4a93290f"
       ]
     },
     {
@@ -974,7 +976,8 @@
           "displayName": "RC-イタリア・トゥリッタ",
           "sourceIds": [
             "wiki-m02"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-5b602fefa93a"
         },
         {
           "difficulty": "Hardest",
@@ -1041,6 +1044,7 @@
       "droneId": "drone-m02",
       "weaponIds": [
         "weapon-aw-outrage",
+        "weapon-wiki-44-5b602fefa93a",
         "weapon-tf-anger-gd"
       ]
     },
@@ -1207,7 +1211,8 @@
           "displayName": "MC-アークソードType.S",
           "sourceIds": [
             "wiki-m03"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-def46c695f73"
         },
         {
           "difficulty": "Hard",
@@ -1277,7 +1282,8 @@
           "displayName": "PC-トルネード・ミリオネア",
           "sourceIds": [
             "wiki-m03"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-66f68ade6872"
         },
         {
           "difficulty": "Hardest",
@@ -1343,7 +1349,9 @@
       "bossNamesSource": [],
       "droneId": "drone-m03",
       "weaponIds": [
-        "weapon-fx-naughty-boy"
+        "weapon-fx-naughty-boy",
+        "weapon-wiki-45-66f68ade6872",
+        "weapon-wiki-51-def46c695f73"
       ]
     },
     {
@@ -1411,7 +1419,8 @@
           "displayName": "AE-2032-ゴーストBDN",
           "sourceIds": [
             "wiki-m04"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-061e5099d05b"
         },
         {
           "difficulty": "Easy / Normal",
@@ -1481,7 +1490,8 @@
           "displayName": "AE-2032-ゴーストPNT",
           "sourceIds": [
             "wiki-m04"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-fdbef96a192f"
         },
         {
           "difficulty": "Hard",
@@ -1537,7 +1547,8 @@
           "displayName": "PG-傀儡師・ほつれ",
           "sourceIds": [
             "wiki-m04"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-b19e6c597d46"
         }
       ],
       "excludedRewards": [
@@ -1588,7 +1599,11 @@
       },
       "bossNamesSource": [],
       "droneId": "drone-m04",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-061e5099d05b",
+        "weapon-wiki-40-fdbef96a192f",
+        "weapon-wiki-40-b19e6c597d46"
+      ]
     },
     {
       "id": "m05",
@@ -1709,7 +1724,8 @@
           "displayName": "FX-ラッキーガール",
           "sourceIds": [
             "wiki-m05"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-7288fe501657"
         },
         {
           "difficulty": "Hard",
@@ -1765,7 +1781,8 @@
           "displayName": "SH-戦略的自壊型決戦用轟砲",
           "sourceIds": [
             "wiki-m05"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-453f3554cc26"
         },
         {
           "difficulty": "Hardest",
@@ -1803,7 +1820,9 @@
       "bossNamesSource": [],
       "droneId": "drone-m05",
       "weaponIds": [
-        "weapon-tf-anger"
+        "weapon-wiki-44-7288fe501657",
+        "weapon-tf-anger",
+        "weapon-wiki-50-453f3554cc26"
       ]
     },
     {
@@ -1941,7 +1960,8 @@
           "displayName": "SH-2039SS",
           "sourceIds": [
             "wiki-m06"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-28f23aeb50bf"
         },
         {
           "difficulty": "Hard",
@@ -1997,7 +2017,8 @@
           "displayName": "RC-ゲンナイ",
           "sourceIds": [
             "wiki-m06"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-2fe0e74a39de"
         },
         {
           "difficulty": "Hardest",
@@ -2073,7 +2094,10 @@
       "bossNamesSource": [],
       "droneId": "drone-m06",
       "weaponIds": [
-        "weapon-sp-cornet"
+        "weapon-wiki-40-b7e0a6cbf851",
+        "weapon-wiki-44-2fe0e74a39de",
+        "weapon-sp-cornet",
+        "weapon-wiki-50-28f23aeb50bf"
       ]
     },
     {
@@ -2227,7 +2251,8 @@
           "displayName": "EC-エクスターミネーターMk.II",
           "sourceIds": [
             "wiki-m07"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-7e2cd317218c"
         },
         {
           "difficulty": "Hard",
@@ -2255,7 +2280,8 @@
           "displayName": "RC-ファラデー",
           "sourceIds": [
             "wiki-m07"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-6d617a1bf10c"
         },
         {
           "difficulty": "Hardest",
@@ -2321,8 +2347,10 @@
       "bossNamesSource": [],
       "droneId": "drone-m07",
       "weaponIds": [
+        "weapon-wiki-44-6d617a1bf10c",
         "weapon-tf-grudge",
-        "weapon-mc-proto-arc-sword"
+        "weapon-mc-proto-arc-sword",
+        "weapon-wiki-52-7e2cd317218c"
       ]
     },
     {
@@ -2408,7 +2436,8 @@
           "displayName": "GK-アサルトチェイサー",
           "sourceIds": [
             "wiki-m08"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-f709afc1a9ac"
         },
         {
           "difficulty": "Easy / Normal",
@@ -2478,7 +2507,8 @@
           "displayName": "AW-ドッペルアドラー",
           "sourceIds": [
             "wiki-m08"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-34b93ecd4f44"
         },
         {
           "difficulty": "Hard",
@@ -2520,7 +2550,8 @@
           "displayName": "SP-サハラ改",
           "sourceIds": [
             "wiki-m08"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-350bc74a43f0"
         },
         {
           "difficulty": "Disaster",
@@ -2534,7 +2565,8 @@
           "displayName": "TF-アンガーGD-II",
           "sourceIds": [
             "wiki-m08"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-126721ccd64c"
         }
       ],
       "excludedRewards": [],
@@ -2558,7 +2590,11 @@
       ],
       "droneId": "drone-m08",
       "weaponIds": [
-        "weapon-ae-2032gd-i"
+        "weapon-ae-2032gd-i",
+        "weapon-wiki-40-34b93ecd4f44",
+        "weapon-wiki-42-f709afc1a9ac",
+        "weapon-wiki-45-350bc74a43f0",
+        "weapon-wiki-48-126721ccd64c"
       ]
     },
     {
@@ -2632,7 +2668,8 @@
           "displayName": "RC-フェルミ",
           "sourceIds": [
             "wiki-m09"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-c9fe2a10a194"
         },
         {
           "difficulty": "Easy / Normal",
@@ -2703,7 +2740,8 @@
           "displayName": "SQ-スカイタンゴ・セカンドヒート",
           "sourceIds": [
             "wiki-m09"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-dc1ddfa1c8ad"
         },
         {
           "difficulty": "Hard",
@@ -2773,7 +2811,8 @@
           "displayName": "SH-プレスト",
           "sourceIds": [
             "wiki-m09"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-18c276529720"
         },
         {
           "difficulty": "Hardest",
@@ -2848,6 +2887,9 @@
       "bossNamesSource": [],
       "droneId": "drone-m09",
       "weaponIds": [
+        "weapon-wiki-43-dc1ddfa1c8ad",
+        "weapon-wiki-44-c9fe2a10a194",
+        "weapon-wiki-50-18c276529720",
         "weapon-ec-rodeo"
       ]
     },
@@ -3015,7 +3057,8 @@
           "displayName": "BS-Opx.A3\"Abigail\"",
           "sourceIds": [
             "wiki-m10"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-8ffaab0f1078"
         },
         {
           "difficulty": "Hard",
@@ -3072,7 +3115,8 @@
           "displayName": "AE-2032-サンタクロース",
           "sourceIds": [
             "wiki-m10"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-7dd95eea4b02"
         }
       ],
       "excludedRewards": [],
@@ -3096,9 +3140,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m10",
       "weaponIds": [
-        "weapon-sq-curtain-call",
-        "weapon-sq-sky-waltz",
+        "weapon-wiki-40-7dd95eea4b02",
         "weapon-bs-opx-a1-alice",
+        "weapon-wiki-42-8ffaab0f1078",
+        "weapon-sq-sky-waltz",
+        "weapon-sq-curtain-call",
         "weapon-sl-sonic-pile-plus"
       ]
     },
@@ -3168,7 +3214,8 @@
           "displayName": "PT-オングストロームα",
           "sourceIds": [
             "wiki-m11"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-08856425a3a8"
         },
         {
           "difficulty": "Easy / Normal",
@@ -3224,7 +3271,8 @@
           "displayName": "MR-連装レーザー/チャンドラB",
           "sourceIds": [
             "wiki-m11"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-43bb990a1c1d"
         },
         {
           "difficulty": "Hard",
@@ -3266,7 +3314,8 @@
           "displayName": "FX-ヘイルバスター",
           "sourceIds": [
             "wiki-m11"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-9d007484d2e5"
         },
         {
           "difficulty": "Hardest",
@@ -3358,7 +3407,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m11",
       "weaponIds": [
-        "weapon-sq-multiple-missile-six"
+        "weapon-sq-multiple-missile-six",
+        "weapon-wiki-44-9d007484d2e5",
+        "weapon-wiki-48-5bbab82b77c6",
+        "weapon-wiki-50-08856425a3a8",
+        "weapon-wiki-54-43bb990a1c1d"
       ]
     },
     {
@@ -3497,7 +3550,8 @@
           "displayName": "EC-ロデオ・パワード",
           "sourceIds": [
             "wiki-m12"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-3f6bfdca0738"
         },
         {
           "difficulty": "Hard",
@@ -3511,7 +3565,8 @@
           "displayName": "BL-カデシュ",
           "sourceIds": [
             "wiki-m12"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-5c10d81893b4"
         },
         {
           "difficulty": "Hard",
@@ -3567,7 +3622,8 @@
           "displayName": "PC-サッカー・パンチ",
           "sourceIds": [
             "wiki-m12"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-1c8ac8b44192"
         }
       ],
       "excludedRewards": [],
@@ -3593,7 +3649,10 @@
       ],
       "droneId": "drone-m12",
       "weaponIds": [
-        "weapon-fx-darius-i"
+        "weapon-fx-darius-i",
+        "weapon-wiki-45-1c8ac8b44192",
+        "weapon-wiki-52-3f6bfdca0738",
+        "weapon-wiki-53-5c10d81893b4"
       ]
     },
     {
@@ -3666,7 +3725,8 @@
           "displayName": "AW-ランページ",
           "sourceIds": [
             "wiki-m13"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-08651e6f9136"
         },
         {
           "difficulty": "Easy / Normal",
@@ -3737,7 +3797,8 @@
           "displayName": "AE-2032GD-II",
           "sourceIds": [
             "wiki-m13"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-65db4db88167"
         },
         {
           "difficulty": "Hard",
@@ -3751,7 +3812,8 @@
           "displayName": "MC-アークソード改",
           "sourceIds": [
             "wiki-m13"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-42809a22d4bd"
         },
         {
           "difficulty": "Hard",
@@ -3835,7 +3897,8 @@
           "displayName": "CM-メーザーライフル",
           "sourceIds": [
             "wiki-m13"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-85ac49789be6"
         }
       ],
       "excludedRewards": [
@@ -3871,7 +3934,13 @@
       ],
       "droneId": "drone-m13",
       "weaponIds": [
-        "weapon-sp-30y-da"
+        "weapon-wiki-40-65db4db88167",
+        "weapon-wiki-40-08651e6f9136",
+        "weapon-wiki-40-3fb431c7dc7a",
+        "weapon-wiki-40-e324199371ee",
+        "weapon-wiki-42-85ac49789be6",
+        "weapon-sp-30y-da",
+        "weapon-wiki-51-42809a22d4bd"
       ]
     },
     {
@@ -3942,7 +4011,8 @@
           "displayName": "SP-カラハリ",
           "sourceIds": [
             "wiki-m14"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-6e7a781efaf6"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4014,7 +4084,8 @@
           "displayName": "SP-ユーフォニアムGD",
           "sourceIds": [
             "wiki-m14"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-9d928831f280"
         },
         {
           "difficulty": "Hard",
@@ -4028,7 +4099,8 @@
           "displayName": "TF-グラッジP/3way",
           "sourceIds": [
             "wiki-m14"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-99f825889381"
         },
         {
           "difficulty": "Hard",
@@ -4070,7 +4142,8 @@
           "displayName": "SN-アポカリプス・セカンド",
           "sourceIds": [
             "wiki-m14"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-a9dc6acde999"
         },
         {
           "difficulty": "Hardest",
@@ -4120,8 +4193,12 @@
       "bossNamesSource": [],
       "droneId": "drone-m14",
       "weaponIds": [
+        "weapon-wiki-45-6e7a781efaf6",
+        "weapon-wiki-45-9d928831f280",
         "weapon-tf-anger-3way",
-        "weapon-mc-arc-sword-type-w"
+        "weapon-wiki-48-99f825889381",
+        "weapon-mc-arc-sword-type-w",
+        "weapon-wiki-55-a9dc6acde999"
       ]
     },
     {
@@ -4222,7 +4299,8 @@
           "displayName": "CM-バリオン",
           "sourceIds": [
             "wiki-m15"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-5d2347d245a9"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4320,7 +4398,8 @@
           "displayName": "SP-サハラ",
           "sourceIds": [
             "wiki-m15"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-5f8279fa7101"
         },
         {
           "difficulty": "Hard",
@@ -4334,7 +4413,8 @@
           "displayName": "BL-ガウガメラ・ジェノサイド",
           "sourceIds": [
             "wiki-m15"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-5cb55cece788"
         },
         {
           "difficulty": "Hard",
@@ -4404,7 +4484,8 @@
           "displayName": "SL-ヴィオラ・カルテット",
           "sourceIds": [
             "wiki-m15"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-75f54794a22e"
         },
         {
           "difficulty": "Hardest",
@@ -4460,7 +4541,11 @@
       "droneId": "drone-m15",
       "weaponIds": [
         "weapon-ae-2040a",
-        "weapon-sh-allegretto"
+        "weapon-wiki-42-5d2347d245a9",
+        "weapon-wiki-45-5f8279fa7101",
+        "weapon-sh-allegretto",
+        "weapon-wiki-53-5cb55cece788",
+        "weapon-wiki-77-75f54794a22e"
       ]
     },
     {
@@ -4529,7 +4614,8 @@
           "displayName": "SP-サーサーン",
           "sourceIds": [
             "wiki-m16"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-9ba80aa3df31"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4543,7 +4629,8 @@
           "displayName": "SH-ソナチネ",
           "sourceIds": [
             "wiki-m16"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-b28110be1cd4"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4585,7 +4672,8 @@
           "displayName": "AW-ラス",
           "sourceIds": [
             "wiki-m16"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-460ffea2c566"
         },
         {
           "difficulty": "Hard",
@@ -4599,7 +4687,8 @@
           "displayName": "BS-Opx.E1\"Elizabeth\"",
           "sourceIds": [
             "wiki-m16"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-b8589a62b029"
         },
         {
           "difficulty": "Hard",
@@ -4627,7 +4716,8 @@
           "displayName": "SN-ナイル・ジェットパルサー",
           "sourceIds": [
             "wiki-m16"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-d46090ab3360"
         },
         {
           "difficulty": "Hardest",
@@ -4674,7 +4764,14 @@
       },
       "bossNamesSource": [],
       "droneId": "drone-m16",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-460ffea2c566",
+        "weapon-wiki-42-b8589a62b029",
+        "weapon-wiki-45-9ba80aa3df31",
+        "weapon-wiki-45-5abb369978d4",
+        "weapon-wiki-50-b28110be1cd4",
+        "weapon-wiki-55-d46090ab3360"
+      ]
     },
     {
       "id": "m17",
@@ -4758,7 +4855,8 @@
           "displayName": "TF-グラッジP",
           "sourceIds": [
             "wiki-m17"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-f9a251bac7da"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4800,7 +4898,8 @@
           "displayName": "SH-アレグロ",
           "sourceIds": [
             "wiki-m17"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-2b14d8997d23"
         },
         {
           "difficulty": "Hard",
@@ -4871,7 +4970,8 @@
           "displayName": "MR-連装レーザー/チャンドラA*",
           "sourceIds": [
             "wiki-m17"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-15343f1de93e"
         }
       ],
       "excludedRewards": [],
@@ -4898,7 +4998,10 @@
       "droneId": "drone-m17",
       "weaponIds": [
         "weapon-aw-furious-ares",
+        "weapon-wiki-48-f9a251bac7da",
         "weapon-sh-allegretto",
+        "weapon-wiki-50-2b14d8997d23",
+        "weapon-wiki-54-15343f1de93e",
         "weapon-sn-iguazu-2"
       ]
     },
@@ -4973,7 +5076,8 @@
           "displayName": "AE-2032-ゴーストSTL",
           "sourceIds": [
             "wiki-m18"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-d731baa9b3e0"
         },
         {
           "difficulty": "Easy / Normal",
@@ -4987,7 +5091,8 @@
           "displayName": "TF-フレイムアンガー",
           "sourceIds": [
             "wiki-m18"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-3994bdaaede5"
         },
         {
           "difficulty": "Easy / Normal",
@@ -5057,7 +5162,8 @@
           "displayName": "SP-70X",
           "sourceIds": [
             "wiki-m18"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-4e75c3240e05"
         },
         {
           "difficulty": "Hard",
@@ -5071,7 +5177,8 @@
           "displayName": "SL-アラベスク",
           "sourceIds": [
             "wiki-m18"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-8bf319ea77bd"
         },
         {
           "difficulty": "Hard",
@@ -5141,7 +5248,8 @@
           "displayName": "SN-イグアス3号基",
           "sourceIds": [
             "wiki-m18"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-e739883f0c29"
         },
         {
           "difficulty": "Hardest",
@@ -5190,7 +5298,14 @@
         "Hivecraft"
       ],
       "droneId": "drone-m18",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-d731baa9b3e0",
+        "weapon-wiki-45-4e75c3240e05",
+        "weapon-wiki-48-3994bdaaede5",
+        "weapon-wiki-50-248a6c5e9b64",
+        "weapon-wiki-55-e739883f0c29",
+        "weapon-wiki-77-8bf319ea77bd"
+      ]
     },
     {
       "id": "m19",
@@ -5273,7 +5388,8 @@
           "displayName": "DD-テスラI型",
           "sourceIds": [
             "wiki-m19"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-f1d2207ed8e1"
         },
         {
           "difficulty": "Easy / Normal",
@@ -5329,7 +5445,8 @@
           "displayName": "AE-ラ・マルセイエーズ",
           "sourceIds": [
             "wiki-m19"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-2c5e0616ec1c"
         },
         {
           "difficulty": "Hard",
@@ -5343,7 +5460,8 @@
           "displayName": "BS-Opx.G1\"Gabriela\"",
           "sourceIds": [
             "wiki-m19"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-543d879faafe"
         },
         {
           "difficulty": "Hard",
@@ -5399,7 +5517,8 @@
           "displayName": "MR-連装ミサイル/ケプラーII",
           "sourceIds": [
             "wiki-m19"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-17946a411671"
         },
         {
           "difficulty": "Hardest",
@@ -5479,7 +5598,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m19",
       "weaponIds": [
-        "weapon-sh-2033gd"
+        "weapon-wiki-40-2c5e0616ec1c",
+        "weapon-wiki-42-543d879faafe",
+        "weapon-wiki-48-f1d2207ed8e1",
+        "weapon-sh-2033gd",
+        "weapon-wiki-54-17946a411671"
       ]
     },
     {
@@ -5555,7 +5678,8 @@
           "displayName": "SP-コルネットEx",
           "sourceIds": [
             "wiki-m20"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-4fe6414bd83e"
         },
         {
           "difficulty": "Easy / Normal",
@@ -5626,7 +5750,8 @@
           "displayName": "SL-ジェスター2",
           "sourceIds": [
             "wiki-m20"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-e1f0641c6cfa"
         },
         {
           "difficulty": "Hard",
@@ -5640,7 +5765,8 @@
           "displayName": "WS-ネイピアレーザーSC",
           "sourceIds": [
             "wiki-m20"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-ec1b85dcc80d"
         },
         {
           "difficulty": "Hard",
@@ -5682,7 +5808,8 @@
           "displayName": "PT-ナイト・スナイパー",
           "sourceIds": [
             "wiki-m20"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-809e8f5c93dc"
         },
         {
           "difficulty": "Hardest",
@@ -5751,7 +5878,11 @@
       ],
       "droneId": "drone-m20",
       "weaponIds": [
-        "weapon-mc-arc-sword"
+        "weapon-wiki-43-ec1b85dcc80d",
+        "weapon-wiki-45-4fe6414bd83e",
+        "weapon-wiki-50-809e8f5c93dc",
+        "weapon-mc-arc-sword",
+        "weapon-wiki-77-e1f0641c6cfa"
       ]
     },
     {
@@ -5819,7 +5950,8 @@
           "displayName": "AW-フューリアス",
           "sourceIds": [
             "wiki-m21"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-fb16ce012bd7"
         },
         {
           "difficulty": "Easy / Normal",
@@ -5833,7 +5965,8 @@
           "displayName": "FX-クセルクセス",
           "sourceIds": [
             "wiki-m21"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-30d21056a60f"
         },
         {
           "difficulty": "Easy / Normal",
@@ -5889,7 +6022,8 @@
           "displayName": "AW-フューリアスGD",
           "sourceIds": [
             "wiki-m21"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-cd4fc34c66fd"
         },
         {
           "difficulty": "Hard",
@@ -5903,7 +6037,8 @@
           "displayName": "MR-照射レーザー/ハッブル",
           "sourceIds": [
             "wiki-m21"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-1d88299c02aa"
         },
         {
           "difficulty": "Hard",
@@ -5959,7 +6094,8 @@
           "displayName": "SN-アルマゲドン・セカンド",
           "sourceIds": [
             "wiki-m21"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-4063922f40a4"
         },
         {
           "difficulty": "Hardest",
@@ -6022,7 +6158,13 @@
       },
       "bossNamesSource": [],
       "droneId": "drone-m21",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-fb16ce012bd7",
+        "weapon-wiki-40-cd4fc34c66fd",
+        "weapon-wiki-44-30d21056a60f",
+        "weapon-wiki-54-1d88299c02aa",
+        "weapon-wiki-55-4063922f40a4"
+      ]
     },
     {
       "id": "m22",
@@ -6084,7 +6226,8 @@
           "displayName": "WS-ネイピアレーザー",
           "sourceIds": [
             "wiki-m22"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-8068ad30ef27"
         },
         {
           "difficulty": "Easy / Normal",
@@ -6155,7 +6298,8 @@
           "displayName": "SQ-スカイサルサ",
           "sourceIds": [
             "wiki-m22"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-bb244d4d7b62"
         },
         {
           "difficulty": "Hard",
@@ -6169,7 +6313,8 @@
           "displayName": "BS-ブラスターガンIII",
           "sourceIds": [
             "wiki-m22"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-2d6ccb44e20d"
         },
         {
           "difficulty": "Hard",
@@ -6211,7 +6356,8 @@
           "displayName": "SL-ローレンツ",
           "sourceIds": [
             "wiki-m22"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-33c03464787f"
         }
       ],
       "excludedRewards": [],
@@ -6235,7 +6381,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m22",
       "weaponIds": [
-        "weapon-ec-exterminator"
+        "weapon-wiki-42-2d6ccb44e20d",
+        "weapon-wiki-43-bb244d4d7b62",
+        "weapon-wiki-43-8068ad30ef27",
+        "weapon-ec-exterminator",
+        "weapon-wiki-77-33c03464787f"
       ]
     },
     {
@@ -6320,7 +6470,8 @@
           "displayName": "PC-ハリケーン",
           "sourceIds": [
             "wiki-m23"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-9615c612de18"
         },
         {
           "difficulty": "Easy / Normal",
@@ -6390,7 +6541,8 @@
           "displayName": "EC-Opx.D1\"David\"",
           "sourceIds": [
             "wiki-m23"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-566b5a80e634"
         },
         {
           "difficulty": "Hard",
@@ -6432,7 +6584,8 @@
           "displayName": "SH-アレグリッシモ",
           "sourceIds": [
             "wiki-m23"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-3151500a93a5"
         },
         {
           "difficulty": "Hardest",
@@ -6446,7 +6599,8 @@
           "displayName": "EC-マタドール",
           "sourceIds": [
             "wiki-m23"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-05eca4c6ce6e"
         },
         {
           "difficulty": "Hardest",
@@ -6498,8 +6652,13 @@
       "bossNamesSource": [],
       "droneId": "drone-m23",
       "weaponIds": [
+        "weapon-ae-20nn",
         "weapon-aw-furious-ares",
-        "weapon-ae-20nn"
+        "weapon-wiki-44-df8aed5ca012",
+        "weapon-wiki-45-9615c612de18",
+        "weapon-wiki-50-3151500a93a5",
+        "weapon-wiki-52-05eca4c6ce6e",
+        "weapon-wiki-52-566b5a80e634"
       ]
     },
     {
@@ -6570,7 +6729,8 @@
           "displayName": "PG-ヴィクトリー",
           "sourceIds": [
             "wiki-m24"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-a73d8057c968"
         },
         {
           "difficulty": "Easy / Normal",
@@ -6640,7 +6800,8 @@
           "displayName": "RC-フェルミ・フィーネ",
           "sourceIds": [
             "wiki-m24"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-c28969dd30f0"
         },
         {
           "difficulty": "Hard",
@@ -6724,7 +6885,8 @@
           "displayName": "MC-アークソードType.SXS",
           "sourceIds": [
             "wiki-m24"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-fa0f57a12049"
         },
         {
           "difficulty": "Hardest",
@@ -6764,7 +6926,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m24",
       "weaponIds": [
-        "weapon-bs-opx-c1-celia"
+        "weapon-wiki-40-a73d8057c968",
+        "weapon-bs-opx-c1-celia",
+        "weapon-wiki-43-ea144ab0caa7",
+        "weapon-wiki-44-c28969dd30f0",
+        "weapon-wiki-51-fa0f57a12049"
       ]
     },
     {
@@ -6834,7 +7000,8 @@
           "displayName": "AW-ラス試作型",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-1754e0762002"
         },
         {
           "difficulty": "Easy / Normal",
@@ -6848,7 +7015,8 @@
           "displayName": "CM-メーザーライフル試作型",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-f98625ad1e18"
         },
         {
           "difficulty": "Easy / Normal",
@@ -6890,7 +7058,8 @@
           "displayName": "SQ-マウナケア改",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-f268bae17573"
         },
         {
           "difficulty": "Hard",
@@ -6904,7 +7073,8 @@
           "displayName": "SL-アケメネスVII",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-b9133bffa7f9"
         },
         {
           "difficulty": "Hard",
@@ -6946,7 +7116,8 @@
           "displayName": "PG-ピノッキオ",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-d315683ec95a"
         },
         {
           "difficulty": "Hardest",
@@ -6960,7 +7131,8 @@
           "displayName": "TF-グラッジP/X",
           "sourceIds": [
             "wiki-m25"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-462d09c6655a"
         },
         {
           "difficulty": "Hardest",
@@ -6999,7 +7171,14 @@
       },
       "bossNamesSource": [],
       "droneId": "drone-m25",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-1754e0762002",
+        "weapon-wiki-40-d315683ec95a",
+        "weapon-wiki-42-f98625ad1e18",
+        "weapon-wiki-43-f268bae17573",
+        "weapon-wiki-48-462d09c6655a",
+        "weapon-wiki-77-b9133bffa7f9"
+      ]
     },
     {
       "id": "m26",
@@ -7075,7 +7254,8 @@
           "displayName": "RC-フェルミ・コーダ",
           "sourceIds": [
             "wiki-m26"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-55ffc172a8a0"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7089,7 +7269,8 @@
           "displayName": "MC-アークソードType.R",
           "sourceIds": [
             "wiki-m26"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-febd3e0d3381"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7145,7 +7326,8 @@
           "displayName": "PT-シャドウ・スナイパーGD",
           "sourceIds": [
             "wiki-m26"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-390c2d272f7b"
         },
         {
           "difficulty": "Hard",
@@ -7159,7 +7341,8 @@
           "displayName": "SN-ナイル3号基",
           "sourceIds": [
             "wiki-m26"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-5984b93dba39"
         },
         {
           "difficulty": "Hard",
@@ -7201,7 +7384,8 @@
           "displayName": "SH-戦略的自壊型最終決戦用轟砲",
           "sourceIds": [
             "wiki-m26"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-9ebff6ce6e91"
         }
       ],
       "excludedRewards": [],
@@ -7226,7 +7410,13 @@
         "Beizal"
       ],
       "droneId": "drone-m26",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-44-55ffc172a8a0",
+        "weapon-wiki-50-9ebff6ce6e91",
+        "weapon-wiki-50-390c2d272f7b",
+        "weapon-wiki-51-febd3e0d3381",
+        "weapon-wiki-55-5984b93dba39"
+      ]
     },
     {
       "id": "m27",
@@ -7306,7 +7496,8 @@
           "displayName": "PC-パンチャー",
           "sourceIds": [
             "mission-wiki-27"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-7ccdbeeaecbe"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7366,7 +7557,8 @@
           "displayName": "PT-オングストロームγ",
           "sourceIds": [
             "mission-wiki-27"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-d00e0ef11b85"
         },
         {
           "difficulty": "Hard",
@@ -7378,7 +7570,8 @@
           "displayName": "SN-アルマゲドン",
           "sourceIds": [
             "mission-wiki-27"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-6ad278ff7b52"
         },
         {
           "difficulty": "Hard",
@@ -7438,7 +7631,8 @@
           "displayName": "SQ-スカイサルサGD",
           "sourceIds": [
             "mission-wiki-27"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-a785e0e6e804"
         },
         {
           "difficulty": "Hardest",
@@ -7450,7 +7644,8 @@
           "displayName": "EC-エクスターミネーターMk.III",
           "sourceIds": [
             "mission-wiki-27"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-98606a62a946"
         },
         {
           "difficulty": "Hardest",
@@ -7527,7 +7722,13 @@
       ],
       "droneId": "drone-m27",
       "weaponIds": [
-        "weapon-sq-sky-rumba"
+        "weapon-sq-sky-rumba",
+        "weapon-wiki-43-a785e0e6e804",
+        "weapon-wiki-45-7ccdbeeaecbe",
+        "weapon-wiki-50-d00e0ef11b85",
+        "weapon-wiki-50-802f17eec3b4",
+        "weapon-wiki-52-98606a62a946",
+        "weapon-wiki-55-6ad278ff7b52"
       ]
     },
     {
@@ -7600,7 +7801,8 @@
           "displayName": "PG-道化師",
           "sourceIds": [
             "mission-wiki-28"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-58d4b274caec"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7612,7 +7814,8 @@
           "displayName": "PT-ダークスナイパー",
           "sourceIds": [
             "mission-wiki-28"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-a3ce9d1f08c7"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7673,7 +7876,8 @@
           "displayName": "RC-マクスゥエル",
           "sourceIds": [
             "mission-wiki-28"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-c4a38a8717f7"
         },
         {
           "difficulty": "Hard",
@@ -7697,7 +7901,8 @@
           "displayName": "EC-Opx.D3\"Dolph\"",
           "sourceIds": [
             "mission-wiki-28"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-cfd4d150ad5b"
         },
         {
           "difficulty": "Hardest",
@@ -7733,7 +7938,8 @@
           "displayName": "PT-フォトンサプライアX",
           "sourceIds": [
             "mission-wiki-28"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-93ea728c5858"
         }
       ],
       "excludedRewards": [],
@@ -7753,7 +7959,12 @@
       "bossNamesSource": [],
       "droneId": "drone-m28",
       "weaponIds": [
-        "weapon-pt-linked-energy-blaster"
+        "weapon-wiki-40-58d4b274caec",
+        "weapon-wiki-44-c4a38a8717f7",
+        "weapon-wiki-50-a3ce9d1f08c7",
+        "weapon-pt-linked-energy-blaster",
+        "weapon-wiki-50-93ea728c5858",
+        "weapon-wiki-52-cfd4d150ad5b"
       ]
     },
     {
@@ -7842,7 +8053,8 @@
           "displayName": "DD-エーテライト",
           "sourceIds": [
             "mission-wiki-29"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-406f8b960727"
         },
         {
           "difficulty": "Easy / Normal",
@@ -7890,7 +8102,8 @@
           "displayName": "PC-ハード・パンチャー",
           "sourceIds": [
             "mission-wiki-29"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-6eea2f0cc163"
         },
         {
           "difficulty": "Hard",
@@ -7902,7 +8115,8 @@
           "displayName": "SQ-スカイワルツ・アンコール",
           "sourceIds": [
             "mission-wiki-29"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-935418b712b3"
         },
         {
           "difficulty": "Hard",
@@ -7926,7 +8140,8 @@
           "displayName": "SP-サーサーン・センチュリー",
           "sourceIds": [
             "mission-wiki-29"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-c6db29cd2720"
         },
         {
           "difficulty": "Hardest",
@@ -7938,7 +8153,8 @@
           "displayName": "CM-バリオンS",
           "sourceIds": [
             "mission-wiki-29"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-d725e3d1f9ec"
         }
       ],
       "excludedRewards": [],
@@ -7963,7 +8179,13 @@
       "bossNamesSource": [],
       "droneId": "drone-m29",
       "weaponIds": [
-        "weapon-sq-sky-waltz"
+        "weapon-wiki-42-d725e3d1f9ec",
+        "weapon-sq-sky-waltz",
+        "weapon-wiki-43-b9bc6a545892",
+        "weapon-wiki-43-935418b712b3",
+        "weapon-wiki-45-c6db29cd2720",
+        "weapon-wiki-45-6eea2f0cc163",
+        "weapon-wiki-48-406f8b960727"
       ]
     },
     {
@@ -8037,7 +8259,8 @@
           "displayName": "AW-フューリアス改",
           "sourceIds": [
             "mission-wiki-30"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-7b657b2c437c"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8073,7 +8296,8 @@
           "displayName": "PC-グリーン・メガクロス",
           "sourceIds": [
             "mission-wiki-30"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-57a3e3c3bc2d"
         },
         {
           "difficulty": "Hard",
@@ -8085,7 +8309,8 @@
           "displayName": "PT-ユークリッドθ",
           "sourceIds": [
             "mission-wiki-30"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-27b60cbd072c"
         },
         {
           "difficulty": "Hard",
@@ -8143,7 +8368,12 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m30",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-7b657b2c437c",
+        "weapon-wiki-44-10e0a26b4f8c",
+        "weapon-wiki-45-57a3e3c3bc2d",
+        "weapon-wiki-50-27b60cbd072c"
+      ]
     },
     {
       "id": "m31",
@@ -8224,7 +8454,8 @@
           "displayName": "AE-2040",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-5c324b9dfbe6"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8236,7 +8467,8 @@
           "displayName": "RC-ガウス",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-6d9c231c8d22"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8284,7 +8516,8 @@
           "displayName": "AE-2041",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-12a031524827"
         },
         {
           "difficulty": "Hard",
@@ -8332,7 +8565,8 @@
           "displayName": "AE-20XX",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-2a24d06f5cf0"
         },
         {
           "difficulty": "Hardest",
@@ -8344,7 +8578,8 @@
           "displayName": "PC-タイフーン",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-761be47daf2b"
         },
         {
           "difficulty": "Hardest",
@@ -8356,7 +8591,8 @@
           "displayName": "BL-カタラウヌム・トライアンフ",
           "sourceIds": [
             "mission-wiki-31"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-7c8f71a2eda7"
         },
         {
           "difficulty": "Hardest",
@@ -8413,7 +8649,14 @@
         "クィーンアント"
       ],
       "droneId": "drone-m31",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-5c324b9dfbe6",
+        "weapon-wiki-40-12a031524827",
+        "weapon-wiki-40-2a24d06f5cf0",
+        "weapon-wiki-44-6d9c231c8d22",
+        "weapon-wiki-45-761be47daf2b",
+        "weapon-wiki-53-7c8f71a2eda7"
+      ]
     },
     {
       "id": "m32",
@@ -8487,7 +8730,8 @@
           "displayName": "PC-グリーン・クロス",
           "sourceIds": [
             "mission-wiki-32"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-31993eba7c66"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8512,7 +8756,8 @@
           "displayName": "SQ-スカイルンバ:Re",
           "sourceIds": [
             "mission-wiki-32"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-5bb09137bf1b"
         },
         {
           "difficulty": "Hard",
@@ -8524,7 +8769,8 @@
           "displayName": "CM-メーザーライフル威力試験型",
           "sourceIds": [
             "mission-wiki-32"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-2bf55f8a5668"
         },
         {
           "difficulty": "Hard",
@@ -8621,6 +8867,10 @@
       "bossNamesSource": [],
       "droneId": "drone-m32",
       "weaponIds": [
+        "weapon-wiki-42-2bf55f8a5668",
+        "weapon-wiki-43-5bb09137bf1b",
+        "weapon-wiki-45-31993eba7c66",
+        "weapon-wiki-50-e684407eedd8",
         "weapon-ec-rodeo-ss"
       ]
     },
@@ -8688,7 +8938,8 @@
           "displayName": "PT-オングストロームβ",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-2efe34c0fea9"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8700,7 +8951,8 @@
           "displayName": "WS-シグマスフィア",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-2fb6c976c1fd"
         },
         {
           "difficulty": "Easy / Normal",
@@ -8736,7 +8988,8 @@
           "displayName": "PT-フォトンサプライア・ヘリオス",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-7f0ec456b90f"
         },
         {
           "difficulty": "Hard",
@@ -8748,7 +9001,8 @@
           "displayName": "BL-ヘイスティングズ",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-6dc4d4c22b8a"
         },
         {
           "difficulty": "Hard",
@@ -8820,7 +9074,8 @@
           "displayName": "PT-ユークリッドφ",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-2fa5085796b6"
         },
         {
           "difficulty": "Hardest",
@@ -8832,7 +9087,8 @@
           "displayName": "MR-連装レーザー/チャンドラB*",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-73f90cbd961a"
         },
         {
           "difficulty": "Hardest",
@@ -8868,7 +9124,14 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m33",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-43-2fb6c976c1fd",
+        "weapon-wiki-50-2efe34c0fea9",
+        "weapon-wiki-50-7f0ec456b90f",
+        "weapon-wiki-50-2fa5085796b6",
+        "weapon-wiki-53-6dc4d4c22b8a",
+        "weapon-wiki-54-73f90cbd961a"
+      ]
     },
     {
       "id": "m34",
@@ -9002,7 +9265,8 @@
           "displayName": "BS-Opx.A4\"Aya\"",
           "sourceIds": [
             "mission-wiki-34"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-5e31915ca63f"
         },
         {
           "difficulty": "Hard",
@@ -9014,7 +9278,8 @@
           "displayName": "GK-ハイロゥビーム改",
           "sourceIds": [
             "mission-wiki-34"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-0ad88a2dffe7"
         },
         {
           "difficulty": "Hard",
@@ -9038,7 +9303,8 @@
           "displayName": "AE-2040GD-III",
           "sourceIds": [
             "mission-wiki-34"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-0b7995c529b0"
         },
         {
           "difficulty": "Hardest",
@@ -9050,7 +9316,8 @@
           "displayName": "SN-ラグナロク・パニッシュメント",
           "sourceIds": [
             "mission-wiki-34"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-c7905ec40b2f"
         },
         {
           "difficulty": "Hardest",
@@ -9121,7 +9388,14 @@
         "ラズニード"
       ],
       "droneId": "drone-m34",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-0b7995c529b0",
+        "weapon-wiki-42-5e31915ca63f",
+        "weapon-wiki-42-0ad88a2dffe7",
+        "weapon-wiki-43-69fd580531cf",
+        "weapon-wiki-44-521978318fcd",
+        "weapon-wiki-55-c7905ec40b2f"
+      ]
     },
     {
       "id": "m35",
@@ -9195,7 +9469,8 @@
           "displayName": "GK-エキゾチックレイ",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-a255f3bbdd58"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9207,7 +9482,8 @@
           "displayName": "CM-バリオンD",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-33445d8722a2"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9231,7 +9507,8 @@
           "displayName": "GK-チェイサーライフル",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-9be308b3b514"
         },
         {
           "difficulty": "Hard",
@@ -9243,7 +9520,8 @@
           "displayName": "BL-ガウガメラ・トライアンフ",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-0c9b9ca0831d"
         },
         {
           "difficulty": "Hard",
@@ -9291,7 +9569,8 @@
           "displayName": "AW-アウトレイジ・クルーエル",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-7f542ad5ca56"
         },
         {
           "difficulty": "Hardest",
@@ -9303,7 +9582,8 @@
           "displayName": "FX-キュロスII・コンクェスト",
           "sourceIds": [
             "mission-wiki-35"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-988b444802f1"
         },
         {
           "difficulty": "Hardest",
@@ -9339,7 +9619,14 @@
         "ベイザル"
       ],
       "droneId": "drone-m35",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-7f542ad5ca56",
+        "weapon-wiki-42-a255f3bbdd58",
+        "weapon-wiki-42-9be308b3b514",
+        "weapon-wiki-42-33445d8722a2",
+        "weapon-wiki-44-988b444802f1",
+        "weapon-wiki-53-0c9b9ca0831d"
+      ]
     },
     {
       "id": "m36",
@@ -9412,7 +9699,8 @@
           "displayName": "AE-2040Ex",
           "sourceIds": [
             "mission-wiki-36"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-fd2943ef5f62"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9424,7 +9712,8 @@
           "displayName": "GK-量産型チェイサー",
           "sourceIds": [
             "mission-wiki-36"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-05e21e84e1a7"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9484,7 +9773,8 @@
           "displayName": "DD-エーテライトL.M.I.",
           "sourceIds": [
             "mission-wiki-36"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-7196e6958bc2"
         },
         {
           "difficulty": "Hard",
@@ -9496,7 +9786,8 @@
           "displayName": "SL-アラベスクII",
           "sourceIds": [
             "mission-wiki-36"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-f70689285d81"
         },
         {
           "difficulty": "Hard",
@@ -9582,7 +9873,12 @@
       "bossNamesSource": [],
       "droneId": "drone-m36",
       "weaponIds": [
-        "weapon-pt-linked-super-blaster"
+        "weapon-wiki-40-fd2943ef5f62",
+        "weapon-wiki-42-05e21e84e1a7",
+        "weapon-wiki-48-7196e6958bc2",
+        "weapon-pt-linked-super-blaster",
+        "weapon-wiki-53-3e8d9d1bbfcb",
+        "weapon-wiki-77-f70689285d81"
       ]
     },
     {
@@ -9657,7 +9953,8 @@
           "displayName": "SP-20X-SS",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-ee545c13bf5e"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9669,7 +9966,8 @@
           "displayName": "GK-ハイロゥビーム",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-bf5447aafaa0"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9717,7 +10015,8 @@
           "displayName": "WS-インテグラルレイFdX",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-507c582d297c"
         },
         {
           "difficulty": "Hard",
@@ -9729,7 +10028,8 @@
           "displayName": "MR-超大型ミサイル/ガリレオ",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-0343601cc93d"
         },
         {
           "difficulty": "Hard",
@@ -9753,7 +10053,8 @@
           "displayName": "FX-ノーティボーイJr.",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-2f2070d4f9a0"
         },
         {
           "difficulty": "Hardest",
@@ -9765,7 +10066,8 @@
           "displayName": "SQ-スカイタンゴ・ファイナルヒート",
           "sourceIds": [
             "mission-wiki-37"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-227b9479f103"
         }
       ],
       "excludedRewards": [],
@@ -9789,7 +10091,14 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m37",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-42-bf5447aafaa0",
+        "weapon-wiki-43-227b9479f103",
+        "weapon-wiki-43-507c582d297c",
+        "weapon-wiki-44-2f2070d4f9a0",
+        "weapon-wiki-45-ee545c13bf5e",
+        "weapon-wiki-54-0343601cc93d"
+      ]
     },
     {
       "id": "m38",
@@ -9857,7 +10166,8 @@
           "displayName": "WS-インテグラルレイ",
           "sourceIds": [
             "mission-hororo-35-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-524dc1226533"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9869,7 +10179,8 @@
           "displayName": "DD-エーテライトII",
           "sourceIds": [
             "mission-hororo-35-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-094e78d38154"
         },
         {
           "difficulty": "Easy / Normal",
@@ -9917,7 +10228,8 @@
           "displayName": "DD-テスラV型",
           "sourceIds": [
             "mission-hororo-35-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-4b7411def4e1"
         },
         {
           "difficulty": "Hard",
@@ -9929,7 +10241,8 @@
           "displayName": "BL-カデシュ・オラクル",
           "sourceIds": [
             "mission-hororo-35-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-55f3b1774c23"
         },
         {
           "difficulty": "Hard",
@@ -9953,7 +10266,8 @@
           "displayName": "RC-ゲンナイ弐",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-35fef3629b03"
         },
         {
           "difficulty": "Hardest",
@@ -9965,7 +10279,8 @@
           "displayName": "SL-ジョーカー",
           "sourceIds": [
             "mission-wiki-31-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-e3bc6ab973a6"
         },
         {
           "difficulty": "Hardest",
@@ -10050,7 +10365,14 @@
       "bossNamesSource": [],
       "droneId": "drone-m38",
       "weaponIds": [
-        "weapon-sq-curtain-call"
+        "weapon-wiki-43-67925f721535",
+        "weapon-sq-curtain-call",
+        "weapon-wiki-43-524dc1226533",
+        "weapon-wiki-44-35fef3629b03",
+        "weapon-wiki-48-094e78d38154",
+        "weapon-wiki-48-4b7411def4e1",
+        "weapon-wiki-53-55f3b1774c23",
+        "weapon-wiki-77-e3bc6ab973a6"
       ]
     },
     {
@@ -10122,7 +10444,8 @@
           "displayName": "PC-トルネード",
           "sourceIds": [
             "mission-wiki-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-d13028012f41"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10170,7 +10493,8 @@
           "displayName": "DD-グランドジャイブQ",
           "sourceIds": [
             "mission-wiki-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-37bd91d7b338"
         },
         {
           "difficulty": "Hard",
@@ -10182,7 +10506,8 @@
           "displayName": "BL-ポエニ",
           "sourceIds": [
             "mission-wiki-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-faaae056cec4"
         },
         {
           "difficulty": "Hard",
@@ -10206,7 +10531,8 @@
           "displayName": "AW-マッドネス",
           "sourceIds": [
             "mission-wiki-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-8c6e16c3c0f0"
         },
         {
           "difficulty": "Hardest",
@@ -10218,7 +10544,8 @@
           "displayName": "SP-30X",
           "sourceIds": [
             "mission-wiki-39"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-e951eb7e6f71"
         },
         {
           "difficulty": "Hardest",
@@ -10263,7 +10590,14 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m39",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-8c6e16c3c0f0",
+        "weapon-wiki-42-dc130608cf7b",
+        "weapon-wiki-45-e951eb7e6f71",
+        "weapon-wiki-45-d13028012f41",
+        "weapon-wiki-48-37bd91d7b338",
+        "weapon-wiki-53-faaae056cec4"
+      ]
     },
     {
       "id": "m40",
@@ -10335,7 +10669,8 @@
           "displayName": "FX-クセルクセス・ラルゴ",
           "sourceIds": [
             "mission-wiki-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-8a1afec55a88"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10347,7 +10682,8 @@
           "displayName": "SQ-マウナケア",
           "sourceIds": [
             "mission-wiki-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-e79c6fa066af"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10395,7 +10731,8 @@
           "displayName": "MC-アークソードType.RX",
           "sourceIds": [
             "mission-wiki-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-48677127c806"
         },
         {
           "difficulty": "Hard",
@@ -10407,7 +10744,8 @@
           "displayName": "BL-カタラウヌムDA",
           "sourceIds": [
             "mission-wiki-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-19bf63d84b12"
         },
         {
           "difficulty": "Hard",
@@ -10443,7 +10781,8 @@
           "displayName": "SH-2041A",
           "sourceIds": [
             "mission-wiki-40"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-8fb07eedbcfa"
         }
       ],
       "excludedRewards": [],
@@ -10465,7 +10804,13 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m40",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-43-e79c6fa066af",
+        "weapon-wiki-44-8a1afec55a88",
+        "weapon-wiki-50-8fb07eedbcfa",
+        "weapon-wiki-51-48677127c806",
+        "weapon-wiki-53-19bf63d84b12"
+      ]
     },
     {
       "id": "m41",
@@ -10541,7 +10886,8 @@
           "displayName": "PT-フォトンサプライア",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-b4af1e28f379"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10553,7 +10899,8 @@
           "displayName": "DD-グランドジャイブ",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-f7747c09b76f"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10601,7 +10948,8 @@
           "displayName": "MC-アークソードType.SX",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-c981a73a9ce0"
         },
         {
           "difficulty": "Hard",
@@ -10613,7 +10961,8 @@
           "displayName": "EC-Opx.A3\"Arthur\"",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-e85924d8e06f"
         },
         {
           "difficulty": "Hard",
@@ -10649,7 +10998,8 @@
           "displayName": "SQ-6連装マルチプルミサイル甲二式",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-e4cbcd2ceec6"
         },
         {
           "difficulty": "Hardest",
@@ -10661,7 +11011,8 @@
           "displayName": "BL-ヘイスティングズ・オラクル",
           "sourceIds": [
             "mission-wiki-41"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-f5edaca3d766"
         },
         {
           "difficulty": "Disaster",
@@ -10695,7 +11046,14 @@
         "クィーンアント"
       ],
       "droneId": "drone-m41",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-43-e4cbcd2ceec6",
+        "weapon-wiki-48-f7747c09b76f",
+        "weapon-wiki-50-b4af1e28f379",
+        "weapon-wiki-51-c981a73a9ce0",
+        "weapon-wiki-52-e85924d8e06f",
+        "weapon-wiki-53-f5edaca3d766"
+      ]
     },
     {
       "id": "m42",
@@ -10767,7 +11125,8 @@
           "displayName": "FX-ヘイルスティンガー",
           "sourceIds": [
             "mission-wiki-42"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-71086dd53a85"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10779,7 +11138,8 @@
           "displayName": "WS-ネイピアレーザーS",
           "sourceIds": [
             "mission-wiki-42"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-e1ed329bdb35"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10815,7 +11175,8 @@
           "displayName": "WS-シグマスフィアLimit",
           "sourceIds": [
             "mission-wiki-42"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-550696624ace"
         },
         {
           "difficulty": "Hard",
@@ -10851,7 +11212,8 @@
           "displayName": "AW-ラス・アルテミス",
           "sourceIds": [
             "mission-wiki-42"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-12165b60a4de"
         },
         {
           "difficulty": "Hardest",
@@ -10863,7 +11225,8 @@
           "displayName": "FX-ヘイルスティンガー・デュオ",
           "sourceIds": [
             "mission-wiki-42"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-667ac9ec8487"
         },
         {
           "difficulty": "Hardest",
@@ -10897,7 +11260,13 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m42",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-12165b60a4de",
+        "weapon-wiki-43-e1ed329bdb35",
+        "weapon-wiki-43-550696624ace",
+        "weapon-wiki-44-71086dd53a85",
+        "weapon-wiki-44-667ac9ec8487"
+      ]
     },
     {
       "id": "m43",
@@ -10975,7 +11344,8 @@
           "displayName": "DD-テスラR型",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-493be8044d97"
         },
         {
           "difficulty": "Easy / Normal",
@@ -10987,7 +11357,8 @@
           "displayName": "EC-Opx.A1\"Ahmed\"",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-92201f67cac4"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11047,7 +11418,8 @@
           "displayName": "AE-50Y-GD",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-dfde681ba271"
         },
         {
           "difficulty": "Hard",
@@ -11059,7 +11431,8 @@
           "displayName": "EC-Opx.D2\"Diego\"",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-25216ce866e0"
         },
         {
           "difficulty": "Hard",
@@ -11107,7 +11480,8 @@
           "displayName": "DD-エーテライトFJ",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-2d448543e498"
         },
         {
           "difficulty": "Hardest",
@@ -11119,7 +11493,8 @@
           "displayName": "SL-アラベスクIII",
           "sourceIds": [
             "mission-wiki-43"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-0c124f60cd5e"
         },
         {
           "difficulty": "Hardest",
@@ -11153,7 +11528,14 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m43",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-45-dfde681ba271",
+        "weapon-wiki-48-493be8044d97",
+        "weapon-wiki-48-2d448543e498",
+        "weapon-wiki-52-92201f67cac4",
+        "weapon-wiki-52-25216ce866e0",
+        "weapon-wiki-77-0c124f60cd5e"
+      ]
     },
     {
       "id": "m44",
@@ -11230,7 +11612,8 @@
           "displayName": "PG-傀儡師",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-6809ddb50bce"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11242,7 +11625,8 @@
           "displayName": "BL-カタラウヌム・オラクル",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-d361c24bef6f"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11290,7 +11674,8 @@
           "displayName": "SH-2040",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-ee2a4fa164b3"
         },
         {
           "difficulty": "Hard",
@@ -11302,7 +11687,8 @@
           "displayName": "BS-Opx.G2\"Grace\"",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-b39635dd93b1"
         },
         {
           "difficulty": "Hard",
@@ -11326,7 +11712,8 @@
           "displayName": "DD-テスラ・イリュージョン",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-3cc3acf52727"
         },
         {
           "difficulty": "Hardest",
@@ -11338,7 +11725,8 @@
           "displayName": "SN-アルマゲドン・ジャッジメント",
           "sourceIds": [
             "mission-wiki-44"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-5801eb9044a3"
         },
         {
           "difficulty": "Hardest",
@@ -11399,7 +11787,16 @@
         "ガーガント"
       ],
       "droneId": "drone-m44",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-6809ddb50bce",
+        "weapon-wiki-42-b39635dd93b1",
+        "weapon-wiki-42-45b12ce65aa8",
+        "weapon-wiki-48-3cc3acf52727",
+        "weapon-wiki-50-ee2a4fa164b3",
+        "weapon-wiki-53-d361c24bef6f",
+        "weapon-wiki-53-69e53985a9dc",
+        "weapon-wiki-55-5801eb9044a3"
+      ]
     },
     {
       "id": "m45",
@@ -11531,7 +11928,8 @@
           "displayName": "AW-ランページL.M.I.",
           "sourceIds": [
             "mission-wiki-45"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-f75f9335806b"
         },
         {
           "difficulty": "Hard",
@@ -11579,7 +11977,8 @@
           "displayName": "DD-グランドジャイブ・ペア",
           "sourceIds": [
             "mission-wiki-45"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-c1d012ce87b1"
         },
         {
           "difficulty": "Hardest",
@@ -11591,7 +11990,8 @@
           "displayName": "BL-カデシュ・トライアンフ",
           "sourceIds": [
             "mission-wiki-45"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-69e53985a9dc"
         }
       ],
       "excludedRewards": [],
@@ -11616,7 +12016,12 @@
       "bossNamesSource": [],
       "droneId": "drone-m45",
       "weaponIds": [
+        "weapon-wiki-40-f75f9335806b",
+        "weapon-wiki-48-1f133259b43c",
+        "weapon-wiki-48-c1d012ce87b1",
+        "weapon-wiki-53-69e53985a9dc",
         "weapon-mr-chandra-a",
+        "weapon-wiki-54-cc83ce5ecb9a",
         "weapon-sn-iguazu-1"
       ]
     },
@@ -11691,7 +12096,8 @@
           "displayName": "BL-コリントス・トライアンフ",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-53-d6229bf797ff"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11703,7 +12109,8 @@
           "displayName": "SN-アポカリプス",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-6a1e4ed71441"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11727,7 +12134,8 @@
           "displayName": "SH-レクイエム",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-c105f3569f8f"
         },
         {
           "difficulty": "Hard",
@@ -11739,7 +12147,8 @@
           "displayName": "TF-強襲型アンガー",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-0d39c415613b"
         },
         {
           "difficulty": "Hard",
@@ -11787,7 +12196,8 @@
           "displayName": "WS-インテグラルレイDivergence",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-1e5b1cbfa98d"
         },
         {
           "difficulty": "Hardest",
@@ -11799,7 +12209,8 @@
           "displayName": "SQ-ボルケーノ",
           "sourceIds": [
             "mission-wiki-46"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-83c4a80ca7d9"
         },
         {
           "difficulty": "Hardest",
@@ -11858,7 +12269,14 @@
       ],
       "bossNamesSource": [],
       "droneId": "drone-m46",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-43-83c4a80ca7d9",
+        "weapon-wiki-43-1e5b1cbfa98d",
+        "weapon-wiki-48-0d39c415613b",
+        "weapon-wiki-50-c105f3569f8f",
+        "weapon-wiki-53-d6229bf797ff",
+        "weapon-wiki-55-6a1e4ed71441"
+      ]
     },
     {
       "id": "m47",
@@ -11935,7 +12353,8 @@
           "displayName": "AW-アウトレイジ・ゴースト",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-f2031dd6bb8d"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11947,7 +12366,8 @@
           "displayName": "MC-アークソードType.WX",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-51-f3ecc14e6d70"
         },
         {
           "difficulty": "Easy / Normal",
@@ -11983,7 +12403,8 @@
           "displayName": "SP-サーサーン後期型",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-30e7783cf725"
         },
         {
           "difficulty": "Hard",
@@ -11995,7 +12416,8 @@
           "displayName": "EC-ロデオII",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-4a26d931e202"
         },
         {
           "difficulty": "Hard",
@@ -12031,7 +12453,8 @@
           "displayName": "BS-Opx.A5\"Anastasia\"",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-254757250731"
         },
         {
           "difficulty": "Hardest",
@@ -12043,7 +12466,8 @@
           "displayName": "MR-照射レーザー/ハッブルX",
           "sourceIds": [
             "mission-wiki-47"
-          ]
+          ],
+          "weaponId": "weapon-wiki-54-cc83ce5ecb9a"
         },
         {
           "difficulty": "Hardest",
@@ -12082,7 +12506,14 @@
         "クイーンアント"
       ],
       "droneId": "drone-m47",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-f2031dd6bb8d",
+        "weapon-wiki-42-254757250731",
+        "weapon-wiki-45-30e7783cf725",
+        "weapon-wiki-51-f3ecc14e6d70",
+        "weapon-wiki-52-4a26d931e202",
+        "weapon-wiki-54-cc83ce5ecb9a"
+      ]
     },
     {
       "id": "m48",
@@ -12166,7 +12597,8 @@
           "displayName": "WS-シグマスフィアXi",
           "sourceIds": [
             "mission-wiki-48"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-e0cb42faf19e"
         },
         {
           "difficulty": "Easy / Normal",
@@ -12286,7 +12718,8 @@
           "displayName": "WS-ネイピアレーザーHyperbolic",
           "sourceIds": [
             "mission-wiki-48"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-ec3014804038"
         },
         {
           "difficulty": "Hardest",
@@ -12298,7 +12731,8 @@
           "displayName": "SL-アケメネス・インペリアル",
           "sourceIds": [
             "mission-wiki-48"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-3192a0ee350c"
         },
         {
           "difficulty": "Hardest",
@@ -12380,7 +12814,15 @@
         "ベイザル"
       ],
       "droneId": "drone-m48",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-bf8d127f1d88",
+        "weapon-wiki-40-77236af5ea86",
+        "weapon-wiki-42-29eaafbd043c",
+        "weapon-wiki-43-e0cb42faf19e",
+        "weapon-wiki-43-ec3014804038",
+        "weapon-wiki-54-8aa442599d63",
+        "weapon-wiki-77-3192a0ee350c"
+      ]
     },
     {
       "id": "m49",
@@ -12468,7 +12910,8 @@
           "displayName": "FX-ノーティボーイFJ",
           "sourceIds": [
             "mission-wiki-49"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-684079f382a1"
         },
         {
           "difficulty": "Easy / Normal",
@@ -12541,7 +12984,8 @@
           "displayName": "FX-ラッキーガールSB",
           "sourceIds": [
             "mission-wiki-49"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-c32b1bf739b0"
         },
         {
           "difficulty": "Hard",
@@ -12553,7 +12997,8 @@
           "displayName": "TF-グラッジ・エピメテウス",
           "sourceIds": [
             "mission-wiki-49"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-962e299b5a3c"
         },
         {
           "difficulty": "Hard",
@@ -12589,7 +13034,8 @@
           "displayName": "TF-アンガー・プロメテウス",
           "sourceIds": [
             "mission-wiki-49"
-          ]
+          ],
+          "weaponId": "weapon-wiki-48-3bb3a19ead7c"
         },
         {
           "difficulty": "Hardest",
@@ -12601,7 +13047,8 @@
           "displayName": "EC-Opx.A4\"Ali\"",
           "sourceIds": [
             "mission-wiki-49"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-dd226e2e518d"
         }
       ],
       "excludedRewards": [],
@@ -12632,6 +13079,11 @@
       "bossNamesSource": [],
       "droneId": "drone-m49",
       "weaponIds": [
+        "weapon-wiki-44-684079f382a1",
+        "weapon-wiki-44-c32b1bf739b0",
+        "weapon-wiki-48-962e299b5a3c",
+        "weapon-wiki-48-3bb3a19ead7c",
+        "weapon-wiki-52-dd226e2e518d",
         "weapon-mr-kepler"
       ]
     },
@@ -12716,7 +13168,8 @@
           "displayName": "PT-ユークリッド",
           "sourceIds": [
             "mission-wiki-50"
-          ]
+          ],
+          "weaponId": "weapon-wiki-50-84e8fe9a5a2c"
         },
         {
           "difficulty": "Easy / Normal",
@@ -12728,7 +13181,8 @@
           "displayName": "WS-インテグラルレイF",
           "sourceIds": [
             "mission-wiki-50"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-b71559e63368"
         },
         {
           "difficulty": "Easy / Normal",
@@ -12776,7 +13230,8 @@
           "displayName": "SP-トランペット",
           "sourceIds": [
             "mission-wiki-50"
-          ]
+          ],
+          "weaponId": "weapon-wiki-45-60ae7f8621db"
         },
         {
           "difficulty": "Hard",
@@ -12800,7 +13255,8 @@
           "displayName": "SQ-マウナケアDA",
           "sourceIds": [
             "mission-wiki-50"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-9ca04bf31893"
         },
         {
           "difficulty": "Hardest",
@@ -12812,7 +13268,8 @@
           "displayName": "BS-ブラスターガンV",
           "sourceIds": [
             "mission-wiki-50"
-          ]
+          ],
+          "weaponId": "weapon-wiki-42-77ec3a3d56cf"
         },
         {
           "difficulty": "Hardest",
@@ -12885,7 +13342,15 @@
         "ベイザル"
       ],
       "droneId": "drone-m50",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-42-77ec3a3d56cf",
+        "weapon-wiki-43-b71559e63368",
+        "weapon-wiki-43-039d38c0a6ae",
+        "weapon-wiki-45-60ae7f8621db",
+        "weapon-wiki-50-84e8fe9a5a2c",
+        "weapon-wiki-55-e89498263902",
+        "weapon-wiki-43-9ca04bf31893"
+      ]
     },
     {
       "id": "m51",
@@ -12965,7 +13430,8 @@
           "displayName": "EC-Opx.A2\"Adam\"",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-52-0957f8fefe5e"
         },
         {
           "difficulty": "Easy / Normal",
@@ -12977,7 +13443,8 @@
           "displayName": "SN-ナイル2号基",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-55-fc60dd3e1a26"
         },
         {
           "difficulty": "Easy / Normal",
@@ -13025,7 +13492,8 @@
           "displayName": "FX-クセルクセス・アンビション",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-44-fa415ef5247d"
         },
         {
           "difficulty": "Hard",
@@ -13073,7 +13541,8 @@
           "displayName": "AE-2041FJ",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-40-9b9768c1d865"
         },
         {
           "difficulty": "Hardest",
@@ -13085,7 +13554,8 @@
           "displayName": "WS-反陽子雲・2mol",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-43-039d38c0a6ae"
         },
         {
           "difficulty": "Hardest",
@@ -13097,7 +13567,8 @@
           "displayName": "SL-ソウルシーカーMO",
           "sourceIds": [
             "mission-wiki-51"
-          ]
+          ],
+          "weaponId": "weapon-wiki-77-3d45ebcf6bda"
         },
         {
           "difficulty": "Hardest",
@@ -13144,7 +13615,14 @@
         "ラズニード"
       ],
       "droneId": "drone-m51",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-40-9b9768c1d865",
+        "weapon-wiki-43-039d38c0a6ae",
+        "weapon-wiki-44-fa415ef5247d",
+        "weapon-wiki-52-0957f8fefe5e",
+        "weapon-wiki-55-fc60dd3e1a26",
+        "weapon-wiki-77-3d45ebcf6bda"
+      ]
     },
     {
       "id": "m52",
@@ -13436,7 +13914,9 @@
         "ハイヴクラフト"
       ],
       "droneId": "drone-m52",
-      "weaponIds": []
+      "weaponIds": [
+        "weapon-wiki-55-c360de22c6b0"
+      ]
     }
   ],
   "trophies": [
@@ -13736,68 +14216,327 @@
         "ps4-truetrophies",
         "ps4-exophase",
         "no-missables",
-        "wiki-faq"
+        "wiki-faq",
+        "full-weapon-index"
       ],
       "verification": "source-checked",
       "notes": [
-        "目錄尚未完整時不能以部分武器全買宣稱Complete Arsenal完成。"
+        "本體武器清單共 312 款；DLC 與特典另列，不納入本體全武器條件。",
+        "清單勾選只追蹤實際持有；全部勾選仍須另外核對 PSN 是否跳盃。"
       ],
       "weaponIds": [
         "weapon-ae-2038",
-        "weapon-aw-outrage",
-        "weapon-aw-furious-2",
-        "weapon-ae-2030",
-        "weapon-aw-furious-ares",
-        "weapon-sq-sky-tango",
-        "weapon-sq-curtain-call",
-        "weapon-bl-catalaunica",
-        "weapon-bl-gaugamela",
-        "weapon-mr-glue-launcher",
-        "weapon-er-super-chainsaw",
-        "weapon-er-super-chainsaw-edf-spec",
+        "weapon-wiki-40-061e5099d05b",
         "weapon-ae-2032gd-i",
+        "weapon-wiki-40-d731baa9b3e0",
         "weapon-ae-2040a",
         "weapon-ae-20nn",
-        "weapon-sp-20x",
-        "weapon-sp-cornet",
-        "weapon-sp-30y-da",
-        "weapon-sh-2033",
-        "weapon-sh-2033gd",
-        "weapon-sh-allegretto",
+        "weapon-wiki-40-5c324b9dfbe6",
+        "weapon-wiki-40-fdbef96a192f",
+        "weapon-wiki-40-fd2943ef5f62",
+        "weapon-wiki-40-65db4db88167",
+        "weapon-wiki-40-2c5e0616ec1c",
+        "weapon-wiki-40-7dd95eea4b02",
+        "weapon-wiki-40-12a031524827",
+        "weapon-wiki-40-2a24d06f5cf0",
+        "weapon-wiki-40-9b9768c1d865",
+        "weapon-wiki-40-0b7995c529b0",
+        "weapon-ae-2030",
+        "weapon-aw-outrage",
+        "weapon-wiki-40-08651e6f9136",
+        "weapon-wiki-40-fb16ce012bd7",
+        "weapon-wiki-40-1754e0762002",
+        "weapon-wiki-40-7b657b2c437c",
+        "weapon-wiki-40-f2031dd6bb8d",
+        "weapon-aw-furious-2",
+        "weapon-wiki-40-460ffea2c566",
+        "weapon-wiki-40-34b93ecd4f44",
+        "weapon-wiki-40-cd4fc34c66fd",
+        "weapon-wiki-40-bf8d127f1d88",
+        "weapon-wiki-40-77236af5ea86",
+        "weapon-wiki-40-f75f9335806b",
+        "weapon-wiki-40-7f542ad5ca56",
+        "weapon-wiki-40-8c6e16c3c0f0",
+        "weapon-wiki-40-12165b60a4de",
+        "weapon-aw-furious-ares",
+        "weapon-wiki-40-a73d8057c968",
+        "weapon-wiki-40-58d4b274caec",
+        "weapon-wiki-40-6809ddb50bce",
+        "weapon-wiki-40-3fb431c7dc7a",
+        "weapon-wiki-40-b19e6c597d46",
+        "weapon-wiki-40-d315683ec95a",
+        "weapon-wiki-40-97ce5f2bbf85",
+        "weapon-bs-opx-a1-alice",
+        "weapon-bs-opx-c1-celia",
+        "weapon-wiki-42-e50f5ec00cd1",
+        "weapon-bs-opx-c2-charlotte",
+        "weapon-wiki-42-e25540c7ec41",
+        "weapon-wiki-42-8ffaab0f1078",
+        "weapon-wiki-42-b8589a62b029",
+        "weapon-wiki-42-543d879faafe",
+        "weapon-wiki-42-2d6ccb44e20d",
+        "weapon-wiki-42-5e31915ca63f",
+        "weapon-wiki-42-b39635dd93b1",
+        "weapon-wiki-42-254757250731",
+        "weapon-wiki-42-77ec3a3d56cf",
+        "weapon-wiki-42-f6ede3860e82",
+        "weapon-wiki-42-f709afc1a9ac",
+        "weapon-wiki-42-a255f3bbdd58",
+        "weapon-wiki-42-05e21e84e1a7",
+        "weapon-wiki-42-bf5447aafaa0",
+        "weapon-wiki-42-29eaafbd043c",
+        "weapon-wiki-42-0ad88a2dffe7",
+        "weapon-wiki-42-9be308b3b514",
+        "weapon-wiki-42-9eaa206f0044",
+        "weapon-wiki-42-5d2347d245a9",
+        "weapon-wiki-42-f98625ad1e18",
+        "weapon-wiki-42-33445d8722a2",
+        "weapon-wiki-42-dc130608cf7b",
+        "weapon-wiki-42-2bf55f8a5668",
+        "weapon-wiki-42-d725e3d1f9ec",
+        "weapon-wiki-42-85ac49789be6",
+        "weapon-sq-sky-waltz",
+        "weapon-sq-sky-tango",
+        "weapon-sq-multiple-missile-six",
+        "weapon-sq-sky-rumba",
+        "weapon-wiki-43-b9bc6a545892",
+        "weapon-wiki-43-69fd580531cf",
+        "weapon-wiki-43-e79c6fa066af",
+        "weapon-wiki-43-bb244d4d7b62",
+        "weapon-wiki-43-dc1ddfa1c8ad",
+        "weapon-wiki-43-ea144ab0caa7",
+        "weapon-wiki-43-f268bae17573",
+        "weapon-wiki-43-935418b712b3",
+        "weapon-wiki-43-5bb09137bf1b",
+        "weapon-wiki-43-227b9479f103",
+        "weapon-wiki-43-a785e0e6e804",
+        "weapon-wiki-43-e4cbcd2ceec6",
+        "weapon-wiki-43-83c4a80ca7d9",
+        "weapon-sq-curtain-call",
+        "weapon-wiki-43-8068ad30ef27",
+        "weapon-wiki-43-524dc1226533",
+        "weapon-wiki-43-2fb6c976c1fd",
+        "weapon-wiki-43-e1ed329bdb35",
+        "weapon-wiki-43-b71559e63368",
+        "weapon-wiki-43-e0cb42faf19e",
+        "weapon-wiki-43-ec1b85dcc80d",
+        "weapon-wiki-43-0eec1d564cd3",
+        "weapon-wiki-43-507c582d297c",
+        "weapon-wiki-43-550696624ace",
+        "weapon-wiki-43-1e5b1cbfa98d",
+        "weapon-wiki-43-ec3014804038",
+        "weapon-wiki-43-039d38c0a6ae",
+        "weapon-wiki-43-a386cb1951d0",
         "weapon-fx-cyrus-ii",
         "weapon-fx-naughty-boy",
         "weapon-fx-darius-i",
-        "weapon-sq-sky-waltz",
-        "weapon-sq-multiple-missile-six",
-        "weapon-sq-sky-rumba",
-        "weapon-bs-opx-a1-alice",
-        "weapon-bs-opx-c1-celia",
-        "weapon-bs-opx-c2-charlotte",
+        "weapon-wiki-44-30d21056a60f",
+        "weapon-wiki-44-684079f382a1",
+        "weapon-wiki-44-8a1afec55a88",
+        "weapon-wiki-44-71086dd53a85",
+        "weapon-wiki-44-7288fe501657",
+        "weapon-wiki-44-c32b1bf739b0",
+        "weapon-wiki-44-9d007484d2e5",
+        "weapon-wiki-44-fa415ef5247d",
+        "weapon-wiki-44-988b444802f1",
+        "weapon-wiki-44-2f2070d4f9a0",
+        "weapon-wiki-44-667ac9ec8487",
+        "weapon-wiki-44-56acf235e2b2",
+        "weapon-wiki-44-c9fe2a10a194",
+        "weapon-wiki-44-55ffc172a8a0",
+        "weapon-wiki-44-6d9c231c8d22",
+        "weapon-wiki-44-c28969dd30f0",
+        "weapon-wiki-44-c4a38a8717f7",
+        "weapon-wiki-44-df8aed5ca012",
+        "weapon-wiki-44-5b602fefa93a",
+        "weapon-wiki-44-6d617a1bf10c",
+        "weapon-wiki-44-2fe0e74a39de",
+        "weapon-wiki-44-10e0a26b4f8c",
+        "weapon-wiki-44-35fef3629b03",
+        "weapon-wiki-44-e278d540773c",
+        "weapon-sp-20x",
+        "weapon-sp-cornet",
+        "weapon-sp-30y-da",
+        "weapon-wiki-45-4fe6414bd83e",
+        "weapon-wiki-45-9ba80aa3df31",
+        "weapon-wiki-45-6e7a781efaf6",
+        "weapon-wiki-45-ee545c13bf5e",
+        "weapon-wiki-45-9d928831f280",
+        "weapon-wiki-45-4e75c3240e05",
+        "weapon-wiki-45-5f8279fa7101",
+        "weapon-wiki-45-dfde681ba271",
+        "weapon-wiki-45-60ae7f8621db",
+        "weapon-wiki-45-30e7783cf725",
+        "weapon-wiki-45-350bc74a43f0",
+        "weapon-wiki-45-e951eb7e6f71",
+        "weapon-wiki-45-c6db29cd2720",
+        "weapon-wiki-45-7f5cabcf78ea",
+        "weapon-wiki-45-9615c612de18",
+        "weapon-wiki-45-7ccdbeeaecbe",
+        "weapon-wiki-45-31993eba7c66",
+        "weapon-wiki-45-d13028012f41",
+        "weapon-wiki-45-6eea2f0cc163",
+        "weapon-wiki-45-57a3e3c3bc2d",
+        "weapon-wiki-45-66f68ade6872",
+        "weapon-wiki-45-1c8ac8b44192",
+        "weapon-wiki-45-761be47daf2b",
+        "weapon-wiki-45-35d43a392be8",
         "weapon-tf-anger",
         "weapon-tf-grudge",
         "weapon-tf-anger-3way",
+        "weapon-wiki-48-f9a251bac7da",
+        "weapon-wiki-48-3994bdaaede5",
+        "weapon-tf-anger-gd",
+        "weapon-wiki-48-99f825889381",
+        "weapon-wiki-48-5bbab82b77c6",
+        "weapon-wiki-48-0d39c415613b",
+        "weapon-wiki-48-962e299b5a3c",
+        "weapon-wiki-48-1f133259b43c",
+        "weapon-wiki-48-3bb3a19ead7c",
+        "weapon-wiki-48-462d09c6655a",
+        "weapon-wiki-48-126721ccd64c",
+        "weapon-wiki-48-406f8b960727",
+        "weapon-wiki-48-f1d2207ed8e1",
+        "weapon-wiki-48-094e78d38154",
+        "weapon-wiki-48-493be8044d97",
+        "weapon-wiki-48-f7747c09b76f",
+        "weapon-wiki-48-7196e6958bc2",
+        "weapon-wiki-48-4b7411def4e1",
+        "weapon-wiki-48-37bd91d7b338",
+        "weapon-wiki-48-2d448543e498",
+        "weapon-wiki-48-3cc3acf52727",
+        "weapon-wiki-48-c1d012ce87b1",
+        "weapon-wiki-48-256fcc913817",
+        "weapon-sh-2033",
+        "weapon-sh-2033gd",
+        "weapon-sh-allegretto",
+        "weapon-wiki-50-b28110be1cd4",
+        "weapon-wiki-50-28f23aeb50bf",
+        "weapon-wiki-50-2b14d8997d23",
+        "weapon-wiki-50-ee2a4fa164b3",
+        "weapon-wiki-50-18c276529720",
+        "weapon-wiki-50-c105f3569f8f",
+        "weapon-wiki-50-453f3554cc26",
+        "weapon-wiki-50-8fb07eedbcfa",
+        "weapon-wiki-50-3151500a93a5",
+        "weapon-wiki-50-9ebff6ce6e91",
+        "weapon-wiki-50-700459d1402d",
+        "weapon-wiki-50-08856425a3a8",
+        "weapon-wiki-50-a3ce9d1f08c7",
+        "weapon-wiki-50-2efe34c0fea9",
+        "weapon-wiki-50-390c2d272f7b",
+        "weapon-wiki-50-d00e0ef11b85",
+        "weapon-wiki-50-b4af1e28f379",
+        "weapon-wiki-50-84e8fe9a5a2c",
+        "weapon-wiki-50-809e8f5c93dc",
+        "weapon-wiki-50-7f0ec456b90f",
+        "weapon-pt-linked-energy-blaster",
+        "weapon-wiki-50-27b60cbd072c",
+        "weapon-wiki-50-e684407eedd8",
+        "weapon-pt-linked-super-blaster",
+        "weapon-wiki-50-2fa5085796b6",
+        "weapon-wiki-50-93ea728c5858",
         "weapon-mc-proto-arc-sword",
         "weapon-mc-arc-sword-type-w",
         "weapon-mc-arc-sword",
+        "weapon-wiki-51-febd3e0d3381",
+        "weapon-wiki-51-42809a22d4bd",
+        "weapon-wiki-51-f3ecc14e6d70",
+        "weapon-wiki-51-def46c695f73",
+        "weapon-wiki-51-c981a73a9ce0",
+        "weapon-wiki-51-48677127c806",
+        "weapon-wiki-51-fa0f57a12049",
+        "weapon-wiki-51-d3b6d43d49e8",
         "weapon-ec-rodeo",
         "weapon-ec-rodeo-ss",
         "weapon-ec-exterminator",
+        "weapon-wiki-52-3f6bfdca0738",
+        "weapon-wiki-52-7e2cd317218c",
+        "weapon-wiki-52-4a26d931e202",
+        "weapon-wiki-52-d927b280d4cd",
+        "weapon-wiki-52-98606a62a946",
+        "weapon-wiki-52-05eca4c6ce6e",
+        "weapon-wiki-52-eaf1e60f96d2",
+        "weapon-wiki-52-92201f67cac4",
+        "weapon-wiki-52-0957f8fefe5e",
+        "weapon-wiki-52-566b5a80e634",
+        "weapon-wiki-52-d9f773f8f159",
+        "weapon-wiki-52-e85924d8e06f",
+        "weapon-wiki-52-25216ce866e0",
+        "weapon-wiki-52-41834b5d6e3a",
+        "weapon-wiki-52-dd226e2e518d",
+        "weapon-wiki-52-cfd4d150ad5b",
+        "weapon-wiki-52-ba2f307b9652",
+        "weapon-bl-catalaunica",
         "weapon-bl-catalaunica-upgrade",
+        "weapon-wiki-53-d361c24bef6f",
+        "weapon-wiki-53-19bf63d84b12",
+        "weapon-wiki-53-7c8f71a2eda7",
+        "weapon-wiki-53-6dc4d4c22b8a",
+        "weapon-wiki-53-f5edaca3d766",
+        "weapon-wiki-53-4c2c1eb8d7cf",
         "weapon-bl-corinth",
+        "weapon-wiki-53-68d72ddad656",
+        "weapon-wiki-53-d6229bf797ff",
+        "weapon-bl-gaugamela",
         "weapon-bl-gaugamela-upgrade",
-        "weapon-sl-sonic-pile-preproduction",
-        "weapon-sl-sonic-pile",
-        "weapon-sl-sonic-pile-plus",
+        "weapon-wiki-53-5cb55cece788",
+        "weapon-wiki-53-0c9b9ca0831d",
+        "weapon-wiki-53-faaae056cec4",
+        "weapon-wiki-53-3e8d9d1bbfcb",
+        "weapon-wiki-53-5c10d81893b4",
+        "weapon-wiki-53-55f3b1774c23",
+        "weapon-wiki-53-69e53985a9dc",
         "weapon-mr-chandra",
         "weapon-mr-chandra-a",
         "weapon-mr-kepler",
+        "weapon-wiki-54-43bb990a1c1d",
+        "weapon-wiki-54-1d88299c02aa",
+        "weapon-wiki-54-15343f1de93e",
+        "weapon-wiki-54-17946a411671",
+        "weapon-wiki-54-0343601cc93d",
+        "weapon-wiki-54-73f90cbd961a",
+        "weapon-wiki-54-cc83ce5ecb9a",
+        "weapon-wiki-54-45556627997e",
         "weapon-sn-iguazu-1",
         "weapon-sn-iguazu-2",
+        "weapon-wiki-55-e739883f0c29",
+        "weapon-wiki-55-e89498263902",
         "weapon-sn-nile-1",
+        "weapon-wiki-55-fc60dd3e1a26",
+        "weapon-wiki-55-5984b93dba39",
+        "weapon-wiki-55-d46090ab3360",
+        "weapon-wiki-55-6a1e4ed71441",
+        "weapon-wiki-55-a9dc6acde999",
+        "weapon-wiki-55-667814f2992c",
+        "weapon-wiki-55-6ad278ff7b52",
+        "weapon-wiki-55-4063922f40a4",
+        "weapon-wiki-55-5801eb9044a3",
+        "weapon-wiki-55-312aa943782d",
+        "weapon-wiki-55-c7905ec40b2f",
+        "weapon-sl-sonic-pile-preproduction",
+        "weapon-sl-sonic-pile",
+        "weapon-sl-sonic-pile-plus",
+        "weapon-wiki-77-33c03464787f",
+        "weapon-wiki-77-8bf319ea77bd",
+        "weapon-wiki-77-f70689285d81",
+        "weapon-wiki-77-0c124f60cd5e",
+        "weapon-wiki-77-2fe0d2631498",
+        "weapon-wiki-77-75f54794a22e",
+        "weapon-wiki-77-5758658e8ab1",
+        "weapon-wiki-77-0bdc6e2871c3",
+        "weapon-wiki-77-e1f0641c6cfa",
+        "weapon-wiki-77-e3bc6ab973a6",
+        "weapon-wiki-77-594e629dc7c5",
+        "weapon-wiki-77-b9133bffa7f9",
+        "weapon-wiki-77-3192a0ee350c",
+        "weapon-wiki-77-046f205d6a4f",
+        "weapon-wiki-77-3d45ebcf6bda",
+        "weapon-er-super-chainsaw",
+        "weapon-er-super-chainsaw-edf-spec",
+        "weapon-mr-glue-launcher",
         "weapon-mr-glue-launcher-ultra",
-        "weapon-tf-anger-gd",
-        "weapon-pt-linked-energy-blaster",
-        "weapon-pt-linked-super-blaster"
+        "weapon-wiki-43-9ca04bf31893"
       ]
     },
     {
@@ -13883,13 +14622,48 @@
       ],
       "weaponIds": [
         "weapon-ae-2038",
-        "weapon-aw-outrage",
-        "weapon-aw-furious-2",
-        "weapon-ae-2030",
-        "weapon-aw-furious-ares",
+        "weapon-wiki-40-061e5099d05b",
         "weapon-ae-2032gd-i",
+        "weapon-wiki-40-d731baa9b3e0",
         "weapon-ae-2040a",
-        "weapon-ae-20nn"
+        "weapon-ae-20nn",
+        "weapon-wiki-40-5c324b9dfbe6",
+        "weapon-wiki-40-fdbef96a192f",
+        "weapon-wiki-40-fd2943ef5f62",
+        "weapon-wiki-40-65db4db88167",
+        "weapon-wiki-40-2c5e0616ec1c",
+        "weapon-wiki-40-7dd95eea4b02",
+        "weapon-wiki-40-12a031524827",
+        "weapon-wiki-40-2a24d06f5cf0",
+        "weapon-wiki-40-9b9768c1d865",
+        "weapon-wiki-40-0b7995c529b0",
+        "weapon-wiki-40-b7e0a6cbf851",
+        "weapon-ae-2030",
+        "weapon-aw-outrage",
+        "weapon-wiki-40-08651e6f9136",
+        "weapon-wiki-40-fb16ce012bd7",
+        "weapon-wiki-40-1754e0762002",
+        "weapon-wiki-40-7b657b2c437c",
+        "weapon-wiki-40-f2031dd6bb8d",
+        "weapon-aw-furious-2",
+        "weapon-wiki-40-460ffea2c566",
+        "weapon-wiki-40-34b93ecd4f44",
+        "weapon-wiki-40-cd4fc34c66fd",
+        "weapon-wiki-40-bf8d127f1d88",
+        "weapon-wiki-40-77236af5ea86",
+        "weapon-wiki-40-f75f9335806b",
+        "weapon-wiki-40-7f542ad5ca56",
+        "weapon-wiki-40-8c6e16c3c0f0",
+        "weapon-wiki-40-12165b60a4de",
+        "weapon-aw-furious-ares",
+        "weapon-wiki-40-a73d8057c968",
+        "weapon-wiki-40-58d4b274caec",
+        "weapon-wiki-40-6809ddb50bce",
+        "weapon-wiki-40-3fb431c7dc7a",
+        "weapon-wiki-40-b19e6c597d46",
+        "weapon-wiki-40-d315683ec95a",
+        "weapon-wiki-40-e324199371ee",
+        "weapon-wiki-40-97ce5f2bbf85"
       ]
     },
     {
@@ -13926,7 +14700,33 @@
       "weaponIds": [
         "weapon-sp-20x",
         "weapon-sp-cornet",
-        "weapon-sp-30y-da"
+        "weapon-sp-30y-da",
+        "weapon-wiki-45-4fe6414bd83e",
+        "weapon-wiki-45-9ba80aa3df31",
+        "weapon-wiki-45-6e7a781efaf6",
+        "weapon-wiki-45-ee545c13bf5e",
+        "weapon-wiki-45-9d928831f280",
+        "weapon-wiki-45-4e75c3240e05",
+        "weapon-wiki-45-5f8279fa7101",
+        "weapon-wiki-45-dfde681ba271",
+        "weapon-wiki-45-60ae7f8621db",
+        "weapon-wiki-45-30e7783cf725",
+        "weapon-wiki-45-350bc74a43f0",
+        "weapon-wiki-45-5abb369978d4",
+        "weapon-wiki-45-e951eb7e6f71",
+        "weapon-wiki-45-4510c3157b98",
+        "weapon-wiki-45-c6db29cd2720",
+        "weapon-wiki-45-7f5cabcf78ea",
+        "weapon-wiki-45-9615c612de18",
+        "weapon-wiki-45-7ccdbeeaecbe",
+        "weapon-wiki-45-31993eba7c66",
+        "weapon-wiki-45-d13028012f41",
+        "weapon-wiki-45-6eea2f0cc163",
+        "weapon-wiki-45-57a3e3c3bc2d",
+        "weapon-wiki-45-66f68ade6872",
+        "weapon-wiki-45-1c8ac8b44192",
+        "weapon-wiki-45-761be47daf2b",
+        "weapon-wiki-45-35d43a392be8"
       ]
     },
     {
@@ -13959,7 +14759,37 @@
       "weaponIds": [
         "weapon-sh-2033",
         "weapon-sh-2033gd",
-        "weapon-sh-allegretto"
+        "weapon-sh-allegretto",
+        "weapon-wiki-50-b28110be1cd4",
+        "weapon-wiki-50-28f23aeb50bf",
+        "weapon-wiki-50-2b14d8997d23",
+        "weapon-wiki-50-ee2a4fa164b3",
+        "weapon-wiki-50-18c276529720",
+        "weapon-wiki-50-c105f3569f8f",
+        "weapon-wiki-50-453f3554cc26",
+        "weapon-wiki-50-8fb07eedbcfa",
+        "weapon-wiki-50-3151500a93a5",
+        "weapon-wiki-50-9ebff6ce6e91",
+        "weapon-wiki-50-248a6c5e9b64",
+        "weapon-wiki-50-700459d1402d",
+        "weapon-wiki-50-08856425a3a8",
+        "weapon-wiki-50-630cb1fad0ca",
+        "weapon-wiki-50-a3ce9d1f08c7",
+        "weapon-wiki-50-2efe34c0fea9",
+        "weapon-wiki-50-390c2d272f7b",
+        "weapon-wiki-50-d00e0ef11b85",
+        "weapon-wiki-50-b4af1e28f379",
+        "weapon-wiki-50-84e8fe9a5a2c",
+        "weapon-wiki-50-809e8f5c93dc",
+        "weapon-wiki-50-7f0ec456b90f",
+        "weapon-pt-linked-energy-blaster",
+        "weapon-wiki-50-27b60cbd072c",
+        "weapon-wiki-50-3fb4098e6b44",
+        "weapon-wiki-50-e684407eedd8",
+        "weapon-pt-linked-super-blaster",
+        "weapon-wiki-50-2fa5085796b6",
+        "weapon-wiki-50-802f17eec3b4",
+        "weapon-wiki-50-93ea728c5858"
       ]
     },
     {
@@ -13993,7 +14823,35 @@
       "weaponIds": [
         "weapon-fx-cyrus-ii",
         "weapon-fx-naughty-boy",
-        "weapon-fx-darius-i"
+        "weapon-fx-darius-i",
+        "weapon-wiki-44-30d21056a60f",
+        "weapon-wiki-44-684079f382a1",
+        "weapon-wiki-44-8a1afec55a88",
+        "weapon-wiki-44-71086dd53a85",
+        "weapon-wiki-44-7288fe501657",
+        "weapon-wiki-44-c32b1bf739b0",
+        "weapon-wiki-44-9d007484d2e5",
+        "weapon-wiki-44-fa415ef5247d",
+        "weapon-wiki-44-988b444802f1",
+        "weapon-wiki-44-2f2070d4f9a0",
+        "weapon-wiki-44-98a6247b39ca",
+        "weapon-wiki-44-667ac9ec8487",
+        "weapon-wiki-44-56acf235e2b2",
+        "weapon-wiki-44-c9fe2a10a194",
+        "weapon-wiki-44-55ffc172a8a0",
+        "weapon-wiki-44-6d9c231c8d22",
+        "weapon-wiki-44-c28969dd30f0",
+        "weapon-wiki-44-c4a38a8717f7",
+        "weapon-wiki-44-df8aed5ca012",
+        "weapon-wiki-44-5b602fefa93a",
+        "weapon-wiki-44-6d617a1bf10c",
+        "weapon-wiki-44-2fe0e74a39de",
+        "weapon-wiki-44-10e0a26b4f8c",
+        "weapon-wiki-44-35fef3629b03",
+        "weapon-wiki-44-521978318fcd",
+        "weapon-wiki-44-e278d540773c",
+        "weapon-wiki-44-78ee764fe0a6",
+        "weapon-wiki-44-33bd689b1f13"
       ]
     },
     {
@@ -14025,11 +14883,41 @@
         "網站沒有讀取遊戲擊殺統計，不會由任務完成數推算武器擊殺數。"
       ],
       "weaponIds": [
-        "weapon-sq-sky-tango",
-        "weapon-sq-curtain-call",
         "weapon-sq-sky-waltz",
+        "weapon-sq-sky-tango",
         "weapon-sq-multiple-missile-six",
-        "weapon-sq-sky-rumba"
+        "weapon-sq-sky-rumba",
+        "weapon-wiki-43-b9bc6a545892",
+        "weapon-wiki-43-69fd580531cf",
+        "weapon-wiki-43-e79c6fa066af",
+        "weapon-wiki-43-bb244d4d7b62",
+        "weapon-wiki-43-dc1ddfa1c8ad",
+        "weapon-wiki-43-ea144ab0caa7",
+        "weapon-wiki-43-f268bae17573",
+        "weapon-wiki-43-935418b712b3",
+        "weapon-wiki-43-5bb09137bf1b",
+        "weapon-wiki-43-227b9479f103",
+        "weapon-wiki-43-a785e0e6e804",
+        "weapon-wiki-43-e4cbcd2ceec6",
+        "weapon-wiki-43-83c4a80ca7d9",
+        "weapon-wiki-43-67925f721535",
+        "weapon-sq-curtain-call",
+        "weapon-wiki-43-8068ad30ef27",
+        "weapon-wiki-43-524dc1226533",
+        "weapon-wiki-43-2fb6c976c1fd",
+        "weapon-wiki-43-e1ed329bdb35",
+        "weapon-wiki-43-b71559e63368",
+        "weapon-wiki-43-e0cb42faf19e",
+        "weapon-wiki-43-ec1b85dcc80d",
+        "weapon-wiki-43-0eec1d564cd3",
+        "weapon-wiki-43-507c582d297c",
+        "weapon-wiki-43-550696624ace",
+        "weapon-wiki-43-1e5b1cbfa98d",
+        "weapon-wiki-43-a1f202c3e0c6",
+        "weapon-wiki-43-ec3014804038",
+        "weapon-wiki-43-039d38c0a6ae",
+        "weapon-wiki-43-a386cb1951d0",
+        "weapon-wiki-43-9ca04bf31893"
       ]
     },
     {
@@ -14062,7 +14950,37 @@
       "weaponIds": [
         "weapon-bs-opx-a1-alice",
         "weapon-bs-opx-c1-celia",
-        "weapon-bs-opx-c2-charlotte"
+        "weapon-wiki-42-e50f5ec00cd1",
+        "weapon-bs-opx-c2-charlotte",
+        "weapon-wiki-42-e25540c7ec41",
+        "weapon-wiki-42-8ffaab0f1078",
+        "weapon-wiki-42-b8589a62b029",
+        "weapon-wiki-42-543d879faafe",
+        "weapon-wiki-42-2d6ccb44e20d",
+        "weapon-wiki-42-5e31915ca63f",
+        "weapon-wiki-42-b39635dd93b1",
+        "weapon-wiki-42-254757250731",
+        "weapon-wiki-42-3196859aebdf",
+        "weapon-wiki-42-77ec3a3d56cf",
+        "weapon-wiki-42-f6ede3860e82",
+        "weapon-wiki-42-f709afc1a9ac",
+        "weapon-wiki-42-a255f3bbdd58",
+        "weapon-wiki-42-05e21e84e1a7",
+        "weapon-wiki-42-bf5447aafaa0",
+        "weapon-wiki-42-1b0e5a9ea9e0",
+        "weapon-wiki-42-29eaafbd043c",
+        "weapon-wiki-42-0ad88a2dffe7",
+        "weapon-wiki-42-9be308b3b514",
+        "weapon-wiki-42-6dd834a4c40f",
+        "weapon-wiki-42-45b12ce65aa8",
+        "weapon-wiki-42-9eaa206f0044",
+        "weapon-wiki-42-5d2347d245a9",
+        "weapon-wiki-42-f98625ad1e18",
+        "weapon-wiki-42-33445d8722a2",
+        "weapon-wiki-42-dc130608cf7b",
+        "weapon-wiki-42-2bf55f8a5668",
+        "weapon-wiki-42-d725e3d1f9ec",
+        "weapon-wiki-42-85ac49789be6"
       ]
     },
     {
@@ -14096,7 +15014,31 @@
       "weaponIds": [
         "weapon-tf-anger",
         "weapon-tf-grudge",
-        "weapon-tf-anger-3way"
+        "weapon-tf-anger-3way",
+        "weapon-wiki-48-f9a251bac7da",
+        "weapon-wiki-48-3994bdaaede5",
+        "weapon-tf-anger-gd",
+        "weapon-wiki-48-99f825889381",
+        "weapon-wiki-48-5bbab82b77c6",
+        "weapon-wiki-48-0d39c415613b",
+        "weapon-wiki-48-962e299b5a3c",
+        "weapon-wiki-48-1f133259b43c",
+        "weapon-wiki-48-3bb3a19ead7c",
+        "weapon-wiki-48-462d09c6655a",
+        "weapon-wiki-48-f43db032cacb",
+        "weapon-wiki-48-126721ccd64c",
+        "weapon-wiki-48-406f8b960727",
+        "weapon-wiki-48-f1d2207ed8e1",
+        "weapon-wiki-48-094e78d38154",
+        "weapon-wiki-48-493be8044d97",
+        "weapon-wiki-48-f7747c09b76f",
+        "weapon-wiki-48-7196e6958bc2",
+        "weapon-wiki-48-4b7411def4e1",
+        "weapon-wiki-48-37bd91d7b338",
+        "weapon-wiki-48-2d448543e498",
+        "weapon-wiki-48-3cc3acf52727",
+        "weapon-wiki-48-c1d012ce87b1",
+        "weapon-wiki-48-256fcc913817"
       ]
     },
     {
@@ -14130,7 +15072,23 @@
       "weaponIds": [
         "weapon-mc-proto-arc-sword",
         "weapon-mc-arc-sword-type-w",
-        "weapon-mc-arc-sword"
+        "weapon-mc-arc-sword",
+        "weapon-wiki-51-febd3e0d3381",
+        "weapon-wiki-51-42809a22d4bd",
+        "weapon-wiki-51-f3ecc14e6d70",
+        "weapon-wiki-51-def46c695f73",
+        "weapon-wiki-51-c981a73a9ce0",
+        "weapon-wiki-51-48677127c806",
+        "weapon-wiki-51-fa0f57a12049",
+        "weapon-wiki-51-f0366e0ba813",
+        "weapon-wiki-51-2e67686edf8c",
+        "weapon-wiki-51-a99ab7508394",
+        "weapon-wiki-51-1d9dee8cf68c",
+        "weapon-wiki-51-d3b6d43d49e8",
+        "weapon-wiki-51-12270b5d4fff",
+        "weapon-wiki-51-f090b8f6c536",
+        "weapon-wiki-51-5a00b1c6922c",
+        "weapon-wiki-51-e2bdc0932198"
       ]
     },
     {
@@ -14163,7 +15121,25 @@
       "weaponIds": [
         "weapon-ec-rodeo",
         "weapon-ec-rodeo-ss",
-        "weapon-ec-exterminator"
+        "weapon-ec-exterminator",
+        "weapon-wiki-52-3f6bfdca0738",
+        "weapon-wiki-52-7e2cd317218c",
+        "weapon-wiki-52-4a26d931e202",
+        "weapon-wiki-52-d927b280d4cd",
+        "weapon-wiki-52-98606a62a946",
+        "weapon-wiki-52-05eca4c6ce6e",
+        "weapon-wiki-52-eaf1e60f96d2",
+        "weapon-wiki-52-7a045fecbf38",
+        "weapon-wiki-52-92201f67cac4",
+        "weapon-wiki-52-0957f8fefe5e",
+        "weapon-wiki-52-566b5a80e634",
+        "weapon-wiki-52-d9f773f8f159",
+        "weapon-wiki-52-e85924d8e06f",
+        "weapon-wiki-52-25216ce866e0",
+        "weapon-wiki-52-41834b5d6e3a",
+        "weapon-wiki-52-dd226e2e518d",
+        "weapon-wiki-52-cfd4d150ad5b",
+        "weapon-wiki-52-ba2f307b9652"
       ]
     },
     {
@@ -14196,10 +15172,27 @@
       ],
       "weaponIds": [
         "weapon-bl-catalaunica",
-        "weapon-bl-gaugamela",
         "weapon-bl-catalaunica-upgrade",
+        "weapon-wiki-53-d361c24bef6f",
+        "weapon-wiki-53-19bf63d84b12",
+        "weapon-wiki-53-7c8f71a2eda7",
+        "weapon-wiki-53-6dc4d4c22b8a",
+        "weapon-wiki-53-f5edaca3d766",
+        "weapon-wiki-53-4c2c1eb8d7cf",
         "weapon-bl-corinth",
-        "weapon-bl-gaugamela-upgrade"
+        "weapon-wiki-53-68d72ddad656",
+        "weapon-wiki-53-d6229bf797ff",
+        "weapon-wiki-53-5d2c55166196",
+        "weapon-bl-gaugamela",
+        "weapon-bl-gaugamela-upgrade",
+        "weapon-wiki-53-5cb55cece788",
+        "weapon-wiki-53-0c9b9ca0831d",
+        "weapon-wiki-53-e3bcb335065c",
+        "weapon-wiki-53-faaae056cec4",
+        "weapon-wiki-53-3e8d9d1bbfcb",
+        "weapon-wiki-53-5c10d81893b4",
+        "weapon-wiki-53-55f3b1774c23",
+        "weapon-wiki-53-69e53985a9dc"
       ]
     },
     {
@@ -14233,7 +15226,23 @@
       "weaponIds": [
         "weapon-sl-sonic-pile-preproduction",
         "weapon-sl-sonic-pile",
-        "weapon-sl-sonic-pile-plus"
+        "weapon-sl-sonic-pile-plus",
+        "weapon-wiki-77-33c03464787f",
+        "weapon-wiki-77-27110f8ab5a3",
+        "weapon-wiki-77-8bf319ea77bd",
+        "weapon-wiki-77-f70689285d81",
+        "weapon-wiki-77-0c124f60cd5e",
+        "weapon-wiki-77-2fe0d2631498",
+        "weapon-wiki-77-75f54794a22e",
+        "weapon-wiki-77-5758658e8ab1",
+        "weapon-wiki-77-0bdc6e2871c3",
+        "weapon-wiki-77-e1f0641c6cfa",
+        "weapon-wiki-77-e3bc6ab973a6",
+        "weapon-wiki-77-594e629dc7c5",
+        "weapon-wiki-77-b9133bffa7f9",
+        "weapon-wiki-77-3192a0ee350c",
+        "weapon-wiki-77-046f205d6a4f",
+        "weapon-wiki-77-3d45ebcf6bda"
       ]
     },
     {
@@ -14266,7 +15275,18 @@
       "weaponIds": [
         "weapon-mr-chandra",
         "weapon-mr-chandra-a",
-        "weapon-mr-kepler"
+        "weapon-mr-kepler",
+        "weapon-wiki-54-62473058c4e5",
+        "weapon-wiki-54-43bb990a1c1d",
+        "weapon-wiki-54-1d88299c02aa",
+        "weapon-wiki-54-15343f1de93e",
+        "weapon-wiki-54-17946a411671",
+        "weapon-wiki-54-0343601cc93d",
+        "weapon-wiki-54-73f90cbd961a",
+        "weapon-wiki-54-cc83ce5ecb9a",
+        "weapon-wiki-54-2edcefdcba8c",
+        "weapon-wiki-54-8aa442599d63",
+        "weapon-wiki-54-45556627997e"
       ]
     },
     {
@@ -14300,7 +15320,21 @@
       "weaponIds": [
         "weapon-sn-iguazu-1",
         "weapon-sn-iguazu-2",
-        "weapon-sn-nile-1"
+        "weapon-wiki-55-e739883f0c29",
+        "weapon-wiki-55-e89498263902",
+        "weapon-sn-nile-1",
+        "weapon-wiki-55-fc60dd3e1a26",
+        "weapon-wiki-55-5984b93dba39",
+        "weapon-wiki-55-d46090ab3360",
+        "weapon-wiki-55-c360de22c6b0",
+        "weapon-wiki-55-6a1e4ed71441",
+        "weapon-wiki-55-a9dc6acde999",
+        "weapon-wiki-55-667814f2992c",
+        "weapon-wiki-55-6ad278ff7b52",
+        "weapon-wiki-55-4063922f40a4",
+        "weapon-wiki-55-5801eb9044a3",
+        "weapon-wiki-55-312aa943782d",
+        "weapon-wiki-55-c7905ec40b2f"
       ]
     },
     {
@@ -14826,7 +15860,7 @@
       "description": "t00–t43為本工具本地穩定ID，未宣稱是官方PSN trophyId。"
     }
   ],
-  "contentVersion": "1.3.0",
+  "contentVersion": "1.4.0",
   "coverage": {
     "missionDetails": 52,
     "enemyLists": 52,

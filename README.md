@@ -65,6 +65,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 ## 維護文件
 
+IRON RAIN 1.4.0 本機修正：武器圖鑑補為 360 款（本體 312／Golden Storm DLC 40／特典 8），預設全部顯示；白金持有條件固定只計本體 312。14 類與獨立英文清單交叉核對，原有 55 款 ID 保留；缺成本／英文逐筆標示，道具及外觀仍是部分庫。2026-11-08 使用者已授權本批 commit／push，沿既有 main Pages 流程發布；部署結果以對應提交 Actions 及正式資源核對為準。見[模組說明](games/edfir/README.md)與[驗證紀錄](games/edfir/docs/IMPLEMENTATION.md)。
+
 IRON RAIN 1.3.0：以白金為主、進度簡化為勾選，武器改為緊湊 checklist 與交叉篩選；新增出擊與養成頁、4 條開局升級路線及 5 條分階段刷取心得。武器部分庫擴為 55 款，來源限制與未知成本保留。2026-11-08 使用者已授權上述內容合併 commit／push／部署，沿既有 main Pages 流程發布；正式 Google 與遊戲實機未驗收。見[模組說明](games/edfir/README.md)與[驗證及發布紀錄](games/edfir/docs/IMPLEMENTATION.md)。
 
 IRON RAIN 1.1.0 本機內容擴充：`/game-companion/games/edfir/` 已有52關主要敵人／Boss與具體步驟、631筆按難度獎勵及16筆隔離的疑DLC／條件衝突資料；PS4本體44盃（含白金）不變。7筆Drone差異已複核，6筆依地標收斂、M32原始高度仍保留候選。裝備部分庫擴為52武器（14類）／20道具／13外觀款式；未知英文與價格維持標示。沿用原schema1／namespace與手動Drive安全流程，資料、產物及隔離瀏覽器通過，正式Google與實機跳盃未驗收。2026-11-08 使用者已授權 commit／push 與沿既有 main Pages 流程部署；實際發布結果以對應 GitHub Actions 為準。見[模組說明](games/edfir/README.md)、[來源差異與驗證報告](games/edfir/docs/IMPLEMENTATION.md)；隔離瀏覽器：`node scripts/verify-edfir-browser.mjs`。

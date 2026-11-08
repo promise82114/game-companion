@@ -7,7 +7,7 @@ export const goals={story:'主線畢業',experience:'完整體驗畢業',platinu
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const assert=(condition,text)=>{if(!condition)throw Error(text+'；未修改進度。');};
 const finite=v=>Number.isSafeInteger(v)&&v>=0;
-export function fresh(){return {gameId:'edfir',scope:'base',schema:1,schemaVersion:1,moduleVersion:'1.3.0',revision:0,updatedAt:Date.now(),missions:{},drones:{},trophies:{},weapons:{},equipment:{},resources:{credits:0,red:0,blue:0,yellow:0},farmRuns:{},settings:{goal:'platinum',currentMission:'m01'}};}
+export function fresh(){return {gameId:'edfir',scope:'base',schema:1,schemaVersion:1,moduleVersion:'1.4.0',revision:0,updatedAt:Date.now(),missions:{},drones:{},trophies:{},weapons:{},equipment:{},resources:{credits:0,red:0,blue:0,yellow:0},farmRuns:{},settings:{goal:'platinum',currentMission:'m01'}};}
 export function validateProgress(p){
  assert(object(p)&&p.gameId==='edfir'&&p.scope==='base'&&p.schema===1&&p.schemaVersion===1,'遊戲識別或版本不相容');
  assert(finite(p.revision)&&Number.isFinite(p.updatedAt)&&p.updatedAt>=0,'修訂或時間無效');
@@ -22,7 +22,7 @@ export function validateProgress(p){
  assert(Object.hasOwn(goals,p.settings.goal)&&/^m(?:0[1-9]|[1-4][0-9]|5[0-2])$/.test(p.settings.currentMission),'目標或目前任務無效');
  return p;
 }
-export const config={gameId:'edfir',moduleVersion:'1.3.0',storagePrefix,driveProjectId:'game-companion.edfir',driveFileName:'game-companion.edfir.progress.v1.json',fresh,validateProgress};
+export const config={gameId:'edfir',moduleVersion:'1.4.0',storagePrefix,driveProjectId:'game-companion.edfir',driveFileName:'game-companion.edfir.progress.v1.json',fresh,validateProgress};
 export function migrate(data){
  const p=clone(data);
  // 本模組的 schema0 交換草案只缺新增群組；不接受其他遊戲或未來版本。
@@ -50,3 +50,6 @@ export function resourcePlan(p,weapons){
  return {targets,total,unknown,missing:Object.fromEntries(Object.keys(total).map(k=>[k,Math.max(0,total[k]-p.resources[k])]))};
 }
 export function estimateRuns(record,missing){const needs=Object.keys(missing).filter(k=>missing[k]>0);return needs.some(k=>record.yield[k]===0)?null:Math.max(0,...needs.map(k=>Math.ceil(missing[k]/(record.yield[k]/record.runs))));}
+
+// 本體清單條件只讀 purchased；DLC／特典與 PSN earned 各自獨立。
+export function arsenalProgress(p,weapons){const required=weapons.filter(w=>w.platinumRequired===true);return {owned:required.filter(w=>p.weapons[w.id]?.purchased===true).length,total:required.length};}

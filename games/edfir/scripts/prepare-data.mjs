@@ -6,7 +6,8 @@ const catalog=await read('catalog-research.json'),drones=await read('drone-resea
 const [early,late,expansion,audit]=await Promise.all(['missions-01-26.json','missions-27-52.json','equipment-expansion.json','drone-audit.json'].map(read));
 const mergeSources=(...lists)=>{const byId=new Map();for(const row of lists.flat()){if(byId.has(row.id))assert.equal(byId.get(row.id).url,row.url,'同一來源 ID 不可指向不同網址');else byId.set(row.id,row);}return [...byId.values()];};
 catalog.sources=mergeSources(catalog.sources,early.sources,late.sources);
-equipment.sources=mergeSources(equipment.sources,expansion.sources);
+const fullWeapons=await read('weapon-catalog.json');
+equipment.sources=mergeSources(equipment.sources,expansion.sources,fullWeapons.sources);
 drones.sources=mergeSources(drones.sources,audit.sources);
 const facts=[...early.missions,...late.missions];assert.equal(facts.length,52);assert.equal(new Set(facts.map(m=>m.id)).size,52);
 for(const m of catalog.missions){const fact=facts.find(row=>row.id===m.id);assert.ok(fact,'缺少關卡詳情 '+m.id);const identity={id:m.id,number:m.number,officialName:m.officialName};const sourceIds=[...new Set([...m.sourceIds,...fact.sourceIds])];Object.assign(m,fact,identity,{sourceIds});}
@@ -20,23 +21,29 @@ for(const m of catalog.missions){
 }
 for(const group of ['weapons','items','appearance']){const oldIds=new Set(equipment[group].map(row=>row.id));for(const row of expansion[group])assert.ok(!oldIds.has(row.id),'擴充資料重複 ID '+row.id);equipment[group].push(...expansion[group]);}
 for(const patch of expansion.updates||[]){const row=equipment.weapons.find(row=>row.id===patch.id)||equipment.items.find(row=>row.id===patch.id)||equipment.appearance.find(row=>row.id===patch.id);assert.ok(row,'更新未知裝備 '+patch.id);Object.assign(row,patch);}
+const legacyWeapons=new Map(equipment.weapons.map(w=>[w.id,w]));
+equipment.weapons=fullWeapons.weapons.map(row=>({...legacyWeapons.get(row.id),...row,recommendation:legacyWeapons.get(row.id)?.recommendation??row.recommendation}));
+for(const id of legacyWeapons.keys())assert.ok(equipment.weapons.some(w=>w.id===id),'不可遺失既有武器 ID '+id);
+equipment.weaponAudit=fullWeapons.audit;
+equipment.coverage={...equipment.coverage,...fullWeapons.coverage};
 equipment.issues=[...(equipment.issues||[]),...expansion.issues];
 equipment.coverage={...equipment.coverage,weaponCount:equipment.weapons.length,weaponTypes:new Set(equipment.weapons.map(w=>w.type)).size,items:'partial',appearance:'partial'};
 for(const patch of audit.updates){const row=drones.drones.find(row=>row.id===patch.id);assert.ok(row,'核對未知 Drone '+patch.id);Object.assign(row,patch);row.checkedAt=audit.checkedAt;}
 drones.audit={checkedAt:audit.checkedAt,method:audit.method,reviewed:audit.updates.map(d=>d.id),landmarkReconciled:audit.updates.filter(d=>d.verification==='source-reconciled').length,unresolved:audit.updates.filter(d=>d.verification==='conflict').map(d=>d.id)};
-catalog.contentVersion=equipment.contentVersion='1.3.0';drones.contentVersion='1.1.0';
+catalog.contentVersion=equipment.contentVersion='1.4.0';drones.contentVersion='1.1.0';
 const categories={'主線':'story','順路':'incidental','特殊挑戰':'challenge','收集':'collection','作業':'grind','線上／多人':'online','高難度':'difficulty'};
 const normalize=text=>String(text).replace(/[’‘]/g,"'");
 const nameKey=value=>normalize(value||'').replace(/\s/g,'').toLocaleLowerCase();
 const displayName=row=>row.officialName||row.nameJa||row.name||row.title;
-function unlockText(u){if(!u)return '解鎖條件待查證。';if(u.kind==='initial')return '初始裝備；以遊戲內庫存確認。';if(u.kind==='mission')return `${u.missionId.toUpperCase()} · ${u.reportedDifficulty||u.minimumDifficulty||'難度待查'} 完成（來源列出的充分條件，未推定最低限制）`;if(u.kind==='drone-count')return `確認回收 ${u.droneCount} 架 M.I.A. Drone 後解鎖購買資格。`;if(u.kind==='enemy-kills')return `累計擊倒 ${u.killCount} 隻 ${u.enemy}，並成功完成任務。`;return '解鎖條件待查證。';}
+function unlockText(u){if(!u)return '解鎖條件待查證。';if(u.kind==='bonus')return '特典／另購內容：'+u.raw;if(u.kind==='dlc-mission')return `Golden Storm · ${u.extraMissionId.toUpperCase()} · ${u.reportedDifficulty||'難度待查'} 完成（來源表列）`;if(u.kind==='initial')return '初始裝備；以遊戲內庫存確認。';if(u.kind==='mission')return `${u.missionId.toUpperCase()} · ${u.reportedDifficulty||u.minimumDifficulty||'難度待查'} 完成（來源列出的充分條件，未推定最低限制）`;if(u.kind==='drone-count')return `確認回收 ${u.droneCount} 架 M.I.A. Drone 後解鎖購買資格。`;if(u.kind==='enemy-kills')return `累計擊倒 ${u.killCount} 隻 ${u.enemy}，並成功完成任務。`;return '解鎖條件待查證。';}
 for(const t of catalog.trophies)t.category=categories[t.category]||t.category;
 for(const w of equipment.weapons){
  const u=w.unlock;w.displayName=displayName(w);assert.ok(w.displayName,'裝備名稱不可空白');
  w.price=w.cost;
  w.missionIds=[...new Set([...(w.relatedMissionIds||[]),...(w.farmMissionIds||[])])];
  w.recommendedUse=[w.recommendation,w.warning].filter(Boolean).join(' ');
- w.unlockCondition=unlockText(u);
+ w.unlockCondition=(w.contentGroup==='dlc'&&u.kind!=='dlc-mission'?'Golden Storm · ':'')+unlockText(u);
+ for(const t of catalog.trophies)if(t.weaponTypes?.includes(w.type)&&!w.trophyNames.includes(t.officialName))w.trophyNames.push(t.officialName);
  w.trophyIds=catalog.trophies.filter(t=>w.trophyNames.some(n=>normalize(n)===normalize(t.officialName))).map(t=>t.id);
 }
 for(const t of catalog.trophies)t.weaponIds=equipment.weapons.filter(w=>w.trophyIds.includes(t.id)).map(w=>w.id);
@@ -48,7 +55,7 @@ for(const m of catalog.missions){
   reward.displayName=displayName(reward)||'名稱待查證';
   reward.sourceIds=reward.sourceIds||[reward.sourceId].filter(Boolean);if(!reward.sourceIds.length)reward.sourceIds=m.sourceIds;
   const found=equipment.weapons.find(w=>[w.officialName,w.nameJa,...w.aliases||[]].filter(Boolean).some(name=>[reward.officialName,reward.nameJa,reward.name].filter(Boolean).some(n=>nameKey(n)===nameKey(name))));
-  if(found&&m.unlockRewards.includes(reward)){reward.weaponId=found.id;if(!found.missionIds.includes(m.id))found.missionIds.push(m.id);}
+  if(found?.baseGame&&m.unlockRewards.includes(reward)){reward.weaponId=found.id;if(!found.missionIds.includes(m.id))found.missionIds.push(m.id);}
  }
  m.weaponIds=equipment.weapons.filter(w=>w.missionIds.includes(m.id)).map(w=>w.id);
 }

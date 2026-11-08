@@ -2,6 +2,34 @@
 
 日期：2026-11-08。開始時 `G:\git\game-companion\games\edfir\module.json` 不存在；本次先建立新模組契約，再讀取核對。入口 AGENTS、repo AGENTS、README、ARCHITECTURE 已讀取，沒有更深層適用 AGENTS。保留工作區既有 Talos II 修改，不提交、不推送、不部署。
 
+## 1.4.0 完整武器索引修正 · 2026-11-08
+
+前版只有 55 款代表性武器，無法支援 Complete Arsenal 的全武器需求；這是內容覆蓋缺失，不是使用者選擇白金目標造成。本批補齊清單；使用者後續已於2026-11-08明確要求「commit、push」，本次僅提交EDFIR完整武器庫與必要驗證／說明，沿既有main Pages流程發布。正式結果以本次提交Actions及資源核對為準，不混入其他遊戲或既有未追蹤檔。
+
+- 新 `research/weapon-catalog.json` 收錄 360 款，分本體 312／Golden Storm DLC 40／特典 8。Wiki 武器總覽明列無特典312、有特典320；逐類本體計數與 GameFAQs 77192 去除兩款 preorder GK 後的312筆完全一致。14 類本體分別為突擊41、雷射步槍29、飛彈33、火箭27、霰彈27、榴彈26、狙擊29、劍11、機槍20、能量20、衛星11、雷射砲16、磁軌18、特殊4。
+- 每筆保留日文、等級、解鎖、成本、內容範圍、來源行及欄位查證。成本表少列的 SQ-Mauna Kea DA、MC-Arc Sword Type.RX+W、ER-ソーネード由性能表／任務表補回，不以缺價為由省略武器。Aisha A2／A3、Integral Ray FdX／Divergrnce 等來源差異保存 alias 與警示，不重複算武器。
+- 英文對照277筆，缺83筆維持日文。新對照以型號或唯一的類型／等級／任務／難度／型號前綴交叉匹配，依據存於 nameMapping；不依排列順序猜名。283筆有完整四資源成本，77筆缺欄；來源破折號仍為 null，不作0。資料只是來源層核對，沒有PS4實機驗收。
+- 原55款穩定ID／非空英文名稱保留，新ID固定保存於研究資料；所有進度沿同一 weapons map，不改 schema1、namespace、store、OAuth 或 Drive。資料產生器離線疊加索引，原始來源文字／解析暫存只在忽略的 outputs/edfir，不部署也不加入研究 JSON。
+- 圖鑑預設全部360，範圍／類型／等級／解鎖／任務／持有篩選可交叉使用。白金只從本體 purchased 計0–312；DLC／特典持有不影響分母。Complete Arsenal 可直達未持有本體清單，不渲染312個重複連結。條件滿足仍不代勾 PSN，已勾獎盃不因取消一把武器而被覆蓋。
+- 裝備頁／首頁／來源頁明示道具20及外觀13仍是部分庫；未把武器清單完整冒稱整份白金攻略已完整。既有開局與刷取心得保留，新增武器未核實用途時明確提示。
+
+驗證：新增360／312／40／8、逐類獨立計數、原55 ID保留、來源證據、缺欄／更正及匯出還原斷言。七模組資料、建置與產物檢查通過。全新 Edge context、合成進度回歸通過9頁×1440／768／390／320px，包括全部312持有不代填獎盃、非本體不影響分母、交叉篩選唯讀、既有進度與匯入保護、新context完整還原、其他遊戲隔離，無外部請求或頁面錯誤。正式 Google、PSN／PS4實測不在本次證據內。
+
+視覺複核：沿用 achromatic-ledger 與既有 palette／type；本次只擴充內容範圍控制。已看1440／768／390的首屏及所有整頁截圖，inspect 0 FAIL／1 WARN。警告是完整清單超出首屏，保留使用者要求的全部武器及交叉篩選，不隱藏資料以消除警告。第二輪精簡重複數量說明；手機首筆仍在900px首屏內、進階條件預設收合。截圖位於忽略的 outputs/edfir/weapons-full-final。
+
+ROUND 2
+
+Seen in one second: 武器購買清單、本體312與全部360、範圍及搜尋。
+Idea (one sentence): 用同一份持有紀錄查看完整圖鑑與白金缺口。
+Live thing: 交叉篩選與持有勾選即時更新清單／白金計數。
+Layout words by section: heading=緊湊摘要 / scope=範圍按鈕 / filters=桌面橫列、手機雙欄 / checklist=緊湊可展開列。
+Scores: design 6.5 · usability 8 · creativity 6 · content 7 → overall 7.0
+Caps applied: 純工具畫面無照片；延續既有品牌及清單組成，不以裝飾補齊畫面。
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. mobile-fold：範圍與搜尋占首屏較多；已刪重複數量敘述、進階條件收合，保留完整範圍控制。
+2. desktop-page-01：完整清單很長；提供類型、範圍、任務與未持有交集及獎盃直達，保持全部項目可查。
+3. mobile-page-02：部分名稱只有日文、成本缺欄；明示待核並保留項目，後續以可靠來源補欄，不猜填。
+
 ## 1.3.0 合併發布授權 · 2026-11-08
 
 使用者要求「commit、push 部署，這次白金介面、武器 checklist 跟出擊養成心得一起上」。本次將 1.2.0 UI 與 1.3.0 心得整批提交，沿既有 main push → Verify and deploy Game Companion → GitHub Pages 流程發布；不變更其他遊戲或既有未追蹤的 TALOS2_UX_AUDIT_TASK.md。以下「未 commit／push／部署」是先前本機實作階段紀錄。

@@ -1684,11 +1684,13 @@
         "ps4-truetrophies",
         "ps4-exophase",
         "no-missables",
-        "wiki-faq"
+        "wiki-faq",
+        "full-weapon-index"
       ],
       "verification": "source-checked",
       "notes": [
-        "目錄尚未完整時不能以部分武器全買宣稱Complete Arsenal完成。"
+        "本體武器清單共 312 款；DLC 與特典另列，不納入本體全武器條件。",
+        "清單勾選只追蹤實際持有；全部勾選仍須另外核對 PSN 是否跳盃。"
       ]
     },
     {

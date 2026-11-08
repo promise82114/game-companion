@@ -3,7 +3,7 @@
   "slug": "edfir",
   "title": "EARTH DEFENSE FORCE: IRON RAIN",
   "description": "52 關任務 Roadmap、55 架 Drone 與 PS4 本體 44 盃（含白金）",
-  "moduleVersion": "1.3.0",
+  "moduleVersion": "1.4.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/edfir/",

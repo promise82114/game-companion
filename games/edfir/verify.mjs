@@ -3,7 +3,7 @@ import {freshWeaponFilters,filterWeapons,sortWeapons} from './dist/weapons.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import {fresh,clone,validateProgress,migrate,parseImport,setMission,setDifficulty,setDrone,setTrophy,setWeapon,missionDone,droneDone,nextMission,resourcePlan,estimateRuns} from './dist/model.js';
+import {fresh,clone,validateProgress,migrate,parseImport,setMission,setDifficulty,setDrone,setTrophy,setWeapon,missionDone,droneDone,nextMission,resourcePlan,estimateRuns,arsenalProgress} from './dist/model.js';
 import {itemName,missionGuideHtml,droneAuditHtml} from './dist/guide.js';
 const read=async file=>JSON.parse(await fs.readFile(new URL(file,import.meta.url),'utf8'));
 const [catalog,droneData,equipment,module]=await Promise.all(['dist/data/catalog.json','dist/data/drones.json','dist/data/equipment.json','module.json'].map(read));
@@ -19,7 +19,7 @@ for(const rows of [missions,trophies,drones,weapons,...['items','cosmetics','paG
 for(const m of missions){assert.ok(m.officialName);assert.equal(drones.filter(d=>d.missionId===m.id).length,1);assert.equal(m.droneId,drones.find(d=>d.missionId===m.id).id);for(const id of m.weaponIds)assert.ok(weapons.find(w=>w.id===id).missionIds.includes(m.id));}
 for(const d of drones)for(const key of ['route','direction','landmark','recommendedGear'])assert.ok(d[key]?.length>0,'位置欄缺漏 '+d.id+' '+key);
 for(const t of trophies){assert.ok(t.officialName&&t.officialDescription&&t.howTo.length);for(const id of t.missionIds)assert.ok(missions.some(m=>m.id===id));for(const id of t.weaponIds)assert.ok(weapons.find(w=>w.id===id).trophyIds.includes(t.id));}
-for(const w of weapons){assert.ok(w.baseGame);assert.ok(w.unlockCondition);for(const key of ['credits','red','blue','yellow'])assert.ok(w.price[key]===null||Number.isSafeInteger(w.price[key])&&w.price[key]>=0);}
+for(const w of weapons){assert.equal(typeof w.baseGame,'boolean');assert.equal(w.baseGame,w.contentGroup==='base');assert.equal(w.platinumRequired,w.baseGame);assert.ok(w.unlockCondition);for(const key of ['credits','red','blue','yellow'])assert.ok(w.price[key]===null||Number.isSafeInteger(w.price[key])&&w.price[key]>=0);}
 // 逐關詳情不再以通用步驟代替；未實機／未核英文與隔離獎勵必須保留。
 assert.equal(catalog.coverage.missionDetails,52);assert.equal(catalog.coverage.enemyLists,52);
 assert.ok(catalog.coverage.rewardRows>=600);assert.ok(catalog.coverage.excludedRewardRows>=16);
@@ -80,7 +80,7 @@ failWrite=false;
 // pending 上次失敗仍先讀取核對；使用者再確認後才會寫入。
 syncReview=await session.start();assert.equal(syncReview.kind,'review');assert.equal((await session.confirm(syncReview,syncReview.plan.conflicts.map(()=>'local'))).kind,'complete');assert.equal(state.resources.credits,100);assert.equal(state.trophies.t38.earned,false);
 assert.ok([...memory.keys()].every(key=>key.startsWith(module.storagePrefix+'sync.')));
-console.log(JSON.stringify({passed:true,module:'edfir',missions:52,drones:55,trophiesIncludingPlatinum:44,weapons:weapons.length,weaponCoverage:'partial',checks:['IDs and source integrity','bidirectional relations','independent trophy confirmation','difficulty and Drone state','schema0 import migration','cross-game rejection','resource gaps and player estimates','unverified Drive writes blocked']}));
+console.log(JSON.stringify({passed:true,module:'edfir',missions:52,drones:55,trophiesIncludingPlatinum:44,weapons:weapons.length,weaponCoverage:equipment.coverage.weapons,checks:['IDs and source integrity','bidirectional relations','independent trophy confirmation','difficulty and Drone state','schema0 import migration','cross-game rejection','resource gaps and player estimates','unverified Drive writes blocked']}));
 
 // 舊目標與多態紀錄仍可讀；只在明確勾選時變更。
 for(const goal of ['story','experience','platinum']){const old=fresh();old.settings.goal=goal;old.drones['drone-m01']={status:'unknown',note:'keep'};validateProgress(old);assert.equal(old.drones['drone-m01'].status,'unknown');assert.equal(old.settings.goal,goal);}
@@ -95,7 +95,7 @@ console.log('EDFIR platinum UI compatibility and intersecting checklist filters 
 const advice=await read('dist/data/advice.json'),adviceSources=new Set([...sourceIds,...advice.sources.map(s=>s.id)]);
 for(const rows of [advice.earlyRoutes,advice.farms]){unique(rows);for(const row of rows){assert.ok(row.steps.length>=2&&row.caution&&row.basis);for(const id of row.sourceIds)assert.ok(adviceSources.has(id));for(const id of row.weaponIds)assert.ok(weapons.some(w=>w.id===id));for(const id of row.missionIds||[row.missionId])assert.ok(missions.some(m=>m.id===id));}}
 for(const row of advice.weaponNotes){assert.ok(weapons.some(w=>w.id===row.weaponId));for(const id of row.sourceIds)assert.ok(adviceSources.has(id));assert.ok(row.good&&row.avoid);}
-assert.equal(advice.farms.length,5);assert.equal(advice.earlyRoutes.length,4);assert.equal(weapons.length,55);assert.ok(missions.every(m=>equipmentNeeds(m).length>0));
+assert.equal(advice.farms.length,5);assert.equal(advice.earlyRoutes.length,4);assert.equal(weapons.length,360);assert.ok(missions.every(m=>equipmentNeeds(m).length>0));
 const empty=fresh(),before=JSON.stringify(empty);assert.equal(routeWeapons(advice.earlyRoutes[2],weapons).length,2);assert.deepEqual(ownFarmTotals(empty,'m46','Disaster'),{runs:0,minutes:0,credits:0});assert.equal(JSON.stringify(empty),before);
 empty.farmRuns.a={missionId:'m46',difficulty:'Disaster',runs:2,minutes:10,yield:{credits:20000}};empty.farmRuns.b={missionId:'m46',difficulty:'Normal',runs:1,minutes:5,yield:{credits:99999}};assert.deepEqual(ownFarmTotals(empty,'m46','Disaster'),{runs:2,minutes:10,credits:20000});
 const pt=weapons.find(w=>w.id==='weapon-pt-linked-energy-blaster');assert.equal(pt.price.red,null);empty.weapons[pt.id]={unlocked:false,purchased:false,target:true};assert.deepEqual(resourcePlan(empty,weapons).unknown,[pt.id]);
@@ -103,3 +103,13 @@ assert.doesNotMatch(weapons.map(w=>w.recommendedUse).join(' '),/先在 Practice 
 console.log('EDFIR sourced early routes, farming prerequisites, own-sample isolation and partial PT budget passed');
 
 const hostile='<img src=x onerror=alert(1)>',safe=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'),safeAdvice=adviceHtml({data:{...advice,principles:[{title:hostile,text:hostile}],earlyRoutes:[],farms:[],exclusions:[]},mission:{...missions[0],enemies:[hostile],recommendedEquipment:[hostile],warnings:[hostile]},missions:[missions[0]],weapons,progress:fresh(),escape:safe,option:()=>'',button:()=>'',sourceLinks:()=>''});assert.ok(safeAdvice.includes('&lt;img'));assert.ok(!safeAdvice.includes(hostile));
+
+// 完整清單按來源逐類核對，舊55項進度ID不變；非本體項目不能填白金分母。
+const full=await read('research/weapon-catalog.json');assert.equal(equipment.coverage.baseIndexVerified,true);assert.equal(equipment.coverage.baseWeaponCount,312);assert.equal(weapons.filter(w=>w.contentGroup==='base').length,312);assert.equal(weapons.filter(w=>w.contentGroup==='dlc').length,40);assert.equal(weapons.filter(w=>w.contentGroup==='bonus').length,8);
+for(const type of full.audit.typeCounts){assert.equal(type.base,type.faqBaseCount);for(const scope of ['base','dlc','bonus'])assert.equal(weapons.filter(w=>w.type===type.type&&w.contentGroup===scope).length,type[scope]);}
+assert.equal(full.audit.preservedIds.length,55);for(const row of full.audit.preservedIds){const found=weapons.find(w=>w.id===row.id);assert.ok(found);if(row.officialName)assert.equal(found.officialName,row.officialName);}
+const allOwned=fresh();setTrophy(allOwned,'t10',false);for(const w of weapons.filter(w=>!w.baseGame))setWeapon(allOwned,w.id,'purchased',true);assert.deepEqual(arsenalProgress(allOwned,weapons),{owned:0,total:312});for(const w of weapons.filter(w=>w.baseGame))setWeapon(allOwned,w.id,'purchased',true);assert.deepEqual(arsenalProgress(allOwned,weapons),{owned:312,total:312});assert.equal(allOwned.trophies.t10.earned,false);setTrophy(allOwned,'t10',true);setWeapon(allOwned,weapons.find(w=>w.baseGame).id,'purchased',false);assert.equal(allOwned.trophies.t10.earned,true);assert.equal(arsenalProgress(allOwned,weapons).owned,311);
+const scoped=freshWeaponFilters();scoped.scope='bonus';assert.equal(filterWeapons(weapons,fresh(),scoped).length,8);scoped.scope='dlc';assert.equal(filterWeapons(weapons,fresh(),scoped).length,40);scoped.scope='base';assert.equal(filterWeapons(weapons,fresh(),scoped).length,312);
+const extraIds=new Set(weapons.filter(w=>!w.baseGame).map(w=>w.id));assert.ok(trophies.find(t=>t.officialName==='Complete Arsenal').weaponIds.every(id=>!extraIds.has(id)));
+assert.ok(weapons.some(w=>w.nameJa==='SQ-マウナケアDA'&&w.price.credits===null));assert.ok(weapons.some(w=>w.nameJa==='ER-ソーネード'&&w.contentGroup==='dlc'));assert.ok(weapons.find(w=>w.nameJa.includes('Aisha')).warning.includes('A3'));assert.equal(weapons.filter(w=>w.evidence?.length).length,360);assert.deepEqual(parseImport(JSON.parse(JSON.stringify(allOwned))),allOwned);
+console.log('EDFIR 312 base / 40 DLC / 8 bonus, independent type counts, preserved IDs and PSN isolation passed');
