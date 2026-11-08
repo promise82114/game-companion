@@ -146,6 +146,13 @@ const atlantis=puzzles.find(p=>p.id==='TEXT-atlantis');assert.equal(atlantis.ver
 const survey=data.steps.find(s=>s.id==='doge-survey');assert.equal(survey.dialogue.length,7);assert.equal(survey.dialogue.at(-1).id,'doge-prayer');assert.ok(survey.dialogue.every(row=>typeof row.english==='string'&&row.english.length));
 assert.ok(data.steps.find(s=>s.id==='rand-north').location.startsWith('N1 '));
 assert.ok(data.steps.find(s=>s.id==='doge-match').location.includes('E2–E3'));
+const malducRows=data.steps.find(s=>s.id==='city-politics').dialogue.filter(row=>row.speaker==='Malduc（202）');
+assert.deepEqual(malducRows.map(row=>row.id),['city-malduc','city-malduc-novel','city-malduc-close']);
+assert.match(malducRows[0].meaning,/我不認為所有的古代作家都相信這一點/);
+assert.match(malducRows[1].note,/作者選了另一項/);
+assert.match(malducRows[2].note,/完整順序.*待查證/);
+assert.equal(storyMaps['CITY-2'].nodes.find(n=>n.id==='malduc').caption,'Malduc 202');
+assert.match(storyMaps['CITY-2'].nodes.find(n=>n.id==='malduc').description,/面向塔門/);
 const seenContexts=new Set();
 for(const step of data.steps)for(const row of step.dialogue||[]){assert.ok(row.id&&row.speaker&&row.context&&row.meaning);assert.ok(row.sources.length);for(const key of row.sources)assert.ok(data.sources[key]);assert.ok(['confirmed','consensus','unverified'].includes(row.verificationStatus));if(row.english===null)assert.equal(row.verificationStatus,'unverified','缺英文不能假裝已查證');if(row.verificationStatus==='confirmed')assert.ok(row.sources.some(id=>['screenshot','transcript'].includes(data.sources[id].kind)));}
 for(const branch of data.branches){const step=data.steps.find(s=>s.id===branch.stepId);assert.ok(step.dialogue.length>=10);assert.ok(step.dialogue.some(row=>row.speaker.includes('Cryer')));assert.ok(step.dialogue.some(row=>row.context.includes('VTOL')));assert.equal(step.verificationStatus,'unverified','未實機驗證不得保證三結果');assert.ok(branch.prerequisites.includes('museum'));assert.match(branch.restore,/Download to Console Storage/);assert.match(branch.restore,/不要.*上傳/);seenContexts.add(branch.id);}

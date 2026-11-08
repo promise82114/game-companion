@@ -21,7 +21,7 @@ for(const visit of [1,2,3]){
   node('construction','工',670,70,'穹頂工地',s('city-tour'),'在博物館後側；精確進入轉角待查證。')
  ];
  if(visit===1)nodes.push(node('purple','P',110,90,'Purple 998',s('purple'),'初訪：考古花園棕櫚樹與短階梯旁。'),node('schuyler','S',500,325,'Schuyler 923',s('schuyler'),'博物館外前方。'),node('rand','R',380,265,'Rand 303',s('museum'),'館前／左側展示室的測試任務。'),node('cornelius','C',620,265,'Cornelius 3',s('museum'),'先入館交談；Rand 測試是另一台終端。'),node('damien','D',330,580,'Damien 903',s('petition'),'靠中央塔出口一帶。'));
- if(visit===2)nodes.push(node('neith','N',610,290,'Neith 33',w('city2-terminal'),'館前找她取得 Cornelius 工作終端許可。'),node('purple','P',500,325,'Purple 998',w('city2-west'),'第二次在館前，不是初訪的水岸位置。'),node('atal','A',500,470,'Atal 890',s('city-politics')),node('damien','D',650,380,'Damien 903',s('city-politics')),node('malduc','M',710,580,'Malduc 970',s('city-politics'),'靠中央塔出口一帶。'));
+ if(visit===2)nodes.push(node('neith','N',610,290,'Neith 33',w('city2-terminal'),'館前找她取得 Cornelius 工作終端許可。'),node('purple','P',500,325,'Purple 998',w('city2-west'),'第二次在館前，不是初訪的水岸位置。'),node('atal','A',500,470,'Atal 890',s('city-politics')),node('damien','D',650,380,'Damien 903',s('city-politics')),node('malduc','M',710,580,'Malduc 202',s('city-politics'),'中央塔入口階梯前，旁有直立電子告示牌。面向塔門時在左側；本圖從塔向博物館看，所以畫在右下。'));
  if(visit===3)nodes.push(node('purple','P',500,490,'Purple 998',w('city3-recruit'),'第三次靠塔的廣場一帶。'),node('damien','D',330,580,'Damien 903',s('final-city')));
  map('CITY-'+visit,'城市・'+['','初訪','北側後回城','Act V 回城'][visit],nodes,[['tower','museum','construction'],['tower','founder','milton','memorial','garden','museum'],['tower','pavilion','gazebo','museum']],'cityMap',cityOrientation,visit===3?'Melville／Yaqut 依黃色三角尋找；目前只核對花圃涼亭與環形階梯畫面，精確城市座標待查證，沒有在此任意落點。':'工地的進入轉角待查證。NPC 位置依到訪次數區分；對話選項仍以本輪路線為準。');
 }

@@ -7,6 +7,7 @@ export function applyMayorResearch(roadmap) {
   ps5Guide:{title:'FK-corporation PS5 2.04 實測攻略（法文；含歧異）',url:'https://www.psthc.fr/unjeu/the-talos-principle2-ps5/guide-trophees.htm',kind:'player-guide'},
   psnGuide:{title:'BlackTorito PSNProfiles 原指南（403，未讀取正文）',url:'https://psnprofiles.com/guide/17976-the-talos-principle-ii-trophy-guide',kind:'unavailable'},
   manorCity:{title:'城市回訪實錄（另一配對：Helga）',url:'https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/new_jerusalem_2.htm',kind:'player-guide'},
+  malducVideo:{title:'TheSourceError：Malduc（202）實玩對話 24:12–26:16（已看影格）',url:'https://www.youtube.com/watch?v=GwKe34G0rto&t=1452s',kind:'screenshot',checkedAt:'2026-11-08'},
   manorW2:{title:'W2 實錄（Helga 路線，不作 Rand 結果保證）',url:'https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_3/west_2_3.htm',kind:'player-guide'},
   w2Plug:{title:'遊戲截圖：入機選項',url:'https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_3/Talos_2_2776b.jpg',kind:'screenshot'},
   w2Wake:{title:'遊戲截圖：甦醒後 Hermanubis 三選項',url:'https://mysterymanor.net/walkthroughs/Talos_Principle_2/17_West_2/West_2_3/Talos_2_2776i.jpg',kind:'screenshot'},
@@ -58,16 +59,18 @@ export function applyMayorResearch(roadmap) {
   sources:['election','steam','randReport','ps5Guide']
  });
  patch('city-politics',{
-  actions:['回城先找博物館右側的 Damien，表示支持；再回應城中心 Atal 的演說，最後到塔前找 Malduc。','問 Malduc：Athena 的名字是否和樂觀小說有關，接著表示會考慮他的看法。','回塔內原本的簡報桌，依下方順序回答。若沒有簡報，先檢查 N2 調查與 Rand 任務是否完成。','第二句英文在指南間有 good on／good of 差異，目前保留中文意思，英文原句仍待核對。'],
+  actions:['回城先找博物館右側的 Damien，表示支持；再回應城中心 Atal 的演說，最後到中央塔入口階梯前找 Malduc（202）。面向塔門時看左側，認他身旁的直立電子告示牌。','Malduc 談到古代作家都在警告追求知識的危險時，先選「我不認為所有的古代作家都相信這一點。還是有其他思想流派的。」；下一輪才找 Athena 與樂觀小說的選項。','小說之後到結尾之間的 Athena 支線輪次尚未完整核對；若又出現人性能否改變等問題，先按當前畫面辨認，不要把結尾答覆當成緊接的下一句。結尾找表示「或許你有道理，我會想想」的選項。','回塔內原本的簡報桌，依下方順序回答。若沒有簡報，先檢查 N2 調查與 Rand 任務是否完成。','簡報第二句英文在指南間有 good on／good of 差異，目前保留中文意思，英文原句仍待核對。'],
   dialogue:[
    choice('city-damien','Damien（903）','博物館右側',null,'明確表示支持',['walkthrough','ps5Guide']),
    choice('city-atal','Atal（890）','城中心／聽演說後',null,'支持他的立場',['election','ps5Guide']),
-   choice('city-malduc','Malduc（202）','返回塔／VTOL 途中',null,'詢問小說名字，表示可能有道理、會考慮',['walkthrough','ps5Guide']),
+   {...choice('city-malduc','Malduc（202）','古代作家的警告：先選其他思想流派',"I don't think all ancient writers believed that. There were other strands of thought.",'選你畫面中的第一項：「我不認為所有的古代作家都相信這一點。還是有其他思想流派的。」',['malducVideo'],'已核對玩家繁中截圖及影片 25:20–25:30：選後才出現小說問題；不能跳過這一輪。','confirmed'),checkedAt:'2026-11-08'},
+   {...choice('city-malduc-novel','Malduc（202）','下一輪：問 Athena 與樂觀小說',"Didn't Athena name herself after a fairly optimistic novel?",'選詢問 Athena 是否取名自一本樂觀小說的句子；這輪才有此選項。',['malducVideo','ps5Guide'],'影片 25:30 已核對選項存在，但作者選了另一項「我們自身的存在」。Athena 選後的中間輪次待查證。','unverified'),checkedAt:'2026-11-08'},
+   {...choice('city-malduc-close','Malduc（202）','最後一輪：表示會考慮',"Perhaps you're right. I'll think about it.",'在結束對話的三選一中，選表示「或許你有道理，我會想想」的句子。',['malducVideo','ps5Guide'],'影片 26:12 已核對英文；採此結尾依 PS5 指南。Athena 支線接到本輪的完整順序及對當選的必要性仍待查證。','unverified'),checkedAt:'2026-11-08'},
    choice('brief-technology','塔內簡報','島上科技',"The island has technology we can't afford to ignore.",'島上科技不能忽視',['walkthrough']),
    choice('brief-trust','塔內簡報','如何看待機會',null,'相信我們能善用機會',['walkthrough','steam'],'good on／good of 不一致，完整英文待 PS5 畫面核對。'),
    choice('brief-why','塔內簡報','追問','How? Why?','怎麼做？為什麼？',['walkthrough']),
    choice('brief-share','塔內簡報','如何處理資料','I would share it with the people.','與人民分享',['walkthrough'])
-  ],sources:['walkthrough','election','steam','ps5Guide'],verificationStatus:'unverified'
+  ],sources:['walkthrough','election','steam','ps5Guide','malducVideo','manorCity'],verificationStatus:'unverified'
  });
  patch('rand-south',{
   trigger:'本頁簡報答法不站 Rand 一邊時，Xbox 流程在 S1 遊玩中收到關係訊息；PS5 指南僅記城市簡報後／更晚。',
@@ -148,5 +151,5 @@ export function applyMayorResearch(roadmap) {
   patch(branch.stepId,{actions:[...content.actions,restore],dialogue:content.dialogue,prerequisites:branch.prerequisites,recovery:restore,sources:[...new Set(content.dialogue.flatMap(row=>row.sources))],verificationStatus:'unverified'});
  }
  patch('w2-backup',{prerequisites:branches[0].prerequisites.filter(id=>id!=='w2-backup')});
- roadmap.mayorResearch={checkedAt,route:'W2 入口 A／XboxAchievements 分支；不混用 Hanni 出機後備份法',transcriptionNote:'已核對的英文有逐項來源；英文空白與人物適用性未證實者均標待查證。影片僅讀取頁面與章節，未取得可播放影格，不算逐字驗證。',ps5Acceptance:'未在 PS5 實機還原三結果，不保證一份備份可補救錯誤前置。'};
+ roadmap.mayorResearch={checkedAt,route:'W2 入口 A／XboxAchievements 分支；不混用 Hanni 出機後備份法',transcriptionNote:'已核對的英文有逐項來源；英文空白與人物適用性未證實者均標待查證。2026-11-08 已逐格核對 Malduc 的其他思想流派、小說與結尾選單；影片採另一條中間支線，Athena 支線的完整銜接仍待查證，不能由選項存在推定選舉結果。',ps5Acceptance:'未在 PS5 實機還原三結果，不保證一份備份可補救錯誤前置。'};
 }
