@@ -39,7 +39,7 @@ for(const file of ['index.html','app.js','data.js','model.js','map.js','style.cs
 for(const file of ['roadmap-store.js','merge-core.js'])await fs.access(path.join(root,'shared',file));
 assert.ok(!(await fs.readFile(path.join(root,'games/grounded/index.html'),'utf8')).includes('accounts.google.com'));
 const edfir=path.join(root,'games/edfir');
-for(const name of ['index.html','boot.js','app.js','model.js','guide.js','style.css','data/catalog.json','data/drones.json','data/equipment.json'])await fs.access(path.join(edfir,name));
+for(const name of ['index.html','boot.js','app.js','model.js','guide.js','weapons.js','advice.js','style.css','data/catalog.json','data/drones.json','data/equipment.json','data/advice.json'])await fs.access(path.join(edfir,name));
 assert.equal(JSON.parse(await fs.readFile(path.join(edfir,'data/catalog.json'),'utf8')).trophies.length,44);
 assert.equal(JSON.parse(await fs.readFile(path.join(edfir,'data/drones.json'),'utf8')).drones.length,55);
 // boot 動態引用既有來源，避免重複實作共用 UI、OAuth、store、同步。

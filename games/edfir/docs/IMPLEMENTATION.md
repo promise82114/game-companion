@@ -2,6 +2,42 @@
 
 日期：2026-11-08。開始時 `G:\git\game-companion\games\edfir\module.json` 不存在；本次先建立新模組契約，再讀取核對。入口 AGENTS、repo AGENTS、README、ARCHITECTURE 已讀取，沒有更深層適用 AGENTS。保留工作區既有 Talos II 修改，不提交、不推送、不部署。
 
+## 1.3.0 合併發布授權 · 2026-11-08
+
+使用者要求「commit、push 部署，這次白金介面、武器 checklist 跟出擊養成心得一起上」。本次將 1.2.0 UI 與 1.3.0 心得整批提交，沿既有 main push → Verify and deploy Game Companion → GitHub Pages 流程發布；不變更其他遊戲或既有未追蹤的 TALOS2_UX_AUDIT_TASK.md。以下「未 commit／push／部署」是先前本機實作階段紀錄。
+
+提交前重新執行七模組資料、同步合成、建置／產物及全新 context 的 EDFIR 9 頁 × 4 寬度瀏覽器檢查；實際結果以工具輸出與對應提交 Actions 為準。發布後另核對正式靜態資源與新 context 畫面，不以 push 成功代替部署成功。正式 Google 與遊戲實機仍未驗收。
+
+## 1.3.0 出擊需求、開局升級與刷取心得 · 2026-11-08
+
+- 新增出擊與養成頁，從既有 52 關 recommendedEquipment／敵人／警示呈現需求；選任務只改 URL，不推定玩家裝備。沒有宣稱 52 關均已驗證具名雙槍或最佳配裝。
+- 4 條開局路線、7 筆具名用途與踩雷提醒、5 條分階段刷取方法；來源為 Wiki 推薦／稼ぎ／各武器表與 GameFAQs 77192，2026-11-08 核對後自行整理繁中。心得、配法推論、解鎖與成本事實各自保存 basis／sourceIds；沒有 PS4 實機驗收。
+- 新收 TF-Anger GD、PT-Linked Energy Blaster、PT-Linked Super Blaster，合計 55 武器、14 類；45 款成本完整。PT 紅 Gems 破折號維持 null，規劃器排除並提醒，未用 0 補齊。對應 M02／28／36 獎勵自動建立原有雙向關聯。
+- 開局 Hard 繞路先列採購成本與對空／爆風／裝填限制；不想先碰 Hard 可讀 Drone 3／5 架方案。PT 不能裝填／換槍停射、B 版發射不能移動等缺點與用途一同呈現。
+- 更正 Practice 只能試已購買武器，移除原始研究中 AW-Outrage「試射後再決定購買」錯誤。
+- M13 為慢補素材；M35 紅 Gems、M46 黃 Gems／Credits、M47 藍 Gems、M52 Credits 均附前置／難度。Wiki 與 GameFAQs 的版本、評價、配裝及收益不同，不顯示固定時薪、不寫入個人估算。M38 連射器放置與 M41 DLC Master Shaman 刷法不作預設。
+- route 持有 checkbox 共用 purchased；不改 unlocked 或 trophy earned。按鈕才把尚未持有武器加入既有 target；刷取預填只改表單任務／難度，不寫出假的時間與收益。schema1、namespace、store、Drive 及其他遊戲不變。
+- 新增 dist/advice.js、research/advice-research.json 與產物 data/advice.json；沿 prepare-data 產生，資料／來源驗證及原有瀏覽器回歸延伸到 9 頁。module／catalog／equipment 為 1.3.0，Drone 內容版本維持 1.1.0。
+
+資料、七模組、建置與產物驗證已通過。最終隔離 Edge 回歸通過 9 頁 × 1440／768／390／320px、心得選任務不寫進度、持有共用且不代填解鎖、明確加入預算、刷法預填不捏造收益、跨分頁、匯入保護與包含武器／裝備在內的完整新 context 還原；沒有其他遊戲儲存寫入、外部請求或頁面錯誤。
+
+已檢視桌面／平板／手機首屏與整頁，以及 Hard 升級路線、M46 刷取心得展開截圖。出擊頁移除重複統計，手機可直接看需求與重要警示。design-taste inspect 0 FAIL／1 WARN（多條心得無法全部進首屏；保留快速段落連結與逐條展開）；截圖位於忽略的 outputs/edfir/advice-final/、advice-hard-route-*.png、advice-farm-route-*.png。自評設計 7／可用性 8／創意 6／內容 7，仍有逐關具名配裝及實機驗證缺口。所有遊戲事實仍保留來源／限制，測試不當作 PS4 或正式 Google 驗收。本批未 commit、push 或部署。
+
+## 1.2.0 白金導向與 checklist · 2026-11-08
+
+本批為本機 UI 調整，未 commit、push 或部署；1.1.0 發布授權與結果屬前一批。
+
+- 移除三目標切換，首頁、推薦與清理提示以白金為主；仍可從任意目前任務開始。舊 settings.goal 保留原值並接受匯入，fresh 預設 platinum，schema1／namespace 不變。
+- Drone 僅保留回收 checkbox，移除重複狀態選單；一般進度篩選為全部／未勾選／已勾選。舊 unknown 渲染為未勾選，只有使用者勾選時才寫 confirmed／missing，保留同筆未知欄位。查證不足與來源衝突仍呈現，不與玩家紀錄混淆。
+- 武器以緊湊清單呈現，解鎖與持有分開勾選。完整條件、關聯任務／獎盃、四資源價格、來源與規劃勾選置於詳情，預設收合；獎盃／任務連入武器會展開對應詳情。
+- 類型分類與持有計數、等級／解鎖方式／關聯任務／未持有／未解鎖／規劃中交集、英文日文別名與敵人搜尋、M1／M01 正規化、等級／Credits／名稱排序、空清單清除篩選。未知價格排序最後，不當作零。
+- 手機進階篩選預設收合，桌面展開。暫存開合與篩選不寫進度；篩選中剛勾選的項目保留到下一次篩選，維持 checkbox 焦點、閱讀位置與取消操作。
+- 新增 dist/weapons.js；只更改 EDFIR UI／fresh 預設值／版本、必要產物驗證與回歸。沒有更動其他遊戲、共用 store／OAuth／Drive 或攻略資料。版本 1.2.0，資料內容仍是 1.1.0 的部分庫。
+
+驗證：資料與相容性、七模組驗證、同步合成檢查、建置／產物檢查均通過。隔離 Edge 回歸通過 8 頁 × 1440／768／390／320px、舊 goal／unknown 只讀不改寫、武器類型與篩選交集、英文日文別名與 M2 正規化、空結果恢復、手機進階篩選開合、checkbox 焦點保留、雙向 Drone、獎盃獨立、資源計算、跨分頁、備份失敗／quota／過期匯入保護、新 context 還原及損壞原文下載；沒有外部請求、頁面錯誤或其他遊戲資料寫入。僅使用合成資料與新 context。
+
+視覺複核已檢視桌面／平板／手機首屏及整頁截圖；武器列桌面約 88px，首屏可開始閱讀多筆清單。修正平板進階欄位對齊與手機選擇後意外收合。design-taste inspect 為 0 FAIL／1 WARN：52 筆完整清單仍超出首屏，保留全清單與篩選而不隱藏資料。截圖與報告位於忽略的 outputs/edfir/weapons-accepted/。視覺自評：設計 7／可用性 8／創意 6／內容 7；內容仍受部分武器庫與實機查證限制。
+
 ## 1.1.0 發布授權 · 2026-11-08
 
 使用者已明確要求「commit、push 部署」。本批只提交 EDFIR 模組、Portal 封面／接入、必要驗證及說明文件，沿既有 main 分支 GitHub Pages workflow 發布。提交前執行資料、合成同步、建置與產物檢查；隔離瀏覽器結果沿用本版已通過的合成回歸。實際 workflow 與正式站結果另行核對，不以 push 成功冒充部署成功。正式 Google 與 PS4 遊戲實測仍未驗收。以下保留先前實作與驗證紀錄。

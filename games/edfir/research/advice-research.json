@@ -1,0 +1,338 @@
+{
+  "contentVersion": "1.3.0",
+  "checkedAt": "2026-11-08",
+  "scope": "PS4 base game; no DLC-dependent routes",
+  "verification": "community-guides-and-editorial-synthesis; not playtested",
+  "sources": [
+    {
+      "id": "advice-recommended",
+      "title": "IRON RAIN @Wiki — 推薦武器與開局順序",
+      "url": "https://w.atwiki.jp/edfir/pages/49.html",
+      "checkedAt": "2026-11-08",
+      "scope": "社群心得；改寫為取捨，非實機驗收或所有難度保證。"
+    },
+    {
+      "id": "advice-farming",
+      "title": "IRON RAIN @Wiki — 刷取路線與版本差異",
+      "url": "https://w.atwiki.jp/edfir/pages/34.html",
+      "checkedAt": "2026-11-08",
+      "scope": "社群刷取方法；數值受版本與評價影響，不匯入為個人實測。"
+    }
+  ],
+  "principles": [
+    {
+      "title": "買之前先看這關缺什麼",
+      "text": "先確認射程、對空與近身自救，再買其中一把。新解鎖只代表多一個選項，不代表下一關的解答。",
+      "sourceIds": [],
+      "basis": "editorial"
+    },
+    {
+      "title": "Practice 是買到後試用",
+      "text": "購買後先試射程、起手延遲與裝填；練習場不能當成購買前免費試槍。",
+      "sourceIds": [
+        "equip-faq-names"
+      ],
+      "basis": "source-checked"
+    },
+    {
+      "title": "刷錢看實拿，不看傳說秒數",
+      "text": "記錄包含重試與結算的總時間，以及結算實拿 Credits；支援道具會影響報酬。先用自己的數據比較。",
+      "sourceIds": [
+        "equip-faq-names"
+      ],
+      "basis": "editorial-from-source"
+    }
+  ],
+  "earlyRoutes": [
+    {
+      "id": "starter",
+      "stage": "剛開始",
+      "title": "先保留遠射，再補好操作的步槍",
+      "weaponIds": [
+        "weapon-fx-cyrus-ii",
+        "weapon-aw-outrage"
+      ],
+      "missionIds": [
+        "m02"
+      ],
+      "steps": [
+        "先熟悉初始 FX-キュロスII 的 Quick Reload；用於能保持距離的目標。",
+        "完成 M02 Normal 後可購買 AW-Outrage，作為較好操作的連射選項。"
+      ],
+      "caution": "編輯搭配：兩者分工是遠處火力／連射應急；火箭近身有風險，並非每關固定帶法。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-rocket",
+        "equip-assault"
+      ],
+      "basis": "community-route-and-editorial-pairing"
+    },
+    {
+      "id": "drones",
+      "stage": "不想先挑戰 Hard",
+      "title": "先收 3／5 架 Drone，打開低價選項",
+      "weaponIds": [
+        "weapon-bl-gaugamela",
+        "weapon-bl-corinth"
+      ],
+      "missionIds": [
+        "m01",
+        "m02"
+      ],
+      "steps": [
+        "Practice 有 3 架 Drone；高處位置需要 Jet Lifter，未解鎖時先取其他可到達的 Drone。",
+        "累計 3 架可買 BL-Gaugamela；累計 5 架可買 BL-コリントス，按清群／控場需求選一把。"
+      ],
+      "caution": "兩把是不同用途的候選，不要求一起買或一起帶。Gaugamela 有彈道下墜；Corinth 偏控場、有起手延遲，不當高難度主輸出。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-energy",
+        "equip-faq-names"
+      ],
+      "basis": "community-route"
+    },
+    {
+      "id": "hard-detour",
+      "stage": "想先拿一組明顯升級",
+      "title": "M02 Hard → Anger GD → M01 Hard → Furious 2",
+      "weaponIds": [
+        "weapon-tf-anger-gd",
+        "weapon-aw-furious-2"
+      ],
+      "missionIds": [
+        "m02",
+        "m01"
+      ],
+      "steps": [
+        "先用熟悉的遠射配置挑戰 M02 Hard，完成後解鎖 TF-Anger GD 購買資格。",
+        "買到 Anger GD、練習 Quick Reload 後，用它幫助處理 M01 Hard 地面群；完成後可買 AW-Furious 2。"
+      ],
+      "caution": "這是可選的社群繞路升級。兩把各 48,000 Credits，另需 Gems；缺資金或 Hard 不穩就先推主線。Furious 2 裝填長，Anger GD 也不能包辦對空。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-grenade-launcher",
+        "equip-assault"
+      ],
+      "basis": "community-route"
+    },
+    {
+      "id": "range",
+      "stage": "需要便宜的遠射候選",
+      "title": "11 架 Drone → Sonic Pile 先行量產型",
+      "weaponIds": [
+        "weapon-sl-sonic-pile-preproduction"
+      ],
+      "missionIds": [],
+      "steps": [
+        "收集途中核對累計 Drone；11 架後到商店查看 SL-ソニックパイル先行量産型。",
+        "它是遠射／穿透候選；購買後先熟悉按下扳機到發射的延遲。"
+      ],
+      "caution": "不要只看高單發數字；另一格仍需留能及時處理近身敵人的武器。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-railgun"
+      ],
+      "basis": "community-route-and-editorial-pairing"
+    }
+  ],
+  "weaponNotes": [
+    {
+      "weaponId": "weapon-aw-furious-2",
+      "role": "前期主輸出升級",
+      "good": "M01 Hard 可取得購買資格；社群推薦拿回 Easy／Normal 推進。",
+      "avoid": "裝填較長；另一格要能處理裝填期間的威脅。",
+      "sourceIds": [
+        "advice-recommended"
+      ]
+    },
+    {
+      "weaponId": "weapon-tf-anger-gd",
+      "role": "地面群體火力",
+      "good": "地面密集敵群；熟悉 Quick Reload 後更好發揮。",
+      "avoid": "對空不順手，近身或隊友旁有爆風風險；保護建物的關卡先看限制。",
+      "sourceIds": [
+        "exp-grenade-launcher"
+      ]
+    },
+    {
+      "weaponId": "weapon-bl-gaugamela",
+      "role": "前期清群候選",
+      "good": "3 架 Drone 後便宜的火力選項。",
+      "avoid": "彈道有下墜，不能把它當全距離通用槍。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-energy"
+      ]
+    },
+    {
+      "weaponId": "weapon-bl-corinth",
+      "role": "麻痺控場副武器",
+      "good": "在需要控場時協助拉開空間。",
+      "avoid": "有起手延遲與火力取捨；部分敵人不吃控制，不保證能救急。",
+      "sourceIds": [
+        "exp-energy"
+      ]
+    },
+    {
+      "weaponId": "weapon-fx-cyrus-ii",
+      "role": "初期遠射候選",
+      "good": "先把 Quick Reload 練熟，Normal 以下可持續使用。",
+      "avoid": "爆風武器不在近身敵人或隊友旁隨意開火。",
+      "sourceIds": [
+        "advice-recommended",
+        "exp-rocket"
+      ]
+    },
+    {
+      "weaponId": "weapon-pt-linked-energy-blaster",
+      "role": "中後期定點爆發／刷取",
+      "good": "按指定刷取路線短時間集中輸出。",
+      "avoid": "射擊時不能移動、無法裝填；換槍停止連射。不要在未知敵種的關卡雙持，也別把彈藥浪費在光學耐性敵人上。",
+      "sourceIds": [
+        "equip-faq-names",
+        "exp-sniper",
+        "advice-recommended"
+      ]
+    },
+    {
+      "weaponId": "weapon-pt-linked-super-blaster",
+      "role": "中後期定點爆發／刷取",
+      "good": "按指定刷取路線短時間集中輸出。",
+      "avoid": "無法裝填；換槍停止連射，別把彈藥耗在無效命中。不是開局或長消耗戰通用解。",
+      "sourceIds": [
+        "equip-faq-names",
+        "exp-sniper"
+      ]
+    }
+  ],
+  "farms": [
+    {
+      "id": "farm-m13",
+      "missionId": "m13",
+      "stage": "推進到 M13 後",
+      "difficulty": "Normal",
+      "goal": "補藍／黃 Gems",
+      "weaponIds": [],
+      "requirements": "熟悉 M13、具遠射與對空手段；Normal 是編輯建議起點，原心得僅寫低難度。",
+      "steps": [
+        "保留部分腿部出兵口，循環處理增援、回收 Gems。",
+        "資源夠用後擊倒 Gargant，成功結算。"
+      ],
+      "caution": "這是慢補素材，不是快速 Credits 路線；不建議為追理論上限長時間空等。",
+      "sourceIds": [
+        "advice-farming"
+      ],
+      "basis": "community-method-with-editorial-starting-difficulty"
+    },
+    {
+      "id": "farm-m35",
+      "missionId": "m35",
+      "stage": "主線後期／已能穩定過高難度",
+      "difficulty": "Hardest",
+      "goal": "紅 Gems＋Credits",
+      "weaponIds": [
+        "weapon-pt-linked-super-blaster"
+      ],
+      "requirements": "社群配置使用 Heavy Striker 與高爆發武器；PT Super Blaster 要先完成 M36 Hardest，不能當首次到 M35 的裝備。",
+      "steps": [
+        "先清機甲，預留足夠彈藥應付兩隻 Beizal。",
+        "集中解決已進場的目標，再利用結算前時間回收紅 Gems。"
+      ],
+      "caution": "來源報酬數字因評價／版本不同；不採某一筆作固定收益。尚無高階配裝就先選穩過的關卡。",
+      "sourceIds": [
+        "advice-farming",
+        "equip-faq-names"
+      ],
+      "basis": "community-method"
+    },
+    {
+      "id": "farm-m46",
+      "missionId": "m46",
+      "stage": "通關後、有定點爆發裝備",
+      "difficulty": "Disaster",
+      "goal": "Credits＋黃 Gems",
+      "weaponIds": [
+        "weapon-pt-linked-energy-blaster",
+        "weapon-pt-linked-super-blaster"
+      ],
+      "requirements": "Disaster 需先通關。B 級 PT 來自 M28 Hard，A 級來自 M36 Hardest；Wiki 用 B 級作起點、GameFAQs 用 A 級，屬不同配置。",
+      "steps": [
+        "瞄準打開的運輸船弱點，擊破後換槍停止 PT 連射，節省有限彈藥。",
+        "最後機甲可按 Wiki 路線用艦上單裝砲，或採熟悉的 Heavy Striker 盾防配置。"
+      ],
+      "caution": "只擊中灰色外殼不算有效輸出。不要未備齊就模仿「幾分鐘一場」。",
+      "sourceIds": [
+        "advice-farming",
+        "equip-faq-names"
+      ],
+      "basis": "two-community-configurations"
+    },
+    {
+      "id": "farm-m47",
+      "missionId": "m47",
+      "stage": "通關後／高階火力與生存已成形",
+      "difficulty": "Disaster",
+      "goal": "藍 Gems",
+      "weaponIds": [],
+      "requirements": "高階非爆炸火力與回復手段；先看本關既有施工樓掩體攻略。",
+      "steps": [
+        "利用施工樓限制來敵角度，逐批處理蟻群與蟻后。",
+        "場面穩定後再出去收集 Gems。"
+      ],
+      "caution": "掩體不是無敵；部分酸與近戰仍會命中。以藍 Gems 為主，火力不足時耗時可能很長。",
+      "sourceIds": [
+        "advice-farming",
+        "equip-faq-names"
+      ],
+      "basis": "community-method"
+    },
+    {
+      "id": "farm-m52",
+      "missionId": "m52",
+      "stage": "通關後、指定 AA 裝備已取得",
+      "difficulty": "Disaster",
+      "goal": "Credits",
+      "weaponIds": [],
+      "requirements": "來源配置為 MR-Super Missile: Galileo II 雙持（累計 Mystic Spider 200 隻）；PR-Sorcerer II 為可選增益，M24 Hard 解鎖。這些尚未納入本次武器／道具完整庫。",
+      "steps": [
+        "按 Boss 攻略尋找可清楚指向目標的射線與遮蔽位置，避免導引誤鎖艦體或幼體。",
+        "分階段輸出，無敵／對話段不要浪費增益；成功結算後記錄實拿 Credits。"
+      ],
+      "caution": "純後期專裝路線；需要先累積擊殺與採購，無固定 Gems 收益。來源秒數與評價不同，不承諾每場固定收入。",
+      "sourceIds": [
+        "advice-farming",
+        "equip-faq-names"
+      ],
+      "basis": "community-method"
+    }
+  ],
+  "exclusions": [
+    {
+      "text": "未收錄 M38 連射控制器放置法為預設快速路線；它依賴額外設備與耐久條件。",
+      "sourceIds": [
+        "advice-farming"
+      ]
+    },
+    {
+      "text": "未採用 M41 依賴 Master Shaman 的刷法；該道具需要 DLC。",
+      "sourceIds": [
+        "advice-farming"
+      ]
+    },
+    {
+      "text": "PT、AA 武器與高難度刷取屬後期選項，不作全新玩家的預設開局。",
+      "sourceIds": [
+        "advice-farming"
+      ],
+      "basis": "editorial"
+    }
+  ],
+  "starterEconomy": {
+    "title": "還在前期，先別為了買槍去硬刷後期配裝",
+    "text": "編輯建議：先從 800 Credits 的 AW-Outrage，或 2,500 Credits 的 Drone 武器選出能補缺口的一把；把想買的項目加入預算，再重打自己能穩定過的已開放關卡。至少記一輪結算實拿與總時間，再比較要不要提高難度。這不是固定最快關卡，也不要求先湊齊 96,000 Credits 的 Hard 繞路組合。",
+    "sourceIds": [
+      "advice-recommended"
+    ],
+    "basis": "editorial-budget-priority"
+  }
+}

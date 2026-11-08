@@ -154,7 +154,7 @@
         "m02"
       ],
       "farmMissionIds": [],
-      "recommendation": "入門連射武器候選；先在 Practice 試射再決定購買。",
+      "recommendation": "入門連射候選；購買後到 Practice 熟悉射程與裝填，再帶入任務。",
       "recommendationBasis": "editorial",
       "trophyNames": [
         "Complete Arsenal",
@@ -421,7 +421,7 @@
       },
       "relatedMissionIds": [],
       "farmMissionIds": [],
-      "recommendation": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "recommendation": "回收三架後可檢查商店；購買後試射，再搭配能補足遠距離需求的武器。",
       "recommendationBasis": "editorial",
       "trophyNames": [
         "Complete Arsenal",

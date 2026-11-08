@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-08 IRON RAIN 1.3.0：新增模組內 dist/weapons.js（緊湊清單與唯讀篩選）、dist/advice.js 與 research/advice-research.json → dist/data/advice.json（出擊需求、開局升級、刷取心得）。介面以白金為主，沿用 schema1／namespace／交易 store／Drive；舊目標與 unknown 狀態保留，武器 purchased 與 target 共用原紀錄，未新增平行配裝存檔。部分武器庫 55 款、其中 45 款成本完整；52 關／55 Drone／44 盃不變。使用者已授權連同白金 UI／checklist 沿 main Pages 合併發布，結果以對應提交 Actions 與正式資源核對為準。
+
 2026-11-08 IRON RAIN 1.1.0 內容擴充：由原研究資料疊加兩份逐關研究、Drone audit 與裝備擴充，產生 52 關具體攻略／敵人／Boss、631 筆本體來源表獎勵與 16 筆隔離紀錄；部分裝備庫為 52 武器／20 道具／13 外觀款式。新 `dist/guide.js` 只負責安全文字及查證範圍呈現，不寫入進度；英文未核實時保留日文原名，既有 ID／schema1／namespace／共用 store／Drive 均不變。7 筆 Drone 複核中 6 筆以地標收斂，M32 高度衝突仍保留候選。詳細覆蓋與未驗證項目見 `games/edfir/docs/IMPLEMENTATION.md`。2026-11-08 使用者已授權本版 commit／push，沿 main Pages 流程部署；實際結果以對應 GitHub Actions 為準。
 
 2026-11-08 IRON RAIN 1.0.0 本機新增：`games/edfir/` 原生 ES modules／JSON，`game-companion.edfir.progress.v1` 獨立 IndexedDB，沿用根 `shared/roadmap-store.js`。52 關任務、55 架 Drone 及 44 個 PS4 本體獎盃各自追蹤，Drone 與任務畫面讀同一份 map，條件推導不寫回獎盃。直接引用 Grounded 基礎 stylesheet、Talos 已有 OAuth／安全 adapter／非同步 sync-session／setupSync／merge core，未複製共用元件或重構既有模組。Drive 的遊戲／帳號 namespace、逐次 grant 驗證與條件寫入不變。沒有 SW。武器、道具與外觀為部分庫；原創路線流程圖不是實測地形圖，未核實欄位保留待查。詳細範圍見 `games/edfir/docs/IMPLEMENTATION.md`。本次未提交、推送或部署。

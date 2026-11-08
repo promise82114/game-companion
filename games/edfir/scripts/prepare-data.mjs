@@ -24,7 +24,7 @@ equipment.issues=[...(equipment.issues||[]),...expansion.issues];
 equipment.coverage={...equipment.coverage,weaponCount:equipment.weapons.length,weaponTypes:new Set(equipment.weapons.map(w=>w.type)).size,items:'partial',appearance:'partial'};
 for(const patch of audit.updates){const row=drones.drones.find(row=>row.id===patch.id);assert.ok(row,'核對未知 Drone '+patch.id);Object.assign(row,patch);row.checkedAt=audit.checkedAt;}
 drones.audit={checkedAt:audit.checkedAt,method:audit.method,reviewed:audit.updates.map(d=>d.id),landmarkReconciled:audit.updates.filter(d=>d.verification==='source-reconciled').length,unresolved:audit.updates.filter(d=>d.verification==='conflict').map(d=>d.id)};
-catalog.contentVersion=equipment.contentVersion=drones.contentVersion='1.1.0';
+catalog.contentVersion=equipment.contentVersion='1.3.0';drones.contentVersion='1.1.0';
 const categories={'主線':'story','順路':'incidental','特殊挑戰':'challenge','收集':'collection','作業':'grind','線上／多人':'online','高難度':'difficulty'};
 const normalize=text=>String(text).replace(/[’‘]/g,"'");
 const nameKey=value=>normalize(value||'').replace(/\s/g,'').toLocaleLowerCase();
@@ -61,4 +61,5 @@ catalog.coverage={missionDetails:missionsCount(m=>m.tactics?.length>0),enemyList
 function missionsCount(predicate){return catalog.missions.filter(predicate).length;}
 await fs.mkdir(new URL('dist/data/',root),{recursive:true});
 for(const [name,data]of [['catalog',catalog],['drones',drones],['equipment',equipment]])await fs.writeFile(new URL('dist/data/'+name+'.json',root),JSON.stringify(data,null,2)+'\n');
+await fs.writeFile(new URL('dist/data/advice.json',root),JSON.stringify(await read('advice-research.json'),null,2)+'\n');
 console.log(JSON.stringify({prepared:true,missions:catalog.missions.length,trophies:catalog.trophies.length,drones:drones.drones.length,weapons:equipment.weapons.length}));

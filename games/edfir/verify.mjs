@@ -1,3 +1,5 @@
+import {equipmentNeeds,ownFarmTotals,routeWeapons,adviceHtml,weaponAdviceHtml} from './dist/advice.js';
+import {freshWeaponFilters,filterWeapons,sortWeapons} from './dist/weapons.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
@@ -38,7 +40,7 @@ const rendered=missionGuideHtml(synthetic,{escape:htmlEscape,sourceLinks:()=>''}
 assert.match(droneAuditHtml(drones.find(d=>d.id==='drone-m32'),{escape:htmlEscape,sourceLinks:()=>''}),/保留候選位置/);
 // 既有穩定 ID 與人工進度語意不能因擴庫改變。
 const original=await read('research/equipment-research.json');for(const row of original.weapons)assert.equal(weapons.find(w=>w.id===row.id).officialName,row.officialName);
-const p=fresh();p.futureTop={keep:'synthetic'};p.drones['future-drone']={futureShape:[1,2]};p.missions['future-mission']={futureShape:'keep'};p.trophies['future-trophy']={futureShape:23};validateProgress(p);assert.equal(p.settings.goal,'story');
+const p=fresh();p.futureTop={keep:'synthetic'};p.drones['future-drone']={futureShape:[1,2]};p.missions['future-mission']={futureShape:'keep'};p.trophies['future-trophy']={futureShape:23};validateProgress(p);assert.equal(p.settings.goal,'platinum');
 setDifficulty(p,'m25','Hard',true);assert.ok(missionDone(p,'m25'));assert.equal(p.missions.m01,undefined);setMission(p,'m25',false);assert.equal(missionDone(p,'m25'),false);
 setDrone(p,'drone-m25','confirmed');assert.ok(droneDone(p,'drone-m25'));assert.equal(missionDone(p,'m25'),false);assert.equal(p.trophies.t38,undefined);
 setTrophy(p,'t38',true);for(const d of drones)setDrone(p,d.id,'confirmed');setDrone(p,'drone-m25','unknown');assert.equal(p.trophies.t38.earned,true);assert.equal(droneDone(p,'drone-m25'),false);
@@ -79,3 +81,25 @@ failWrite=false;
 syncReview=await session.start();assert.equal(syncReview.kind,'review');assert.equal((await session.confirm(syncReview,syncReview.plan.conflicts.map(()=>'local'))).kind,'complete');assert.equal(state.resources.credits,100);assert.equal(state.trophies.t38.earned,false);
 assert.ok([...memory.keys()].every(key=>key.startsWith(module.storagePrefix+'sync.')));
 console.log(JSON.stringify({passed:true,module:'edfir',missions:52,drones:55,trophiesIncludingPlatinum:44,weapons:weapons.length,weaponCoverage:'partial',checks:['IDs and source integrity','bidirectional relations','independent trophy confirmation','difficulty and Drone state','schema0 import migration','cross-game rejection','resource gaps and player estimates','unverified Drive writes blocked']}));
+
+// 舊目標與多態紀錄仍可讀；只在明確勾選時變更。
+for(const goal of ['story','experience','platinum']){const old=fresh();old.settings.goal=goal;old.drones['drone-m01']={status:'unknown',note:'keep'};validateProgress(old);assert.equal(old.drones['drone-m01'].status,'unknown');assert.equal(old.settings.goal,goal);}
+const wf=freshWeaponFilters(),wp=fresh();
+assert.equal(filterWeapons(weapons,wp,wf).length,weapons.length);
+Object.assign(wf,{search:'Ｍ２ Outrage',type:'Assault Rifle',rank:'E',kind:'mission',mission:'m02',unpurchased:true,locked:true});
+assert.deepEqual(filterWeapons(weapons,wp,wf).map(w=>w.id),['weapon-aw-outrage']);
+setWeapon(wp,'weapon-aw-outrage','purchased',true);assert.equal(filterWeapons(weapons,wp,wf).length,0);assert.equal(filterWeapons(weapons,wp,wf,{ignoreChecks:true}).length,1);assert.equal(wp.weapons['weapon-aw-outrage'].unlocked,false);
+assert.equal(sortWeapons(weapons,'credits').at(-1).price.credits,null);
+console.log('EDFIR platinum UI compatibility and intersecting checklist filters passed');
+
+const advice=await read('dist/data/advice.json'),adviceSources=new Set([...sourceIds,...advice.sources.map(s=>s.id)]);
+for(const rows of [advice.earlyRoutes,advice.farms]){unique(rows);for(const row of rows){assert.ok(row.steps.length>=2&&row.caution&&row.basis);for(const id of row.sourceIds)assert.ok(adviceSources.has(id));for(const id of row.weaponIds)assert.ok(weapons.some(w=>w.id===id));for(const id of row.missionIds||[row.missionId])assert.ok(missions.some(m=>m.id===id));}}
+for(const row of advice.weaponNotes){assert.ok(weapons.some(w=>w.id===row.weaponId));for(const id of row.sourceIds)assert.ok(adviceSources.has(id));assert.ok(row.good&&row.avoid);}
+assert.equal(advice.farms.length,5);assert.equal(advice.earlyRoutes.length,4);assert.equal(weapons.length,55);assert.ok(missions.every(m=>equipmentNeeds(m).length>0));
+const empty=fresh(),before=JSON.stringify(empty);assert.equal(routeWeapons(advice.earlyRoutes[2],weapons).length,2);assert.deepEqual(ownFarmTotals(empty,'m46','Disaster'),{runs:0,minutes:0,credits:0});assert.equal(JSON.stringify(empty),before);
+empty.farmRuns.a={missionId:'m46',difficulty:'Disaster',runs:2,minutes:10,yield:{credits:20000}};empty.farmRuns.b={missionId:'m46',difficulty:'Normal',runs:1,minutes:5,yield:{credits:99999}};assert.deepEqual(ownFarmTotals(empty,'m46','Disaster'),{runs:2,minutes:10,credits:20000});
+const pt=weapons.find(w=>w.id==='weapon-pt-linked-energy-blaster');assert.equal(pt.price.red,null);empty.weapons[pt.id]={unlocked:false,purchased:false,target:true};assert.deepEqual(resourcePlan(empty,weapons).unknown,[pt.id]);
+assert.doesNotMatch(weapons.map(w=>w.recommendedUse).join(' '),/先在 Practice 試射再決定購買/);
+console.log('EDFIR sourced early routes, farming prerequisites, own-sample isolation and partial PT budget passed');
+
+const hostile='<img src=x onerror=alert(1)>',safe=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'),safeAdvice=adviceHtml({data:{...advice,principles:[{title:hostile,text:hostile}],earlyRoutes:[],farms:[],exclusions:[]},mission:{...missions[0],enemies:[hostile],recommendedEquipment:[hostile],warnings:[hostile]},missions:[missions[0]],weapons,progress:fresh(),escape:safe,option:()=>'',button:()=>'',sourceLinks:()=>''});assert.ok(safeAdvice.includes('&lt;img'));assert.ok(!safeAdvice.includes(hostile));

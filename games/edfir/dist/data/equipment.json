@@ -2,7 +2,7 @@
   "checkedAt": "2026-11-08",
   "coverage": {
     "weapons": "partial",
-    "weaponCount": 52,
+    "weaponCount": 55,
     "items": "partial",
     "appearance": "partial",
     "paGear": "four-base-game-types",
@@ -323,7 +323,7 @@
         "m02"
       ],
       "farmMissionIds": [],
-      "recommendation": "入門連射武器候選；先在 Practice 試射再決定購買。",
+      "recommendation": "入門連射候選；購買後到 Practice 熟悉射程與裝填，再帶入任務。",
       "recommendationBasis": "editorial",
       "trophyNames": [
         "Complete Arsenal",
@@ -352,7 +352,7 @@
       "missionIds": [
         "m02"
       ],
-      "recommendedUse": "入門連射武器候選；先在 Practice 試射再決定購買。 價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
+      "recommendedUse": "入門連射候選；購買後到 Practice 熟悉射程與裝填，再帶入任務。 價格表列 Normal 為可解鎖難度；Easy 是否同樣適用請見任務獎勵查證，不將這個欄位視為最低限制。 來源表列難度僅為充分條件；最低難度尚未確認。",
       "unlockCondition": "M02 · Normal 完成（來源列出的充分條件，未推定最低限制）",
       "trophyIds": [
         "t10",
@@ -746,7 +746,7 @@
       },
       "relatedMissionIds": [],
       "farmMissionIds": [],
-      "recommendation": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "recommendation": "回收三架後可檢查商店；購買後試射，再搭配能補足遠距離需求的武器。",
       "recommendationBasis": "editorial",
       "trophyNames": [
         "Complete Arsenal",
@@ -773,7 +773,7 @@
         "yellow": 0
       },
       "missionIds": [],
-      "recommendedUse": "回收三架後可檢查商店，先試射再搭配另一種射程的武器。",
+      "recommendedUse": "回收三架後可檢查商店；購買後試射，再搭配能補足遠距離需求的武器。",
       "unlockCondition": "確認回收 3 架 M.I.A. Drone 後解鎖購買資格。",
       "trophyIds": [
         "t10",
@@ -3373,6 +3373,168 @@
       "trophyIds": [
         "t10"
       ]
+    },
+    {
+      "id": "weapon-tf-anger-gd",
+      "officialName": "TF-Anger GD",
+      "nameJa": "TF-アンガーGD",
+      "type": "Grenade Launcher",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m02",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 800,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m02"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "前期地面清群升級候選；可練習射擊後手動裝填接 Quick Reload。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-grenade-launcher",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "爆炸會波及自己或隊友；不把它當作唯一對空武器。",
+      "displayName": "TF-Anger GD",
+      "price": {
+        "credits": 48000,
+        "red": 800,
+        "blue": 0,
+        "yellow": 0
+      },
+      "missionIds": [
+        "m02"
+      ],
+      "recommendedUse": "前期地面清群升級候選；可練習射擊後手動裝填接 Quick Reload。 爆炸會波及自己或隊友；不把它當作唯一對空武器。",
+      "unlockCondition": "M02 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10"
+      ]
+    },
+    {
+      "id": "weapon-pt-linked-energy-blaster",
+      "officialName": "PT-Linked Energy Blaster",
+      "nameJa": "PT-PAギア直結型電磁放射銃",
+      "type": "Sniper Rifle",
+      "rank": "B",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m28",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 220000,
+        "red": null,
+        "blue": 600,
+        "yellow": 3000
+      },
+      "relatedMissionIds": [
+        "m28"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-sniper",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "射擊時不能移動。持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。",
+      "displayName": "PT-Linked Energy Blaster",
+      "price": {
+        "credits": 220000,
+        "red": null,
+        "blue": 600,
+        "yellow": 3000
+      },
+      "missionIds": [
+        "m28"
+      ],
+      "recommendedUse": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。 射擊時不能移動。持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。",
+      "unlockCondition": "M28 · Hard 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10"
+      ]
+    },
+    {
+      "id": "weapon-pt-linked-super-blaster",
+      "officialName": "PT-Linked Super Blaster",
+      "nameJa": "PT-PAギア直結型超電磁放射銃",
+      "type": "Sniper Rifle",
+      "rank": "A",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m36",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hardest",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 560000,
+        "red": null,
+        "blue": 800,
+        "yellow": 5200
+      },
+      "relatedMissionIds": [
+        "m36"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-sniper",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。",
+      "displayName": "PT-Linked Super Blaster",
+      "price": {
+        "credits": 560000,
+        "red": null,
+        "blue": 800,
+        "yellow": 5200
+      },
+      "missionIds": [
+        "m36"
+      ],
+      "recommendedUse": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。 持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。",
+      "unlockCondition": "M36 · Hardest 完成（來源列出的充分條件，未推定最低限制）",
+      "trophyIds": [
+        "t10"
+      ]
     }
   ],
   "items": [
@@ -4821,7 +4983,7 @@
       "description": "Laser Rifle 表列 Aisha 型號為 BS-Opx.A3，Drone獎勵表列 BS-Opx.A2；本輪選取其他型號，未以猜測消除此差異。"
     }
   ],
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.3.0",
   "cosmetics": [
     {
       "id": "appearance-symbol-1",

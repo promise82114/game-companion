@@ -3,7 +3,7 @@
   "scope": "PS4 base game; no Golden Storm / Ex missions / preorder DLC",
   "coverage": {
     "weapons": "partial",
-    "newWeapons": 40,
+    "newWeapons": 43,
     "weaponTypes": 14,
     "newItems": 18,
     "newAppearanceModels": 12,
@@ -1979,6 +1979,123 @@
       },
       "nameVerification": "日文原名已核對，英文顯示名尚未核實；不得自行英譯冒充官方名。",
       "warning": null
+    },
+    {
+      "id": "weapon-tf-anger-gd",
+      "officialName": "TF-Anger GD",
+      "nameJa": "TF-アンガーGD",
+      "type": "Grenade Launcher",
+      "rank": "C",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m02",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 48000,
+        "red": 800,
+        "blue": 0,
+        "yellow": 0
+      },
+      "relatedMissionIds": [
+        "m02"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "前期地面清群升級候選；可練習射擊後手動裝填接 Quick Reload。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-grenade-launcher",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "爆炸會波及自己或隊友；不把它當作唯一對空武器。"
+    },
+    {
+      "id": "weapon-pt-linked-energy-blaster",
+      "officialName": "PT-Linked Energy Blaster",
+      "nameJa": "PT-PAギア直結型電磁放射銃",
+      "type": "Sniper Rifle",
+      "rank": "B",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m28",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hard",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 220000,
+        "red": null,
+        "blue": 600,
+        "yellow": 3000
+      },
+      "relatedMissionIds": [
+        "m28"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-sniper",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "射擊時不能移動。持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。"
+    },
+    {
+      "id": "weapon-pt-linked-super-blaster",
+      "officialName": "PT-Linked Super Blaster",
+      "nameJa": "PT-PAギア直結型超電磁放射銃",
+      "type": "Sniper Rifle",
+      "rank": "A",
+      "baseGame": true,
+      "unlock": {
+        "kind": "mission",
+        "missionId": "m36",
+        "minimumDifficulty": null,
+        "reportedDifficulty": "Hardest",
+        "droneCount": null,
+        "enemy": null,
+        "killCount": null
+      },
+      "cost": {
+        "credits": 560000,
+        "red": null,
+        "blue": 800,
+        "yellow": 5200
+      },
+      "relatedMissionIds": [
+        "m36"
+      ],
+      "farmMissionIds": [],
+      "recommendation": "中後期定點爆發與刷取路線候選；按來源所需配裝選用。",
+      "recommendationBasis": "editorial-from-sources",
+      "trophyNames": [
+        "Complete Arsenal"
+      ],
+      "sourceIds": [
+        "exp-sniper",
+        "equip-faq-names"
+      ],
+      "verification": "secondary-transcription",
+      "nameVerification": "英文名稱依 GameFAQs 清單，日文名稱及成本依 Wiki；尚未實機核對。",
+      "warning": "持續開火且無法重新裝填，換槍可停止射擊；不適合隨意掃射的長期消耗戰。紅 Gems 原表為破折號，暫留未知，不能當完整預算。"
     }
   ],
   "items": [

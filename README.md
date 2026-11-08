@@ -65,6 +65,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 ## 維護文件
 
+IRON RAIN 1.3.0：以白金為主、進度簡化為勾選，武器改為緊湊 checklist 與交叉篩選；新增出擊與養成頁、4 條開局升級路線及 5 條分階段刷取心得。武器部分庫擴為 55 款，來源限制與未知成本保留。2026-11-08 使用者已授權上述內容合併 commit／push／部署，沿既有 main Pages 流程發布；正式 Google 與遊戲實機未驗收。見[模組說明](games/edfir/README.md)與[驗證及發布紀錄](games/edfir/docs/IMPLEMENTATION.md)。
+
 IRON RAIN 1.1.0 本機內容擴充：`/game-companion/games/edfir/` 已有52關主要敵人／Boss與具體步驟、631筆按難度獎勵及16筆隔離的疑DLC／條件衝突資料；PS4本體44盃（含白金）不變。7筆Drone差異已複核，6筆依地標收斂、M32原始高度仍保留候選。裝備部分庫擴為52武器（14類）／20道具／13外觀款式；未知英文與價格維持標示。沿用原schema1／namespace與手動Drive安全流程，資料、產物及隔離瀏覽器通過，正式Google與實機跳盃未驗收。2026-11-08 使用者已授權 commit／push 與沿既有 main Pages 流程部署；實際發布結果以對應 GitHub Actions 為準。見[模組說明](games/edfir/README.md)、[來源差異與驗證報告](games/edfir/docs/IMPLEMENTATION.md)；隔離瀏覽器：`node scripts/verify-edfir-browser.mjs`。
 
 Grounded 已完成本機整合：`/game-companion/games/grounded/` 提供七階段 Roadmap、公開 PlayStation 46 盃、十類收集、Super Win 核對、原創庭院示意圖、章節直達、原處勾選與周目保存。1.1.1 初始完整展開，步驟內事項全部完成後才精簡，並同時呈現完整體驗／白金需求，移除筆記、個人標記與世界／成員管理介面。收集資料庫目前為 53 個具名項目的部分清單，沒有未核實精確座標；尚未接入 Drive 或即時共享。1.0.0 已依授權發布；2026-11-04 使用者已授權提交／推送 1.1.1，沿用 main 的 Pages 流程；部署結果以對應 GitHub Actions 為準。執行 `node scripts/verify-grounded-browser.mjs` 驗證，詳見 [模組說明](games/grounded/README.md)、[P0 報告](GROUNDED_P0_REPORT.md) 與 [實作報告](GROUNDED_IMPLEMENTATION_REPORT.md)。
