@@ -8,6 +8,8 @@ import vm from 'node:vm';
 import {randomUUID,webcrypto} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {roadmap as data} from './dist/data.js';
+import {safetyChecks} from './dist/ux-safety.js';
+import {childIds,needsAttention,nextAction} from './dist/roadmap/attention.js';
 import {overview,blockers,matches} from './dist/roadmap/model.js';
 import {createStore} from './dist/roadmap/store.js';
 import {dialogueHtml} from './dist/roadmap/evidence.js';
@@ -29,6 +31,12 @@ for(const t of data.trophies){const localized=trophyNamesZhTW.find(row=>row.offi
 assert.equal(trophyLabel(data.trophies.find(t=>t.id==='chicken')),'Chicken（膽小鬼）');
 assert.equal(data.stages.length,8);assert.equal(data.trophies.filter(t=>t.category==='base').length,60);assert.equal(data.dlcCount,9);
 const ids=new Set(data.steps.map(s=>s.id)),trophyIds=new Set(data.trophies.map(t=>t.id));assert.equal(ids.size,data.steps.length);assert.equal(trophyIds.size,60);
+for(const[id,check]of Object.entries(safetyChecks)){assert.ok(ids.has(id));for(const[trophy,step]of check.items){assert.ok(trophyIds.has(trophy),trophy);assert.ok(ids.has(step),step);}for(const step of check.steps||[])assert.ok(ids.has(step),step);}
+for(const id of ['single-rod','one-lap','hard-way']){const step=data.steps.find(s=>s.id===id);assert.equal(step.warningLevel,'prepare');assert.equal(step.missable,false);assert.ok(step.sources.includes('ps5Guide'));assert.match(step.recovery,/終端重試/);}
+const uxFixture={steps:{calibration:{status:'completed',legacyExtra:'keep'}},settings:{},trophies:{},backups:{},branches:{}},calibration=data.steps.find(s=>s.id==='calibration');
+assert.equal(needsAttention(calibration,uxFixture),true,'父項完成不能略過未完成子項');assert.equal(nextAction(data.steps,uxFixture).item.id,'BOOT-1');
+for(const id of childIds(calibration))uxFixture.steps[id]={status:'completed'};
+assert.equal(needsAttention(calibration,uxFixture),false);assert.equal(nextAction(data.steps,uxFixture).step.id,'save-safety');assert.equal(uxFixture.steps.calibration.legacyExtra,'keep');assert.deepEqual(uxFixture.trophies,{});assert.deepEqual(uxFixture.backups,{});
 const mapped=new Set(data.steps.flatMap(s=>s.trophyRefs));assert.ok(data.trophies.every(t=>mapped.has(t.id)),'所有本體獎盃都要有名稱對照');
 const publishedStepIds='calibration save-safety doge-intro chicken petition schuyler museum purple neutral-route departure-check region-e1 doge-survey team field-basics chase puzzle-time region-e2 single-rod one-lap region-e3 doge-match first-megastructure region-n1 rand-north region-n2 broken-somnodrome region-n3 north-exit sinner text-adventures city-tour city-politics city-exit region-s1 hard-way rand-south region-s2 region-s3 artifacts west-arrival region-w1 region-w3 region-w2 w2-backup working-somnodrome mayor-rand mayor-byron mayor-hermanubis final-city all-puzzles miranda collectibles stars story-audit final-backup ending platinum-audit'.split(' ');
 assert.ok(publishedStepIds.every(id=>ids.has(id)),'已發布的 57 步驟 ID 不得因攻略更新消失');

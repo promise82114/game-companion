@@ -1,5 +1,6 @@
 import {storySources} from './story-data.js';
 import {applyMayorResearch} from './mayor-research.js';
+import {applyUxSafety} from './ux-safety.js';
 import {trophyNamesZhTW,trophyNameSource} from './trophy-names.js';
 import {trophyConditions} from './trophy-guide-data.js';
 const localizedTrophies=new Map(trophyNamesZhTW.map(t=>[t.officialName,t]));
@@ -134,6 +135,7 @@ for(const stage of stages){const list=steps.filter(s=>s.stageId===stage.id),orde
 steps.sort((a,b)=>stages.findIndex(s=>s.id===a.stageId)-stages.findIndex(s=>s.id===b.stageId)||a.order-b.order);
 export const roadmap={gameId:'talos2',title:'The Talos Principle II',subtitle:'PS5 · 本體白金 Roadmap',version:'2026.11.08.4',checkedAt:'2026-10-31',storagePrefix:'game-companion.talos2.',moduleVersion:'1.6.1',driveProjectId:'game-companion.talos2',driveFileName:'game-companion.talos2.progress.v1.json',baseCount:60,dlcCount:9,classification:'本體 1 白金／1 金／6 銀／52 銅；DLC 4 銀／5 銅，未納入清單。',officialIdNote:'NPWR34440_00 已有公開分組佐證；逐盃官方數字 ID 尚未取得可靠對照。trophyRefs 為網站穩定名稱鍵，trophyIds 保留空陣列，絕不假冒官方 ID。',stages,steps,branches,sources,trophies:trophyNames.map(name=>({id:trophyKey(name),officialId:null,officialName:name,...localizedTrophies.get(name),nameCheckedAt:trophyNameSource.checkedAt,...trophyConditions.find(t=>t.exophaseId===localizedTrophies.get(name).exophaseId),descriptionCheckedAt:'2026-11-04',category:'base',idVerificationStatus:'unverified',sources:['psn','psnZhTW','list']}))};
 applyMayorResearch(roadmap);
+applyUxSafety(roadmap);
 // 首次可取得的獎盃放在事件之前；P7 僅保留收尾驗收。
 const editStep=(id,patch)=>Object.assign(steps.find(s=>s.id===id),patch);
 editStep('region-e1',{trophyRefs:refs('Grasslands Ring','Discovery','The All-Gifted'),actions:['邊解 1–8 題邊完成下方收集：1 座實驗室、兩種錄音各 1、2 顆星星；本區沒有人物光影。','從現在開始辨識人類遺物。第一件即可取得 Discovery，繼續累計 10 件可取得 Archaeologist；不要等到收尾才找。','首次完成 Pandora 雕像即可取得 The All-Gifted。先看下方位置與清單，再開始沿路解題。黃金門等 P7 再回來。']});
