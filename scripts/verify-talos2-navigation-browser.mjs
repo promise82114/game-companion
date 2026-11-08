@@ -11,6 +11,47 @@ const state=()=>page.evaluate(async()=>{const {roadmap}=await import('./data.js'
 const open=async query=>{await page.goto(url+query);await page.locator('#section-select').waitFor();};
 const noOverflow=async()=>assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'page overflow');
 try{
+ // 24 顆星星的找路內容不依賴解法開關，定位只讀資料、沿用同一星星進度。
+ const starCases=[];
+ await open('?stage=P1&section=E1');
+ const starRoutes=await page.evaluate(async()=>{const {starRoutes}=await import('./star-navigation-data.js');return Object.entries(starRoutes).map(([id,r])=>({id,points:r.points}));});
+ await fs.mkdir('outputs/talos2/stars',{recursive:true});
+ const desktopPage=page;
+ for(const width of [1440,390]){
+  const mobileContext=width===390?await browser.newContext({viewport:{width,height:1000},hasTouch:true,isMobile:true,serviceWorkers:'block'}):null;
+  if(mobileContext)await mobileContext.route('**/*',route=>new URL(route.request().url()).origin===new URL(base).origin?route.continue():route.abort());
+  const page=mobileContext?await mobileContext.newPage():desktopPage;
+  if(mobileContext)page.on('pageerror',error=>errors.push(error.message));
+  const open=async query=>{await page.goto(url+query);await page.locator('#section-select').waitFor();};
+  const state=()=>page.evaluate(async()=>{const {roadmap}=await import('./data.js'),{createStore}=await import('./roadmap/store.js'),store=createStore(roadmap,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
+  const noOverflow=async()=>assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'star page overflow');
+  await page.setViewportSize({width,height:1000});
+  await open('?stage=P1&section=E1');await page.locator('#puzzle-E1-star-pandora').scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.querySelector('.region-map-aside .map-selected')?.getAttribute('data-map-target')==='puzzle-E1-star-pandora');
+  await open('?view=roadmap#puzzle-N3-main-2');const prep=page.locator('#puzzle-N3-main-2 .star-preparation [data-map-point]');assert.equal(await prep.count(),1);if(mobileContext)await prep.tap();else await prep.click();
+  const prepMap=page.locator(mobileContext?'#map-dialog':'.region-map-aside');assert.match(await prepMap.locator('.map-selection').textContent(),/2 號高台/);assert.equal(await prepMap.locator('[data-map-target="puzzle-N3-star-pandora"].map-selected').count(),1);
+  await prepMap.locator('[data-map-target="puzzle-N3-star-pandora"].map-selected').click();await page.locator('[data-star-navigation="N3-star-pandora"]').waitFor();await page.goBack();await page.waitForFunction(()=>location.hash==='#puzzle-N3-main-2');
+  for(const {id,points} of starRoutes){
+   await open('?view=roadmap#puzzle-'+id);const guide=page.locator('[data-star-navigation="'+id+'"]');await guide.waitFor({state:'visible'});
+   await page.waitForFunction(id=>document.querySelector('.region-map-aside .map-selected')?.getAttribute('data-map-target')==='puzzle-'+id,id,{timeout:5000}).catch(async error=>{await page.screenshot({path:'outputs/talos2/stars/auto-focus-failure.png'});throw Error(id+' @ '+width+' auto focus: '+await page.locator('.region-map-aside .map-selected').getAttribute('data-map-target').catch(()=>null)+'; '+error.message);});
+   assert.equal(await page.locator('#show-solutions').isChecked(),false);assert.equal(await page.locator('[data-solution]').count(),0);assert.equal(await guide.locator('li').count(),points.length);
+   const before=await state(),mapped=points.filter(p=>p.anchor).length;
+   for(const button of await guide.locator('[data-map-point]').all()){
+    const pointId=await button.getAttribute('data-map-point');if(mobileContext)await button.tap();else await button.click();
+    const surface=page.locator(width<1280?'#map-dialog':'.region-map-aside');await surface.waitFor({state:'visible'});
+    assert.equal(await surface.locator('.map-star-point').count(),mapped,id+' mapped route');assert.equal(await surface.locator('[data-map-node="'+pointId+'"].map-selected').count(),1);
+    assert.equal(await surface.locator('.map-optional,.map-artifact').count(),0);assert.match(await surface.locator('.map-selection').textContent(),/ · /);
+    if(mobileContext)await surface.locator('[data-close="map-dialog"]').tap();
+   }
+   assert.deepEqual(await state(),before,id+' map browsing must not write progress');await noOverflow();
+   if(['E2-star-pandora','N2-star-prometheus','N2-star-sphinx','N3-star-pandora'].includes(id)){
+    const first=guide.locator('[data-map-point]').first();if(mobileContext)await first.tap();else await first.click();await page.screenshot({path:`outputs/talos2/stars/${id}-${width}.png`});if(mobileContext)await page.locator('#map-dialog [data-close="map-dialog"]').tap();
+   }
+   starCases.push({width,id,points:points.length,mapped,passed:true});
+  }
+  if(mobileContext)await mobileContext.close();
+ }
+ await fs.writeFile('outputs/talos2/stars/result.json',JSON.stringify({passed:true,cases:starCases},null,2));
+ await page.setViewportSize({width:1440,height:1000});
  await open('?view=roadmap&stage=P1&section=east-megastructure');
  assert.equal(await page.locator('#show-solutions').isChecked(),false);
  assert.equal(await page.locator('.puzzle-solution').count(),0);

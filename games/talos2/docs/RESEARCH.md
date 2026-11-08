@@ -4,6 +4,34 @@
 
 ## 已取得證據
 
+### 2026-11-08 星星起點、遠距機關與跨題接線定位
+
+玩家再次回報星星導引找不到位置。盤點確認：舊圖主要標領星雕像與跳題 Spark，沒有追逐起點、途中停靠與跨題觀察站位；僅把解法寫對，無法讓玩家在大地圖找到設備。本輪保留既有解法與進度，另外加入位置導引。
+
+- 本體 24 條星星路線共 101 段，100 段有原創地圖 P 點。位置是已知地標旁的搜尋區或題內觀察站位，非實機量測座標；細線連到參考地標，藍虛線只表操作順序，未知段落不跨接虛線。
+- 定位說明不受「拒絕謎語」開關遮蔽，完成星星後仍沿用原本收合。每段的「看位置」可直接選圖上 P 點；手機開啟地圖對話框，桌面沿用側欄圖。讀到星星時自動選路線，不要求每次手動切換。
+- 跨題 Pandora 的相關正規／Lost 題內也有同一觀察點的入口，不必等到區域末端才查位置。由地圖轉到完整星星攻略後，可用瀏覽器返回原題；沒有另開收集進度。自然捲到頁尾及深連結的選圖時機另做回歸，避免仍停在上一顆星星。
+- 星星路線暫時隱去無關收集物／橘紅 Spark，圖幅收近並放大 P 字號；區域總覽與正常收集圖保留。所有定位／選圖皆不寫進度，也不新增 101 個重複勾選。
+- 比對十二區參考圖時確認 S2 Lost 位置配反。Question Block 在 Pandora 一側、Stowaway 在另一岸，已交換地圖坐標配對，保留兩個題目的既有 ID、解法與取得紀錄。
+
+關鍵證據：
+
+| 範圍 | 實際核對與來源 |
+| --- | --- |
+| 十二區相對位置 | 逐張檢視 [Cognition 原作者區域圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536)，只摘錄地標關係與搜尋區；不部署或嵌入原圖。 |
+| N2 追逐起點 | [Mystery Manor N2 第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_2/flooded_2.htm) 的起點段落及 Talos_2_1136.jpg：混凝土支架內有大型金色環架。補上 3 號→水壩→往 4 號岔路及岸邊找回光團的方法。 |
+| N2 三座機關 | [N2 第 4 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/08_North_2_Flooded_Valley/Flooded_Valley_4/flooded_4.htm) 與 [Mauritsio 實玩指南](https://steamcommunity.com/sharedfiles/filedetails/?id=3067666650) 支持 1 號入口右岔、面南看 4 號左路後再走 Y 左支、過橋後塔右側小島。相對方向同時核對參考圖，避免把面南的左手邊畫成畫面左邊。 |
+| N3 固定 RGB | [N3 第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_2/north_3_2.htm) 與 Talos_2_1361.jpg：由 5 號入口看紅光源上方的柱頂設備，圖上只標 2／3／5 的觀察站位，不假造 RGB 柱底落點。 |
+| N3 追逐起點 | [N3 第 3 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/09_North_3_Lost_%20Marshes/North_3_3/north_3_3.htm) 與區域圖支持戶外支線遠端的水中人像；改明圖上 6 號右上方搜尋區，移除「7 號入口旁」式誤導。 |
+| E2 接點外觀 | [Wiki E2](https://taloswiki.org/wiki/Wooded_Plateau#Star_monuments) 原始解法圖 1～3 與 [Graves 實玩指南](https://eip.gg/guides/the-talos-principle-2-east-2-star-statue-puzzles/)：白色裂岩頂、帶直立缺口與水平金屬線的混凝土柱、3 號前帶橢圓孔的楔形構造。中間柱的外觀與回溯方法可確認，平面落點仍待查證。 |
+| E3 接點 | [Wiki E3](https://taloswiki.org/wiki/Eastern_Wetlands#Star_monuments) 的高柱、Straton 構造、戶外岩頂連線順序；補 3 號、7 號光影旁高柱與 6 號觀察站位。 |
+| S1 接點 | [Wiki S1](https://taloswiki.org/wiki/Southern_Coast#Star_monuments) 原始解法圖 01／02：2 號終點下方銅牆、對岸薄岩層疊的紅岩尖頂，以及 4 號拱孔一側的觀察角度。 |
+| S2、S3、W1、W2、W3 | 重新讀取既有各星星的 Mystery Manor／Wiki 來源位置段落；補上 Lost 背側峽谷、題內高台、石耳接點、牆洞與交通軌道的觀察／搜尋地標，不混用其他指南的搬設備替代解法。 |
+
+驗證沿用既有 `verify.mjs` 及導航瀏覽器腳本：涵蓋 24 條 × 桌面／手機、每個可定位 P 點（100 × 2 次）、來源／未知落點不造點、沒有新進度欄位、沒有水平溢出，以及原有城市／巨構與匯入／mock Drive 回歸。結果檔位於 `outputs/talos2/stars/result.json`，原始研究參考只存在忽略的輸出資料夾。
+
+剩餘限制：E2 林中中繼柱的精確平面落點、W1 上軌道的逐段岩石落點仍待查證。P 點區分搜尋區與觀察站位，不能當作測量座標或直接可走的路線；未進行 PS5 逐條實機驗收。2026-11-08 使用者已授權本輪 commit／push，沿用 main 的 Pages 流程；發布結果以對應 GitHub Actions 為準。
+
 ### 2026-11-08 剩餘 183 項逐步來源覆核（1.6.1）
 
 接續下節 1.5.2 的 29 項，本輪先閱讀 N2、N3 尚未對照的 22 項，再逐題閱讀其他 161 項的現有操作與來源正文／拼塊截圖，檢查設備取得、遞孔／本人繞行、交換台物品、壓板接手、換色、光源與接收器、操作先後和終點狀態。合計 **212 項已做來源覆核，200 項有完整流程對照、12 項仍缺拼塊精確轉向，0 項尚未覆核**。這是公開攻略與畫面對照，不是 PS5 逐題實機通關，也沒有驗收真實 Google。

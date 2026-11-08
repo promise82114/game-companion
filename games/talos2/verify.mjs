@@ -19,6 +19,8 @@ import {collectionRegions,collectionItems,artifactCandidates,collectionProgressI
 import {humanArtifacts,artifactProgressId,artifactDone,artifactCounts} from './dist/roadmap/artifacts.js';
 import {roadmapSections,sectionForStep} from './dist/roadmap/navigation.js';
 import {regionMaps,mapSvg} from './dist/roadmap/maps.js';
+import {starRoutes,starPointId} from './dist/star-navigation-data.js';
+import {starNavigationHtml} from './dist/roadmap/stars.js';
 import {trophyGuides,trophyProgress} from './dist/roadmap/trophies.js';
 import {trophyConditions} from './dist/trophy-guide-data.js';
 import {mockDrive} from '../../scripts/fixtures/drive.mjs';
@@ -31,6 +33,16 @@ for(const t of data.trophies){const localized=trophyNamesZhTW.find(row=>row.offi
 assert.equal(trophyLabel(data.trophies.find(t=>t.id==='chicken')),'Chicken（膽小鬼）');
 assert.equal(data.stages.length,8);assert.equal(data.trophies.filter(t=>t.category==='base').length,60);assert.equal(data.dlcCount,9);
 const ids=new Set(data.steps.map(s=>s.id)),trophyIds=new Set(data.trophies.map(t=>t.id));assert.equal(ids.size,data.steps.length);assert.equal(trophyIds.size,60);
+assert.equal(Object.keys(starRoutes).length,24);
+for(const puzzle of puzzles.filter(p=>p.kind==='star')){
+ const route=starRoutes[puzzle.id],map=regionMaps[puzzle.region];assert.ok(route?.points.length>=2,puzzle.id);
+ route.points.forEach((point,index)=>{const node=map.nodes.find(n=>n.id===starPointId(puzzle.id,index));if(!point.anchor){assert.equal(node,undefined,'未知落點不可生成假標記');return;}assert.ok(node,puzzle.id+' '+point.title);assert.equal(node.target,puzzleProgressId(puzzle.id));assert.equal(node.routeId,puzzle.id);assert.ok(node.anchorX>=0&&node.anchorX<=1000&&node.anchorY>=0&&node.anchorY<=650);});
+ const html=starNavigationHtml(puzzle,{escape:s=>String(s).replaceAll('<','&lt;')});assert.match(html,/data-map-point/);assert.ok(!html.includes('data-puzzle-complete'),'定位不建立另一份收集進度');
+ const selected=map.nodes.find(n=>n.kind==='star'&&n.target===puzzleProgressId(puzzle.id)).id,svg=mapSvg(puzzle.region,{escape:s=>s,progress:{steps:{}},selected});
+ assert.equal((svg.match(/class="map-node map-star-point/g)||[]).length,route.points.filter(p=>p.anchor).length);assert.ok(!svg.includes('map-optional'),'星星路線不混入跳題 Spark');assert.ok(!svg.includes('map-artifact'));
+}
+assert.match(starRoutes['N2-star-prometheus'].intro,/金色圓環/);assert.match(starRoutes['N3-star-pandora'].points[0].description,/紅光源上方/);
+assert.ok(regionMaps.S2.nodes.find(n=>n.id==='lost-1').x>regionMaps.S2.nodes.find(n=>n.id==='lost-2').x,'S2 Question Block 在 Pandora 一側，Stowaway 在另一岸');
 for(const[id,check]of Object.entries(safetyChecks)){assert.ok(ids.has(id));for(const[trophy,step]of check.items){assert.ok(trophyIds.has(trophy),trophy);assert.ok(ids.has(step),step);}for(const step of check.steps||[])assert.ok(ids.has(step),step);}
 for(const id of ['single-rod','one-lap','hard-way']){const step=data.steps.find(s=>s.id===id);assert.equal(step.warningLevel,'prepare');assert.equal(step.missable,false);assert.ok(step.sources.includes('ps5Guide'));assert.match(step.recovery,/終端重試/);}
 const uxFixture={steps:{calibration:{status:'completed',legacyExtra:'keep'}},settings:{},trophies:{},backups:{},branches:{}},calibration=data.steps.find(s=>s.id==='calibration');

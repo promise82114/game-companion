@@ -1,8 +1,9 @@
 import {puzzles} from './puzzle-data.js';
 import {collectionItems,artifactCandidates} from './collection-data.js';
+import {starRoutes,starPointId} from './star-navigation-data.js';
 // 2026-11-04：逐張檢視 Cognition 的十二區地圖，只摘錄地標與相對位置。
 // 原創 SVG 不包含原圖、地形輪廓或作者圖示；節點間距經簡化，非測量座標。
-export const mapSource={title:'Cognition · Comprehensive maps of each area',url:'https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536',checkedAt:'2026-11-04'};
+export const mapSource={title:'Cognition · Comprehensive maps of each area',url:'https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536',checkedAt:'2026-11-08'};
 const raw={
  E1:{image:'12872250725038601619/0615C69D42880A657E96D5099D99731BDFCB56C5',main:[[613,405],[708,410],[500,405],[488,530],[650,645],[838,565],[980,554],[838,360]],lost:[[337,545],[1087,550]],gold:[516,676],pod:[651,575],tower:[652,165],bridge:[651,319],lab:[277,365],trevor:[613,499],lifthrasir:[799,295],remnants:[],stars:[[391,245],[938,394]],artifacts:[[915,204],[476,188],[798,686]],sparks:[[543,365],[830,469]],text:[564,500],paths:[[[650,645],[650,575],[565,575],[565,460],[427,460],[427,320],[650,320],[768,320],[1010,320],[1010,485],[840,485],[840,635],[770,635],[770,460],[565,460]],[[427,400],[310,430],[300,370],[277,365]],[[427,460],[337,545]],[[840,565],[1087,550]],[[650,320],[650,165]]]},
  E2:{image:'10022333418454047801/A934FF79BF80A26C66B63513441269B8A1B283F6',main:[[546,382],[408,241],[395,423],[505,523],[721,365],[669,452],[754,655],[856,445]],lost:[[450,632],[1016,550]],gold:[857,260],pod:[595,303],tower:[600,166],bridge:[598,246],lab:[732,521],trevor:[498,200],lifthrasir:[592,445],remnants:[],stars:[[677,366],[786,532]],artifacts:[[495,379],[527,615],[881,563]],sparks:[[662,309],[363,485]],text:[814,456],paths:[[[600,166],[598,246],[595,303],[575,370],[575,425],[505,490],[395,460],[445,340],[495,215]],[[575,370],[721,370],[805,413],[856,445],[860,515],[750,580],[754,655]],[[575,425],[600,465],[505,523],[515,600],[450,632]],[[721,370],[760,300],[857,260]],[[805,413],[750,475],[732,521]],[[860,515],[1016,550]]]},
@@ -18,8 +19,26 @@ const raw={
  W3:{image:'11465426512265221108/EB76C9E9A34A155C91D2234E8511BFAB06E71F88',main:[[705,522],[806,605],[837,507],[766,399],[681,310],[557,317],[506,416],[554,551]],lost:[[684,162],[407,506]],gold:[640,606],pod:[640,548],tower:[640,410],bridge:[640,518],lab:[739,698],trevor:[771,503],lifthrasir:[580,505],remnants:[[780,430],[548,427]],stars:[[831,321],[590,620]],artifacts:[],sparks:[[542,228],[873,373]],text:[756,295],paths:[[[640,548],[705,522],[806,560],[837,507],[835,435],[766,399],[795,360],[831,321]],[[640,548],[580,555],[554,551],[490,515],[506,416],[557,370],[557,317],[542,228],[640,190],[684,162]],[[557,317],[681,325],[756,295],[684,162]],[[835,435],[806,605],[739,698]],[[554,551],[590,620],[640,606]],[[490,515],[407,506]]]}
 };
 function point(id,label,xy,kind,target,description=''){return {id,label,x:Math.round((xy[0]-180)/10)*10,y:Math.round((xy[1]-120)/10)*10,kind,target,description};}
+function appendStarPoints(nodes,stars){
+ for(const puzzle of stars){
+  const route=starRoutes[puzzle.id],placed=[];if(!route)continue;
+  route.points.forEach((item,index)=>{
+   if(!item.anchor)return;
+   const anchor=item.anchor==='star'?nodes.find(n=>n.kind==='star'&&n.target==='puzzle-'+puzzle.id):nodes.find(n=>n.id===item.anchor);
+   if(!anchor)throw Error('未知星星地標：'+puzzle.id+' '+item.anchor);
+   const clamp=(v,min,max)=>Math.max(min,Math.min(max,v)),anchorX=clamp(anchor.x+item.offset[0],35,965),anchorY=clamp(anchor.y+item.offset[1],35,615);
+   const positions=[[65,-50],[-65,-50],[65,50],[-65,50],[0,-85],[0,85],[100,0],[-100,0]].map(([dx,dy])=>({x:clamp(anchorX+dx,35,965),y:clamp(anchorY+dy,35,615)}));
+   const obstacles=[...nodes.filter(n=>n.kind!=='star-point'),...placed],score=p=>Math.min(...obstacles.map(n=>Math.hypot(n.x-p.x,n.y-p.y)));
+   const position=positions.sort((a,b)=>score(b)-score(a))[0];
+   const node={id:starPointId(puzzle.id,index),label:'P'+(index+1),...position,kind:'star-point',target:'puzzle-'+puzzle.id,routeId:puzzle.id,routeIndex:index,anchorId:anchor.id,anchorX,anchorY,title:item.title,description:item.description};
+   placed.push(node);nodes.push(node);
+  });
+ }
+}
 // 依來源圖羅盤讀取的概略北向；僅保留方向關係，不宣稱量測角度。
 const northDirections={E1:[-0.9,0.4],E2:[-1,0],E3:[-0.9,0.4],N1:[0.7,-0.7],N2:[-0.2,-1],N3:[-0.7,-0.7],S1:[0.4,0.9],S2:[0,1],S3:[-0.4,0.9],W1:[0.9,-0.4],W2:[1,0.1],W3:[0.9,-0.4]};
+// Question Block 在 Pandora 一側，Stowaway 在另一岸；原圖位置與題目 ID 配對曾反置。
+raw.S2.lost.reverse();
 export const regionMaps=Object.fromEntries(Object.entries(raw).map(([region,r])=>{
  const nodes=[];const ps=puzzles.filter(p=>p.region===region),cs=collectionItems.filter(c=>c.region===region),arts=artifactCandidates.filter(a=>a.region===region);
  r.main.forEach((xy,i)=>nodes.push(point('main-'+(i+1),String(i+1),xy,'puzzle','puzzle-'+region+'-main-'+(i+1))));
@@ -31,5 +50,6 @@ export const regionMaps=Object.fromEntries(Object.entries(raw).map(([region,r])=
  arts.forEach((a,i)=>nodes.push(point(a.id,'A'+(i+1),r.artifacts[i],'artifact','artifact-'+a.id,a.location)));
  r.sparks.forEach((xy,i)=>nodes.push(point('spark-'+i,'火'+(i+1),xy,'optional',null,'Prometheus Spark 候選拾取點；只收集即可，不需要用它跳題。')));
  nodes.push(point('text','文',r.text,'optional',null,'戶外電腦終端：操作並逐份開啟文字，記入本區已讀數量。'));
+ appendStarPoints(nodes,ps.filter(p=>p.kind==='star'));
  return [region,{region,nodes,north:northDirections[region],paths:r.paths.map(path=>path.map(xy=>[Math.round((xy[0]-180)/10)*10,Math.round((xy[1]-120)/10)*10])),sourceUrl:mapSource.url,sourceImage:'https://images.steamusercontent.com/ugc/'+r.image+'/',orientation:'先以「起」交通艙與「塔」定位。圖上方沿用抵達朝向；N 箭頭表示大致北向。',note:'線條是簡化主路；支線需依地形繞行，距離與高低差不按比例。A 為遺物候選點，已在其他區取得的同一物品可能不再出現。'}];
 }));
