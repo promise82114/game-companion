@@ -58,8 +58,30 @@ assert.equal((portraits.html('Big Ron／Ron／Ronny').match(/data-character="ron
 assert.equal(portraits.html('Ronald Nickname Samson'), 'Ronald Nickname Samson');
 assert.ok(portraits.html('<img onerror="x">Rog & Sue').startsWith('&lt;img onerror=&quot;x&quot;&gt;'));
 assert.ok(!/<script|\bon\w+=|(?:href|src)="https?:/i.test(portraitSvg),'頭像只能使用本機靜態 SVG');
-for(const file of ['shared/progress-envelope.js','shared/sync-core.js','model.js'])vm.runInContext(await fs.readFile(new URL(file,dir),'utf8'),context);
+for(const file of ['shared/progress-envelope.js','shared/sync-core.js','model.js','roadmap.js'])vm.runInContext(await fs.readFile(new URL(file,dir),'utf8'),context);
 const {RoadmapModel:model,SideProjectSync:core}=context.window,base=model.fresh();
+const roadmap=context.window.RoadmapProgress.create(guide);
+assert.equal(roadmap.milestones.length,60);assert.equal(new Set(roadmap.milestones.map(item=>item.id)).size,60);
+assert.equal(roadmap.milestones.filter(item=>item.trophyId).length,11);
+for(const stage of guide.stages){
+ assert.deepEqual(stage.milestones.flatMap(item=>item.stepIds),stage.steps.map(step=>step.id),'成果須依原順序完整覆蓋操作說明');
+ for(const item of stage.milestones){assert.ok(item.title.trim());assert.equal(item.id,item.stepIds[0]);if(item.trophyId){assert.ok(trophyIds.has(item.trophyId));assert.ok(item.stepIds.some(id=>steps.find(step=>step.id===id).trophyIds.includes(item.trophyId)));assert.equal(guide.trophies.find(trophy=>trophy.id===item.trophyId).progress,undefined,'跨階段進度不可改用單次跳盃取代');}}
+}
+const snailResult=roadmap.byStep.get('snail-sue'),gullResult=roadmap.byStep.get('gull-oily');
+assert.equal(snailResult,roadmap.byStep.get('snail-bench'));assert.equal(gullResult,roadmap.byStep.get('pub-beans'));assert.equal(gullResult.stepIds.length,7);
+const partial={...base,stepDone:{'snail-sue':true,'future-step':true},trophyEarned:{t31:true}};
+assert.equal(roadmap.done(snailResult,partial),false);assert.equal(roadmap.recorded(snailResult,partial),1);
+const fullSnails={...partial,stepDone:{...partial.stepDone,...Object.fromEntries(snailResult.stepIds.map(id=>[id,true]))},trophyEarned:{}};
+assert.equal(roadmap.done(snailResult,fullSnails),true);assert.equal(fullSnails.trophyEarned.t31,undefined);
+assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,stepDone:{'leave-reception':true}}),false,'舊操作完成不能冒充跳盃');
+assert.equal(roadmap.done(roadmap.byStep.get('leave-reception'),{...base,trophyEarned:{t24:true}}),true);
+assert.equal(new Set(guide.routeChecks.map(check=>check.id)).size,guide.routeChecks.length);
+for(const check of guide.routeChecks){
+ assert.ok(stepIds.has(check.beforeStepId));assert.ok(check.risk.trim());assert.ok(['consensus','unverified'].includes(check.verificationStatus));
+ if(check.stepIds)for(const id of check.stepIds)assert.ok(stepIds.has(id)&&steps.find(step=>step.id===id).warningLevel==='critical','檢查點只能提醒有風險的既有項目');
+ if(check.trophyIds)for(const id of check.trophyIds)assert.equal(guide.trophies.find(trophy=>trophy.id===id).category,'optional');
+}
+const well=guide.routeChecks.find(check=>check.id==='last-well');assert.equal(roadmap.pending(well,partial).length,5);assert.equal(roadmap.pending(well,fullSnails).length,0);
 assert.equal(Object.values(base.trophyEarned).filter(Boolean).length,0);
 const local=model.validate({...base,stepDone:{'mow':true},future:{keep:1},trophyEarned:{'future-trophy':false}}).data;
 const remote={...base,trophyEarned:{t18:true},futureRemote:{keep:2}};
@@ -83,6 +105,6 @@ const cloud=await fs.readFile(new URL('cloud-config.js',dir),'utf8');assert.ok(!
 const adapter=await fs.readFile(new URL('shared/drive-appdata.js',dir),'utf8');assert.ok(adapter.includes("'If-Match':etag"));assert.ok(adapter.includes('!this.verified'));
 for(const file of ['shared/drive-appdata.js','shared/google-auth.js','shared/progress-envelope.js'])assert.equal((await fs.readFile(new URL(file,dir),'utf8')).replaceAll('\r\n','\n'),(await fs.readFile(new URL('../edf-wb/dist/'+file,import.meta.url),'utf8')).replaceAll('\r\n','\n'),'重用的安全模組應保持一致：'+file);
 const sw=await fs.readFile(new URL('sw.js',dir),'utf8');assert.ok(sw.includes(config.storagePrefix+'assets.'));assert.ok(sw.includes('self.registration.scope'));assert.ok(!sw.includes('caches.match('));
-for(const file of ['characters.js','characters.svg'])assert.ok(sw.includes("'./"+file+"'"),'離線需包含頭像：'+file);
+for(const file of ['characters.js','characters.svg','roadmap.js'])assert.ok(sw.includes("'./"+file+"'"),'離線需包含資源：'+file);
 assert.ok((await fs.readFile(new URL('index.html',dir),'utf8')).indexOf('src="characters.js"')<(await fs.readFile(new URL('index.html',dir),'utf8')).indexOf('src="app.js"'));
 console.log(JSON.stringify({passed:true,module:guide.gameId,trophies:33,mapped:33,steps:steps.length,stages:guide.stages.length,trackers:guide.trackers.length,statuses:Object.fromEntries(['verified','consensus','unverified'].map(status=>[status,steps.filter(step=>step.verificationStatus===status).length]))}));

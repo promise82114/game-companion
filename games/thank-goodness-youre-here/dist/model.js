@@ -1,6 +1,6 @@
 (function (global) {
   'use strict';
-  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.', moduleVersion = '1.3.0';
+  const gameId = 'thank-goodness-youre-here', prefix = 'game-companion.' + gameId + '.', moduleVersion = '1.4.0';
   const clone = value => JSON.parse(JSON.stringify(value));
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   function fresh() {
@@ -85,6 +85,11 @@
     async toggle(group, id, value) {
       if (!['stepDone', 'trophyEarned'].includes(group) || typeof value !== 'boolean') throw Error('未知進度欄位。');
       return this.transact(current => ({...current, [group]: {...current[group], [id]: value}, revision: current.revision + 1, updatedAt: Date.now()}));
+    }
+    async setSteps(ids, value) {
+      if (!Array.isArray(ids) || !ids.length || ids.some(id => typeof id !== 'string' || !id) || typeof value !== 'boolean') throw Error('成果項目格式不正確。');
+      // One result is one transaction/revision; keep concurrent edits and unknown fields.
+      return this.transact(current => ({...current, stepDone: {...current.stepDone, ...Object.fromEntries(ids.map(id => [id, value]))}, revision: current.revision + 1, updatedAt: Date.now()}));
     }
     async checkpoint(kind) {
       await new Promise((resolve, reject) => {
