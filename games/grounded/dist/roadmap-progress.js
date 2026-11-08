@@ -1,5 +1,5 @@
-import {steps,collectibles} from './data.js';
-import {run,player,collectionState} from './model.js';
+import {steps,collectibles,trophies,superWinConditions} from './data.js';
+import {run,world,player,collectionState,collectionVisible} from './model.js';
 
 // 步驟收斂只讀取現有勾選；不代填、合併或另存任何完成狀態。
 export function stepProgress(progress,step){
@@ -14,3 +14,12 @@ export function stepProgress(progress,step){
 }
 export const completedSteps=progress=>steps.filter(step=>stepProgress(progress,step).complete).length;
 export const nextPendingStep=progress=>steps.find(step=>!stepProgress(progress,step).complete);
+
+export const conditionItems=(progress,condition)=>collectibles.filter(item=>collectionVisible(progress,item)&&condition.categoryIds?.includes(item.category));
+export const pendingItems=(progress,items)=>items.filter(item=>collectionState(progress,item)!=='obtained');
+// 只顯示人工紀錄的缺漏，不推論遊戲開門或 PSN 已跳盃。
+export function remixReview(progress){
+ const firstRun=Object.values(world(progress).runs).find(r=>r.level===0);
+ const baseTrophies=trophies.filter(t=>t.grade!=='platinum'&&t.category!=='ngplus');
+ return {firstRun,baseTrophies,pendingTrophies:baseTrophies.filter(t=>!player(progress).trophies[t.id]?.earned),pendingConditions:superWinConditions.filter(c=>!firstRun?.conditions[c.id]?.done)};
+}

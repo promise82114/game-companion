@@ -3,7 +3,7 @@
   "slug": "grounded",
   "title": "Grounded",
   "description": "庭院探索 Roadmap、46 項獎盃、收集追蹤與原創區域示意圖",
-  "moduleVersion": "1.1.1",
+  "moduleVersion": "1.1.2",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/grounded/",

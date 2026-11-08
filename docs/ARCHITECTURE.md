@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-08 Grounded 1.1.2 白金流程稽核：沿用 `roadmap-progress.js` 衍生分類待辦與第一輪 REMIX.R 核對，`model.js` 新增唯讀項目可見性供摘要／清單共用。沒有新增儲存旗標或改動 schema1／namespace／store／import。Ominent 分組與少量路線是靜態 metadata；已列 53 項仍為部分庫，不計算遊戲百分比。報告見根目錄 `GROUNDED_PLATINUM_AUDIT_REPORT.md`，本次使用者已授權 commit／push，沿用 main 的 Pages 流程；發布結果以對應 GitHub Actions 為準。
+
 2026-11-04 Grounded 1.1.1 依 `docs/PROGRESSIVE_ROADMAP_UX.md` 採漸進式收斂：新 `roadmap-progress.js` 從現有步驟目標、獎盃及相關收集推導完整度；所有事項完成才精簡步驟，取消任一項即恢復全文。暫時回看只存於頁面記憶體，搜尋不改完成資料；原位 DOM 更新維持焦點／捲動，章節顯示完成數並可返回第一個未完成步驟。schema、進度欄位、ID、儲存及其他遊戲模組不變；2026-11-04 使用者已授權提交／推送本批，部署結果以對應 GitHub Actions 為準。
 
 2026-11-04 Grounded 1.1.0 操作簡化：七章節放入左側導覽，步驟依「目標、完整體驗、白金需求」完整展開；獎盃與相關收集在原處勾選，沿用同一筆進度與跨分頁更新。移除目標切換、內容區章節下拉、耗時、自訂備註、個人標記和世界／成員介面。schema、namespace、ID、交易與匯入保護不變；歷史資料完整保存，不做遷移或清除。此調整與 1.1.1 一同依使用者授權提交／推送，部署結果以對應 GitHub Actions 為準。

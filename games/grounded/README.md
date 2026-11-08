@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.1.1／schema 1，資料查證 2026-11-04。Grounded 本體，非 Grounded 2。採公開 PS4／PS5 清單，初始 0/46。繁中條件為本站摘要，英文名保留，網站 ID 不是 PSN 數字 ID。
+模組 1.1.2／schema 1，資料複查 2026-11-08。Grounded 本體，非 Grounded 2。採公開 PS4／PS5 清單，初始 0/46。繁中條件為本站摘要，英文名保留，網站 ID 不是 PSN 數字 ID。
 
 從 repo 根執行：
 
@@ -45,3 +45,15 @@ DB `game-companion.grounded.progress.v1` 的 `records/progress` 保存 `gameId`�
 逐項 `sourceUrls`／查證狀態在 `dist/data.js`；來源頁可直接開啟。部分來源 403，僅使用已取得搜尋索引文字，沒有繞過或下載圖片。混合兩代條目只核對 Grounded 段落。版圖、封面、標記以 SVG 基本形狀自行創作，未使用或描摹第三方底圖。位置文字為本站摘要，不重製攻略長文。
 
 詳見根目錄 `GROUNDED_P0_REPORT.md`、`GROUNDED_IMPLEMENTATION_REPORT.md`。
+
+## 1.1.2 白金流程驗收
+
+本次先完成 P0，再修正部分具名查漏：收集頁首可直達 Super Win 矩陣，各分類連到已收錄未完成項，包含 unknown 及必要性待查證項。保留原搜尋／清單順序，沒有為矩陣擠開收集操作；Ominent 的兩個已列項新增分組、地下文字位置與 Haze 攻略反查，Trudy Blues 補已確認取得方式與必要性。未收錄名稱仍可能無結果，不代表已全齊。
+
+補上存檔資格提醒、Haze 破門／不同入口工具、Undershed Fuse 前置、開蜂箱與三蟻后卡片風險，以及 Apprentice／Daily 區別。PS5 蟻寶寶卡與補跳未實機驗證，不把 Super Win 的社群例外套為卡片獎盃免查條件。部分路線仍不足，已在介面標示待查證。
+
+REMIX.R 頁及對應 Roadmap 步驟從既有紀錄列出第一輪未確認的 13 分類與 43 個非白金／非 NG+ 個人獎盃；不推論裝置已解鎖。NG+ 摘要改顯當輪普通乳牙人工計數，不再顯示第一輪 0/6。永久 inherited 四類仍共用同世界狀態，未改 bucket、schema、ID、匯入或寫入邏輯。
+
+Haze 新增相關文件的勾選，可能讓舊的已完成步驟重新顯示全文；原目標勾選與既有進度均保留，不自動補齊文件。全部資料庫仍為 53 項部分清單；MIX.R 的 8 個名稱已列，路線未齊；網站不能獨立證明 Super Win。
+
+報告：[白金驗收](../../GROUNDED_PLATINUM_AUDIT_REPORT.md)、[資料覆蓋](../../GROUNDED_DATA_COVERAGE.md)、[玩家情境](../../GROUNDED_UX_TEST_CASES.md)、[後續計畫](../../GROUNDED_FOLLOWUP_PLAN.md)。此版本已完成本機驗收；使用者已授權 commit／push，發布結果以對應 GitHub Actions 為準，真實 PS5 驗收限制不變。

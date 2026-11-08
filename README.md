@@ -67,6 +67,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 Grounded 已完成本機整合：`/game-companion/games/grounded/` 提供七階段 Roadmap、公開 PlayStation 46 盃、十類收集、Super Win 核對、原創庭院示意圖、章節直達、原處勾選與周目保存。1.1.1 初始完整展開，步驟內事項全部完成後才精簡，並同時呈現完整體驗／白金需求，移除筆記、個人標記與世界／成員管理介面。收集資料庫目前為 53 個具名項目的部分清單，沒有未核實精確座標；尚未接入 Drive 或即時共享。1.0.0 已依授權發布；2026-11-04 使用者已授權提交／推送 1.1.1，沿用 main 的 Pages 流程；部署結果以對應 GitHub Actions 為準。執行 `node scripts/verify-grounded-browser.mjs` 驗證，詳見 [模組說明](games/grounded/README.md)、[P0 報告](GROUNDED_P0_REPORT.md) 與 [實作報告](GROUNDED_IMPLEMENTATION_REPORT.md)。
 
+2026-11-08 Grounded 1.1.2 完成白金流程 P0 稽核與低風險修正：補 Ominent 具名查找、Super Win 分類查漏、第一輪未確認事項與 NG+ 乳牙摘要，保留 schema1 與既有進度。全量收集／精確地圖／真實 PS5 跳盃仍未通過，本次使用者已授權 commit／push，沿用 main 的 Pages 流程；發布結果以對應 GitHub Actions 為準。見 [稽核報告](GROUNDED_PLATINUM_AUDIT_REPORT.md)、[資料覆蓋](GROUNDED_DATA_COVERAGE.md)、[情境測試](GROUNDED_UX_TEST_CASES.md)、[後續計畫](GROUNDED_FOLLOWUP_PLAN.md)。
+
 Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[模組說明](games/thank-goodness-youre-here/README.md)。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)包含 PS5 本體 33 獎盃、8 階段、100 個獨立步驟與 13 組跨階段追蹤。IndexedDB 分開保存攻略與獎盃狀態，Drive 沿用既有安全同步核心。執行 `node scripts/verify-thank-goodness-browser.mjs` 驗證新模組；真實 PS5 跳盃與正式 Google Drive 尚待人工驗收。
 
 - [目前架構](docs/ARCHITECTURE.md)

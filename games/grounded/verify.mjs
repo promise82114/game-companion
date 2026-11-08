@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {trophies,steps,stages,collectibles,categories,regions,superWinConditions} from './dist/data.js';
 import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData} from './dist/model.js';
-import {stepProgress,completedSteps,nextPendingStep} from './dist/roadmap-progress.js';
+import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 assert.equal(trophies.length,46);for(const [grade,n]of [['platinum',1],['gold',3],['silver',10],['bronze',32]])assert.equal(trophies.filter(t=>t.grade===grade).length,n,grade);
 for(const list of [trophies,steps,stages,collectibles,categories,regions,superWinConditions])assert.equal(new Set(list.map(i=>i.id)).size,list.length);
 for(const s of steps){assert.ok(stages.some(v=>v.id===s.stageId));assert.ok(typeof s.experienceNote==='string'&&s.experienceNote.trim(),'完整體驗說明缺失：'+s.id);for(const id of s.prerequisites)assert.ok(steps.some(v=>v.id===id));for(const id of s.trophyIds)assert.ok(trophies.some(v=>v.id===id));for(const id of s.collectibleIds)assert.ok(collectibles.some(v=>v.id===id));}
@@ -23,6 +23,15 @@ for(const id of hedgeStep.collectibleIds)setCollection(reading,collectibles.find
 assert.equal(stepProgress(reading,hedgeStep).complete,true);setCollection(reading,collectibles.find(i=>i.id==='scab-bugjuice'),'unknown');
 assert.equal(stepProgress(reading,hedgeStep).complete,false,'待確認不能視為全部完成');
 const readingRaw=JSON.stringify(reading);stepProgress(reading,hedgeStep);completedSteps(reading);nextPendingStep(reading);assert.equal(JSON.stringify(reading),readingRaw,'閱讀完成度不得改寫進度');
+const audit=fresh(),dataCondition=superWinConditions.find(c=>c.id==='data'),molarCondition=superWinConditions.find(c=>c.id==='molars');
+assert.equal(remixReview(audit).baseTrophies.length,43);assert.equal(remixReview(audit).pendingConditions.length,13);
+assert.ok(conditionItems(audit,dataCondition).some(i=>i.id==='audio-goodbye-wendell'),'資料查漏不可排除必要性待查證的項目');
+const recon=collectibles.find(i=>i.id==='data-recon-special');setCollection(audit,recon,'unknown');assert.ok(pendingItems(audit,conditionItems(audit,dataCondition)).some(i=>i.id===recon.id));
+for(const i of collectibles)setCollection(audit,i,'obtained');for(const c of superWinConditions)run(audit).conditions[c.id]={done:true};
+assert.equal(pendingItems(audit,conditionItems(audit,dataCondition)).length,0);assert.equal(player(audit).trophies['super-win'],undefined,'清單與條件全勾選不可代填 PSN');
+const auditBase=JSON.stringify(run(audit));addRun(audit);assert.ok(conditionItems(audit,molarCondition).every(i=>i.category!=='milk'));assert.equal(remixReview(audit).pendingConditions.length,0,'NG+ 必須讀取第一輪驗收，不可誤用本輪空條件');assert.equal(JSON.stringify(world(audit).runs.base),auditBase);
+const auditRaw=JSON.stringify(audit);remixReview(audit);conditionItems(audit,dataCondition);assert.equal(JSON.stringify(audit),auditRaw);
+for(const c of superWinConditions){for(const id of c.categoryIds||[])assert.ok(categories.some(row=>row.id===id));if(c.stepId)assert.ok(steps.some(row=>row.id===c.stepId));}
 const p=fresh();validateProgress(p);assert.equal(Object.keys(player(p).trophies).length,0);p.unknownTop={keep:'synthetic'};world(p).runs.base.future={retain:true};
 run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>i.category==='milk'),scab=collectibles.find(i=>i.category==='scab');setCollection(p,milk,'obtained');setCollection(p,scab,'obtained');const baseId=world(p).currentRunId;addRun(p);assert.equal(collectionState(p,milk),'missing');assert.equal(collectionState(p,scab),'obtained');assert.deepEqual(run(p).steps,{});world(p).currentRunId=baseId;assert.equal(run(p).steps.hedge.note,'synthetic');
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});

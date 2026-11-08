@@ -1,5 +1,13 @@
 # Grounded 實作與驗證報告
 
+## 1.1.2 白金流程稽核 · 2026-11-08
+
+依 `GROUNDED_PLATINUM_UX_AUDIT.md` 先完成 P0 報告及 46 盃逐筆對照，再修正已重現的 Ominent 查找、Super Win 分類查漏入口、unknown 篩選、NG+ 乳牙摘要與第一輪未確認事項。補少量來源明確的前置／入口文字和蟻后卡片警示，保留仍待查證的路線；沒有大規模新增點位。
+
+沒有更改 schema、穩定 ID、namespace、儲存／匯入／永久 inherited 分界，也沒有修改其他遊戲或共用 store。Haze 目標與文件仍獨立確認；新相關項可能使原先縮起的步驟重新展開，原有勾選不變。沿用既有閱讀收斂、備份與部署架構，使用者後續已授權 commit／push，沿用 main 的 Pages 流程；發布結果以對應 GitHub Actions 為準。
+
+完整證據及未通過事項：[白金流程驗收](GROUNDED_PLATINUM_AUDIT_REPORT.md)、[資料覆蓋](GROUNDED_DATA_COVERAGE.md)、[情境測試](GROUNDED_UX_TEST_CASES.md)、[後續計畫](GROUNDED_FOLLOWUP_PLAN.md)。全量 99% 查漏、精確地圖與主機 46 盃仍未通過，不能以本機測試當作白金實機驗收。
+
 ## 1.1.1 漸進式收斂 · 2026-11-04
 
 依使用者本次明確修改要求及 `docs/PROGRESSIVE_ROADMAP_UX.md`，修正 1.1.0 的「完成後仍一直顯示全文」：初始沒有必須點開的內容；一個步驟內的目標、相關獎盃與收集全數勾選後，才縮成名稱、狀態及事項計數。只完成目標、仍有未取得／待確認收集或獎盃時不收斂，不自動代填其他事項。這是閱讀呈現條件，不是新增遊戲獎盃或白金達成條件。
