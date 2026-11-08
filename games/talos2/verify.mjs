@@ -1,6 +1,8 @@
 import {textScreenedIds,sourceComparedIds,puzzleReviewLevel,puzzleReviewCounts,correctedFindings,sourceGapIds,reviewedIds} from './dist/puzzle-audit.js';
 import {storyMaps} from './dist/story-maps.js';
 import {storySources,storyRoutes} from './dist/story-data.js';
+import {megaBridges,bridgeCoverage} from './dist/bridge-data.js';
+import {bridgeHtml} from './dist/roadmap/bridges.js';
 import {storyWaypoints,waypointProgressId,routeItemsForStep,storyRouteHtml} from './dist/roadmap/story.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
@@ -93,7 +95,18 @@ for(const region of 'E1 E2 E3 N1 N2 N3 S1 S2 S3 W1 W2 W3'.split(' ')){
 }
 assert.equal(puzzles.filter(p=>p.kind==='tutorial').length,12);assert.equal(puzzles.filter(p=>p.kind==='arranger').length,9);
 for(const puzzle of puzzles){assert.ok(ids.has(puzzle.stepId),puzzle.id+' owner');assert.ok(puzzle.actions.length||puzzle.pending,puzzle.id+' content');assert.ok(puzzle.sources.length);for(const source of puzzle.sources)assert.ok(new URL(source.url).protocol==='https:');if(puzzle.verificationStatus==='unverified')assert.ok(puzzle.pending,puzzle.id+' uncertainty');assert.ok(puzzleGroups[puzzle.stepId]);assert.ok(!ids.has(puzzleProgressId(puzzle.id)),'子謎題不覆蓋原步驟');}
-assert.equal(new Set(storyWaypoints.map(w=>w.id)).size,31);
+assert.equal(new Set(storyWaypoints.map(w=>w.id)).size,59);
+assert.equal(megaBridges.length,28);assert.deepEqual(bridgeCoverage.map(c=>c.count),[7,9,11,0,1]);
+for(const item of megaBridges){
+ const b=item.bridge,route=storyRoutes[item.stepId];assert.ok(route.indexOf(item.id)<route.indexOf(item.beforeId));assert.ok(item.location&&b.after);assert.equal(new Set(b.pieces.map(p=>p.number)).size,b.pieces.length);assert.deepEqual([...b.pieces.map(p=>p.number)].sort((a,b)=>a-b),Array.from({length:b.pieces.length},(_,i)=>i+1));
+ const waypoint=storyWaypoints.find(w=>w.id===item.id),hidden=bridgeHtml(waypoint,{escape:s=>s,showSolutions:false}),shown=bridgeHtml(waypoint,{escape:s=>s,showSolutions:true});assert.ok(!hidden.includes('data-bridge-solution'));assert.ok(hidden.includes(b.after));assert.equal((shown.match(/<strong>\d+ 號<\/strong>/g)||[]).length,b.pieces.length);if(b.pieces.some(p=>p.rotation!=='as-shown'))assert.match(shown,/待查證/);assert.ok(!shown.includes('<img'));
+}
+assert.deepEqual(megaBridges.find(b=>b.id==='bridge-north-01').bridge.pieces.map(p=>p.number),[2,3,1,4]);
+assert.deepEqual(megaBridges.find(b=>b.id==='bridge-east-04').bridge.pieces.map(p=>p.number),[2,4,3,1]);
+assert.match(megaBridges.find(b=>b.id==='bridge-north-04').bridge.between[1],/上樓/);
+assert.match(megaBridges.find(b=>b.id==='bridge-south-02').bridge.between[2],/側面/);
+assert.match(megaBridges.find(b=>b.id==='bridge-south-08').bridge.after,/先左轉.*再左轉/);
+assert.match(megaBridges.at(-1).bridge.alternative,/Dystopia.*待查證/);
 for(const w of storyWaypoints){assert.ok(ids.has(w.stepId));assert.ok(storyMaps[w.mapKey]);assert.ok(w.actions.length);assert.ok(w.sources.length);assert.ok(routeItemsForStep(w.stepId).includes(w));assert.ok(storyMaps[w.mapKey].nodes.some(n=>n.target===waypointProgressId(w.id)||n.alsoTargets?.includes(waypointProgressId(w.id))),w.id+' map locator');}
 for(const[stepId,route]of Object.entries(storyRoutes)){assert.ok(ids.has(stepId));const items=routeItemsForStep(stepId);assert.ok(items.every(Boolean),stepId);assert.equal(new Set(items).size,items.length);assert.ok(items.every(i=>i.stepId===stepId));assert.ok(puzzles.filter(p=>p.stepId===stepId).every(p=>items.includes(p)));assert.equal(items.length,route.length+puzzles.filter(p=>p.stepId===stepId&&!route.includes(p.id)).length);}
 assert.deepEqual(routeItemsForStep('first-megastructure').map(i=>i.id),storyRoutes['first-megastructure']);

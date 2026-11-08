@@ -4,6 +4,28 @@
 
 ## 已取得證據
 
+### 2026-11-08 巨構沿路搭橋逐段補漏（1.6.2）
+
+本輪把過去藏在「過金環、搭橋」敘述中的橋獨立盤點，沒有再拿原有 212 個謎題的來源覆核數表示途中每座橋都完整。新增 28 個 waypoint（共 59 個），97 個選塊步驟；舊 31 個 waypoint、212 個 puzzle、60 主步驟 ID 與 schema 1 保留。不自動把已完成主題推定成新橋已完成，原有未知資料、匯入與 Drive 合併契約不改。
+
+| 區段 | 本輪來源與結果 |
+| --- | --- |
+| 東側 7 段 | [原作者第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_1.htm) 的中央橋、綠炮橋與紅炮橋；[第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/06_Megastructure_East/megastructure_east_2.htm) 的藍炮跨房橋與返三色門三橋。第 4 段的 4 號朝向在作者文字中有差異，另列待查證。 |
+| 北側 9 段 | [第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_1/mega_north_1.htm) 四橋到藍炮；[第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/mega_north_2.htm) 三橋到綠炮、兩橋回主門。風扇後兩塊橋必須先放 1 號，再走左梯上樓、跳到拼塊上才放 2 號。 |
+| 南側 11 段 | [第 1 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_1.htm) 對應插銷 1 的三橋、插銷 2 的兩橋、插銷 3 的三橋；[第 2 頁](https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_2.htm) 對應插銷 4 的兩橋、插銷 5 的一橋。第 2 段放完 2 號後要爬到其側面再放 1 號；第 8 段橋後依原文與 Talos_2_2403.jpg 改明左、左落地，再右、右上樓。 |
+| 西側首次救援 | [原作者圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/19_Megastructure_West/megastructure_west_1.htm) 記載 VTOL 後既有橋、大門、Prometheus 影像與 Byron 平台；沒有列出需要放拼塊的金環。不為普通橋虛構形狀順序。 |
+| 最終巨構 | [原作者完整流程](https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm) 的八輪盤後 Utopia 八塊橋：原清單由左至右選取，經塔與電梯到 Athena。文中一般木橋、玻璃橋廊與登陸台橋不屬於拼塊題。[Wiki Utopia](https://taloswiki.org/wiki/Utopia) 支持兩出口橋互斥；Dystopia 替代橋的塊號／順序／旋轉未取得完整對照，仍待查證。 |
+
+實際讀取上述八頁正文，並下載、觀看 28 張原攻略遊戲畫面／合成圖，只作為地標、形狀清單與中途爬行的研究證據；另觀看 Wiki 的 Utopia 終橋俯視標註圖，可確認成橋形狀，但沒有逐塊輸入方向，未與原作者清單混配。未發布來源原圖。三張東側圖片請求失敗，未把它們算入看過的畫面。Neoseeker 巨構三頁正文回應 403，只讀到搜尋索引的局部段落；其中北側有另一套選塊路線，未與本輪原作者路線混接。額外搜尋未找到可直接核實逐塊旋轉方向的完整紀錄。
+
+**旋轉缺口**：原圖文多數只說 rotate，靜態圖無法唯一回推出旋轉軸、順／逆方向與按鍵次數；不能假裝每一處都是「轉一次」。28 段中 23 段有此類缺口，均在對應橋的解法內明示；另 5 段僅有來源原向放置紀錄，不保證玩家已自行旋轉後的當前方向相同。最終 Utopia 橋只知可能有一至兩塊需轉，連塊號都未明，因此八塊都標旋轉待查證。Dystopia 替代橋沒有假造順序。沒有進行 PS5 逐橋實機通關。
+
+呈現沿用原生 Roadmap 與現有樣式；每橋位置／過橋去向直接可讀，選塊細節受既有「拒絕謎語」控制，完成後沿原 waypoint 機制收合。新定位共用已核實的主線地標，不新增未量測橋位座標；來源頁另列 28 段與缺口，不混入原 212 項統計。使用者已授權本輪測試、commit／push 並更新正式站，發布結果以對應 Actions 為準。
+
+驗證紀錄：模組資料／合成同步檢查通過；隔離瀏覽器新增 28 段 × 桌面／觸控手機，核對順序 DOM、解法開關、唯讀定位、勾選焦點、完成收合、重載及取消恢復。最終執行結果記錄於忽略的 `outputs/talos2/story/bridge-result.json` 與既有瀏覽器結果檔，正式發布前另以本次提交範圍建立快照檢查，不混入其他遊戲工作中的內容。
+
+最終發布快照：`verify.mjs`（全 7 模組）、合成 `verify-sync.mjs`、build 與 site 檢查通過（639 檔、138 本機連結）。完整 Talos 隔離瀏覽器回歸通過；導航回歸包含橋 56 情境、原星星 48 情境／200 次定位、14 張主線圖與六種寬度。橋的深連結明確選中自己的參考地標，避免被同畫面下一個目標搶走。設計檢查 1440／768／390 為 0 FAIL、0 WARN，人工檢視三寬度及已展開順序的畫面；沿用既有配色／字體，未重做版面，警示語意符號保留。
+
 ### 2026-11-08 星星起點、遠距機關與跨題接線定位
 
 玩家再次回報星星導引找不到位置。盤點確認：舊圖主要標領星雕像與跳題 Spark，沒有追逐起點、途中停靠與跨題觀察站位；僅把解法寫對，無法讓玩家在大地圖找到設備。本輪保留既有解法與進度，另外加入位置導引。

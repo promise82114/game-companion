@@ -12,7 +12,7 @@ const open=async query=>{await page.goto(url+query);await page.locator('#section
 const noOverflow=async()=>assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'page overflow');
 try{
  // 24 顆星星的找路內容不依賴解法開關，定位只讀資料、沿用同一星星進度。
- const starCases=[];
+ const starCases=[],bridgeCases=[];
  await open('?stage=P1&section=E1');
  const starRoutes=await page.evaluate(async()=>{const {starRoutes}=await import('./star-navigation-data.js');return Object.entries(starRoutes).map(([id,r])=>({id,points:r.points}));});
  await fs.mkdir('outputs/talos2/stars',{recursive:true});
@@ -48,14 +48,39 @@ try{
    }
    starCases.push({width,id,points:points.length,mapped,passed:true});
   }
+  {
+  const bridgeContext=await browser.newContext({viewport:{width,height:1000},hasTouch:width===390,isMobile:width===390,serviceWorkers:'block'});await bridgeContext.route('**/*',route=>new URL(route.request().url()).origin===new URL(base).origin?route.continue():route.abort());const page=await bridgeContext.newPage();page.on('pageerror',error=>errors.push(error.message));
+  const open=async query=>{await page.goto(url+query);await page.locator('#section-select').waitFor();},state=()=>page.evaluate(async()=>{const {roadmap}=await import('./data.js'),{createStore}=await import('./roadmap/store.js'),store=createStore(roadmap,window.SideProjectSync);try{return await store.open();}finally{store.close();}}),noOverflow=async()=>assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'bridge overflow');
+  await open('?view=roadmap#waypoint-bridge-east-01');
+  const bridges=await page.evaluate(async()=>{const {megaBridges}=await import('./bridge-data.js');return megaBridges.map(b=>({id:b.id,mapKey:b.mapKey,stepId:b.stepId,pieces:b.bridge.pieces.map(p=>p.number)}));});
+  for(const bridge of bridges){
+   await open('?view=roadmap#waypoint-'+bridge.id);const row=page.locator('#waypoint-'+bridge.id),body=page.locator('#body-waypoint-'+bridge.id);
+   await body.waitFor({state:'visible'});assert.ok((await row.locator('.waypoint-location').textContent()).length>10);assert.ok((await row.locator('.bridge-after').textContent()).length>15);
+   assert.equal(await page.evaluate(async id=>{const {regionMaps,mapNodeMatches}=await import('./roadmap/maps.js');const panel=document.querySelector('.region-map-aside [data-map-region]'),selected=panel?.querySelector('.map-selected')?.getAttribute('data-map-node');return Boolean(regionMaps[panel?.dataset.mapRegion]?.nodes.some(n=>n.id===selected&&mapNodeMatches(n,'waypoint-'+id)));},bridge.id),true,'bridge deep link must select its landmark');
+   if(!await page.locator('#show-solutions').isChecked()){assert.equal(await page.locator('[data-bridge-solution]').count(),0);await page.locator('#show-solutions').check();await row.locator('[data-bridge-solution]').waitFor();}
+   assert.deepEqual(await row.locator('.bridge-pieces strong').allTextContents(),bridge.pieces.map(n=>n+' 號'));assert.ok(await row.locator('.solution-sources a').count()>0);await noOverflow();
+   const before=await state(),locate=row.locator('[data-map-locate]');if(mobileContext)await locate.tap();else await locate.click();
+   const map=page.locator(mobileContext?'#map-dialog':'.region-map-aside');assert.equal(await map.locator('[data-map-region]').getAttribute('data-map-region'),bridge.mapKey);assert.equal(await map.locator('.map-selected').count(),1);
+   if(mobileContext)await page.locator('#map-dialog [data-close="map-dialog"]').tap();assert.deepEqual((await state()).steps,before.steps,'bridge locator must not write progress');
+   if(['bridge-east-04','bridge-north-04','bridge-south-02','bridge-final-01'].includes(bridge.id)){await row.scrollIntoViewIfNeeded();await page.screenshot({path:`outputs/talos2/stars/${bridge.id}-${width}.png`});}
+   const checkbox=row.locator('[data-waypoint-complete]');if(mobileContext)await checkbox.tap();else await checkbox.check();await page.waitForFunction(id=>document.getElementById('body-waypoint-'+id)?.hidden,bridge.id);
+   assert.equal((await state()).steps['waypoint-'+bridge.id].status,'completed');assert.equal(await checkbox.evaluate(el=>document.activeElement===el),true);
+   await open('?view=roadmap&stage='+({'first-megastructure':'P1','north-megastructure':'P2','prometheus-rescue':'P4',ending:'P7'}[bridge.stepId])+'&section='+({'first-megastructure':'east-megastructure','north-megastructure':'north-megastructure','prometheus-rescue':'south-megastructure',ending:'finale'}[bridge.stepId]));
+   await page.waitForFunction(id=>document.getElementById('body-waypoint-'+id)?.hidden,bridge.id);const restored=page.locator('[data-waypoint-complete="'+bridge.id+'"]');if(mobileContext)await restored.tap();else await restored.uncheck();await page.waitForFunction(id=>!document.getElementById('body-waypoint-'+id)?.hidden,bridge.id);
+   bridgeCases.push({width,id:bridge.id,passed:true});
+  }
+  await page.locator('#show-solutions').uncheck();
+  await bridgeContext.close();
+  }
   if(mobileContext)await mobileContext.close();
  }
  await fs.writeFile('outputs/talos2/stars/result.json',JSON.stringify({passed:true,cases:starCases},null,2));
+ await fs.writeFile('outputs/talos2/story/bridge-result.json',JSON.stringify({passed:true,cases:bridgeCases},null,2));
  await page.setViewportSize({width:1440,height:1000});
  await open('?view=roadmap&stage=P1&section=east-megastructure');
  assert.equal(await page.locator('#show-solutions').isChecked(),false);
  assert.equal(await page.locator('.puzzle-solution').count(),0);
- assert.equal(await page.locator('[data-waypoint]').count(),10);
+ assert.equal(await page.locator('[data-waypoint]').count(),17);
  assert.equal(await page.locator('.puzzle-navigation').count(),3);
  assert.match(await page.locator('#waypoint-east-lobby').textContent(),/NOEMA-01/);
  assert.ok((await page.locator('.region-map-aside').boundingBox()).width>=440);
@@ -82,7 +107,7 @@ try{
  await page.reload();await page.locator('[data-waypoint-complete="east-arrival"]').waitFor();
  assert.equal((await state()).steps['waypoint-east-arrival'].status,'not_started');
  // 三色題全部完成後還要做終端與回程，下一步不可直接跳 N1。
- await page.evaluate(async()=>{const {roadmap}=await import('./data.js'),{createStore}=await import('./roadmap/store.js'),{storyRoutes}=await import('./story-data.js'),store=createStore(roadmap,window.SideProjectSync);try{await store.open();await store.update(p=>{for(const id of storyRoutes['first-megastructure'].slice(0,10))p.steps[(id.startsWith('MEGA-')?'puzzle-':'waypoint-')+id]={status:'completed'};p.steps['first-megastructure']={status:'completed'};p.settings.syntheticFuture={keep:true};return p;});}finally{store.close();}});
+ await page.evaluate(async()=>{const {roadmap}=await import('./data.js'),{createStore}=await import('./roadmap/store.js'),{storyRoutes}=await import('./story-data.js'),store=createStore(roadmap,window.SideProjectSync);try{await store.open();await store.update(p=>{const route=storyRoutes['first-megastructure'];for(const id of route.slice(0,route.indexOf('east-terminal3')))p.steps[(id.startsWith('MEGA-')?'puzzle-':'waypoint-')+id]={status:'completed'};p.steps['first-megastructure']={status:'completed'};p.settings.syntheticFuture={keep:true};return p;});}finally{store.close();}});
  await page.reload();await page.locator('#continue').click();assert.equal(new URL(page.url()).hash,'#waypoint-east-terminal3');
  assert.equal((await state()).settings.syntheticFuture.keep,true);
  // 已發布的北側題目深連結，仍到同一題，現在改由北側巨構片段承接。
@@ -113,5 +138,5 @@ try{
  }
  assert.deepEqual(errors,[]);
  await fs.writeFile('outputs/talos2/story/navigation-result.json',JSON.stringify({passed:true,checks:['visible wayfinding with spoilers off','waypoint completion/folding/focus/reload/unknown field retention','ordered next step before return terminals','legacy North deep link','visit-specific city NPCs and pending positions','14 story SVG caption bounds','larger default maps at six widths','mobile dialog and Escape'],pageErrors:errors},null,2));
- console.log(JSON.stringify({passed:true,storyMaps:14,waypoints:31,widths:[1440,1280,1024,768,390,320]}));
+ console.log(JSON.stringify({passed:true,storyMaps:14,waypoints:59,widths:[1440,1280,1024,768,390,320]}));
 }finally{await context.close();await browser.close();}

@@ -1,4 +1,5 @@
 import {storySources} from './story-data.js';
+import {megaBridges} from './bridge-data.js';
 // 原創拓樸圖。城市只借用已核對的相對方位；室內不假造樓層比例或北向。
 const w=id=>'waypoint-'+id,s=id=>'step-'+id,p=id=>'puzzle-'+id;
 const node=(id,label,x,y,caption,target,description='',kind='story')=>({id,label,x,y,caption,target,description,kind});
@@ -80,3 +81,5 @@ for(const visit of [1,2,3])maps['CITY-'+visit].nodes.find(n=>n.id==='gazebo').ca
 maps['CITY-2'].nodes.find(n=>n.id==='gazebo').target=w('city2-east');
 for(const[key,id,alias]of [['MEGA-E-ENTRY','vtol','east-exit'],['MEGA-S-ENTRY','vtol','south-exit-route'],['MEGA-FINAL','entry','final-arrival']])maps[key].nodes.find(n=>n.id===id).alsoTargets=[w(alias)];
 export const storyMaps=maps;
+// 沿用既有地標做定位，不將多樓層橋梁硬畫成未測量的平面座標。
+for(const bridge of megaBridges){const anchor=maps[bridge.mapKey].nodes.find(n=>n.id===bridge.mapAnchor);if(!anchor)throw Error('巨構橋缺少地標：'+bridge.id);anchor.alsoTargets=[...(anchor.alsoTargets||[]),w(bridge.id)];}

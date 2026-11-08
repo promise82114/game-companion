@@ -1,4 +1,5 @@
-// 城市回訪與巨構導覽，2026-11-05。路線順序來自逐段實玩圖文，沒有假定遊戲內座標。
+import {attachMegaBridges} from './bridge-data.js';
+// 城市回訪與巨構導覽，2026-11-08。路線順序來自逐段實玩圖文，沒有假定遊戲內座標。
 const manor='https://mysterymanor.net/walkthroughs/Talos_Principle_2/';
 export const storySources={
  cityMap:{title:'Cognition：三次城市到訪的人物與地標圖',url:'https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536'},
@@ -69,11 +70,11 @@ waypoint('first-megastructure','east-yaqut','橋上 Yaqut：談完再沿長廊�
 ],'MEGA-E-ENTRY',['megaEast1']);
 waypoint('first-megastructure','east-central','中央區：先搭橋，目標是三色大門','第一個金環 → 中央平台',[
  '金環另一側是中央平台，正對面大門有紅、綠、藍三個接收器；要分別解開支線、拉動三座雷射炮的拉桿，才會開門。橋塊已提供，不需再到戶外找題目收拼塊。',
- '第一橋依左上原始形狀順序 1 → 2 → 3（轉）搭過去。本頁走綠 → 紅 → 藍，避免把不同攻略的中途位置混用；中央平台面向大門時綠區在右，藍區在左，紅區在入口較下方。'
+ '本頁走綠 → 紅 → 藍；中央平台面向大門時，綠區在右，藍區在左，紅區在入口較下方。各段搭橋已依行進順序分開列在途中。'
 ],'MEGA-E-CORE',['megaEast1','megaEastWiki']);
 waypoint('first-megastructure','east-terminal3','三色門開後：跟黃色三角到 NOEMA-03','藍炮區出口 → 中央橋 → 三色大門內的水池',[
- '確認三道雷射都命中大門。從藍炮區下樓、穿回紫屏後找黃色三角：向左金環搭四塊橋 1 → 4 → 2 → 3，再走左邊金環、朝大門連搭兩段橋。',
- '第一段三塊是 1 → 2 → 3（轉）；下一段是 1 → 2（轉）→ 3。進大門後沿水池兩側階梯到中央小島，操作 NOEMA-03、讀檔並看完 Athena／Miranda 記憶。'
+ '完成前列東橋 5～7，確認已穿過三色大門。沿水池兩側階梯到中央小島，操作 NOEMA-03、逐份開檔。',
+ '看完 Athena／Miranda 記憶，等 Act II 開始後再循黃色三角返回。'
 ],'MEGA-E-CORE',['megaEast2','megaEastWiki']);
 waypoint('first-megastructure','east-terminal1','回程補終端：NOEMA-01 現在才可讀','循黃色三角回入口大廳 → 左側 L1',[
  'Act II 開始後循黃色三角原路返回：穿三色門、過中央橋、沿長廊與 R2 回到最初大廳。',
@@ -92,7 +93,7 @@ waypoint('north-megastructure','north-byron','北側中央：走重力牆到 Byr
  'Byron 會啟動紅色雷射。你接下來只需要依序處理藍、綠兩條支線，不必再找紅炮拉桿。'
 ],'MEGA-N',['megaNorth1']);
 waypoint('north-megastructure','north-memory','北側三色門：讀主線終端並準備撤離','綠光完成 → 黃色三角 → 三色大門 → 水池小島',[
- '綠光啟動後沿黃色三角返回，途中需要重力牆、階梯與拼塊橋。這裡的上下方向會隨重力改變，先找特殊地磚與黃色三角，不用把示意圖當作同一層平面。',
+ '完成前列北橋 8、9 並穿過三色大門；重力翻轉時以特殊地磚與黃色三角確認前進方向。',
  '進三色門，沿走廊上樓到水池小島。Byron 操作終端後觸發事故；看完劇情便轉為撤離。'
 ],'MEGA-N',['megaNorth2']);
 waypoint('north-megastructure','north-exit-route','北側撤離：跟黃色三角回庭院與 VTOL','主線終端 → 回程樓梯／走廊 → 最初庭院',[
@@ -112,7 +113,7 @@ waypoint('prometheus-rescue','south-exit-route','釋放後：搭電梯與纜車�
  '依序搭纜車、過橋、搭另一部電梯回入口走廊與 VTOL。回基地先處理 Hermanubis／Cryer 的主線對話，再下樓搭交通艙去 W1。'
 ],'MEGA-S-ENTRY',['megaSouth2']);
 waypoint('west-megastructure','west-byron','西側救援：跟 Prometheus 影像到 Byron','VTOL → 橋 → 大門 → 發光影像',[
- '完成西區與所選市長分歧後搭 VTOL 進西側。下機過橋進大門，跟隨 Prometheus 的影像，走到看見 Byron 被終端束縛的平台。',
+ '完成西區與所選市長分歧後搭 VTOL 進西側。下機走既有橋進大門；這次救援的來源路線沒有放拼塊的金環，不用到處找形狀清單。跟隨 Prometheus 影像，到看見 Byron 被終端束縛的平台。',
  '跳下到 Byron 所在平台，靠近互動，把他的手從終端拉開。不要把這次救援誤認為最後 Utopia／Dystopia 的八輪盤流程。'
 ],'MEGA-W',['megaWest']);
 waypoint('west-megastructure','west-escape','西側救援後：跟 Byron 看完，再循黃色三角撤退','Byron 平台 → 記憶 → 電流大廳',[
@@ -141,7 +142,7 @@ waypoint('ending','final-arrival','最後進巨構：入口與兩側世界','基
  '這是西側第二次進入，不是重做救 Byron。圖上的 U1～U4、D1～D4 代表解題區段／輪盤，並非量測樓層座標；詳細設備操作由「拒絕謎語」開關顯示。'
 ],'MEGA-FINAL',['megaFinal']);
 waypoint('ending','final-athena','八輪盤後：最後的橋、電梯與 Athena','最後輪盤 → 金環橋 → 塔 → 電梯',[
- '八個輪盤都啟動後，走最後金環橋登塔，搭電梯到 Athena。Utopia 的出口橋完成後，Dystopia 對應橋會停用；這是遊戲機制，不是漏了一個額外輪盤。',
+ '依前列終橋走 Utopia 出口，進塔搭電梯；到頂右轉、走到底左轉再左轉，進門上階梯到 Athena。兩世界的出口橋擇一即可，不必回頭補另一側。',
  '與 Athena 互動並完成最後選擇，再核對 Break the Loop；已救回 Miranda 的同一進度完成結局後，另核對 The Future。'
 ],'MEGA-FINAL',['megaFinal','utopiaWiki']);
 
@@ -154,12 +155,13 @@ export const storyRoutes={
  ending:['final-arrival','FINAL-gate','FINAL-u1','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4','FINAL-u2','FINAL-u3','FINAL-u4','final-athena']
 };
 export const storyPuzzleDetails={
- 'MEGA-E-green':{mapKey:'MEGA-E-CORE',navigation:['面向三色大門，從中央平台右側金環搭橋。過環後先左上樓、再右上樓；到左右岔路選右，走上去穿紫屏。看到鑽孔器與銅牆就是綠光題。','解完不是直接折返：穿兩道已開門下樓，沿地上電線找到拉桿，拉下確認綠光命中大門。']},
- 'MEGA-E-red':{mapKey:'MEGA-E-CORE',navigation:['從綠炮沿原階梯穿回紫屏，左下樓回剛才左右岔路。這次直走上另一段長階梯，到金環搭橋去紅炮平台；進左側紫屏解題。','解完走到炮旁拉桿，確認紅光命中大門。這裡的紅炮在較低的入口側，圖用上下關係辨識，不代表北方。']},
- 'MEGA-E-blue':{mapKey:'MEGA-E-CORE',navigation:['從紅炮回題目房、穿紫屏；不要走回剛過的金環，改直走下樓。沿紅柱間階梯一路往下，再穿紫屏，會看到紅／綠接收器與右角金環。','在這裡搭橋去對面房間解題；開綠接收器旁通路後上樓，沿炮的電線找拉桿。藍光打中大門後才進入主線終端階段。']},
- 'MEGA-N-blue':{stepId:'north-megastructure',mapKey:'MEGA-N',navigation:['Byron 開紅光後，走右側金環搭橋。沿右樓梯找右側重力牆，攀上天花板，經後續金環與風扇到紫屏內。','這段方向會翻轉；認特殊地磚、金環與最後的壓板／蓄能器房。解完必須拉下藍炮拉桿。']},
- 'MEGA-N-green':{stepId:'north-megastructure',mapKey:'MEGA-N',navigation:['從藍炮題穿回紫屏與金環，下右側樓梯，沿右側重力牆轉兩次左、落回地板。接著沿連續金環橋與特殊地磚前進到有交換台、鑽孔器的綠炮題。','拉綠炮後三色門會開；黃色三角此時指向門內主線終端。']},
- 'MEGA-S-pins':{mapKey:'MEGA-S-PINS',navigation:['先在 Prometheus 正面拉一次大拉桿，看到 0/5 才開始沿環道找五個黃色三角。1／2 共用第一條支路；3 在下一條支路；4／5 共用後一條支路。','第 4 根需要與 Yaqut 說話，再離開他的高台讓他操作。5/5 後回正面再拉大拉桿；不是自動解放。']},
+ 'MEGA-E-green':{mapKey:'MEGA-E-CORE',navigation:['完成前列東橋 2，沿階梯到右側紫屏內；看到鑽孔器與銅牆，就是綠光題。','解完不是直接折返：穿兩道已開門下樓，沿地上電線找到拉桿，拉下確認綠光命中大門。']},
+ 'MEGA-E-red':{mapKey:'MEGA-E-CORE',navigation:['完成前列東橋 3，到紅炮平台後進左側紫屏解題。','解完走到炮旁拉桿，確認紅光命中大門。這裡的紅炮在較低的入口側，圖用上下關係辨識，不代表北方。']},
+ 'MEGA-E-blue':{mapKey:'MEGA-E-CORE',navigation:['完成前列東橋 4，從紅／綠接收器房跨到對面 RGB 房，再開始下方連線。','開啟綠接收器旁的通路後，上樓沿炮的電線找拉桿。藍光打中大門後，接著走東橋 5～7 去主線終端。']},
+ 'MEGA-N-blue':{stepId:'north-megastructure',mapKey:'MEGA-N',navigation:['依前列北橋 1～4，經天花板與風扇穿到紫屏內。','認壓板與蓄能器房，解完必須拉下藍炮拉桿；回程沿已建橋下到風扇前。']},
+ 'MEGA-N-green':{stepId:'north-megastructure',mapKey:'MEGA-N',navigation:['完成前列北橋 5～7，從天花板向右穿紫屏，進有交換台與鑽孔器的綠炮題。','拉綠炮後三色門會開；接著依北橋 8、9 回三色門內的主線終端。']},
+ 'MEGA-S-pins':{mapKey:'MEGA-S-PINS',navigation:['前列南橋 1～11 已依序帶到五根插銷；現在核對右上是否 5/5。','未滿時查看黃色三角與對應插銷段落。已滿便回正面大拉桿再拉一次，不會自動解放。']},
  MIRANDA:{mapKey:'BASE-CAMP'},'FINAL-gate':{mapKey:'MEGA-FINAL'},
  ...Object.fromEntries(['FINAL-u1','FINAL-u2','FINAL-u3','FINAL-u4','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4'].map(id=>[id,{mapKey:'MEGA-FINAL',navigation:[id.includes('-u')?'此段在 Utopia 側；要換世界時回中間通路。圖上的 U 編號是本網站輪盤分段，不是遊戲路牌。':'此段在 Dystopia 側；光線不足時要回 Utopia 設備端調整，不是另找地圖外的光源。']}]))
 };
+attachMegaBridges(storyWaypoints,storyRoutes,storySources);
