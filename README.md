@@ -83,3 +83,9 @@ Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[�
 - [驗收結果與限制](docs/ACCEPTANCE.md)
 - [Thank Goodness 正式站 Drive 同步驗收清單](docs/THANK_GOODNESS_DRIVE_ACCEPTANCE_CHECKLIST.md)
 - [原始需求基準](GAME_COMPANION_ARCHITECTURE.md) 與 [P0 歷史報告](docs/reports/P0_REPORT.md)
+
+## BALL x PIT 模組（2026-11-10）
+
+新增 `/game-companion/games/ball-x-pit/`：八層 Roadmap、16×8 本體矩陣與6更新角色另組、64 PS5 獎盃、78建築及6資源地塊、86配方與161已收錄球／Passive圖鑑。提供22角色配裝方向、基地發展示意與排序。進度使用獨立 IndexedDB、保護式 JSON 匯入；沒有 Drive 或 SW。圖鑑總量、部分成本／門檻及PS5觸發仍待核實，配裝屬明示推論，不能把本站全勾當 Scholar。
+
+本機開啟 [BALL x PIT](http://127.0.0.1:4190/game-companion/games/ball-x-pit/)；先執行 `node scripts/build.mjs`、`node server.mjs`。專屬隔離驗證 `node scripts/verify-ball-x-pit-browser.mjs`，資料檢查已接入根 verify。詳見 [模組說明](games/ball-x-pit/README.md)與[實作／驗證紀錄](games/ball-x-pit/docs/IMPLEMENTATION.md)。2026-11-10 依授權沿 main 的 Pages 流程發布，結果以對應提交的 Actions 為準。[正式入口](https://promise82114.github.io/game-companion/games/ball-x-pit/)

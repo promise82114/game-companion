@@ -44,4 +44,10 @@ assert.equal(JSON.parse(await fs.readFile(path.join(edfir,'data/catalog.json'),'
 assert.equal(JSON.parse(await fs.readFile(path.join(edfir,'data/drones.json'),'utf8')).drones.length,55);
 // boot 動態引用既有來源，避免重複實作共用 UI、OAuth、store、同步。
 for(const file of ['grounded/style.css','talos2/roadmap/sync.js',...['sync-core','sync-session','google-auth','drive-appdata','progress-envelope'].map(n=>'talos2/shared/'+n+'.js')])await fs.access(path.join(root,'games',file));
+const ball=path.join(root,'games/ball-x-pit'),ballData=JSON.parse(await fs.readFile(path.join(ball,'data/catalog.json'),'utf8'));
+assert.equal(ballData.trophies.length,64);assert.equal(ballData.characters.filter(c=>c.contentSet==='base').length*ballData.levels.length,128);
+for(const file of ['index.html','app.js','model.js','style.css'])await fs.access(path.join(ball,file));
+assert.ok(!(await fs.readFile(path.join(ball,'index.html'),'utf8')).includes('accounts.google.com'));
+assert.ok(!(await fs.readFile(path.join(ball,'app.js'),'utf8')).includes('serviceWorker'));
+
 console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:moduleCount}));

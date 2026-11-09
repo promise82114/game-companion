@@ -88,3 +88,9 @@ Mycopunk 的五項主功能移入固定左側欄；裝備分類仍沿用原 dire
 2026-11-03 Thank Goodness 中英名稱與計數（模組 1.2.0、攻略 1.1.0，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：33 盃新增依 Exophase 同一獎盃連結 ID 核對的 `nameZhTW`，保留 `officialName` 與既有 t00–t32；來源核對紀錄在模組 `docs/EXOPHASE_TROPHY_NAMES.json`。12 個多步驟獎盃於攻略 metadata 明列 `progress.stepIds`／標籤／限制，由 UI 直接從現有 `stepDone` 計算並同步更新所有出現位置，不另存計數或改寫 `trophyEarned`。排除動物的蚯蚓保守提醒、Nick 另一獎盃的豆罐步驟；回訪／路線標籤不表示已證實的必要互動次數。IndexedDB、schema、namespace、Drive 及其他遊戲邏輯不變，SW cache v8 保留原清理前綴。
 
 2026-11-04 Thank Goodness 漸進式收斂（模組 1.3.0、攻略 1.2.0，使用者已授權提交與推送，沿用 main Pages 發布流程，部署結果以對應提交的 GitHub Actions 為準）：既有 8 章、100 步新增 28 段 sections metadata，以既有 stepIds 按原順序分組。未完成內容完整呈現，完成步驟收起說明，全段／全章完成後只留標題與計數，可臨時回看；搜尋、段落定位與返回遊玩進度不代填完成狀態。閱讀展開只保存在頁面記憶體，步驟／段落收斂從 stepDone 推導；跨分頁、匯入、初始化與手動同步沿用原進度事件更新原位 DOM。schema、namespace、IndexedDB 與 Drive 實作未改，model 僅遞增 moduleVersion，SW cache v9 保留原清理前綴。詳見模組 README。
+
+## BALL x PIT · 2026-11-09 本機新增
+
+`games/ball-x-pit/` 模組1.0.0，原生ES modules／JSON，獨立 `game-companion.ball-x-pit.progress.v1` IndexedDB，schema1的七個布林map分開保存通關、路線檢查、藍圖、建造、配方、圖鑑及PSN手動獎盃。衍生計數不存檔、不自動授予獎盃。16×8本體格與6更新角色的48格隔離；圖鑑只計已收錄球／Passive，不以119本體項目推導Scholar。
+
+沿用根 `shared/roadmap-store.js` 與既有純合併core，沒有載入Drive或SW。store補上缺省Drive ID不拆封裝的判斷，以及可選 `exportSyncState:false` 供純本機模組不讀localStorage；既有預設不變。匯入先archive兩端原文，單端未知資料保留、兩端差異確認、下載備份、expected原文交易阻擋過期預覽。研究JSON與根規格離線產生catalog；78建築／6資源地塊、90球、71Passive、86配方、22角色推論配裝及資料限制見模組README／docs。根build自動加入Portal，verify與verify-site明列必要檢查。2026-11-10 依授權沿 main 的 Pages 流程發布，結果以對應提交的 Actions 為準。

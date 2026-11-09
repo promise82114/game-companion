@@ -49,4 +49,6 @@ results.push({slug:'grounded',baseTrophies:46,stages:7,collectibles:53,collectio
 results.push({slug:'talos2',baseTrophies:60,dlcExcluded:9,roadmap:'independent steps/trophies/backups/branches in IndexedDB',cloudWrite:'blocked-until-current-grant-proven'});
 const edfirCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/edfir'),encoding:'utf8'});assert.equal(edfirCheck.status,0,edfirCheck.stderr);console.log(edfirCheck.stdout.trim());
 results.push({slug:'edfir',missions:52,drones:55,baseTrophiesIncludingPlatinum:44,weapons:'312 base / 40 DLC / 8 bonus',cloudWrite:'blocked-until-current-grant-proven'});
+const ballCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/ball-x-pit'),encoding:'utf8'});assert.equal(ballCheck.status,0,ballCheck.stdout+ballCheck.stderr);console.log(ballCheck.stdout.trim());
+results.push({slug:'ball-x-pit',trophies:64,baseMatrix:128,cloudWrite:'not implemented'});
 console.log(JSON.stringify({passed:true,modules:results}));

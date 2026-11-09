@@ -1,0 +1,5211 @@
+{
+  "balls": [
+    {
+      "id": "bleed",
+      "name": "Bleed",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "brood-mother",
+      "name": "Brood Mother",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "egg-sac",
+      "name": "Egg Sac",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "flesh",
+      "name": "Flesh",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The GORYxGRASSLANDS"
+    },
+    {
+      "id": "freeze",
+      "name": "Freeze",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "iron",
+      "name": "Iron",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "laser-horizontal",
+      "name": "Laser (Horizontal)",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "laser-vertical",
+      "name": "Laser (Vertical)",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The LIMINALxDESERT"
+    },
+    {
+      "id": "lightning",
+      "name": "Lightning",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The SNOWYxSHORES"
+    },
+    {
+      "id": "poison",
+      "name": "Poison",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The SMOLDERINGxDEPTHS"
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "wind",
+      "name": "Wind",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "burn",
+      "name": "Burn",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "cell",
+      "name": "Cell",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The FUNGALxFOREST"
+    },
+    {
+      "id": "charm",
+      "name": "Charm",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The HEAVENLYxGATES"
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；Clear  The BONExYARD"
+    },
+    {
+      "id": "earthquake",
+      "name": "Earthquake",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "基礎戰球；N/A Unlocked by default"
+    },
+    {
+      "id": "armageddon",
+      "name": "Armageddon",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "banished-flame",
+      "name": "Banished Flame",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "banshee",
+      "name": "Banshee",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "berserk",
+      "name": "Berserk",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "black-hole",
+      "name": "Black Hole",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "bomb",
+      "name": "Bomb",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "brimstone",
+      "name": "Brimstone",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "catapult",
+      "name": "Catapult",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "drill",
+      "name": "Drill",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "elemental",
+      "name": "Elemental",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "erosion",
+      "name": "Erosion",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "flesh-mound",
+      "name": "Flesh Mound",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "flicker",
+      "name": "Flicker",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "sacrifice",
+      "name": "Sacrifice",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Sandstorm",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "satan",
+      "name": "Satan",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "shotgun",
+      "name": "Shotgun",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "soul-sucker",
+      "name": "Soul Sucker",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "spider-queen",
+      "name": "Spider Queen",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "steel",
+      "name": "Steel",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "succubus",
+      "name": "Succubus",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "swamp",
+      "name": "Swamp",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "freeze-ray",
+      "name": "Freeze Ray",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "frozen-flame",
+      "name": "Frozen Flame",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "glacier",
+      "name": "Glacier",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "heart-swallower",
+      "name": "Heart Swallower",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "hemorrhage",
+      "name": "Hemorrhage",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "holy-laser",
+      "name": "Holy Laser",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "incubus",
+      "name": "Incubus",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "inferno",
+      "name": "Inferno",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "landslide",
+      "name": "Landslide",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "laser-beam",
+      "name": "Laser Beam",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "laser-cutter",
+      "name": "Laser Cutter",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "petrify",
+      "name": "Petrify",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "phantom",
+      "name": "Phantom",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "radiation-beam",
+      "name": "Radiation Beam",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "reaper",
+      "name": "Reaper",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "maggot",
+      "name": "Maggot",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "magma",
+      "name": "Magma",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "mosquito-king",
+      "name": "Mosquito King",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "mosquito-kingdom",
+      "name": "Mosquito Kingdom",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "mosquito-swarm",
+      "name": "Mosquito Swarm",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "nosferatu",
+      "name": "Nosferatu",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "noxious",
+      "name": "Noxious",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "nuclear-bomb",
+      "name": "Nuclear Bomb",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "offspring",
+      "name": "Offspring",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "overgrowth",
+      "name": "Overgrowth",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "time-bomb",
+      "name": "Time Bomb",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "timestop",
+      "name": "Timestop",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "tumor",
+      "name": "Tumor",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "vampire-lord",
+      "name": "Vampire Lord",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "venom",
+      "name": "Venom",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "virus",
+      "name": "Virus",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "voluptuous-egg-sac",
+      "name": "Voluptuous Egg Sac",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "x-ray",
+      "name": "X Ray",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "leech",
+      "name": "Leech",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "lightning-bug",
+      "name": "Lightning Bug",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "lightning-rod",
+      "name": "Lightning Rod",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    },
+    {
+      "id": "lovestruck",
+      "name": "Lovestruck",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "ball",
+      "note": "具名進化戰球；配方另見查詢。"
+    }
+  ],
+  "passives": [
+    {
+      "id": "archers-effigy",
+      "name": "Archer's Effigy",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SNOWYxSHORES"
+    },
+    {
+      "id": "artificial-heart",
+      "name": "Artificial Heart",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "baby-rattle",
+      "name": "Baby Rattle",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "bandage-roll",
+      "name": "Bandage Roll",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "bottled-tornado",
+      "name": "Bottled Tornado",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "breastplate",
+      "name": "Breastplate",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "crown-of-thorns",
+      "name": "Crown of Thorns",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "cursed-elixir",
+      "name": "Cursed Elixir",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The BONExYARD"
+    },
+    {
+      "id": "deadeyes-amulet",
+      "name": "Deadeye's Amulet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The LIMINALxDESERT"
+    },
+    {
+      "id": "diamond-hilted-dagger",
+      "name": "Diamond Hilted Dagger",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "dynamite",
+      "name": "Dynamite",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SMOLDERINGxDEPTHS"
+    },
+    {
+      "id": "emerald-hilted-dagger",
+      "name": "Emerald Hilted Dagger",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "ethereal-cloak",
+      "name": "Ethereal Cloak",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "everflowing-goblet",
+      "name": "Everflowing Goblet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "eye-of-the-beholder",
+      "name": "Eye of the Beholder",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "fleet-feet",
+      "name": "Fleet Feet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "frozen-spike",
+      "name": "Frozen Spike",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "gemspring",
+      "name": "Gemspring",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SMOLDERINGxDEPTHS"
+    },
+    {
+      "id": "ghostly-corset",
+      "name": "Ghostly Corset",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The HEAVENLYxGATES"
+    },
+    {
+      "id": "ghostly-shield",
+      "name": "Ghostly Shield",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The HEAVENLYxGATES"
+    },
+    {
+      "id": "golden-bull",
+      "name": "Golden Bull",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SNOWYxSHORES"
+    },
+    {
+      "id": "hand-fan",
+      "name": "Hand Fan",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The GORYxGRASSLANDS"
+    },
+    {
+      "id": "hand-mirror",
+      "name": "Hand Mirror",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The GORYxGRASSLANDS"
+    },
+    {
+      "id": "healers-effigy",
+      "name": "Healer's Effigy",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SNOWYxSHORES"
+    },
+    {
+      "id": "hourglass",
+      "name": "Hourglass",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "iron-onesie",
+      "name": "Iron Onesie",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "kiss-of-death",
+      "name": "Kiss of Death",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "lovers-quiver",
+      "name": "Lover's Quiver",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The GORYxGRASSLANDS"
+    },
+    {
+      "id": "magic-staff",
+      "name": "Magic Staff",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "magnet",
+      "name": "Magnet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "midnight-oil",
+      "name": "Midnight Oil",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "platinum-dumbbell",
+      "name": "Platinum Dumbbell",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear ?"
+    },
+    {
+      "id": "pressure-valve",
+      "name": "Pressure Valve",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The BONExYARD"
+    },
+    {
+      "id": "protective-charm",
+      "name": "Protective Charm",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The FUNGALxFOREST"
+    },
+    {
+      "id": "radiant-feather",
+      "name": "Radiant Feather",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "reachers-spear",
+      "name": "Reacher's Spear",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "rubber-headband",
+      "name": "Rubber Headband",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "ruby-hilted-dagger",
+      "name": "Ruby Hilted Dagger",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "sapphire-hilted-dagger",
+      "name": "Sapphire Hilted Dagger",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "shortbow",
+      "name": "Shortbow",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "silver-blindfold",
+      "name": "Silver Blindfold",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The LIMINALxDESERT"
+    },
+    {
+      "id": "silver-bullet",
+      "name": "Silver Bullet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "slingshot",
+      "name": "Slingshot",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "spiked-collar",
+      "name": "Spiked Collar",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The FUNGALxFOREST"
+    },
+    {
+      "id": "stone-effigy",
+      "name": "Stone Effigy",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "sword-breaker",
+      "name": "Sword Breaker",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；?"
+    },
+    {
+      "id": "traitors-cowl",
+      "name": "Traitor's Cowl",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The HEAVENLYxGATES"
+    },
+    {
+      "id": "turret",
+      "name": "Turret",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "upturned-hatchet",
+      "name": "Upturned Hatchet",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "vampiric-sword",
+      "name": "Vampiric Sword",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The LIMINALxDESERT"
+    },
+    {
+      "id": "voodoo-doll",
+      "name": "Voodoo Doll",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The BONExYARD"
+    },
+    {
+      "id": "wagon-wheel",
+      "name": "Wagon Wheel",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The SMOLDERINGxDEPTHS"
+    },
+    {
+      "id": "war-horn",
+      "name": "War Horn",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；N/A (unlocked by default)"
+    },
+    {
+      "id": "wretched-onion",
+      "name": "Wretched Onion",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "基礎 Passive；Clear  The FUNGALxFOREST"
+    },
+    {
+      "id": "ardent-tire",
+      "name": "Ardent Tire",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "argent-stopwatch",
+      "name": "Argent Stopwatch",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "arrow-of-fate",
+      "name": "Arrow of Fate",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "cornucopia",
+      "name": "Cornucopia",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "deadeyes-cross",
+      "name": "Deadeye's Cross",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "deadeyes-impaler",
+      "name": "Deadeye's Impaler",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "full-metal-rapier",
+      "name": "Full Metal Rapier",
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "gracious-impaler",
+      "name": "Gracious Impaler",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "grotesque-artillery",
+      "name": "Grotesque Artillery",
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "inglorious-hammer",
+      "name": "Inglorious Hammer",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "odiferous-shell",
+      "name": "Odiferous Shell",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "phantom-regalia",
+      "name": "Phantom Regalia",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "remote-detonator",
+      "name": "Remote Detonator",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "soul-reaver",
+      "name": "Soul Reaver",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "tormenters-mask",
+      "name": "Tormenters Mask",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "conflict",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "windweaver",
+      "name": "Windweaver",
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    },
+    {
+      "id": "wings-of-the-anointed",
+      "name": "Wings of the Anointed",
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "encyclopedia": true,
+      "kind": "passive",
+      "note": "具名進化 Passive；配方另見查詢。"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "armageddon",
+      "name": "Armageddon",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "inferno"
+        ],
+        [
+          "storm"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "iron"
+        ],
+        [
+          "ghost",
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "banished-flame",
+      "name": "Banished Flame",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "dark"
+        ],
+        [
+          "burn"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "banshee",
+      "name": "Banshee",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "phantom"
+        ],
+        [
+          "wraith"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "berserk",
+      "name": "Berserk",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "charm"
+        ],
+        [
+          "bleed",
+          "burn"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "black-hole",
+      "name": "Black Hole",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "sun"
+        ],
+        [
+          "dark",
+          "time"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "freeze"
+        ],
+        [
+          "wind",
+          "lightning"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "bomb",
+      "name": "Bomb",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "iron"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "brimstone",
+      "name": "Brimstone",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "stone",
+          "poison"
+        ],
+        [
+          "burn"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "catapult",
+      "name": "Catapult",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "stone"
+        ],
+        [
+          "egg-sac"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "drill",
+      "name": "Drill",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "earthquake"
+        ],
+        [
+          "iron"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "elemental",
+      "name": "Elemental",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "wind"
+        ],
+        [
+          "freeze"
+        ],
+        [
+          "earthquake"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "erosion",
+      "name": "Erosion",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "time"
+        ],
+        [
+          "wind"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "egg-sac"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "lightning"
+        ],
+        [
+          "light"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "flesh-mound",
+      "name": "Flesh Mound",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "brood-mother"
+        ],
+        [
+          "flesh"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "flicker",
+      "name": "Flicker",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "light"
+        ],
+        [
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "sacrifice",
+      "name": "Sacrifice",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "bleed"
+        ],
+        [
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Sandstorm",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "earthquake",
+          "stone"
+        ],
+        [
+          "wind"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "satan",
+      "name": "Satan",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "incubus"
+        ],
+        [
+          "succubus"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "shotgun",
+      "name": "Shotgun",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "iron"
+        ],
+        [
+          "egg-sac"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "shotgun"
+        ],
+        [
+          "assassin"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "soul-sucker",
+      "name": "Soul Sucker",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire"
+        ],
+        [
+          "ghost"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "spider-queen",
+      "name": "Spider Queen",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "brood-mother"
+        ],
+        [
+          "egg-sac"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "steel",
+      "name": "Steel",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "iron"
+        ],
+        [
+          "stone"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "lightning"
+        ],
+        [
+          "wind"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "succubus",
+      "name": "Succubus",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "charm"
+        ],
+        [
+          "vampire"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "light"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "swamp",
+      "name": "Swamp",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "poison"
+        ],
+        [
+          "earthquake"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "freeze-ray",
+      "name": "Freeze Ray",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "freeze"
+        ],
+        [
+          "laser-horizontal",
+          "laser-vertical"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "frozen-flame",
+      "name": "Frozen Flame",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "freeze"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "glacier",
+      "name": "Glacier",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "freeze"
+        ],
+        [
+          "earthquake",
+          "stone"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "heart-swallower",
+      "name": "Heart Swallower",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "bleed"
+        ],
+        [
+          "ghost"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "hemorrhage",
+      "name": "Hemorrhage",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "bleed"
+        ],
+        [
+          "iron",
+          "flesh"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "holy-laser",
+      "name": "Holy Laser",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "laser-horizontal"
+        ],
+        [
+          "laser-vertical"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "incubus",
+      "name": "Incubus",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "charm"
+        ],
+        [
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "inferno",
+      "name": "Inferno",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "wind",
+          "time"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "landslide",
+      "name": "Landslide",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "stone"
+        ],
+        [
+          "earthquake"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "laser-beam",
+      "name": "Laser Beam",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "light"
+        ],
+        [
+          "laser-horizontal",
+          "laser-vertical"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "laser-cutter",
+      "name": "Laser Cutter",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "laser-horizontal",
+          "laser-vertical"
+        ],
+        [
+          "steel"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "petrify",
+      "name": "Petrify",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "stone"
+        ],
+        [
+          "flesh"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "phantom",
+      "name": "Phantom",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "dark"
+        ],
+        [
+          "ghost"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "radiation-beam",
+      "name": "Radiation Beam",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "laser-horizontal",
+          "laser-vertical"
+        ],
+        [
+          "poison",
+          "cell"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "reaper",
+      "name": "Reaper",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "soul-sucker"
+        ],
+        [
+          "heart-swallower"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "maggot",
+      "name": "Maggot",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "brood-mother"
+        ],
+        [
+          "cell"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "magma",
+      "name": "Magma",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "burn"
+        ],
+        [
+          "earthquake"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "mosquito-king",
+      "name": "Mosquito King",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire"
+        ],
+        [
+          "brood-mother"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "mosquito-kingdom",
+      "name": "Mosquito Kingdom",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "mosquito-king"
+        ],
+        [
+          "mosquito-swarm"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "mosquito-swarm",
+      "name": "Mosquito Swarm",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire"
+        ],
+        [
+          "egg-sac"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "nosferatu",
+      "name": "Nosferatu",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire-lord"
+        ],
+        [
+          "spider-queen"
+        ],
+        [
+          "mosquito-king"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "noxious",
+      "name": "Noxious",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "wind"
+        ],
+        [
+          "poison",
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "nuclear-bomb",
+      "name": "Nuclear Bomb",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "bomb"
+        ],
+        [
+          "poison"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "offspring",
+      "name": "Offspring",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "cell"
+        ],
+        [
+          "flesh"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "overgrowth",
+      "name": "Overgrowth",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "earthquake"
+        ],
+        [
+          "cell"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "time-bomb",
+      "name": "Time Bomb",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "time"
+        ],
+        [
+          "bomb"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "timestop",
+      "name": "Timestop",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "time"
+        ],
+        [
+          "freeze"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "tumor",
+      "name": "Tumor",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "radiation-beam"
+        ],
+        [
+          "flesh"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "vampire-lord",
+      "name": "Vampire Lord",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire"
+        ],
+        [
+          "bleed",
+          "dark"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "venom",
+      "name": "Venom",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "poison"
+        ],
+        [
+          "freeze"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "virus",
+      "name": "Virus",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "poison"
+        ],
+        [
+          "bleed",
+          "ghost",
+          "cell"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "voluptuous-egg-sac",
+      "name": "Voluptuous Egg Sac",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "egg-sac"
+        ],
+        [
+          "cell"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "time"
+        ],
+        [
+          "light"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "freeze"
+        ],
+        [
+          "ghost"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "x-ray",
+      "name": "X Ray",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "holy-laser"
+        ],
+        [
+          "laser-beam"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "vampire"
+        ],
+        [
+          "flesh"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "leech",
+      "name": "Leech",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "brood-mother"
+        ],
+        [
+          "bleed"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "lightning-bug",
+      "name": "Lightning Bug",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "lightning"
+        ],
+        [
+          "brood-mother"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "lightning-rod",
+      "name": "Lightning Rod",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "lightning"
+        ],
+        [
+          "iron"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "lovestruck",
+      "name": "Lovestruck",
+      "kind": "evolution",
+      "ingredients": [
+        [
+          "charm"
+        ],
+        [
+          "light",
+          "lightning",
+          "time"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-BALLS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "ardent-tire",
+      "name": "Ardent Tire",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "wagon-wheel"
+        ],
+        [
+          "rubber-headband"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "argent-stopwatch",
+      "name": "Argent Stopwatch",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "hourglass"
+        ],
+        [
+          "silver-bullet"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "arrow-of-fate",
+      "name": "Arrow of Fate",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "lovers-quiver"
+        ],
+        [
+          "hand-mirror"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "cornucopia",
+      "name": "Cornucopia",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "baby-rattle"
+        ],
+        [
+          "war-horn"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "deadeyes-cross",
+      "name": "Deadeye's Cross",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "diamond-hilted-dagger"
+        ],
+        [
+          "sapphire-hilted-dagger"
+        ],
+        [
+          "ruby-hilted-dagger"
+        ],
+        [
+          "emerald-hilted-dagger"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "deadeyes-impaler",
+      "name": "Deadeye's Impaler",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "deadeyes-cross"
+        ],
+        [
+          "gracious-impaler"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "full-metal-rapier",
+      "name": "Full Metal Rapier",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "iron-onesie"
+        ],
+        [
+          "sword-breaker"
+        ]
+      ],
+      "contentSet": "shadow",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "gracious-impaler",
+      "name": "Gracious Impaler",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "reachers-spear"
+        ],
+        [
+          "deadeyes-amulet"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "grotesque-artillery",
+      "name": "Grotesque Artillery",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "turret"
+        ],
+        [
+          "hand-fan"
+        ]
+      ],
+      "contentSet": "regal",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "inglorious-hammer",
+      "name": "Inglorious Hammer",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "platinum-dumbbell"
+        ],
+        [
+          "upturned-hatchet"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "odiferous-shell",
+      "name": "Odiferous Shell",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "wretched-onion"
+        ],
+        [
+          "breastplate"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "phantom-regalia",
+      "name": "Phantom Regalia",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "ghostly-corset"
+        ],
+        [
+          "ethereal-cloak"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "remote-detonator",
+      "name": "Remote Detonator",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "pressure-valve"
+        ],
+        [
+          "magnet"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "soul-reaver",
+      "name": "Soul Reaver",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "vampiric-sword"
+        ],
+        [
+          "everflowing-goblet"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    },
+    {
+      "id": "tormenters-mask",
+      "name": "Tormenters Mask",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "spiked-collar"
+        ],
+        [
+          "crown-of-thorns"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "conflict",
+      "note": "Wiki 索引名稱 Tormenters Mask；Stevivor 本體指南作 Tormentor’s Mask。材料皆為 Spiked Collar + Crown of Thorns，遊戲英文拼法待實機核對。"
+    },
+    {
+      "id": "windweaver",
+      "name": "Windweaver",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "bottled-tornado"
+        ],
+        [
+          "slingshot"
+        ]
+      ],
+      "contentSet": "naturalist",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。"
+    },
+    {
+      "id": "wings-of-the-anointed",
+      "name": "Wings of the Anointed",
+      "kind": "evolved-passive",
+      "ingredients": [
+        [
+          "radiant-feather"
+        ],
+        [
+          "fleet-feet"
+        ]
+      ],
+      "contentSet": "base",
+      "sourceIds": [
+        "W-PASSIVES",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "note": "搜尋索引核對，尚未在 PS5 實測。本體歸屬以本體清單及三次更新新增清單交叉排除核對。"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "wheat-field",
+      "name": "Wheat Field",
+      "category": "resource",
+      "blueprintLevel": null,
+      "effect": "可採收小麥的資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "dense-wheat",
+      "name": "Dense Wheat",
+      "category": "resource",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "較高容量與再生速度的小麥資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "category": "resource",
+      "blueprintLevel": null,
+      "effect": "可採收木材的資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "grand-tree",
+      "name": "Grand Tree",
+      "category": "resource",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "較高容量與再生速度的木材資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "boulder",
+      "name": "Boulder",
+      "category": "resource",
+      "blueprintLevel": null,
+      "effect": "可採收石材的資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "granite-slab",
+      "name": "Granite Slab",
+      "category": "resource",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "較高容量與再生速度的石材資源地塊。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "entryType": "resource-plot"
+    },
+    {
+      "id": "farm",
+      "name": "Farm",
+      "category": "economy",
+      "blueprintLevel": "snowyxshores",
+      "effect": "指派角色採收相鄰小麥。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "lumberyard",
+      "name": "Lumberyard",
+      "category": "economy",
+      "blueprintLevel": "snowyxshores",
+      "effect": "指派角色採收相鄰木材。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "stone-mine",
+      "name": "Stone Mine",
+      "category": "economy",
+      "blueprintLevel": "snowyxshores",
+      "effect": "指派角色採收相鄰石材。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gold-mine",
+      "name": "Gold Mine",
+      "category": "economy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "指派工人採金，彈跳觸發採集；精確數值待查。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gatherers-hut",
+      "name": "Gatherer's Hut",
+      "category": "economy",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "指派角色按預設方向定期自動採集。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "watch-tower",
+      "name": "Watch Tower",
+      "category": "economy",
+      "blueprintLevel": "snowyxshores",
+      "effect": "延長採收時間。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "road-keeper",
+      "name": "Road Keeper",
+      "category": "economy",
+      "blueprintLevel": "fungalxforest",
+      "effect": "提升採收時的角色移動速度。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "market",
+      "name": "Market",
+      "category": "economy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "以金幣兌換其他資源。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "workers-guild",
+      "name": "Worker's Guild",
+      "category": "economy",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "關閉遊戲時以較慢速率持續採集，最多累積24小時。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "spa",
+      "name": "Spa",
+      "category": "economy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "花費金幣立即再次採收。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "guild-hall",
+      "name": "Guild Hall",
+      "category": "economy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "花費資源重抽角色採收升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "shadow",
+      "cost": null
+    },
+    {
+      "id": "consulate",
+      "name": "Consulate",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Leadership 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "schoolhouse",
+      "name": "Schoolhouse",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Intelligence 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "shoemaker",
+      "name": "Shoemaker",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Speed 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gunsmith",
+      "name": "Gunsmith",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Dexterity 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "barracks",
+      "name": "Barracks",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Strength 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "clinic",
+      "name": "Clinic",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "全角色 Endurance 加成。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "hospital",
+      "name": "Hospital",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Endurance 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "warriors-guild",
+      "name": "Warrior's Guild",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Strength 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "capitolium",
+      "name": "Capitolium",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Leadership 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "wagon-factory",
+      "name": "Wagon Factory",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Speed 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "marksmans-guild",
+      "name": "Marksman's Guild",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Dexterity 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "grand-museum",
+      "name": "Grand Museum",
+      "category": "function",
+      "blueprintLevel": "vastxvoid",
+      "effect": "Intelligence 加成，可無限升級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "wheelwright",
+      "name": "Wheelwright",
+      "category": "function",
+      "blueprintLevel": "snowyxshores",
+      "effect": "提升 Speed scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "military-academy",
+      "name": "Military Academy",
+      "category": "function",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "提升 Strength scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "alchemist",
+      "name": "Alchemist",
+      "category": "function",
+      "blueprintLevel": "snowyxshores",
+      "effect": "提升 Endurance scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "university",
+      "name": "University",
+      "category": "function",
+      "blueprintLevel": "snowyxshores",
+      "effect": "提升 Intelligence scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "archery-range",
+      "name": "Archery Range",
+      "category": "function",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "提升 Dexterity scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "diplomacy-hall",
+      "name": "Diplomacy Hall",
+      "category": "function",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "提升 Leadership scaling 階級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "boneyard-trophy",
+      "name": "Boneyard Trophy",
+      "category": "trophy",
+      "blueprintLevel": "bonexyard",
+      "effect": "依不同角色通關 BONExYARD 的紀錄提供狀態效果強度。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "snowy-trophy",
+      "name": "Snowy Trophy",
+      "category": "trophy",
+      "blueprintLevel": "snowyxshores",
+      "effect": "依不同角色通關 SNOWYxSHORES 的紀錄提供範圍傷害強度。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "desert-trophy",
+      "name": "Desert Trophy",
+      "category": "trophy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "依不同角色通關 LIMINALxDESERT 的紀錄提供暴擊機率。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "shroom-trophy",
+      "name": "Shroom Trophy",
+      "category": "trophy",
+      "blueprintLevel": "fungalxforest",
+      "effect": "依不同角色通關 FUNGALxFOREST 的紀錄提供生命值。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gory-trophy",
+      "name": "Gory Trophy",
+      "category": "trophy",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "依不同角色通關 GORYxGRASSLANDS 的紀錄提供戰球速度。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "smoldering-trophy",
+      "name": "Smoldering Trophy",
+      "category": "trophy",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "依不同角色通關 SMOLDERINGxDEPTHS 的紀錄提供 baby ball 傷害。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "heavenly-trophy",
+      "name": "Heavenly Trophy",
+      "category": "trophy",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "依不同角色通關 HEAVENLYxGATES 的紀錄提供 Passive 強度。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "void-trophy",
+      "name": "Void Trophy",
+      "category": "trophy",
+      "blueprintLevel": "vastxvoid",
+      "effect": "依不同角色通關 VASTxVOID 的紀錄提供基礎傷害。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "abbey",
+      "name": "Abbey",
+      "category": "function",
+      "blueprintLevel": "fungalxforest",
+      "effect": "增加經驗取得量；適用範圍仍待實機確認。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "jeweler",
+      "name": "Jeweler",
+      "category": "function",
+      "blueprintLevel": "fungalxforest",
+      "effect": "提高起始戰球等級。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "necromancer",
+      "name": "Necromancer",
+      "category": "function",
+      "blueprintLevel": "fungalxforest",
+      "effect": "每場戰鬥可復活一次，降低復活生命值並擊殺附近敵人。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "bank",
+      "name": "Bank",
+      "category": "economy",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "增加戰鬥中取得的金幣。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "matchmaker",
+      "name": "Matchmaker",
+      "category": "function",
+      "blueprintLevel": "fungalxforest",
+      "effect": "允許同場使用兩名角色並結合能力。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "magnet-factory",
+      "name": "Magnet Factory",
+      "category": "function",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "擴大拾取範圍。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "candle-maker",
+      "name": "Candle Maker",
+      "category": "function",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "Fusion Reactor 提供較高的最低升級數。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gamblers-den",
+      "name": "Gambler's Den",
+      "category": "function",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "提供戰鬥升級的免費重抽次數。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "casino",
+      "name": "Casino",
+      "category": "function",
+      "blueprintLevel": "fungalxforest",
+      "effect": "降低戰鬥升級重抽費用。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "wishing-well",
+      "name": "Wishing Well",
+      "category": "function",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "升級時有機會獲得額外升級點。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "evolution-chamber",
+      "name": "Evolution Chamber",
+      "category": "function",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "新取得戰球由等級2開始。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "relic-collector",
+      "name": "Relic Collector",
+      "category": "function",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "新取得 Passive 由等級2開始。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "meditation-tent",
+      "name": "Meditation Tent",
+      "category": "function",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "升級選項增加至4個。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "exorcist",
+      "name": "Exorcist",
+      "category": "function",
+      "blueprintLevel": "bonexyard",
+      "effect": "升級時可封禁選項。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "gemsmith",
+      "name": "Gemsmith",
+      "category": "function",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "戰鬥開場可額外選一顆戰球。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "antique-shop",
+      "name": "Antique Shop",
+      "category": "function",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "戰鬥開場可選一項 Passive。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "war-room",
+      "name": "War Room",
+      "category": "function",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "可派遣角色自行完成關卡；是否計入 PS5 獎盃待實測。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "bag-maker",
+      "name": "Bag Maker",
+      "category": "function",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "增加1個戰球槽位。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "carpenter",
+      "name": "Carpenter",
+      "category": "function",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "增加1個 Passive 槽位。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null
+    },
+    {
+      "id": "adventurers-guild",
+      "name": "Adventurer's Guild",
+      "category": "function",
+      "blueprintLevel": "snowyxshores",
+      "effect": "解鎖擊敗 Boss 後繼續探索的 Endless Mode。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "regal",
+      "cost": null
+    },
+    {
+      "id": "sheriffs-office",
+      "name": "Sheriff's Office",
+      "category": "housing",
+      "blueprintLevel": "bonexyard",
+      "effect": "解鎖角色 The Itchy Finger。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "itchy-finger"
+    },
+    {
+      "id": "haunted-house",
+      "name": "Haunted House",
+      "category": "housing",
+      "blueprintLevel": "bonexyard",
+      "effect": "解鎖角色 The Repentant。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "repentant"
+    },
+    {
+      "id": "theater",
+      "name": "Theater",
+      "category": "housing",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "解鎖角色 The Juggler。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "juggler"
+    },
+    {
+      "id": "cozy-home",
+      "name": "Cozy Home",
+      "category": "housing",
+      "blueprintLevel": "bonexyard",
+      "effect": "解鎖角色 The Cohabitants。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "cohabitants"
+    },
+    {
+      "id": "villa",
+      "name": "Villa",
+      "category": "housing",
+      "blueprintLevel": "snowyxshores",
+      "effect": "解鎖角色 The Cogitator。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "cogitator"
+    },
+    {
+      "id": "mausoleum",
+      "name": "Mausoleum",
+      "category": "housing",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "解鎖角色 The Shade。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "shade"
+    },
+    {
+      "id": "iron-fortress",
+      "name": "Iron Fortress",
+      "category": "housing",
+      "blueprintLevel": "fungalxforest",
+      "effect": "解鎖角色 The Shieldbearer。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "shieldbearer"
+    },
+    {
+      "id": "captains-quarters",
+      "name": "Captain's Quarters",
+      "category": "housing",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "解鎖角色 The Tactician。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "tactician"
+    },
+    {
+      "id": "campground",
+      "name": "Campground",
+      "category": "housing",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "解鎖角色 The Radical。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "radical"
+    },
+    {
+      "id": "single-family-home",
+      "name": "Single Family Home",
+      "category": "housing",
+      "blueprintLevel": "snowyxshores",
+      "effect": "解鎖角色 The Empty Nester。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "empty-nester"
+    },
+    {
+      "id": "rocky-hill",
+      "name": "Rocky Hill",
+      "category": "housing",
+      "blueprintLevel": "liminalxdesert",
+      "effect": "解鎖角色 The Makeshift Sisyphus。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "makeshift-sisyphus"
+    },
+    {
+      "id": "monastery",
+      "name": "Monastery",
+      "category": "housing",
+      "blueprintLevel": "goryxgrasslands",
+      "effect": "解鎖角色 The Flagellant。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "flagellant"
+    },
+    {
+      "id": "laboratory",
+      "name": "Laboratory",
+      "category": "housing",
+      "blueprintLevel": "fungalxforest",
+      "effect": "解鎖角色 The Physicist。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "physicist"
+    },
+    {
+      "id": "veterans-hut",
+      "name": "Veteran's Hut",
+      "category": "housing",
+      "blueprintLevel": "snowyxshores",
+      "effect": "解鎖角色 The Embedded。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "embedded"
+    },
+    {
+      "id": "mansion",
+      "name": "Mansion",
+      "category": "housing",
+      "blueprintLevel": "fungalxforest",
+      "effect": "解鎖角色 The Spendthrift。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS"
+      ],
+      "verification": "source_checked",
+      "contentSet": "base",
+      "cost": null,
+      "characterId": "spendthrift"
+    },
+    {
+      "id": "falconry-hut",
+      "name": "Falconry Hut",
+      "category": "housing",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "解鎖角色 The Falconer。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "regal",
+      "cost": null,
+      "characterId": "falconer"
+    },
+    {
+      "id": "party-house",
+      "name": "Party House",
+      "category": "housing",
+      "blueprintLevel": "vastxvoid",
+      "effect": "解鎖角色 The Carouser。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "regal",
+      "cost": null,
+      "characterId": "carouser"
+    },
+    {
+      "id": "stone-domain",
+      "name": "Stone Domain",
+      "category": "housing",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "解鎖角色 The Tunneller。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "shadow",
+      "cost": null,
+      "characterId": "tunneller"
+    },
+    {
+      "id": "hidden-temple",
+      "name": "Hidden Temple",
+      "category": "housing",
+      "blueprintLevel": "smolderingxdepths",
+      "effect": "解鎖角色 The Tiptoer。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "shadow",
+      "cost": null,
+      "characterId": "tiptoer"
+    },
+    {
+      "id": "ball-house",
+      "name": "Ball House",
+      "category": "housing",
+      "blueprintLevel": "vastxvoid",
+      "effect": "解鎖角色 The Ballbearer。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "naturalist",
+      "cost": null,
+      "characterId": "ballbearer"
+    },
+    {
+      "id": "unstable-tower",
+      "name": "Unstable Tower",
+      "category": "housing",
+      "blueprintLevel": "heavenlyxgates",
+      "effect": "解鎖角色 The Hoary Hoarder。",
+      "effectVerification": "source_checked",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "W-LEVELS",
+        "W-UPDATES"
+      ],
+      "verification": "source_checked",
+      "contentSet": "naturalist",
+      "cost": null,
+      "characterId": "hoary-hoarder"
+    }
+  ],
+  "notes": {
+    "gearRule": "同一角色首次完成同一關卡（任一速度階）取得 Gear，僅能用來開放緊接下一層；較早層的 Gear 不計入更深層。NG+索引說明各層需8 Gear，屬推薦閱讀，不增加白金矩陣。",
+    "buildingCounting": "索引84筆包含6資源地塊；entryType:resource-plot不得當作一般建築/藍圖追蹤分母。一般建築78筆，來源覆蓋分母不等同PS5遊戲內全量。",
+    "trophyBlueprints": "8座Trophy藍圖由對應關卡首次完成授予，不是一般敵人掉落。"
+  },
+  "sourceRefs": [
+    {
+      "id": "W-BUILDINGS",
+      "label": "Wiki Buildings（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Buildings",
+      "checkedAt": "2026-11-09",
+      "access": "search_index",
+      "note": "完整可見索引收錄84筆：6資源地塊、21角色住房；非完整內頁閱讀，成本未核實。"
+    },
+    {
+      "id": "W-LEVELS",
+      "label": "Wiki Levels（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Levels",
+      "checkedAt": "2026-11-09",
+      "access": "search_index",
+      "note": "逐層藍圖索引可讀；Gear精確數字在總表為空白，僅核對規則，不猜門檻。"
+    },
+    {
+      "id": "W-BALLS",
+      "label": "Wiki Balls（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Balls",
+      "checkedAt": "2026-11-09",
+      "access": "search_index",
+      "note": "直接開啟回403；名稱、材料分支與更新歸屬僅由搜尋索引逐項核對，非完整內頁讀取。"
+    },
+    {
+      "id": "W-PASSIVES",
+      "label": "Wiki Passives（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Passives",
+      "checkedAt": "2026-11-09",
+      "access": "search_index",
+      "note": "直接開啟回403；名稱、材料分支與更新歸屬僅由搜尋索引逐項核對，非完整內頁讀取。"
+    },
+    {
+      "id": "W-UPDATES",
+      "label": "Wiki Game Updates（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Game_Updates",
+      "checkedAt": "2026-11-09",
+      "access": "search_index",
+      "note": "直接開啟回403；名稱、材料分支與更新歸屬僅由搜尋索引逐項核對，非完整內頁讀取。"
+    }
+  ],
+  "limitations": [
+    "建築索引84筆含6資源地塊；一般建築78筆，成本／等級倍率／PS5實機仍待核實，不宣稱全遊戲建築已驗收。",
+    "Gear只能用於緊接下一層，並非全域池；完整精確門檻仍待查。",
+    "Wiki索引表列21基礎戰球、69進化戰球、54基礎Passive、17進化Passive；只代表本次來源覆蓋，不等於PS5 Encyclopedia完整分母。",
+    "本體歸屬已與明列本體/Regal的Stevivor指南及Wiki三次更新新增名單核對；仍待PS5各版本實測。指南 https://stevivor.com/guides/ball-x-pit-ball-evolutions-guide-all-ball-combinations/ 及 https://stevivor.com/guides/ball-x-pit-passive-evolutions-guide-all-passive-combinations/ 已開啟閱讀相關清單。",
+    "Glacier、Sandstorm原為本體；Stone替代材料於Regal新增。Inferno、Lovestruck、Black Hole原為本體；Time替代材料於Shadow新增。Hemorrhage原為本體；Flesh替代材料於Naturalist新增。配方顯示目前更新後完整可替代組合，不改產物原始contentSet。",
+    "Tormenters Mask / Tormentor’s Mask拼法來源衝突；Odiferous Shell的原料採Wiki Wretched Onion，Stevivor誤作Corrupted Onion，材料命名仍待實機核對。",
+    "Sword Breaker、Platinum Dumbbell解鎖關卡在Wiki仍為問號。",
+    "Scholar仍需遊戲內確認本體圖鑑範圍；不可因本站119筆本體球/Passive全勾就宣稱Scholar條件已達成。其他類型及真正總量未核實。",
+    "此次未取得Wiki完整內頁，不聲稱全遊戲資料已完整；未包含付費DLC、PC Twitch角色或未發布內容。"
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "checkedAt": "2026-11-09",
+  "sourceRefs": [
+    {
+      "id": "W-CHARACTERS",
+      "label": "Wiki Characters（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Characters",
+      "access": "search_index",
+      "note": "22名PS5角色逐項機制可見；排除PC限定The False Messiah。直接頁受限，未宣稱完整閱讀。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "P-REGAL",
+      "label": "開發者 Kenny Sun：Regal 官方公告",
+      "url": "https://blog.playstation.com/2026/01/26/ball-x-pit-the-regal-update-launches-today/",
+      "access": "read",
+      "note": "已開啟公告，核對Falconer／Carouser與Fusion／Evolution概念；沒有引用精確傷害倍率。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "P-SHADOW",
+      "label": "開發者 Kenny Sun：Shadow 官方公告",
+      "url": "https://blog.playstation.com/2026/04/20/ball-x-pit-shadow-update-arrives-april-27/",
+      "access": "read",
+      "note": "已開啟公告，核對Tunneller／Tiptoer與時間系配裝選項。數值可能與Wiki現版不同，本文不採精確倍率。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "P-NATURALIST",
+      "label": "開發者 Kenny Sun：Naturalist 官方公告",
+      "url": "https://blog.playstation.com/2026/07/28/ball-x-pit-final-update-the-naturalist-arrives-august-6/",
+      "access": "read",
+      "note": "已開啟公告，核對Ballbearer與Hoary Hoarder的槽位限制；未將官方內容當作PS5實測。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "W-BALLS",
+      "label": "Wiki Balls（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Balls",
+      "access": "search_index",
+      "note": "配方名稱與材料使用本次已逐項核對的研究表；效果只用定性說明。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "W-PASSIVES",
+      "label": "Wiki Passives（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Passives",
+      "access": "search_index",
+      "note": "被動配方及作用方向由本次索引核對；未聲稱角色最佳搭配。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "W-BUILDINGS",
+      "label": "Wiki Buildings（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Buildings",
+      "access": "search_index",
+      "note": "房屋、槽位與基地功能使用本次索引核對。",
+      "checkedAt": "2026-11-09"
+    },
+    {
+      "id": "W-LEVELS",
+      "label": "Wiki Levels（搜尋索引）",
+      "url": "https://ballxpit.wiki.gg/wiki/Levels",
+      "access": "search_index",
+      "note": "只採每角色首通與下一層Gear規則，不猜未取得門檻。",
+      "checkedAt": "2026-11-09"
+    }
+  ],
+  "characters": [
+    {
+      "id": "warrior",
+      "mechanic": "標準射球，沒有額外操作限制。",
+      "buildIdea": "先以 Bleed + Vampire 製作 Vampire Lord，保留一顆控制球協助熟悉走位。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "repentant",
+      "mechanic": "反彈逐步增傷，碰後牆後穿過敵人返回。",
+      "buildIdea": "沿側牆安排多次反彈；可試 Wagon Wheel 或 Rubber Headband，觀察回程清場。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "itchy-finger",
+      "mechanic": "散射且高速自動開火，射擊時仍可快速移動。",
+      "buildIdea": "優先容錯較高的範圍傷害；可從 Burn + Earthquake 的 Magma 方向開始。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "cogitator",
+      "mechanic": "自動選擇升級。",
+      "buildIdea": "先提高基地永久加成；配方依實際自動選項調整，不預設能手選固定組合。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BUILDINGS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "tactician",
+      "mechanic": "戰鬥改為回合制。",
+      "buildIdea": "每次發射前看清敵列與牆面；可先試 Iron + Egg Sac 的 Shotgun，再按回合結果調整角度。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "spendthrift",
+      "mechanic": "同時以寬角度射出裝備戰球。",
+      "buildIdea": "擴充戰球槽增加齊射選擇，並讓其中一顆球負責控制；先測 Freeze 與輸出球的覆蓋。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BUILDINGS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "embedded",
+      "mechanic": "球在碰牆前可穿過敵人。",
+      "buildIdea": "對準密集敵列施加狀態；可由 Poison + Earthquake 製作 Swamp，觀察沿路覆蓋。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "radical",
+      "mechanic": "移動、戰鬥與升級選擇自動進行。",
+      "buildIdea": "先補基地的生命與輸出加成；觀察自動玩法缺口後再投資，不依賴精準手選或手動走位配裝。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BUILDINGS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "empty-nester",
+      "mechanic": "不產生 baby ball，一次射出同種特殊球的多份。",
+      "buildIdea": "以特殊球本體與狀態效果為核心；避開依賴 baby ball 數量的被動，可先測 Ghost + Vampire 的 Soul Sucker。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "shade",
+      "mechanic": "從後場射球，並有額外暴擊傾向。",
+      "buildIdea": "按敵人背面方向調整瞄準；可試 Ruby Hilted Dagger，再逐步收集 Deadeye’s Cross 材料。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "cohabitants",
+      "mechanic": "射擊會產生鏡射副本，單球傷害降低。",
+      "buildIdea": "利用左右覆蓋清兩側；可從 Brood Mother + Egg Sac 的 Spider Queen 方向累積衍生攻擊。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "physicist",
+      "mechanic": "重力把球拉向後場。",
+      "buildIdea": "先觀察後場滯留軌跡；可試 Burn + Wind 的 Inferno，讓範圍與狀態效果覆蓋後排。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "shieldbearer",
+      "mechanic": "用盾反彈碰到盾面的回球。",
+      "buildIdea": "把盾的接球路徑當作瞄準的一部分，先保留 Iron 熟悉反彈，再逐步增加控制球。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "makeshift-sisyphus",
+      "mechanic": "失去直接命中傷害與 baby ball，強化範圍及狀態傷害。",
+      "buildIdea": "由 Earthquake + Burn 的 Magma 開始，優先範圍與狀態效果；不以直接命中或 baby ball 傷害為核心。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "flagellant",
+      "mechanic": "球碰到底邊後仍會反彈。",
+      "buildIdea": "先試反彈增益 Wagon Wheel／Rubber Headband，觀察球留場的路徑，再決定是否進化 Ardent Tire。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "juggler",
+      "mechanic": "把球拋至指定落點後才開始反彈。",
+      "buildIdea": "把落點放在密集敵群附近；可從 Lightning + Wind 的 Storm 測試持續覆蓋。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "falconer",
+      "mechanic": "由畫面兩側的鳥發射，形成較寬覆蓋。",
+      "buildIdea": "用鳥的位置判斷射線；先測 Lightning + Wind 的 Storm，觀察兩側交會的覆蓋區。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-REGAL",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "carouser",
+      "mechanic": "自身引力改變回球軌跡，回球可短暫環繞。",
+      "buildIdea": "觀察環繞球的近身覆蓋，同時保留控制與走位空間；Charm 可往 Succubus 的回血方向嘗試。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-REGAL",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。例外或補充細節來自Wiki索引，官方公告未提供完整邊界。"
+    },
+    {
+      "id": "tunneller",
+      "mechanic": "射球可穿越畫面上下邊界後重新進場。",
+      "buildIdea": "先試 Earthquake + Burn 的 Magma 或其他範圍／狀態球；別預設所有依碰牆或迴環的效果都能長時間留場。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-SHADOW",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "tiptoer",
+      "mechanic": "一般敵人較難偵測；生命與傷害較低，Boss與小Boss例外。",
+      "buildIdea": "優先控制與保命，先測 Freeze 或 Arrow of Fate；面對 Boss 仍需走位，不把隱蔽當作免傷。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-SHADOW",
+        "W-BALLS",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。例外或補充細節來自Wiki索引，官方公告未提供完整邊界。"
+    },
+    {
+      "id": "ballbearer",
+      "mechanic": "戰球槽倍增，但完全沒有 Passive 槽。",
+      "buildIdea": "控制與回血都從球端安排，例如 Freeze 與 Vampire 系列；不用 Passive 配方作為本角色核心。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-NATURALIST",
+        "W-BALLS"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    },
+    {
+      "id": "hoary-hoarder",
+      "mechanic": "僅兩個戰球槽，Passive 槽倍增。",
+      "buildIdea": "兩顆球分擔輸出與控制，額外槽位再走 Soul Reaver 或 Arrow of Fate 等被動進化方向。",
+      "verification": "source_checked",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "P-NATURALIST",
+        "W-PASSIVES"
+      ],
+      "note": "機制有來源；配裝方向是依機制與已核對配方的推論，尚未在 PS5 實測，不表示固定最佳解。"
+    }
+  ],
+  "generalTips": [
+    {
+      "title": "先選想解鎖的角色",
+      "text": "先找對應住房藍圖並完成建造。拆除住房會使角色暫時不可用，但來源說明其既有經驗與通關紀錄仍保留；網站不隨拆除抹掉歷史獎盃。",
+      "sourceIds": [
+        "W-CHARACTERS",
+        "W-BUILDINGS"
+      ],
+      "verification": "source_checked"
+    },
+    {
+      "title": "Fusion 與 Evolution 分開規劃",
+      "text": "Fusion 結合球的能力；Evolution 則需指定材料並產生具名球。先從查詢器核對原料與替代分支，再決定這輪是否追特殊配方。",
+      "sourceIds": [
+        "P-REGAL",
+        "W-BALLS"
+      ],
+      "verification": "source_checked"
+    },
+    {
+      "title": "先補槽位，再追多材料目標",
+      "text": "Bag Maker 與 Carpenter 提供額外球／Passive 槽位。多材料目標先檢查角色槽位限制；Ballbearer 與 Hoary Hoarder 的限制相反，不能照搬同一套配置。",
+      "sourceIds": [
+        "W-BUILDINGS",
+        "P-NATURALIST"
+      ],
+      "verification": "source_checked"
+    },
+    {
+      "title": "把 Gear 用在緊接下一層",
+      "text": "不同角色首次完成該關才提供該層的 Gear，僅計入下一層解鎖；不要把所有早期關卡的通關當成通用 Gear。門檻未核實處以遊戲顯示為準。",
+      "sourceIds": [
+        "W-LEVELS"
+      ],
+      "verification": "source_checked"
+    },
+    {
+      "title": "留意版本數值差異",
+      "text": "官方更新公告與目前 Wiki 部分效果數字不同；這份配裝方向只採定性機制，不列未實測的倍率、傷害排行或最強組合。",
+      "sourceIds": [
+        "P-SHADOW",
+        "W-PASSIVES"
+      ],
+      "verification": "source_checked"
+    }
+  ]
+}

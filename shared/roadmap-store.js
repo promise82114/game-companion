@@ -4,7 +4,7 @@ export function createStore(config, core, onChange=()=>{}) {
   const fresh=config.fresh||(()=>({gameId:config.gameId,schema:1,moduleVersion:config.moduleVersion,revision:0,updatedAt:Date.now(),steps:{},trophies:{},backups:{},branches:{},settings:{}}));
   const object=v=>v!==null && typeof v==='object' && !Array.isArray(v);
   function validate(raw) {
-    const data=core.clone(raw?.projectId===config.driveProjectId ? raw.data : raw);
+    const data=core.clone(config.driveProjectId && raw?.projectId===config.driveProjectId ? raw.data : raw);
     if(config.validateProgress){config.validateProgress(data);return {data};}
     if(!object(data)||data.gameId!==config.gameId||data.schema!==1) throw Error('遊戲識別或進度版本不符；未修改資料。');
     if(!Number.isFinite(data.updatedAt)||data.updatedAt<0||!Number.isSafeInteger(data.revision)||data.revision<0) throw Error('進度時間或修訂欄位損壞；已保留原文。');
@@ -43,7 +43,7 @@ export function createStore(config, core, onChange=()=>{}) {
     async checkpoint(label){return transaction('readwrite',(records,value)=>{const key=prefix+'snapshot.'+crypto.randomUUID();records.put({at:new Date().toISOString(),label,raw:core.clone(value)},key);return key;});},
     async archive(bundle){return transaction('readwrite',(records)=>{const key=prefix+'import.raw.'+crypto.randomUUID();records.put(bundle,key);return key;});},
     async exportAll(){return new Promise((resolve,reject)=>{const tx=db.transaction('records','readonly'),s=tx.objectStore('records'),keys=s.getAllKeys(),values=s.getAll();tx.oncomplete=()=>{
-      try{const syncState={};for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith(prefix+'sync.'))Object.defineProperty(syncState,key,{value:localStorage.getItem(key),enumerable:true});}
+      try{const syncState={};if(config.exportSyncState!==false)for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith(prefix+'sync.'))Object.defineProperty(syncState,key,{value:localStorage.getItem(key),enumerable:true});}
       resolve({gameId:config.gameId,records:keys.result.map((key,i)=>({key,value:values.result[i]})),syncState});}catch(error){reject(error);}
     };tx.onerror=()=>reject(tx.error);});},
     async commitSync(start,merged){return update(current=>core.rebase(start,current,merged));}
