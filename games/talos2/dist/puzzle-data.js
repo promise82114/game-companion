@@ -2665,6 +2665,9 @@ export const puzzles=[
     "number": 1,
     "title": "Aerial Warp",
     "stepId": "region-s1",
+    "navigation": [
+      "從 6 號 Translocator 離開圓頂後沿路下坡，經過廂型車遺物點，再往 7 號方向走一小段。左手邊的紫色入口就是 Aerial Warp。"
+    ],
     "sources": [
       {
         "title": "Talos Wiki · Aerial Warp",
@@ -2698,6 +2701,9 @@ export const puzzles=[
     "number": 2,
     "title": "Minimalism",
     "stepId": "region-s1",
+    "navigation": [
+      "走到 4 號 Pushing Through 入口前，面向入口走左側岔路，踩石塊穿過淺水。沿路走到紫色入口就是 Minimalism。"
+    ],
     "sources": [
       {
         "title": "Talos Wiki · Minimalism",
@@ -3333,6 +3339,9 @@ export const puzzles=[
     "number": 1,
     "title": "Transfer",
     "stepId": "region-s3",
+    "navigation": [
+      "從 3 號沿上層環道往 4 號走。在 Sphinx 雕像旁的岔路離開環道，沿支路走到底，從階梯下去穿過紫門。"
+    ],
     "sources": [
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
@@ -3358,6 +3367,9 @@ export const puzzles=[
     "number": 2,
     "title": "Convolution",
     "stepId": "region-s3",
+    "navigation": [
+      "從 2 號出來繞到建築背後，在戶外看羅盤上的藍色三角。朝標記穿過沙地，找獨立的謎題建築。"
+    ],
     "sources": [
       {
         "title": "Dick Leeuw / Louis Koot · 圖文解法",
@@ -3428,19 +3440,28 @@ export const puzzles=[
     "stepId": "region-s3",
     "title": "Pandora 星星",
     "actions": [
-      "正規 2 入口內側，連接器接藍光源與塔頂藍接收器，放紫屏旁。",
-      "轉盤左轉一次到 B、C 相通，取兩根連接器放轉盤；右轉回 C、D。一根接紅光源留轉盤中央。",
-      "另一根站第一門內側，接轉盤紅光與塔頂固定連接器，放到紅光可通的位置。",
-      "正規 3 完成後取隱藏連接器，放升降台，方塊壓板帶上樓；從第一壓板附近接塔頂紅光與 Pandora。"
+      "先完成正規 2 The Passageway 和正規 3 Dismantling 的終點輪盤。",
+      "回 2 號，用一根連接器選題內藍光源。站紫門內側面向入口，抬頭選高塔外牆的大型藍色接收器，再把連接器放在紫門旁。確認藍線接通，以及接收器右側的小柱已升起。",
+      "保留紫門旁的藍光。從 C、D 兩側相通的轉盤開始，按左側開關一次改成 B、C 相通，把剩下兩根連接器搬到轉盤。按右側開關一次轉回 C、D，其中一根選紅光源，放在轉盤中央。",
+      "抱另一根連接器，從 D 側走到第一道藍門內側。選轉盤上帶紅光的連接器，再朝塔抬頭，選升起的小柱頂端那個固定連接器。放到能同時接通兩端的位置，確認紅線到達小柱頂端。",
+      "回 3 號，從入口左側已開啟的暗格取出連接器。把它放上升降台，用方塊壓住地面壓板一起上樓。在上層第一塊壓板附近選小柱頂端的紅光與 Pandora 盒子的紅色接收器，接通後到像底領星星。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
+        "title": "Dick Leeuw / Louis Koot · 2 號藍光與紅光接線",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_3/south_3_3.htm"
+      },
+      {
+        "title": "Dick Leeuw / Louis Koot · 完成 3 號後打開暗格",
+        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_2/south_3_2.htm"
+      },
+      {
+        "title": "Graves · 小柱與兩道光束的遊戲畫面",
+        "url": "https://eip.gg/guides/the-talos-principle-2-south-3-star-statue-puzzles/"
       }
     ],
     "verificationStatus": "consensus",
-    "checkedAt": "2026-11-08"
+    "checkedAt": "2026-11-10"
   },
   {
     "id": "S3-gold-1",

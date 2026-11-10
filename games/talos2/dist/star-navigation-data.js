@@ -104,11 +104,11 @@ export const starRoutes={
   spot('main-5','5 號附近・Trevor 終端對池','先找 Trevor 錄音終端，再看水池對岸的小路，機關在對面。'),
   spot('star','上層 Sphinx・3／4 號之間','回上層 3、4 號之間的 Sphinx 像底。')
  ]),
- 'S3-star-pandora':route('先從 2 號入口看塔頂藍接收器，供電後才會升起紅光中繼接點，並開出 3 號的隱藏設備室。',[
-  spot('main-2','2 號入口・抬頭看塔頂','站題內回看紫色入口，再透過上方開口看高塔外牆的大型藍接收器；固定接點會在它右側升起。'),
-  spot('main-2','2 號轉盤・送紅光站位','用題內轉盤與連接器把紅光送向塔頂升起的固定接點。此處沿用既有解法，不混用其他指南的 Lost 搬運替代路線。'),
-  spot('main-3','3 號入口左角・隱藏設備室','從 3 號入口進去後，向左看入口同側牆角；接通塔頂藍接收器後，這裡的暗格才會開出連接器。'),
-  spot('main-3','3 號升降台・塔頂到 Pandora','把隱藏連接器帶上升降台，到上層找同時看得到塔頂紅光與遠處 Pandora 的站位。'),
+ 'S3-star-pandora':route('先解完正規 2 和 3，啟動兩題終點輪盤。回 2 號先接藍光升起塔上的小柱，再送紅光到小柱頂端。',[
+  spot('main-2','2 號紫門內側・先接藍光','拿一根連接器選題內藍光源。回紫門內側，面向入口抬頭選高塔外牆的大型藍色接收器，放下連接器。看到藍線連上後，找接收器右側升起的小柱。'),
+  spot('main-2','2 號第一道藍門內側・紅光接小柱頂端','留著紫門旁的藍線。用另外兩根連接器，一根留轉盤中央接紅光源，另一根帶到第一道藍門內側。用手上這根選轉盤上的連接器，再抬頭選小柱頂端的固定連接器，放下後確認紅線通到小柱。'),
+  spot('main-3','3 號入口左角・隱藏連接器','完成 3 號的終點輪盤後，回入口內側的左手邊牆角，從打開的暗格取出連接器。'),
+  spot('main-3','3 號上層・把紅光接給 Pandora','把隱藏連接器帶上升降台。到上層第一塊壓板附近，選塔上小柱頂端已亮紅的連接器，再選 Pandora 盒子上的紅色接收器。'),
   spot('star','Pandora・沙地遠端','返回沙地遠端的 Pandora 像底領星星。')
  ]),
  'W1-star-prometheus':route('藍光起點在 6 號 Elements 題內天花板附近，不在戶外雕像旁；要先讓平台與風扇把人送上去。',[
@@ -154,3 +154,4 @@ export const starPointId=(puzzleId,index)=>'star-route-'+puzzleId+'-'+(index+1);
 starRoutes['E2-star-pandora'].sources=[{title:'Graves · E2 固定接點與三角拱門',url:'https://eip.gg/guides/the-talos-principle-2-east-2-star-statue-puzzles/'}];
 starRoutes['N2-star-sphinx'].sources=[{title:'Mauritsio · N2 三座開關的岔路',url:'https://steamcommunity.com/sharedfiles/filedetails/?id=3067666650'}];
 starRoutes['N1-star-sphinx'].sources=[{title:'Mauritsio · N1 外牆按鈕的繞行方向',url:'https://steamcommunity.com/sharedfiles/filedetails/?id=3067666650'}];
+starRoutes['S3-star-pandora'].checkedAt='2026-11-10';

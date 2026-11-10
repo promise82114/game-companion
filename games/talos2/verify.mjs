@@ -46,6 +46,16 @@ for(const puzzle of puzzles.filter(p=>p.kind==='star')){
 }
 assert.match(starRoutes['N2-star-prometheus'].intro,/金色圓環/);assert.match(starRoutes['N3-star-pandora'].points[0].description,/紅光源上方/);
 assert.ok(regionMaps.S2.nodes.find(n=>n.id==='lost-1').x>regionMaps.S2.nodes.find(n=>n.id==='lost-2').x,'S2 Question Block 在 Pandora 一側，Stowaway 在另一岸');
+const s1MapNodes=regionMaps.S1.nodes;
+const aerialWarp=s1MapNodes.find(node=>node.target==='puzzle-S1-lost-1');
+const minimalism=s1MapNodes.find(node=>node.target==='puzzle-S1-lost-2');
+assert.ok(aerialWarp.x<s1MapNodes.find(node=>node.id==='main-7').x,'Aerial Warp 在 7 號的圖面左側');
+assert.ok(minimalism.x>s1MapNodes.find(node=>node.id==='main-4').x,'Minimalism 在 4 號的圖面右側');
+const s3MapNodes=regionMaps.S3.nodes;
+const transfer=s3MapNodes.find(node=>node.target==='puzzle-S3-lost-1');
+const convolution=s3MapNodes.find(node=>node.target==='puzzle-S3-lost-2');
+assert.ok(transfer.x<s3MapNodes.find(node=>node.id==='main-3').x,'Transfer 在 3 號外側的支路');
+assert.ok(convolution.x>s3MapNodes.find(node=>node.id==='main-2').x,'Convolution 在 2 號外側的沙地');
 for(const[id,check]of Object.entries(safetyChecks)){assert.ok(ids.has(id));for(const[trophy,step]of check.items){assert.ok(trophyIds.has(trophy),trophy);assert.ok(ids.has(step),step);}for(const step of check.steps||[])assert.ok(ids.has(step),step);}
 for(const id of ['single-rod','one-lap','hard-way']){const step=data.steps.find(s=>s.id===id);assert.equal(step.warningLevel,'prepare');assert.equal(step.missable,false);assert.ok(step.sources.includes('ps5Guide'));assert.match(step.recovery,/終端重試/);}
 const uxFixture={steps:{calibration:{status:'completed',legacyExtra:'keep'}},settings:{},trophies:{},backups:{},branches:{}},calibration=data.steps.find(s=>s.id==='calibration');

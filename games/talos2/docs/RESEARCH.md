@@ -4,6 +4,24 @@
 
 ## 已取得證據
 
+### 2026-11-10 S3 遺失謎題地圖對調
+
+區域圖的兩個落點與題名配反。依題目識別，L1 Transfer 從 3→4 環道的 Sphinx 岔路走支線，位於本站圖左側。L2 Convolution 從 2 號背後沿羅盤藍色三角穿過沙地，位於圖右上方。實玩圖文用作者的造訪順序編號，入口以題名和地標核對。已修正地圖配對，兩題的走法可從地圖定位與題目卡片查看。[區域圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536) · [Transfer 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_3/south_3_3.htm) · [Convolution 導航](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_1/south_3_1.htm) · [題目識別](https://taloswiki.org/wiki/Convolution)
+
+Talos 資料、建置及產物檢查通過。桌面與觸控手機均核對兩題的地圖位置和入口文字。
+
+### 2026-11-10 S3 Pandora 藍光與紅光的目標
+
+2 號紫門內側先把藍光送到塔外牆的大型藍色接收器。接通後，右側小柱升起並露出頂端固定連接器。從 2 號轉盤經第一道藍門內側送出的紅光接到這根小柱，再由 3 號上層轉接給 Pandora。舊 P1 只有觀察位置，現在寫明接藍光及確認小柱升起的操作。P3 暗格由 3 號終點輪盤開啟，已修正原先誤寫成塔上藍光觸發的提示。[2 號接線圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_3/south_3_3.htm) · [3 號暗格圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_2/south_3_2.htm) · [接收器與小柱對照](https://eip.gg/guides/the-talos-principle-2-south-3-star-statue-puzzles/)
+
+Talos 資料、建置及產物檢查通過。桌面和觸控手機的隔離瀏覽器均確認 P1／P2 選中各自的地圖站位，詳細解法與定位提示使用相同的接線順序。
+
+### 2026-11-09 S1 遺失謎題地圖對調
+
+原圖的兩個落點與題名配反。對照 Cognition 區域圖及實玩路線，L1 Aerial Warp 在圖左側的 6→7 支路，經過廂型車遺物點後找左側紫門。L2 Minimalism 在圖右下，從 4 號入口前左轉，踩石塊過淺水。圖面左右以交通艙朝高塔的方向為準。兩題的走法可從地圖定位及題目卡片直接查看，完成紀錄仍對應原謎題 ID。[區域圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536) · [Aerial Warp 實玩路線](https://mysterymanor.net/walkthroughs/Talos_Principle_2/12_South_%201/South_1_4/south_1_page_4.htm) · [Minimalism 入口](https://taloswiki.org/wiki/Minimalism)
+
+Talos 資料、建置與產物檢查通過。桌面與觸控手機均確認題目定位指向正確的標記，關閉解法時仍可查看走法，定位不改動完成狀態。
+
 ### 2026-11-08 P3 Malduc 地圖與漏寫的對話輪次
 
 使用者提供 PS5 繁中三選一截圖後，實際觀看 [TheSourceError 城市回訪 24:12–26:16](https://www.youtube.com/watch?v=GwKe34G0rto&t=1452s)，以 4 秒抽格定位、關鍵切換用 0.5／1 秒抽格核對。24:16 頭上標示及胸口均為 **Malduc 202**，修正城市第二次回訪地圖的誤植 970；保留原 `malduc` 節點與座標，補明「面向塔門左側／本圖向博物館看為右下」的視角及階梯、直立電子告示牌地標。左右方位另以 [第二次回城圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/10_Megastructure_North/Structure_North_2/new_jerusalem_2.htm) 對照。
