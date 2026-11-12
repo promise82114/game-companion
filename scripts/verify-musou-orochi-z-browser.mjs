@@ -14,8 +14,13 @@ const attach = page => {
   page.on('pageerror', error => errors.push(error.message));
 };
 await context.route('**/*', route => {
-  if (new URL(route.request().url()).origin === new URL(base).origin) return route.continue();
-  remote.push(route.request().url());
+  const requestUrl = route.request().url();
+  // 模擬改版前的快取。入口必須使用新版資源網址。
+  if (requestUrl === url + 'app.js') {
+    return route.fulfill({contentType: 'text/javascript', body: "document.getElementById('intro').hidden = false;"});
+  }
+  if (new URL(requestUrl).origin === new URL(base).origin) return route.continue();
+  remote.push(requestUrl);
   return route.abort();
 });
 const page = await context.newPage();
