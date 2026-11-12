@@ -2,6 +2,8 @@
 
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
+《無双OROCHI Z》（PS3）提供 96 名武將、140 個劇本、325 筆特技關聯及 30 項鍊成素材。進度存於本機，支援 JSON 備份與匯入。[模組與本機操作](games/musou-orochi-z/README.md)。
+
 目前包含 EDF World Brothers、EDF World Brothers 2、EARTH DEFENSE FORCE: IRON RAIN、Mycopunk、The Talos Principle II、Thank Goodness You're Here! 與 Grounded。原有攻略、翻譯、ID、樣式、資料工具及專屬驗證保留在各模組。Mycopunk 提供雙語攻略、升級收集、Hidden Paths 與配裝模擬，沒有新增雲端或 SW。
 
 2026-10-31 入口與 Roadmap 介面改版：遊戲目錄提供原創 SVG 主題插畫、功能摘要、搜尋與工具類型篩選；兩款新 Roadmap 對齊功能導覽、右上 Drive／備份、章節直達、搜尋與下一步。章節可以直接切換，提醒依目前瀏覽章節呈現，早期步驟不會被自動填寫或強制完成。2026-11-01 使用者已授權提交與推送本批 UI／文件，並透過既有 main 分支 Pages 流程發布至正式站；部署結果以對應提交的 [GitHub Actions](https://github.com/promise82114/game-companion/actions/workflows/deploy.yml) 為準。詳見 [介面驗證報告](docs/reports/UI_UX_REPORT.md)。

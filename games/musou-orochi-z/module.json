@@ -1,0 +1,12 @@
+{
+  "gameId": "musou-orochi-z",
+  "slug": "musou-orochi-z",
+  "title": "無双OROCHI Z",
+  "description": "PS3 武將熟練度、武器與特技、激難通關、鍊成素材收集紀錄",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/musou-orochi-z/",
+  "storagePrefix": "game-companion.musou-orochi-z.",
+  "cloudWritesEnabled": false
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <title>無双OROCHI Z</title>
+  <path fill="#182921" d="M0 0h600v360H0z"/>
+  <path fill="#263e31" d="M412 0h188v360H250z"/>
+  <path fill="#bdd8b8" opacity=".2" d="M281 28h241L361 286h144v44H275L438 72H281z"/>
+  <path fill="#bdd8b8" d="M44 209h140v3H44z"/>
+  <text x="44" y="183" fill="#f2f5ea" font-family="Georgia,serif" font-size="56" font-weight="700">OROCHI Z</text>
+  <text x="44" y="246" fill="#d2e1cc" font-family="sans-serif" font-size="22">無双OROCHI Z · PS3</text>
+</svg>

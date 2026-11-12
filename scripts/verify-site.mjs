@@ -50,4 +50,11 @@ for(const file of ['index.html','app.js','model.js','style.css'])await fs.access
 assert.ok(!(await fs.readFile(path.join(ball,'index.html'),'utf8')).includes('accounts.google.com'));
 assert.ok(!(await fs.readFile(path.join(ball,'app.js'),'utf8')).includes('serviceWorker'));
 
+const orochi=path.join(root,'games/musou-orochi-z');
+for(const file of ['index.html','app.js','model.js','style.css','catalog.json'])await fs.access(path.join(orochi,file));
+const orochiData=JSON.parse(await fs.readFile(path.join(orochi,'catalog.json'),'utf8'));
+assert.equal(orochiData.characterSkills.length,325);
+assert.equal(orochiData.stages.length,140);
+assert.ok((await fs.readFile(path.join(root,'index.html'),'utf8')).includes('href="games/musou-orochi-z/"'));
+
 console.log(JSON.stringify({passed:true,files,localLinks:links,basePath:'/game-companion/',modules:moduleCount}));

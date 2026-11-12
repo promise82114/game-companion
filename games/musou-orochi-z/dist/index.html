@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="《無双OROCHI Z》PS3 武將、激難通關、特技與鍊成素材紀錄。">
+  <title>無双OROCHI Z · Game Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a href="../../">← 遊戲目錄</a>
+    <span id="save-state" role="status">載入中</span>
+  </header>
+  <div class="shell">
+    <aside class="rail">
+      <div class="game-title"><span aria-hidden="true" class="mark">Z</span><div><h1>無双OROCHI Z</h1><span>PlayStation 3</span></div></div>
+      <nav aria-label="收集清單" id="navigation">
+        <a href="#characters">全武將</a><a href="#stages">全關卡</a>
+        <a href="#skills">全特技</a><a href="#materials">全鍊成素材</a>
+      </nav>
+      <button id="open-backup" type="button" disabled>備份與匯入</button>
+      <a class="source-link" href="#sources">資料來源與判定</a>
+    </aside>
+    <main class="sheet">
+      <div id="stats" class="stats" aria-label="依已輸入資料推算的進度"></div>
+      <p class="intro" id="intro" hidden>依已輸入資料推算。空白項目表示尚未記錄。繁中名稱以攻略用語與暫譯呈現。</p>
+      <div id="notice" class="notice" hidden><span id="message" role="status"></span><button type="button" id="undo" hidden>撤銷全勾操作</button></div>
+      <section id="workspace" aria-labelledby="view-title"><p>正在載入《Z》資料與本機紀錄。</p></section>
+    </main>
+  </div>
+
+  <dialog id="backup-dialog" aria-labelledby="backup-title">
+    <h2 id="backup-title">備份與匯入</h2>
+    <p>匯出本機進度與保留的匯入原文。匯入前會先保存兩端原文，再比較差異。</p>
+    <button type="button" id="export">下載 JSON 備份</button>
+    <p><label for="recovery-side">雙端復原檔的來源</label>
+      <select id="recovery-side"><option value="localRaw">備份時的本機端</option><option value="sourceRaw">當時的匯入端</option></select></p>
+    <p><label for="import-file">選擇 JSON 檔案</label><br><input type="file" id="import-file" accept=".json,application/json"></p>
+    <p id="backup-status" role="status"></p>
+    <form method="dialog"><button>關閉</button></form>
+  </dialog>
+  <dialog id="import-dialog" aria-labelledby="import-title">
+    <h2 id="import-title">比較匯入差異</h2>
+    <p id="import-summary"></p>
+    <div class="actions" id="import-bulk">
+      <button type="button" id="import-local">差異全部保留本機</button>
+      <button type="button" id="import-source">差異全部採用匯入</button>
+    </div>
+    <div id="import-rows"></div>
+    <div class="actions">
+      <button type="button" id="import-download">下載兩端原文</button>
+      <label class="check"><input type="checkbox" id="import-ack" disabled>我已保存下載的兩端原文</label>
+    </div>
+    <p id="import-status" role="status"></p>
+    <div class="actions">
+      <button type="button" id="import-apply" disabled>確認套用</button>
+      <form method="dialog"><button>取消</button></form>
+    </div>
+  </dialog>
+</body>
+</html>

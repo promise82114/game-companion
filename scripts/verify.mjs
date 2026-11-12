@@ -7,6 +7,9 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const results=[];
+const orochiCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/musou-orochi-z'),encoding:'utf8'});
+assert.equal(orochiCheck.status,0,orochiCheck.stdout+orochiCheck.stderr);
+results.push(JSON.parse(orochiCheck.stdout));
 for(const slug of ['edf-wb','edf-wb2']){
  const dir=path.join(root,'games',slug),context={window:{}};vm.createContext(context);
  const scripts=['data','details','translations','acquisition',...(slug==='edf-wb'?['mission-facts']:[]),'missions','recommendations','content','cloud-config','shared/progress-envelope'];
