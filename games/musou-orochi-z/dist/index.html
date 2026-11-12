@@ -25,12 +25,17 @@
     </aside>
     <main class="sheet">
       <div id="stats" class="stats" aria-label="依已輸入資料推算的進度"></div>
-      <p class="intro" id="intro" hidden>依已輸入資料推算。空白項目表示尚未記錄。繁中名稱以攻略用語與暫譯呈現。</p>
       <div id="notice" class="notice" hidden><span id="message" role="status"></span><button type="button" id="undo" hidden>撤銷全勾操作</button></div>
       <section id="workspace" aria-labelledby="view-title"><p>正在載入《Z》資料與本機紀錄。</p></section>
     </main>
   </div>
 
+  <dialog id="stage-dialog" aria-labelledby="stage-title">
+    <p id="stage-chapter" class="muted"></p>
+    <h2 id="stage-title"></h2>
+    <div id="stage-description"></div>
+    <form method="dialog"><button>關閉</button></form>
+  </dialog>
   <dialog id="backup-dialog" aria-labelledby="backup-title">
     <h2 id="backup-title">備份與匯入</h2>
     <p>匯出本機進度與保留的匯入原文。匯入前會先保存兩端原文，再比較差異。</p>

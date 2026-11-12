@@ -84,14 +84,18 @@ try {
   const character = page.locator('#char-01');
   const number = character.locator('input[type=number]');
   const slider = character.locator('input[type=range]');
+  assert.equal(await number.inputValue(), '0');
+  assert.equal(await slider.inputValue(), '0');
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], undefined);
+  assert.equal(await page.locator('[lang="ja"]').count(), 0);
   await number.fill('20');
   assert.equal(await slider.inputValue(), '20');
   assert.match(await character.locator('.costume').textContent(), /4 套/);
   await number.press('Tab');
-  await page.waitForFunction(() => document.querySelector('#char-01 .row-meta').textContent.includes('熟練度 20'));
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], 20);
   await expectStat(page, '一般武將壁紙', '0 / 744');
   await slider.press('ArrowLeft');
-  await page.waitForFunction(() => document.querySelector('#char-01 .row-meta').textContent.includes('熟練度 19'));
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], 19);
   assert.equal(await number.inputValue(), '19');
   assert.match(await character.locator('.costume').textContent(), /3 套/);
   await number.fill('');
@@ -113,8 +117,12 @@ try {
   await expectStat(page, '武器合計', '3 / 288');
   assert.deepEqual((await state(page)).learnedCharacterSkills, {});
 
-  await character.getByRole('checkbox', {name: '趙雲 體力增加'}).check();
+  const health = character.getByRole('checkbox', {name: '趙雲 體力增加'});
+  const chipFace = character.locator('.chip').filter({has: page.getByRole('checkbox', {name: '趙雲 體力增加'})}).locator('span');
+  const unfilled = await chipFace.evaluate(el => getComputedStyle(el).backgroundColor);
+  await health.press('Space');
   await expectStat(page, '武將特技', '1 / 325');
+  assert.notEqual(await chipFace.evaluate(el => getComputedStyle(el).backgroundColor), unfilled);
   await page.locator('#navigation a[href="#skills"]').click();
   assert.equal(await page.locator('.skill').count(), 18);
   const skill = page.locator('#skill-health');
@@ -151,19 +159,35 @@ try {
 
   await go(page, '#stages');
   assert.equal(await page.locator('.record').count(), 140);
+  assert.deepEqual(await page.locator('#stage-original-shu-02').locator('..').locator('article').evaluateAll(rows =>
+    rows.map(row => row.id)), ['stage-original-shu-02', 'stage-original-shu-02-side']);
   await filter(page, 'mode').selectOption('drama');
   assert.equal(await page.locator('.record:visible').count(), 40);
   await filter(page, 'query').fill('古志城');
-  await page.locator('#stage-drama-40 summary').click();
-  await waitText(page.locator('#stage-drama-40 .pending'), '待查');
-  await page.locator('#stage-drama-40 input').check();
+  const finalStage = page.locator('#stage-drama-40');
+  await finalStage.locator('button').click();
+  await waitText(page.locator('#stage-dialog .pending'), '待查');
+  assert.equal(await page.locator('#stage-dialog a[href^="https:"]').count(), 0);
+  await page.locator('#stage-dialog').press('Escape');
+  const stageFace = finalStage.locator('.stage-face');
+  const stageOutline = await stageFace.evaluate(el => getComputedStyle(el).backgroundColor);
+  await finalStage.getByRole('checkbox').check();
   await expectStat(page, '激難通關', '1 / 140');
+  assert.notEqual(await stageFace.evaluate(el => getComputedStyle(el).backgroundColor), stageOutline);
   await filter(page, 'status').selectOption('incomplete');
   assert.equal(await page.locator('.record:visible').count(), 0);
   await go(page, '#stages/stage-original-sengoku-02');
   await page.getByRole('link', {name: '黑曜石', exact: true}).click();
   const obsidian = page.locator('#material-01');
-  await waitText(obsidian.locator('.row-detail'), '5 分鐘');
+  assert.equal(await page.locator('.material details[open]').count(), 30);
+  await waitText(obsidian.locator('.material-body'), '5 分鐘');
+  assert.equal(await obsidian.locator('a[href^="https:"]').count(), 0);
+  await obsidian.getByRole('checkbox').check();
+  await expectStat(page, '鍊成素材', '1 / 30');
+  assert.equal(await obsidian.locator('details').getAttribute('open'), null);
+  await obsidian.getByRole('checkbox').uncheck();
+  await expectStat(page, '鍊成素材', '0 / 30');
+  assert.equal(await obsidian.locator('details').getAttribute('open'), '');
   await obsidian.getByRole('checkbox').check();
   await expectStat(page, '鍊成素材', '1 / 30');
   await expectStat(page, '激難通關', '1 / 140');
@@ -171,8 +195,9 @@ try {
   assert.equal(await page.locator('.record:visible').count(), 29);
   await go(page, '#materials');
   await go(page, '#materials/material-01');
-  await obsidian.getByRole('link', {name: '查看出處關卡'}).click();
+  await obsidian.locator('.material-stage').click();
   assert.match(page.url(), /#stages\/stage-original-sengoku-02$/);
+  await page.locator('#stage-dialog').getByRole('button', {name: '關閉'}).click();
   assert.deepEqual((await state(page)).extremeStageClears, {'stage-drama-40': true});
 
   await upload(page, '{synthetic-damaged');
@@ -297,6 +322,10 @@ try {
     await fs.mkdir(screenshots, {recursive: true});
     await go(page, '#characters');
     await page.screenshot({path: screenshots + '/desktop.png'});
+    await go(page, '#stages');
+    await page.screenshot({path: screenshots + '/desktop-stages.png'});
+    await go(page, '#materials');
+    await page.screenshot({path: screenshots + '/desktop-materials.png'});
     await page.setViewportSize({width: 768, height: 1024});
     await go(page, '#skills');
     await page.locator('#skill-health summary').click();
@@ -311,12 +340,16 @@ try {
     assert.ok(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), tab);
   }
   await go(phone, '#characters');
-  await phone.locator('#char-01').getByText('Lv.2', {exact: true}).tap();
+  await phone.locator('#char-01').getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).tap();
   await expectStat(phone, '武器合計', '1 / 288');
   assert.equal((await state(page)).weaponsByCharacter['char-01'].lv2, false);
   if (screenshots) {
     await phone.evaluate(() => window.scrollTo(0, 0));
     await phone.screenshot({path: screenshots + '/mobile.png'});
+    await go(phone, '#stages');
+    await phone.screenshot({path: screenshots + '/mobile-stages.png'});
+    await go(phone, '#materials');
+    await phone.screenshot({path: screenshots + '/mobile-materials.png'});
   }
   await mobile.close();
   assert.deepEqual(errors, []);

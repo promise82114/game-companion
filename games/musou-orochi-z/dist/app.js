@@ -6,7 +6,7 @@ const core = window.SideProjectSync;
 const $ = id => document.getElementById(id);
 const workspace = $('workspace');
 const views = {characters: '全武將', stages: '全關卡', skills: '全特技', materials: '全鍊成素材', sources: '資料來源與判定'};
-const modes = {original: 'Story · 原版', rebirth: 'Story · 再臨', drama: 'Dramatic'};
+const modes = {original: '原版', rebirth: '再臨', drama: '戲劇模式'};
 const factions = ['蜀', '魏', '吳', '戰國', '遠呂智'];
 const filters = {};
 const openedCharacters = new Map();
@@ -19,12 +19,15 @@ const chapters = stage => stage.mode === 'drama' ? pad(stage.chapter) + (stage.i
   (stage.chapter === 16 || (stage.chapter === 8 && stage.faction === '遠呂智') ? '終章' : '第 ' + stage.chapter + ' 章') +
   (stage.isSideStory ? ' 外傳' : '');
 const stageLabel = stage => (stage.faction ? stage.faction + ' · ' : '') + modes[stage.mode] + ' · ' + chapters(stage);
+const stageName = stage => stage.titleZh.replaceAll('覇', '霸');
 const note = text => '<p class="muted">' + esc(text) + '</p>';
 const option = (value, label) => '<option value="' + esc(value) + '">' + esc(label) + '</option>';
 const select = (key, label, options) => '<select data-filter="' + key + '" aria-label="' + label + '">' +
   options.map(([value, text]) => option(value, text)).join('') + '</select>';
-const check = (group, id, label, attrs = '') => '<label class="check"><input type="checkbox" data-group="' + group +
-  '" data-id="' + id + '" ' + attrs + '><span>' + esc(label) + '</span></label>';
+const checkboxInput = (group, id, attrs = '') => '<input type="checkbox" data-group="' + group +
+  '" data-id="' + id + '" ' + attrs + '>';
+const check = (group, id, label, attrs = '', style = '') => '<label class="check ' + style + '">' +
+  checkboxInput(group, id, attrs) + '<span>' + esc(label) + '</span></label>';
 
 let catalog, model, store, progress, materialsByStage, references, view, review, undo;
 let busy = false;
@@ -66,7 +69,7 @@ function renderStats() {
 }
 
 function toolbar() {
-  const search = '<input type="search" data-filter="query" aria-label="搜尋名稱" placeholder="搜尋繁中／日文名稱">';
+  const search = '<input type="search" data-filter="query" aria-label="搜尋名稱" placeholder="搜尋名稱">';
   if (view === 'characters') {
     const groups = [...new Set(catalog.characters.map(row => row.faction))];
     return search + select('faction', '勢力', [['', '所有勢力'], ...groups.map(name => [name, name])]) +
@@ -75,7 +78,7 @@ function toolbar() {
   }
   if (view === 'stages') {
     return search + select('mode', '劇本模式', [['', '所有模式'], ...Object.entries(modes)]) +
-      select('faction', 'Story 勢力', [['', '所有勢力'], ...factions.map(name => [name, name])]) +
+      select('faction', '故事勢力', [['', '所有勢力'], ...factions.map(name => [name, name])]) +
       select('status', '通關進度篩選', [['', '全部進度'], ['incomplete', '未完成']]);
   }
   if (view === 'materials') {
@@ -85,62 +88,88 @@ function toolbar() {
 }
 
 function characterRow(character) {
-  const {id, nameZh, nameJa, special} = character;
+  const {id, nameZh, special} = character;
   const name = esc(nameZh);
   const skills = model.skillsByCharacter.get(id);
   const status = model.characterStatus(progress, character);
   const open = openedCharacters.get(id) ?? !status.complete;
-  const checkbox = (group, key, label) => check(group, key, label, 'aria-label="' + name + ' ' + esc(label) + '"');
-  return '<details class="character row" data-row="' + id + '" id="' + id + '"' + (open ? ' open' : '') + '>' +
-    '<summary><span><strong>' + name + '</strong>' + (nameZh === nameJa ? '' : '<small lang="ja">' + esc(nameJa) + '</small>') +
-    '</span><span class="row-meta"></span></summary><div class="character-controls">' +
-    '<div class="training"><label>熟練度 <input type="number" min="0" max="50" step="1" inputmode="numeric" placeholder="—"' +
-    ' aria-label="' + name + ' 熟練度" data-prof="' + id + '"></label>' +
+  const checkbox = (group, key, label, style) => check(group, key, label, 'aria-label="' + name + ' ' + esc(label) + '"', style);
+  return '<details class="character card" data-row="' + id + '" id="' + id + '"' + (open ? ' open' : '') + '>' +
+    '<summary><strong>' + name + '</strong><span class="row-meta"></span></summary><div class="character-controls">' +
+    '<div class="training"><label>熟練度 <input type="number" min="0" max="50" step="1" inputmode="numeric"' +
+    ' aria-label="' + name + ' 熟練度" data-prof="' + id + '"></label><span class="costume"></span>' +
     '<input type="range" min="0" max="50" step="1" aria-label="' + name + ' 熟練度滑桿" data-prof="' + id + '">' +
-    '<span class="costume"></span></div>' +
-    '<div class="track-group"><span class="track-title">武器</span>' +
+    '</div><div class="track-group"><div class="track-head"><span class="track-title">武器</span>' +
+    '<button class="bulk" type="button" data-bulk="weapons" data-id="' + id + '"></button></div><div class="chips weapon-chips">' +
     weaponLevels.map((level, i) => check('weaponsByCharacter', id, 'Lv.' + (i + 2),
-      'data-level="' + level + '" aria-label="' + name + ' Lv.' + (i + 2) + ' 武器"')).join('') +
-    '<button class="bulk" type="button" data-bulk="weapons" data-id="' + id + '"></button></div>' +
-    '<div class="track-group"><span class="track-title">特技</span>' +
-    (skills.length ? skills.map(skill => checkbox('learnedCharacterSkills', skillKey(id, skill.id), skill.nameZh)).join('') +
-      '<button class="bulk" type="button" data-bulk="skills" data-id="' + id + '"></button>' : '<span class="muted">無可習得特技</span>') +
+      'data-level="' + level + '" aria-label="' + name + ' Lv.' + (i + 2) + ' 武器"', 'chip')).join('') +
+    '</div></div><div class="track-group"><div class="track-head"><span class="track-title">特技</span>' +
+    (skills.length ? '<button class="bulk" type="button" data-bulk="skills" data-id="' + id + '"></button></div><div class="chips">' +
+      skills.map(skill => checkbox('learnedCharacterSkills', skillKey(id, skill.id), skill.nameZh, 'chip')).join('') +
+      '</div>' : '</div><span class="muted">無可習得特技</span>') +
     '</div><div class="wallpaper">' + (special ? '<span>無一般武將壁紙</span>' :
       checkbox('unlockedCharacters', id, '已可操作') + '<span class="wallpaper-count"></span>') + '</div></div></details>';
 }
 
-function stageRow(stage) {
-  const {id, titleZh, titleJa, unlockText, unlockEvidence, evidenceNote, recommendedCharacterIds} = stage;
+function stageTile(stage) {
+  const {id, evidenceNote} = stage;
+  const name = esc(stageName(stage));
+  const chapter = stage.mode !== 'drama' && stage.isSideStory ? stage.chapter + ' 章外傳' : chapters(stage);
+  return '<article class="stage-tile record' + (stage.isSideStory ? ' side-stage' : '') + '" id="' + id + '" data-row="' + id + '">' +
+    '<label class="stage-toggle">' + checkboxInput('extremeStageClears', id,
+      'aria-label="' + name + ' ' + esc(stageLabel(stage)) + ' 激難已通關"') +
+    '<span class="stage-face"><small>' + esc(chapter) + '</small><strong>' + name + '</strong></span></label>' +
+    '<button class="stage-info" type="button" data-stage="' + id + '" aria-label="' + name + ' ' + esc(stageLabel(stage)) +
+      (evidenceNote ? ' 詳情（待查）' : ' 詳情') + '" title="查看詳情">⋯' +
+      (evidenceNote ? '<span class="pending-dot" aria-hidden="true"></span>' : '') + '</button></article>';
+}
+
+function showStage(id) {
+  const stage = model.stages.get(id);
+  const {unlockText, evidenceNote, recommendedCharacterIds} = stage;
   const associated = materialsByStage.get(id) ?? [];
-  return '<article class="row record" id="' + id + '" data-row="' + id + '"><details>' +
-    '<summary><span><small>' + esc(chapters(stage)) + '</small><strong>' + esc(titleZh) + '</strong></span></summary>' +
-    '<div class="row-detail"><span lang="ja">' + esc(titleJa) + '</span><p>' + esc(unlockText) + '</p>' +
+  $('stage-title').textContent = stageName(stage);
+  $('stage-chapter').textContent = stageLabel(stage);
+  $('stage-description').innerHTML = note(unlockText) +
     (recommendedCharacterIds ? note('指定武將：' + recommendedCharacterIds.map(key => model.characters.get(key).nameZh).join('、')) : '') +
     (evidenceNote ? '<p class="pending">待查 · ' + esc(evidenceNote) + '</p>' : '') +
-    (associated.length ? '<p>素材 ' + associated.map(row => '<a href="#materials/' + row.id + '">' + esc(row.nameZh) + '</a>').join('、') + '</p>' : '') +
-    '<p class="references">' + sourceLinks(unlockEvidence) + '</p></div></details>' +
-    check('extremeStageClears', id, '激難已通關', 'aria-label="' + esc(titleZh) + ' ' + esc(stageLabel(stage)) + ' 激難已通關"') + '</article>';
+    (associated.length ? '<p>素材 ' + associated.map(row => '<a href="#materials/' + row.id + '">' + esc(row.nameZh) + '</a>').join('、') + '</p>' : '');
+  $('stage-dialog').showModal();
+}
+
+function stageRoutes() {
+  const groups = Map.groupBy(catalog.stages, row => row.faction ? row.faction + ' · ' + modes[row.mode] : modes.drama);
+  return [...groups].map(([label, stages]) => {
+    const isDrama = stages[0].mode === 'drama';
+    const chapterStops = [...Map.groupBy(stages, stage => stage.chapter).values()];
+    return '<section class="listing stage-route"><h3>' + esc(label) + '</h3><div class="stage-grid">' +
+      (isDrama ? stages.map(stageTile).join('') : chapterStops.map(stop =>
+        '<div class="stage-stop">' + stop.map(stageTile).join('') + '</div>').join('')) + '</div></section>';
+  }).join('');
 }
 
 function materialRow(material) {
-  const {id, nameZh, nameJa, stageId, condition, evidence} = material;
+  const {id, nameZh, stageId, condition} = material;
   const stage = model.stages.get(stageId);
-  return '<article class="row record" id="' + id + '" data-row="' + id + '"><details><summary><span><strong>' + esc(nameZh) + '</strong>' +
-    '<small>' + esc(stageLabel(stage)) + ' ' + esc(stage.titleZh) + '</small></span></summary><div class="row-detail">' +
-    '<span lang="ja">' + esc(nameJa) + '</span><p>' + esc(condition) + '</p>' +
+  const collected = isChecked(progress.collectedMaterials, id);
+  return '<article class="material card record" id="' + id + '" data-row="' + id + '" data-collected="' + collected + '">' +
+    '<label class="material-toggle">' + checkboxInput('collectedMaterials', id, 'aria-label="' + esc(nameZh) + ' 已取得"') + '</label>' +
+    '<details' + (collected ? '' : ' open') + '><summary><strong>' + esc(nameZh) + '</strong></summary><div class="material-body">' +
+    '<a class="material-stage" href="#stages/' + stageId + '"><small>' + esc(stageLabel(stage)) + '</small>' +
+    '<strong>' + esc(stageName(stage)) + '</strong></a><p>' + esc(condition) + '</p>' +
     (material.evidenceNote ? '<p class="pending">待查 · ' + esc(material.evidenceNote) + '</p>' : '') +
-    '<p><a href="#stages/' + stageId + '">查看出處關卡</a></p><p class="references">' + sourceLinks(evidence) + '</p></div></details>' +
-    check('collectedMaterials', id, '已取得', 'aria-label="' + esc(nameZh) + ' 已取得"') + '</article>';
+    '</div></details></article>';
 }
 
 function skillRow(skill) {
-  return '<details class="skill" data-row="' + skill.id + '" id="' + skill.id + '"><summary><span><strong>' + esc(skill.nameZh) +
-    '</strong><small lang="ja">' + esc(skill.nameJa) + '</small></span><span class="skill-count"></span></summary><div class="skill-missing"></div></details>';
+  return '<details class="skill" data-row="' + skill.id + '" id="' + skill.id + '"><summary><strong>' + esc(skill.nameZh) +
+    '</strong><span class="skill-count"></span></summary><div class="skill-missing"></div></details>';
 }
 
 function groupRows(items, key, row) {
   const groups = Map.groupBy(items, key);
-  return [...groups].map(([label, rows]) => '<section class="listing"><h3>' + esc(label) + '</h3>' + rows.map(row).join('') + '</section>').join('');
+  return [...groups].map(([label, rows]) => '<section class="listing"><h3>' + esc(label) + '</h3><div class="card-grid">' +
+    rows.map(row).join('') + '</div></section>').join('');
 }
 
 function sourceView() {
@@ -149,13 +178,14 @@ function sourceView() {
     '真・遠呂智、百百目鬼、牛鬼沒有額外服裝。PS3 獎盃攻略仍列三人熟練度需達 20，因此「服裝未達標」保留這項門檻。</p>' +
     '<p>一般武將需勾選「已可操作」才納入壁紙推算。可操作時先計 1 張，全特技再計 1 張，熟練度達 ' + wallpaperLevels.join('、') +
     ' 各計 1 張。特殊三人沒有一般壁紙。</p>' +
-    '<p>Story 全通、Dramatic 全通各有一張特殊壁紙。兩模式全部劇本在所有難度通關另有一張。本站只記激難，特殊壁紙另以遊戲為準。</p>' +
+    '<p>故事模式全通、戲劇模式全通各有一張特殊壁紙。兩模式全部劇本在所有難度通關另有一張。本站只記激難，特殊壁紙另以遊戲為準。</p>' +
     '<p>開啟條件依《Z》攻略整理，分歧逐關標「待查」。素材勾選只計收集。PS3 版獎盃觸發、更新版本行為與繁中選單用字仍待實機確認。</p>' +
     '<h3>查閱來源</h3><ul>' + catalog.references.map(ref => '<li>' + sourceLinks([ref.id]) + '</li>').join('') + '</ul></div>';
 }
 
 function render() {
   if (!ready) return;
+  if ($('stage-dialog').open) $('stage-dialog').close();
   const [nextView, target] = route();
   view = nextView;
   if (target) filters[view] = {};
@@ -165,10 +195,10 @@ function render() {
   }
   const content = {
     characters: () => groupRows(catalog.characters, row => row.faction, characterRow),
-    stages: () => note('劇本可直接查看。開啟條件供查詢，勾選只記錄激難通關。') +
-      groupRows(catalog.stages, row => modes[row.mode] + (row.faction ? ' · ' + row.faction : ''), stageRow),
+    stages: () => '<p class="route-hint"><span class="legend-box"></span> 未記錄 <span class="legend-box filled"></span> 激難已通關</p>' +
+      stageRoutes(),
     skills: () => '<div class="skill-grid">' + catalog.skills.map(skillRow).join('') + '</div>',
-    materials: () => note('可在任意難度完成取得條件並通關。') + '<div class="listing">' + catalog.materials.map(materialRow).join('') + '</div>',
+    materials: () => note('可在任意難度完成取得條件並通關。') + '<div class="card-grid material-grid">' + catalog.materials.map(materialRow).join('') + '</div>',
     sources: sourceView
   };
   const tools = toolbar();
@@ -180,10 +210,15 @@ function render() {
   refresh();
   const destination = target && $(target);
   if (destination?.matches('[data-row]')) {
-    const details = destination.matches('details') ? destination : destination.querySelector('details');
-    details.open = true;
-    details.querySelector('summary').focus({preventScroll: true});
     destination.scrollIntoView({block: 'start'});
+    if (view === 'stages') {
+      destination.querySelector('.stage-info').focus({preventScroll: true});
+      showStage(target);
+    } else {
+      const details = destination.matches('details') ? destination : destination.querySelector('details');
+      details.open = true;
+      details.querySelector('summary').focus({preventScroll: true});
+    }
   } else if (location.hash) {
     $('view-title').focus({preventScroll: true});
     window.scrollTo({top: 0});
@@ -192,22 +227,21 @@ function render() {
 
 function costumeText(character, proficiency) {
   if (character.special) return proficiency >= 20 ? '獎盃門檻 20 已達' : '無額外服裝 · 獎盃門檻 20';
-  if (proficiency === undefined) return '服裝待回填 · 門檻 10／20';
-  return proficiency >= 20 ? '4 套 · 已達標' : proficiency >= 10 ? '3 套 · 下階 20' : '2 套 · 下階 10';
+  return proficiency >= 20 ? '服裝 4 套' : proficiency >= 10 ? '服裝 3 套 · 下階 20' : '服裝門檻 10／20';
 }
 
 function refreshCharacter(row) {
   const character = model.characters.get(row.dataset.row);
   const status = model.characterStatus(progress, character);
   row.querySelector('.row-meta').textContent = [
-    status.proficiency === undefined ? '熟練度未記錄' : '熟練度 ' + status.proficiency,
+    ...(status.complete ? ['熟練度 ' + (status.proficiency ?? 0)] : []),
     '武器 ' + status.weapons + '/3',
     '特技 ' + status.learned + '/' + status.assigned.length,
     ...(status.complete ? ['已完成'] : [])
   ].join(' · ');
   if (!row.querySelector('[data-editing="true"]')) {
     for (const input of row.querySelectorAll('[data-prof]')) {
-      input.value = status.proficiency ?? (input.type === 'range' ? 0 : '');
+      input.value = status.proficiency ?? 0;
     }
     row.querySelector('.costume').textContent = costumeText(character, status.proficiency);
   }
@@ -217,7 +251,7 @@ function refreshCharacter(row) {
     const weapons = button.dataset.bulk === 'weapons';
     const all = weapons ? status.weapons === weaponLevels.length : status.learned === status.assigned.length;
     const label = (weapons ? '武器' : '特技') + (all ? '全取消' : '全勾');
-    button.textContent = label;
+    button.textContent = all ? '全取消' : '全勾';
     button.setAttribute('aria-label', character.nameZh + ' ' + label);
   }
   // 只在完成狀態改變時自動收合／展開，平時維持玩家的閱讀位置。
@@ -263,13 +297,13 @@ function applyFilters() {
       show = matches(q, character.nameZh, character.nameJa) && (!faction || character.faction === faction) && (!status || statuses[status]);
     } else if (view === 'stages') {
       const stage = model.stages.get(id);
-      show = matches(q, stage.titleZh, stage.titleJa, stageLabel(stage)) &&
+      show = matches(q, stageName(stage), stage.titleZh, stage.titleJa, stageLabel(stage)) &&
         (!faction || stage.faction === faction) && (!mode || stage.mode === mode) &&
         (!status || !isChecked(progress.extremeStageClears, id));
     } else if (view === 'materials') {
       const item = model.materials.get(id);
       const stage = model.stages.get(item.stageId);
-      show = matches(q, item.nameZh, item.nameJa, stage.titleZh, stage.titleJa) &&
+      show = matches(q, item.nameZh, item.nameJa, stageName(stage), stage.titleJa, stageLabel(stage)) &&
         (!status || !isChecked(progress.collectedMaterials, id));
     } else {
       const skill = model.skills.get(id);
@@ -278,7 +312,7 @@ function applyFilters() {
     row.hidden = !show;
     if (show) visible++;
   }
-  for (const list of workspace.querySelectorAll('section.listing')) list.hidden = !list.querySelector('[data-row]:not([hidden])');
+  for (const list of workspace.querySelectorAll('section.listing, .stage-stop')) list.hidden = !list.querySelector('[data-row]:not([hidden])');
   if ($('no-results')) $('no-results').hidden = visible > 0;
 }
 
@@ -286,6 +320,14 @@ function refresh() {
   renderStats();
   for (const row of workspace.querySelectorAll('.character')) refreshCharacter(row);
   for (const row of workspace.querySelectorAll('.skill')) refreshSkill(row);
+  for (const row of workspace.querySelectorAll('.material')) {
+    const collected = String(isChecked(progress.collectedMaterials, row.dataset.row));
+    if (row.dataset.collected === collected) continue;
+    const details = row.querySelector('details');
+    if (collected === 'true' && details.contains(document.activeElement)) details.querySelector('summary').focus();
+    details.open = collected === 'false';
+    row.dataset.collected = collected;
+  }
   for (const input of workspace.querySelectorAll('input[data-group]')) {
     const {group, id, level} = input.dataset;
     input.checked = level ? isChecked(progress[group][id] ?? {}, level) : isChecked(progress[group], id);
@@ -374,6 +416,11 @@ workspace.addEventListener('change', event => {
 });
 
 workspace.addEventListener('click', event => {
+  const stageButton = event.target.closest('[data-stage]');
+  if (stageButton) {
+    showStage(stageButton.dataset.stage);
+    return;
+  }
   const button = event.target.closest('[data-bulk]');
   if (!button) return;
   const {id, bulk} = button.dataset;
@@ -623,7 +670,6 @@ try {
   progress = await store.open();
   ready = true;
   $('open-backup').disabled = false;
-  $('intro').hidden = false;
   $('save-state').textContent = '已保存於此瀏覽器';
   render();
 } catch (error) {
