@@ -59,6 +59,7 @@ const expectStat = async (p, label, value) => {
   assert.deepEqual(await item.getByRole('progressbar').evaluate(el => [el.value, el.max]), value.split(' / ').map(Number));
 };
 const filter = (p, key) => p.locator('[data-filter="' + key + '"]');
+const faction = (p, name) => p.getByRole('group', {name: '勢力', exact: true}).getByRole('button', {name, exact: true});
 
 try {
   const portal = await page.goto(base);
@@ -84,7 +85,11 @@ try {
     request.onsuccess = () => { request.result.close(); resolve(); };
   }));
 
-  await filter(page, 'faction').selectOption('魏');
+  assert.deepEqual(await page.locator('.faction-tabs button').allTextContents(),
+    ['全部', '蜀', '魏', '吳', '其他一', '其他二', '戰國一', '戰國二', '戰國三']);
+  assert.equal(await faction(page, '全部').getAttribute('aria-pressed'), 'true');
+  await faction(page, '魏').click();
+  assert.equal(await faction(page, '魏').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('.character:visible').count(), 13);
   await filter(page, 'query').fill('張コウ');
   assert.equal(await page.locator('.character:visible strong').textContent(), '張郃');
@@ -145,6 +150,11 @@ try {
   await slider.press('ArrowLeft');
   await expectStat(page, '一般武將壁紙', '93 / 744');
   assert.equal(await number.inputValue(), '24');
+  const stop20 = character.getByRole('button', {name: '趙雲 熟練度 20', exact: true});
+  await stop20.press('Enter');
+  assert.equal(await stop20.getAttribute('aria-current'), 'true');
+  assert.equal(await number.inputValue(), '20');
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], 20);
 
   const weaponBulk = character.locator('[data-bulk=weapons]');
   const skillBulk = character.locator('[data-bulk=skills]');
@@ -200,10 +210,18 @@ try {
 
   await go(page, '#stages');
   assert.equal(await page.locator('.record').count(), 140);
+  assert.deepEqual(await page.locator('.faction-tabs button').allTextContents(), ['全部', '蜀', '魏', '吳', '戰國', '遠呂智']);
   assert.deepEqual(await page.locator('#stage-original-shu-02').locator('..').locator('article').evaluateAll(rows =>
     rows.map(row => row.id)), ['stage-original-shu-02', 'stage-original-shu-02-side']);
+  await faction(page, '魏').click();
+  assert.equal(await page.locator('.record:visible').count(), 23);
   await filter(page, 'mode').selectOption('drama');
+  assert.equal(await faction(page, '全部').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('.record:visible').count(), 40);
+  await faction(page, '遠呂智').click();
+  assert.equal(await filter(page, 'mode').inputValue(), '');
+  assert.equal(await page.locator('.record:visible').count(), 8);
+  await filter(page, 'mode').selectOption('drama');
   await filter(page, 'query').fill('古志城');
   const finalStage = page.locator('#stage-drama-40');
   const condition = finalStage.getByRole('button', {name: /開啟條件/});
@@ -385,17 +403,26 @@ try {
   }
   await go(phone, '#characters');
   assert.equal(await phone.locator('.character-grid').first().evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 1);
+  await faction(phone, '蜀').tap();
+  assert.equal(await phone.locator('.character:visible').count(), 13);
+  await faction(phone, '全部').tap();
+  assert.equal(await phone.locator('.character:visible').count(), 96);
   await phone.locator('#char-01').getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).tap();
   await expectStat(phone, '武器合計', '1 / 288');
   assert.equal((await state(page)).weaponsByCharacter['char-01'].lv2, false);
   const phoneSlider = phone.locator('#char-01 input[type=range]');
   const phoneTrack = phone.locator('#char-01 .proficiency-track');
+  await phone.locator('#char-01').getByRole('button', {name: '趙雲 熟練度 20', exact: true}).tap();
+  assert.equal(await phoneSlider.inputValue(), '20');
+  assert.equal((await state(phone)).proficiencyByCharacter['char-01'], 20);
+  await phone.reload();
+  await ready(phone);
+  assert.equal(await phoneSlider.inputValue(), '20');
+  assert.equal((await state(phone)).proficiencyByCharacter['char-01'], 20);
   await phoneTrack.scrollIntoViewIfNeeded();
   const touchBounds = await phoneTrack.boundingBox();
   const touchX = value => 8 + (touchBounds.width - 16) * value / 50;
   const touchY = touchBounds.height / 2;
-  await phoneTrack.tap({position: {x: touchX(19.55), y: touchY}});
-  assert.equal(await phoneSlider.inputValue(), '20');
   const touch = await mobile.newCDPSession(phone);
   const touchPoint = value => [{x: touchBounds.x + touchX(value), y: touchBounds.y + touchY}];
   await touch.send('Input.dispatchTouchEvent', {type: 'touchStart', touchPoints: touchPoint(20)});

@@ -76,20 +76,24 @@ function renderStats() {
 function toolbar() {
   const search = '<input type="search" data-filter="query" aria-label="搜尋名稱" placeholder="搜尋名稱">';
   if (view === 'characters') {
-    const groups = [...new Set(catalog.characters.map(row => row.faction))];
-    return search + select('faction', '勢力', [['', '所有勢力'], ...groups.map(name => [name, name])]) +
-      select('status', '武將進度篩選', [['', '全部進度'], ['skills', '特技未全習得'], ['costumes', '服裝未達標'],
+    return search + select('status', '武將進度篩選', [['', '全部進度'], ['skills', '特技未全習得'], ['costumes', '服裝未達標'],
         ['weapons', '武器未收齊'], ['incomplete', '未完成']]);
   }
   if (view === 'stages') {
     return search + select('mode', '劇本模式', [['', '所有模式'], ...Object.entries(modes)]) +
-      select('faction', '故事勢力', [['', '所有勢力'], ...factions.map(name => [name, name])]) +
       select('status', '通關進度篩選', [['', '全部進度'], ['incomplete', '未完成']]);
   }
   if (view === 'materials') {
     return search + select('status', '素材進度篩選', [['', '全部進度'], ['incomplete', '未取得']]);
   }
   return view === 'skills' ? search : '';
+}
+
+function factionTabs() {
+  if (view !== 'characters' && view !== 'stages') return '';
+  const names = view === 'characters' ? [...new Set(catalog.characters.map(row => row.faction))] : factions;
+  return '<div class="faction-tabs" role="group" aria-label="勢力">' + ['', ...names].map(name =>
+    '<button type="button" data-faction="' + esc(name) + '">' + esc(name || '全部') + '</button>').join('') + '</div>';
 }
 
 function characterRow(character) {
@@ -99,14 +103,15 @@ function characterRow(character) {
   const status = model.characterStatus(progress, character);
   const open = openedCharacters.get(id) ?? !status.complete;
   const ticks = proficiencyStops(character).map(stop =>
-    '<span data-stop="' + stop + '" style="--stop:' + stop * 2 + '%">' + stop + '</span>').join('');
+    '<button type="button" data-stop="' + stop + '" style="--stop:' + stop * 2 +
+    '%" aria-label="' + name + ' 熟練度 ' + stop + '">' + stop + '</button>').join('');
   const checkbox = (group, key, label, style) => check(group, key, label, 'aria-label="' + name + ' ' + esc(label) + '"', style);
   return '<details class="character card" data-row="' + id + '" id="' + id + '"' + (open ? ' open' : '') + '>' +
     '<summary><strong>' + name + '</strong><span class="row-meta"></span></summary><div class="character-controls">' +
     '<div class="training"><label>熟練度 <input type="number" min="0" max="50" step="1" inputmode="numeric"' +
     ' aria-label="' + name + ' 熟練度" data-prof="' + id + '"></label><span class="costume"></span>' +
     '<div class="proficiency-scale"><div class="proficiency-track"><input type="range" min="0" max="50" step="1" aria-label="' +
-    name + ' 熟練度滑桿" data-prof="' + id + '"></div><div class="proficiency-stops" aria-hidden="true">' + ticks + '</div></div>' +
+    name + ' 熟練度滑桿" data-prof="' + id + '"></div><div class="proficiency-stops">' + ticks + '</div></div>' +
     '<div class="wallpaper">' + (special ? '無一般武將壁紙' : '<span class="wallpaper-count"></span>') + '</div>' +
     '</div><div class="track-group"><div class="track-head"><span class="track-title">武器</span>' +
     '<button class="bulk" type="button" data-bulk="weapons" data-id="' + id + '"></button></div><div class="chips weapon-chips">' +
@@ -212,7 +217,7 @@ function render() {
   };
   const tools = toolbar();
   workspace.innerHTML = '<div class="view-header"><h2 tabindex="-1" id="view-title">' + views[view] + '</h2>' +
-    (tools ? '<div class="toolbar">' + tools + '</div>' : '') + '</div>' + content[view]() +
+    (tools ? '<div class="toolbar">' + tools + '</div>' : '') + '</div>' + factionTabs() + content[view]() +
     (tools ? '<p id="no-results" class="empty" hidden>沒有符合條件的項目。</p>' : '');
   const activeFilters = filters[view] ?? {};
   for (const input of workspace.querySelectorAll('[data-filter]')) input.value = activeFilters[input.dataset.filter] ?? '';
@@ -239,6 +244,14 @@ function costumeText(character, proficiency) {
   return proficiency >= 20 ? '服裝 4 套' : proficiency >= 10 ? '服裝 3 套 · 下階 20' : '服裝門檻 10／20';
 }
 
+function showProficiency(scale, value) {
+  scale.style.setProperty('--proficiency-progress', value * 2 + '%');
+  const current = scale.querySelector('[aria-current]');
+  if (current?.dataset.stop === String(value)) return;
+  current?.removeAttribute('aria-current');
+  scale.querySelector('[data-stop="' + value + '"]')?.setAttribute('aria-current', 'true');
+}
+
 function refreshCharacter(row) {
   const character = model.characters.get(row.dataset.row);
   const status = model.characterStatus(progress, character);
@@ -252,7 +265,7 @@ function refreshCharacter(row) {
     for (const input of row.querySelectorAll('[data-prof]')) {
       input.value = status.proficiency ?? 0;
     }
-    row.querySelector('.proficiency-scale').style.setProperty('--proficiency-progress', (status.proficiency ?? 0) * 2 + '%');
+    showProficiency(row.querySelector('.proficiency-scale'), status.proficiency ?? 0);
     row.querySelector('.costume').textContent = costumeText(character, status.proficiency);
   }
   const wallpaper = row.querySelector('.wallpaper-count');
@@ -291,7 +304,10 @@ function refreshSkill(row) {
 }
 
 function applyFilters() {
-  const {query = '', faction, mode, status} = filters[view] ?? {};
+  const {query = '', faction = '', mode, status} = filters[view] ?? {};
+  for (const tab of workspace.querySelectorAll('[data-faction]')) {
+    tab.setAttribute('aria-pressed', String(tab.dataset.faction === faction));
+  }
   const q = normalize(query);
   let visible = 0;
   for (const row of workspace.querySelectorAll('[data-row]')) {
@@ -434,13 +450,7 @@ workspace.addEventListener('input', event => {
   if (input.dataset.filter) {
     const values = filters[view] ??= {};
     values[input.dataset.filter] = input.value;
-    if (input.dataset.filter === 'mode' && input.value === 'drama') {
-      values.faction = '';
-      workspace.querySelector('[data-filter="faction"]').value = '';
-    } else if (input.dataset.filter === 'faction' && input.value && values.mode === 'drama') {
-      values.mode = '';
-      workspace.querySelector('[data-filter="mode"]').value = '';
-    }
+    if (input.dataset.filter === 'mode' && input.value === 'drama') values.faction = '';
     applyFilters();
   }
   const id = input.dataset.prof;
@@ -450,7 +460,7 @@ workspace.addEventListener('input', event => {
   if (!input.validity.valid || !Number.isFinite(value)) return;
   const row = $(id);
   row.querySelector(input.type === 'range' ? 'input[type="number"]' : 'input[type="range"]').value = value;
-  row.querySelector('.proficiency-scale').style.setProperty('--proficiency-progress', value * 2 + '%');
+  showProficiency(row.querySelector('.proficiency-scale'), value);
   row.querySelector('.costume').textContent = costumeText(model.characters.get(id), value);
 });
 
@@ -488,6 +498,26 @@ workspace.addEventListener('change', event => {
 });
 
 workspace.addEventListener('click', event => {
+  const factionTab = event.target.closest('[data-faction]');
+  if (factionTab) {
+    const values = filters[view] ??= {};
+    values.faction = factionTab.dataset.faction;
+    if (values.faction && values.mode === 'drama') {
+      values.mode = '';
+      workspace.querySelector('[data-filter="mode"]').value = '';
+    }
+    applyFilters();
+    return;
+  }
+  const stop = event.target.closest('[data-stop]');
+  if (stop) {
+    const input = stop.closest('.proficiency-scale').querySelector('input[type="range"]');
+    if (input.value === stop.dataset.stop) return;
+    input.value = stop.dataset.stop;
+    input.dispatchEvent(new Event('input', {bubbles: true}));
+    input.dispatchEvent(new Event('change', {bubbles: true}));
+    return;
+  }
   const stageButton = event.target.closest('[data-stage]');
   if (stageButton) {
     showStage(stageButton.dataset.stage);

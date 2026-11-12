@@ -119,6 +119,27 @@ nav a[aria-current] { color: var(--text); border-color: var(--accent); font-weig
 .toolbar { display: flex; flex-wrap: wrap; gap: 7px; }
 .toolbar input { width: 190px; min-width: 0; }
 .toolbar select { min-width: 0; }
+.faction-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.faction-tabs button {
+  min-height: 38px;
+  padding-inline: 11px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 5px 5px 0 0;
+  color: var(--muted);
+}
+.faction-tabs button[aria-pressed="true"] {
+  border-bottom-color: var(--accent);
+  background: var(--raised);
+  color: var(--accent);
+  font-weight: 650;
+}
 .listing { margin-top: 24px; }
 .listing h3 { margin-bottom: 10px; font-size: 17px; font-weight: 700; }
 .card-grid {
@@ -199,23 +220,29 @@ summary { cursor: pointer; }
 }
 .proficiency-stops {
   position: relative;
-  height: 21px;
+  height: 32px;
   margin-inline: calc(var(--proficiency-thumb) / 2);
-  color: var(--muted);
-  font-size: 11px;
-  pointer-events: none;
 }
-.proficiency-stops span {
+.proficiency-stops button {
   position: absolute;
   left: var(--stop);
   display: grid;
+  align-content: start;
   justify-items: center;
-  gap: 1px;
+  gap: 3px;
+  width: min(10%, 40px);
+  height: 32px;
+  min-height: 0;
+  padding: 1px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px;
   transform: translateX(-50%);
   line-height: 1.1;
 }
-.proficiency-stops span::before { content: ""; width: 1px; height: 4px; background: currentColor; }
-.proficiency-stops .is-snapped { color: var(--accent); font-weight: 700; }
+.proficiency-stops button::before { content: ""; width: 1px; height: 4px; background: currentColor; }
+.proficiency-stops button[aria-current], .proficiency-stops .is-snapped { background: var(--raised); font-weight: 700; }
 .costume { text-align: end; font-size: 13px; color: var(--muted); }
 .track-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
 .track-title { font-size: 13px; font-weight: 700; }
