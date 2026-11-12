@@ -1,6 +1,6 @@
 import {createStore} from '../../shared/roadmap-store.js';
 import '../../shared/merge-core.js';
-import {createModel, gameId, isChecked, planImport, skillKey, wallpaperLevels, weaponLevels} from './model.js';
+import {createModel, gameId, isChecked, planImport, skillKey, wallpaperLevels, weaponLevels} from './model.js?v=20261112-progress';
 
 const core = window.SideProjectSync;
 const $ = id => document.getElementById(id);
@@ -56,15 +56,16 @@ function renderStats() {
   const count = model.summarize(progress);
   const roster = catalog.characters.length;
   const normalRoster = catalog.characters.filter(row => !row.special).length;
-  const stat = (label, value, suffix = '') => '<div><span>' + label + '</span><strong>' + value + '</strong>' +
-    (suffix ? '<small>' + suffix + '</small>' : '') + '</div>';
+  const stat = (label, value, total, description = label) =>
+    '<div><span>' + label + '</span><strong>' + value + ' / ' + total + '</strong>' +
+    '<progress aria-label="' + description + '" value="' + value + '" max="' + total + '"></progress></div>';
   $('stats').innerHTML = [
-    ...count.weaponCounts.map((value, i) => stat('Lv.' + (i + 2) + ' 武器', value + ' / ' + roster, percent(value, roster))),
-    stat('武器合計', count.weapons + ' / ' + roster * weaponLevels.length),
-    stat('一般武將壁紙', count.wallpaper + ' / ' + normalRoster * 8, '依紀錄推算'),
-    stat('武將特技', count.skills + ' / ' + catalog.characterSkills.length),
-    stat('激難通關', count.stages + ' / ' + catalog.stages.length),
-    stat('鍊成素材', count.materials + ' / ' + catalog.materials.length)
+    ...count.weaponCounts.map((value, i) => stat('Lv.' + (i + 2) + ' 武器', value, roster)),
+    stat('武器合計', count.weapons, roster * weaponLevels.length),
+    stat('一般武將壁紙', count.wallpaper, normalRoster * 8, '一般武將壁紙（以全武將已取得推算）'),
+    stat('武將特技', count.skills, catalog.characterSkills.length),
+    stat('激難通關', count.stages, catalog.stages.length),
+    stat('鍊成素材', count.materials, catalog.materials.length)
   ].join('');
 }
 
@@ -107,8 +108,8 @@ function characterRow(character) {
     (skills.length ? '<button class="bulk" type="button" data-bulk="skills" data-id="' + id + '"></button></div><div class="chips">' +
       skills.map(skill => checkbox('learnedCharacterSkills', skillKey(id, skill.id), skill.nameZh, 'chip')).join('') +
       '</div>' : '</div><span class="muted">無可習得特技</span>') +
-    '</div><div class="wallpaper">' + (special ? '<span>無一般武將壁紙</span>' :
-      checkbox('unlockedCharacters', id, '已可操作') + '<span class="wallpaper-count"></span>') + '</div></div></details>';
+    '</div><div class="wallpaper">' + (special ? '無一般武將壁紙' :
+      '<span class="wallpaper-count"></span>') + '</div></div></details>';
 }
 
 function stageTile(stage) {
@@ -120,7 +121,7 @@ function stageTile(stage) {
       'aria-label="' + name + ' ' + esc(stageLabel(stage)) + ' 激難已通關"') +
     '<span class="stage-face"><small>' + esc(chapter) + '</small><strong>' + name + '</strong></span></label>' +
     '<button class="stage-info" type="button" data-stage="' + id + '" aria-label="' + name + ' ' + esc(stageLabel(stage)) +
-      (evidenceNote ? ' 詳情（待查）' : ' 詳情') + '" title="查看詳情">⋯' +
+      (evidenceNote ? ' 開啟條件（待查）' : ' 開啟條件') + '">條件' +
       (evidenceNote ? '<span class="pending-dot" aria-hidden="true"></span>' : '') + '</button></article>';
 }
 
@@ -166,17 +167,17 @@ function skillRow(skill) {
     '</strong><span class="skill-count"></span></summary><div class="skill-missing"></div></details>';
 }
 
-function groupRows(items, key, row) {
-  const groups = Map.groupBy(items, key);
-  return [...groups].map(([label, rows]) => '<section class="listing"><h3>' + esc(label) + '</h3><div class="card-grid">' +
-    rows.map(row).join('') + '</div></section>').join('');
+function characterGroups() {
+  const groups = Map.groupBy(catalog.characters, character => character.faction);
+  return [...groups].map(([label, rows]) => '<section class="listing"><h3>' + esc(label) + '</h3><div class="card-grid character-grid">' +
+    rows.map(characterRow).join('') + '</div></section>').join('');
 }
 
 function sourceView() {
   return '<div class="source-content"><h3>記錄與推算</h3>' +
     '<p>武器記錄 Lv.2、Lv.3、Lv.4，初始 Lv.1 免記。一般武將初始兩套服裝，熟練度 10 與 20 分別解鎖第 3、4 套。' +
     '真・遠呂智、百百目鬼、牛鬼沒有額外服裝。PS3 獎盃攻略仍列三人熟練度需達 20，因此「服裝未達標」保留這項門檻。</p>' +
-    '<p>一般武將需勾選「已可操作」才納入壁紙推算。可操作時先計 1 張，全特技再計 1 張，熟練度達 ' + wallpaperLevels.join('、') +
+    '<p>壁紙以全武將已取得推算。一般武將先計 1 張，全特技再計 1 張，熟練度達 ' + wallpaperLevels.join('、') +
     ' 各計 1 張。特殊三人沒有一般壁紙。</p>' +
     '<p>故事模式全通、戲劇模式全通各有一張特殊壁紙。兩模式全部劇本在所有難度通關另有一張。本站只記激難，特殊壁紙另以遊戲為準。</p>' +
     '<p>開啟條件依《Z》攻略整理，分歧逐關標「待查」。素材勾選只計收集。PS3 版獎盃觸發、更新版本行為與繁中選單用字仍待實機確認。</p>' +
@@ -194,7 +195,7 @@ function render() {
     else link.removeAttribute('aria-current');
   }
   const content = {
-    characters: () => groupRows(catalog.characters, row => row.faction, characterRow),
+    characters: characterGroups,
     stages: () => '<p class="route-hint"><span class="legend-box"></span> 未記錄 <span class="legend-box filled"></span> 激難已通關</p>' +
       stageRoutes(),
     skills: () => '<div class="skill-grid">' + catalog.skills.map(skillRow).join('') + '</div>',
@@ -246,7 +247,7 @@ function refreshCharacter(row) {
     row.querySelector('.costume').textContent = costumeText(character, status.proficiency);
   }
   const wallpaper = row.querySelector('.wallpaper-count');
-  if (wallpaper) wallpaper.textContent = status.unlocked ? '壁紙 ' + status.wallpaper + ' / 8' : '壁紙待確認';
+  if (wallpaper) wallpaper.textContent = '壁紙 ' + status.wallpaper + ' / 8';
   for (const button of row.querySelectorAll('[data-bulk]')) {
     const weapons = button.dataset.bulk === 'weapons';
     const all = weapons ? status.weapons === weaponLevels.length : status.learned === status.assigned.length;

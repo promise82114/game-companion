@@ -50,11 +50,13 @@ const upload = async (p, data) => {
   const buffer = Buffer.from(typeof data === 'string' ? data : JSON.stringify(data));
   await p.locator('#import-file').setInputFiles({name: 'synthetic.json', mimeType: 'application/json', buffer});
 };
-const stat = (p, label) => p.locator('#stats > div').filter({has: p.getByText(label, {exact: true})}).locator('strong');
+const stat = (p, label) => p.locator('#stats > div').filter({has: p.getByText(label, {exact: true})});
 const expectStat = async (p, label, value) => {
   await p.waitForFunction(({label, value}) => [...document.querySelectorAll('#stats > div')].some(row =>
     row.querySelector('span').textContent === label && row.querySelector('strong').textContent === value), {label, value});
-  assert.equal(await stat(p, label).textContent(), value);
+  const item = stat(p, label);
+  assert.equal(await item.locator('strong').textContent(), value);
+  assert.deepEqual(await item.getByRole('progressbar').evaluate(el => [el.value, el.max]), value.split(' / ').map(Number));
 };
 const filter = (p, key) => p.locator('[data-filter="' + key + '"]');
 
@@ -67,8 +69,11 @@ try {
   assert.equal(await page.locator('.character').count(), 96);
   assert.equal(await page.locator('[data-level]').count(), 288);
   assert.equal(await page.locator('[data-group="learnedCharacterSkills"]').count(), 325);
-  await expectStat(page, '一般武將壁紙', '0 / 744');
+  await expectStat(page, '一般武將壁紙', '93 / 744');
+  assert.equal(await page.locator('.character-grid').first().evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 2);
+  assert.equal(await page.locator('[data-group="unlockedCharacters"]').count(), 0);
   const pristine = await state(page);
+  assert.deepEqual(pristine.unlockedCharacters, {});
 
   await page.evaluate(() => new Promise((resolve, reject) => {
     localStorage.setItem('game-companion.ball-x-pit.synthetic', 'keep');
@@ -98,7 +103,7 @@ try {
   assert.match(await character.locator('.costume').textContent(), /4 套/);
   await number.press('Tab');
   assert.equal((await state(page)).proficiencyByCharacter['char-01'], 20);
-  await expectStat(page, '一般武將壁紙', '0 / 744');
+  await expectStat(page, '一般武將壁紙', '93 / 744');
   await slider.press('ArrowLeft');
   assert.equal((await state(page)).proficiencyByCharacter['char-01'], 19);
   assert.equal(await number.inputValue(), '19');
@@ -148,11 +153,11 @@ try {
   await expectStat(page, '武將特技', '0 / 325');
   await page.locator('#undo').click();
   await expectStat(page, '武將特技', '4 / 325');
-  await character.getByRole('checkbox', {name: '趙雲 已可操作'}).check();
-  await expectStat(page, '一般武將壁紙', '2 / 744');
+  await expectStat(page, '一般武將壁紙', '94 / 744');
+  assert.deepEqual((await state(page)).unlockedCharacters, {});
   await number.fill('50');
   await number.press('Tab');
-  await expectStat(page, '一般武將壁紙', '8 / 744');
+  await expectStat(page, '一般武將壁紙', '100 / 744');
   await page.waitForFunction(() => !document.querySelector('#char-01').open);
   await character.locator('summary').click();
   await character.getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).uncheck();
@@ -170,10 +175,13 @@ try {
   assert.equal(await page.locator('.record:visible').count(), 40);
   await filter(page, 'query').fill('古志城');
   const finalStage = page.locator('#stage-drama-40');
-  await finalStage.locator('button').click();
+  const condition = finalStage.getByRole('button', {name: /開啟條件/});
+  assert.equal(await condition.innerText(), '條件');
+  await condition.click();
   await waitText(page.locator('#stage-dialog .pending'), '待查');
   assert.equal(await page.locator('#stage-dialog a[href^="https:"]').count(), 0);
   await page.locator('#stage-dialog').press('Escape');
+  assert.equal(await finalStage.getByRole('checkbox').isChecked(), false);
   const stageFace = finalStage.locator('.stage-face');
   const stageOutline = await stageFace.evaluate(el => getComputedStyle(el).backgroundColor);
   await finalStage.getByRole('checkbox').check();
@@ -345,6 +353,7 @@ try {
     assert.ok(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), tab);
   }
   await go(phone, '#characters');
+  assert.equal(await phone.locator('.character-grid').first().evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 1);
   await phone.locator('#char-01').getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).tap();
   await expectStat(phone, '武器合計', '1 / 288');
   assert.equal((await state(page)).weaponsByCharacter['char-01'].lv2, false);

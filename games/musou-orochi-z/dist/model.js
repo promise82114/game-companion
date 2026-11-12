@@ -78,11 +78,11 @@ export function createModel(catalog) {
     const learned = assigned.filter(skill => isChecked(progress.learnedCharacterSkills, skillKey(id, skill.id))).length;
     const weapons = weaponLevels.filter(level => isChecked(progress.weaponsByCharacter[id] ?? {}, level)).length;
     const costumes = proficiency >= 20;
-    const unlocked = isChecked(progress.unlockedCharacters, id);
-    const wallpaper = special || !unlocked ? 0 :
+    // 以全武將已取得推算。舊版可操作紀錄仍保留在備份格式。
+    const wallpaper = special ? 0 :
       1 + Number(learned === assigned.length) + wallpaperLevels.filter(level => proficiency >= level).length;
     return {
-      proficiency, assigned, learned, weapons, costumes, unlocked, wallpaper,
+      proficiency, assigned, learned, weapons, costumes, wallpaper,
       complete: costumes && weapons === weaponLevels.length && learned === assigned.length &&
         (special || wallpaper === 8)
     };
