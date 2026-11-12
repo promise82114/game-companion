@@ -127,7 +127,7 @@ nav a[aria-current] { color: var(--text); border-color: var(--accent); font-weig
   align-items: start;
   gap: 14px;
 }
-.character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.character-grid { grid-template-columns: minmax(0, 1fr); }
 .card {
   min-width: 0;
   border: 1px solid var(--border);
@@ -151,11 +151,71 @@ summary { cursor: pointer; }
 .character[open] > summary::after, .material details[open] summary::after { content: '▴'; }
 .character summary::-webkit-details-marker, .material summary::-webkit-details-marker { display: none; }
 .row-meta { color: var(--muted); font-size: 13px; margin-inline-start: auto; }
-.character-controls { display: grid; gap: 12px; padding: 12px 14px; }
+.character-controls {
+  display: grid;
+  grid-template-columns: minmax(230px, 1fr) minmax(150px, .65fr) minmax(220px, 1.1fr);
+  align-items: start;
+  gap: 12px 18px;
+  padding: 12px 14px;
+}
 .training { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2px 8px; }
 .training label { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 650; }
 .training input[type="number"] { width: 52px; min-height: 32px; padding-inline: 5px; }
-.training input[type="range"] { grid-column: 1 / -1; height: 26px; margin: 0; }
+.proficiency-scale {
+  --proficiency-thumb: 16px;
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.proficiency-track { cursor: pointer; touch-action: pan-y; }
+.proficiency-scale input {
+  appearance: none;
+  display: block;
+  height: 28px;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+}
+.proficiency-scale input::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(var(--accent), var(--accent)) left / var(--proficiency-progress, 0%) 100% no-repeat var(--border);
+}
+.proficiency-scale input::-moz-range-track { height: 5px; border-radius: 3px; background: var(--border); }
+.proficiency-scale input::-moz-range-progress { height: 5px; border-radius: 3px; background: var(--accent); }
+.proficiency-scale input::-webkit-slider-thumb {
+  appearance: none;
+  width: var(--proficiency-thumb);
+  height: var(--proficiency-thumb);
+  margin-top: -5.5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.proficiency-scale input::-moz-range-thumb {
+  width: var(--proficiency-thumb);
+  height: var(--proficiency-thumb);
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.proficiency-stops {
+  position: relative;
+  height: 21px;
+  margin-inline: calc(var(--proficiency-thumb) / 2);
+  color: var(--muted);
+  font-size: 11px;
+  pointer-events: none;
+}
+.proficiency-stops span {
+  position: absolute;
+  left: var(--stop);
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  transform: translateX(-50%);
+  line-height: 1.1;
+}
+.proficiency-stops span::before { content: ""; width: 1px; height: 4px; background: currentColor; }
+.proficiency-stops .is-snapped { color: var(--accent); font-weight: 700; }
 .costume { text-align: end; font-size: 13px; color: var(--muted); }
 .track-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
 .track-title { font-size: 13px; font-weight: 700; }
@@ -194,7 +254,7 @@ summary { cursor: pointer; }
   outline-offset: 2px;
 }
 .bulk { color: var(--accent); font-size: 13px; min-height: 30px; padding: 2px 7px; }
-.wallpaper { padding-top: 8px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+.wallpaper { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
 
 .route-hint { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; }
 .legend-box { width: 13px; height: 13px; border: 1px solid var(--control); border-radius: 3px; }
@@ -333,12 +393,14 @@ dialog input[type="file"] { max-width: 100%; }
 @media (max-width: 800px) {
   .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .view-header { flex-wrap: wrap; }
+  .character-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .training { grid-column: 1 / -1; }
 }
 @media (max-width: 600px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 6px; margin-bottom: 16px; }
   .stats > div { gap: 2px 5px; padding: 3px 7px 4px; }
   .stats progress { height: 3px; }
-  .character-grid { grid-template-columns: minmax(0, 1fr); }
+  .character-controls { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 510px) {
   :root { --gap: 11px; }

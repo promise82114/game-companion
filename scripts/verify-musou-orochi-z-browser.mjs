@@ -70,7 +70,7 @@ try {
   assert.equal(await page.locator('[data-level]').count(), 288);
   assert.equal(await page.locator('[data-group="learnedCharacterSkills"]').count(), 325);
   await expectStat(page, '一般武將壁紙', '93 / 744');
-  assert.equal(await page.locator('.character-grid').first().evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 2);
+  assert.equal(await page.locator('.character-grid').first().evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length), 1);
   assert.equal(await page.locator('[data-group="unlockedCharacters"]').count(), 0);
   const pristine = await state(page);
   assert.deepEqual(pristine.unlockedCharacters, {});
@@ -94,6 +94,13 @@ try {
   const character = page.locator('#char-01');
   const number = character.locator('input[type=number]');
   const slider = character.locator('input[type=range]');
+  assert.deepEqual(await character.locator('[data-stop]').allTextContents(), ['10', '20', '25', '30', '35', '40', '45', '50']);
+  assert.deepEqual(await page.getByRole('checkbox', {name: /真・遠呂智 Lv.2 武器/}).locator('xpath=ancestor::details[1]')
+    .locator('[data-stop]').allTextContents(), ['20']);
+  const [training, weapons, skills] = await character.locator('.character-controls > div').evaluateAll(elements =>
+    elements.map(element => ({x: element.getBoundingClientRect().left, y: element.getBoundingClientRect().top})));
+  assert.ok(training.x < weapons.x && weapons.x < skills.x);
+  assert.equal(training.y, weapons.y);
   assert.equal(await number.inputValue(), '0');
   assert.equal(await slider.inputValue(), '0');
   assert.equal((await state(page)).proficiencyByCharacter['char-01'], undefined);
@@ -114,6 +121,30 @@ try {
   await number.press('Tab');
   await waitText(page.locator('#message'), '0–50');
   assert.equal(await number.inputValue(), '19');
+
+  await slider.scrollIntoViewIfNeeded();
+  const bounds = await slider.boundingBox();
+  const radius = await slider.evaluate(el => parseFloat(getComputedStyle(el).getPropertyValue('--proficiency-thumb')) / 2);
+  const x = value => bounds.x + radius + (bounds.width - radius * 2) * value / 50;
+  const y = bounds.y + bounds.height / 2;
+  await page.mouse.move(x(19), y);
+  await page.mouse.down();
+  await page.mouse.move(x(24.2), y);
+  assert.equal(await slider.inputValue(), '25');
+  assert.equal(await number.inputValue(), '25');
+  assert.equal(await character.locator('.is-snapped').textContent(), '25');
+  await page.mouse.move(x(26.6), y);
+  assert.equal(await slider.inputValue(), '25');
+  await page.mouse.move(x(27.7), y);
+  assert.equal(await slider.inputValue(), '28');
+  await page.mouse.move(x(24.2), y);
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], 19);
+  await page.mouse.up();
+  await expectStat(page, '一般武將壁紙', '94 / 744');
+  assert.equal((await state(page)).proficiencyByCharacter['char-01'], 25);
+  await slider.press('ArrowLeft');
+  await expectStat(page, '一般武將壁紙', '93 / 744');
+  assert.equal(await number.inputValue(), '24');
 
   const weaponBulk = character.locator('[data-bulk=weapons]');
   const skillBulk = character.locator('[data-bulk=skills]');
@@ -357,6 +388,22 @@ try {
   await phone.locator('#char-01').getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).tap();
   await expectStat(phone, '武器合計', '1 / 288');
   assert.equal((await state(page)).weaponsByCharacter['char-01'].lv2, false);
+  const phoneSlider = phone.locator('#char-01 input[type=range]');
+  const phoneTrack = phone.locator('#char-01 .proficiency-track');
+  await phoneTrack.scrollIntoViewIfNeeded();
+  const touchBounds = await phoneTrack.boundingBox();
+  const touchX = value => 8 + (touchBounds.width - 16) * value / 50;
+  const touchY = touchBounds.height / 2;
+  await phoneTrack.tap({position: {x: touchX(19.55), y: touchY}});
+  assert.equal(await phoneSlider.inputValue(), '20');
+  const touch = await mobile.newCDPSession(phone);
+  const touchPoint = value => [{x: touchBounds.x + touchX(value), y: touchBounds.y + touchY}];
+  await touch.send('Input.dispatchTouchEvent', {type: 'touchStart', touchPoints: touchPoint(20)});
+  await touch.send('Input.dispatchTouchEvent', {type: 'touchMove', touchPoints: touchPoint(24.5)});
+  assert.equal(await phoneSlider.inputValue(), '25');
+  await touch.send('Input.dispatchTouchEvent', {type: 'touchEnd', touchPoints: []});
+  await expectStat(phone, '一般武將壁紙', '94 / 744');
+  assert.equal((await state(phone)).proficiencyByCharacter['char-01'], 25);
   if (screenshots) {
     await phone.evaluate(() => window.scrollTo(0, 0));
     await phone.screenshot({path: screenshots + '/mobile.png'});

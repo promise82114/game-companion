@@ -10,6 +10,9 @@ const modes = {original: '原版', rebirth: '再臨', drama: '戲劇模式'};
 const factions = ['蜀', '魏', '吳', '戰國', '遠呂智'];
 const filters = {};
 const openedCharacters = new Map();
+const normalProficiencyStops = [10, 20, ...wallpaperLevels];
+const specialProficiencyStops = [20];
+const proficiencyStops = character => character.special ? specialProficiencyStops : normalProficiencyStops;
 const esc = text => String(text).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const normalize = value => String(value).normalize('NFKC').trim().toLocaleLowerCase('zh-Hant');
 const matches = (query, ...values) => values.some(value => normalize(value).includes(query));
@@ -33,6 +36,7 @@ let catalog, model, store, progress, materialsByStage, references, view, review,
 let busy = false;
 let ready = false;
 let saving = Promise.resolve();
+let proficiencyDrag;
 
 function report(message) {
   $('notice').hidden = false;
@@ -94,12 +98,16 @@ function characterRow(character) {
   const skills = model.skillsByCharacter.get(id);
   const status = model.characterStatus(progress, character);
   const open = openedCharacters.get(id) ?? !status.complete;
+  const ticks = proficiencyStops(character).map(stop =>
+    '<span data-stop="' + stop + '" style="--stop:' + stop * 2 + '%">' + stop + '</span>').join('');
   const checkbox = (group, key, label, style) => check(group, key, label, 'aria-label="' + name + ' ' + esc(label) + '"', style);
   return '<details class="character card" data-row="' + id + '" id="' + id + '"' + (open ? ' open' : '') + '>' +
     '<summary><strong>' + name + '</strong><span class="row-meta"></span></summary><div class="character-controls">' +
     '<div class="training"><label>熟練度 <input type="number" min="0" max="50" step="1" inputmode="numeric"' +
     ' aria-label="' + name + ' 熟練度" data-prof="' + id + '"></label><span class="costume"></span>' +
-    '<input type="range" min="0" max="50" step="1" aria-label="' + name + ' 熟練度滑桿" data-prof="' + id + '">' +
+    '<div class="proficiency-scale"><div class="proficiency-track"><input type="range" min="0" max="50" step="1" aria-label="' +
+    name + ' 熟練度滑桿" data-prof="' + id + '"></div><div class="proficiency-stops" aria-hidden="true">' + ticks + '</div></div>' +
+    '<div class="wallpaper">' + (special ? '無一般武將壁紙' : '<span class="wallpaper-count"></span>') + '</div>' +
     '</div><div class="track-group"><div class="track-head"><span class="track-title">武器</span>' +
     '<button class="bulk" type="button" data-bulk="weapons" data-id="' + id + '"></button></div><div class="chips weapon-chips">' +
     weaponLevels.map((level, i) => check('weaponsByCharacter', id, 'Lv.' + (i + 2),
@@ -108,8 +116,7 @@ function characterRow(character) {
     (skills.length ? '<button class="bulk" type="button" data-bulk="skills" data-id="' + id + '"></button></div><div class="chips">' +
       skills.map(skill => checkbox('learnedCharacterSkills', skillKey(id, skill.id), skill.nameZh, 'chip')).join('') +
       '</div>' : '</div><span class="muted">無可習得特技</span>') +
-    '</div><div class="wallpaper">' + (special ? '無一般武將壁紙' :
-      '<span class="wallpaper-count"></span>') + '</div></div></details>';
+    '</div></div></details>';
 }
 
 function stageTile(stage) {
@@ -186,6 +193,7 @@ function sourceView() {
 
 function render() {
   if (!ready) return;
+  if (proficiencyDrag) finishProficiencyDrag(false);
   if ($('stage-dialog').open) $('stage-dialog').close();
   const [nextView, target] = route();
   view = nextView;
@@ -244,6 +252,7 @@ function refreshCharacter(row) {
     for (const input of row.querySelectorAll('[data-prof]')) {
       input.value = status.proficiency ?? 0;
     }
+    row.querySelector('.proficiency-scale').style.setProperty('--proficiency-progress', (status.proficiency ?? 0) * 2 + '%');
     row.querySelector('.costume').textContent = costumeText(character, status.proficiency);
   }
   const wallpaper = row.querySelector('.wallpaper-count');
@@ -359,6 +368,67 @@ workspace.addEventListener('toggle', event => {
   if (row.matches('.character')) openedCharacters.set(row.id, row.open);
 }, true);
 
+function previewProficiencyDrag(clientX) {
+  const drag = proficiencyDrag;
+  const position = Math.max(0, Math.min(50, (clientX - drag.start - drag.offset) * 50 / drag.width));
+  const previousStop = drag.stop;
+  // 進入與離開門檻使用不同距離，慢慢拖過刻度時可穩定停住。
+  drag.stop = previousStop !== undefined && Math.abs(position - previousStop) < 2
+    ? previousStop : drag.stops.find(stop => Math.abs(position - stop) <= 1.25);
+  if (previousStop !== drag.stop) {
+    const scale = drag.track.parentElement;
+    scale.querySelector('.is-snapped')?.classList.remove('is-snapped');
+    scale.querySelector('[data-stop="' + drag.stop + '"]')?.classList.add('is-snapped');
+  }
+  const value = drag.stop ?? Math.round(position);
+  if (value === drag.input.valueAsNumber) return;
+  drag.input.value = value;
+  drag.input.dispatchEvent(new Event('input', {bubbles: true}));
+}
+
+function finishProficiencyDrag(save) {
+  const {input, track, pointerId, initialValue} = proficiencyDrag;
+  proficiencyDrag = undefined;
+  track.parentElement.querySelector('.is-snapped')?.classList.remove('is-snapped');
+  if (track.hasPointerCapture(pointerId)) track.releasePointerCapture(pointerId);
+  if (save && input.value !== initialValue) {
+    input.dispatchEvent(new Event('change', {bubbles: true}));
+  } else {
+    delete input.dataset.editing;
+    refreshCharacter(input.closest('.character'));
+  }
+}
+
+workspace.addEventListener('pointerdown', event => {
+  const track = event.target.closest('.proficiency-track');
+  if (proficiencyDrag || !event.isPrimary || event.button !== 0 || !track) return;
+  event.preventDefault();
+  const input = track.querySelector('input');
+  input.focus({preventScroll: true});
+  const bounds = input.getBoundingClientRect();
+  const radius = parseFloat(getComputedStyle(input).getPropertyValue('--proficiency-thumb')) / 2;
+  const width = bounds.width - radius * 2;
+  const start = bounds.left + radius;
+  const offset = event.clientX - (start + input.valueAsNumber * width / 50);
+  const onThumb = Math.abs(offset) <= radius;
+  proficiencyDrag = {
+    input, track, pointerId: event.pointerId, initialValue: input.value, start, width,
+    offset: onThumb ? offset : 0, stops: proficiencyStops(model.characters.get(input.dataset.prof))
+  };
+  track.setPointerCapture(event.pointerId);
+  if (!onThumb) previewProficiencyDrag(event.clientX);
+});
+
+workspace.addEventListener('pointermove', event => {
+  if (proficiencyDrag?.pointerId === event.pointerId) previewProficiencyDrag(event.clientX);
+});
+
+for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+  workspace.addEventListener(type, event => {
+    if (proficiencyDrag?.pointerId === event.pointerId) finishProficiencyDrag(type === 'pointerup');
+  });
+}
+
 workspace.addEventListener('input', event => {
   const input = event.target;
   if (input.dataset.filter) {
@@ -380,6 +450,7 @@ workspace.addEventListener('input', event => {
   if (!input.validity.valid || !Number.isFinite(value)) return;
   const row = $(id);
   row.querySelector(input.type === 'range' ? 'input[type="number"]' : 'input[type="range"]').value = value;
+  row.querySelector('.proficiency-scale').style.setProperty('--proficiency-progress', value * 2 + '%');
   row.querySelector('.costume').textContent = costumeText(model.characters.get(id), value);
 });
 
