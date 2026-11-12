@@ -171,7 +171,10 @@ summary { cursor: pointer; }
 .material summary::after { margin-inline-start: auto; }
 .character[open] > summary::after, .material details[open] summary::after { content: '▴'; }
 .character summary::-webkit-details-marker, .material summary::-webkit-details-marker { display: none; }
-.row-meta { color: var(--muted); font-size: 13px; margin-inline-start: auto; }
+.character-heading { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+.row-meta, .wallpaper-count { color: var(--muted); font-size: 13px; }
+.row-meta { margin-inline-start: auto; }
+.wallpaper-count { white-space: nowrap; }
 .character-controls {
   display: grid;
   grid-template-columns: minmax(230px, 1fr) minmax(150px, .65fr) minmax(220px, 1.1fr);
@@ -281,7 +284,6 @@ summary { cursor: pointer; }
   outline-offset: 2px;
 }
 .bulk { color: var(--accent); font-size: 13px; min-height: 30px; padding: 2px 7px; }
-.wallpaper { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
 
 .route-hint { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; }
 .legend-box { width: 13px; height: 13px; border: 1px solid var(--control); border-radius: 3px; }

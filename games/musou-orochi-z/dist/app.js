@@ -107,12 +107,13 @@ function characterRow(character) {
     '%" aria-label="' + name + ' 熟練度 ' + stop + '">' + stop + '</button>').join('');
   const checkbox = (group, key, label, style) => check(group, key, label, 'aria-label="' + name + ' ' + esc(label) + '"', style);
   return '<details class="character card" data-row="' + id + '" id="' + id + '"' + (open ? ' open' : '') + '>' +
-    '<summary><strong>' + name + '</strong><span class="row-meta"></span></summary><div class="character-controls">' +
+    '<summary><span class="character-heading"><strong>' + name + '</strong>' +
+    (special ? '' : '<span class="wallpaper-count"></span>') +
+    '</span><span class="row-meta"></span></summary><div class="character-controls">' +
     '<div class="training"><label>熟練度 <input type="number" min="0" max="50" step="1" inputmode="numeric"' +
     ' aria-label="' + name + ' 熟練度" data-prof="' + id + '"></label><span class="costume"></span>' +
     '<div class="proficiency-scale"><div class="proficiency-track"><input type="range" min="0" max="50" step="1" aria-label="' +
     name + ' 熟練度滑桿" data-prof="' + id + '"></div><div class="proficiency-stops">' + ticks + '</div></div>' +
-    '<div class="wallpaper">' + (special ? '無一般武將壁紙' : '<span class="wallpaper-count"></span>') + '</div>' +
     '</div><div class="track-group"><div class="track-head"><span class="track-title">武器</span>' +
     '<button class="bulk" type="button" data-bulk="weapons" data-id="' + id + '"></button></div><div class="chips weapon-chips">' +
     weaponLevels.map((level, i) => check('weaponsByCharacter', id, 'Lv.' + (i + 2),

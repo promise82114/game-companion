@@ -99,6 +99,8 @@ try {
   const character = page.locator('#char-01');
   const number = character.locator('input[type=number]');
   const slider = character.locator('input[type=range]');
+  const wallpaperCount = character.locator('summary .character-heading .wallpaper-count');
+  assert.equal(await wallpaperCount.textContent(), '壁紙 1 / 8');
   assert.deepEqual(await character.locator('[data-stop]').allTextContents(), ['10', '20', '25', '30', '35', '40', '45', '50']);
   assert.deepEqual(await page.getByRole('checkbox', {name: /真・遠呂智 Lv.2 武器/}).locator('xpath=ancestor::details[1]')
     .locator('[data-stop]').allTextContents(), ['20']);
@@ -200,6 +202,8 @@ try {
   await number.press('Tab');
   await expectStat(page, '一般武將壁紙', '100 / 744');
   await page.waitForFunction(() => !document.querySelector('#char-01').open);
+  assert.ok(await wallpaperCount.isVisible());
+  assert.equal(await wallpaperCount.textContent(), '壁紙 8 / 8');
   await character.locator('summary').click();
   await character.getByRole('checkbox', {name: '趙雲 Lv.2 武器'}).uncheck();
   await expectStat(page, '武器合計', '2 / 288');
