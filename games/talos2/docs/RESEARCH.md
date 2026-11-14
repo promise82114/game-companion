@@ -4,6 +4,14 @@
 
 ## 已取得證據
 
+### 2026-11-14 最終登機後的入口光線交換
+
+玩家回報站內步驟與來源圖文的順序不同。入口原本把操作濃縮為兩步，缺少蓄能器接反相器充藍、換壓板、反相器從 A 門附近跨紫屏接 C 門紅接收器的細節。同時列出的 Gamepressure 在反相器壓著紅板時先進內室拆線，約 01:05–01:28 反轉交換器並換壓，約 01:34–01:37 才接 C 門紅燈。Mystery Manor 截圖 3405–3417 顯示先把充藍的蓄能器換上壓板，接 C 門紅燈，才清空內室紅線並反轉交換器。已核對兩邊的遊戲畫面，站內入口選用 Mystery Manor 的順序並逐步說明兩端交換器與三道門。[採用的圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm) · [另一條路線的實際影片](https://www.youtube.com/watch?v=6BBW_fV6VAY&t=65s)
+
+後續八輪盤也沿同一圖文的 U1 → D1 → D2 → D3 → D4 → U2 → U3 → U4。補上 Utopia 第一輪盤後留鑽孔器壓板、Dystopia 第二輪盤的窄紫屏傳送點，以及第二輪盤通往後段重力柱的走法。Gamepressure 先回 Utopia 解第二輪盤，改變了中途蓄能器與交換器狀態，已從這組站內解法的連結移除。PS5 實機未重現。
+
+Talos 與全站資料驗證、建置及產物檢查通過。隔離 Edge 的 1440px 桌面與 390px 觸控手機均驗證入口直達、劇透開關、七步呈現順序、同一來源、八輪盤排列與完成後收合／重開。
+
 ### 2026-11-14 W3 與十二區遺失謎題配對覆核
 
 W3 兩個座標反置。L1 **Alternator** 在圖左側，從 7 號外走崖邊支路，經方尖碑後下到圓形遺跡。L2 **Hexahedral Stacking** 在圖上方，從 5 號往 6 號途中下完大階梯後右轉。原圖文作者按遊玩順序把 Hexahedral Stacking 稱為第一個、Alternator 稱為第二個。本站的 L1／L2 對應題目的 Δ1／Δ2。已補上各題的入口描述和定位。[Alternator 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_3/west_3_3.htm) · [Hexahedral Stacking 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_2/west_3_2.htm) · [Δ1](https://taloswiki.org/wiki/Alternator) · [Δ2](https://taloswiki.org/wiki/Hexahedral_Stacking)

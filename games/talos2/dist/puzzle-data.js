@@ -4644,21 +4644,23 @@ export const puzzles=[
     "stepId": "ending",
     "title": "入口 · 光線交換",
     "actions": [
-      "反相器壓板開門。內房連接器送紅光到牆上交換裝置；回外房用反相器接另一端紅光，輸出藍光開蓄能器房。",
-      "蓄能器充藍後換壓板，反相器接它並輸出紅光到終點。內房連接器斷線，再讓外房藍蓄能器照交換裝置；內房連接器把交換來的藍光送終點。"
+      "先認門。外室右手邊關著蓄能器的是 A 門，紫屏後的通道是 B 門，最裡面兩側有紅、藍接收器的是出口 C 門。把反相器放上外室的紅色壓板，空手穿紫屏與 B 門進內室。",
+      "拿內室的連接器，選內室紅光源與柵欄內側的交換器（圖文 em/re-2）後放下。紅光會從柵欄外側的交換器（em/re-1）射出。",
+      "沿原路回外室，把反相器從壓板拿起，選外側交換器與 A 門旁的藍接收器，放下後 A 門會打開。取出蓄能器，選反相器並放下，確認蓄能器已亮藍。",
+      "清掉反相器的舊連線，先放在壓板旁。把充藍的蓄能器搬上紅色壓板，重新打開 B 門。",
+      "拿反相器站在 A 門附近、面朝紫屏，找一個同時看得到壓板上蓄能器和 C 門紅接收器的位置。選藍蓄能器與 C 門紅接收器，把反相器放在外室。確認紅光能穿過紫屏與 B 門，照到 C 門旁。",
+      "空手穿紫屏與 B 門，拿起內室連接器並清除舊連線，原地放下。回外室，保留連線拿起藍蓄能器，加選外側交換器，再把蓄能器放回同一塊紅色壓板。確認外側交換器吃進藍光，反相器也仍往 C 門送紅光。",
+      "再進內室，拿連接器選已改為射藍光的內側交換器和 C 門旁的藍接收器，放下。等 C 門的紅、藍接收器同時亮起後穿門。"
     ],
     "sources": [
       {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
-      {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
+        "title": "Mystery Manor · 同順序圖文（A／B／C 門）",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
     ],
     "verificationStatus": "consensus",
-    "checkedAt": "2026-11-08"
+    "checkedAt": "2026-11-14",
+    "researchNote": "依 Mystery Manor 的 A／B／C 門標記及遊戲截圖 3405–3417 核對。舊摘要省略換壓與隔紫屏的站位，同時連到反轉交換器時機不同的 Gamepressure 圖文。"
   },
   {
     "id": "FINAL-u1",
@@ -4669,14 +4671,10 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Utopia · 第一個輪盤",
     "actions": [
-      "先去 Dystopia，用連接器送藍光給牆上交換裝置。",
-      "回 Utopia，用反相器把交換來的藍光變紅，開門；鑽孔器壓板維持門，啟動輪盤。"
+      "穿過入口 C 門後，到分岔走右側的 Dystopia。拿入口附近的連接器，選紫屏旁的藍光源與牆上交換器。",
+      "回分岔走左側的 Utopia。拿花圃裡的反相器，接牆上交換器射來的藍光與門旁紅接收器。進門把藍光源旁的鑽孔器移上紅色壓板，再啟動輪盤。離開時讓鑽孔器留在板上，下一步會拆掉這扇門的紅光。"
     ],
     "sources": [
-      {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
@@ -4694,14 +4692,11 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第一個輪盤",
     "actions": [
-      "Utopia 反相器先斷線；去 Dystopia 斷連接器，讓交換裝置可反向供電。",
-      "回 Utopia，用反相器把內側藍光變紅送交換裝置；Dystopia 連接器接交換來的紅光開門。蓄能器充藍，搬到兩橋後的風扇接收器，搭風啟動輪盤。"
+      "確認 Utopia 鑽孔器留在壓板上。到門外清除反相器舊線，放下；回 Dystopia 清除入口連接器的舊線，放下，讓交換器能反向收光。",
+      "回 Utopia，反相器選壓板旁的藍光源與牆上交換器，在門外放下。再回 Dystopia，用連接器接交換器射出的紅光與左門的紅接收器。",
+      "過左門的第一座橋，在第一座小島取蓄能器。帶回 Dystopia 紫屏入口的固定藍光源充藍，再抱它走過兩座橋。把蓄能器接到第二島風扇後的藍接收器，搭風扇穿紫屏，啟動輪盤。"
     ],
     "sources": [
-      {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
@@ -4719,14 +4714,11 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第二個輪盤",
     "actions": [
-      "踩輪盤旁壓板，看見對岸傳送器就傳送；把它帶上樓留紫屏旁。",
-      "下樓把蓄能器清空，從入口紅連接器充紅；抱蓄能器傳送上樓，接紅接收器，啟動輪盤。"
+      "踩第一個 Dystopia 輪盤旁的壓板，等對岸的門打開，瞄準門內的傳送器傳送過去。落地轉身拿起傳送器，上樓放在右手邊較窄的紫屏前。",
+      "自己穿過窄紫屏跳到底下，涉水回風扇所在的第二座小島。取回藍蓄能器並清空電荷，帶到第一座小島靠入口的橋上，接仍在送紅光的入口連接器並充紅。",
+      "抱起充紅的蓄能器，從橋上瞄準樓上窄紫屏前的傳送器，帶著蓄能器傳送。隔著較寬的紫屏接門旁紅接收器，留蓄能器在外面，進門啟動輪盤。"
     ],
     "sources": [
-      {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
@@ -4744,17 +4736,14 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第三個輪盤",
     "actions": [
-      "依本頁輪盤順序，從 Utopia 後段重力柱上天花板，反相器接屋頂紅光源與雙世界交換裝置，向 Dystopia 送藍光。",
-      "回 Dystopia，用連接器把交換來的藍光接到鑽孔器房的藍接收器。取鑽孔器開金屬牆，隔孔切到另一身體 B；此時先辨認門旁的綠接收器，還要開門讓原身體通過。",
+      "從第二個 Dystopia 輪盤後方剛降下的柵欄往前，左轉跳到下層，穿過紫屏。往右沿路找另一根連接器，帶到金屬牆附近放下。轉身走高紫屏後的通道，從這裡進 Utopia 後段。",
+      "在 Utopia 搭入口旁的重力柱跳上天花板，拿反相器，接屋頂紅光源與這一區的牆上交換器，放在天花板上，向 Dystopia 送藍光。",
+      "跳回地面，走原通道回 Dystopia。用剛放下的連接器把交換來的藍光接到鑽孔器房的藍接收器。取鑽孔器開金屬牆，隔孔切到另一身體 B，辨認門旁的綠接收器。",
       "切回原身體 A，斷開 Dystopia 連接器。回 Utopia，把天花板反相器帶下交換成 RGB；重返天花板，選紅光源、遠處藍光源與交換裝置，改送綠光。",
       "回 Dystopia，連接器先選交換來的綠光，再從牆洞遞給 B。切 B 保留這條連線，加選門旁綠接收器並放下。",
       "綠門打開後切回 A，穿門與 B 會合，再操作本段輪盤。接下來才是兩身體托盤疊高的第四個 Dystopia 輪盤。"
     ],
     "sources": [
-      {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
@@ -4801,10 +4790,6 @@ export const puzzles=[
     ],
     "sources": [
       {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
-      {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
       }
@@ -4849,10 +4834,6 @@ export const puzzles=[
       "確認啟動器仍收到天花板藍光，進門啟動最後輪盤。從其後新開的柵欄走玻璃橋廊到金環，搭最後拼塊橋、登塔並搭電梯找 Athena。"
     ],
     "sources": [
-      {
-        "title": "Gamepressure · Utopia / Dystopia 圖文",
-        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a"
-      },
       {
         "title": "Dick Leeuw / Louis Koot · 圖文流程",
         "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
