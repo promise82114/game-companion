@@ -69,7 +69,7 @@ export const puzzleGroups={
   },
   "ending": {
     "title": "最終巨構 · 建議依序完成",
-    "intro": "Utopia 與 Dystopia 的牆上裝置互通顏色，一端接收、另一端輸出。先照下方順序走，避免同時改動兩邊。"
+    "intro": "烏托邦 1 → 反烏托邦 1 → 反烏托邦 2 → 烏托邦 2 → 反烏托邦 3 → 烏托邦 3 → 反烏托邦 4 → 烏托邦 4。"
   },
   "miranda": {
     "title": "救回 Miranda"
@@ -4676,8 +4676,8 @@ export const puzzles=[
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 烏托邦 1 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_2"
       }
     ],
     "verificationStatus": "consensus",
@@ -4692,14 +4692,14 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第一個輪盤",
     "actions": [
-      "確認 Utopia 鑽孔器留在壓板上。到門外清除反相器舊線，放下；回 Dystopia 清除入口連接器的舊線，放下，讓交換器能反向收光。",
-      "回 Utopia，反相器選壓板旁的藍光源與牆上交換器，在門外放下。再回 Dystopia，用連接器接交換器射出的紅光與左門的紅接收器。",
+      "確認 Utopia 鑽孔器留在壓板上。到門外清除反相器舊線，放下，走近原本射藍光的牆上交換器並重設。",
+      "在 Utopia 用反相器選壓板旁的固定藍光源與牆上交換器，在門外放下。走分岔回 Dystopia，清掉入口連接器的舊線，再接交換器射出的紅光與左門的紅接收器。",
       "過左門的第一座橋，在第一座小島取蓄能器。帶回 Dystopia 紫屏入口的固定藍光源充藍，再抱它走過兩座橋。把蓄能器接到第二島風扇後的藍接收器，搭風扇穿紫屏，啟動輪盤。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 反烏托邦 1 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_3"
       }
     ],
     "verificationStatus": "consensus",
@@ -4720,8 +4720,8 @@ export const puzzles=[
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 反烏托邦 2 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_4"
       }
     ],
     "verificationStatus": "consensus",
@@ -4736,22 +4736,19 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第三個輪盤",
     "actions": [
-      "從第二個 Dystopia 輪盤後方剛降下的柵欄往前，左轉跳到下層，穿過紫屏。往右沿路找另一根連接器，帶到金屬牆附近放下。轉身走高紫屏後的通道，從這裡進 Utopia 後段。",
-      "在 Utopia 搭入口旁的重力柱跳上天花板，拿反相器，接屋頂紅光源與這一區的牆上交換器，放在天花板上，向 Dystopia 送藍光。",
-      "跳回地面，走原通道回 Dystopia。用剛放下的連接器把交換來的藍光接到鑽孔器房的藍接收器。取鑽孔器開金屬牆，隔孔切到另一身體 B，辨認門旁的綠接收器。",
-      "切回原身體 A，斷開 Dystopia 連接器。回 Utopia，把天花板反相器帶下交換成 RGB；重返天花板，選紅光源、遠處藍光源與交換裝置，改送綠光。",
-      "回 Dystopia，連接器先選交換來的綠光，再從牆洞遞給 B。切 B 保留這條連線，加選門旁綠接收器並放下。",
-      "綠門打開後切回 A，穿門與 B 會合，再操作本段輪盤。接下來才是兩身體托盤疊高的第四個 Dystopia 輪盤。"
+      "從烏托邦 2 的輪盤繼續過橋，在新區域找紫色重力柱。搭到天花板拿後段的反相器，選附近的固定紅光源與後段牆上交換器，放在天花板。確認烏托邦這端吃進藍光。",
+      "跳回地面，下階梯穿下層紫屏，沿這條通道進 Dystopia 後段。用這區的連接器把交換器射出的藍光送到鑽孔器房旁的藍接收器。",
+      "取鑽孔器在房外的金屬牆開孔，隔孔切到另一個身體 B。用 B 啟動牆後的輪盤，鑽孔器留在原地。原身體 A 會在下一段透過同一個牆洞切回來。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 反烏托邦 3 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_6"
       }
     ],
     "verificationStatus": "consensus",
-    "checkedAt": "2026-11-08",
-    "researchNote": "原摘要把輪盤啟動寫在綠光開門之前；已把綠光、遞連接器與兩身體會合補回本段。 已與來源逐步對照，未在 PS5 實機重現。"
+    "checkedAt": "2026-11-14",
+    "researchNote": "依 Gamepressure 由烏托邦 2 過橋取得供藍的反相器。本路線先用 B 啟動輪盤，綠門在反烏托邦 4 開。"
   },
   {
     "id": "FINAL-u3",
@@ -4762,14 +4759,14 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Utopia · 第三個輪盤",
     "actions": [
-      "取出藍啟動器，搬到另一側被柵欄擋住的紫屏前。",
-      "回天花板，反相器改接紅光源與啟動器，輸出藍光。",
-      "下樓過紫屏，啟動第七個輪盤。"
+      "用 B 回到鑽孔，隔孔切回原身體 A，走下層通道回烏托邦的重力柱。",
+      "回天花板，清掉後段反相器原本送往牆上交換器的連線。從天花板選對岸烏托邦 2 那台仍在射藍光的反相器，再選廣場另一側、第三個輪盤門旁的紅接收器。把後段反相器放在天花板上。",
+      "確認遠端藍光能接進後段反相器並變紅。跳回地面，走向剛打開的門，啟動輪盤。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 烏托邦 3 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_7"
       }
     ],
     "verificationStatus": "consensus",
@@ -4784,19 +4781,21 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Dystopia · 第四個輪盤",
     "actions": [
-      "先完成前一段綠光開門，讓兩個身體都在金屬牆內側。往左穿紫屏到有方塊與托盤的區域；不要再把天花板設備換一次。",
+      "在烏托邦回到重力柱，從天花板取下後段反相器，到地面的交換台換 RGB 轉換器。抱它上天花板，選附近固定紅光源、遠處烏托邦 2 反相器的藍光，再選後段牆上交換器。放下後確認交換器吃進綠光。",
+      "從下層通道回反烏托邦後段。拿原先替鑽孔器房供光的連接器，清掉舊線，先選牆上交換器射出的綠光，再把連接器從鑽孔遞到 B 那側。隔孔切到 B，保留連線拾取，加選綠門接收器再放下。",
+      "綠門打開後切回 A，穿門與 B 會合。沿前方走、左轉穿紫屏，到有方塊和托盤的區域。",
       "身體 A 抱托盤站方塊旁，切 B 踩方塊跳上 A 的托盤。再切 A，連同上面的 B 一起踩上方塊。",
-      "切最上面的 B，跳到輪盤高台並啟動。本輪盤是本頁總順序的第 5 個；餘下三個都在 Utopia，下一段再將 RGB 換回反相器。"
+      "切最上面的 B，跳到高台啟動輪盤。接下來回烏托邦重力柱做最後一個輪盤。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 反烏托邦 4 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_8"
       }
     ],
     "verificationStatus": "consensus",
-    "checkedAt": "2026-11-08",
-    "researchNote": "綠光開門改在前一段完成，本段只接續雙身體與托盤疊高，避免輪盤順序混接。 已與來源逐步對照，未在 PS5 實機重現。"
+    "checkedAt": "2026-11-14",
+    "researchNote": "依 Gamepressure 在烏托邦 3 之後換 RGB 送綠光。從鑽孔遞連接器、讓兩身體會合，再解托盤高台。"
   },
   {
     "id": "FINAL-u2",
@@ -4807,18 +4806,20 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Utopia · 第二個輪盤",
     "actions": [
-      "回 Utopia 天花板，把 RGB 換回反相器。",
-      "反相器接先前用過的遠處藍光源，輸出紅光到後方紅接收器；下樓沿新開門啟動第六個輪盤。"
+      "啟動反烏托邦 2 後，回樓上紫屏外取紅蓄能器。用一般拾取清除原本接門的連線，保留紅色電荷。從窄紫屏旁柵欄的小缺口把蓄能器先放下去，自己再跳到底下。",
+      "撿回蓄能器，沿兩座島回反烏托邦入口，先把蓄能器放下。清掉入口連接器的舊線，在牆上交換器重設，讓它準備接收。用紅蓄能器照它，確認紅光送往烏托邦，再從入口的分岔回烏托邦。",
+      "拿烏托邦 1 壓板上的鑽孔器，對同區紫屏後的金屬牆開孔，放回紅色壓板，讓前門開著、牆洞也維持。",
+      "拿入口區的反相器，選牆上交換器送來的紅光與下一段門旁的藍接收器，擺在藍光能穿過剛鑽出的孔的位置。進門啟動輪盤，留下反相器與鑽孔器。從輪盤後的通道過橋就是供反烏托邦 3 藍光的重力柱區。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 烏托邦 2 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_5"
       }
     ],
     "verificationStatus": "consensus",
-    "researchNote": "採圖文攻略的 Dystopia 四輪盤先完成、再回 Utopia 的順序；不混用 Gamepressure 先解 Utopia 第二輪盤的另一套中間狀態。",
-    "checkedAt": "2026-11-08"
+    "researchNote": "圖文第 21 張及實錄約 05:27 顯示紅光進入反相器、藍光穿孔到下一扇門，正文的光色敘述有誤。保留蓄能器紅電荷，這組線也供烏托邦 3 與反烏托邦 4 使用。",
+    "checkedAt": "2026-11-14"
   },
   {
     "id": "FINAL-u4",
@@ -4829,19 +4830,20 @@ export const puzzles=[
     "stepId": "ending",
     "title": "Utopia · 第四個輪盤",
     "actions": [
-      "完成前一個 Utopia 輪盤後，天花板已是反相器接紅光源、輸出藍光給啟動器；保持這組連線，不用再找 RGB 換物。",
-      "回剛才開紫屏通路的藍啟動器，用保留連線拾取，移到廣場另一側的終點藍門，放在範圍能罩住門的位置。",
-      "確認啟動器仍收到天花板藍光，進門啟動最後輪盤。從其後新開的柵欄走玻璃橋廊到金環，搭最後拼塊橋、登塔並搭電梯找 Athena。"
+      "從反烏托邦 4 高台跳回托盤區，穿紫屏折返，沿入口分岔回烏托邦。從烏托邦 2 的輪盤過橋回到重力柱，把天花板上的 RGB 拿下來，到地面交換台換回反相器。",
+      "抱反相器上天花板，接遠處烏托邦 2 反相器的藍光，輸出紅光重新打開第三個輪盤的門。跳下去，經過該輪盤，取門後花台的藍啟動器。",
+      "把藍啟動器搬到最後輪盤的藍門前，站位可從重力柱上方看到它。回天花板，清掉後段反相器舊線，改選附近固定紅光源和藍啟動器，放下使它輸出藍光。",
+      "跳回地面，到啟動器旁進門操作最後輪盤。從新開的柵欄走玻璃橋廊至金環。"
     ],
     "sources": [
       {
-        "title": "Dick Leeuw / Louis Koot · 圖文流程",
-        "url": "https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm"
+        "title": "Gamepressure · 烏托邦 4 圖文",
+        "url": "https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_9"
       }
     ],
     "verificationStatus": "consensus",
-    "checkedAt": "2026-11-08",
-    "researchNote": "原摘要重複要求 RGB 換反相器，與已完成 Utopia 2／3 的設備狀態矛盾；此段只須移動保留藍光連線的啟動器。 已與來源逐步對照，未在 PS5 實機重現。"
+    "checkedAt": "2026-11-14",
+    "researchNote": "改採 Gamepressure 輪盤順序後，反烏托邦 4 結束時天花板是 RGB，須換回反相器以重新開門取啟動器。"
   },
   {
     "id": "TEXT-goldboom",

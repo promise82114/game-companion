@@ -13,13 +13,14 @@ export const storySources={
  megaSouth2:{title:'Dick Leeuw／Louis Koot：插銷 4–5、釋放與離開',url:manor+'15_Megastructure_South/megastructure_south_2.htm'},
  megaWest:{title:'Dick Leeuw／Louis Koot：西側救援與 Act V 回城',url:manor+'19_Megastructure_West/megastructure_west_1.htm'},
  megaFinal:{title:'Dick Leeuw／Louis Koot：最終巨構與 Athena',url:manor+'22_Free_Athena/free_athena_1.htm'},
+ finaleWheels:{title:'Gamepressure：雙世界八輪盤',url:'https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a#NH2_2',checkedAt:'2026-11-14'},
  megaEastWiki:{title:'Talos Wiki：東側終端與中央空間',url:'https://taloswiki.org/wiki/Megastructure_East'},
  megaNorthWiki:{title:'Talos Wiki：北側終端檔案',url:'https://taloswiki.org/wiki/Megastructure_North'},
  megaSouthWiki:{title:'Talos Wiki：南側文字與劇情',url:'https://taloswiki.org/wiki/Megastructure_South'},
  utopiaWiki:{title:'Talos Wiki：Utopia 與 Dystopia 的橋樑互斥',url:'https://taloswiki.org/wiki/Utopia'},
  overloadEarly:{title:'Game of Guides：E2 Schematic_108 後的 Overload',url:'https://video-game-guide-walkthrough.supersoluce.com/solution/the-talos-principle-2-guide-walkthrough/collectibles/tp2-lost-labs/lost-lab-wooded-plateau-east-2/'}
 };
-for(const[key,source]of Object.entries(storySources))Object.assign(source,{kind:key.endsWith('Wiki')?'wiki':key==='cityMap'?'map-guide':'walkthrough',checkedAt:'2026-11-05'});
+for(const[key,source]of Object.entries(storySources))Object.assign(source,{kind:key.endsWith('Wiki')?'wiki':key==='cityMap'?'map-guide':'walkthrough',checkedAt:source.checkedAt||'2026-11-05'});
 export const storyWaypoints=[];
 function waypoint(stepId,id,title,location,actions,mapKey,sources,extra={}){storyWaypoints.push({stepId,id,title,location,actions,mapKey,sources:sources.map(key=>storySources[key]),verificationStatus:'consensus',...extra});}
 waypoint('neutral-route','city1-arrive','初訪：從出生實驗室到塔上簡報','出生實驗室 → 軌道車 → 中央塔',[
@@ -139,8 +140,8 @@ waypoint('miranda','base-golden','救 Miranda：在基地的 Golden Gate 找 Cor
 ],'BASE-CAMP',['megaWest']);
 waypoint('ending','final-arrival','最後進巨構：入口與兩側世界','基地最終 VTOL → 西側內部 → 光線交換入口',[
  '確認最終備份與收集後才搭這次 VTOL。跟隨主線走到下方「入口・光線交換」題，之後要在 Utopia 與 Dystopia 之間交換光線與設備，完成各四個輪盤。',
- '這是西側第二次進入，不是重做救 Byron。圖上的 U1～U4、D1～D4 代表解題區段／輪盤，並非量測樓層座標；詳細設備操作由「拒絕謎語」開關顯示。'
-],'MEGA-FINAL',['megaFinal']);
+ '反烏托邦 2 完成後，帶紅蓄能器回入口送光，先解烏托邦 2，再過橋前往能供應反烏托邦 3 藍光的重力柱。勾選「拒絕謎語」查看接線。'
+],'MEGA-FINAL',['megaFinal','finaleWheels']);
 waypoint('ending','final-athena','八輪盤後：最後的橋、電梯與 Athena','最後輪盤 → 金環橋 → 塔 → 電梯',[
  '依前列終橋走 Utopia 出口，進塔搭電梯；到頂右轉、走到底左轉再左轉，進門上階梯到 Athena。兩世界的出口橋擇一即可，不必回頭補另一側。',
  '與 Athena 互動並完成最後選擇，再核對 Break the Loop；已救回 Miranda 的同一進度完成結局後，另核對 The Future。'
@@ -152,7 +153,7 @@ export const storyRoutes={
  'north-megastructure':['north-door','north-byron','MEGA-N-blue','MEGA-N-green','north-memory','north-exit-route'],
  'prometheus-rescue':['south-terminal','south-start','MEGA-S-pins','south-exit-route'],
  'west-megastructure':['west-byron','west-escape'],'final-city':['city3-wake','city3-recruit'],stars:['base-temple'],miranda:['base-golden'],
- ending:['final-arrival','FINAL-gate','FINAL-u1','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4','FINAL-u2','FINAL-u3','FINAL-u4','final-athena']
+ ending:['final-arrival','FINAL-gate','FINAL-u1','FINAL-d1','FINAL-d2','FINAL-u2','FINAL-d3','FINAL-u3','FINAL-d4','FINAL-u4','final-athena']
 };
 export const storyPuzzleDetails={
  'MEGA-E-green':{mapKey:'MEGA-E-CORE',navigation:['完成前列東橋 2，沿階梯到右側紫屏內；看到鑽孔器與銅牆，就是綠光題。','解完不是直接折返：穿兩道已開門下樓，沿地上電線找到拉桿，拉下確認綠光命中大門。']},
@@ -162,6 +163,8 @@ export const storyPuzzleDetails={
  'MEGA-N-green':{stepId:'north-megastructure',mapKey:'MEGA-N',navigation:['完成前列北橋 5～7，從天花板向右穿紫屏，進有交換台與鑽孔器的綠炮題。','拉綠炮後三色門會開；接著依北橋 8、9 回三色門內的主線終端。']},
  'MEGA-S-pins':{mapKey:'MEGA-S-PINS',navigation:['前列南橋 1～11 已依序帶到五根插銷；現在核對右上是否 5/5。','未滿時查看黃色三角與對應插銷段落。已滿便回正面大拉桿再拉一次，不會自動解放。']},
  MIRANDA:{mapKey:'BASE-CAMP'},'FINAL-gate':{mapKey:'MEGA-FINAL'},
- ...Object.fromEntries(['FINAL-u1','FINAL-u2','FINAL-u3','FINAL-u4','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4'].map(id=>[id,{mapKey:'MEGA-FINAL',navigation:[id.includes('-u')?'此段在 Utopia 側；要換世界時回中間通路。圖上的 U 編號是本網站輪盤分段，不是遊戲路牌。':'此段在 Dystopia 側；光線不足時要回 Utopia 設備端調整，不是另找地圖外的光源。']}]))
+ ...Object.fromEntries(['FINAL-u1','FINAL-u2','FINAL-u3','FINAL-u4','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4'].map(id=>[id,{mapKey:'MEGA-FINAL'}])),
+ 'FINAL-d2':{mapKey:'MEGA-FINAL',navigation:['按完輪盤後，下一站是烏托邦 2。先保留這裡的紅蓄能器，照下一段搬回反烏托邦入口。']},
+ 'FINAL-d3':{mapKey:'MEGA-FINAL',navigation:['先完成烏托邦 2，再從輪盤旁過橋到重力柱。此處供藍的反相器在柱頂。']}
 };
 attachMegaBridges(storyWaypoints,storyRoutes,storySources);

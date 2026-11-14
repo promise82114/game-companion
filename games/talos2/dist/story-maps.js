@@ -70,7 +70,7 @@ map('BASE-CAMP','島上基地・交通與兩座建築',[
 const finalNodes=[node('entry','入',500,590,'光線交換入口',p('FINAL-gate'))];
 for(const world of ['u','d'])for(let i=1;i<=4;i++)finalNodes.push(node(world+i,world.toUpperCase()+i,world==='u'?220:780,520-(i-1)*125,(world==='u'?'Utopia':'Dystopia')+' 輪盤 '+i,p('FINAL-'+world+i)));
 finalNodes.push(node('athena','終',500,60,'最後橋 → 電梯 → Athena',w('final-athena')));
-map('MEGA-FINAL','最終巨構・雙世界八輪盤',finalNodes,[['entry','u1','u2','u3','u4','athena'],['entry','d1','d2','d3','d4','athena']],'megaFinal','兩列表示世界內的解題區段，不能當作樓層座標。閱讀順序依下方逐題攻略，途中多次交換世界與光線。','雙世界的完整逐層平面圖待查證；此圖提供八輪盤分區與終點。');
+map('MEGA-FINAL','最終巨構・雙世界八輪盤',finalNodes,[['entry','u1','u2','u3','u4','athena'],['entry','d1','d2','d3','d4','athena']],'finaleWheels','解題順序：U1 → D1 → D2 → U2 → D3 → U3 → D4 → U4。線段標示兩世界各自的輪盤分區。','雙世界的完整逐層平面圖待查證；此圖提供八輪盤分區與終點。');
 // 同一實體路標可在去程與回程各對應一項，定位共用，完成判定需全部完成。
 // R2 深入主路繞圖邊，避免線段穿過 R1，誤讀成水池房能穿行。
 maps['MEGA-E-ENTRY'].paths[4]=[[500,370],[800,140],[950,140],[950,520],[800,520]];

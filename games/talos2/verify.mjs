@@ -164,9 +164,11 @@ for(const p of puzzles.filter(p=>p.diagramCells)){
 assert.match(puzzles.find(p=>p.id==='E2-main-8').warning,/另一根不要碰/);assert.match(puzzles.find(p=>p.id==='E2-lost-2').warning,/只送一趟/);assert.ok(puzzles.find(p=>p.id==='S1-main-8').sources.some(s=>s.url.includes('switcheroo')));
 const atlantis=puzzles.find(p=>p.id==='TEXT-atlantis');assert.equal(atlantis.verificationStatus,'confirmed');assert.equal(atlantis.pending,undefined);assert.ok(atlantis.actions.some(text=>text.includes('Then find another way to witness the Sublime without being annihilated.')));assert.ok(atlantis.sources.some(source=>source.url==='https://www.youtube.com/watch?v=pB1VTo02kB4&t=239s'));
 const finalePuzzles=routeItemsForStep('ending').filter(item=>item.id.startsWith('FINAL-'));
-assert.deepEqual(finalePuzzles.map(item=>item.id),['FINAL-gate','FINAL-u1','FINAL-d1','FINAL-d2','FINAL-d3','FINAL-d4','FINAL-u2','FINAL-u3','FINAL-u4']);
-const finaleGuide='https://mysterymanor.net/walkthroughs/Talos_Principle_2/22_Free_Athena/free_athena_1.htm';
-for(const puzzle of finalePuzzles)assert.deepEqual(puzzle.sources.map(source=>source.url),[finaleGuide],puzzle.id+' 應連到同一套設備狀態與順序');
+assert.deepEqual(finalePuzzles.map(item=>item.id),['FINAL-gate','FINAL-u1','FINAL-d1','FINAL-d2','FINAL-u2','FINAL-d3','FINAL-u3','FINAL-d4','FINAL-u4']);
+const wheelGuide='https://www.gamepressure.com/the-talos-principle-2/utopia-and-dystopia/z81114a';
+assert.deepEqual(finalePuzzles.slice(1).map(puzzle=>puzzle.sources.map(source=>source.url)),Array.from({length:8},(_,index)=>[wheelGuide+'#NH2_'+(index+2)]));
+const utopia2=finalePuzzles.find(puzzle=>puzzle.id==='FINAL-u2');
+assert.match(utopia2.actions.join('\n'),/紅蓄能器照它[\s\S]*鑽孔器[\s\S]*藍光能穿過剛鑽出的孔[\s\S]*留下反相器與鑽孔器/);
 const survey=data.steps.find(s=>s.id==='doge-survey');assert.equal(survey.dialogue.length,7);assert.equal(survey.dialogue.at(-1).id,'doge-prayer');assert.ok(survey.dialogue.every(row=>typeof row.english==='string'&&row.english.length));
 assert.ok(data.steps.find(s=>s.id==='rand-north').location.startsWith('N1 '));
 assert.ok(data.steps.find(s=>s.id==='doge-match').location.includes('E2–E3'));
