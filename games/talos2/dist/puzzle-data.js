@@ -4345,6 +4345,9 @@ export const puzzles=[
     "number": 1,
     "title": "Alternator",
     "stepId": "region-w3",
+    "navigation": [
+      "從 7 號出來上樓，樓梯頂左轉，在第二條支路右轉。沿崖邊經過方尖碑，順著路向左彎，看到下方的圓形遺跡後繼續下行，穿石門、下階梯到紫門。"
+    ],
     "sources": [
       {
         "title": "Dick Leeuw / Louis Koot · 圖文解法",
@@ -4368,6 +4371,9 @@ export const puzzles=[
     "number": 2,
     "title": "Hexahedral Stacking",
     "stepId": "region-w3",
+    "navigation": [
+      "從 5 號沿路牌往 6 號走。下完大階梯後在岔路右轉，沿小徑到圓形遺跡。沿外圈向右找到石門，再下階梯進紫門。"
+    ],
     "sources": [
       {
         "title": "Dick Leeuw / Louis Koot · 圖文解法",

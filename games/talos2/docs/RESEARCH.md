@@ -4,6 +4,35 @@
 
 ## 已取得證據
 
+### 2026-11-14 W3 與十二區遺失謎題配對覆核
+
+W3 兩個座標反置。L1 **Alternator** 在圖左側，從 7 號外走崖邊支路，經方尖碑後下到圓形遺跡。L2 **Hexahedral Stacking** 在圖上方，從 5 號往 6 號途中下完大階梯後右轉。原圖文作者按遊玩順序把 Hexahedral Stacking 稱為第一個、Alternator 稱為第二個。本站的 L1／L2 對應題目的 Δ1／Δ2。已補上各題的入口描述和定位。[Alternator 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_3/west_3_3.htm) · [Hexahedral Stacking 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/18_West_3/West_3_2/west_3_2.htm) · [Δ1](https://taloswiki.org/wiki/Alternator) · [Δ2](https://taloswiki.org/wiki/Hexahedral_Stacking)
+
+最初地圖以陣列索引配出 L1／L2。兩點各有合法座標與進度 ID，互換時仍會通過當時只查數量及連結的檢查。這次逐區對照參考圖上的三角標記與具名入口路線，W3 是此次發現需對調的一區。資料改用題名指定座標，並在驗證裡檢查已修正的入口與地標相對位置。[十二區參考圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536)
+
+| 區域 | L1 入口對照 | L2 入口對照 |
+| --- | --- | --- |
+| E1 | Elevation，4 號旁岔路 | Interconnectivity，7 號外側支路 |
+| E2 | Keeping Connections，4 號背後 | Loop，7→8 橋前岔路 |
+| E3 | Transposition，4→5 途中上方支路 | Preconnected，7→8 岔路 |
+| N1 | Passing Through，4 號往 5 號路牌後的支路 | Interplay，8 號附近 |
+| N2 | Field of View，4 號外側、Sphinx 開關岔路 | Lateral Inhibition，6 號一側的岸邊 |
+| N3 | All Around，4 號下階梯外側支路 | Elegance，8 號外側支路 |
+| S1 | Aerial Warp，6→7 廂型車後 | Minimalism，4 號外過淺水 |
+| S2 | Question Block，Pandora 一側 | Stowaway，7 號外另一岸 |
+| S3 | Transfer，3→4 的 Sphinx 岔路 | Convolution，2 號背後沙地 |
+| W1 | Jailbreak，3→4 岔路 | Vertical Locomotion，5 號後方 |
+| W2 | Slide，7 號往 Prometheus 的崖路外段 | Two of Three，4→5 岔路 |
+| W3 | Alternator，7 號外的崖邊 | Hexahedral Stacking，5→6 階梯下支路 |
+
+Talos 資料、建置與產物檢查通過。桌面與觸控手機均驗證 W3 兩題的入口文字、地圖定位及標記相對位置。
+
+### 2026-11-11 南橋 2 的兩種放塊順序
+
+使用者的 **4→2→1→3** 與原圖文一致。放完 2 號先跳上地板，往左繞並跳到 2 號的側面，接 1 號，最後旋轉 3 號接到對面金環。影片的最後一輪也走通。比對清單原始槽位與放置後變灰的圖示，13:20 兩個彎道都回到清單，13:22 放下 3 號，13:24 放下 1 號，13:26 後穿過金環。先前影片資料覆蓋了原圖文順序。現以原圖文為主解，影片另列為另一種放法。3 號旋轉的按鍵方向與次數待查證。[原圖文](https://mysterymanor.net/walkthroughs/Talos_Principle_2/15_Megastructure_South/megastructure_south_1.htm) · [影片最後一輪](https://www.youtube.com/watch?v=Pku_80x50dk&t=800s)
+
+Talos 資料、建置與產物檢查通過。桌面與觸控手機均確認主解順序、放完 2 號後的側面站位，以及另一種放法的影片連結。
+
 ### 2026-11-10 S3 遺失謎題地圖對調
 
 區域圖的兩個落點與題名配反。依題目識別，L1 Transfer 從 3→4 環道的 Sphinx 岔路走支線，位於本站圖左側。L2 Convolution 從 2 號背後沿羅盤藍色三角穿過沙地，位於圖右上方。實玩圖文用作者的造訪順序編號，入口以題名和地標核對。已修正地圖配對，兩題的走法可從地圖定位與題目卡片查看。[區域圖](https://steamcommunity.com/sharedfiles/filedetails/?id=3090253536) · [Transfer 入口](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_3/south_3_3.htm) · [Convolution 導航](https://mysterymanor.net/walkthroughs/Talos_Principle_2/14_South_3/South_3_1/south_3_1.htm) · [題目識別](https://taloswiki.org/wiki/Convolution)
@@ -46,7 +75,7 @@ Talos 資料、建置與產物檢查通過。桌面與觸控手機均確認題�
 | 北 1 | [TheSourceError 探索 07:50–08:57](https://www.youtube.com/watch?v=0KuCtyk7u7Q&t=470s)：以金環、右方亮門及完整 I／短塊／L／折角清單對上原 Talos_2_1522.jpg；採最後成功的 1→4→3→2。08:15 先放 2 號，之後拆回再換成 3→2，不能照第一次嘗試抄。此作者先建橋再找 Byron，本站仍按原劇情提醒行走。 |
 | 北 7 | [同影片 15:40–16:19](https://www.youtube.com/watch?v=0KuCtyk7u7Q&t=940s)：由綠環跳到起點，四塊依 1→4→3→2，最後接上紫屏旁的重力牆，與原圖文地標對照後改採整套影片解法。 |
 | 北 4／5／6／8／9 | 實看 [Trophy Tom 完整 00:00–05:31](https://www.youtube.com/watch?v=pHt676Y2fDk) 的橋段，以及 [TheSourceError 探索](https://www.youtube.com/watch?v=0KuCtyk7u7Q&t=466s) 的支路／回走段。Trophy Tom 標題遮住選塊清單，綠炮後返門還有剪接；另一作者先建支路、嘗試死路，沒有足夠可靠的原清單逐塊對應。這五段保留原圖文順序與待查證，不將看過相似橋面冒充已核實同一套操作。 |
-| 南 1／2／3 | [Game Guides Channel 南側實玩](https://www.youtube.com/watch?v=Pku_80x50dk&t=618s)：10:18–10:34、12:43–13:30、13:46–13:55。採成功的 3→4→1→2、4→2→3→1、1→2；南 2 放 2 號後必須到上層繞左、跳到側面才接 3 號。南 3 的 13:39–13:44 是 2→1 的試錯及拆回，未採用。 |
+| 南 1／2／3 | [Game Guides Channel 南側實玩](https://www.youtube.com/watch?v=Pku_80x50dk&t=618s) 的片段為 10:18–10:34、12:43–13:30、13:46–13:55。南 1／3 採成功的 3→4→1→2、1→2。南 2 的影片解是 4→2→3→1，2026-11-11 已改以圖文的 4→2→1→3 為主解，詳見本報告上方。南 3 的 13:39–13:44 是 2→1 的試錯及拆回。 |
 | 南 6／7／8 | [同影片 14:51–16:09](https://www.youtube.com/watch?v=Pku_80x50dk&t=891s)：採 1→2→3、3→4→1→2、1→2→3；重力橋保留末段跳上側面與轉面後續走法。 |
 | 南 9／10／11 | [同影片 05:08–05:24](https://www.youtube.com/watch?v=Pku_80x50dk&t=308s)、[05:39–05:54](https://www.youtube.com/watch?v=Pku_80x50dk&t=339s)、[08:17–08:34](https://www.youtube.com/watch?v=Pku_80x50dk&t=497s)：依序 1→2→3→4、2→3→1、2→3→1→4。影片先取 Yaqut／紫色升降台支路，本站插銷編號及全章先後不跟著重排。 |
 | Utopia 終橋 | [TheSourceError 00:24–00:59](https://www.youtube.com/watch?v=JdovWAkF0Ts&t=24s)：原槽位 1→8；1、2、3、4、5、7 在該次選取狀態沒有旋轉就放置。6 號約 00:40.7–00:41.3 由左翻右，8 號約 00:46.5–00:46.9 由右翻左，皆回到水平；可辨識為 180° 翻面。00:49 後通過塔前環廊，進電梯。 |

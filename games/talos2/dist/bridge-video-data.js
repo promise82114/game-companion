@@ -18,7 +18,16 @@ export const bridgeVideoAudits={
  'bridge-east-06':audit('east',526,538,[pose(1,527,'平放，先把路向左接出去。'),pose(2,529,'保持水平，往正前方延長。'),pose(3,532,'調整成水平彎道，接到下一座金環。')]),
  'bridge-east-07':audit('east',542,553,[pose(1,543,'平放，先往左伸出。'),pose(2,545,'調整成水平右彎，把出口帶回大門方向。'),pose(3,548,'平放直線塊，接到三色門前。')]),
  'bridge-south-01':audit('south',618,634,[pose(3,620,'平放直線塊，朝對岸伸出。'),pose(4,624,'平放短塊，延長到轉角。'),pose(1,626,'轉到水平左彎，往旁邊藍色出口面接。'),pose(2,628,'平放短塊，接到金環。')],'採影片成功路線 3→4→1→2，取代原圖文的另一解。影片先取其他插銷，請按本站章節順序走，不照影片的全章回訪順序。'),
- 'bridge-south-02':audit('south',763,810,[pose(4,768,'直線塊平放；先搭到前方，別把紅色、朝牆的預覽放下。'),pose(2,771,'調成往上攀爬的形狀，讓拼塊接到上層。'),pose(3,789,'換到拼塊側面後，調成水平彎道再放置。'),pose(1,800,'平放最後的彎道，接到遠處金環。')],'採影片最後成功的 4→2→3→1；13:18 的拆回重放不是新增的一塊。'),
+ 'bridge-south-02':{
+  ...audit('south',763,810,[
+   pose(4,769,'將直線塊平放，往前延伸。'),
+   pose(2,773,'接出爬向上層的拼塊。'),
+   pose(3,801,'跳到 2 號側面後，將彎道接向對岸。'),
+   pose(1,803,'用最後一個彎道接到對面金環。')
+  ],'影片另示 4→2→3→1。作者在 13:20 收回兩個彎道，13:22 先重放 3 號，13:24 再放 1 號，隨後穿過金環。'),
+  alternateOrder:true,
+  checkedAt:'2026-11-11'
+ },
  'bridge-south-03':audit('south',826,835,[pose(1,827,'平放彎道，先把出口帶向左邊。'),pose(2,829,'接成水平路面，到對岸金環。')],'影片 13:39 先試 2→1，13:44 拆回；本站採 13:47 起成功的 1→2，勿混用前一輪。'),
  'bridge-south-06':audit('south',891,903,[pose(1,892,'平放直線塊，往對岸伸出。'),pose(2,895,'調成水平左彎。'),pose(3,898,'平放彎道，出口接向前方金環。')]),
  'bridge-south-07':audit('south',906,929,[pose(3,907,'平放第一段，往前延長。'),pose(4,911,'調成平面彎道，出口向左。'),pose(1,915,'調整到藍色預覽，接往下一個轉角。'),pose(2,918,'調成向上的末段；放好後跳上拼塊側面，沿重力橋往上走。')],'採影片成功路線 3→4→1→2；不能接用原圖文 4→3→1→2 的旋轉紀錄。'),
@@ -43,8 +52,7 @@ export function attachBridgeVideoEvidence(bridges){
  for(const item of bridges){
   const video=bridgeVideoAudits[item.id];if(!video)continue;
   item.bridge.video=video;
-  if(video.steps){item.bridge.pieces=video.steps;delete item.bridge.rotationNotes;}
-  if(item.id==='bridge-south-02')item.bridge.between={2:'放完 2 號，跳上拼塊往上走，到上層地板；繞到拼塊左側，跳到側面再放 3 號（影片 12:54–13:09）。'};
+  if(video.steps&&!video.alternateOrder){item.bridge.pieces=video.steps;delete item.bridge.rotationNotes;}
   if(item.id==='bridge-final-01'){
    item.title='終橋 · Utopia／Dystopia 出口到 Athena 塔';
    item.bridge.alternative='Utopia／Dystopia 出口橋擇一；完成一側會停用另一側。兩套解法共用本項完成紀錄。';

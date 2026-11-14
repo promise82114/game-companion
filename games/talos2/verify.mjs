@@ -56,6 +56,11 @@ const transfer=s3MapNodes.find(node=>node.target==='puzzle-S3-lost-1');
 const convolution=s3MapNodes.find(node=>node.target==='puzzle-S3-lost-2');
 assert.ok(transfer.x<s3MapNodes.find(node=>node.id==='main-3').x,'Transfer 在 3 號外側的支路');
 assert.ok(convolution.x>s3MapNodes.find(node=>node.id==='main-2').x,'Convolution 在 2 號外側的沙地');
+const w3MapNodes=regionMaps.W3.nodes;
+const alternator=w3MapNodes.find(node=>node.target==='puzzle-W3-lost-1');
+const hexahedralStacking=w3MapNodes.find(node=>node.target==='puzzle-W3-lost-2');
+assert.ok(alternator.x<w3MapNodes.find(node=>node.id==='main-7').x,'Alternator 在 7 號外側的崖邊');
+assert.ok(hexahedralStacking.y<w3MapNodes.find(node=>node.id==='main-6').y,'Hexahedral Stacking 在 5、6 號外側的支路');
 for(const[id,check]of Object.entries(safetyChecks)){assert.ok(ids.has(id));for(const[trophy,step]of check.items){assert.ok(trophyIds.has(trophy),trophy);assert.ok(ids.has(step),step);}for(const step of check.steps||[])assert.ok(ids.has(step),step);}
 for(const id of ['single-rod','one-lap','hard-way']){const step=data.steps.find(s=>s.id===id);assert.equal(step.warningLevel,'prepare');assert.equal(step.missable,false);assert.ok(step.sources.includes('ps5Guide'));assert.match(step.recovery,/終端重試/);}
 const uxFixture={steps:{calibration:{status:'completed',legacyExtra:'keep'}},settings:{},trophies:{},backups:{},branches:{}},calibration=data.steps.find(s=>s.id==='calibration');
@@ -115,7 +120,8 @@ for(const item of megaBridges){
 assert.deepEqual(megaBridges.find(b=>b.id==='bridge-north-01').bridge.pieces.map(p=>p.number),[1,4,3,2]);
 assert.deepEqual(megaBridges.find(b=>b.id==='bridge-east-04').bridge.pieces.map(p=>p.number),[2,4,3,1]);
 assert.match(megaBridges.find(b=>b.id==='bridge-north-04').bridge.between[1],/上樓/);
-assert.match(megaBridges.find(b=>b.id==='bridge-south-02').bridge.between[2],/側面/);
+const southBridgeTwo=megaBridges.find(b=>b.id==='bridge-south-02').bridge;
+assert.match(southBridgeTwo.between[2],/側面.*放 1 號/);
 assert.match(megaBridges.find(b=>b.id==='bridge-south-08').bridge.after,/先左轉.*再左轉/);
 assert.match(megaBridges.at(-1).bridge.alternative,/Dystopia.*擇一/);
 assert.equal(Object.keys(bridgeVideoAudits).length,23,'原 23 段各自記錄本輪影片查證結果');
@@ -130,7 +136,11 @@ for(const video of [...Object.values(bridgeVideoAudits),dystopiaBridge.video]){
 assert.deepEqual(megaBridges.at(-1).bridge.pieces.filter(p=>p.rotationDegrees===180).map(p=>p.number),[6,8]);
 assert.deepEqual(dystopiaBridge.video.steps.filter(p=>p.rotationDegrees===180).map(p=>p.number),[3,7]);
 assert.match(dystopiaBridge.location,/沒有方形/);
-assert.deepEqual(megaBridges.find(b=>b.id==='bridge-south-02').bridge.pieces.map(p=>p.number),[4,2,3,1]);
+assert.deepEqual(southBridgeTwo.pieces.map(p=>p.number),[4,2,1,3]);
+assert.deepEqual(southBridgeTwo.video.steps.map(p=>p.number),[4,2,3,1]);
+const southBridgeTwoHtml=bridgeHtml(storyWaypoints.find(w=>w.id==='bridge-south-02'),{escape:s=>s,showSolutions:true});
+assert.match(southBridgeTwoHtml,/<\/ol><p>影片另示 4→2→3→1/);
+assert.ok(!southBridgeTwoHtml.includes('t=undefined'));
 assert.deepEqual(megaBridges.find(b=>b.id==='bridge-south-03').bridge.pieces.map(p=>p.number),[1,2],'不能採影片重設前的試錯順序');
 const escapedBridge=bridgeHtml({...storyWaypoints.find(w=>w.id==='bridge-final-01'),bridge:{...megaBridges.at(-1).bridge,video:{...megaBridges.at(-1).bridge.video,note:'<script>bad</script>'}}},{escape:s=>String(s).replaceAll('<','&lt;').replaceAll('>','&gt;'),showSolutions:true});assert.ok(!escapedBridge.includes('<script>'));assert.ok(escapedBridge.includes('&lt;script&gt;'));
 for(const w of storyWaypoints){assert.ok(ids.has(w.stepId));assert.ok(storyMaps[w.mapKey]);assert.ok(w.actions.length);assert.ok(w.sources.length);assert.ok(routeItemsForStep(w.stepId).includes(w));assert.ok(storyMaps[w.mapKey].nodes.some(n=>n.target===waypointProgressId(w.id)||n.alsoTargets?.includes(waypointProgressId(w.id))),w.id+' map locator');}
