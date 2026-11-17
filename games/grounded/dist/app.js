@@ -1,90 +1,160 @@
-import {checkedAt,sources,trophies,steps,stages,collectibles,categories,regions,superWinConditions,ngRules} from './data.js';
-import {config,world,run,player,collectionState,collectionVisible,setCollection,stampActor,addRun,runLabel,importData} from './model.js';
-import {mapSvg,bindMap} from './map.js';
-import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './roadmap-progress.js';
+import {checkedAt,sources,trophies,steps,stages,collectibles,regions,superWinConditions,ngRules} from './data.js';
+import {config,world,run,player,collectionState,setCollection,stampActor,addRun,runLabel,importData} from './model.js';
+import {reportMapHtml,bindReportMap} from './map.js';
+import {creaturesHtml,reportReferenceHtml,groups,reportItems,itemById,reportConditionItems,reportSource,mapSource} from './report.js';
+import {mainTech,shopSource} from './chip-tech.js';
+import {stepProgress,completedSteps,nextPendingStep,pendingItems,remixReview} from './roadmap-progress.js';
+import {preparations} from './preparations.js';
+import {weaponsHtml,armorHtml} from './gear.js';
+
 const sharedPath=import.meta.url.includes('/dist/')?'../../../shared/roadmap-store.js':'../../shared/roadmap-store.js';
 const {createStore}=await import(new URL(sharedPath,import.meta.url));
 const core=window.SideProjectSync,$=id=>document.getElementById(id);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const names={overview:'庭院總覽',roadmap:'遊玩 Roadmap',collectibles:'收集清單',map:'庭院示意圖',trophies:'46 項獎盃',ngplus:'NG+ 驗收',sources:'來源與查證'};
+const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',weapons:'武器列表',armor:'防具列表',sources:'來源與查證'};
 const warningLabels={critical:'不可逆／易錯過',branch:'分歧／備份',prep:'提前準備',recommended:'推薦體驗',later:'可延後'};
 const verificationLabels={verified:'已查證',unverified:'待查證',conflicting:'來源有差異'};
-const layerNames={all:'全部圖層',ground:'地表',underground:'地下',underwater:'水下',high:'高處'};
 let progress,review,ngBackupStamp,refreshPending=false;
-const filter={search:'',category:'all',region:'all',status:'all',verification:'all',required:'all',layer:'all',condition:'all',dataGroup:'all',trophyCategory:'all',trophyStatus:'all',stage:'start'};
-const mapState={selectedId:''};
+const filter={search:'',reportGroup:'all',mapGroup:'all',creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',stage:'start'};
 const revealedSteps=new Set();
 let readingScope='';
 const scopeOf=p=>{const w=world(p);return [w.worldId,w.currentRunId,w.currentPlayerId].join(':');};
-const store=createStore(config,core,()=>{if(!refreshPending){refreshPending=true;queueMicrotask(async()=>{refreshPending=false;try{progress=await store.get();if(view()==='roadmap'&&readingScope===scopeOf(progress)&&document.querySelector('.roadmap-step'))syncRoadmap();else render();}catch(e){message(e.message);}});}});
+const store=createStore(config,core,()=>{if(!progress)return;if(!refreshPending){refreshPending=true;queueMicrotask(async()=>{refreshPending=false;try{progress=await store.get();if(view()!=='roadmap')return;if(readingScope===scopeOf(progress)&&document.querySelector('.roadmap-step'))syncRoadmap();else render();}catch(e){message(e.message);}});}});
 const date=value=>value?new Date(value).toLocaleString('zh-TW',{hour12:false}):'尚未記錄';
 const links=urls=>`<div class="sources">${[...new Set(urls)].map(url=>`<a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(Object.values(sources).find(s=>s.url===url)?.label||'資料來源')} ↗</a>`).join('')}</div>`;
-const view=()=>Object.hasOwn(names,new URL(location.href).searchParams.get('view'))?new URL(location.href).searchParams.get('view'):'overview';
+const pageParams=()=>new URL(location.href).searchParams;
+const view=()=>{
+ const requested=pageParams().get('view');
+ if(!requested||requested==='ngplus')return 'roadmap';
+ return Object.hasOwn(names,requested)?requested:'overview';
+};
+const stageFromUrl=()=>pageParams().get('view')==='ngplus'?'remix':pageParams().get('stage');
+const nameWithEnglish=row=>`${escape(row.name)}${row.officialName&&row.officialName!==row.name?`<small class="english-name" lang="en">${escape(row.officialName)}</small>`:''}`;
+const searchInput=(id,label)=>`<label class="search">${label}<input id="${id}" type="search" data-filter="search" value="${escape(filter.search)}"></label>`;
 const regionName=id=>regions.find(r=>r.id===id)?.name||'區域待查證';
 const options=(rows,current)=>rows.map(([value,label])=>`<option value="${escape(value)}" ${value===current?'selected':''}>${escape(label)}</option>`).join('');
 const filterSelect=(id,label,rows,key)=>`<label>${label}<select id="${id}" data-filter="${key}">${options(rows,filter[key])}</select></label>`;
+const gearControls={filter,select:filterSelect,search:searchInput,escape};
 const stateOptions=current=>options([['missing','未取得'],['obtained','已取得'],['unknown','待確認']],current);
 function message(text){$('feedback').textContent=text;}
 async function action(fn){try{await fn();}catch(e){message(e.message);}}
 async function update(fn){const w=world(progress),scope=[w.worldId,w.currentRunId,w.currentPlayerId];await store.update(p=>{const w=world(p);if(w.worldId!==scope[0]||w.currentRunId!==scope[1]||w.currentPlayerId!==scope[2])throw Error('其他分頁已切換世界、周目或成員，請重新操作。');fn(p);return p;});}
-function go(next,extra={}){const url=new URL(location.href);url.searchParams.set('view',next);for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);url.hash='';history.pushState({},'',url);render();window.scrollTo(0,0);$('app').focus({preventScroll:true});}
+function go(next,extra={}){const url=new URL(location.href);url.searchParams.set('view',next);if(!Object.hasOwn(extra,'group'))url.searchParams.delete('group');if(next!=='roadmap')url.searchParams.delete('stage');else url.searchParams.set('stage',filter.stage);for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);if(next!=='map')url.searchParams.delete('item');else if(!Object.hasOwn(extra,'item'))url.searchParams.delete('item');url.hash='';history.pushState({},'',url);render();window.scrollTo(0,0);$('app').focus({preventScroll:true});}
 function header(){
+ if(view()!=='roadmap')return `<div class="page-heading"><h1>${names[view()]}</h1></div>`;
  const r=run(progress),earned=trophies.filter(t=>player(progress).trophies[t.id]?.earned).length,done=superWinConditions.filter(c=>r.conditions[c.id]?.done).length;
- return `<div class="page-heading"><div><h1>${names[view()]}</h1><p class="scope">Grounded · ${runLabel(r)}</p></div><small>最後更新 <span id="updated-at">${date(progress.updatedAt)}</span></small></div><div class="stats"><div><small>PlayStation 獎盃</small><strong id="trophy-count">${earned} / 46</strong></div><div><small>本周目 Roadmap</small><strong id="roadmap-count">${completedSteps(progress)} / ${steps.length}</strong></div><div><small>Super Win 核對</small><strong id="condition-count">${done} / ${superWinConditions.length}</strong></div><div><small>下一步所在章節</small><strong id="next-stage-title" style="font-size:17px">${escape(stages.find(s=>s.id===nextStep()?.stageId)?.title||'已完成')}</strong></div></div>`;
+ return `<div class="page-heading"><div><h1>${names[view()]}</h1><p class="scope">Grounded · ${runLabel(r)}</p></div><small>最後更新 <span id="updated-at">${date(progress.updatedAt)}</span></small></div><div class="stats"><div><small>PlayStation 獎盃</small><strong id="trophy-count">${earned} / 46</strong></div><div><small>本周目路線圖</small><strong id="roadmap-count">${completedSteps(progress)} / ${steps.length}</strong></div><div><small>超級勝利核對</small><strong id="condition-count">${done} / ${superWinConditions.length}</strong></div><div><small>下一步所在章節</small><strong id="next-stage-title" style="font-size:17px">${escape(stages.find(s=>s.id===nextStep()?.stageId)?.title||'已完成')}</strong></div></div>`;
 }
 function overviewHtml(){
- const next=nextStep();
- return `<section class="panel overview-next"><h2>下一個主線目標</h2>${next?`<p class="next">${escape(next.title)}</p><p>${escape(next.action)}</p><button class="primary" data-step-link="${next.id}">前往這一步</button>`:'<p>Roadmap 已核對完畢；請以遊戲內紀錄確認結局與獎盃。</p>'}<div class="warning"><strong>REMIX.R 前先查漏</strong><p>建議在第一輪先取得 Super Win。進 NG+ 後普通乳牙改為隨機位置，故事重新開始。</p></div></section><section><h2>收集概況</h2><p class="muted">只計本站已收錄項目；資料庫未齊，不顯示完整收集率。</p>${categorySummary()}</section>`;
+ return `<section class="panel overview-next"><h2>從橡樹實驗室到恢復體型</h2><p>七個章節列出主線、出發前裝備和白金需求。</p><button class="primary" data-go="roadmap">開啟遊玩路線圖</button></section><section><h2>收集索引</h2><div class="category-grid">${groups.map(g=>`<div class="list-summary"><a href="?view=collectibles&group=${g.id}" data-category-link="${g.id}">${g.name}</a><strong>${reportItems.filter(i=>i.group===g.id).length} 項</strong></div>`).join('')}</div></section>`;
 }
-function categorySummary(){return `<div class="category-grid">${categories.map(c=>{if(c.id==='milk'&&run(progress).level)return `<div class="list-summary" data-category-summary="milk"><div><a href="?view=ngplus" data-go="ngplus">本周目隨機乳牙</a><small style="display:block">獨立人工計數，非第一輪位置</small></div><strong>${run(progress).ngMolars.count} 已記錄</strong></div>`;const rows=collectibles.filter(i=>collectionVisible(progress,i)&&i.category===c.id),done=rows.filter(i=>collectionState(progress,i)==='obtained').length;return `<div class="list-summary" data-category-summary="${c.id}"><div><a href="?view=collectibles" data-category-link="${c.id}">${escape(c.name)}</a><small style="display:block">${c.id==='mix'?'8 個名稱已列，入口路線待補':'資料庫未齊'}${c.referenceTotal?' · 第一輪來源參考 '+c.referenceTotal+' 項':''}</small></div><strong>${done} / ${rows.length} 已收錄</strong></div>`;}).join('')}</div>`;}
 function roadmapHtml(){
- const stage=stages.find(s=>s.id===filter.stage)||stages[0],r=run(progress),rows=steps.filter(s=>s.stageId===stage.id).filter(s=>(s.title+s.action+s.experienceNote+s.trophyIds.map(id=>trophies.find(t=>t.id===id).officialName).join(' ')).toLowerCase().includes(filter.search.toLowerCase()));
- return `<div class="roadmap-heading"><h2>${stage.number} · ${escape(stage.title)}</h2><p class="muted">完整體驗與白金需求一起列出。Hedge、Pond、Haze、Black Anthill 可依裝備平行探索。</p></div><div class="toolbar"><label class="search">搜尋本章步驟／獎盃<input id="search" data-filter="search" value="${escape(filter.search)}" type="search"></label><button id="resume-progress" ${nextStep()?'':'disabled'}>返回遊玩進度</button></div>${rows.map(s=>{
+ const stage=stages.find(s=>s.id===filter.stage)||stages[0],rows=steps.filter(s=>s.stageId===stage.id).filter(s=>(s.title+' '+s.action+' '+s.experienceNote+' '+(preparations[s.id]||[]).join(' ')+' '+(mainTech[s.id]||[]).flat().join(' ')+' '+s.trophyIds.map(id=>{const t=trophies.find(t=>t.id===id);return t.name+' '+t.officialName;}).join(' ')).toLowerCase().includes(filter.search.toLowerCase()));
+ return `<div class="roadmap-heading"><h2>${stage.number} · ${escape(stage.title)}</h2>${stage.id==='labs'?'<p class="muted">樹籬、池塘、霧靄區和黑蟻丘可依手邊的裝備安排順序。</p>':''}</div><div class="toolbar"><label class="search">搜尋本章地點／裝備／獎盃<input id="search" data-filter="search" value="${escape(filter.search)}" type="search"></label><button id="resume-progress" ${nextStep()?'':'disabled'}>返回遊玩進度</button>${filter.search?'':stage.id==='audit'?'<a href="#super-win-matrix">前往超級勝利核對</a>':stage.id==='remix'?'<a href="#cycle-panel">切換周目或記錄乳牙</a>':''}</div>${rows.map(s=>{
   const state=stepProgress(progress,s),done=state.complete,compact=done&&!filter.search&&!revealedSteps.has(s.id),requiredItems=s.collectibleIds.filter(id=>collectibles.find(i=>i.id===id).requiredFor.length),optionalItems=s.collectibleIds.filter(id=>!requiredItems.includes(id));
-  return `<article class="row roadmap-step ${done?'done':''}" id="step-${s.id}" data-step-row="${s.id}" data-complete="${done}" data-compact="${compact}"><div class="row-heading"><h3><label class="check-label"><input id="step-check-${s.id}" type="checkbox" data-step="${s.id}" aria-label="完成步驟目標：${escape(s.title)}" ${state.goalDone?'checked':''}>${escape(s.title)}</label></h3><div class="step-summary"><small class="step-state">${done?'完成':state.goalDone?'目標已完成':'未開始'}</small><small class="step-count">${state.completed} / ${state.total} 項</small><button type="button" class="step-peek" data-step-peek="${s.id}" aria-controls="body-step-${s.id}" aria-expanded="${!compact}" ${!done||filter.search?'hidden':''}>${compact?'查看詳情':'收起詳情'}</button></div></div><div class="metadata"><span>${regionName(s.regionId)}</span><span class="step-warning ${s.warning}">${warningLabels[s.warning]}</span><span>${verificationLabels[s.verification]}</span></div>${['critical','branch'].includes(s.warning)?`<p class="persistent-warning" ${compact?'':'hidden'}>${escape(s.action)}</p>`:''}<div id="body-step-${s.id}" class="step-content" ${compact?'hidden':''}><section class="step-goal"><h4>步驟目標</h4><p>${escape(s.action)}</p></section><section class="step-experience"><h4>完整體驗</h4><p>${escape(s.experienceNote)}</p>${s.gear!=='依遊戲配方準備當前最高可用裝備、治療與撤退路線。'?`<p>準備：${escape(s.gear)}</p>`:''}${s.prerequisites.length?`<p class="muted">前置參考：${s.prerequisites.map(id=>escape(steps.find(t=>t.id===id).title)).join('、')}</p>`:''}${optionalItems.length?collectionChecklist(optionalItems,'experience-'+s.id):''}</section><section class="step-platinum"><h4>白金需求</h4>${s.trophyIds.length?trophyChecklist(s.trophyIds,s.id):`<p class="muted">${s.platinum?'這一步沒有對應的獨立獎盃，依主線及收集需求繼續推進。':'本步為完整體驗建議，沒有獨立獎盃條件。'}</p>`}${requiredItems.length?`<h5>相關收集</h5>${collectionChecklist(requiredItems,s.id)}`:''}</section>${['collect-audit','super-win'].includes(s.id)?'<button data-go="collectibles">逐類查漏 Super Win</button>':''}${s.id==='remix-check'?remixPendingHtml():''}${links(s.sourceUrls)}</div></article>`;
- }).join('')||'<p class="empty">沒有符合條件的步驟。</p>'}`;
+  return `<article class="row roadmap-step ${done?'done':''}" id="step-${s.id}" data-step-row="${s.id}" data-complete="${done}" data-compact="${compact}"><div class="row-heading"><h3><label class="check-label"><input id="step-check-${s.id}" type="checkbox" data-step="${s.id}" aria-label="完成步驟目標：${escape(s.title)}" ${state.goalDone?'checked':''}>${escape(s.title)}</label></h3><div class="step-summary"><small class="step-state">${done?'完成':state.goalDone?'目標已完成':'未開始'}</small><small class="step-count">${state.completed} / ${state.total} 項</small><button type="button" class="step-peek" data-step-peek="${s.id}" aria-controls="body-step-${s.id}" aria-expanded="${!compact}" ${!done||filter.search?'hidden':''}>${compact?'查看詳情':'收起詳情'}</button></div></div><div class="metadata"><span>${regionName(s.regionId)}</span><span class="step-warning ${s.warning}">${warningLabels[s.warning]}</span><span>${verificationLabels[s.verification]}</span></div>${['critical','branch'].includes(s.warning)?`<p class="persistent-warning" ${compact?'':'hidden'}>${escape(s.action)}</p>`:''}<div id="body-step-${s.id}" class="step-content" ${compact?'hidden':''}><section class="step-goal"><h4>步驟目標</h4><p>${escape(s.action)}</p></section>${preparationHtml(s.id)}${chipTechHtml(s.id)}<section class="step-experience"><h4>完整體驗</h4><p>${escape(s.experienceNote)}</p>${s.prerequisites.length?`<p class="muted">前置參考：${s.prerequisites.map(id=>escape(steps.find(t=>t.id===id).title)).join('、')}</p>`:''}${optionalItems.length?collectionChecklist(optionalItems,'experience-'+s.id):''}</section><section class="step-platinum"><h4>白金需求</h4>${s.trophyIds.length?trophyChecklist(s.trophyIds,s.id):`<p class="muted">${s.platinum?'這一步沒有對應的獨立獎盃，依主線及收集需求繼續推進。':'本步為完整體驗建議，沒有獨立獎盃條件。'}</p>`}${requiredItems.length?`<h5>相關收集</h5>${collectionChecklist(requiredItems,s.id)}`:''}</section>${links(s.sourceUrls)}</div></article>`;
+ }).join('')||'<p class="empty">沒有符合條件的步驟。</p>'}${filter.search?'':stage.id==='audit'?matrixHtml():stage.id==='remix'?ngHtml():''}`;
 }
-function collectionFilters(){return `<div class="toolbar"><label class="search">名稱／Data 分組／位置搜尋<input id="collection-search" type="search" data-filter="search" value="${escape(filter.search)}"></label>${filterSelect('category-filter','分類',[['all','全部分類'],...categories.map(c=>[c.id,c.name])],'category')}${filterSelect('data-group-filter','遊戲 Data 分組',[['all','全部／未核對分組'],['Ominent','Ominent（部分）'],['Wendell','Wendell（部分）']],'dataGroup')}${filterSelect('region-filter','區域',[['all','全部區域'],...regions.map(r=>[r.id,r.name])],'region')}${filterSelect('status-filter','狀態',[['all','全部狀態'],['pending','未完成（含待確認）'],['missing','未取得'],['obtained','已取得'],['unknown','待確認']],'status')}${filterSelect('verification-filter','查證',[['all','全部查證'],...Object.entries(verificationLabels)],'verification')}${filterSelect('required-filter','用途',[['all','所有用途'],['platinum','白金相關（含 Super Win）'],['super-win','Super Win']],'required')}${view()==='map'?filterSelect('layer-filter','圖層',Object.entries(layerNames),'layer'):''}</div>${filter.condition!=='all'?`<p id="active-condition">查漏分類：${escape(superWinConditions.find(c=>c.id===filter.condition)?.title)} · 已收錄的未完成項（含必要性待查證）。<button id="clear-collection-filter">清除查漏篩選</button></p>`:''}`;}
-function filteredItems(){return collectibles.filter(i=>collectionVisible(progress,i)).filter(i=>filter.condition==='all'||conditionItems(progress,superWinConditions.find(c=>c.id===filter.condition)).some(item=>item.id===i.id)).filter(i=>filter.category==='all'||i.category===filter.category).filter(i=>filter.dataGroup==='all'||i.dataGroup===filter.dataGroup).filter(i=>filter.region==='all'||i.regionId===filter.region).filter(i=>filter.status==='all'||(filter.status==='pending'?collectionState(progress,i)!=='obtained':collectionState(progress,i)===filter.status)).filter(i=>filter.verification==='all'||i.verification===filter.verification).filter(i=>filter.required==='all'||(filter.required==='super-win'?i.requiredFor.includes('super-win'):i.requiredFor.length>0)).filter(i=>view()!=='map'||filter.layer==='all'||i.layer===filter.layer).filter(i=>(i.officialName+' '+(i.dataGroup||'')+' '+i.locationDescription+' '+regionName(i.regionId)).toLowerCase().includes(filter.search.trim().toLowerCase()));}
-function collectionRow(i,map=false){
- const status=collectionState(progress,i);
- return `<article class="row ${status==='obtained'?'done':''} ${mapState.selectedId===i.id?'selected-item':''}" id="collect-${i.id}"><div class="row-heading"><h3>${escape(i.officialName)}</h3><label><span class="muted">取得狀態 </span><select id="collect-state-${i.id}" class="status-picker" data-collect="${i.id}" aria-label="${escape(i.officialName)} 狀態">${stateOptions(status)}</select></label></div><div class="metadata"><span>${categories.find(c=>c.id===i.category).name}</span><span>${regionName(i.regionId)} · ${layerNames[i.layer]}</span><span>${verificationLabels[i.verification]}</span><span>${i.requiredFor.length?'白金相關':'必要性待查證'}</span></div><p>${escape(i.locationDescription)}</p>${['document','audio'].includes(i.category)?`<p class="muted">遊戲 Data 分組：${escape(i.dataGroup||'待查證')} · 遊戲內排序待查證</p>`:""}<small>區域已知，精確位置待查證 · ${i.worldScope==='base'?'第一輪位置':'跨周目內容'} · ${i.spawnRule==='fixed'?'固定位置':'出現規則待查證'}</small><div class="actions"><button data-locate="${i.id}">${map?'聚焦此區域':'在示意圖定位'}</button>${map?`<button data-collection-link="${i.id}">前往收集清單</button>`:''}</div>${steps.filter(s=>s.collectibleIds.includes(i.id)).map(s=>`<button data-step-link="${s.id}">回攻略：${escape(s.title)}</button>`).join('')}${links(i.sourceUrls)}</article>`;
+
+function preparationHtml(id){
+ const route=preparations[id];
+ if(!route)return '';
+ return `<section class="route-pair" aria-label="出發前準備與行進路線">
+ <div><h4>先取得／準備</h4><p>${escape(route[0])}</p></div>
+ <div><h4>再前往</h4><p>${escape(route[1])}</p></div>
+ </section>`;
 }
-function matrixHtml(){const r=run(progress);return `<section class="panel" id="super-win-matrix"><h2>Super Win 條件核對</h2><p>依遊戲 Report Card 提示查漏，再逐類核對。以下是人工確認，不是遊戲百分比；本站未收錄項目仍可能缺漏。清單全勾選也不保證 Super Win。</p><p><strong>官方已確認：Gold Cards 不必要。</strong>獎盃與每項條件各自確認，沒有自動推測或 Shared World／PSN 同步。</p><div class="matrix">${superWinConditions.map(c=>{const items=conditionItems(progress,c),pending=pendingItems(progress,items);return `<div class="row" data-condition-row="${c.id}"><label class="check-label"><input id="condition-${c.id}" data-condition="${c.id}" type="checkbox" ${r.conditions[c.id]?.done?'checked':''}><span><strong>${c.title}</strong><small style="display:block">${escape(c.detail)}</small></span></label>${c.categoryIds?`<p>本站已收錄 ${items.length} 項，未完成 ${pending.length} 項（含待確認）；${c.id==='mix'?'名稱齊，路線仍待補。':'部分清單，還須遊戲內全量核對。'}</p><button data-condition-link="${c.id}">查已收錄未完成項</button>`:c.stepId?`<button data-step-link="${c.stepId}">查看本周目攻略與獨立勾選</button>`:'<p>逐項資料未建庫，請回遊戲核對。</p>'}${c.id==='molars'&&r.level?'<button data-go="ngplus">核對本周目隨機乳牙</button>':''}</div>`;}).join('')}</div>${links([sources.report.url,sources.official.url])}</section>`;}
-function collectionsHtml(){
- const rows=filteredItems();
- return `<p class="warning">本站收錄 ${collectibles.length} 個具名項目，逐項資料庫未齊；參考總數不代表已列出全部項目。${run(progress).level?'NG+ 普通乳牙使用當輪獨立計數，不列第一輪固定點。':''}</p><div class="actions"><button id="open-super-win-lookup">Super Win／99% 查漏</button></div>${categorySummary()}${collectionFilters()}<section id="collection-results"><h2>已收錄收集項</h2><p class="muted">符合 ${rows.length} 項。取得狀態可撤回；獎盃需獨立確認。</p>${rows.map(i=>collectionRow(i)).join('')||'<p class="empty">沒有符合條件的已收錄項目；不代表遊戲已全收齊，請核對未收錄項與來源。</p>'}</section>${matrixHtml()}`;
+function chipTechHtml(stepId){
+ const unlocks=mainTech[stepId];
+ if(!unlocks)return '';
+ return `<section class="chip-tech"><h4>晶片與重點解鎖</h4><dl>${unlocks.map(([name,detail])=>`<dt>${escape(name)}</dt><dd>${escape(detail)}</dd>`).join('')}</dl>
+ <a href="${escape(shopSource)}" target="_blank" rel="noopener noreferrer">科學商店解鎖表 ↗</a></section>`;
+}
+
+function matrixHtml(){
+ const r=run(progress);
+ return `<section class="panel" id="super-win-matrix"><h2>超級勝利核對</h2><p>按第一輪遊戲報告卡逐類查漏。金卡無須全收集。</p>
+  <div class="matrix">${superWinConditions.map(c=>{
+   const items=reportConditionItems(c,r.level);
+   return `<div class="row" data-condition-row="${c.id}">
+    <label class="check-label"><input id="condition-${c.id}" data-condition="${c.id}" type="checkbox" ${r.conditions[c.id]?.done?'checked':''}>
+    <span><strong>${c.title}</strong><small class="check-description">${escape(c.detail)}</small></span></label>
+    ${items.length?`<details><summary data-condition-summary="${c.id}">${conditionSummary(items)}</summary>
+     ${collectionChecklist(items.map(i=>i.id),'audit-'+c.id)}</details>`:''}
+    ${c.stepId?`<button data-step-link="${c.stepId}">前往對應攻略</button>`:''}
+    ${c.id==='molars'&&r.level?'<button data-roadmap-jump="remix" data-target="ng-molars">核對本周目隨機乳牙</button>':''}
+   </div>`;
+  }).join('')}</div>${links([sources.report.url,sources.official.url])}
+ </section><details><summary>舊版池塘乳牙紀錄</summary><p>池塘沉木旁的網尚待比對新版點位。</p>${collectionChecklist(['milk-pond-net'],'legacy-audit')}</details><section class="panel" id="platinum-check"><h2>白金獎盃</h2>${trophyChecklist(['gnats-all-folks'],'audit')}</section>`;
+}
+
+function conditionSummary(items){
+ return `展開明細 · 待核對 ${pendingItems(progress,items).length}／${items.length}`;
 }
 function trophyHtml(){
- const pl=player(progress),rows=trophies.filter(t=>filter.trophyCategory==='all'||t.category===filter.trophyCategory).filter(t=>filter.trophyStatus==='all'||!!pl.trophies[t.id]?.earned===(filter.trophyStatus==='earned')).filter(t=>(t.officialName+t.condition).toLowerCase().includes(filter.search.toLowerCase()));
- return `<p>依 PlayStation 實際跳盃勾選；與 Roadmap 中的同名獎盃互相反映。完成步驟或收集不會自動代填。46 項包含 REMIX.R 與 NG+ 結局。</p><div class="toolbar"><label class="search">搜尋名稱／條件<input id="trophy-search" type="search" data-filter="search" value="${escape(filter.search)}"></label>${filterSelect('trophy-status','取得狀態',[['all','全部'],['earned','已取得'],['pending','未取得']],'trophyStatus')}${filterSelect('trophy-category','分類',[['all','全部分類'],['story','故事'],['combat','戰鬥'],['craft','製作／基地'],['explore','探索'],['collection','收集'],['ngplus','NG+'],['meta','白金']],'trophyCategory')}</div>${rows.map(t=>`<article id="trophy-${t.id}" class="row"><div class="row-heading"><h3><label class="check-label"><input id="trophy-check-${t.id}" data-trophy="${t.id}" type="checkbox" ${pl.trophies[t.id]?.earned?'checked':''}>${escape(t.officialName)}</label></h3><small>${{platinum:'白金',gold:'金',silver:'銀',bronze:'銅'}[t.grade]} · ${verificationLabels[t.verification]}</small></div><p>${escape(t.condition)}</p>${t.risk?`<p class="risk">${escape(t.risk)}</p>`:""}${links(t.sourceUrls)}</article>`).join('')||'<p class="empty">沒有符合的獎盃。</p>'}`;
-}
-function mapHtml(){
- const rows=filteredItems(),groups=regions.map(reg=>{const items=rows.filter(i=>i.regionId===reg.id);return {id:reg.id,count:items.length,done:items.filter(i=>collectionState(progress,i)==='obtained').length};});
- return `<p>原創概念區域圖，非等比例、非導航地圖。所有收集品只聚合到區域，<strong>目前沒有已核實的精確點位</strong>。點區域可篩選清單，清單也可反向定位。</p>${collectionFilters()}<div class="map-layout"><div class="map-frame"><div class="map-controls"><button data-map-control="in" aria-label="放大">＋</button><button data-map-control="out" aria-label="縮小">−</button><button data-map-control="left" aria-label="向左平移">←</button><button data-map-control="up" aria-label="向上平移">↑</button><button data-map-control="down" aria-label="向下平移">↓</button><button data-map-control="right" aria-label="向右平移">→</button><button data-map-control="reset">全圖</button><button id="clear-map-filter">全部區域</button></div><div class="map-viewport">${mapSvg(groups,filter.region,escape)}</div><p class="map-caption">矩形：示意區域群組。可拖曳空白處；方向鍵平移、＋／− 縮放、Home 還原。</p></div><section class="map-list" aria-label="地圖篩選結果"><h2>${rows.length} 個符合項目</h2>${rows.map(i=>collectionRow(i,true)).join('')||'<p class="empty">這個圖層／篩選尚無已收錄項目。</p>'}</section></div>`;
+ const rows=trophies.filter(t=>(filter.trophyCategory==='all'||t.category===filter.trophyCategory)
+  && [t.name,t.officialName,t.condition].join(' ').toLowerCase().includes(filter.search.trim().toLowerCase()));
+ return `<p class="muted">中文依 BWIKI 成就名稱整理，白金為本站譯名。取得後可從條件旁前往路線圖勾選。</p>
+ <div class="toolbar">${searchInput('trophy-search','搜尋中／英文名稱或條件')}
+ ${filterSelect('trophy-category','分類',[['all','全部分類'],['story','故事'],['combat','戰鬥'],['craft','製作／基地'],['explore','探索'],['collection','收集'],['ngplus','NG+'],['meta','白金']],'trophyCategory')}</div>
+ ${rows.map(t=>{
+  const step=steps.find(s=>s.trophyIds.includes(t.id));
+  return `<article id="trophy-${t.id}" class="row"><div class="row-heading"><h2>${nameWithEnglish(t)}</h2>
+   <small>${{platinum:'白金',gold:'金',silver:'銀',bronze:'銅'}[t.grade]} · ${verificationLabels[t.verification]}</small></div>
+   <p>${escape(t.condition)}</p>${t.risk?`<p class="risk">${escape(t.risk)}</p>`:''}
+   ${['super-win','gnats-all-folks'].includes(t.id)?'<p><a href="?view=collectibles" data-go="collectibles">查看 100% 通關清單</a></p>':''}
+   ${step?`<button data-step-link="${step.id}">前往路線圖 · ${escape(step.title)}</button>`:'<button data-roadmap-jump="audit" data-target="platinum-check">前往路線圖 · 白金</button>'}
+  </article>`;
+ }).join('')||'<p class="empty">沒有符合的獎盃。</p>'}${links([sources.bwikiTrophies.url,sources.ps.url])}`;
 }
 function remixPendingHtml(){
  const review=remixReview(progress);
- return `<div id="remix-pending"><h3>第一輪未確認事項</h3><p>這是本站人工紀錄，不代表遊戲 REMIX.R 已可啟動。只有 PSN 實際跳盃才能勾選個人獎盃。</p><p>${review.firstRun?'第一輪 Super Win 分類尚未確認：'+review.pendingConditions.length+' / '+superWinConditions.length:'找不到第一輪紀錄，請回原存檔核對。'}</p><p>${review.pendingConditions.map(c=>escape(c.title)).join('、')||'分類皆已人工勾選；資料庫仍未齊，請確認遊戲實際評分。'}</p><p>第一輪個人獎盃尚未確認：${review.pendingTrophies.length} / ${review.baseTrophies.length}（不含白金與兩個 NG+ 盃）。</p><p>${review.pendingTrophies.map(t=>escape(t.officialName)).join('、')||'第一輪個人獎盃已手動確認。'}</p><button data-go="collectibles">逐類查漏 Super Win</button></div>`;
+ return `<div id="remix-pending"><h3>第一輪未確認事項</h3><p>這是本站人工紀錄，不代表遊戲 REMIX.R 已可啟動。只有 PSN 實際跳盃才能勾選個人獎盃。</p><p>${review.firstRun?'第一輪 超級勝利 分類尚未確認：'+review.pendingConditions.length+' / '+superWinConditions.length:'找不到第一輪紀錄，請回原存檔核對。'}</p><p>${review.pendingConditions.map(c=>escape(c.title)).join('、')||'分類皆已人工勾選；資料庫仍未齊，請確認遊戲實際評分。'}</p><p>第一輪個人獎盃尚未確認：${review.pendingTrophies.length} / ${review.baseTrophies.length}（不含白金與兩個 NG+ 盃）。</p><p>${review.pendingTrophies.map(t=>escape(t.name)).join('、')||'第一輪個人獎盃已手動確認。'}</p><button data-roadmap-jump="audit" data-target="super-win-matrix">前往 100% 查漏</button></div>`;
 }
-function ngHtml(){const w=world(progress),r=run(progress);return `<div class="toolbar"><label>瀏覽周目<select id="run-select">${options(Object.entries(w.runs).map(([id,r])=>[id,runLabel(r)]),w.currentRunId)}</select></label></div><section class="panel"><h2>REMIX.R 前驗收</h2><p>這裡只建立網站清單，不操作遊戲存檔。舊周目完整保留，可隨時切回查看。</p>${['broodmother','mantis','wasp-queen','javamatic'].map(id=>`<p>${r.steps[id]?.done?'目標已手動記錄':'目標未手動記錄'} · ${escape(steps.find(s=>s.id===id).title)}</p>`).join('')}<div class="warning">先在遊戲保留可辨識的存檔。確認第一輪 Super Win 後再啟動 REMIX.R，能減少新周目的收集負擔。</div>${remixPendingHtml()}<button id="ng-backup">下載網站周目切換前備份</button><label class="check-label"><input id="ng-ack" type="checkbox">我已保存下載檔，並已在遊戲啟動 REMIX.R，現在要建立下一周目清單</label><button id="ng-create" disabled>建立下一個 NG+ 清單</button></section><section><h2>繼承／重置規則</h2>${ngRules.map(rule=>`<article class="row"><h3>${rule.title}</h3><p>${rule.detail}</p>${links([sources[rule.source].url])}</article>`).join('')}</section><section class="panel"><h2>本周目隨機乳牙記錄</h2><p>社群資料為每輪 66 顆、從 219 個候選位置中選出；候選不是必收數量。本站沒有未核實候選座標，此計數是你回到遊戲核對後的獨立記錄。</p>${r.level?`<div class="form-grid"><label>已核對取得數<input id="ng-molar-count" type="number" min="0" max="999" step="1" value="${r.ngMolars.count}"></label><label>核對狀態<select id="ng-molar-status">${stateOptions(r.ngMolars.status)}</select></label></div>`:'<p>目前是第一輪；普通乳牙請在收集清單逐項追蹤。進入 NG+ 後才啟用此獨立計數。</p>'}${links([sources.ng.url])}</section>`;}
-function sourcesHtml(){return `<section class="definition"><h2>資料基準 · ${checkedAt}</h2><p>Grounded 本體，非 Grounded 2。依公開 PS4／PS5 46 項清單建立，繁中條件是本站摘要。本站 ID 不是官方 PSN 數字 ID。</p><p>最新可查官方修補紀錄：1.4.7.4815（2025-05-12）。PS4／PS5 實際安裝版本仍需主機確認。</p><p>來源直接存取部分回傳 403，使用搜尋索引回傳文字核對，未繞過驗證。維基有混合兩代條目，僅納入 Grounded 段落；圖像、底圖、座標與圖磚皆未使用。</p><p>收集品 ${collectibles.length} 項；所有分類均未宣稱完整。沒有用 78／45／51 的參考總數產生空白假項目。特殊配方、生物卡目前僅收錄已查證子集；其餘逐項資料仍待補齊。</p><p>Underexposed 的來源分別寫進入照片模式／拍照，已標來源差異。部分錄音／Data 分組仍待核實；未知必要性不能當成可略過。已確認的 Trudy Blues 與 Ominent 具名資料已補來源及文字路線。獎盃可補救與多人補跳機制未實機驗收。</p><p>Super Win 條件矩陣來自社群資料，沒有宣稱能計算遊戲評分。官方 1.4 已確認 Gold Cards 不必要。</p><p>本機使用 Grounded 獨立 IndexedDB；網站完整備份保存未知資料、快照及匯入兩端原文。沒有 SW、背景同步或 Google Drive 寫入。跨分頁讀取最新值後再交易；匯入預覽過期即停止。</p></section><section>${Object.values(sources).map(s=>`<article class="row"><h3>${escape(s.label)}</h3><a href="${escape(s.url)}" target="_blank" rel="noopener noreferrer">開啟來源 ↗</a></article>`).join('')}</section>`;}
+function ngHtml(){const w=world(progress),r=run(progress);return `<div class="toolbar" id="cycle-panel"><label>瀏覽周目<select id="run-select">${options(Object.entries(w.runs).map(([id,r])=>[id,runLabel(r)]),w.currentRunId)}</select></label></div><section class="panel"><h2>REMIX.R 前驗收</h2><p>這裡只建立網站清單，不操作遊戲存檔。舊周目完整保留，可隨時切回查看。</p>${['broodmother','mantis','wasp-queen','javamatic'].map(id=>`<p><span data-remix-step="${id}">${r.steps[id]?.done?'目標已手動記錄':'目標未手動記錄'}</span> · ${escape(steps.find(s=>s.id===id).title)}</p>`).join('')}<div class="warning">先在遊戲保留可辨識的存檔。確認第一輪超級勝利後再啟動 REMIX.R，能減少新周目的收集負擔。</div>${remixPendingHtml()}<button id="ng-backup">下載網站周目切換前備份</button><label class="check-label"><input id="ng-ack" type="checkbox">我已保存下載檔，並已在遊戲啟動 REMIX.R，現在要建立下一周目清單</label><button id="ng-create" disabled>建立下一個 NG+ 清單</button></section><section><h2>繼承／重置規則</h2>${ngRules.map(rule=>`<article class="row"><h3>${rule.title}</h3><p>${rule.detail}</p>${links([sources[rule.source].url])}</article>`).join('')}</section><section class="panel" id="ng-molars"><h2>本周目隨機乳牙記錄</h2><p>社群資料為每輪 66 顆、從 219 個候選位置中選出；候選不是必收數量。本站沒有未核實候選座標，此計數是你回到遊戲核對後的獨立記錄。</p>${r.level?`<div class="form-grid"><label>已核對取得數<input id="ng-molar-count" type="number" min="0" max="999" step="1" value="${r.ngMolars.count}"></label><label>核對狀態<select id="ng-molar-status">${stateOptions(r.ngMolars.status)}</select></label></div>`:'<p>目前是第一輪；普通乳牙請在本路線圖的 100% 查漏逐項記錄。進入 NG+ 後才啟用此獨立計數。</p>'}${links([sources.ng.url])}</section>`;}
+function sourcesHtml(){
+ return `<section class="definition"><h2>資料基準 · ${checkedAt}</h2>
+ <p>PS4／PS5 獎盃來自公開 46 盃清單。第一輪報告卡索引、生物抗性和晶片科技以 BWIKI 為主。地圖採 MapGenie 逐點座標。</p>
+ <p>地標、收集與防守可能共用點位，資料頁各自核對。遊戲內的 100% 報告卡是完成依據。部分劇情獎勵、沒有固定點位的生物及購買項目在清單查閱。PS5 跳盃待實機確認。</p>
+ <p>本機使用 Grounded 獨立 IndexedDB，完整備份包含未知資料、快照及匯入兩端原文。</p>
+ <div class="sources"><a href="${reportSource}">BWIKI 報告卡</a><a href="${shopSource}">BWIKI 科學商店</a><a href="${mapSource}">MapGenie 點位</a></div>
+ </section><section>${Object.values(sources).map(s=>`<article class="row"><h3>${escape(s.label)}</h3><a href="${escape(s.url)}" target="_blank" rel="noopener noreferrer">開啟來源 ↗</a></article>`).join('')}</section>`;
+}
 function render(){
- if(!progress)return;
- if(readingScope!==scopeOf(progress)){revealedSteps.clear();readingScope=scopeOf(progress);}
- for(const step of steps)if(!stepProgress(progress,step).complete)revealedSteps.delete(step.id);
+ if(!progress&&view()==='roadmap'){
+  if(progressError){renderProgressError();return;}
+  $('app').innerHTML='<p role="status">正在讀取本機進度…</p>';
+  void loadProgress().then(()=>{if(view()==='roadmap')render();});
+  return;
+ }
+ if(view()==='roadmap'&&readingScope!==scopeOf(progress)){revealedSteps.clear();readingScope=scopeOf(progress);}
+ if(view()==='roadmap')for(const step of steps)if(!stepProgress(progress,step).complete)revealedSteps.delete(step.id);
  const active=document.activeElement,focusId=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;
- $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectionsHtml,map:mapHtml,trophies:trophyHtml,ngplus:ngHtml,sources:sourcesHtml}[view()]())+`<p class="footer">查證 ${checkedAt} · 網站備份不包含遊戲存檔 · 資料庫尚未齊全</p>`;
+ $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:()=>reportReferenceHtml(gearControls),map:()=>reportMapHtml({...gearControls,selectedId:pageParams().get('item')}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),sources:sourcesHtml}[view()]());
  document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view())a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  document.querySelectorAll('[data-stage]').forEach(a=>{if(view()==='roadmap'&&a.dataset.stage===filter.stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
  if(focusId&&$(focusId)){$(focusId).focus({preventScroll:true});if(selection&&$(focusId).setSelectionRange)try{$(focusId).setSelectionRange(...selection);}catch{}}
- updateChapterCounts();bindControls();if(view()==='map')bindMap({selectRegion:id=>{filter.region=id;render();}});
+ updateChapterCounts();bindControls();if(view()==='map')bindReportMap({
+  filter,escape,onSelect:id=>{
+   const url=new URL(location.href);url.searchParams.set('item',id);history.replaceState({},'',url);
+  },onCollection:id=>{resetCollectionFilters();go('collectibles');focusItem('collect-'+id);}
+ });
 }
-function focusItem(id){requestAnimationFrame(()=>{const target=$(id);target?.scrollIntoView({block:['super-win-matrix','collection-results'].includes(id)?'start':'center'});const focus=target?.querySelector('input,select,button');focus?.focus({preventScroll:true});});}
+function focusItem(id){
+ const scrollToItem=()=>requestAnimationFrame(()=>{
+  const target=$(id);
+  if(!target)return;
+  target.scrollIntoView({block:['super-win-matrix','platinum-check','ng-molars','collection-results'].includes(id)?'start':'center'});
+  const focus=target.querySelector('input,select,button,a');
+  focus?.focus({preventScroll:true});
+ });
+ if(view()==='roadmap'&&!progress)void loadProgress().then(scrollToItem);
+ else scrollToItem();
+}
 function updateChapterCounts(){
  document.querySelectorAll('[data-stage-count]').forEach(label=>{
   const items=steps.filter(step=>step.stageId===label.dataset.stageCount);
-  label.textContent=items.filter(step=>stepProgress(progress,step).complete).length+' / '+items.length;
+  label.textContent=view()==='roadmap'&&progress?items.filter(step=>stepProgress(progress,step).complete).length+' / '+items.length:'';
  });
 }
 function syncRoadmap(){
@@ -105,47 +175,68 @@ function syncRoadmap(){
   const warning=row.querySelector('.persistent-warning');if(warning)warning.hidden=!compact;
  });
  document.querySelectorAll('[data-trophy]').forEach(input=>input.checked=player(progress).trophies[input.dataset.trophy]?.earned===true);
- document.querySelectorAll('[data-collect-check]').forEach(input=>input.checked=collectionState(progress,collectibles.find(item=>item.id===input.dataset.collectCheck))==='obtained');
- document.querySelectorAll('[data-collection-pending]').forEach(label=>label.hidden=collectionState(progress,collectibles.find(item=>item.id===label.dataset.collectionPending))!=='unknown');
+ document.querySelectorAll('[data-collect-check]').forEach(input=>input.checked=collectionState(progress,itemById(input.dataset.collectCheck))==='obtained');
+ document.querySelectorAll('[data-collection-pending]').forEach(label=>label.hidden=collectionState(progress,itemById(label.dataset.collectionPending))!=='unknown');
  $('trophy-count').textContent=trophies.filter(t=>player(progress).trophies[t.id]?.earned).length+' / 46';
  $('roadmap-count').textContent=completedSteps(progress)+' / '+steps.length;
  $('condition-count').textContent=superWinConditions.filter(c=>run(progress).conditions[c.id]?.done).length+' / '+superWinConditions.length;
  $('next-stage-title').textContent=stages.find(stage=>stage.id===nextStep()?.stageId)?.title||'已完成';
  $('updated-at').textContent=date(progress.updatedAt);$('resume-progress').disabled=!nextStep();updateChapterCounts();
- const pending=$('remix-pending');if(pending){pending.outerHTML=remixPendingHtml();$('remix-pending').querySelector('[data-go]').onclick=()=>{resetCollectionFilters();go('collectibles');};}
+ document.querySelectorAll('[data-condition]').forEach(input=>input.checked=run(progress).conditions[input.dataset.condition]?.done===true);
+ document.querySelectorAll('[data-condition-summary]').forEach(label=>{
+  const condition=superWinConditions.find(c=>c.id===label.dataset.conditionSummary);
+  label.textContent=conditionSummary(reportConditionItems(condition,run(progress).level));
+ });
+ const currentRun=run(progress);
+ if($('ng-molar-count'))$('ng-molar-count').value=currentRun.ngMolars.count;
+ if($('ng-molar-status'))$('ng-molar-status').value=currentRun.ngMolars.status;
+ document.querySelectorAll('[data-remix-step]').forEach(label=>label.textContent=currentRun.steps[label.dataset.remixStep]?.done?'目標已手動記錄':'目標未手動記錄');
+ const pending=$('remix-pending');
+ if(pending){pending.outerHTML=remixPendingHtml();bindRoadmapJumps($('remix-pending'));}
  if(activeRow&&!active.getClientRects().length){const fallback=activeRow.querySelector('[data-step]');fallback.focus({preventScroll:true});if(anchor===active)anchor=fallback;}
  if(anchor&&top!==undefined)window.scrollBy(0,anchor.getBoundingClientRect().top-top);
 }
+function bindRoadmapJumps(root=document){
+ root.querySelectorAll('[data-roadmap-jump]').forEach(button=>button.onclick=()=>{
+  filter.stage=button.dataset.roadmapJump;
+  filter.search='';
+  go('roadmap');
+  focusItem(button.dataset.target);
+ });
+}
+
 function bindControls(){
+ bindRoadmapJumps();
  document.querySelectorAll('[data-step-peek]').forEach(button=>button.onclick=()=>{const id=button.dataset.stepPeek;if(revealedSteps.has(id))revealedSteps.delete(id);else revealedSteps.add(id);syncRoadmap();});
  if($('resume-progress'))$('resume-progress').onclick=()=>{const next=nextStep();if(next){filter.stage=next.stageId;filter.search='';go('roadmap',{stage:next.stageId});focusItem('step-'+next.id);}};
  document.querySelectorAll('[data-filter]').forEach(input=>input.addEventListener(input.tagName==='INPUT'?'input':'change',()=>{filter[input.dataset.filter]=input.value;render();}));
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=e=>{e.preventDefault();resetCollectionFilters();go(b.dataset.go);});
  document.querySelectorAll('[data-step-link]').forEach(b=>b.onclick=()=>{const s=steps.find(s=>s.id===b.dataset.stepLink);filter.stage=s.stageId;filter.search='';go('roadmap',{stage:s.stageId});focusItem('step-'+s.id);});
- if($('open-super-win-lookup'))$('open-super-win-lookup').onclick=()=>focusItem('super-win-matrix');
- document.querySelectorAll('[data-condition-link]').forEach(b=>b.onclick=()=>{resetCollectionFilters();filter.condition=b.dataset.conditionLink;filter.status='pending';go('collectibles');focusItem('collection-results');});
- if($('clear-collection-filter'))$('clear-collection-filter').onclick=()=>{resetCollectionFilters();render();focusItem('collection-results');};
- document.querySelectorAll('[data-category-link]').forEach(b=>b.onclick=e=>{e.preventDefault();resetCollectionFilters();filter.category=b.dataset.categoryLink;go('collectibles');});
- document.querySelectorAll('[data-collection-link]').forEach(b=>b.onclick=()=>{resetCollectionFilters();go('collectibles');focusItem('collect-'+b.dataset.collectionLink);});
- document.querySelectorAll('[data-locate]').forEach(b=>b.onclick=()=>{const i=collectibles.find(i=>i.id===b.dataset.locate);resetCollectionFilters();filter.region=i.regionId;filter.layer=i.layer;mapState.selectedId=i.id;go('map');focusItem('collect-'+i.id);});
+ document.querySelectorAll('[data-audit]').forEach(link=>link.onclick=e=>{
+  e.preventDefault();filter.stage='audit';filter.search='';go('roadmap');focusItem('super-win-matrix');
+ });
+ document.querySelectorAll('[data-category-link]').forEach(link=>link.onclick=e=>{
+  e.preventDefault();resetCollectionFilters();filter.reportGroup=link.dataset.categoryLink;go('collectibles',{group:filter.reportGroup});
+ });
+ document.querySelectorAll('[data-locate]').forEach(link=>link.onclick=e=>{
+  e.preventDefault();resetCollectionFilters();go('map',{item:link.dataset.locate});
+ });
  document.querySelectorAll('[data-step]').forEach(input=>input.onchange=()=>{const done=input.checked,id=input.dataset.step;void action(()=>update(p=>{const rows=run(p).steps;rows[id]={...rows[id],done,completedAt:done?Date.now():null,...stampActor(p)};}));});
  document.querySelectorAll('[data-trophy]').forEach(input=>input.onchange=()=>{const earned=input.checked,id=input.dataset.trophy;void action(()=>update(p=>{const rows=player(p).trophies;rows[id]={...rows[id],earned,...stampActor(p)};}));});
- document.querySelectorAll('[data-collect-check]').forEach(input=>input.onchange=()=>{const status=input.checked?'obtained':'missing',item=collectibles.find(i=>i.id===input.dataset.collectCheck);void action(()=>update(p=>setCollection(p,item,status)));});
- document.querySelectorAll('[data-collect]').forEach(input=>input.onchange=()=>{const status=input.value,item=collectibles.find(i=>i.id===input.dataset.collect);void action(()=>update(p=>setCollection(p,item,status)));});
+ document.querySelectorAll('[data-collect-check]').forEach(input=>input.onchange=()=>{const status=input.checked?'obtained':'missing',item=itemById(input.dataset.collectCheck);void action(()=>update(p=>setCollection(p,item,status)));});
  document.querySelectorAll('[data-condition]').forEach(input=>input.onchange=()=>{const done=input.checked,id=input.dataset.condition;void action(()=>update(p=>{const rows=run(p).conditions;rows[id]={...rows[id],done,...stampActor(p)};}));});
  for(const [id,key,group]of [['run-select','currentRunId','runs']])if($(id))$(id).onchange=e=>{const value=e.target.value;void action(()=>update(p=>{const w=world(p);if(!Object.hasOwn(w[group],value))throw Error('找不到記錄');w[key]=value;}));};
- if($('clear-map-filter'))$('clear-map-filter').onclick=()=>{filter.region='all';render();};
  if($('ng-backup'))$('ng-backup').onclick=()=>void action(async()=>{const raw=await store.stamp();download(JSON.parse(raw),'before-ng');ngBackupStamp=raw;message('下載已發起；請開啟檔案確認保存，再建立周目。');});
  if($('ng-ack'))$('ng-ack').onchange=()=>{$('ng-create').disabled=!$('ng-ack').checked||!ngBackupStamp;};
  if($('ng-create'))$('ng-create').onclick=()=>void action(async()=>{if(!$('ng-ack').checked||!ngBackupStamp)throw Error('請先備份並確認');await store.checkpoint('新增 NG+ 前');await store.update(p=>{addRun(p);return p;},ngBackupStamp);ngBackupStamp=null;message('新周目已建立；第一輪原始記錄保留。');});
  for(const [id,key]of [['ng-molar-count','count'],['ng-molar-status','status']])if($(id))$(id).onchange=e=>{const value=key==='count'?Number(e.target.value):e.target.value;void action(()=>update(p=>{if(key==='count'&&(!Number.isSafeInteger(value)||value<0||value>999))throw Error('請輸入 0–999 的整數');run(p).ngMolars[key]=value;}));};
 }
-function resetCollectionFilters(){Object.assign(filter,{search:'',category:'all',region:'all',status:'all',verification:'all',required:'all',layer:'all',condition:'all',dataGroup:'all'});}
+function resetCollectionFilters(){Object.assign(filter,{search:'',reportGroup:'all',mapGroup:'all'});}
 function download(data,label){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='game-companion.grounded.'+label+'.'+Date.now()+'.json';document.body.append(a);try{a.click();}finally{a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}}
 async function preview(file){if(file.size>20*1024*1024)throw Error('匯入檔超過 20 MB，已停止；原始檔保留');const sourceRaw=await file.text(),localRaw=await store.stamp();await store.archive({sourceRaw,localRaw,at:Date.now(),label:'匯入兩端原文'});const source=importData(JSON.parse(sourceRaw)),local=JSON.parse(localRaw),plan=core.merge(null,local,source,{hasBase:false});review={plan,bundle:{sourceRaw,localRaw,at:Date.now()},stamp:localRaw,choices:plan.conflicts.map(()=>''),downloaded:false,invalid:false};$('import-ack').checked=false;$('import-ack').disabled=true;$('import-status').textContent=plan.conflicts.length+' 筆差異；兩端原文已保存在本遊戲復原區。';renderReview();$('backup-dialog').close();$('import-dialog').showModal();}
 function renderReview(){$('import-rows').innerHTML=review.plan.conflicts.map((c,i)=>`<div class="diff"><strong>${escape(c.path.join(' / '))}</strong><div class="diff-values"><pre>本機\n${escape(JSON.stringify(c.local,null,2)??'未記錄')}</pre><pre>來源\n${escape(JSON.stringify(c.remote,null,2)??'未記錄')}</pre></div><select data-diff="${i}" aria-label="匯入差異 ${i+1}">${options([['','請選擇'],['local','本機'],['remote','來源']],review.choices[i])}</select></div>`).join('')||'<p>沒有進度差異；仍須下載兩端原文復原包並確認。</p>';$('import-rows').querySelectorAll('[data-diff]').forEach(s=>s.onchange=()=>{review.choices[Number(s.dataset.diff)]=s.value;importReady();});importReady();}
 function importReady(){$('import-apply').disabled=!review||review.invalid||!review.downloaded||!$('import-ack').checked||review.choices.some(c=>!c);}
-$('open-backup').onclick=()=>$('backup-dialog').showModal();
+$('open-backup').onclick=()=>void action(async()=>{await loadProgress();$('backup-dialog').showModal();});
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 $('export-progress').onclick=()=>void action(async()=>download(await store.raw(),'progress'));
 $('export-recovery').onclick=()=>void action(async()=>download(await store.exportAll(),'recovery'));
@@ -156,21 +247,44 @@ $('import-ack').onchange=importReady;
 $('import-apply').onclick=()=>void action(async()=>{if($('import-apply').disabled)return;try{const next=store.validate(core.resolve(review.plan,review.choices)).data;await store.checkpoint('匯入前');await store.update(()=>next,review.stamp);$('import-dialog').close();review=null;message('匯入完成；兩端原文與未知資料已保留。');}catch(e){review.invalid=true;$('import-status').textContent=e.message;importReady();}});
 $('roadmap-chapters').innerHTML=stages.map(stage=>`<a href="?view=roadmap&stage=${stage.id}" data-stage="${stage.id}"><span>${stage.number}</span><span class="chapter-name">${escape(stage.title)}</span><small data-stage-count="${stage.id}"></small></a>`).join('');
 document.querySelectorAll('[data-stage]').forEach(a=>a.onclick=e=>{e.preventDefault();filter.stage=a.dataset.stage;filter.search='';go('roadmap',{stage:filter.stage});$('handbook-nav').classList.remove('open');$('nav-toggle').setAttribute('aria-expanded','false');});
-document.querySelectorAll('[data-view]').forEach(a=>a.onclick=e=>{e.preventDefault();filter.search='';go(a.dataset.view);$('handbook-nav').classList.remove('open');$('nav-toggle').setAttribute('aria-expanded','false');});
+document.querySelectorAll('[data-view]').forEach(a=>a.onclick=e=>{e.preventDefault();resetViewFilters();go(a.dataset.view);$('handbook-nav').classList.remove('open');$('nav-toggle').setAttribute('aria-expanded','false');});
 $('nav-toggle').onclick=()=>{const open=$('handbook-nav').classList.toggle('open');$('nav-toggle').setAttribute('aria-expanded',String(open));};
-window.addEventListener('popstate',()=>{filter.stage=new URL(location.href).searchParams.get('stage')||filter.stage;render();});
+function resetViewFilters(){
+ resetCollectionFilters();
+ Object.assign(filter,{creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all'});
+}
+window.addEventListener('popstate',()=>{resetViewFilters();filter.stage=stageFromUrl()||filter.stage;applyReferenceUrl();render();});
 window.addEventListener('pagehide',()=>store.close(),{once:true});
 $('app').tabIndex=-1;
-try{progress=await store.open();filter.stage=new URL(location.href).searchParams.get('stage')||run(progress).storyStage||'start';render();}catch(e){$('app').innerHTML=`<h1>進度無法讀取</h1><p class="error">${escape(e.message)}</p><p>原始資料未被空進度覆蓋。可使用右上角完整復原備份保存原文。</p>`;}
+let progressError='';
+function renderProgressError(){
+ $('app').innerHTML=`<h1>進度無法讀取</h1><p class="error">${escape(progressError)}</p><p>可使用右上角完整復原備份保存原文。</p>`;
+ document.querySelectorAll('[data-stage-count]').forEach(label=>label.textContent='');
+}
+let openingProgress;
+async function loadProgress(){
+ if(progress)return;
+ openingProgress ||= store.open().then(value=>{progress=value;}).catch(error=>{progressError=error.message;}).finally(()=>{openingProgress=null;});
+ await openingProgress;
+}
+if(view()==='roadmap')await loadProgress();
+filter.stage=stageFromUrl()||(progress&&run(progress).storyStage)||'start';
+function applyReferenceUrl(){
+ const group=pageParams().get('group');
+ if(view()==='collectibles'&&groups.some(g=>g.id===group))filter.reportGroup=group;
+}
+applyReferenceUrl();
+render();
+if(view()==='collectibles'&&location.hash.startsWith('#collect-'))focusItem(location.hash.slice(1));
 
 function nextStep(){
  return nextPendingStep(progress);
 }
 
 function trophyChecklist(ids,context){
- return `<div class="related-checklist">${ids.map(id=>{const t=trophies.find(t=>t.id===id);return `<label class="related-item" for="trophy-${context}-${t.id}"><input id="trophy-${context}-${t.id}" data-trophy="${t.id}" type="checkbox" ${player(progress).trophies[t.id]?.earned?'checked':''}><span><strong>${escape(t.officialName)}</strong><span class="check-description">${escape(t.condition)}</span>${t.verification==='conflicting'?'<small class="risk">來源有差異</small>':''}${t.risk?`<small class="risk">${escape(t.risk)}</small>`:''}</span></label>`;}).join('')}</div>`;
+ return `<div class="related-checklist">${ids.map(id=>{const t=trophies.find(t=>t.id===id);return `<label class="related-item" for="trophy-${context}-${t.id}"><input id="trophy-${context}-${t.id}" data-trophy="${t.id}" type="checkbox" ${player(progress).trophies[t.id]?.earned?'checked':''}><span><strong>${nameWithEnglish(t)}</strong><span class="check-description">${escape(t.condition)}</span>${t.verification==='conflicting'?'<small class="risk">來源有差異</small>':''}${t.risk?`<small class="risk">${escape(t.risk)}</small>`:''}</span></label>`;}).join('')}</div>`;
 }
 
 function collectionChecklist(ids,context){
- return `<div class="related-checklist">${ids.map(id=>{const i=collectibles.find(i=>i.id===id),status=collectionState(progress,i);return `<label class="related-item" for="collection-${context}-${i.id}"><input id="collection-${context}-${i.id}" data-collect-check="${i.id}" type="checkbox" ${status==='obtained'?'checked':''}><span><strong>${escape(i.officialName)}</strong><span class="check-description">${escape(i.locationDescription)}</span><small data-collection-pending="${i.id}" ${status==='unknown'?'':'hidden'}>待確認</small></span></label>`;}).join('')}</div>`;
+ return `<div class="related-checklist">${ids.map(id=>{const i=itemById(id),status=collectionState(progress,i);return `<label class="related-item" for="collection-${context}-${i.id}"><input id="collection-${context}-${i.id}" data-collect-check="${i.id}" type="checkbox" ${status==='obtained'?'checked':''}><span><strong>${nameWithEnglish(i)}</strong><span class="check-description">${escape(i.locationDescription)}</span><small data-collection-pending="${i.id}" ${status==='unknown'?'':'hidden'}>待確認</small></span></label>`;}).join('')}</div>`;
 }

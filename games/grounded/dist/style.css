@@ -22,3 +22,92 @@
 .step-content>section{margin:16px 0}.step-content>.sources{margin-top:18px}.step-summary{display:flex;gap:8px 12px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.step-summary small{white-space:nowrap}.step-peek{font-size:12px;padding:4px 10px;min-height:36px}.roadmap-step[data-compact=true]{padding:12px 0}.persistent-warning{border-left:2px solid var(--risk);padding-left:10px;font-size:13px;color:var(--risk)}
 #roadmap-chapters a{display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:start;gap:6px}#roadmap-chapters .chapter-name{flex-shrink:1;overflow-wrap:anywhere}#roadmap-chapters small{font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}
 @media(max-width:720px){.step-summary{justify-content:flex-start}.step-peek{min-height:44px}#roadmap-chapters a{grid-template-columns:18px minmax(0,1fr)}#roadmap-chapters small{grid-column:2}}
+
+/* 出發前的裝備和目的地在同一行，窄螢幕按行進順序閱讀。 */
+.english-name{display:block;color:var(--muted);font-size:.78em;font-weight:400;overflow-wrap:anywhere}
+.route-pair{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.route-pair>div{min-width:0;padding:14px 16px}
+.route-pair>div+div{border-left:1px solid var(--line)}
+.route-pair h4{color:var(--accent)}
+.route-pair p{margin:0}
+#super-win-matrix summary{min-height:44px;padding:10px 0;cursor:pointer;color:var(--accent)}
+#super-win-matrix .row{min-width:0}
+#super-win-matrix .check-description{display:block}
+.gear-toolbar{gap:12px}
+.gear-note{margin:12px 0 18px}
+.weapon-table{border-block:1px solid var(--line)}
+.weapon-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.7fr);gap:12px;padding:13px 10px;align-items:baseline}
+.weapon-row+.weapon-row{border-top:1px solid var(--line)}
+.weapon-heading{background:var(--surface);font-weight:600}
+.weapon-row>div{min-width:0;overflow-wrap:anywhere}
+.weapon-row small{display:block;color:var(--muted);line-height:1.5}
+.weapon-row .weapon-mobile-label{display:none}
+.weapon-damage{font-variant-numeric:tabular-nums}
+.water-yes{color:var(--accent);font-weight:650}
+.armor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.armor-entry{border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0}
+.armor-entry h2{margin:0;font-size:18px}
+.armor-defense{font-variant-numeric:tabular-nums}
+.armor-effects{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:14px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.armor-effects dt{color:var(--muted)}
+.armor-effects dd{margin:0}
+@media(max-width:900px){
+ .weapon-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 0}
+ .weapon-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0}
+ .weapon-name{grid-column:1/-1}
+ .weapon-row .weapon-mobile-label{display:block;font-size:11px;font-weight:600}
+}
+@media(max-width:720px){
+ .route-pair,.armor-grid{grid-template-columns:1fr}
+ .route-pair>div+div{border-left:0;border-top:1px solid var(--line)}
+}
+/* 報告卡清單與地圖的目標都維持可搜尋、可直接定位。 */
+.report-intro{padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface);margin-bottom:14px}
+.report-intro p{margin:4px 0 0}.report-section{margin:26px 0}
+.report-section-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.report-section-title h2{margin:0}.report-section>p{margin:8px 0;color:var(--muted)}
+.report-list,.map-results{list-style:none;margin:0;padding:0}
+.report-list li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);scroll-margin-top:15px}
+.report-list li>div{min-width:0;overflow-wrap:anywhere}.report-list li>a{flex:0 0 auto;align-self:center;padding:8px 0}
+.report-note{display:block;color:var(--muted)}
+.chip-tech{border:1px solid var(--line);padding:12px 16px;border-radius:6px}
+.chip-tech dl{margin:6px 0 10px;display:grid;grid-template-columns:minmax(9rem,1fr) minmax(0,3fr);gap:7px 13px}
+.chip-tech dt{font-weight:650;color:var(--accent)}.chip-tech dd{margin:0}
+.matrix-legend,.map-legend{display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
+.matrix-legend span{padding:2px 7px;border-radius:3px}
+.creature-scroll{max-height:70vh;overflow:auto;max-width:100%;border:1px solid var(--line)}
+.creature-matrix{border-collapse:separate;border-spacing:0;min-width:100%;font-variant-numeric:tabular-nums}
+.creature-matrix th,.creature-matrix td{border-bottom:1px solid var(--line);padding:8px 7px;white-space:nowrap;text-align:center}
+.creature-matrix th{font-weight:650;background:var(--surface)}
+.creature-matrix thead th{position:sticky;top:0;z-index:2}
+.creature-matrix th:first-child{position:sticky;left:0;text-align:left;min-width:125px;z-index:1}
+.creature-matrix thead th:first-child{z-index:3}.creature-matrix td{min-width:45px}
+.damage-weak{background:#e0ebd8;color:#264a2b;font-weight:650}
+.damage-resist{background:#f4e1d4;color:#763525;font-weight:650}
+.damage-immune{background:#4b2522;color:#fff;font-weight:650}
+.damage-neutral,.damage-unknown{color:var(--muted)}
+.report-map{grid-template-columns:minmax(0,2.2fr) minmax(220px,1fr)}
+.report-map .map-frame{position:static}.report-map .map-frame svg{width:100%;min-width:0;min-height:0;max-height:none;aspect-ratio:780 / 830}
+.report-map .map-viewport{overflow:hidden}.yard-pin{cursor:pointer}
+.yard-pin circle{transform:scale(var(--yard-marker-scale,1));stroke:#2e312b;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.yard-pin:hover circle,.yard-pin.selected circle{stroke-width:3;stroke:#1c2520}
+.report-map .yard-anchors text{font-size:calc(17px * var(--yard-marker-scale,1));font-weight:700;paint-order:stroke;stroke:#f5f7f2;stroke-width:3;pointer-events:none}
+.map-legend{font-size:12px;margin:0;padding:8px 10px;border-top:1px solid var(--line)}
+.map-legend i{display:inline-block;width:.8em;height:.8em;border:1px solid var(--ink);border-radius:50%;margin-right:4px}
+.report-map-sidebar h2{font-size:16px}
+#map-selection{background:var(--surface);padding:12px;border:1px solid var(--line);border-radius:5px}
+#map-selection h2,#map-selection p{margin:0 0 6px}#map-selection .actions{margin:7px 0}
+.map-results{max-height:470px;overflow:auto;border-top:1px solid var(--line)}
+.map-results li{border-bottom:1px solid var(--line)}
+.map-results button{width:100%;text-align:left;border:0;background:none;padding:8px 10px;min-height:44px}
+.map-results button[aria-current=true]{background:var(--surface);color:var(--accent);font-weight:650}
+.map-results small{display:block;color:var(--muted)}
+.yard-basemap{margin-top:16px}.yard-basemap summary{min-height:44px;display:list-item;padding:9px 0;color:var(--accent);cursor:pointer}
+.yard-basemap iframe{width:100%;height:480px;border:1px solid var(--line)}
+@media(max-width:1050px){.report-map{grid-template-columns:1fr}.map-results{max-height:290px}}
+@media(max-width:720px){
+ .chip-tech dl{grid-template-columns:1fr;gap:3px}.chip-tech dd:not(:last-child){margin-bottom:8px}
+ .report-list{font-size:13px}.report-list li>a{min-height:44px}
+ .creature-matrix th,.creature-matrix td{padding:7px 5px}.creature-matrix th:first-child{min-width:110px}
+ .yard-basemap iframe{height:350px}
+}

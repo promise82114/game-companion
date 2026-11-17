@@ -6,7 +6,7 @@ const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_C
 await fs.mkdir('outputs/grounded',{recursive:true});
 const errors=[],requests=[];
 const get=page=>page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config}=await import('./model.js');const s=createStore(config,window.SideProjectSync);try{return await s.open();}finally{s.close();}});
-const visit=async(page,view)=>{await page.goto(url+'?view='+view);await page.locator('#trophy-count').waitFor();};
+const visit=async(page,view)=>{await page.goto(url+'?view='+view);await page.locator('#app h1').waitFor();};
 const w=p=>p.worlds[p.currentWorldId],r=p=>w(p).runs[w(p).currentRunId],pl=p=>w(p).players[w(p).currentPlayerId];
 const upload=async(page,data)=>{await page.locator('#open-backup').click();await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.locator('#import-dialog').waitFor({state:'visible'});};
 const download=async(page,id)=>{const pending=page.waitForEvent('download');await page.locator(id).click();const file=await pending;assert.equal(await file.failure(),null);return JSON.parse(await fs.readFile(await file.path(),'utf8'));};
@@ -24,8 +24,8 @@ try{
  await reading.locator('[data-step="hedge"]').scrollIntoViewIfNeeded();await reading.evaluate(()=>{const row=document.getElementById('step-hedge');window.sameReadingRow=row;scrollTo(0,scrollY+row.getBoundingClientRect().top-120);});await reading.locator('[data-step="hedge"]').focus();const beforePosition=(await reading.locator('[data-step="hedge"]').boundingBox()).y;
  await reading.keyboard.press('Space');await reading.locator('#body-step-hedge').waitFor({state:'hidden'});assert.equal(await reading.evaluate(()=>window.sameReadingRow===document.getElementById('step-hedge')),true);assert.equal(await reading.evaluate(()=>document.activeElement.id),'step-check-hedge');assert.ok(Math.abs((await reading.locator('[data-step="hedge"]').boundingBox()).y-beforePosition)<3,'勾選收合須維持閱讀位置');
  await reading.locator('[data-step-peek="hedge"]').click();await reading.locator('[data-collect-check="scab-bugjuice"]').uncheck();await reading.waitForFunction(()=>document.querySelector('#step-hedge').dataset.complete==='false');assert.equal(await reading.locator('#body-step-hedge').isVisible(),true);await reading.locator('[data-collect-check="scab-bugjuice"]').check();await reading.locator('#body-step-hedge').waitFor({state:'hidden'});
- const mirrored=await readingContext.newPage();mirrored.on('pageerror',e=>errors.push(e.message));await visit(mirrored,'trophies');await mirrored.locator('[data-trophy="hedge-lab"]').uncheck();await reading.locator('#body-step-hedge').waitFor({state:'visible'});assert.equal(await reading.locator('[data-step="hedge"]').isChecked(),true);await mirrored.locator('[data-trophy="hedge-lab"]').check();await reading.locator('#body-step-hedge').waitFor({state:'hidden'});
- const beforeSearch=await get(reading);await reading.locator('#search').fill('Hedge');assert.equal(await reading.locator('#body-step-hedge').isVisible(),true);assert.deepEqual(await get(reading),beforeSearch);await reading.locator('#search').fill('');assert.equal(await reading.locator('#body-step-hedge').isVisible(),false);
+ const mirrored=await readingContext.newPage();mirrored.on('pageerror',e=>errors.push(e.message));await visit(mirrored,'roadmap&stage=labs');await mirrored.locator('[data-step-peek="hedge"]').click();await mirrored.locator('[data-trophy="hedge-lab"]').uncheck();await reading.locator('#body-step-hedge').waitFor({state:'visible'});assert.equal(await reading.locator('[data-step="hedge"]').isChecked(),true);await mirrored.locator('[data-trophy="hedge-lab"]').check();await reading.locator('#body-step-hedge').waitFor({state:'hidden'});
+ const beforeSearch=await get(reading);await reading.locator('#search').fill('樹籬');assert.equal(await reading.locator('#body-step-hedge').isVisible(),true);assert.deepEqual(await get(reading),beforeSearch);await reading.locator('#search').fill('');assert.equal(await reading.locator('#body-step-hedge').isVisible(),false);
  await reading.locator('[data-step-peek="hedge"]').click();await reading.reload();await reading.locator('#body-step-hedge').waitFor({state:'hidden'});assert.deepEqual(await get(reading),beforeSearch,'重整僅依完成度恢復，不保存回看狀態');
  await reading.locator('[data-trophy="sticky-hands"]').check();await reading.locator('[data-step="haze-choice"]').check();await reading.locator('#body-step-haze-choice').waitFor({state:'hidden'});assert.equal(await reading.locator('#step-haze-choice .persistent-warning').isVisible(),true);assert.match(await reading.locator('#step-haze-choice .persistent-warning').textContent(),/封罐|Haze/);
  const beforeNavigation=await get(reading);await reading.locator('#roadmap-chapters [data-stage="remix"]').click();await reading.locator('#resume-progress').click();await reading.locator('#step-first-camp').waitFor({state:'visible'});assert.equal(new URL(reading.url()).searchParams.get('stage'),'start');assert.deepEqual(await get(reading),beforeNavigation,'閱讀／返回進度不能代填完成');
@@ -34,29 +34,67 @@ try{
 
  const context=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'});await context.route('https://**',route=>{requests.push(route.request().url());return route.abort();});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
- await visit(page,'overview');assert.equal(await page.locator('#trophy-count').textContent(),'0 / 46');
+ await visit(page,'collectibles');
+ assert.equal(await page.locator('li[id^="collect-"]').count(),569);
+ assert.equal(await page.locator('#trophy-count,[data-collect],[data-collect-check],[data-condition]').count(),0);
+ assert.deepEqual(await page.evaluate(()=>indexedDB.databases()),[],'參考頁不初始化進度資料庫');
+ await page.locator('#collect-chip-hedge [data-locate="chip-hedge"]').click();
+ await page.locator('#map-selection').filter({hasText:'樹籬超級晶片'}).waitFor();
+ await page.locator('#map-selection [data-collection-link]').click();
+ await page.locator('#collect-chip-hedge').waitFor();
+ await page.locator('[data-audit]').click();
+ await page.waitForFunction(()=>document.activeElement.id==='condition-shop');
+ await visit(page,'overview');
  assert.doesNotMatch(await page.locator('#app').innerText(),/共同遊玩規則|今日建議/);assert.equal(await page.locator('[data-view="world"]').count(),0);assert.equal(await page.locator('#roadmap-chapters [data-stage]').count(),7);
  // 舊版本留下的模式、筆記、標記、多世界／成員只能保留，不能因畫面簡化被移除。
  await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config,world,run,player,newWorld,newPlayer}=await import('./model.js');const s=createStore(config,window.SideProjectSync);try{await s.open();await s.update(p=>{p.moduleVersion='1.0.0';p.settings.goal='platinum';run(p).steps['first-camp']={done:false,note:'synthetic retained note',legacyExtra:'keep'};run(p).customMarkers['legacy-marker']={name:'synthetic <script> marker',x:500,y:325,layer:'ground',note:'synthetic marker note',done:true};world(p).notes='synthetic world note';player(p).notes='synthetic player note';const extra=newWorld('synthetic legacy world');p.worlds[extra.worldId]=extra;const extraPlayer=newPlayer('synthetic legacy player');world(p).players[extraPlayer.playerId]=extraPlayer;return p;});}finally{s.close();}});
  await visit(page,'roadmap');assert.equal(await page.locator('#stage-select,#goal,textarea,details,[data-trophy-link],[data-collection-link]').count(),0);assert.equal(await page.locator('[data-step="field-habits"]').count(),1,'legacy platinum mode must not hide experience');
- const headings=await page.locator('#step-first-camp h4').allTextContents();assert.deepEqual(headings,['步驟目標','完整體驗','白金需求']);assert.doesNotMatch(await page.locator('#app').innerText(),/耗時|自訂備註/);
+ const headings=await page.locator('#step-first-camp h4').allTextContents();assert.deepEqual(headings,['步驟目標','先取得／準備','再前往','完整體驗','白金需求']);assert.doesNotMatch(await page.locator('#app').innerText(),/耗時|自訂備註/);
  await page.locator('[data-step="first-camp"]').focus();await page.keyboard.press('Space');await page.waitForFunction(()=>document.querySelector('#step-first-camp .step-state')?.textContent==='目標已完成');assert.equal(await page.evaluate(()=>document.activeElement.id),'step-check-first-camp');assert.equal(await page.locator('#step-first-camp .step-goal').isVisible(),true);assert.equal(await page.locator('#step-first-camp .step-experience').isVisible(),true);assert.equal(await page.locator('#step-first-camp .step-platinum').isVisible(),true);assert.equal(r(await get(page)).steps['first-camp'].note,'synthetic retained note');
  await page.locator('#roadmap-chapters [data-stage="labs"]').click();assert.equal(new URL(page.url()).searchParams.get('stage'),'labs');assert.equal(await page.locator('#roadmap-chapters [aria-current="step"]').getAttribute('data-stage'),'labs');const beforeBrowse=await get(page);await page.reload();await page.locator('[data-step="hedge"]').waitFor();assert.deepEqual((await get(page)).worlds,beforeBrowse.worlds);
  const beforeTrophyUrl=page.url();await page.locator('[data-trophy="hedge-lab"]').check();await page.waitForFunction(()=>document.querySelector('#trophy-count').textContent==='1 / 46');assert.equal(page.url(),beforeTrophyUrl);assert.equal(r(await get(page)).steps.hedge,undefined);
- await visit(page,'trophies');assert.equal(await page.locator('[data-trophy]').count(),46);await page.locator('[data-trophy="hedge-lab"]:checked').waitFor();await page.locator('[data-trophy="hedge-lab"]').uncheck();await page.waitForFunction(()=>document.querySelector('#trophy-count').textContent==='0 / 46');
- await visit(page,'roadmap&stage=labs');assert.equal(await page.locator('[data-trophy="hedge-lab"]').isChecked(),false);await page.locator('[data-collect-check="scab-bugjuice"]').check();await page.waitForFunction(()=>document.querySelector('[data-collect-check="scab-bugjuice"]').checked);await visit(page,'collectibles');await page.locator('[data-collect="scab-bugjuice"]').waitFor();assert.equal(await page.locator('[data-collect="scab-bugjuice"]').inputValue(),'obtained');await page.locator('[data-collect="scab-bugjuice"]').selectOption('unknown');await get(page);
- await visit(page,'roadmap&stage=labs');assert.equal(await page.locator('[data-collect-check="scab-bugjuice"]').isChecked(),false);assert.match(await page.locator('[data-collect-check="scab-bugjuice"]').locator('..').innerText(),/待確認/);await page.locator('[data-collect-check="scab-bugjuice"]').check();assert.equal(pl(await get(page)).trophies.flavorful,undefined);
+ const withTrophy=await get(page);
+ await visit(page,'trophies');assert.equal(await page.locator('article[id^="trophy-"]').count(),46);
+ assert.equal(await page.locator('[data-trophy]').count(),0);
+ assert.match(await page.locator('#trophy-hedge-lab h2').innerText(),/^樹籬實驗室\s+Hedge Lab/);
+ await page.locator('#trophy-search').fill('Hedge Lab');
+ assert.equal(await page.locator('article[id^="trophy-"]').count(),1);
+ assert.deepEqual(await get(page),withTrophy);
+ await page.locator('#trophy-hedge-lab button').click();
+ assert.equal(await page.locator('[data-trophy="hedge-lab"]').isChecked(),true);
+ await page.locator('[data-trophy="hedge-lab"]').uncheck();
+ await page.waitForFunction(()=>document.querySelector('#trophy-count').textContent==='0 / 46');
+ await page.locator('[data-collect-check="scab-bugjuice"]').check();
+ await page.waitForFunction(()=>document.querySelector('#step-hedge .step-count').textContent==='1 / 5 項');
+ assert.equal(pl(await get(page)).trophies.flavorful,undefined);
+
  await page.locator('#roadmap-chapters [data-stage="audit"]').click();assert.equal(await page.locator('[data-trophy="super-win"]').count(),2);await page.locator('[data-trophy="super-win"]').first().check();await page.waitForFunction(()=>document.querySelectorAll('[data-trophy="super-win"]:checked').length===2);await page.locator('[data-trophy="super-win"]').last().uncheck();await page.waitForFunction(()=>document.querySelectorAll('[data-trophy="super-win"]:checked').length===0);
  const beforeLegacyRoute=await get(page);await visit(page,'world');assert.equal(await page.locator('h1').textContent(),'庭院總覽');assert.equal(await page.locator('#world-select,#player-select,#add-world-form,#add-player-form,textarea').count(),0);assert.deepEqual(await get(page),beforeLegacyRoute);
- console.log('Roadmap UI passed: chapter links/reload, both goals visible, unfinished steps stay open, bidirectional trophy/collection checkboxes, removed notes/world UI, legacy data retained');
- await visit(page,'collectibles');await page.locator('#category-filter').selectOption('scab');assert.equal(await page.locator('[data-collect]').count(),8);await page.locator('[data-condition="cards"]').check();assert.equal(pl(await get(page)).trophies['gotta-peep-them-all'],undefined);assert.equal(await page.locator('textarea,details').count(),0);
- await page.locator('#collection-search').fill('synthetic-no-match');assert.equal(await page.locator('[data-collect]').count(),0);await page.locator('#collection-search').fill('');await page.locator('#category-filter').selectOption('milk');await page.locator('[data-collect="milk-old-anthill"]').selectOption('obtained');
- const other=await context.newPage();other.on('pageerror',e=>errors.push(e.message));await visit(other,'roadmap');await Promise.all([other.locator('[data-step="oak-rescue"]').check(),page.locator('[data-collect="milk-hedge-roof"]').selectOption('unknown')]);const concurrent=await get(page);assert.ok(r(concurrent).steps['oak-rescue'].done);assert.equal(r(concurrent).collectibles['milk-hedge-roof'].status,'unknown');
- await visit(other,'trophies');await visit(page,'roadmap&stage=audit');await page.locator('[data-trophy="super-win"]').first().check();await other.locator('[data-trophy="super-win"]:checked').waitFor();await other.locator('[data-trophy="super-win"]').uncheck();await page.waitForFunction(()=>document.querySelectorAll('[data-trophy="super-win"]:checked').length===0);await visit(page,'collectibles');
- await page.locator('[data-locate="milk-old-anthill"]').click();await page.locator('#yard-map').waitFor();assert.equal(await page.locator('#region-filter').inputValue(),'oak');assert.equal(await page.locator('#layer-filter').inputValue(),'underground');assert.equal(await page.locator('#yard-map image,[data-personal],#marker-form,textarea').count(),0);assert.doesNotMatch(await page.locator('#app').innerText(),/個人標記|備註/);assert.ok(r(await get(page)).customMarkers['legacy-marker']);await page.locator('#clear-map-filter').click();await page.locator('#layer-filter').selectOption('all');await page.locator('[data-map-region="hedge"]').focus();await page.keyboard.press('Enter');assert.equal(await page.locator('#region-filter').inputValue(),'hedge');
- await page.locator('#yard-map').focus();await page.keyboard.press('+');assert.notEqual(await page.locator('#yard-map').getAttribute('viewBox'),'0 0 1000 650');await page.keyboard.press('Home');assert.equal(await page.locator('#yard-map').getAttribute('viewBox'),'0 0 1000 650');await page.locator('[data-map-control="in"]').click();await page.locator('[data-map-control="reset"]').click();
- await page.locator('[data-collect="scab-bugjuice"]').selectOption('missing');await get(page);await visit(page,'roadmap&stage=labs');assert.equal(await page.locator('[data-collect-check="scab-bugjuice"]').isChecked(),false);await page.locator('[data-collect-check="scab-bugjuice"]').check();await get(page);
- console.log('Collections/map passed: three-state filters, no note/marker controls, map/list/roadmap reflections, keyboard zoom, concurrent writes');
+ console.log('Roadmap UI passed: chapter navigation, bilingual trophy lookup, legacy data retained');
+ await visit(page,'collectibles');await page.locator('#category-filter').selectOption('scab');
+ assert.equal(await page.locator('li[id^="collect-"]').count(),51);
+ await page.locator('#collection-search').fill('synthetic-no-match');assert.equal(await page.locator('li[id^="collect-"]').count(),0);
+ await visit(page,'roadmap&stage=audit');await page.locator('[data-condition="cards"]').check();
+ assert.equal(pl(await get(page)).trophies['gotta-peep-them-all'],undefined);
+ await page.locator('[data-condition-summary="molars"]').click();
+ await page.locator('[data-collect-check="milk-old-anthill"]').check();
+ const other=await context.newPage();other.on('pageerror',e=>errors.push(e.message));await visit(other,'roadmap');await Promise.all([other.locator('[data-step="oak-rescue"]').check(),page.locator('[data-collect-check="milk-hedge-roof"]').check()]);const concurrent=await get(page);assert.ok(r(concurrent).steps['oak-rescue'].done);assert.equal(r(concurrent).collectibles['milk-hedge-roof'].status,'obtained');
+ await visit(other,'roadmap&stage=audit');await page.locator('[data-trophy="super-win"]').first().check();await other.locator('[data-trophy="super-win"]:checked').first().waitFor();await other.locator('[data-trophy="super-win"]').first().uncheck();await page.waitForFunction(()=>document.querySelectorAll('[data-trophy="super-win"]:checked').length===0);await visit(page,'collectibles');
+ await page.locator('[data-locate="milk-old-anthill"]').click();
+ await page.locator('#yard-map').waitFor();
+ assert.match(await page.locator('#map-selection').innerText(),/橡樹實驗室破窗下方/);
+ assert.match(await page.locator('#map-selection a').first().getAttribute('href'),/locationIds=198242/);
+ assert.equal(await page.locator('#yard-map image,[data-personal],#marker-form,textarea').count(),0);
+ assert.ok(r(await get(page)).customMarkers['legacy-marker']);
+ await page.locator('#category-filter').selectOption('mega');
+ assert.equal(await page.locator('[data-map-item]').count(),45);
+ await page.locator('[data-map-list="mega-oak-battery"]').focus();
+ await page.keyboard.press('Enter');
+ await page.locator('#map-selection').filter({hasText:'電池房'}).waitFor();
+ assert.equal(new URL(page.url()).searchParams.get('item'),'mega-oak-battery');
+ await page.locator('#yard-map').focus();await page.keyboard.press('+');assert.notEqual(await page.locator('#yard-map').getAttribute('viewBox'),'0 0 780 830');await page.keyboard.press('Home');assert.equal(await page.locator('#yard-map').getAttribute('viewBox'),'0 0 780 830');await page.locator('[data-map-control="in"]').click();await page.locator('[data-map-control="reset"]').click();
+ await visit(page,'roadmap&stage=labs');assert.equal(await page.locator('[data-collect-check="scab-bugjuice"]').isChecked(),true);
+ console.log('Collections/map passed: static catalog, map keyboard, concurrent Roadmap writes');
  await visit(page,'ngplus');const beforeNG=await download(page,'#ng-backup');await page.locator('#ng-ack').check();await page.locator('#ng-create').click();await page.waitForFunction(()=>document.getElementById('run-select').selectedOptions[0].textContent==='NG+1');const ng=await get(page);assert.deepEqual(r(ng).steps,{});assert.equal(r(ng).storyStage,'start');assert.equal(w(ng).inherited['scab-bugjuice'].status,'obtained');assert.deepEqual(r(ng).customMarkers,{});assert.equal(Object.keys(w(ng).runs).length,2);assert.equal(r(beforeNG).steps['first-camp'].note,'synthetic retained note');
  await page.locator('#ng-molar-count').fill('3');await page.locator('#ng-molar-count').press('Tab');await page.locator('#run-select').selectOption('base');await page.waitForFunction(()=>document.getElementById('run-select').value==='base');const back=await get(page);assert.equal(r(back).collectibles['milk-old-anthill'].status,'obtained');assert.equal(r(back).ngMolars.count,0);assert.equal(w(back).notes,'synthetic world note');assert.equal(pl(back).notes,'synthetic player note');assert.equal(Object.keys(back.worlds).length,2);assert.equal(Object.keys(w(back).players).length,2);assert.equal(r(back).customMarkers['legacy-marker'].note,'synthetic marker note');
  console.log('NG+ compatibility passed: original steps/notes/markers/worlds/players retained and no new management UI');
@@ -67,15 +105,15 @@ try{
  await page.evaluate(()=>{window.originalPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(value,key){if(String(key).includes('import.raw.'))throw new DOMException('synthetic quota','QuotaExceededError');return window.originalPut.call(this,value,key);};});const beforeQuota=await get(page);await page.locator('#open-backup').click();await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(incoming))});await page.locator('#feedback').filter({hasText:'synthetic quota'}).waitFor();assert.deepEqual(await get(page),beforeQuota);await page.evaluate(()=>{IDBObjectStore.prototype.put=window.originalPut;});await page.locator('#backup-dialog [data-close]').click();
  // 完整備份含 archive 原文；跨遊戲及新 schema 拒絕，保留原文。
  await page.locator('#open-backup').click();const recovery=await download(page,'#export-recovery');assert.ok(recovery.records.some(row=>String(row.key).includes('import.raw.')));await page.locator('#import-file').setInputFiles({name:'wrong-game.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({...incoming,gameId:'talos2'}))});await page.locator('#feedback').filter({hasText:'不相容'}).waitFor();assert.deepEqual(await get(page),beforeQuota);await page.locator('#backup-dialog [data-close]').click();
- for(const v of ['overview','roadmap','collectibles','map','trophies','ngplus','sources'])for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});await visit(page,v);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,v+' overflow '+width);if(['overview','map','trophies'].includes(v))await page.screenshot({path:`outputs/grounded/${v}-${width}.png`,fullPage:v!=='trophies'});}
- await page.setViewportSize({width:390,height:900});await page.locator('#nav-toggle').click();await page.locator('[data-view="trophies"]').click();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('[data-trophy]').count(),46);
+ for(const v of ['overview','roadmap','collectibles','map','trophies','ngplus','sources','weapons','armor','creatures'])for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});await visit(page,v);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,v+' overflow '+width);if(['roadmap','map','trophies','weapons','armor','creatures'].includes(v))await page.screenshot({path:`outputs/grounded/${v}-${width}.png`,fullPage:false});}
+ await page.setViewportSize({width:390,height:900});await page.locator('#nav-toggle').click();await page.locator('[data-view="trophies"]').click();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('article[id^="trophy-"]').count(),46);
  await page.locator('#nav-toggle').click();await page.screenshot({path:'outputs/grounded/chapters-mobile.png'});await page.locator('#roadmap-chapters [data-stage="remix"]').focus();await page.keyboard.press('Enter');await page.locator('[data-step="ng-ending"]').waitFor();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('#roadmap-chapters [aria-current="step"]').getAttribute('data-stage'),'remix');
  const stores=await page.evaluate(async()=>({dbs:(await indexedDB.databases()).map(d=>d.name),local:Object.keys(localStorage),caches:await caches.keys()}));assert.deepEqual(stores.dbs,['game-companion.grounded.progress.v1']);assert.deepEqual(stores.local,[]);assert.deepEqual(stores.caches,[]);assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  await context.close();
  // 新 context 的完整備份還原；沒有沿用任何現有 profile。
- const fresh=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),restore=await fresh.newPage();await visit(restore,'overview');assert.equal(await restore.locator('#trophy-count').textContent(),'0 / 46');await upload(restore,recovery);await restore.locator('#import-source').click();await download(restore,'#import-download');await restore.locator('#import-ack').check();await restore.locator('#import-apply').click();await restore.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await get(restore)).futureUnknown.keep[1],17);
+ const fresh=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),restore=await fresh.newPage();await visit(restore,'roadmap');assert.equal(await restore.locator('#trophy-count').textContent(),'0 / 46');await upload(restore,recovery);await restore.locator('#import-source').click();await download(restore,'#import-download');await restore.locator('#import-ack').check();await restore.locator('#import-apply').click();await restore.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await get(restore)).futureUnknown.keep[1],17);
  await restore.evaluate(async()=>{const q=indexedDB.open('game-companion.grounded.progress.v1'),db=await new Promise(resolve=>q.onsuccess=()=>resolve(q.result));try{await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite'),s=tx.objectStore('records'),g=s.get('progress');g.onsuccess=()=>{g.result.schema=99;s.put(g.result,'progress');};tx.oncomplete=resolve;tx.onerror=reject;});}finally{db.close();}});await restore.reload();await restore.locator('h1').filter({hasText:'進度無法讀取'}).waitFor();await restore.locator('#open-backup').click();const corrupt=await download(restore,'#export-recovery');assert.equal(corrupt.records.find(row=>row.key==='progress').value.schema,99);await fresh.close();
- console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 7 pages','no cross-game DB/cache/storage','no external requests','no page errors']}));
+ console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 10 views','no cross-game DB/cache/storage','no external requests','no page errors']}));
 }finally{await browser.close();}
 
 async function platinumAudit(){
@@ -84,32 +122,49 @@ async function platinumAudit(){
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  try{
   console.log('Audit phase: fresh');
-  await visit(page,'overview');assert.equal(await page.locator('#trophy-count').innerText(),'0 / 46');
-  const fresh=await get(page);await page.locator('[data-step-link="first-camp"]').click();assert.match(await page.locator('#step-first-camp').innerText(),/獎盃停用提示/);assert.equal(await page.locator('.step-content:visible').count(),3);assert.deepEqual(await get(page),fresh);
+  await visit(page,'roadmap');assert.equal(await page.locator('#trophy-count').innerText(),'0 / 46');
+  const fresh=await get(page);assert.match(await page.locator('#step-first-camp').innerText(),/獎盃停用提示/);assert.equal(await page.locator('.step-content:visible').count(),3);assert.deepEqual(await get(page),fresh);
   await visit(page,'roadmap&stage=labs');await page.locator('[data-step="hedge"]').check();await get(page);assert.equal(pl(await get(page)).trophies['hedge-lab'],undefined);assert.equal(r(await get(page)).collectibles['data-recon-special'],undefined);
   await page.locator('[data-step="haze"]').check();await get(page);assert.equal(await page.locator('[data-collect-check="data-recon-special"]').isChecked(),false);assert.equal(await page.locator('#body-step-haze').isVisible(),true);
   console.log('Audit phase: Ominent');
-  await visit(page,'collectibles');await page.locator('#collection-search').fill('Ominent');assert.equal(await page.locator('[data-collect]').count(),2);await page.locator('#collection-search').fill('');await page.locator('#data-group-filter').selectOption('Ominent');assert.equal(await page.locator('[data-collect]').count(),2);
-  await page.locator('[data-collect="data-recon-special"]').selectOption('unknown');await get(page);assert.match(await page.locator('#collect-data-recon-special').innerText(),/感染象鼻蟲洞穴後方的骷髏/);
-  await page.locator('#open-super-win-lookup').click();await page.waitForFunction(()=>{const box=document.querySelector('#condition-shop').getBoundingClientRect();return document.activeElement.id==='condition-shop'&&box.top>=0&&box.bottom<innerHeight;});assert.equal(await page.locator('[data-condition="shop"]').isChecked(),false,'定位不能勾選條件');
-  await page.locator('[data-condition-link="data"]').click();assert.ok((await page.locator('[data-collect="data-recon-special"]').boundingBox()).y>=0,'查漏定位須從清單起點開始');assert.equal(await page.locator('#status-filter').inputValue(),'pending');assert.equal(await page.locator('#data-group-filter').inputValue(),'all');assert.equal(await page.locator('[data-collect="data-recon-special"]').count(),1);assert.equal(await page.locator('[data-collect="audio-goodbye-wendell"]').count(),1,'必要性待查證也須可查漏');
-  const beforeBrowse=await get(page);await page.locator('#clear-collection-filter').click();assert.deepEqual(await get(page),beforeBrowse);
+   await visit(page,'collectibles');await page.locator('#collection-search').fill('偵察日記');
+   await page.locator('#category-filter').selectOption('docs');
+   assert.equal(await page.locator('li[id^="collect-"]').count(),7);
+   await page.locator('#collect-data-recon-special [data-locate]').click();
+   await page.locator('#map-selection').filter({hasText:'特種部隊'}).waitFor();
+   assert.match(await page.locator('#map-selection a').first().getAttribute('href'),/locationIds=212379/);
+   await visit(page,'roadmap&stage=audit');
+   const beforeBrowse=await get(page);await page.locator('[data-condition-summary="data"]').click();
+   await page.locator('[data-collect-check="audio-goodbye-wendell"]').waitFor();
+   assert.deepEqual(await get(page),beforeBrowse);
+
+
   console.log('Audit phase: 99 percent');
-  await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config,setCollection,run}=await import('./model.js');const {collectibles,superWinConditions}=await import('./data.js');const s=createStore(config,window.SideProjectSync);try{await s.open();await s.update(p=>{for(const i of collectibles)setCollection(p,i,i.id==='data-recon-special'?'unknown':'obtained');for(const c of superWinConditions)run(p).conditions[c.id]={done:true,source:'manual'};p.auditUnknown={keep:'synthetic audit'};return p;});}finally{s.close();}});
-  await page.reload();await page.locator('#condition-count').waitFor();assert.equal(await page.locator('#condition-count').innerText(),'13 / 13');assert.equal(await page.locator('#trophy-count').innerText(),'0 / 46');assert.match(await page.locator('#super-win-matrix').innerText(),/清單全勾選也不保證/);
-  await page.locator('[data-condition-link="data"]').click();assert.equal(await page.locator('[data-collect]').count(),1);await page.locator('#collect-data-recon-special [data-locate]').click();assert.equal(await page.locator('#region-filter').inputValue(),'haze');assert.equal(await page.locator('#collect-state-data-recon-special').inputValue(),'unknown');assert.match(await page.locator('#collect-data-recon-special').innerText(),/地下/);
-  await page.locator('[data-collect="data-recon-special"]').selectOption('obtained');await get(page);await page.locator('#collect-data-recon-special [data-step-link="haze"]').click();assert.equal(await page.locator('[data-collect-check="data-recon-special"]').isChecked(),true);assert.equal(await page.locator('[data-step="haze"]').isChecked(),true);
-  await visit(page,'collectibles');await page.locator('#open-super-win-lookup').click();await page.locator('[data-condition-link="data"]').click();assert.equal(await page.locator('[data-collect]').count(),0);assert.match(await page.locator('#collection-results').innerText(),/不代表遊戲已全收齊/);
-  await page.locator('#clear-collection-filter').click();await page.locator('#collection-search').fill('Recon Journal: Entomologist');assert.equal(await page.locator('[data-collect]').count(),0);assert.match(await page.locator('#collection-results').innerText(),/未收錄/);
-  await visit(page,'roadmap&stage=boss');assert.match(await page.locator('#step-ant-queens').innerText(),/Baby Ant/);assert.match(await page.locator('#step-ant-queens').innerText(),/不要求殺死/);assert.match(await page.locator('#step-wasp-queen').innerText(),/睡眠觸發動畫/);
+  await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config,setCollection,run}=await import('./model.js');const {collectibles,superWinConditions}=await import('./data.js');const {reportItems}=await import('./report.js');const s=createStore(config,window.SideProjectSync);try{await s.open();await s.update(p=>{for(const i of [...collectibles,...reportItems])setCollection(p,i,i.id==='data-recon-special'?'unknown':'obtained');for(const c of superWinConditions)run(p).conditions[c.id]={done:true,source:'manual'};p.auditUnknown={keep:'synthetic audit'};return p;});}finally{s.close();}});
+  await page.reload();await page.locator('#condition-count').waitFor();assert.equal(await page.locator('#condition-count').innerText(),'13 / 13');assert.equal(await page.locator('#trophy-count').innerText(),'0 / 46');assert.match(await page.locator('#super-win-matrix').innerText(),/第一輪遊戲報告卡/);
+   await page.locator('[data-condition-summary="data"]').click();
+   assert.match(await page.locator('[data-condition-summary="data"]').innerText(),/1／128/);
+   assert.match(await page.locator('#collection-audit-data-data-recon-special').locator('..').innerText(),/待確認/);
+   await page.locator('#collection-audit-data-data-recon-special').check();
+   await page.waitForFunction(()=>document.querySelector('[data-condition-summary="data"]').textContent.includes('0／'));
+   await visit(page,'roadmap&stage=labs');
+   assert.equal(await page.locator('[data-collect-check="data-recon-special"]').isChecked(),true);
+   assert.equal(await page.locator('[data-step="haze"]').isChecked(),true);
+   assert.match(await page.locator('#step-pond .route-pair').innerText(),/泡泡頭盔[\s\S]*再前往[\s\S]*斷路器/);
+   assert.match(await page.locator('#step-haze .route-pair').innerText(),/防毒面具[\s\S]*再前往/);
+
+  await visit(page,'roadmap&stage=boss');assert.match(await page.locator('#step-ant-queens').innerText(),/蟻寶寶/);assert.match(await page.locator('#step-ant-queens').innerText(),/不要求殺死/);assert.match(await page.locator('#step-wasp-queen').innerText(),/睡眠觸發動畫/);
   console.log('Audit phase: REMIX preflight');
   await visit(page,'roadmap&stage=remix');assert.match(await page.locator('#remix-pending').innerText(),/43 \/ 43/);
-  const other=await context.newPage();other.on('pageerror',e=>errors.push(e.message));await visit(other,'trophies');await other.locator('[data-trophy="resourceful"]').check();await page.locator('#remix-pending').filter({hasText:'42 / 43'}).waitFor();
+  const other=await context.newPage();other.on('pageerror',e=>errors.push(e.message));await visit(other,'roadmap');await other.locator('[data-trophy="resourceful"]').check();await page.locator('#remix-pending').filter({hasText:'42 / 43'}).waitFor();
   await visit(page,'ngplus');assert.match(await page.locator('#remix-pending').innerText(),/0 \/ 13/);assert.match(await page.locator('#remix-pending').innerText(),/42 \/ 43/);assert.equal(await page.locator('#ng-create').isDisabled(),true);
   await download(page,'#ng-backup');await other.locator('[data-trophy="resourceful"]').uncheck();await get(other);await page.locator('#trophy-count').filter({hasText:'0 / 46'}).waitFor();await page.locator('#ng-ack').check();await page.locator('#ng-create').click();await page.locator('#feedback').filter({hasText:'預覽已過期'}).waitFor();assert.equal(Object.keys(w(await get(page)).runs).length,1,'過期 NG+ 備份不得建立周目');
   console.log('Audit phase: NG creation');
   const backup=await download(page,'#ng-backup');await page.locator('#ng-ack').check();await page.locator('#ng-create').click();await page.waitForFunction(()=>document.querySelector('#run-select').selectedOptions[0].textContent==='NG+1');const ng=await get(page),ngId=w(ng).currentRunId;assert.deepEqual(w(ng).runs.base,w(backup).runs.base);assert.deepEqual(r(ng).conditions,{});assert.match(await page.locator('#remix-pending').innerText(),/0 \/ 13/);
-  await page.locator('#ng-molar-count').fill('3');await page.locator('#ng-molar-count').press('Tab');await get(page);await visit(page,'collectibles');assert.match(await page.locator('[data-category-summary="milk"]').innerText(),/本周目隨機乳牙[\s\S]*3 已記錄/);assert.doesNotMatch(await page.locator('[data-category-summary="milk"]').innerText(),/78|0 \/ 6/);await page.locator('#category-filter').selectOption('milk');assert.equal(await page.locator('[data-collect]').count(),0);
+   await page.locator('#ng-molar-count').fill('3');await page.locator('#ng-molar-count').press('Tab');await get(page);
+   await visit(page,'collectibles');assert.equal(await page.locator('li[id^="collect-"]').count(),569);
+   assert.equal(await page.locator('#ng-molar-count,[data-collect-check],#trophy-count').count(),0);
+   await page.locator('#category-filter').selectOption('molars');assert.equal(await page.locator('li[id^="collect-"]').count(),78);
   await visit(page,'ngplus');await page.locator('#run-select').selectOption('base');await page.waitForFunction(()=>document.querySelector('#run-select').value==='base');assert.deepEqual(r(await get(page)),w(backup).runs.base);assert.equal(w(await get(page)).runs[ngId].ngMolars.count,3);
   console.log('Audit phase: members');
   // 兩位成員只使用合成資料；世界 Boss 目標不授予 B 的 PSN 獎盃。
@@ -117,12 +172,37 @@ async function platinumAudit(){
   await visit(page,'roadmap&stage=boss');assert.equal(await page.locator('[data-step="broodmother"]').isChecked(),true);assert.equal(await page.locator('[data-trophy="mom-genes"]').isChecked(),false);assert.equal(await page.locator('#trophy-count').innerText(),'0 / 46');
   console.log('Audit phase: 46 trophy manual state');
   await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config,player}=await import('./model.js');const {trophies}=await import('./data.js');const s=createStore(config,window.SideProjectSync);try{await s.open();await s.update(p=>{for(const t of trophies)if(t.grade!=='platinum')player(p).trophies[t.id]={earned:true,source:'manual'};return p;});}finally{s.close();}});
-  await visit(page,'trophies');assert.equal(await page.locator('#trophy-count').innerText(),'45 / 46');assert.equal(await page.locator('[data-trophy="gnats-all-folks"]').isChecked(),false);await page.locator('[data-trophy="gnats-all-folks"]').check();await page.locator('#trophy-count').filter({hasText:'46 / 46'}).waitFor();const allTrophies=await get(page);assert.equal(Object.keys(pl(allTrophies).trophies).length,46);assert.equal(r(allTrophies).steps['ng-ending'],undefined,'個人獎盃全勾不代填世界目標');
+  await visit(page,'roadmap&stage=audit');assert.equal(await page.locator('#trophy-count').innerText(),'45 / 46');assert.equal(await page.locator('[data-trophy="gnats-all-folks"]').isChecked(),false);await page.locator('[data-trophy="gnats-all-folks"]').check();await page.locator('#trophy-count').filter({hasText:'46 / 46'}).waitFor();const allTrophies=await get(page);assert.equal(Object.keys(pl(allTrophies).trophies).length,46);assert.equal(r(allTrophies).steps['ng-ending'],undefined,'個人獎盃全勾不代填世界目標');
   console.log('Audit phase: repeat import');
   const roundtrip=await get(page);for(let i=0;i<2;i++){await upload(page,roundtrip);await page.locator('#import-source').click();await download(page,'#import-download');await page.locator('#import-ack').check();await page.locator('#import-apply').click();await page.locator('#import-dialog').waitFor({state:'hidden'});assert.deepEqual((await get(page)).worlds,roundtrip.worlds);assert.equal((await get(page)).auditUnknown.keep,'synthetic audit');}
   await page.locator('#open-backup').click();const beforeInvalid=await get(page);await page.locator('#import-file').setInputFiles({name:'broken-synthetic.json',mimeType:'application/json',buffer:Buffer.from('{bad json')});await page.locator('#feedback').filter({hasText:/JSON|property/i}).waitFor();assert.deepEqual(await get(page),beforeInvalid);await page.locator('#backup-dialog [data-close]').click();
-  console.log('Audit phase: screenshots');
-  for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});await visit(page,'collectibles');await page.screenshot({path:`outputs/grounded/audit-collections-${width}.png`});await page.locator('#open-super-win-lookup').click();await page.waitForFunction(()=>{const box=document.querySelector('#condition-shop').getBoundingClientRect();return document.activeElement.id==='condition-shop'&&box.top>=0&&box.bottom<innerHeight;});await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));await page.screenshot({path:`outputs/grounded/audit-matrix-${width}.png`});await visit(page,'ngplus');await page.screenshot({path:`outputs/grounded/audit-ngplus-${width}.png`});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
+   console.log('Audit phase: equipment references');
+   const beforeGear=await get(page);
+   await visit(page,'weapons');assert.equal(await page.locator('[data-weapon]').count(),88);
+   await page.locator('#weapon-water').selectOption('yes');await page.locator('#weapon-search').fill('Mosquito Needle');
+   assert.equal(await page.locator('[data-weapon]').count(),1);
+   assert.match(await page.locator('[data-weapon]').innerText(),/蚊子釘刺[\s\S]*25 \/ 25 \/ 31[\s\S]*可使用/);
+   await page.locator('#weapon-tier').selectOption('1');assert.equal(await page.locator('[data-weapon]').count(),0);
+   await visit(page,'armor');assert.equal(await page.locator('[data-armor]').count(),28);
+   await page.locator('#armor-weight').selectOption('重型');await page.locator('#armor-search').fill('瓢蟲');
+   assert.equal(await page.locator('[data-armor]').count(),1);
+   assert.match(await page.locator('[data-armor]').innerText(),/單件效果[\s\S]*套裝效果[\s\S]*光滑鍛造/);
+   assert.doesNotMatch(await page.locator('#app').innerText(),/製作材料|修理材料/);
+   assert.deepEqual(await get(page),beforeGear);
+   await visit(page,'creatures');
+   await page.locator('#creature-search').fill('Wolf Spider');
+   const wolf=page.locator('.creature-matrix tbody tr').filter({has:page.getByRole('rowheader',{name:/^狼蛛/})});
+   await page.locator('#damage-column').selectOption('辣味');
+   assert.equal(await wolf.locator('td').innerText(),'+50%');
+   await page.locator('#damage-column').selectOption('穿刺');
+   assert.equal(await wolf.locator('td').innerText(),'-50%');
+   await page.locator('#damage-effect').selectOption('weak');
+   assert.equal(await wolf.count(),0);
+   await visit(page,'roadmap');assert.match(await page.locator('#step-oak-rescue .chip-tech').innerText(),/預設科學商店[\s\S]*鍛造站[\s\S]*脆性磨刀石/);
+   await visit(page,'roadmap&stage=labs');
+   assert.match(await page.locator('#step-haze .chip-tech').innerText(),/霧靄超級晶片[\s\S]*熔爐/);
+   assert.match(await page.locator('#step-black-ant .chip-tech').innerText(),/黑蟻超級晶片[\s\S]*堅固磨刀石/);
+   assert.deepEqual(await get(page),beforeGear);
   console.log('Platinum audit passed: 0/46, independent lab/data, Ominent lookup/map/roadmap, 99% incomplete database, Ant Queen warnings, first-run preflight, stale NG+ guard, NG+ isolation/count, synthetic A/B, 46/46 manual state, repeated import, invalid JSON');
  }finally{await context.close();}
 }

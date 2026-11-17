@@ -48,7 +48,8 @@ const thankGoodnessCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.joi
 results.push({slug:'thank-goodness-youre-here',trophies:33,roadmap:'independent IndexedDB steps and trophies',cloudWrite:'blocked-until-current-grant-proven'});
 const talosCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/talos2'),encoding:'utf8'});assert.equal(talosCheck.status,0,talosCheck.stderr);console.log(talosCheck.stdout.trim());
 const groundedCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/grounded'),encoding:'utf8'});assert.equal(groundedCheck.status,0,groundedCheck.stderr);console.log(groundedCheck.stdout.trim());
-results.push({slug:'grounded',baseTrophies:46,stages:7,collectibles:53,collectionDatabase:'partial',cloudWrite:'not implemented'});
+const {trophies:groundedTrophies,stages:groundedStages,reportEntries,mapPins,creatures}=JSON.parse(groundedCheck.stdout);
+results.push({slug:'grounded',baseTrophies:groundedTrophies,stages:groundedStages,reportEntries,mapPins,creatures,cloudWrite:'not implemented'});
 results.push({slug:'talos2',baseTrophies:60,dlcExcluded:9,roadmap:'independent steps/trophies/backups/branches in IndexedDB',cloudWrite:'blocked-until-current-grant-proven'});
 const edfirCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/edfir'),encoding:'utf8'});assert.equal(edfirCheck.status,0,edfirCheck.stderr);console.log(edfirCheck.stdout.trim());
 results.push({slug:'edfir',missions:52,drones:55,baseTrophiesIncludingPlatinum:44,weapons:'312 base / 40 DLC / 8 bonus',cloudWrite:'blocked-until-current-grant-proven'});
