@@ -43,24 +43,47 @@ export function reportItemLink(item){
  return item.pin ? mapSource+'?locationIds='+item.pin : groups.find(group=>group.id===item.group)?.source;
 }
 export const searchReport=(items,query)=>items.filter(i=>[i.id,i.name,i.officialName,i.section,i.note,reportGroupName(i.group)].join(' ').toLowerCase().includes(query.trim().toLowerCase()));
-export function reportReferenceHtml({filter,select,search,escape}){
- const rows=searchReport(reportItems,filter.search);
- const sections=groups.filter(g=>filter.reportGroup==='all'||filter.reportGroup===g.id).map(g=>{
-  const items=rows.filter(i=>i.group===g.id);
-  return {g,items};
- }).filter(({items})=>items.length);
- const count=sections.reduce((total,{items})=>total+items.length,0);
- return `<div class="report-intro"><strong>白金條件之一 · 超級勝利</strong><p>以第一輪的 100% 報告卡逐項確認。取得後可到路線圖的「100% 查漏」勾選。</p></div>
- <div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}
- ${select('category-filter','收集分類',[['all','全部分類'],...groups.map(g=>[g.id,g.name])],'reportGroup')}
- <a href="?view=roadmap&stage=audit" data-audit>前往路線圖核對</a></div>
- <p class="muted">顯示 ${count}／${reportItems.length} 個核對列</p>
- ${sections.map(({g,items})=>`<section class="report-section"><div class="report-section-title"><h2>${g.name}</h2><small>${items.length} 項</small></div><p>${g.hint}</p>
- <ul class="report-list">${items.map(i=>`<li id="collect-${i.id}"><div><strong>${escape(i.name)}</strong>
- ${i.officialName&&i.officialName!==i.name?`<small lang="en" class="english-name">${escape(i.officialName)}</small>`:''}
- ${i.section?`<small class="muted">${escape(i.section)}</small>`:''}${i.note?`<small class="report-note">${escape(i.note)}</small>`:''}</div>
- ${i.pin?`<a href="?view=map&item=${i.id}" data-locate="${i.id}">地圖定位</a>`:`<a href="${escape(g.source)}" target="_blank" rel="noopener noreferrer">查來源 ↗</a>`}</li>`).join('')}</ul></section>`).join('')||'<p class="empty">沒有符合條件的項目。</p>'}
- <p class="sources"><a href="${escape(reportSource)}" target="_blank" rel="noopener noreferrer">BWIKI 遊戲報告卡 ↗</a><a href="https://grounded.wiki.gg/wiki/Game_Report_Card" target="_blank" rel="noopener noreferrer">Grounded Wiki 條件對照 ↗</a></p>`;
+
+export const defaultReportGroup='molars';
+const reportPageSize=24;
+export function collectionTarget(item){
+ const rows=reportItems.filter(row=>row.group===item.group);
+ return {group:item.group,page:Math.floor(rows.indexOf(item)/reportPageSize)+1,hash:'collect-'+item.id};
+}
+
+export function reportReferenceHtml({filter,select,search,escape,statusOf,scopeLabel}){
+ const g=groups.find(row=>row.id===filter.reportGroup);
+ const categoryItems=reportItems.filter(i=>i.group===g.id);
+ const rows=searchReport(categoryItems,filter.search).filter(i=>filter.reportStatus==='all'
+  || (filter.reportStatus==='obtained' ? statusOf(i)==='obtained' : statusOf(i)!=='obtained'));
+ const pageCount=Math.max(1,Math.ceil(rows.length/reportPageSize));
+ const current=Math.min(filter.reportPage,pageCount);
+ const visible=rows.slice((current-1)*reportPageSize,current*reportPageSize);
+ const obtained=categoryItems.filter(i=>statusOf(i)==='obtained').length;
+ return `<nav class="report-tabs" aria-label="收集分類">
+  ${groups.map(tab=>`<a href="?view=collectibles&amp;group=${tab.id}" data-category-link="${tab.id}" ${g.id===tab.id?'aria-current="page"':''}>${tab.name}</a>`).join('')}
+ </nav>
+ <div class="toolbar">${search('collection-search','搜尋本分類的名稱或位置')}
+ ${select('collection-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'reportStatus')}
+ <a href="?view=roadmap&amp;stage=audit" data-audit>前往路線圖查漏</a></div>
+ <section class="report-section" id="collection-results" tabindex="-1">
+ <div class="report-section-title"><h2>${g.name}</h2><span aria-live="polite">已勾選 ${obtained}／${categoryItems.length}</span></div>
+ <p>${escape(g.hint)} · ${escape(scopeLabel)}</p>
+ <ul class="report-list">${visible.map(i=>{
+  const status=statusOf(i);
+  return `<li id="collect-${i.id}"><label class="check-label" for="collection-ref-${i.id}">
+  <input id="collection-ref-${i.id}" type="checkbox" data-collect-check="${i.id}" ${status==='obtained'?'checked':''} ${status===null?'disabled':''}>
+  <span><strong>${escape(i.name)}</strong>
+  ${i.officialName&&i.officialName!==i.name?`<small lang="en" class="english-name">${escape(i.officialName)}</small>`:''}
+  ${i.section?`<small class="muted">${escape(i.section)}</small>`:''}${i.note?`<small class="report-note">${escape(i.note)}</small>`:''}
+  ${status==='unknown'?'<small class="muted">待確認</small>':''}</span></label>
+  ${i.pin?`<a href="?view=map&amp;item=${i.id}" data-locate="${i.id}">地圖定位</a>`:`<a href="${escape(g.source)}" target="_blank" rel="noopener noreferrer">查來源 ↗</a>`}</li>`;
+ }).join('')}</ul>${visible.length?'':'<p class="empty">沒有符合條件的項目。</p>'}
+ ${pageCount>1?`<nav class="report-pagination" aria-label="收集分頁">
+ <button data-report-page="${current-1}" ${current===1?'disabled':''}>上一頁</button>
+ <span>第 ${current}／${pageCount} 頁，共 ${rows.length} 項</span>
+ <button data-report-page="${current+1}" ${current===pageCount?'disabled':''}>下一頁</button>
+ </nav>`:''}</section>`;
 }
 
 export const mappedItems=reportItems.filter(i=>i.pin);

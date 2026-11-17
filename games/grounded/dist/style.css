@@ -36,7 +36,7 @@
 .gear-toolbar{gap:12px}
 .gear-note{margin:12px 0 18px}
 .weapon-table{border-block:1px solid var(--line)}
-.weapon-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.7fr);gap:12px;padding:13px 10px;align-items:baseline}
+.weapon-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr) minmax(0,.52fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.7fr);gap:12px;padding:13px 10px;align-items:baseline}
 .weapon-row+.weapon-row{border-top:1px solid var(--line)}
 .weapon-heading{background:var(--surface);font-weight:600}
 .weapon-row>div{min-width:0;overflow-wrap:anywhere}
@@ -62,13 +62,12 @@
  .route-pair>div+div{border-left:0;border-top:1px solid var(--line)}
 }
 /* 報告卡清單與地圖的目標都維持可搜尋、可直接定位。 */
-.report-intro{padding:14px 16px;border-left:3px solid var(--accent);background:var(--surface);margin-bottom:14px}
-.report-intro p{margin:4px 0 0}.report-section{margin:26px 0}
+.report-section{margin:26px 0}
 .report-section-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:7px}
 .report-section-title h2{margin:0}.report-section>p{margin:8px 0;color:var(--muted)}
 .report-list,.map-results{list-style:none;margin:0;padding:0}
 .report-list li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);scroll-margin-top:15px}
-.report-list li>div{min-width:0;overflow-wrap:anywhere}.report-list li>a{flex:0 0 auto;align-self:center;padding:8px 0}
+.report-list li>a{flex:0 0 auto;align-self:center;padding:8px 0}
 .report-note{display:block;color:var(--muted)}
 .chip-tech{border:1px solid var(--line);padding:12px 16px;border-radius:6px}
 .chip-tech dl{margin:6px 0 10px;display:grid;grid-template-columns:minmax(9rem,1fr) minmax(0,3fr);gap:7px 13px}
@@ -89,7 +88,7 @@
 .report-map{grid-template-columns:minmax(0,2.2fr) minmax(220px,1fr)}
 .report-map .map-frame{position:static}.report-map .map-frame svg{width:100%;min-width:0;min-height:0;max-height:none;aspect-ratio:780 / 830}
 .report-map .map-viewport{overflow:hidden}.yard-pin{cursor:pointer}
-.yard-pin circle{transform:scale(var(--yard-marker-scale,1));stroke:#2e312b;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.yard-pin circle{stroke:#2e312b;stroke-width:1.2;vector-effect:non-scaling-stroke}
 .yard-pin:hover circle,.yard-pin.selected circle{stroke-width:3;stroke:#1c2520}
 .report-map .yard-anchors text{font-size:calc(17px * var(--yard-marker-scale,1));font-weight:700;paint-order:stroke;stroke:#f5f7f2;stroke-width:3;pointer-events:none}
 .map-legend{font-size:12px;margin:0;padding:8px 10px;border-top:1px solid var(--line)}
@@ -111,3 +110,17 @@
  .creature-matrix th,.creature-matrix td{padding:7px 5px}.creature-matrix th:first-child{min-width:110px}
  .yard-basemap iframe{height:350px}
 }
+.report-tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding:0 0 10px}
+.report-tabs a{min-height:40px;display:inline-flex;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:4px;text-decoration:none}
+.report-tabs a[aria-current=page]{background:var(--accent);border-color:var(--accent);color:white;font-weight:650}
+.report-list li>.check-label{min-width:0;align-items:flex-start;flex:1;gap:10px;cursor:pointer}
+.report-list .check-label>span{min-width:0;overflow-wrap:anywhere}.report-list input{margin-top:5px;flex:none}
+.report-pagination{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.report-pagination button{min-height:44px}
+.pin-glyph{transform:scale(var(--yard-marker-scale,1))}
+.yard-pin .pin-ring{fill:var(--paper);stroke:var(--accent);visibility:hidden}
+.yard-pin:hover .pin-ring,.yard-pin.selected .pin-ring{visibility:visible}
+.pin-glyph.has-icon .pin-fallback{visibility:hidden}
+.report-map .map-frame .pin-fallback text{font-size:8px;fill:#fff;stroke:#30403a;stroke-width:.7px;paint-order:stroke;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+.map-legend .legend-glyph{font-size:10px;line-height:14px;width:16px;height:16px;text-align:center;font-style:normal;color:white;text-shadow:0 0 2px black}
+@media(max-width:720px){.report-tabs a{min-height:44px}}

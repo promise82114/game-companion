@@ -3,7 +3,7 @@
   "slug": "grounded",
   "title": "Grounded",
   "description": "繁中路線圖、100% 收集點位、46 項獎盃、裝備與怪物抗性",
-  "moduleVersion": "1.3.0",
+  "moduleVersion": "1.4.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/grounded/",

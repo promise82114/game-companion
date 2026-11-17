@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.3.0／schema 1，資料複查 2026-11-17。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
+模組 1.4.0／schema 1，資料複查 2026-11-17。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
 
 從 repo 根執行：
 
@@ -12,17 +12,17 @@ node server.mjs
 node scripts/verify-grounded-browser.mjs
 ```
 
-入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，MapGenie 底圖由玩家展開後載入。Pages 沿用 main workflow。
+入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，BWIKI 的原始互動地圖由玩家展開後載入，站內對應圖示保留 BWIKI 來源署名並由本站載入。Pages 沿用 main workflow。
 
 ## 功能與資料邊界
 
 - 七階段、25 步遊玩路線圖。左側章節直達，各關鍵步驟並排顯示「先取得／準備」和「再前往」，窄螢幕依順序上下排列。依 `docs/PROGRESSIVE_ROADMAP_UX.md`，未完成時全文可讀；目標、相關獎盃及收集全部勾完才縮成摘要，可暫時回看。取消任一事項就恢復全文，重要警告持續可見。沒有目標模式／瀏覽章節選單、耗時或自訂備註。四大實驗室可依裝備平行探索。
 - `dist/roadmap-progress.js` 從現有進度推導事項數量、全完成與下一步，不寫入新完成旗標。閱讀回看只存在頁面記憶體，重整後重新依完成度收斂；搜尋可暫時顯示已完成內容。章節完成數與「返回遊玩進度」亦使用相同判斷，不代填任何進度。更新時在原位修改 DOM，保留焦點及閱讀位置，不自動捲至下一步。
-- 路線圖集中保存步驟、獎盃、收集與周目紀錄，各項分開確認。獎盃參考頁具中英文搜尋與前往對應路線的連結。
+- 路線圖、收集清單與獎盃清單共用同一份紀錄，可直接勾選並篩出未取得項目。步驟、收集與 PSN 跳盃分別確認。
 - 路線圖列出各區晶片交回後可購買的重點科技。開局的鍛造站在預設商店，霧靄超級晶片開放熔爐，黑蟻丘、沙盒、樹樁與奧美能磁碟接續不同階段的武防升級。
-- 第一輪 100% 收集清單預設顯示 569 個核對列，涵蓋 78 顆普通乳牙、45 顆巨型乳牙、51 個野外 SCA.B、108 個地標、68 張目標生物卡及 64 筆商店條目，也含庭院資料、晶片、防守、首領、腦力與結局。資料頁的潦草筆記列作 99% 查漏對照。勾選集中在路線圖，遊戲報告卡為最終判準。
+- 第一輪 100% 收集清單有 11 個分類分頁、共 569 個核對列，每頁最多 24 筆，涵蓋 78 顆普通乳牙、45 顆巨型乳牙、51 個野外 SCA.B、108 個地標、68 張目標生物卡及 64 筆商店條目，也含庭院資料、晶片、防守、首領、腦力與結局。資料頁的潦草筆記列作 99% 查漏對照。切換到 NG+ 時，固定位置普通乳牙的勾選仍記在第一輪。遊戲報告卡為最終判準。
 - 路線圖的 100% 查漏提供 13 條超級勝利條件，並能逐類展開本站已收錄項目。版本例外、多人補跳與實機達成尚待驗證。
-- 武器頁收錄 88 筆武器、工具與箭矢，含連段傷害、武器及傷害類型、元素、暈眩和水下可用性。防具頁收錄 22 套及 6 件探索散件，呈現階級、減免、單件／套裝／光滑鍛造效果。兩頁可搜尋及篩選，省略配方和修理材料。
+- 武器頁收錄 88 筆武器、工具與箭矢，含持握方式、連段傷害、武器及傷害類型、元素、暈眩和水下可用性。防具頁收錄 22 套及 6 件探索散件，呈現階級、減免、單件／套裝／光滑鍛造效果。兩頁可搜尋及篩選，省略配方和修理材料。
 - 100% 點位地圖採 MapGenie 庭院 113 的 418 個來源座標，以北朝上的座標圖呈現。可按分類、名稱定位，點位與清單互跳，並支援縮放、拖曳與鍵盤操作。共用座標的地標、任務或收集列分開核對。無固定位置的生物、商店與腦力，以及尚未對上逐點座標的資料，保留在清單。
 - 怪物頁可按中英文、類型、傷害欄與弱抗性搜尋。BWIKI 提供 67 種、14 欄，數值缺漏與矛盾標示為待查證。
 - 個人標記、收集備註、世界／成員管理及總覽的共同遊玩規則／今日建議已移除。舊筆記、標記、多世界／成員欄位保存在原 schema 與完整備份中，不顯示或新增這些操作。
@@ -45,7 +45,7 @@ DB `game-companion.grounded.progress.v1` 的 `records/progress` 保存 `gameId`�
 
 ## 來源與版權
 
-逐項 `sourceUrls`／查證狀態在 `dist/data.js`。武器與防具資料依 [BWIKI 武器](https://wiki.biligame.com/grounded/武器)、[護甲](https://wiki.biligame.com/grounded/护甲)、[官方 1.3 水下武器更新](https://grounded.obsidian.net/news/grounded/update-1-3) 整理，查證範圍見各頁來源。部分來源 403，僅使用已取得搜尋索引文字，沒有繞過或下載圖片。混合兩代條目只核對 Grounded 段落。報告卡、晶片與生物來源為 [BWIKI 報告卡](https://wiki.biligame.com/grounded/游戏报告卡)、[資料頁](https://wiki.biligame.com/grounded/数据页)、[地標](https://wiki.biligame.com/grounded/地标)、[科學商店](https://wiki.biligame.com/grounded/科学商店)、[生物](https://wiki.biligame.com/grounded/生物)，並以 [Grounded Wiki 報告卡](https://grounded.wiki.gg/wiki/Game_Report_Card) 對照例外。點位取自 [MapGenie 庭院](https://mapgenie.io/grounded/maps/yard) 的公開地圖資料，保存識別碼與平面投影所需座標，詳情連回供應者。底圖由原站內嵌頁提供。位置文字為本站摘要。
+逐項 `sourceUrls`／查證狀態在 `dist/data.js`。武器與防具資料依 [BWIKI 武器](https://wiki.biligame.com/grounded/武器)、[護甲](https://wiki.biligame.com/grounded/护甲)、[官方 1.3 水下武器更新](https://grounded.obsidian.net/news/grounded/update-1-3) 整理，查證範圍見各頁來源。部分來源 403，僅使用已取得搜尋索引文字，沒有繞過來源存取限制。混合兩代條目只核對 Grounded 段落。報告卡、晶片與生物來源為 [BWIKI 報告卡](https://wiki.biligame.com/grounded/游戏报告卡)、[資料頁](https://wiki.biligame.com/grounded/数据页)、[地標](https://wiki.biligame.com/grounded/地标)、[科學商店](https://wiki.biligame.com/grounded/科学商店)、[生物](https://wiki.biligame.com/grounded/生物)，並以 [Grounded Wiki 報告卡](https://grounded.wiki.gg/wiki/Game_Report_Card) 對照例外。點位取自 [MapGenie 庭院](https://mapgenie.io/grounded/maps/yard) 的公開地圖資料，保存識別碼與平面投影所需座標，詳情連回供應者。原始互動圖由 [BWIKI 地圖](https://wiki.biligame.com/grounded/互动地图) 提供，乳牙、配色、防守、實驗室和工作站圖示取自該頁並存於 `dist/map-icons/`。其他分類使用站內文字標記。遊戲圖像依 [Microsoft 遊戲內容使用規則](https://www.xbox.com/en-us/developers/rules) 與 [Obsidian 玩家創作規範](https://www.obsidian.net/legal/ip-use) 使用，權利歸原權利人。位置文字為本站摘要。
 
 詳見根目錄 `GROUNDED_P0_REPORT.md`、`GROUNDED_IMPLEMENTATION_REPORT.md`。
 

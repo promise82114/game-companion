@@ -8,7 +8,7 @@ import {fresh,validateProgress,world,run,player,setCollection,collectionState,ad
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
 import {preparations} from './dist/preparations.js';
-import {groups,reportItems,reportConditionItems,mappedItems,yardPoints} from './dist/report.js';
+import {groups,reportItems,reportConditionItems,collectionTarget,mappedItems,yardPoints} from './dist/report.js';
 import {damageColumns,creatureRows} from './dist/creature-data.js';
 import {mainTech} from './dist/chip-tech.js';
 assert.equal(trophies.length,46);for(const [grade,n]of [['platinum',1],['gold',3],['silver',10],['bronze',32]])assert.equal(trophies.filter(t=>t.grade===grade).length,n,grade);
@@ -28,10 +28,20 @@ for(const rows of [weapons,armor]){
  assert.ok(rows.every(row=>row.name&&row.english&&[1,2,3].includes(row.tier)));
 }
 assert.ok(weapons.every(row=>/^\d/.test(row.damage)&&row.damageType&&['yes','no','unknown'].includes(row.underwater)));
+assert.ok(weapons.every(row=>['one','two','ammo','thrown'].includes(row.hands)));
+assert.equal(weapons.find(row=>row.english==='Salt Morning Star').hands,'one');
+assert.equal(weapons.find(row=>row.english==='Mint Mace').hands,'two');
+assert.ok(weapons.filter(row=>row.kind==='箭矢').every(row=>row.hands==='ammo'));
+for(const name of ['molars','mega','scab','defense','lab','station']){
+ const image=await fs.readFile(new URL('dist/map-icons/'+name+'.png',import.meta.url));
+ assert.equal(image.subarray(0,8).toString('hex'),'89504e470d0a1a0a',name);
+}
 assert.equal(armor.filter(row=>row.defense).length,22);
 const expectedReportCounts={meta:2,shop:64,chips:11,cards:68,docs:128,sites:108,molars:78,mega:45,scab:51,defense:9,bosses:5};
 for(const {id} of groups)assert.equal(reportItems.filter(row=>row.group===id).length,expectedReportCounts[id],id);
 assert.equal(new Set(reportItems.map(row=>row.id)).size,reportItems.length);
+const lastMolar=reportItems.filter(row=>row.group==='molars').at(-1);
+assert.deepEqual(collectionTarget(lastMolar),{group:'molars',page:4,hash:'collect-'+lastMolar.id});
 assert.ok(mappedItems.every(row=>yardPoints[row.pin]?.length===2&&yardPoints[row.pin].every(Number.isFinite)));
 assert.equal(new Set(mappedItems.map(row=>row.pin)).size,418);
 assert.deepEqual(reportItems.find(row=>row.id==='chip-hedge').pin,71125);
