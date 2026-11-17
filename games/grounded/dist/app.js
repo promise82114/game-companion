@@ -6,16 +6,17 @@ import {mainTech,shopSource} from './chip-tech.js';
 import {stepProgress,completedSteps,nextPendingStep,pendingItems,remixReview} from './roadmap-progress.js';
 import {preparations} from './preparations.js';
 import {weaponsHtml,armorHtml} from './gear.js';
+import {mutationsHtml,recommendationsHtml} from './playstyle.js';
 
 const sharedPath=import.meta.url.includes('/dist/')?'../../../shared/roadmap-store.js':'../../shared/roadmap-store.js';
 const {createStore}=await import(new URL(sharedPath,import.meta.url));
 const core=window.SideProjectSync,$=id=>document.getElementById(id);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',weapons:'武器列表',armor:'防具列表',sources:'來源與查證'};
+const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',weapons:'武器列表',armor:'防具列表',mutations:'異變列表',recommendations:'配裝與異變推薦',sources:'來源與查證'};
 const warningLabels={critical:'不可逆／易錯過',branch:'分歧／備份',prep:'提前準備',recommended:'推薦體驗',later:'可延後'};
 const verificationLabels={verified:'已查證',unverified:'待查證',conflicting:'來源有差異'};
 let progress,review,ngBackupStamp,refreshPending=false;
-const filter={search:'',reportGroup:defaultReportGroup,reportPage:1,reportStatus:'all',mapGroup:'all',creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'all',weaponHand:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',stage:'start'};
+const filter={search:'',reportGroup:defaultReportGroup,reportPage:1,reportStatus:'all',mapGroup:'all',creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'all',weaponHand:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',stage:'start'};
 const revealedSteps=new Set();
 let readingScope='';
 const scopeOf=p=>{const w=world(p);return [w.worldId,w.currentRunId,w.currentPlayerId].join(':');};
@@ -40,7 +41,7 @@ const stateOptions=current=>options([['missing','未取得'],['obtained','已取
 function message(text){$('feedback').textContent=text;}
 async function action(fn){try{await fn();}catch(e){message(e.message);}}
 async function update(fn){const w=world(progress),scope=[w.worldId,w.currentRunId,w.currentPlayerId];await store.update(p=>{const w=world(p);if(w.worldId!==scope[0]||w.currentRunId!==scope[1]||w.currentPlayerId!==scope[2])throw Error('其他分頁已切換世界、周目或成員，請重新操作。');fn(p);return p;});}
-function go(next,extra={},hash=''){const url=new URL(location.href);url.searchParams.set('view',next);if(!Object.hasOwn(extra,'group'))url.searchParams.delete('group');if(!Object.hasOwn(extra,'page'))url.searchParams.delete('page');if(next!=='roadmap')url.searchParams.delete('stage');else url.searchParams.set('stage',filter.stage);for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);if(next!=='map')url.searchParams.delete('item');else if(!Object.hasOwn(extra,'item'))url.searchParams.delete('item');url.hash=hash;history.pushState({},'',url);render();window.scrollTo(0,0);$('app').focus({preventScroll:true});}
+function go(next,extra={},hash=''){const url=new URL(location.href);url.searchParams.set('view',next);for(const key of ['group','page','tab','q','item'])url.searchParams.delete(key);if(next!=='roadmap')url.searchParams.delete('stage');else url.searchParams.set('stage',filter.stage);for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);url.hash=hash;history.pushState({},'',url);applyReferenceUrl();render();window.scrollTo(0,0);$('app').focus({preventScroll:true});}
 function header(){
  if(view()!=='roadmap')return `<div class="page-heading"><h1>${names[view()]}</h1></div>`;
  const r=run(progress),earned=trophies.filter(t=>player(progress).trophies[t.id]?.earned).length,done=superWinConditions.filter(c=>r.conditions[c.id]?.done).length;
@@ -148,7 +149,7 @@ function render(){
  if(view()==='roadmap'&&readingScope!==scopeOf(progress)){revealedSteps.clear();readingScope=scopeOf(progress);}
  if(view()==='roadmap')for(const step of steps)if(!stepProgress(progress,step).complete)revealedSteps.delete(step.id);
  const active=document.activeElement,focusId=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;
- $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:pageParams().get('item')}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),sources:sourcesHtml}[view()]());
+ $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:pageParams().get('item')}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),mutations:()=>mutationsHtml(gearControls),recommendations:()=>recommendationsHtml(gearControls),sources:sourcesHtml}[view()]());
  document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view())a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  document.querySelectorAll('[data-stage]').forEach(a=>{if(view()==='roadmap'&&a.dataset.stage===filter.stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
  if(focusId&&$(focusId)){$(focusId).focus({preventScroll:true});if(selection&&$(focusId).setSelectionRange)try{$(focusId).setSelectionRange(...selection);}catch{}}
@@ -240,6 +241,10 @@ function bindControls(){
  document.querySelectorAll('[data-category-link]').forEach(link=>link.onclick=e=>{
   e.preventDefault();resetCollectionFilters();filter.reportGroup=link.dataset.categoryLink;go('collectibles',{group:filter.reportGroup});
  });
+ document.querySelectorAll('[data-armor-tab]').forEach(link=>link.onclick=e=>{
+  if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+  e.preventDefault();resetViewFilters();go('armor',{tab:link.dataset.armorTab});
+ });
  document.querySelectorAll('[data-report-page]').forEach(button=>button.onclick=()=>{
   filter.reportPage=Number(button.dataset.reportPage);
   go('collectibles',{group:filter.reportGroup,page:filter.reportPage});
@@ -285,7 +290,7 @@ document.querySelectorAll('[data-view]').forEach(a=>a.onclick=e=>{e.preventDefau
 $('nav-toggle').onclick=()=>{const open=$('handbook-nav').classList.toggle('open');$('nav-toggle').setAttribute('aria-expanded',String(open));};
 function resetViewFilters(){
  resetCollectionFilters();
- Object.assign(filter,{creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'all',weaponHand:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all'});
+ Object.assign(filter,{creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'all',weaponHand:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all'});
 }
 window.addEventListener('popstate',()=>{resetViewFilters();filter.stage=stageFromUrl()||filter.stage;applyReferenceUrl();render();});
 window.addEventListener('pagehide',()=>store.close(),{once:true});
@@ -304,20 +309,24 @@ async function loadProgress(){
 if(usesProgress())await loadProgress();
 filter.stage=stageFromUrl()||(progress&&run(progress).storyStage)||'start';
 function applyReferenceUrl(){
- const group=pageParams().get('group');
+ const params=pageParams();
+ if(view()==='armor')filter.armorTab=params.get('tab')==='pieces'?'pieces':'sets';
+ if(['armor','weapons'].includes(view())&&params.has('q'))filter.search=params.get('q');
  if(view()!=='collectibles')return;
+ const group=params.get('group');
  if(groups.some(g=>g.id===group))filter.reportGroup=group;
  const itemId=location.hash.startsWith('#collect-')?location.hash.slice(9):'';
  if(itemId&&reportItems.some(item=>item.id===itemId)){
   const target=collectionTarget(itemById(itemId));
   filter.reportGroup=target.group;filter.reportPage=target.page;return;
  }
- const page=Number(pageParams().get('page'));
+ const page=Number(params.get('page'));
  if(Number.isSafeInteger(page)&&page>0)filter.reportPage=page;
 }
 applyReferenceUrl();
 render();
 if(view()==='collectibles'&&location.hash.startsWith('#collect-'))focusItem(location.hash.slice(1));
+if(view()==='mutations'&&location.hash.startsWith('#mutation-'))focusItem(location.hash.slice(1));
 
 function nextStep(){
  return nextPendingStep(progress);

@@ -39,22 +39,32 @@ export function weaponsHtml({filter,select,search,escape}) {
 }
 
 export function armorHtml({filter,select,search,escape}) {
- const rows = armor.filter(row=>contains(row,filter.search)
+ const pieces=filter.armorTab==='pieces';
+ const category=armor.filter(row=>pieces===!row.defense);
+ const rows = category.filter(row=>contains(row,filter.search)
   && (filter.gearTier==='all'||row.tier===Number(filter.gearTier))
-  && (filter.armorWeight==='all'||(filter.armorWeight==='散件'?!row.defense:row.weight===filter.armorWeight)));
- return `<div class="toolbar gear-toolbar">${search('armor-search','中文／英文名稱或效果')}
+  && (filter.armorWeight==='all'||row.weight===filter.armorWeight))
+  .sort((a,b)=>b.tier-a.tier);
+ return `<nav class="report-tabs" aria-label="防具分類">
+  ${[['sets','套裝'],['pieces','散裝']].map(([id,label])=>`<a href="?view=armor&amp;tab=${id}" data-armor-tab="${id}" ${filter.armorTab===id?'aria-current="page"':''}>${label}</a>`).join('')}
+ </nav>
+ <div class="toolbar gear-toolbar">${search('armor-search','中文／英文名稱或效果')}
   ${select('armor-tier','階級',tiers.map(([id,label])=>[String(id),label]),'gearTier')}
-  ${select('armor-weight','護甲類型',[['all','全部類型'],['輕型','輕型'],['中型','中型'],['重型','重型'],['散件','散件']],'armorWeight')}
+  ${select('armor-weight',pieces?'部位':'護甲類型',[['all',pieces?'全部部位':'全部類型'],...unique(category,'weight').map(label=>[label,label])],'armorWeight')}
  </div>
- <p class="muted gear-note">共 ${rows.length}／${armor.length} 筆。防禦值為未強化數值，傷害減免按整套穿戴列出。</p>
- <div class="armor-grid">${rows.map(a=>`<article class="armor-entry" data-armor>
-  <h2>${escape(a.name)} <small class="english-name" lang="en">${escape(a.english)}</small></h2>
-  <p class="metadata"><span>${tierLabel(a.tier)} · ${a.weight}</span></p>
-  ${a.defense?`<p class="armor-defense">防禦 頭／腿各 ${a.defense[0]}、胸 ${a.defense[1]} · 整套減免 ${a.resistance}% · 耐力消耗 +${a.resistance-5}%</p>`:''}
-  <dl class="armor-effects"><dt>單件效果</dt><dd>${escape(a.piece)}</dd>
-   ${a.defense?`<dt>套裝效果</dt><dd>${escape(a.bonus)}</dd>`:''}
-   <dt>光滑鍛造</dt><dd>${escape(a.sleek)}</dd>
-  </dl>
- </article>`).join('')}</div>${rows.length?'':'<p class="empty">沒有符合篩選的防具。</p>'}
+ <p class="muted gear-note">共 ${rows.length}／${category.length} 筆，依階級由高到低排列。${pieces?'':'防禦為未強化數值，減免與耐力消耗按整套穿戴列出。'}</p>
+ <div role="table" class="weapon-table armor-table${pieces?' armor-pieces':''}" aria-label="${pieces?'散裝防具':'防具套裝'}比較">
+  <div role="row" class="weapon-row weapon-heading">${['防具',pieces?'階級／部位':'階級／類型',...(pieces?[]:['防禦／減免']),'單件效果',...(pieces?[]:['套裝效果']),'光滑鍛造'].map(h=>`<span role="columnheader">${h}</span>`).join('')}</div>
+  ${rows.map(a=>`<div class="weapon-row" role="row" data-armor data-tier="${a.tier}">
+   <div role="cell" class="weapon-name"><strong>${escape(a.name)}</strong><small class="english-name" lang="en">${escape(a.english)}</small></div>
+   ${comparisonCell(pieces?'階級／部位':'階級／類型',tierLabel(a.tier)+' · '+a.weight)}
+   ${pieces?'':comparisonCell('防禦／減免',`頭／腿各 ${a.defense[0]}，胸 ${a.defense[1]}<small>整套減免 ${a.resistance}% · 耐力消耗 +${a.resistance-5}%</small>`)}
+   ${comparisonCell('單件效果',escape(a.piece))}
+   ${pieces?'':comparisonCell('套裝效果',escape(a.bonus))}
+   ${comparisonCell('光滑鍛造',escape(a.sleek))}
+  </div>`).join('')}
+ </div>${rows.length?'':'<p class="empty">沒有符合篩選的防具。</p>'}
  <p class="sources"><a href="${escape(bwiki.armor)}" target="_blank" rel="noopener noreferrer">BWIKI 護甲屬性 ↗</a></p>`;
 }
+
+export const comparisonCell=(label,html)=>`<div role="cell"><small aria-hidden="true" class="weapon-mobile-label">${label}</small>${html}</div>`;

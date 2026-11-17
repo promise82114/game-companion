@@ -44,21 +44,25 @@
 .weapon-row .weapon-mobile-label{display:none}
 .weapon-damage{font-variant-numeric:tabular-nums}
 .water-yes{color:var(--accent);font-weight:650}
-.armor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.armor-entry{border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0}
-.armor-entry h2{margin:0;font-size:18px}
-.armor-defense{font-variant-numeric:tabular-nums}
-.armor-effects{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:14px 0 0;border-top:1px solid var(--line);padding-top:12px}
-.armor-effects dt{color:var(--muted)}
-.armor-effects dd{margin:0}
+.armor-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.64fr) minmax(0,1fr) repeat(3,minmax(0,1.12fr))}
+.armor-pieces .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.8fr) repeat(2,minmax(0,1.4fr))}
+.mutation-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1.6fr)}
+.mutation-table [data-mutation]{scroll-margin:18px}
+.mutation-table [data-mutation]:target{background:var(--surface)}
+.build-guide section+section{margin-top:28px}
+.build-guide h2{scroll-margin:16px}
+.build-gear{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 12px;margin:10px 0}
+.build-gear dt{font-weight:600;color:var(--muted)}
+.build-gear dd{margin:0}
 @media(max-width:900px){
- .weapon-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 0}
+ .weapon-row,.armor-table .weapon-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 0}
+ .mutation-table .weapon-row{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 0}
  .weapon-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0}
  .weapon-name{grid-column:1/-1}
  .weapon-row .weapon-mobile-label{display:block;font-size:11px;font-weight:600}
 }
 @media(max-width:720px){
- .route-pair,.armor-grid{grid-template-columns:1fr}
+ .route-pair{grid-template-columns:1fr}
  .route-pair>div+div{border-left:0;border-top:1px solid var(--line)}
 }
 /* 報告卡清單與地圖的目標都維持可搜尋、可直接定位。 */

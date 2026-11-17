@@ -7,6 +7,8 @@ import {trophies,steps,stages,collectibles,categories,regions,superWinConditions
 import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
+import {mutations,mutationCategories} from './dist/mutation-data.js';
+import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
 import {preparations} from './dist/preparations.js';
 import {groups,reportItems,reportConditionItems,collectionTarget,mappedItems,yardPoints} from './dist/report.js';
 import {damageColumns,creatureRows} from './dist/creature-data.js';
@@ -28,6 +30,19 @@ for(const rows of [weapons,armor]){
  assert.ok(rows.every(row=>row.name&&row.english&&[1,2,3].includes(row.tier)));
 }
 assert.ok(weapons.every(row=>/^\d/.test(row.damage)&&row.damageType&&['yes','no','unknown'].includes(row.underwater)));
+assert.equal(mutations.length,41);
+assert.equal(new Set(mutations.map(row=>row.id)).size,mutations.length);
+for(const row of mutations)assert.ok(row.name&&row.effect&&row.unlock&&Object.hasOwn(mutationCategories,row.category),row.english);
+for(const build of progressionBuilds){
+ assert.ok(build.weapons.every(name=>weapons.some(row=>row.english===name&&row.scope==='第一輪')),build.title);
+ assert.ok(build.armor.every(name=>armor.some(row=>row.english===name)),build.title);
+}
+for(const build of mutationBuilds){
+ const picks=[...build.core,...build.extras];
+ assert.equal(build.core.length,2,build.title);
+ assert.ok(picks.length<=5&&new Set(picks).size===picks.length,build.title);
+ assert.ok(picks.every(name=>mutations.some(row=>row.english===name)),build.title);
+}
 assert.ok(weapons.every(row=>['one','two','ammo','thrown'].includes(row.hands)));
 assert.equal(weapons.find(row=>row.english==='Salt Morning Star').hands,'one');
 assert.equal(weapons.find(row=>row.english==='Mint Mace').hands,'two');
@@ -81,5 +96,5 @@ run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});
 const w=newWorld('synthetic isolated');p.worlds[w.worldId]=w;p.currentWorldId=w.worldId;assert.equal(collectionState(p,scab),'missing');const restored=importData({records:[{key:'progress',value:p}]});assert.equal(restored.unknownTop.keep,'synthetic');assert.throws(()=>validateProgress({...p,schema:2}));assert.throws(()=>validateProgress({...p,gameId:'talos2'}));
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(new URL('../talos2/dist/shared/sync-core.js',import.meta.url),'utf8'),ctx);const core=ctx.window.SideProjectSync;const remote=JSON.parse(JSON.stringify(p));remote.unknownFuture={note:'preserved'};const plan=core.merge(null,p,remote,{hasBase:false}),next=core.resolve(plan,plan.conflicts.map(()=>'remote'));validateProgress(next);assert.equal(next.unknownFuture.note,'preserved');
-for(const file of ['app.js','data.js','model.js','map.js','roadmap-progress.js','gear-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','model.js','map.js','roadmap-progress.js','gear-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,game:'grounded',trophies:trophies.length,stages:stages.length,steps:steps.length,legacyCollectibles:collectibles.length,reportEntries:reportItems.length,mapPins:new Set(mappedItems.map(row=>row.pin)).size,creatures:creatureRows.length,cloud:false}));

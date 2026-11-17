@@ -137,7 +137,7 @@ try{
  await page.evaluate(()=>{window.originalPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(value,key){if(String(key).includes('import.raw.'))throw new DOMException('synthetic quota','QuotaExceededError');return window.originalPut.call(this,value,key);};});const beforeQuota=await get(page);await page.locator('#open-backup').click();await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(incoming))});await page.locator('#feedback').filter({hasText:'synthetic quota'}).waitFor();assert.deepEqual(await get(page),beforeQuota);await page.evaluate(()=>{IDBObjectStore.prototype.put=window.originalPut;});await page.locator('#backup-dialog [data-close]').click();
  // 完整備份含 archive 原文；跨遊戲及新 schema 拒絕，保留原文。
  await page.locator('#open-backup').click();const recovery=await download(page,'#export-recovery');assert.ok(recovery.records.some(row=>String(row.key).includes('import.raw.')));await page.locator('#import-file').setInputFiles({name:'wrong-game.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({...incoming,gameId:'talos2'}))});await page.locator('#feedback').filter({hasText:'不相容'}).waitFor();assert.deepEqual(await get(page),beforeQuota);await page.locator('#backup-dialog [data-close]').click();
- for(const v of ['overview','roadmap','collectibles','map','trophies','ngplus','sources','weapons','armor','creatures'])for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});await visit(page,v);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,v+' overflow '+width);if(['roadmap','collectibles','map','trophies','weapons','armor','creatures'].includes(v))await page.screenshot({path:`outputs/grounded/${v}-${width}.png`,fullPage:false});}
+ for(const v of ['overview','roadmap','collectibles','map','trophies','ngplus','sources','weapons','armor','armor&tab=pieces','mutations','recommendations','creatures'])for(const width of [1440,768,390,320]){await page.setViewportSize({width,height:900});await visit(page,v);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,v+' overflow '+width);if(!['overview','ngplus','sources'].includes(v))await page.screenshot({path:`outputs/grounded/${v.replace('&tab=','-')}-${width}.png`,fullPage:false});}
  await page.setViewportSize({width:390,height:900});await page.locator('#nav-toggle').click();await page.locator('[data-view="trophies"]').click();await page.locator('article[id^="trophy-"]').first().waitFor();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('article[id^="trophy-"]').count(),46);
  await page.locator('#nav-toggle').click();await page.screenshot({path:'outputs/grounded/chapters-mobile.png'});await page.locator('#roadmap-chapters [data-stage="remix"]').focus();await page.keyboard.press('Enter');await page.locator('[data-step="ng-ending"]').waitFor();assert.equal(await page.locator('#nav-toggle').getAttribute('aria-expanded'),'false');assert.equal(await page.locator('#roadmap-chapters [aria-current="step"]').getAttribute('data-stage'),'remix');
  const stores=await page.evaluate(async()=>({dbs:(await indexedDB.databases()).map(d=>d.name),local:Object.keys(localStorage),caches:await caches.keys()}));assert.deepEqual(stores.dbs,['game-companion.grounded.progress.v1']);assert.deepEqual(stores.local,[]);assert.deepEqual(stores.caches,[]);assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
@@ -145,7 +145,7 @@ try{
  // 新 context 的完整備份還原；沒有沿用任何現有 profile。
  const fresh=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),restore=await fresh.newPage();await visit(restore,'roadmap');assert.equal(await restore.locator('#trophy-count').textContent(),'0 / 46');await upload(restore,recovery);await restore.locator('#import-source').click();await download(restore,'#import-download');await restore.locator('#import-ack').check();await restore.locator('#import-apply').click();await restore.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await get(restore)).futureUnknown.keep[1],17);
  await restore.evaluate(async()=>{const q=indexedDB.open('game-companion.grounded.progress.v1'),db=await new Promise(resolve=>q.onsuccess=()=>resolve(q.result));try{await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite'),s=tx.objectStore('records'),g=s.get('progress');g.onsuccess=()=>{g.result.schema=99;s.put(g.result,'progress');};tx.oncomplete=resolve;tx.onerror=reject;});}finally{db.close();}});await restore.reload();await restore.locator('h1').filter({hasText:'進度無法讀取'}).waitFor();await restore.locator('#open-backup').click();const corrupt=await download(restore,'#export-recovery');assert.equal(corrupt.records.find(row=>row.key==='progress').value.schema,99);await fresh.close();
- console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 10 views','no cross-game DB/cache/storage','only explicit BWIKI iframe requests','no page errors']}));
+ console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 13 routes','no cross-game DB/cache/storage','only explicit BWIKI iframe requests','no page errors']}));
 }finally{await browser.close();}
 
 async function platinumAudit(){
@@ -222,10 +222,34 @@ async function platinumAudit(){
    await page.locator('#weapon-hand').selectOption('one');assert.equal(await page.locator('[data-weapon]').count(),1);
    assert.match(await page.locator('[data-weapon]').innerText(),/蚊子釘刺[\s\S]*25 \/ 25 \/ 31[\s\S]*可使用/);
    await page.locator('#weapon-tier').selectOption('1');assert.equal(await page.locator('[data-weapon]').count(),0);
-   await visit(page,'armor');assert.equal(await page.locator('[data-armor]').count(),28);
+   await visit(page,'armor');assert.equal(await page.locator('[data-armor]').count(),22);
+   const armorTiers=()=>page.locator('[data-armor]').evaluateAll(rows=>rows.map(row=>Number(row.dataset.tier)));
+   const setTiers=await armorTiers();assert.deepEqual(setTiers,setTiers.toSorted((a,b)=>b-a));
    await page.locator('#armor-weight').selectOption('重型');await page.locator('#armor-search').fill('瓢蟲');
    assert.equal(await page.locator('[data-armor]').count(),1);
-   assert.match(await page.locator('[data-armor]').innerText(),/單件效果[\s\S]*套裝效果[\s\S]*光滑鍛造/);
+   assert.deepEqual((await page.getByRole('columnheader').allTextContents()).slice(-3),['單件效果','套裝效果','光滑鍛造']);
+   await page.locator('[data-armor-tab="pieces"]').click();
+   assert.equal(new URL(page.url()).searchParams.get('tab'),'pieces');
+   assert.equal(await page.locator('[data-armor]').count(),6);
+   const pieceTiers=await armorTiers();assert.deepEqual(pieceTiers,pieceTiers.toSorted((a,b)=>b-a));
+   await page.locator('#armor-weight').selectOption('頭部散件');assert.equal(await page.locator('[data-armor]').count(),4);
+   await page.goBack();assert.equal(await page.locator('[data-armor-tab="sets"]').getAttribute('aria-current'),'page');
+   await visit(page,'mutations');assert.equal(await page.locator('[data-mutation]').count(),41);
+   await page.locator('#mutation-category').selectOption('boss');
+   await page.locator('#mutation-search').fill('Guard Dog');
+   assert.equal(await page.locator('[data-mutation]').count(),1);
+   assert.match(await page.locator('[data-mutation]').innerText(),/1／4／9 場防守事件/);
+   await visit(page,'recommendations');
+   assert.equal(await page.locator('[data-progression-build]').count(),3);
+   assert.equal(await page.locator('[data-mutation-build]').count(),7);
+   await page.getByRole('link',{name:'泡泡頭盔',exact:true}).click();
+   await page.locator('[data-armor]').first().waitFor();
+   assert.equal(await page.locator('[data-armor]').count(),1);
+   assert.match(await page.locator('[data-armor]').innerText(),/泡泡頭盔/);
+   await visit(page,'recommendations');
+   await page.getByRole('link',{name:'看門狗',exact:true}).first().click();
+   await page.locator('#mutation-guard-dog').waitFor();
+   await page.waitForFunction(()=>document.activeElement.id==='mutation-guard-dog');
    assert.doesNotMatch(await page.locator('#app').innerText(),/製作材料|修理材料/);
    assert.deepEqual(await get(page),beforeGear);
    await visit(page,'creatures');
