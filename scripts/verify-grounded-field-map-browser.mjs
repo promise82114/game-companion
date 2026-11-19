@@ -24,6 +24,11 @@ try{
     assert.ok(typePanel.x+typePanel.width<=mapPanel.x&&mapPanel.x+mapPanel.width<=detailPanel.x,'桌面由左至右：種類、地圖、位置說明');
     assert.ok(mapPanel.width>typePanel.width*2&&mapPanel.width>detailPanel.width*2,'兩側窄欄不擠壓主地圖');
     assert.ok(Math.abs(typePanel.width-detailPanel.width)<2,'兩側各分配原說明欄約一半寬');
+    assert.ok(Math.abs(typePanel.y+typePanel.height-mapPanel.y-mapPanel.height)<2&&Math.abs(detailPanel.y+detailPanel.height-mapPanel.y-mapPanel.height)<2,'左右欄底部跟隨地圖對齊');
+    for(const selector of ['.field-type-options','.map-results']){
+     const list=await page.locator(selector).boundingBox();
+     assert.ok(list.y+list.height<=mapPanel.y+mapPanel.height+2,'列表不能超出地圖底部 '+selector);
+    }
    }else assert.ok(typePanel.y+typePanel.height<=mapPanel.y&&mapPanel.y+mapPanel.height<=detailPanel.y,'窄螢幕依種類、地圖、位置說明排列');
    assert.ok((await page.locator('.field-type-choice>span').first().boundingBox()).width>85,'種類名稱保留橫向閱讀空間');
   };
@@ -41,6 +46,7 @@ try{
   await page.locator('[data-map-list="field-211340"]').click();
   assert.match(await page.locator('#map-selection').innerText(),/棚下[\s\S]*不重生/);
   assert.equal(await page.locator('[data-yard-pin="211340"].selected').count(),1);
+  await checkLayout();
   assert.match(await page.locator('#yard-selection-label').textContent(),/黑寡婦/);
   await page.getByRole('link',{name:'查看弱點與抗性 →'}).click();await page.locator('.creature-matrix tbody tr').first().waitFor();
   assert.match(await page.locator('.creature-matrix tbody tr').first().innerText(),/黑寡婦[\s\S]*Black Widow/);
