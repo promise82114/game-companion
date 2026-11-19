@@ -60,7 +60,7 @@ function activateView(name,reset=false){
 function capturePosition(){
  const rows=[...$('app').querySelectorAll('[id^="collect-"],[id^="trophy-"],[data-step-row],[data-weapon],[data-armor],[data-shield],[data-mutation],[data-chip]')];
  const anchor=rows.find(row=>row.getBoundingClientRect().bottom>0);
- return {scroll:scrollY,anchor:anchor?.id,offset:anchor?.getBoundingClientRect().top,focusId:$('app').contains(document.activeElement)?document.activeElement.id:'',
+ return {scroll:scrollY,typeScroll:$('field-type-options')?.scrollTop||0,anchor:anchor?.id,offset:anchor?.getBoundingClientRect().top,focusId:$('app').contains(document.activeElement)?document.activeElement.id:'',
   openDetails:[...$('app').querySelectorAll('details[id][open]')].map(row=>row.id)};
 }
 function rememberView(){
@@ -71,6 +71,7 @@ function rememberView(){
 }
 function restorePosition(position){
  if(!position)return;
+ if($('field-type-options'))$('field-type-options').scrollTop=position.typeScroll||0;
  for(const id of position.openDetails||[])if($(id))$(id).open=true;
  const anchor=position.anchor&&$(position.anchor);
  window.scrollTo(0,anchor?scrollY+anchor.getBoundingClientRect().top-position.offset:position.scroll);

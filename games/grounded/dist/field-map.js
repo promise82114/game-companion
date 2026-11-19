@@ -15,15 +15,18 @@ const detail=(row,escape)=>row?`<h2>${escape(row.name)}</h2><p class="english-na
  <p class="muted">俯視座標不等於入口；未註明層級的點請先確認是否在洞穴、實驗室或高處。</p>
  <div class="actions">${row.creature?`<a href="?view=creatures&amp;q=${encodeURIComponent(row.creature)}">查看弱點與抗性 →</a>`:''}<a href="${fieldMapSource}?locationIds=${row.pin}" target="_blank" rel="noopener noreferrer">查看來源點位與說明 ↗</a></div>`:'<p>選地圖標記或清單，查看該點名稱、位置提示與準備需求。</p>';
 
-export function fieldMapHtml(kind,{filter,escape,select,search}){
+export function fieldMapHtml(kind,{filter,escape,search}){
  const rows=fieldRows(kind,filter),selected=rows.find(row=>row.id===filter.mapItem),total=fieldItems.filter(row=>row.kind===kind).length;
+ const matching=fieldRows(kind,{...filter,fieldType:'all'});
+ const types=[['all','全部種類'],...fieldTypes(kind)].map(([value,name],index)=>({value,name,index,count:value==='all'?matching.length:matching.filter(row=>row.type===value).length}));
+ const typeList=`<fieldset class="field-type-panel"><legend>選擇種類</legend><p class="muted">單選一種，地圖只顯示該類點位。</p><div id="field-type-options" class="field-type-options">${types.filter(row=>row.value==='all'||row.count||row.value===filter.fieldType).map(row=>`<label class="field-type-choice"><input id="field-type-${row.index}" type="radio" name="field-type" data-filter="fieldType" value="${escape(row.value)}" ${row.value===filter.fieldType?'checked':''}><span>${escape(row.name)}</span><small>${row.count}</small></label>`).join('')}</div></fieldset>`;
  const title=kind==='creature'?'怪物出沒與首領位置':'採集資源位置';
  const box=filter.mapBox||rectFor(selected?.pin,3,project);
  const ordered=[...rows].sort((a,b)=>Number(a===selected)-Number(b===selected));
  return `<p>${kind==='creature'?'尋找怪物、首領與特殊個體的出沒處。':'查找礦石、糖果、毛絮、趾甲與其他採集資源。'}這張圖供找怪／採集使用，不計入 100% 收集進度。</p>
- <div class="toolbar">${search('field-search','搜尋中文／英文、位置提示或地標')}${select('field-type','種類',[['all','全部種類'],...fieldTypes(kind).map(([value,name])=>[value,`${name}（${fieldItems.filter(row=>row.kind===kind&&row.type===value).length}）`])],'fieldType')}</div>
+ <div class="toolbar">${search('field-search','搜尋種類、位置提示或地標（支援中文／英文）')}</div>
  <p class="muted">顯示 ${rows.length}／${total} 個來源點位。${kind==='creature'?'怪物會遊走，來源未涵蓋所有生物，也不反映 NG+ 入注或即時重生。':'點位可能代表分布區；不保證已列出每株植物或全部資源節點，原始科學仍屬收集地圖。'}</p>
- <div class="map-layout report-map field-map"><div class="map-frame">
+ <div class="map-layout report-map field-map">${typeList}<div class="map-frame">
  <div class="map-controls" aria-label="地圖操作">${[['in','＋','放大'],['out','−','縮小'],['left','←','向左平移'],['up','↑','向上平移'],['down','↓','向下平移'],['right','→','向右平移'],['reset','全圖','顯示全圖']].map(([id,text,label])=>`<button data-map-control="${id}" aria-label="${label}">${text}</button>`).join('')}</div>
  <div class="map-viewport"><svg id="yard-map" viewBox="${box.join(' ')}" role="group" tabindex="0" aria-label="${title}，北方朝上"><rect x="-1100" y="-830" width="3300" height="2490" fill="#11120c"/>${terrainHtml()}
  <g class="yard-anchors" aria-hidden="true">${yardAnchors.map(([name,pin])=>{const [x,y]=projectYardPoint(yardPoints[pin]);return `<text x="${x}" y="${y-16}">${escape(name)}</text>`;}).join('')}</g>

@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.14.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
+模組 1.14.1／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
 
 從 repo 根執行：
 
@@ -102,3 +102,7 @@ Haze 新增相關文件的勾選，可能讓舊的已完成步驟重新顯示全
 新頁不提供已取得勾選，也不開啟玩家進度資料庫。100% 收集地圖仍獨立使用原進度與 NG+ 乳牙周目紀錄；沒有新增存檔欄位、schema 或改寫既有 ID。
 
 更新點位時，先取得公開頁的 window.mapData JSON 與公開資料 https://mapgenie.io/api/v1/maps/113/data，再執行 `node games/grounded/import-field-map.mjs <mapData.json> <locations.json>`；腳本離線轉錄，輸出 dist/field-map-data.js 與 FIELD_MAP_SOURCES.json。中文對照、工具與具名路線維護在 dist/field-map-catalog.js。
+
+## 1.14.1 地圖種類單選列表
+
+怪物與採集地圖改以常駐種類列表切換，取代下拉選單。桌面在地圖右側，窄螢幕在地圖上方；原生 radio 單選、清楚選中樣式與點位數量，可用鍵盤方向鍵切換。搜尋同時篩出相關種類與點位，保留全部種類及無結果時的重設入口。選擇種類後保持列表捲動位置，切換功能仍重設條件，不改寫玩家進度。

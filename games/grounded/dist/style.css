@@ -200,3 +200,15 @@
 .report-map .map-frame .pin-fallback text{font-size:8px;fill:#fff;stroke:#30403a;stroke-width:.7px;paint-order:stroke;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
 .map-legend .legend-glyph{font-size:10px;line-height:14px;width:16px;height:16px;text-align:center;font-style:normal;color:white;text-shadow:0 0 2px black}
 @media(max-width:720px){.report-tabs a{min-height:44px}}
+.field-map{grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);grid-template-areas:"map types" "map detail";gap:16px 20px}
+.field-map>.map-frame{grid-area:map}.field-map>.report-map-sidebar{grid-area:detail}
+.field-type-panel{grid-area:types;min-width:0;margin:0;padding:10px;border:1px solid var(--line);border-radius:5px}
+.field-type-panel legend{padding:0 5px;font-size:16px;font-weight:650}.field-type-panel>p{margin:0 0 8px;font-size:12px}
+.field-type-options{max-height:340px;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.field-type-choice{display:flex;align-items:center;gap:8px;min-height:44px;padding:7px 8px;border-left:3px solid transparent;border-bottom:1px solid var(--line);cursor:pointer;overflow-wrap:anywhere}
+.field-type-choice input[type=radio]{flex:none;width:16px;height:16px;min-height:0;padding:0;margin:0;border:0;background:transparent;accent-color:var(--accent)}
+.field-type-choice>span{flex:1;min-width:0}.field-type-choice small{color:var(--muted);font-variant-numeric:tabular-nums}
+.field-type-choice:has(input:checked){background:var(--surface);border-left-color:var(--accent);font-weight:650}
+.field-type-choice:focus-within{outline:2px solid var(--accent);outline-offset:-2px}.field-type-choice:hover{background:var(--surface)}
+.field-map .map-results{max-height:260px}
+@media(max-width:1050px){.field-map{grid-template-columns:1fr;grid-template-areas:"types" "map" "detail"}.field-type-options{max-height:220px}}
