@@ -6,7 +6,7 @@ const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_C
 const errors=[],external=[];
 await fs.mkdir('outputs/grounded',{recursive:true});
 try{
- for(const width of [320,390,768,1280,1920]){
+ for(const width of [320,390,768,1050,1051,1101,1280,1920]){
   const context=await browser.newContext({viewport:{width,height:950},serviceWorkers:'block'});
   await context.route('https://**',route=>{external.push(route.request().url());return route.abort();});
   const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
@@ -18,9 +18,16 @@ try{
   assert.ok(await page.locator('input[name=field-type]').count()>50);
   const radioBox=await page.locator('input[name=field-type]').first().boundingBox();
   assert.ok(radioBox.width<=20&&radioBox.height<=20,'單選圓鈕不能套用文字輸入框的寬高');
-  assert.ok((await page.locator('.field-type-choice>span').first().boundingBox()).width>120,'種類名稱保留橫向閱讀空間');
-  const typePanel=await page.locator('.field-type-panel').boundingBox(),mapPanel=await page.locator('.map-frame').boundingBox();
-  assert.ok(width>1050?typePanel.x>mapPanel.x:typePanel.y<mapPanel.y,'種類列表須在地圖旁或手機上方');
+  const checkLayout=async()=>{
+   const typePanel=await page.locator('.field-type-panel').boundingBox(),mapPanel=await page.locator('.map-frame').boundingBox(),detailPanel=await page.locator('.report-map-sidebar').boundingBox();
+   if(width>1050){
+    assert.ok(typePanel.x+typePanel.width<=mapPanel.x&&mapPanel.x+mapPanel.width<=detailPanel.x,'桌面由左至右：種類、地圖、位置說明');
+    assert.ok(mapPanel.width>typePanel.width*2&&mapPanel.width>detailPanel.width*2,'兩側窄欄不擠壓主地圖');
+    assert.ok(Math.abs(typePanel.width-detailPanel.width)<2,'兩側各分配原說明欄約一半寬');
+   }else assert.ok(typePanel.y+typePanel.height<=mapPanel.y&&mapPanel.y+mapPanel.height<=detailPanel.y,'窄螢幕依種類、地圖、位置說明排列');
+   assert.ok((await page.locator('.field-type-choice>span').first().boundingBox()).width>85,'種類名稱保留橫向閱讀空間');
+  };
+  await checkLayout();
   if(width===390||width===1280)await page.screenshot({path:`outputs/grounded/type-list-${width}.png`,fullPage:width===390});
   assert.equal(await page.locator('#app [data-collect-check],#app [data-ng-absent],#app input[type=checkbox]').count(),0);
   await page.locator('input[name=field-type][value="Black Widow"]').check();assert.equal(await page.locator('[data-map-list]').count(),5);
@@ -57,10 +64,11 @@ try{
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'採集地圖不溢出 '+width);
   await page.goto(url+'?view=resourceMap&item=field-211155');await page.locator('[data-yard-pin="211155"].selected').waitFor();
   assert.match(await page.locator('#map-selection').innerText(),/煙灰缸[\s\S]*黑牛甲蟲鎚/);
+  await checkLayout();
   if(width===390||width===1280){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`outputs/grounded/resource-map-${width}.png`,fullPage:width===390});}
   assert.deepEqual(await page.evaluate(()=>indexedDB.databases()),[],'參考地圖不開啟進度資料庫');
   await context.close();
  }
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
- console.log('Field maps passed: 459 creatures / 586 resources, 5 widths, local tiles, single-select type list, retained list scroll, keyboard choice, filters and aliases, selection labels, deep links, weakness link, keyboard zoom/reset, no progress DB or external requests');
+ console.log('Field maps passed: 459 creatures / 586 resources, 8 widths, desktop types/map/detail columns, narrow-screen stacking, local tiles, single-select type list, retained list scroll, keyboard choice, filters and aliases, selection labels, deep links, weakness link, keyboard zoom/reset, no progress DB or external requests');
 }finally{await browser.close();}

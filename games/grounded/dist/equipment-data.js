@@ -38,13 +38,19 @@ export function weaponUpgrade(row){
 }
 
 export const shields=[
- {name:'火蟻盾',english:'Fire Ant Shield',tier:3,scope:'第一輪',block:75,effect:'格擋有 20% 機率使攻擊者受到腐蝕，承受傷害 +15%，持續 10 秒。',unlock:'分析火蟻頭；上庭院火蟻區。',advice:'單手近戰通用選擇；已靠火蟻護甲施加同種腐蝕時，不會再疊一份增傷。',source:'https://wiki.biligame.com/grounded/火蚁盾牌'},
- {name:'凶猛瓢蟲盾',english:'Ladybird Shield',tier:3,scope:'第一輪',block:75,effect:'格擋有 25% 機率使近戰攻擊在 5 秒內不消耗耐力。',unlock:'分析凶猛瓢蟲殼；上庭院凶猛瓢蟲。',advice:'需要持續出刀、又已由護甲提供腐蝕時可選。',source:'https://grounded.wiki.gg/wiki/Ladybird_Shield'},
+ {name:'火蟻盾',english:'Fire Ant Shield',tier:3,scope:'第一輪',block:75,effect:'格擋有 20% 機率使攻擊者受到腐蝕，承受傷害 +15%，持續 10 秒。',unlock:'分析火蟻頭；上庭院火蟻區。',advice:'瓢蟲套單手續戰、沒有其他腐蝕來源且耐力足夠時優先，補上增傷；已靠火蟻護甲施加同種腐蝕時，不會再疊一份增傷。',source:'https://wiki.biligame.com/grounded/火蚁盾牌'},
+ {name:'凶猛瓢蟲盾',english:'Ladybird Shield',tier:3,scope:'第一輪',block:75,effect:'格擋有 25% 機率使近戰攻擊在 5 秒內不消耗耐力。',unlock:'分析凶猛瓢蟲殼；上庭院凶猛瓢蟲。',advice:'火蟻護甲已有腐蝕時搭配省耐效果；瓢蟲套常缺耐力或已有其他腐蝕來源時也可改用。兩面三階盾的基礎格擋量相同。',source:'https://grounded.wiki.gg/wiki/Ladybird_Shield'},
  {name:'被感染的螞蟻盾',english:'Infected Ant Shield',tier:3,scope:'輪迴',block:75,effect:'格擋時額外抵抗爆炸傷害；精確比例來源有差異，依遊戲當前詞條確認。',unlock:'分析被感染的螞蟻部位；需前一輪感染蟻后，進入後續 NG+ 取得感染螞蟻素材。',advice:'特殊爆炸對策，不是第一輪通用盾。',source:'https://grounded.wiki.gg/wiki/Infected_Ant_Shield'},
  {name:'黑螞蟻盾牌',english:'Black Ant Shield',tier:2,scope:'第一輪',block:50,effect:'提高格擋強度；沒有額外觸發效果。',unlock:'分析黑螞蟻部位，或腦力值 LV.10；黑蟻丘與垃圾堆周圍。',advice:'中期取代象鼻蟲盾，減少格擋條被打滿。',source:'https://wiki.biligame.com/grounded/黑蚂蚁盾牌'},
  {name:'象鼻蟲盾牌',english:'Weevil Shield',tier:1,scope:'第一輪',block:25,effect:'提高格擋強度；沒有額外觸發效果。',unlock:'分析生象鼻蟲肉；下庭院即可取得。',advice:'開局盾，搭單手矛或劍學習格擋。',source:'https://wiki.biligame.com/grounded/象鼻虫盾牌'}
 ];
 
+// 推薦配裝與兩份對敵表共用；僅為閱讀資料，不保存防具或盾牌選擇。
+export const armorShieldPairings=[
+ {armor:'Ladybug Armor',shield:'Fire Ant Shield',shortReason:'補上腐蝕增傷；需沒有其他同種來源。',reason:'保留瓢蟲套的治療續戰，讓盾補上防具沒有的腐蝕增傷。耐力足夠且沒有其他同種腐蝕來源時優先；增傷需格擋觸發，不是常駐。'},
+ {armor:'Fire Ant Armor',shield:'Ladybird Shield',shortReason:'護甲已有腐蝕，改取格擋省耐。',reason:'火蟻護甲的近戰已能施加腐蝕，同種效果不會再疊一份增傷。改用凶猛瓢蟲盾的格擋觸發省耐效果，幫助維持出刀節奏。'}
+];
+export const shieldPairingAlternative='瓢蟲套若常因耐力不足停手，或隊友／其他裝備已穩定提供同種腐蝕，也可換凶猛瓢蟲盾；依實際缺耐情況取捨，不因打 Boss 就固定換盾。';
 // 散件另記實際防禦與抗傷，不用套裝階級公式估算。
 export const utilityArmorStats={
  'Gas Mask':{defense:3,resistance:2.5},'Gill Tube':{defense:6,resistance:2.5},

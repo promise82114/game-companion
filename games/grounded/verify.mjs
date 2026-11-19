@@ -22,7 +22,7 @@ import {fresh,validateProgress,world,run,player,setCollection,ngMolarState,setNG
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
 import {upgradeLevels,baseMaterials,branchMaterials,smithingUnlocks,ngArmorLevels} from './dist/smithing-data.js';
-import {weaponUpgrade,shields,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
+import {weaponUpgrade,shields,armorShieldPairings,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
 import {mutations,mutationCategories} from './dist/mutation-data.js';
 import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
 import {targetBuilds} from './dist/target-build-data.js';
@@ -129,14 +129,18 @@ const conflicting=structuredClone(ngSearchProgress);world(conflicting).runs[ngFi
 const legacyNG=structuredClone(ngAbsenceBefore);delete run(legacyNG).collectibles[ngCandidate.id].ngNotSpawned;validateProgress(legacyNG);assert.equal(ngMolarState(legacyNG,ngCandidate,run(legacyNG)),'pending');
 assert.equal(new Set(fixedWeapons.map(row=>row.weapon)).size,fixedWeapons.length,'每種武器只配一把');
 const fixedById=new Map(fixedWeapons.map(row=>[row.id,row]));
+assert.deepEqual(armorShieldPairings.map(p=>[p.armor,p.shield]),[['Ladybug Armor','Fire Ant Shield'],['Fire Ant Armor','Ladybird Shield']]);
+for(const p of armorShieldPairings){assert.ok(armor.some(a=>a.english===p.armor));assert.ok(shields.some(s=>s.english===p.shield));assert.ok(p.shortReason&&p.reason);}
 assert.deepEqual([...fixedMatchups.map(row=>row.target)].sort(),targetBuilds.map(row=>row.target).sort());
 assert.deepEqual(fixedMatchups.map(row=>row.difficulty),fixedMatchups.map(row=>row.difficulty).sort((a,b)=>a-b),'簡單在前');
 for(const fixed of fixedWeapons)assert.equal(weapons.find(row=>row.english===fixed.weapon)?.scope,'第一輪');
 for(const row of fixedMatchups){
  if(row.difficulty<=2)assert.equal(row.specialized.length,0,'簡單敵人特化留空');
- for(const pick of [...row.specialized,...row.transition]){assert.ok(fixedById.has(pick.id));if(pick.shield)assert.ok(shields.some(s=>s.english===pick.shield));}
+ for(const pick of [...row.specialized,...row.transition]){assert.ok(fixedById.has(pick.id));if(pick.shield){assert.equal(weapons.find(w=>w.english===fixedById.get(pick.id).weapon).hands,'one','雙手武器不能搭盾');if(pick.shield!=='by-armor')assert.ok(shields.some(s=>s.english===pick.shield));}}
  for(const pick of row.specialized){const fixed=fixedById.get(pick.id);assert.ok(!fixed.transitionOnly);assert.ok(!['法杖','弓','弩'].includes(weapons.find(w=>w.english===fixed.weapon).kind));}
 }
+const assistantShield=fixedMatchups.find(r=>r.target==='Assistant Manager');assert.ok(assistantShield.transition.every(p=>p.shield==='Black Ant Shield'));
+for(const row of fixedMatchups.filter(r=>r.target!=='Assistant Manager'))for(const pick of [...row.specialized,...row.transition])if(pick.shield)assert.equal(pick.shield,'by-armor','後期配盾必須依防具，不固定兇猛瓢蟲盾');
 for(const [number,pin,limit] of [[2,42703,10],[22,42693,20],[168,210207,15]]){
  const point=projectYardPoint(ngMolarItems.find(row=>row.number===number).point),anchor=projectYardPoint((await import('./dist/report-data.js')).yardPoints[pin]);
  assert.ok(Math.hypot(point[0]-anchor[0],point[1]-anchor[1])<limit,'NG+ map axis / scale '+number);

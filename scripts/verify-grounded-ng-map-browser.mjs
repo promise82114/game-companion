@@ -16,6 +16,7 @@ const read=page=>page.evaluate(async()=>{
 try{
  await fs.mkdir('outputs/grounded',{recursive:true});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+ await verifyShieldPairings(page);
  await visit(page,'map&scope=ng&item=ng-molar-001');
  assert.equal(await page.locator('[data-map-list]').count(),219);
  assert.equal(await page.locator('#map-check-ng-molar-001').isDisabled(),true);
@@ -129,3 +130,34 @@ try{
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
  console.log('NG map passed: 219 candidates; obtained/absent exclusive, default pending excludes both, absent-only filter, cross-tab changes, undo, opacity, reload/export/protected import; first-run/two NG runs and manual count isolated; 5 widths; 24 fixed builds, easy specializations empty, optional weapons transition-only.');
 }finally{await context.close();await browser.close();}
+
+async function verifyShieldPairings(page){
+ await visit(page,'recommendations');const before=await page.evaluate(async()=>({dbs:await indexedDB.databases(),localKeys:Object.keys(localStorage)}));
+ for(const width of [1440,768,390,320]){
+  await page.setViewportSize({width,height:1000});
+  for(const tab of ['progression','targets','fixed']){
+   await visit(page,'recommendations&tab='+tab);
+   assert.match(await page.locator('[data-shield-reason="Ladybug Armor"]').innerText(),/瓢蟲套[\s\S]*火蟻盾[\s\S]*沒有其他同種腐蝕來源/);
+   assert.match(await page.locator('[data-shield-reason="Fire Ant Armor"]').innerText(),/火蟻套[\s\S]*凶猛瓢蟲盾[\s\S]*不會再疊/);
+   assert.match(await page.locator('#shield-pairing-guide').innerText(),/耐力不足[\s\S]*雙手武器不能配盾/);
+   assert.doesNotMatch(await page.locator('#app').innerText(),/單手後期配凶猛瓢蟲盾/);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,tab+' '+width);
+   if(tab==='progression')continue;
+   const row=page.locator(tab==='fixed'?'[data-fixed-build="Mantis"]':'[data-target-build="Mantis"]');
+   assert.match(await row.locator('[data-shield-pairing="Ladybug Armor"]').first().innerText(),/瓢蟲套[\s\S]*火蟻盾[\s\S]*補上腐蝕/);
+   assert.match(await row.locator('[data-shield-pairing="Fire Ant Armor"]').first().innerText(),/火蟻套[\s\S]*凶猛瓢蟲盾[\s\S]*省耐/);
+   const early=page.locator(tab==='fixed'?'[data-fixed-build="Assistant Manager"]':'[data-target-build="Assistant Manager"]');
+   assert.match(await early.innerText(),/黑(?:螞)?蟻盾(?:牌)?/);assert.equal(await early.locator('[data-shield-pairing]').count(),0,'首遇不要求三階盾');
+   if(tab==='targets')assert.equal(await row.locator('[role="cell"]').nth(2).locator('[data-shield-pairing]').count(),0,'雙手欄不配盾');
+   if([1440,390].includes(width)){await row.scrollIntoViewIfNeeded();await page.screenshot({path:`outputs/grounded/shield-pairings-${tab}-${width}.png`});}
+   await row.locator('[data-shield-pairing="Ladybug Armor"]').first().getByRole('link',{name:'火蟻盾',exact:true}).click();
+   assert.equal(await page.locator('[data-shield]').count(),1);assert.match(await page.locator('[data-shield]').innerText(),/火蟻盾[\s\S]*瓢蟲套/);
+   await visit(page,'recommendations&tab='+tab);await page.locator('#'+(tab==='fixed'?'fixed':'target')+'-search').fill('火蟻盾');
+   assert.ok(await page.locator(tab==='fixed'?'[data-fixed-build]':'[data-target-build]').count()>0,'搜尋納入防具／盾牌');
+   await page.locator('#'+(tab==='fixed'?'fixed':'target')+'-search').fill('Black Ant Shield');
+   assert.equal(await page.locator(tab==='fixed'?'[data-fixed-build]':'[data-target-build]').count(),1);assert.match(await page.locator(tab==='fixed'?'[data-fixed-build]':'[data-target-build]').innerText(),/助理經理/);
+  }
+ }
+ assert.deepEqual(await page.evaluate(async()=>({dbs:await indexedDB.databases(),localKeys:Object.keys(localStorage)})),before,'純參考頁不應開啟或建立進度儲存');
+ console.log('Shield pairings passed: Ladybug/Fire Ant, Fire Ant/Ladybird, stamina alternative, early Black Ant, no two-handed shields, search, equipment links, 4 widths, unchanged progress.');
+}

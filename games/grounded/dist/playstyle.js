@@ -3,7 +3,7 @@ import {comparisonCell} from './gear.js';
 import {mutations,mutationCategories,mutationSource,mutationPatch} from './mutation-data.js';
 import {progressionBuilds,mutationBuilds,armorComparison,armorSwapPhases} from './playstyle-data.js';
 import {matchesSearch} from './search.js';
-import {environmentUpgrades,toolUpgrades,smithingSource,shields} from './equipment-data.js';
+import {environmentUpgrades,toolUpgrades,smithingSource,shields,armorShieldPairings,shieldPairingAlternative} from './equipment-data.js';
 import {targetBuilds,targetSource} from './target-build-data.js';
 import {fixedWeapons,fixedMatchups,fixedDifficultyLabels} from './fixed-build-data.js';
 
@@ -37,6 +37,16 @@ function gearLinks(englishNames,rows,view,escape){
  }).join('、');
 }
 
+function shieldSearchText(profile){
+ return profile==='by-armor'?armorShieldPairings.flatMap(p=>[p.armor,p.shield,armor.find(a=>a.english===p.armor)?.name,shields.find(s=>s.english===p.shield)?.name,p.shortReason]):[profile,shields.find(s=>s.english===profile)?.name];
+}
+function shieldPairingsHtml(escape){
+ return `<div class="shield-pairings">${armorShieldPairings.map(p=>`<small data-shield-pairing="${p.armor}">${gearLinks([p.armor],armor,'armor',escape)} ＋ ${gearLinks([p.shield],shields,'shields',escape)}：${escape(p.shortReason)}</small>`).join('')}</div>`;
+}
+function shieldGuideHtml(escape){
+ return `<section id="shield-pairing-guide"><h2>單手配盾：依防具選擇</h2>${armorShieldPairings.map(p=>`<p data-shield-reason="${p.armor}"><strong>${gearLinks([p.armor],armor,'armor',escape)} ＋ ${gearLinks([p.shield],shields,'shields',escape)}</strong>：${escape(p.reason)}</p>`).join('')}<p>${escape(shieldPairingAlternative)}</p><p>兩面三階盾的基礎格擋量同為 ${shields.find(s=>s.english==='Fire Ant Shield').block}，不是凶猛瓢蟲盾擋得更多；裝盾造成傷害降低 20%。以上適用三階盾已取得時，首遇助理經理先用黑蟻盾。雙手武器不能配盾；爆炸、範圍招式與機關仍須依機制閃避。</p></section>`;
+}
+
 export function recommendationsHtml(controls){
  const {filter,escape}=controls;
  const targetTab=filter.recommendationTab==='targets';
@@ -46,7 +56,7 @@ export function recommendationsHtml(controls){
  if(targetTab)return nav+targetRecommendationsHtml(controls);
  return nav+`<div class="build-guide">
  <p>以第一輪常見的近戰推進、光滑瓢蟲吸血續戰與火蟻輸出為主線，按實際可取得的裝備逐步替換。搭配依裝備效果與社群常見玩法整理。</p>
- <nav class="report-tabs" aria-label="配裝階段">${progressionBuilds.map((row,index)=>`<a href="#build-${index}">${row.stage}</a>`).join('')}<a href="#armor-comparison">三套防具比較</a><a href="#armor-swap-first">第一輪換裝</a><a href="#armor-swap-ngplus">NG+ 換裝</a><a href="#environment-upgrades">環境裝備強化</a><a href="#tool-upgrades">採集工具強化</a></nav>
+ <nav class="report-tabs" aria-label="配裝階段">${progressionBuilds.map((row,index)=>`<a href="#build-${index}">${row.stage}</a>`).join('')}<a href="#armor-comparison">三套防具比較</a><a href="#shield-pairing-guide">防具與盾牌搭配</a><a href="#armor-swap-first">第一輪換裝</a><a href="#armor-swap-ngplus">NG+ 換裝</a><a href="#environment-upgrades">環境裝備強化</a><a href="#tool-upgrades">採集工具強化</a></nav>
  ${progressionBuilds.map((row,index)=>`<article class="row" id="build-${index}" data-progression-build>
   <h2>${escape(row.stage)} · ${escape(row.title)}</h2>
   <dl class="build-gear"><dt>武器</dt><dd>${gearLinks(row.weapons,weapons,'weapons',escape)}</dd>
@@ -54,6 +64,7 @@ export function recommendationsHtml(controls){
   <p>${escape(row.plan)}</p>
   <dl class="build-detail">${[['取得時機',row.timing],['升級順序',row.upgrade],['實戰使用',row.combat],['替換選擇',row.alternatives],['異變搭配',row.mutationNote]].map(([label,text])=>`<dt>${label}</dt><dd>${escape(text)}</dd>`).join('')}</dl>
  </article>`).join('')}
+ ${shieldGuideHtml(escape)}
  <section id="armor-comparison" tabindex="-1"><h2>瓢蟲、西瓜蟲、火蟻：生存與輸出比較</h2>
  <p>瓢蟲偏治療續戰，西瓜蟲偏直接承傷與多人坦克，火蟻偏近戰輸出。下表比較完整三件套、相同等級與鍛造分支；光滑效果從 +6 解鎖，防禦數字不等於實際減傷百分比。</p>
  <div role="table" class="weapon-table tool-advice-table" aria-label="三套防具生存與輸出比較"><div role="row" class="weapon-row weapon-heading">${['防具與數值','生存方式','輸出差異'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
@@ -86,10 +97,11 @@ export function recommendationsHtml(controls){
 function fixedRecommendationsHtml({filter,select,search,escape}){
  const arsenal=new Map(fixedWeapons.map(pick=>[pick.id,pick]));
  const targets=new Map(targetBuilds.map(row=>[row.target,row]));
- const rows=fixedMatchups.filter(row=>(filter.targetKind==='all'||targets.get(row.target).kind===filter.targetKind)&&matchesSearch([targets.get(row.target).name,row.target,row.reason,fixedDifficultyLabels[row.difficulty],...[...row.specialized,...row.transition].flatMap(pick=>{const gear=arsenal.get(pick.id);return [gear.weapon,gear.branch,weapons.find(w=>w.english===gear.weapon)?.name,pick.note,pick.shield];})],filter.search));
- const picksHtml=picks=>picks.map(pick=>{const gear=arsenal.get(pick.id);return `<div class="target-pick" data-fixed-pick="${gear.id}">${gearLinks([gear.weapon],weapons,'weapons',escape)}<strong>${escape(gear.branch)}${pick.shield?' ＋ '+gearLinks([pick.shield],shields,'shields',escape):''}</strong><small>${escape(pick.note)}</small>${gear.transitionOnly?'<small>過渡限定 · 已有才用，可不製作</small>':''}</div>`;}).join('');
+ const rows=fixedMatchups.filter(row=>(filter.targetKind==='all'||targets.get(row.target).kind===filter.targetKind)&&matchesSearch([targets.get(row.target).name,row.target,row.reason,fixedDifficultyLabels[row.difficulty],...[...row.specialized,...row.transition].flatMap(pick=>{const gear=arsenal.get(pick.id);return [gear.weapon,gear.branch,weapons.find(w=>w.english===gear.weapon)?.name,pick.note,...shieldSearchText(pick.shield)];})],filter.search));
+ const picksHtml=picks=>picks.map(pick=>{const gear=arsenal.get(pick.id);return `<div class="target-pick" data-fixed-pick="${gear.id}">${gearLinks([gear.weapon],weapons,'weapons',escape)}<strong>${escape(gear.branch)}${pick.shield==='by-armor'?' · 依防具配盾':pick.shield?' ＋ '+gearLinks([pick.shield],shields,'shields',escape):''}</strong><small>${escape(pick.note)}</small>${pick.shield==='by-armor'?shieldPairingsHtml(escape):''}${gear.transitionOnly?'<small>過渡限定 · 已有才用，可不製作</small>':''}</div>`;}).join('');
  return `<section class="build-guide"><p>只用第一輪武器，每種練一把、分支固定。先配難敵，簡單敵人沿用過渡；法杖、弓弩與 Boss 武器只列過渡，已有再用。</p>
- <p>按第一輪單人一般難度由易到難排列（攻略評估，非取得順序）。單手後期配凶猛瓢蟲盾、前期先用黑蟻盾；裝盾傷害 −20%，爆炸、範圍招式與機關仍須閃避。</p>
+ <p>按第一輪單人一般難度由易到難排列（攻略評估，非取得順序）。後期單手依下列防具搭配選盾，不固定指定同一面盾；前期先用可取得的盾。</p>
+ ${shieldGuideHtml(escape)}
  <nav class="report-tabs" aria-label="懶人包段落"><a href="#fixed-matchups">按難度找敵人</a><a href="#fixed-arsenal">查看固定武器分支</a></nav>
  <div class="toolbar">${search('fixed-search','搜尋對手、固定武器、元素或打法')}${select('fixed-kind','對象',[['all','全部對象'],['tier3','三階怪'],['boss','Boss']],'targetKind')}</div>
  <section id="fixed-matchups"><h2>由易到難 · 特化與過渡</h2><p class="muted">顯示 ${rows.length}／${fixedMatchups.length} 組。特化欄沒有內容時，直接看過渡；固定分支不隨敵人改動。</p>
@@ -103,15 +115,16 @@ function fixedRecommendationsHtml({filter,select,search,escape}){
 }
 
 function targetRecommendationsHtml({filter,select,search,escape}){
- const rows=targetBuilds.filter(row=>(filter.targetKind==='all'||row.kind===filter.targetKind)&&matchesSearch([row.name,row.target,row.weakness,row.tactics,...[...row.single,...row.two].flatMap(pick=>[weapons.find(w=>w.english===pick.weapon)?.name,pick.weapon,pick.branch,pick.note])],filter.search));
+ const rows=targetBuilds.filter(row=>(filter.targetKind==='all'||row.kind===filter.targetKind)&&matchesSearch([row.name,row.target,row.weakness,row.tactics,...shieldSearchText(row.target==='Assistant Manager'?'Black Ant Shield':'by-armor'),...[...row.single,...row.two].flatMap(pick=>[weapons.find(w=>w.english===pick.weapon)?.name,pick.weapon,pick.branch,pick.note])],filter.search));
  const picksHtml=picks=>picks.map(pick=>`<div class="target-pick">${gearLinks([pick.weapon],weapons,'weapons',escape)}<strong>${escape(pick.branch)}</strong><small>${escape(pick.note)}</small></div>`).join('');
  return `<section class="build-guide"><p>只用第一輪可取得的裝備，包含元素鍛造；不含輪迴商店、入注武器或 NG+ 隨機飾品。按弱點、抗性、出手空檔與武器效果選擇，並非固定 DPS 實測排名。單手與雙手各列有效選擇，不保證兩邊同樣強。</p>
  <p>以主力武器 +7～9、已選對應武器異變為後期比較基準；首遇助理經理則按二階 +5 規劃。單手不一定要拿盾，裝盾會降低造成傷害 20%；能穩定武器招架時可收盾追輸出。雙手也可用武器格擋。火蟻套偏近戰輸出，瓢蟲套偏治療續戰，先選能活著完成連段的組合。</p>
  <p>元素分支不能事後改回；固有元素武器不能再任選元素。酸味與火蟻酸液不同；棍棒的通用也不等於鎚子的粉碎。蘭花鐮刀選元素會失去揮砍類型，不能照強悍分支的雙類型計算。以下先列有效主選，已有高強化備選時不必為每隻怪重做一把。</p>
+ ${shieldGuideHtml(escape)}
  <div class="toolbar">${search('target-search','搜尋怪物、武器、元素或打法')}${select('target-kind','對象',[['all','全部對象'],['tier3','三階怪'],['boss','Boss']],'targetKind')}</div>
  <p class="muted">顯示 ${rows.length}／${targetBuilds.length} 組。武器名稱可直達裝備列表，怪物名稱可直達弱抗性矩陣。</p>
  <div role="table" class="weapon-table advice-table target-advice" aria-label="三階怪與 Boss 單雙手特化武器"><div role="row" class="weapon-row weapon-heading">${['目標／弱抗性','單手選擇','雙手選擇','實際效率與準備'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
- ${rows.map(row=>`<div role="row" class="weapon-row" data-target-build="${escape(row.target)}">${comparisonCell('目標／弱抗性',`<a href="?view=creatures&amp;q=${encodeURIComponent(row.target)}">${escape(row.name)}</a><small>${escape(row.weakness)}</small>`)}${comparisonCell('單手選擇',picksHtml(row.single))}${comparisonCell('雙手選擇',picksHtml(row.two))}${comparisonCell('實際效率與準備',`${escape(row.tactics)}<a class="gear-source" href="${targetSource(row.target)}" target="_blank" rel="noopener noreferrer">敵人資料 ↗</a>`)}</div>`).join('')}</div>
+ ${rows.map(row=>`<div role="row" class="weapon-row" data-target-build="${escape(row.target)}">${comparisonCell('目標／弱抗性',`<a href="?view=creatures&amp;q=${encodeURIComponent(row.target)}">${escape(row.name)}</a><small>${escape(row.weakness)}</small>`)}${comparisonCell('單手選擇',picksHtml(row.single)+(row.target==='Assistant Manager'?`<small data-early-shield>首遇配 ${gearLinks(['Black Ant Shield'],shields,'shields',escape)}，不要求先取得三階盾。</small>`:shieldPairingsHtml(escape)))}${comparisonCell('雙手選擇',picksHtml(row.two))}${comparisonCell('實際效率與準備',`${escape(row.tactics)}<a class="gear-source" href="${targetSource(row.target)}" target="_blank" rel="noopener noreferrer">敵人資料 ↗</a>`)}</div>`).join('')}</div>
  ${rows.length?'':'<p class="empty">沒有符合條件的對策，請清除搜尋或切換對象。</p>'}
  <p class="actions"><a href="?view=mutationBuilds">搭配各場合異變</a><a href="?view=recommendations&amp;tab=progression#armor-comparison">三套防具生存與輸出比較</a></p>
  <p class="sources"><a href="https://wiki.biligame.com/grounded/生物大全" target="_blank" rel="noopener noreferrer">BWIKI 本體怪物資料 ↗</a><a href="${smithingSource}" target="_blank" rel="noopener noreferrer">鍛造與元素分支 ↗</a></p></section>`;
