@@ -19,9 +19,10 @@ export function accessHtml(item,escape){
  const prep=[...new Set([access.prep,entry?.prep].filter(Boolean))].join('、');
  return `<div class="collection-access">
  <span>${escape(access.layer)}${prep?' · '+escape(prep):''}</span>
- <div id="access-${item.id}"><strong>如何抵達${entry?' · '+escape(entry.name):''}</strong>
- <p>${escape(access.route)}</p>
- ${entry?`<p><strong>入口與前置</strong> ${escape(entry.route)}</p><a href="${entry.source}" target="_blank" rel="noopener noreferrer">入口資料 ↗</a>`:''}
+ <div id="access-${item.id}">
+ <p><strong>如何抵達${entry?' · '+escape(entry.name):''}</strong> ${escape(access.route)}</p>
+ ${entry?`<p><strong>入口與前置</strong> ${escape(entry.route)}</p>`:''}
+ <div class="access-sources">${entry?`<a href="${entry.source}" target="_blank" rel="noopener noreferrer">入口資料 ↗</a>`:''}
  <a class="access-source" href="${access.source||'https://mapgenie.io/grounded/maps/yard?locationIds='+item.pin}" target="_blank" rel="noopener noreferrer">位置圖與來源 ↗</a>
- </div></div>`;
+ </div></div></div>`;
 }

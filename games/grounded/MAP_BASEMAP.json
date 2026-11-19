@@ -1,0 +1,605 @@
+{
+  "checkedAt": "2026-11-19",
+  "source": "https://mapgenie.io/grounded/maps/yard",
+  "mapId": 113,
+  "tileSetId": 121,
+  "style": "Retro / simple-v1",
+  "projection": "Web Mercator / EPSG:3857",
+  "zoom": 11,
+  "tileSize": 256,
+  "tileBounds": {
+    "maxY": 1023,
+    "minY": 1016,
+    "maxX": 1023,
+    "minX": 1016
+  },
+  "pixelSize": 2048,
+  "tiles": [
+    {
+      "x": 1016,
+      "y": 1016,
+      "path": "dist/map-tiles/1016-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1016.png",
+      "bytes": 1518,
+      "sha256": "d825ea9cc1382822d444c36ad271173bb8d257acbf58ad7b870142de6306c45b"
+    },
+    {
+      "x": 1016,
+      "y": 1017,
+      "path": "dist/map-tiles/1016-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1017.png",
+      "bytes": 2508,
+      "sha256": "e1591e5e65ea6479006e9a07c926c618b115f91cdf39c46c80ba13f77558ec4c"
+    },
+    {
+      "x": 1016,
+      "y": 1018,
+      "path": "dist/map-tiles/1016-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1018.png",
+      "bytes": 5129,
+      "sha256": "9cae1081c077313ae1d72ff84fb948cc3fb35ecd31924a7c149bab8c763e43d1"
+    },
+    {
+      "x": 1016,
+      "y": 1019,
+      "path": "dist/map-tiles/1016-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1019.png",
+      "bytes": 2812,
+      "sha256": "2d7d5057bd54d83f55304bd5a0581b006c477382daaecb8a74b5e626e0841a30"
+    },
+    {
+      "x": 1016,
+      "y": 1020,
+      "path": "dist/map-tiles/1016-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1020.png",
+      "bytes": 1293,
+      "sha256": "c168fc6383f2ac24da5ecdda0ad9a0bee88edee7b4e96c1dae0450c422f908cf"
+    },
+    {
+      "x": 1016,
+      "y": 1021,
+      "path": "dist/map-tiles/1016-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1021.png",
+      "bytes": 2723,
+      "sha256": "164d57ebdefd6ad6f81d10ef44ba33555ff13ec2e7ce534c222e9eab2231b40f"
+    },
+    {
+      "x": 1016,
+      "y": 1022,
+      "path": "dist/map-tiles/1016-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1022.png",
+      "bytes": 3563,
+      "sha256": "ab470411aab1c2f18ea39396f98b40ca925d4094c7713b7fa3ee15bf3bd9cd7d"
+    },
+    {
+      "x": 1016,
+      "y": 1023,
+      "path": "dist/map-tiles/1016-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1016/1023.png",
+      "bytes": 3373,
+      "sha256": "e7901af520143807456af4fbd2b18dd5cada5cea35b2fe03032faf844b3dfefb"
+    },
+    {
+      "x": 1017,
+      "y": 1016,
+      "path": "dist/map-tiles/1017-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1016.png",
+      "bytes": 2528,
+      "sha256": "ad93e2232345133a7da45ac4e7b993622267e24eb38168ffb276d0a53ffee58a"
+    },
+    {
+      "x": 1017,
+      "y": 1017,
+      "path": "dist/map-tiles/1017-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1017.png",
+      "bytes": 3962,
+      "sha256": "4b967b450b77c636359580987d4ee4f5e42059d05619c4b21a7afc92269f88df"
+    },
+    {
+      "x": 1017,
+      "y": 1018,
+      "path": "dist/map-tiles/1017-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1018.png",
+      "bytes": 10839,
+      "sha256": "f27b3a822a1e1be0be4bd2edefebbc39b20ea1f7bfd5253ae6b737f714878628"
+    },
+    {
+      "x": 1017,
+      "y": 1019,
+      "path": "dist/map-tiles/1017-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1019.png",
+      "bytes": 10504,
+      "sha256": "9e0069848fe8e74c4a6479682d4bb640d662daa80d38a89fe7df8e906021dc86"
+    },
+    {
+      "x": 1017,
+      "y": 1020,
+      "path": "dist/map-tiles/1017-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1020.png",
+      "bytes": 2712,
+      "sha256": "8be4c75b161e000f52e7f8ba250a84dc40c9fd0abae8fec85de02c363a8510e2"
+    },
+    {
+      "x": 1017,
+      "y": 1021,
+      "path": "dist/map-tiles/1017-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1021.png",
+      "bytes": 4797,
+      "sha256": "3a4001f55af4f687ea98fc1f2c8f455f2597520989e48dcaf2a47818065ecb77"
+    },
+    {
+      "x": 1017,
+      "y": 1022,
+      "path": "dist/map-tiles/1017-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1022.png",
+      "bytes": 8175,
+      "sha256": "3f8e41caf73edc309454933b50742ed4e9ffbef11a4c95f97b899fffc2294715"
+    },
+    {
+      "x": 1017,
+      "y": 1023,
+      "path": "dist/map-tiles/1017-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1017/1023.png",
+      "bytes": 7689,
+      "sha256": "66310602e3cc105de4368c390e5c235e9e15601125fe2198bf08848cab827b41"
+    },
+    {
+      "x": 1018,
+      "y": 1016,
+      "path": "dist/map-tiles/1018-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1016.png",
+      "bytes": 807,
+      "sha256": "fd7d8531052023f75510d8723d096806eecc74310266b8abcf2150223bd3574d"
+    },
+    {
+      "x": 1018,
+      "y": 1017,
+      "path": "dist/map-tiles/1018-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1017.png",
+      "bytes": 2282,
+      "sha256": "d25b1dfc96b389cec30c5ccd92cd8ac42c633505e4b51d87413ea42a6bef7eb2"
+    },
+    {
+      "x": 1018,
+      "y": 1018,
+      "path": "dist/map-tiles/1018-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1018.png",
+      "bytes": 13169,
+      "sha256": "dfcadcb9d44caeeb9cea42d8a5567741120e108b806bbad46811727d9b4c731c"
+    },
+    {
+      "x": 1018,
+      "y": 1019,
+      "path": "dist/map-tiles/1018-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1019.png",
+      "bytes": 11921,
+      "sha256": "a75828d1d645f4c029d76acbe62d29b1ba68432019c7eabe717f2173e70e480d"
+    },
+    {
+      "x": 1018,
+      "y": 1020,
+      "path": "dist/map-tiles/1018-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1020.png",
+      "bytes": 11975,
+      "sha256": "e847bad14c646309d76c6acd88585cad58a21605882e76060817d5fbedf619fe"
+    },
+    {
+      "x": 1018,
+      "y": 1021,
+      "path": "dist/map-tiles/1018-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1021.png",
+      "bytes": 10721,
+      "sha256": "5fd130a904d8b3033f3ca6ad6a9e1de45fa01b198a47d625fc1ec90517ddf761"
+    },
+    {
+      "x": 1018,
+      "y": 1022,
+      "path": "dist/map-tiles/1018-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1022.png",
+      "bytes": 5285,
+      "sha256": "944faacf1c380d643bb4e81c7d49b716c94c10b6cc454cd4c06e35d081bf4aa5"
+    },
+    {
+      "x": 1018,
+      "y": 1023,
+      "path": "dist/map-tiles/1018-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1018/1023.png",
+      "bytes": 6456,
+      "sha256": "271bfb3376568d882d42822c182f8c16f05d6894b720b462450561730c2fad1b"
+    },
+    {
+      "x": 1019,
+      "y": 1016,
+      "path": "dist/map-tiles/1019-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1016.png",
+      "bytes": 2799,
+      "sha256": "168af7a54a0736783fb29559afdf99b36e4279580982771bd40e39946d871b2e"
+    },
+    {
+      "x": 1019,
+      "y": 1017,
+      "path": "dist/map-tiles/1019-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1017.png",
+      "bytes": 5945,
+      "sha256": "3302c487e1f71e6cd40e8c4ae4a6e4f3eae1cd928b48225001feb9356c2e27c1"
+    },
+    {
+      "x": 1019,
+      "y": 1018,
+      "path": "dist/map-tiles/1019-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1018.png",
+      "bytes": 10818,
+      "sha256": "4dfe93e21990b22b0dd5d64c3c791b8cade961c42aef8831b5370e50d4b2db02"
+    },
+    {
+      "x": 1019,
+      "y": 1019,
+      "path": "dist/map-tiles/1019-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1019.png",
+      "bytes": 8544,
+      "sha256": "c0743f56666e9406e9d07c9e3585f2850e9db32f976d167013a260be1795c957"
+    },
+    {
+      "x": 1019,
+      "y": 1020,
+      "path": "dist/map-tiles/1019-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1020.png",
+      "bytes": 4322,
+      "sha256": "fcf593e9fa6074ac7a0fd74a808737db71336ed1a4de2d2d435d15b721a4eede"
+    },
+    {
+      "x": 1019,
+      "y": 1021,
+      "path": "dist/map-tiles/1019-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1021.png",
+      "bytes": 6734,
+      "sha256": "c3053bfaaf0261d2792401ed6d713addecf14dbddccca7370772bc4137b15b4a"
+    },
+    {
+      "x": 1019,
+      "y": 1022,
+      "path": "dist/map-tiles/1019-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1022.png",
+      "bytes": 774,
+      "sha256": "cff4f4a8b4e7b96cb87c190a8beac01c120b7e7acc46a7bd23dc834e59d40f1c"
+    },
+    {
+      "x": 1019,
+      "y": 1023,
+      "path": "dist/map-tiles/1019-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1019/1023.png",
+      "bytes": 1161,
+      "sha256": "1f49ac8253a4f2ef1760fc1296fee5fba6952d76d92bd2e29fde7c0c894602c0"
+    },
+    {
+      "x": 1020,
+      "y": 1016,
+      "path": "dist/map-tiles/1020-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1016.png",
+      "bytes": 2390,
+      "sha256": "37301cd133d04c66ae883377d5572597fd94d538db56fb0ee957dba5eb26af89"
+    },
+    {
+      "x": 1020,
+      "y": 1017,
+      "path": "dist/map-tiles/1020-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1017.png",
+      "bytes": 7282,
+      "sha256": "6235075e6274e8ba4b5d1f5fd3d900c25644f40b56f8c0594600e688a62378da"
+    },
+    {
+      "x": 1020,
+      "y": 1018,
+      "path": "dist/map-tiles/1020-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1018.png",
+      "bytes": 9129,
+      "sha256": "d5a7bc028679b6cc4446f1f1d911f80271113f961ed8895951db47ac3bffdf30"
+    },
+    {
+      "x": 1020,
+      "y": 1019,
+      "path": "dist/map-tiles/1020-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1019.png",
+      "bytes": 10578,
+      "sha256": "b606f806a8366c8691bc1ade71614c1f895edb37dc2bbd34959b97b4f6d8b077"
+    },
+    {
+      "x": 1020,
+      "y": 1020,
+      "path": "dist/map-tiles/1020-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1020.png",
+      "bytes": 6606,
+      "sha256": "a572918aca3ce403cd4e83e03f28700dd92a05926cdb6baca7be83dd0db9b76b"
+    },
+    {
+      "x": 1020,
+      "y": 1021,
+      "path": "dist/map-tiles/1020-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1021.png",
+      "bytes": 4518,
+      "sha256": "9610a0f6a934c32c8ce628c1f7ea5626bc07bb64f8bc3829f6779d1ab3c50e3f"
+    },
+    {
+      "x": 1020,
+      "y": 1022,
+      "path": "dist/map-tiles/1020-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1022.png",
+      "bytes": 1447,
+      "sha256": "7b7fc0ca10b5c7ac3831bdb0fc049e81cf920ed92acaabe6b15f555986f41769"
+    },
+    {
+      "x": 1020,
+      "y": 1023,
+      "path": "dist/map-tiles/1020-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1020/1023.png",
+      "bytes": 728,
+      "sha256": "c93091f62dcc0c6361bb54fcc4bbd14852de616c0fcef7589c64c5dc051ccdd4"
+    },
+    {
+      "x": 1021,
+      "y": 1016,
+      "path": "dist/map-tiles/1021-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1016.png",
+      "bytes": 7785,
+      "sha256": "72466088acfc1ac3bcdc087b053d6a7bdaa86a52c87c7c08e885279d47bee669"
+    },
+    {
+      "x": 1021,
+      "y": 1017,
+      "path": "dist/map-tiles/1021-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1017.png",
+      "bytes": 7241,
+      "sha256": "1e47e09de1cc8f11aff5cc49ab41e6557d774b310792b4d9af26330140e8b112"
+    },
+    {
+      "x": 1021,
+      "y": 1018,
+      "path": "dist/map-tiles/1021-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1018.png",
+      "bytes": 8500,
+      "sha256": "705f8cc52d9c43fdd1b9b2dec276fd277459b26c9f8db260af621b19b1688402"
+    },
+    {
+      "x": 1021,
+      "y": 1019,
+      "path": "dist/map-tiles/1021-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1019.png",
+      "bytes": 6407,
+      "sha256": "440ee9d34247ae090378d7d9ad31086bff30818a31498504cfa8bdeb59814048"
+    },
+    {
+      "x": 1021,
+      "y": 1020,
+      "path": "dist/map-tiles/1021-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1020.png",
+      "bytes": 5746,
+      "sha256": "aa9394caaedec79b1ad71850f365eef5c901e8be6bafcc245769fc0a54940f72"
+    },
+    {
+      "x": 1021,
+      "y": 1021,
+      "path": "dist/map-tiles/1021-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1021.png",
+      "bytes": 10572,
+      "sha256": "f196c43811dbec41ddcb75dcf7683bb876775997ba6a54c929e5bbd5de71d6a8"
+    },
+    {
+      "x": 1021,
+      "y": 1022,
+      "path": "dist/map-tiles/1021-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1022.png",
+      "bytes": 2950,
+      "sha256": "99812aa027cfaa509daad5e90cc5493acd7b8a02c99584d77df2977ad5f0e1a8"
+    },
+    {
+      "x": 1021,
+      "y": 1023,
+      "path": "dist/map-tiles/1021-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1021/1023.png",
+      "bytes": 728,
+      "sha256": "c93091f62dcc0c6361bb54fcc4bbd14852de616c0fcef7589c64c5dc051ccdd4"
+    },
+    {
+      "x": 1022,
+      "y": 1016,
+      "path": "dist/map-tiles/1022-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1016.png",
+      "bytes": 8825,
+      "sha256": "9c458b4ce57d33f6500831dffd740f03221824bd5804817cce55d78c3569b04e"
+    },
+    {
+      "x": 1022,
+      "y": 1017,
+      "path": "dist/map-tiles/1022-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1017.png",
+      "bytes": 9642,
+      "sha256": "2024451f2e22d1671c41b360a51bbe815161d4f3627842d66d796a82a1ddb027"
+    },
+    {
+      "x": 1022,
+      "y": 1018,
+      "path": "dist/map-tiles/1022-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1018.png",
+      "bytes": 13070,
+      "sha256": "6a913a76eb7d6b63488935f9c2dd9fc4348d4ca9268658a9ffdc9652574f2a9c"
+    },
+    {
+      "x": 1022,
+      "y": 1019,
+      "path": "dist/map-tiles/1022-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1019.png",
+      "bytes": 10059,
+      "sha256": "50a1107f60f85ea5148fc4cb67171e9d9da854f16c176069139a674d95053ec9"
+    },
+    {
+      "x": 1022,
+      "y": 1020,
+      "path": "dist/map-tiles/1022-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1020.png",
+      "bytes": 7962,
+      "sha256": "1a01c82570f18f64434c8102f3b26ddd23287efe1e8a8d8ad471e212c74e776e"
+    },
+    {
+      "x": 1022,
+      "y": 1021,
+      "path": "dist/map-tiles/1022-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1021.png",
+      "bytes": 10279,
+      "sha256": "a558862dec8b58e2bf227ab393c6422ea425b6e6a2bec197031201ef52f5e629"
+    },
+    {
+      "x": 1022,
+      "y": 1022,
+      "path": "dist/map-tiles/1022-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1022.png",
+      "bytes": 685,
+      "sha256": "94d974ff0cf89f169755bf0be53ed8b6856a17a2c856774e249174b933e1c12c"
+    },
+    {
+      "x": 1022,
+      "y": 1023,
+      "path": "dist/map-tiles/1022-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1022/1023.png",
+      "bytes": 728,
+      "sha256": "c93091f62dcc0c6361bb54fcc4bbd14852de616c0fcef7589c64c5dc051ccdd4"
+    },
+    {
+      "x": 1023,
+      "y": 1016,
+      "path": "dist/map-tiles/1023-1016.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1016.png",
+      "bytes": 4886,
+      "sha256": "8dbb79f4187283d7b7ce628acd3df8cdfbca66bcf71d386881c118239e6d074d"
+    },
+    {
+      "x": 1023,
+      "y": 1017,
+      "path": "dist/map-tiles/1023-1017.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1017.png",
+      "bytes": 4302,
+      "sha256": "d1d19d56c780d94bf9b300e6d98a8f2a0f64c09b339380e6da3a0fb4824f68f2"
+    },
+    {
+      "x": 1023,
+      "y": 1018,
+      "path": "dist/map-tiles/1023-1018.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1018.png",
+      "bytes": 5927,
+      "sha256": "15ffbf924e4943f8006cc8bd5ac2943cf1fdfafb22ba0336886a1dd45648fa5c"
+    },
+    {
+      "x": 1023,
+      "y": 1019,
+      "path": "dist/map-tiles/1023-1019.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1019.png",
+      "bytes": 6825,
+      "sha256": "aaec39d883c6ae29382f7cd334e5c34a5883c4887e9893438bc1d3b6a6eb54d1"
+    },
+    {
+      "x": 1023,
+      "y": 1020,
+      "path": "dist/map-tiles/1023-1020.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1020.png",
+      "bytes": 3155,
+      "sha256": "31ac9b7cad9b91f862fd950875c97359125564047767f55613a64ca1a6d0dca9"
+    },
+    {
+      "x": 1023,
+      "y": 1021,
+      "path": "dist/map-tiles/1023-1021.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1021.png",
+      "bytes": 1273,
+      "sha256": "30537ec924b940a98b2d566c9a5426a6a3bc3db94f3fce8dcb539ce9c5c8e943"
+    },
+    {
+      "x": 1023,
+      "y": 1022,
+      "path": "dist/map-tiles/1023-1022.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1022.png",
+      "bytes": 1619,
+      "sha256": "f021662a0e9af735372eb1605723c8f35f912654aba423f90cf7494b15a7527c"
+    },
+    {
+      "x": 1023,
+      "y": 1023,
+      "path": "dist/map-tiles/1023-1023.png",
+      "url": "https://tiles.mapgenie.io/games/grounded/yard/simple-v1/11/1023/1023.png",
+      "bytes": 1138,
+      "sha256": "062adb3b79a18d0b746ad4afd64739361cc0b958d57813ab91e8812af4208a40"
+    }
+  ],
+  "landmarks": [
+    {
+      "name": "橡樹",
+      "pin": 42693,
+      "coordinate": [
+        -0.5552387,
+        0.7481756
+      ],
+      "pixel": [
+        1239.37503,
+        958.35934
+      ]
+    },
+    {
+      "name": "樹籬",
+      "pin": 42695,
+      "coordinate": [
+        -0.1763284,
+        0.4938744
+      ],
+      "pixel": [
+        1791.20316,
+        1328.73437
+      ]
+    },
+    {
+      "name": "沙坑",
+      "pin": 208110,
+      "coordinate": [
+        -1.1422384,
+        0.3812605
+      ],
+      "pixel": [
+        384.49476,
+        1492.74506
+      ]
+    },
+    {
+      "name": "魔多克城堡",
+      "pin": 210025,
+      "coordinate": [
+        -0.2270943,
+        0.8140867
+      ],
+      "pixel": [
+        1717.26995,
+        862.36042
+      ]
+    },
+    {
+      "name": "樹樁",
+      "pin": 210052,
+      "coordinate": [
+        -0.2396893,
+        1.2471698
+      ],
+      "pixel": [
+        1698.92716,
+        231.53388
+      ]
+    },
+    {
+      "name": "咖啡機",
+      "pin": 210207,
+      "coordinate": [
+        -0.689714,
+        1.3144675
+      ],
+      "pixel": [
+        1043.53118,
+        133.5
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 import {yardPoints,yardAnchors,mapSource,mappedItems,itemById,collectionTarget,searchReport,reportGroupName,reportItemLink} from './report.js';
-import {accessHtml} from './access.js';
+import {accessHtml,itemAccess} from './access.js';
+import {basemap,yardViewport,projectYardPoint,terrainHtml} from './basemap.js';
+import {defenseHtml} from './defense.js';
 
 const filters=[['all','全部點位'],['molars','普通乳牙'],['mega','巨型乳牙'],['scab','SCA.B 配色'],['docs','庭院資料'],['sites','地標'],['chips','漢堡小哥晶片'],['defense','防守事件'],['bosses','首領及固定生物卡']];
 const colors={molars:'#ebd9a6',mega:'#e5a82d',scab:'#b56337',docs:'#407aa5',sites:'#74875e',chips:'#2c6e60',defense:'#a64545',bosses:'#4e3a81',cards:'#4e3a81',meta:'#343832'};
@@ -10,12 +12,8 @@ const iconKey=item=>item.group==='sites'
  ? (/Field Station/i.test(item.officialName)?'station':/Lab/i.test(item.officialName)?'lab':'sites')
  : item.id==='report-javamatic'?'meta':item.group;
 const groupMatch=(i,group)=>group==='all'||i.group===group||(group==='bosses'&&i.group==='cards');
-const width=780,height=830;
-const origin=[-1.38,1.46],scale=570;
-const project=pin=>{
- const [x,y]=yardPoints[pin];
- return [(x-origin[0])*scale,(origin[1]-y)*scale];
-};
+const {width,height}=yardViewport;
+const project=pin=>projectYardPoint(yardPoints[pin]);
 const rectFor=(pin,zoom)=>{
  if(!pin)return [0,0,width,height];
  const [x,y]=project(pin);
@@ -31,10 +29,9 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
  const markerList=[...byPin].sort(([keyA],[keyB])=>Number(keyA===selected?.pin)-Number(keyB===selected?.pin));
  const mapBox=filter.mapBox||rectFor(selected?.pin,3);
  const pointColor=item=>colors[item.group]||colors.sites;
- const overlay=`<svg id="yard-map" viewBox="${mapBox.join(' ')}" role="group" aria-label="庭院收集點圖，北方朝上" tabindex="0">
-  <defs><pattern id="yard-grid" width="61" height="61" patternUnits="userSpaceOnUse"><path d="M61 0H0V61" fill="none" stroke="#d0d9c9"/></pattern></defs>
-  <rect x="-1100" y="-830" width="3300" height="2490" fill="#edf1e8"/>
-  <rect x="-1100" y="-830" width="3300" height="2490" fill="url(#yard-grid)"/>
+ const overlay=`<svg id="yard-map" viewBox="${mapBox.join(' ')}" role="group" aria-label="庭院地形與收集點位，北方朝上" tabindex="0">
+  <rect x="-1100" y="-830" width="3300" height="2490" fill="#11120c"/>
+  ${terrainHtml()}
   <g aria-hidden="true" class="yard-anchors">${yardAnchors.map(([label,pin])=>{
    const [x,y]=project(pin);return `<text x="${x.toFixed(2)}" y="${(y-16).toFixed(2)}">${escape(label)}</text>`;
   }).join('')}</g>
@@ -52,13 +49,14 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
  return `<div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',filters,'mapGroup')}
  ${select('map-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
  <a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">另開 BWIKI 原圖 ↗</a></div>
- <p class="muted">依地圖來源的逐點座標繪製，北方朝上。地上、地下與水下可能重疊；選點後可查原圖的路線與畫面。</p>
+ <p class="muted">庭院地形與本站點位一起縮放、拖曳，北方朝上。地圖是俯視位置，地下、水下及高處請對照選點後的入口與抵達路線。</p>
  <div class="map-layout report-map">
  <div class="map-frame">
   <div class="map-controls" aria-label="地圖操作"><button data-map-control="in" aria-label="放大">＋</button><button data-map-control="out" aria-label="縮小">−</button><button data-map-control="left" aria-label="向左平移">←</button><button data-map-control="up" aria-label="向上平移">↑</button><button data-map-control="down" aria-label="向下平移">↓</button><button data-map-control="right" aria-label="向右平移">→</button><button data-map-control="reset">全圖</button></div>
   <div class="map-viewport">${overlay}</div>
+  <p id="basemap-error" class="warning" role="status" hidden>底圖載入不完整，請重新載入頁面；點位與收集勾選仍可使用，也可另開來源地圖對照。</p>
   <p class="map-legend">${filters.slice(1).map(([id,label])=>`<span><i class="legend-glyph" style="background:${colors[id]}">${symbols[id]}</i>${label}</span>`).join('')}</p>
-  <details class="yard-basemap" id="yard-basemap"><summary>顯示 BWIKI 原始互動地圖</summary><div id="yard-basemap-frame"></div></details>
+  <p class="map-attribution">${escape(basemap.attribution)}</p>
  </div>
  <section class="report-map-sidebar" aria-label="點位選擇">
  <div id="map-selection">${mapDetail(selected,rows,escape,statusOf)}</div>
@@ -71,13 +69,16 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
 function mapDetail(item,rows,escape,statusOf){
  if(!item)return '<p class="muted">選地圖標記或右側清單查看點位。</p>';
  const same=rows.filter(i=>i.pin===item.pin&&i.id!==item.id);
+ const access=itemAccess(item);
  const {group,hash}=collectionTarget(item);
  return `<h2>${escape(item.name)}</h2>
  <label class="check-label"><input id="map-check-${item.id}" type="checkbox" data-collect-check="${item.id}" ${statusOf(item)==='obtained'?'checked':''} ${statusOf(item)===null?'disabled':''}>已取得</label>
+ <p class="map-location-layer"><strong>所在層級</strong> ${escape(access?.layer||'未逐項核對；請依位置說明確認地上、地下或水下')}</p>
  <p>${escape(item.section||reportGroupName(item.group))}${item.note?' · '+escape(item.note):''}</p>
  <div class="actions"><a href="${reportItemLink(item)}" target="_blank" rel="noopener noreferrer">查看底圖與點位說明 ↗</a>
  <a href="?view=collectibles&amp;group=${group}#${hash}" data-collection-link="${item.id}">回 100% 清單</a></div>
  ${accessHtml(item,escape)}
+ ${defenseHtml(item,escape)}
  ${same.length?`<p class="muted">同一點位另有 ${same.map(i=>escape(i.name)).join('、')}</p>`:''}`;
 }
 
@@ -86,16 +87,7 @@ export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDe
  if(!svg)return;
  const results=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup)&&statusMatches(i,filter,statusOf));
  const detail=document.getElementById('map-selection');
- const basemap=document.getElementById('yard-basemap');
- const frame=document.getElementById('yard-basemap-frame');
- basemap.ontoggle=()=>{
-  if(!basemap.open||frame.firstElementChild)return;
-  const iframe=document.createElement('iframe');
-  iframe.title='BWIKI Grounded 原始互動地圖';
-  iframe.src=bwikiMap;
-  iframe.referrerPolicy='strict-origin-when-cross-origin';
-  frame.append(iframe);
- };
+ for(const tile of svg.querySelectorAll('[data-basemap-tile]'))tile.addEventListener('error',()=>{document.getElementById('basemap-error').hidden=false;});
  detail.onclick=event=>{
   const target=event.target.closest('[data-collection-link]');
   if(target){event.preventDefault();onCollection(target.dataset.collectionLink);}

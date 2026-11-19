@@ -3,6 +3,9 @@ import fs from 'node:fs/promises';
 import vm from 'node:vm';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {basemap,yardTiles,projectYardPoint} from './dist/basemap.js';
+import {defenseEvents} from './dist/defense.js';
 import {trophies,steps,stages,collectibles,categories,regions,superWinConditions} from './dist/data.js';
 import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
@@ -115,6 +118,29 @@ for(const chip of chipCatalog){
 for(const id of Object.keys(shopDetails))assert.ok(reportItems.some(item=>item.id===id),id);
 assert.ok(mappedItems.every(row=>yardPoints[row.pin]?.length===2&&yardPoints[row.pin].every(Number.isFinite)));
 assert.equal(new Set(mappedItems.map(row=>row.pin)).size,418);
+const mapManifest=JSON.parse(await fs.readFile(new URL('MAP_BASEMAP.json',import.meta.url),'utf8'));
+assert.equal(mapManifest.mapId,113);assert.equal(mapManifest.tileSetId,basemap.tileSetId);
+assert.equal(yardTiles.length,64);assert.equal(mapManifest.tiles.length,64);
+for(const tile of yardTiles){
+ const source=mapManifest.tiles.find(row=>row.x===tile.tileX&&row.y===tile.tileY);assert.ok(source,tile.path);
+ const bytes=await fs.readFile(new URL('dist/'+tile.path,import.meta.url));
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),source.sha256,tile.path);
+ assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a',tile.path);
+ assert.equal(bytes.readUInt32BE(16),256,tile.path);assert.equal(bytes.readUInt32BE(20),256,tile.path);
+}
+const corner=yardTiles[0],span=corner.size*8;
+for(const landmark of mapManifest.landmarks){
+ assert.deepEqual(yardPoints[landmark.pin],landmark.coordinate,landmark.name);
+ const point=projectYardPoint(yardPoints[landmark.pin]);
+ const pixel=point.map((value,index)=>(value-[corner.x,corner.y][index])/span*2048);
+ assert.ok(pixel.every((value,index)=>Math.abs(value-landmark.pixel[index])<.001),landmark.name+' 底圖對位');
+}
+assert.ok(mappedItems.every(row=>{const [x,y]=projectYardPoint(yardPoints[row.pin]);return x>=corner.x&&x<=corner.x+span&&y>=corner.y&&y<=corner.y+span;}),'所有來源點位須落在底圖範圍內');
+assert.equal(Object.keys(defenseEvents).length,9);
+for(const [id,event] of Object.entries(defenseEvents)){
+ assert.ok(reportItems.some(row=>row.id===id&&row.group==='defense'),id);
+ assert.ok(event.enemies.every(name=>creatureRows.some(row=>row[1]===name)),id+' 生物對應');
+}
 assert.deepEqual(reportItems.find(row=>row.id==='chip-hedge').pin,71125);
 assert.deepEqual(reportItems.find(row=>row.id==='data-recon-special').pin,212379);
 assert.equal(reportConditionItems({id:'molars'},0).length,123);
@@ -152,5 +178,5 @@ run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});
 const w=newWorld('synthetic isolated');p.worlds[w.worldId]=w;p.currentWorldId=w.worldId;assert.equal(collectionState(p,scab),'missing');const restored=importData({records:[{key:'progress',value:p}]});assert.equal(restored.unknownTop.keep,'synthetic');assert.throws(()=>validateProgress({...p,schema:2}));assert.throws(()=>validateProgress({...p,gameId:'talos2'}));
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(new URL('../talos2/dist/shared/sync-core.js',import.meta.url),'utf8'),ctx);const core=ctx.window.SideProjectSync;const remote=JSON.parse(JSON.stringify(p));remote.unknownFuture={note:'preserved'};const plan=core.merge(null,p,remote,{hasBase:false}),next=core.resolve(plan,plan.conflicts.map(()=>'remote'));validateProgress(next);assert.equal(next.unknownFuture.note,'preserved');
-for(const file of ['app.js','data.js','model.js','map.js','roadmap-progress.js','gear-data.js','equipment-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','model.js','map.js','basemap.js','defense.js','roadmap-progress.js','gear-data.js','equipment-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,game:'grounded',trophies:trophies.length,stages:stages.length,steps:steps.length,legacyCollectibles:collectibles.length,reportEntries:reportItems.length,mapPins:new Set(mappedItems.map(row=>row.pin)).size,creatures:creatureRows.length,cloud:false}));

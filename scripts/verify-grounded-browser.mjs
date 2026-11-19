@@ -7,8 +7,6 @@ await fs.mkdir('outputs/grounded',{recursive:true});
 const errors=[],requests=[];
 async function routeExternal(context){
  await context.route('https://**',route=>{
-  const url=new URL(route.request().url());
-  if(url.hostname==='wiki.biligame.com'&&decodeURIComponent(url.pathname)==='/grounded/互动地图')return route.fulfill({contentType:'text/html',body:'<h1>BWIKI synthetic map</h1>'});
   requests.push(route.request().url());return route.abort();
  });
 }
@@ -123,9 +121,9 @@ try{
  assert.match(await page.locator('#map-selection a').first().getAttribute('href'),/locationIds=198242/);
  assert.equal(await page.locator('[data-personal],#marker-form,textarea').count(),0);
  await page.locator('[data-yard-pin="198242"] image[href="map-icons/molars.png"]').waitFor();
- await page.locator('#yard-basemap summary').click();
- const basemapUrl=await page.locator('#yard-basemap iframe').getAttribute('src');
- assert.equal(decodeURIComponent(basemapUrl),'https://wiki.biligame.com/grounded/互动地图');
+ assert.equal(await page.locator('[data-basemap-tile]').count(),64);
+ assert.equal(await page.locator('#yard-basemap,iframe').count(),0);
+ assert.equal(await page.locator('#basemap-error').isVisible(),false);
  assert.ok(r(await get(page)).customMarkers['legacy-marker']);
  await page.locator('#category-filter').selectOption('mega');
  assert.equal(await page.locator('[data-map-item]').count(),45);
@@ -154,7 +152,7 @@ try{
  // 新 context 的完整備份還原；沒有沿用任何現有 profile。
  const fresh=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),restore=await fresh.newPage();await visit(restore,'roadmap');assert.equal(await restore.locator('#trophy-count').textContent(),'0 / 46');await upload(restore,recovery);await restore.locator('#import-source').click();await download(restore,'#import-download');await restore.locator('#import-ack').check();await restore.locator('#import-apply').click();await restore.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await get(restore)).futureUnknown.keep[1],17);
  await restore.evaluate(async()=>{const q=indexedDB.open('game-companion.grounded.progress.v1'),db=await new Promise(resolve=>q.onsuccess=()=>resolve(q.result));try{await new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite'),s=tx.objectStore('records'),g=s.get('progress');g.onsuccess=()=>{g.result.schema=99;s.put(g.result,'progress');};tx.oncomplete=resolve;tx.onerror=reject;});}finally{db.close();}});await restore.reload();await restore.locator('h1').filter({hasText:'進度無法讀取'}).waitFor();await restore.locator('#open-backup').click();const corrupt=await download(restore,'#export-recovery');assert.equal(corrupt.records.find(row=>row.key==='progress').value.schema,99);await fresh.close();
- console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 16 routes','no cross-game DB/cache/storage','only explicit BWIKI iframe requests','no page errors']}));
+ console.log(JSON.stringify({passed:true,module:'grounded',checks:['progressive all-item completion / transient peek / reading position / inline reflections / legacy retention','unknown field retention','archive before parse','backup failure','quota before import','stale expected-value guard','export/import roundtrip in new context','corrupt raw export','4 widths / 16 routes','no cross-game DB/cache/storage','local basemap / no external requests','no page errors']}));
 }finally{await browser.close();}
 
 async function preferenceAudit(){
@@ -429,7 +427,7 @@ async function platinumAudit(){
    assert.equal(await page.locator('.mutation-build-matrix tbody tr').count(),14);
    await page.locator('#build-situation').selectOption('1');
    assert.equal(await page.locator('.mutation-build-matrix tbody tr').count(),1);
-   assert.equal(await page.locator('.mutation-build-matrix .build-core').count(),2);
+   assert.equal(await page.locator('.mutation-build-matrix .build-core').count(),3);
    await page.locator('#build-situation').selectOption('all');
    await page.getByRole('link',{name:'看門狗',exact:true}).first().click();
    await page.locator('#mutation-guard-dog').waitFor();

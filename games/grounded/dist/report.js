@@ -2,6 +2,7 @@ import {reportRows,yardPoints,yardAnchors} from './report-data.js';
 import {creatureRows,damageColumns} from './creature-data.js';
 import {collectibles,superWinConditions} from './data.js';
 import {accessHtml,accessSearchValues} from './access.js';
+import {defenseHtml,defenseSearchValues} from './defense.js';
 import {matchesSearch} from './search.js';
 
 export const mapSource='https://mapgenie.io/grounded/maps/yard';
@@ -44,7 +45,7 @@ export function reportConditionItems(condition,runLevel){
 export function reportItemLink(item){
  return item.pin ? mapSource+'?locationIds='+item.pin : groups.find(group=>group.id===item.group)?.source;
 }
-export const searchReport=(items,query)=>items.filter(i=>matchesSearch([i.id,i.name,i.officialName,i.section,i.note,accessSearchValues(i),reportGroupName(i.group)],query));
+export const searchReport=(items,query)=>items.filter(i=>matchesSearch([i.id,i.name,i.officialName,i.section,i.note,accessSearchValues(i),defenseSearchValues(i),reportGroupName(i.group)],query));
 
 export const defaultReportGroup='all';
 export function collectionTarget(item){
@@ -67,19 +68,20 @@ export function reportReferenceHtml({filter,select,search,escape,statusOf,scopeL
  <a href="?view=roadmap&amp;stage=audit" data-audit>前往路線圖查漏</a></div>
  ${condition?`<p>查漏條件 · ${escape(condition.title)} <button data-clear-condition>清除條件</button></p>`:''}
  <p class="muted collection-counts" aria-live="polite">顯示 ${rows.length} 項 · 本範圍<button id="report-total-obtained" data-report-status="obtained">已勾選 ${obtained}／${categoryItems.length}</button><button id="report-total-pending" data-report-status="pending">缺 ${categoryItems.length-obtained} 項</button> · ${escape(scopeLabel)}</p>
- <p class="muted">普通及巨型乳牙、野外配色、晶片與部分鑰匙及配方附有抵達說明。地上完整牙殼用昆蟲鎚或黑牛甲蟲鎚敲開，水下濕根用二階以上水下匕首切開。高處可搭階梯，入口與前置可展開查看。</p>
+ <p class="muted">乳牙、野外配色、晶片與部分鑰匙／配方直接列出抵達路線與前置工具。完整牙殼需昆蟲鎚或黑牛甲蟲鎚，水下濕根需二階以上水下匕首。</p>
  <div id="collection-results" tabindex="-1">
  ${sections.map(({g,items})=>`<section class="report-section"><div class="report-section-title"><h2>${g.name}</h2><button data-group-missing="${g.id}">缺 ${categoryItems.filter(i=>i.group===g.id&&statusOf(i)!=='obtained').length}／${categoryItems.filter(i=>i.group===g.id).length}</button></div>
  <p>${escape(g.hint)}</p>
+ ${g.id==='defense'?'<p class="muted defense-scope">敵人資料按第一輪主要來襲種類整理，不代表固定波次與數量。難度為本站準備評估；機器介面上的難度標示尚未逐台核對。NG+ 強化效果、遊戲難度與人數會影響實際壓力。</p>':''}
  <ul class="report-list">${items.map(i=>{
   const status=statusOf(i);
   return `<li id="collect-${i.id}"><div class="collection-main"><label class="check-label" for="collection-ref-${i.id}">
   <input id="collection-ref-${i.id}" type="checkbox" data-collect-check="${i.id}" ${status==='obtained'?'checked':''} ${status===null?'disabled':''}>
   <span><strong>${escape(i.name)}</strong>
   ${i.officialName&&i.officialName!==i.name?`<small lang="en" class="english-name">${escape(i.officialName)}</small>`:''}
-  ${i.section?`<small class="muted">${escape(i.section)}</small>`:''}${i.note?`<small class="report-note">${escape(i.note)}</small>`:''}
+  ${i.section?`<small class="muted">${escape(i.section)}</small>`:''}
   ${status==='unknown'?'<small class="muted">待確認</small>':''}</span></label>
-  ${accessHtml(i,escape)}</div>
+  <div class="collection-details">${i.note?`<p class="report-note"><strong>位置／條件</strong> ${escape(i.note)}</p>`:''}${accessHtml(i,escape)}${defenseHtml(i,escape)}</div></div>
   ${i.pin?`<a href="?view=map&amp;item=${i.id}" data-locate="${i.id}">地圖定位</a>`:`<a href="${escape(g.source)}" target="_blank" rel="noopener noreferrer">查來源 ↗</a>`}</li>`;
  }).join('')}</ul></section>`).join('')||'<p class="empty">沒有符合條件的項目。</p>'}
  </div>`;

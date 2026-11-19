@@ -145,10 +145,13 @@
 .damage-neutral,.damage-unknown{color:var(--muted)}
 .report-map{grid-template-columns:minmax(0,2.2fr) minmax(220px,1fr)}
 .report-map .map-frame{position:static}.report-map .map-frame svg{width:100%;min-width:0;min-height:0;max-height:none;aspect-ratio:780 / 830}
-.report-map .map-viewport{overflow:hidden}.yard-pin{cursor:pointer}
+.report-map .map-viewport{overflow:hidden;background:#11120c}.yard-pin{cursor:pointer}
+#yard-map{touch-action:none;user-select:none;cursor:grab}#yard-map:active{cursor:grabbing}
+#yard-terrain{filter:brightness(2.1)}
+.map-attribution{font-size:11px;color:var(--muted);margin:0;padding:6px 10px}
 .yard-pin circle{stroke:#2e312b;stroke-width:1.2;vector-effect:non-scaling-stroke}
 .yard-pin:hover circle,.yard-pin.selected circle{stroke-width:3;stroke:#1c2520}
-.report-map .yard-anchors text{font-size:calc(17px * var(--yard-marker-scale,1));font-weight:700;paint-order:stroke;stroke:#f5f7f2;stroke-width:3;pointer-events:none}
+.report-map .yard-anchors text{font-size:calc(17px * var(--yard-marker-scale,1));font-weight:700;fill:#fff3ce;paint-order:stroke;stroke:#11120c;stroke-width:3;pointer-events:none}
 .map-legend{font-size:12px;margin:0;padding:8px 10px;border-top:1px solid var(--line)}
 .map-legend i{display:inline-block;width:.8em;height:.8em;border:1px solid var(--ink);border-radius:50%;margin-right:4px}
 .report-map-sidebar h2{font-size:16px}
@@ -159,20 +162,28 @@
 .map-results button{width:100%;text-align:left;border:0;background:none;padding:8px 10px;min-height:44px}
 .map-results button[aria-current=true]{background:var(--surface);color:var(--accent);font-weight:650}
 .map-results small{display:block;color:var(--muted)}
-.yard-basemap{margin-top:16px}.yard-basemap summary{min-height:44px;display:list-item;padding:9px 0;color:var(--accent);cursor:pointer}
-.yard-basemap iframe{width:100%;height:480px;border:1px solid var(--line)}
 @media(max-width:1050px){.report-map{grid-template-columns:1fr}.map-results{max-height:290px}}
 @media(max-width:720px){
  .chip-tech dl{grid-template-columns:1fr;gap:3px}.chip-tech dd:not(:last-child){margin-bottom:8px}
  .report-list{font-size:13px}.report-list li>a{min-height:44px}
  .creature-matrix th,.creature-matrix td{padding:7px 5px}.creature-matrix th:first-child{min-width:110px}
- .yard-basemap iframe{height:350px}
 }
 .report-tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding:0 0 10px}
 .report-tabs a{min-height:40px;display:inline-flex;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:4px;text-decoration:none}
 .report-tabs a[aria-current=page]{background:var(--accent);border-color:var(--accent);color:white;font-weight:650}
 .report-list li>.check-label{min-width:0;align-items:flex-start;flex:1;gap:10px;cursor:pointer}
 .report-list .check-label>span{min-width:0;overflow-wrap:anywhere}.report-list input{margin-top:5px;flex:none}
+.report-list .collection-main{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,2.6fr);gap:18px;align-items:start}
+.report-list .check-label{align-items:start}.report-list .check-label>span{flex:1}
+.report-list li>a{align-self:start;white-space:nowrap;margin:0}
+.collection-details{min-width:0;overflow-wrap:anywhere;font-size:13px;line-height:1.55}
+.collection-details p{margin:0 0 5px}.collection-details .collection-access{margin:0;padding:0;border:0}
+.access-sources{display:flex;align-items:center;flex-wrap:wrap;gap:4px 14px;font-size:12px}
+.collection-access .access-source{padding:0}.collection-details .collection-access>span{margin-bottom:4px}
+.defense-reference p{margin:0 0 5px}.defense-reference strong{font-weight:600}
+.defense-scope{font-size:12px}
+@media(max-width:900px){.report-list .collection-main{grid-template-columns:minmax(0,1fr);gap:5px}.collection-details{margin-left:30px}}
+@media(max-width:720px){.report-list li>a{margin-left:30px}}
 .pin-glyph{transform:scale(var(--yard-marker-scale,1))}
 .yard-pin .pin-ring{fill:var(--paper);stroke:var(--accent);visibility:hidden}
 .yard-pin:hover .pin-ring,.yard-pin.selected .pin-ring{visibility:visible}

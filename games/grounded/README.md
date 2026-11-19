@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.8.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
+模組 1.9.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
 
 從 repo 根執行：
 
@@ -12,7 +12,7 @@ node server.mjs
 node scripts/verify-grounded-browser.mjs
 ```
 
-入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，BWIKI 的原始互動地圖由玩家展開後載入，站內對應圖示保留 BWIKI 來源署名並由本站載入。Pages 沿用 main workflow。
+入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，庭院底圖隨網站提供，不再嵌入外站互動地圖，站內對應圖示保留 BWIKI 來源署名並由本站載入。Pages 沿用 main workflow。
 
 ## 功能與資料邊界
 
@@ -26,11 +26,12 @@ node scripts/verify-grounded-browser.mjs
 - 1.8.0 補武器「+6 鍛造與專屬效果」欄，可搜尋余震、流血、招架等效果；明列強悍分支限定、固有特效、消耗品不能鍛造及入注武器不繼承原型特效。舊腳蹼的 +6 新增效果仍未核實，感染螞蟻盾的爆炸抗性比例來源有差異，不顯示未確認數字。查證範圍見 [裝備補充](EQUIPMENT_RESEARCH.md)。
 - 新增獨立盾牌列表，收錄 5 面盾牌，預設只看第一輪 4 面；提供階級、格擋強度、觸發效果、取得階段與用途，明列盾牌不能鍛造及裝盾造成傷害降低 20%。武器、防具與推薦配裝皆可互跳。
 - 推薦配裝新增 5 組環境裝備與 5 組工具強化建議，區分原有能力、光滑 +6、採集階級門檻、耐久與戰鬥收益。換裝會中斷三件套，但其餘單件效果保留；散件表增加實際單件防禦與抗傷，二階套裝頭／腿防禦依個別條目更正為 7.5。
-- 異變頁整理 41 項 Grounded 本體異變的中英文名稱、效果及解鎖門檻，可按用途篩選。推薦配裝與推薦異變分頁。配裝按初、中、後期說明取得時機、升級順序、實戰使用及替換選擇，採常見近戰、瓢蟲吸血與火蟻輸出路線；推薦異變以使用場合為列，上方分為優先最多 3 項、候選最多 5 項（依條件替換，實際裝備上限仍為 5 項），直接列出名稱並按重要性排序，每項可附適用條件，依用途留白；肺部增益、有氧、招架及防護依耐力缺口和敵人攻擊類型選用，名稱可跳到圖鑑。這些頁面可直接瀏覽，無需遊玩進度。
+- 異變頁整理 41 項 Grounded 本體異變的中英文名稱、效果及解鎖門檻，可按用途篩選。推薦配裝與推薦異變分頁。配裝按初、中、後期說明取得時機、升級順序、實戰使用及替換選擇，採常見近戰、瓢蟲吸血與火蟻輸出路線；推薦異變以使用場合為列，上方分為優先最多 3 項、候選最多 5 項（依條件替換，實際裝備上限仍為 5 項），直接列出名稱並按重要性排序，每項可附適用條件，依用途留白；一般戰鬥優先武器專精與有氧回耐，再以肺部增益補上限；穩定招架回耐的配法保留替換空間，採集／搬運不固定塞戰鬥異變，防護依敵人攻擊類型選用，名稱可跳到圖鑑。這些頁面可直接瀏覽，無需遊玩進度。
 - 晶片解鎖頁列出 11 枚晶片的名稱、位置、前置及全部第一輪商店購買包，另列預設商店與奧美能磁碟解鎖。建築包形狀變體合併呈現，科技包補列實際配方，來源為 BWIKI 科學商店。
+- 收集清單桌面版以名稱／狀態和抵達路線左右並排，路線使用較寬右欄，手機改直向；全文常駐、來源連結並排，保留全顯示、預設尚未取得與勾選同步。`防守事件` 補入 8 台 MIX.R／超級 MIX.R 與 JavaMatic 的主要敵人、攻略準備難度和準備重點；機器介面難度尚未逐台核對，不填作遊戲原始評級。敵人可直達弱點表，名稱與準備內容可搜尋。
 - 收集清單與地圖補入全部 78 顆普通乳牙、45 顆巨型乳牙、51 個野外配色、11 枚晶片與 13 個鑰匙／配方的接近方式。入口導覽集中在 14 條共用路線。其他庭院資料與地標沿用原定位描述和來源連結。
 - 武器新增傷害類型及固有傷害屬性篩選，可與階級、持握、水下條件交叉使用。
-- 100% 點位地圖採 MapGenie 庭院 113 的 418 個來源座標，以北朝上的座標圖呈現。可按分類、名稱定位，點位與清單互跳，並支援縮放、拖曳與鍵盤操作。共用座標的地標、任務或收集列分開核對。無固定位置的生物、商店與腦力，以及尚未對上逐點座標的資料，保留在清單。
+- 100% 點位地圖採 MapGenie 庭院 113 的 418 個來源座標，以北朝上的同座標系地形底圖呈現。可按分類、名稱定位，點位與清單互跳，並支援縮放、拖曳與鍵盤操作。共用座標的地標、任務或收集列分開核對。無固定位置的生物、商店與腦力，以及尚未對上逐點座標的資料，保留在清單。
 - 怪物頁可按中英文、類型、傷害欄與弱抗性搜尋。BWIKI 提供 67 種、14 欄，數值缺漏與矛盾標示為待查證。
 - 個人標記、收集備註、世界／成員管理及總覽的共同遊玩規則／今日建議已移除。舊筆記、標記、多世界／成員欄位保存在原 schema 與完整備份中，不顯示或新增這些操作。
 - 保留獨立周目與 NG+ 隨機乳牙計數。新增 NG+ 先下載備份並由使用者確認已在遊戲啟動 REMIX.R，原周目不刪除。原有跨周目繼承規則不變，下一步由實際未完成步驟推導；不再手動設定故事階段。
@@ -62,7 +63,7 @@ DB `game-companion.grounded.progress.v1` 的 `records/progress` 保存 `gameId`�
 
 ## 來源與版權
 
-逐項 `sourceUrls`／查證狀態在 `dist/data.js`。武器與防具資料依 [BWIKI 武器](https://wiki.biligame.com/grounded/武器)、[護甲](https://wiki.biligame.com/grounded/护甲)、[官方 1.3 水下武器更新](https://grounded.obsidian.net/news/grounded/update-1-3) 整理，查證範圍見各頁來源。部分來源 403，僅使用已取得搜尋索引文字，沒有繞過來源存取限制。混合兩代條目只核對 Grounded 段落。報告卡、晶片與生物來源為 [BWIKI 報告卡](https://wiki.biligame.com/grounded/游戏报告卡)、[資料頁](https://wiki.biligame.com/grounded/数据页)、[地標](https://wiki.biligame.com/grounded/地标)、[科學商店](https://wiki.biligame.com/grounded/科学商店)、[生物](https://wiki.biligame.com/grounded/生物)，並以 [Grounded Wiki 報告卡](https://grounded.wiki.gg/wiki/Game_Report_Card) 對照例外。點位取自 [MapGenie 庭院](https://mapgenie.io/grounded/maps/yard) 的公開地圖資料，保存識別碼與平面投影所需座標，詳情連回供應者。原始互動圖由 [BWIKI 地圖](https://wiki.biligame.com/grounded/互动地图) 提供，乳牙、配色、防守、實驗室和工作站圖示取自該頁並存於 `dist/map-icons/`。其他分類使用站內文字標記。遊戲圖像依 [Microsoft 遊戲內容使用規則](https://www.xbox.com/en-us/developers/rules) 與 [Obsidian 玩家創作規範](https://www.obsidian.net/legal/ip-use) 使用，權利歸原權利人。位置文字為本站摘要。
+逐項 `sourceUrls`／查證狀態在 `dist/data.js`。武器與防具資料依 [BWIKI 武器](https://wiki.biligame.com/grounded/武器)、[護甲](https://wiki.biligame.com/grounded/护甲)、[官方 1.3 水下武器更新](https://grounded.obsidian.net/news/grounded/update-1-3) 整理，查證範圍見各頁來源。部分來源 403，僅使用已取得搜尋索引文字，沒有繞過來源存取限制。混合兩代條目只核對 Grounded 段落。報告卡、晶片與生物來源為 [BWIKI 報告卡](https://wiki.biligame.com/grounded/游戏报告卡)、[資料頁](https://wiki.biligame.com/grounded/数据页)、[地標](https://wiki.biligame.com/grounded/地标)、[科學商店](https://wiki.biligame.com/grounded/科学商店)、[生物](https://wiki.biligame.com/grounded/生物)，並以 [Grounded Wiki 報告卡](https://grounded.wiki.gg/wiki/Game_Report_Card) 對照例外。點位取自 [MapGenie 庭院](https://mapgenie.io/grounded/maps/yard) 的公開地圖資料，保存識別碼與平面投影所需座標，詳情連回供應者。庭院底圖取自 MapGenie 同座標系的 Retro / simple-v1 圖層，64 張切片（約 352 KiB）隨站部署；來源與 SHA-256 記在 MAP_BASEMAP.json，投影及驗證見 [地圖整合](MAP_IMPLEMENTATION.md)。[BWIKI 地圖](https://wiki.biligame.com/grounded/互动地图) 保留為另開對照來源，乳牙、配色、防守、實驗室和工作站圖示取自該頁並存於 `dist/map-icons/`。其他分類使用站內文字標記。遊戲圖像依 [Microsoft 遊戲內容使用規則](https://www.xbox.com/en-us/developers/rules) 與 [Obsidian 玩家創作規範](https://www.obsidian.net/legal/ip-use) 使用，權利歸原權利人。位置文字為本站摘要。
 
 詳見根目錄 `GROUNDED_P0_REPORT.md`、`GROUNDED_IMPLEMENTATION_REPORT.md`。
 

@@ -121,7 +121,7 @@ function go(next,extra={},hash='',patch={}){
  activateView(next);
  Object.assign(filter,patch);
  if(next==='map'&&extra.item)Object.assign(filter,{mapGroup:'all',mapStatus:'all',search:'',mapItem:extra.item,mapBox:null});
- if(['weapons','armor','shields'].includes(next)&&extra.q)Object.assign(filter,{...defaultFilters(next),gearScope:'all',search:extra.q});
+ if(['weapons','armor','shields','creatures'].includes(next)&&extra.q)Object.assign(filter,{...defaultFilters(next),gearScope:'all',search:extra.q});
  if(next==='mutations'&&hash.startsWith('mutation-'))Object.assign(filter,{search:'',mutationCategory:'all'});
  if(next==='roadmap')url.searchParams.set('stage',extra.stage||filter.stage);
  for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);
@@ -479,7 +479,7 @@ function applyReferenceUrl(){
  if(view()==='roadmap'&&stages.some(row=>row.id===stageFromUrl()))filter.stage=stageFromUrl();
  if(view()==='map'&&params.has('item'))filter.mapItem=params.get('item');
  if(view()==='armor'&&params.has('tab'))filter.armorTab=params.get('tab')==='pieces'?'pieces':'sets';
- if(['armor','weapons','shields'].includes(view())&&params.has('q'))filter.search=params.get('q');
+ if(['armor','weapons','shields','creatures'].includes(view())&&params.has('q'))filter.search=params.get('q');
  if(view()!=='collectibles')return;
  if(params.has('condition')){
   filter.reportCondition=params.get('condition');

@@ -81,7 +81,7 @@ export function mutationRecommendationsHtml({filter,select,escape}){
  <tr>${['優先','候選'].flatMap(group=>Array.from({length:group==='優先'?3:5},(_,index)=>`<th scope="col"${group==='候選'&&index===0?' class="build-divider"':''}><span class="sr-only">${group}</span>${index+1}</th>`)).join('')}</tr></thead>
  <tbody>${situations.map(row=>`<tr data-mutation-build><th scope="row">${escape(row.title)}</th>${recommendedCells(row.core,'core',row)}${recommendedCells(row.extras,'option',row)}</tr>`).join('')}</tbody>
  </table></div>
- <p class="muted mutation-build-intro">肺部增益增加 50 耐力上限；有氧改善耐力回復。辣味防護減少穿刺與粉碎傷害，滿階減傷 50%，依敵人攻擊類型選用。</p>
+ <p class="muted mutation-build-intro">一般戰鬥先選武器專精與有氧運動愛好者，肺部增益再補耐力上限；能穩定招架回耐時才替換。有氧滿階加快回耐 30%，仍需留攻擊空檔與格擋餘裕。辣味防護依穿刺／粉碎攻擊壓力選用。</p>
  <section class="build-situation-notes"><h2>各場合的換法</h2>${situations.map(row=>`<details><summary>${escape(row.title)}</summary><p>${escape(row.swap)}</p></details>`).join('')}</section>
  <p><a href="?view=recommendations">回推薦配裝</a></p>
  <p class="sources"><a href="${mutationSource}" target="_blank" rel="noopener noreferrer">BWIKI 異變效果與取得方式 ↗</a><a href="${mutationPatch}" target="_blank" rel="noopener noreferrer">官方 1.4.7 異變調整 ↗</a></p>`;
