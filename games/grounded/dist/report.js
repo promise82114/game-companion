@@ -1,6 +1,8 @@
 import {reportRows,yardPoints,yardAnchors} from './report-data.js';
 import {creatureRows,damageColumns} from './creature-data.js';
-import {collectibles} from './data.js';
+import {collectibles,superWinConditions} from './data.js';
+import {accessHtml,accessSearchValues} from './access.js';
+import {matchesSearch} from './search.js';
 
 export const mapSource='https://mapgenie.io/grounded/maps/yard';
 const wiki='https://wiki.biligame.com/grounded/';
@@ -42,57 +44,53 @@ export function reportConditionItems(condition,runLevel){
 export function reportItemLink(item){
  return item.pin ? mapSource+'?locationIds='+item.pin : groups.find(group=>group.id===item.group)?.source;
 }
-export const searchReport=(items,query)=>items.filter(i=>[i.id,i.name,i.officialName,i.section,i.note,reportGroupName(i.group)].join(' ').toLowerCase().includes(query.trim().toLowerCase()));
+export const searchReport=(items,query)=>items.filter(i=>matchesSearch([i.id,i.name,i.officialName,i.section,i.note,accessSearchValues(i),reportGroupName(i.group)],query));
 
-export const defaultReportGroup='molars';
-const reportPageSize=24;
+export const defaultReportGroup='all';
 export function collectionTarget(item){
- const rows=reportItems.filter(row=>row.group===item.group);
- return {group:item.group,page:Math.floor(rows.indexOf(item)/reportPageSize)+1,hash:'collect-'+item.id};
+ return {group:item.group,hash:'collect-'+item.id};
 }
 
 export function reportReferenceHtml({filter,select,search,escape,statusOf,scopeLabel}){
- const g=groups.find(row=>row.id===filter.reportGroup);
- const categoryItems=reportItems.filter(i=>i.group===g.id);
+ const condition=superWinConditions.find(row=>row.id===filter.reportCondition);
+ const allowed=condition?new Set(reportConditionItems(condition,0).map(row=>row.id)):null;
+ const categoryItems=reportItems.filter(i=>(filter.reportGroup==='all'||i.group===filter.reportGroup)&&(!allowed||allowed.has(i.id)));
  const rows=searchReport(categoryItems,filter.search).filter(i=>filter.reportStatus==='all'
   || (filter.reportStatus==='obtained' ? statusOf(i)==='obtained' : statusOf(i)!=='obtained'));
- const pageCount=Math.max(1,Math.ceil(rows.length/reportPageSize));
- const current=Math.min(filter.reportPage,pageCount);
- const visible=rows.slice((current-1)*reportPageSize,current*reportPageSize);
  const obtained=categoryItems.filter(i=>statusOf(i)==='obtained').length;
+ const sections=groups.map(g=>({g,items:rows.filter(i=>i.group===g.id)})).filter(section=>section.items.length);
  return `<nav class="report-tabs" aria-label="收集分類">
-  ${groups.map(tab=>`<a href="?view=collectibles&amp;group=${tab.id}" data-category-link="${tab.id}" ${g.id===tab.id?'aria-current="page"':''}>${tab.name}</a>`).join('')}
+  ${[{id:'all',name:'全部分類'},...groups].map(tab=>`<a id="collection-category-${tab.id}" href="?view=collectibles&amp;group=${tab.id}" data-category-link="${tab.id}" ${filter.reportGroup===tab.id?'aria-current="page"':''}>${tab.name}</a>`).join('')}
  </nav>
- <div class="toolbar">${search('collection-search','搜尋本分類的名稱或位置')}
- ${select('collection-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'reportStatus')}
+ <div class="toolbar">${search('collection-search','搜尋名稱、位置或入口')}
+ ${select('collection-status','取得狀態',[['pending','尚未取得'],['all','全部'],['obtained','已取得']],'reportStatus')}
  <a href="?view=roadmap&amp;stage=audit" data-audit>前往路線圖查漏</a></div>
- <section class="report-section" id="collection-results" tabindex="-1">
- <div class="report-section-title"><h2>${g.name}</h2><span aria-live="polite">已勾選 ${obtained}／${categoryItems.length}</span></div>
- <p>${escape(g.hint)} · ${escape(scopeLabel)}</p>
- <ul class="report-list">${visible.map(i=>{
+ ${condition?`<p>查漏條件 · ${escape(condition.title)} <button data-clear-condition>清除條件</button></p>`:''}
+ <p class="muted collection-counts" aria-live="polite">顯示 ${rows.length} 項 · 本範圍<button id="report-total-obtained" data-report-status="obtained">已勾選 ${obtained}／${categoryItems.length}</button><button id="report-total-pending" data-report-status="pending">缺 ${categoryItems.length-obtained} 項</button> · ${escape(scopeLabel)}</p>
+ <p class="muted">普通及巨型乳牙、野外配色、晶片與部分鑰匙及配方附有抵達說明。地上完整牙殼用昆蟲鎚或黑牛甲蟲鎚敲開，水下濕根用二階以上水下匕首切開。高處可搭階梯，入口與前置可展開查看。</p>
+ <div id="collection-results" tabindex="-1">
+ ${sections.map(({g,items})=>`<section class="report-section"><div class="report-section-title"><h2>${g.name}</h2><button data-group-missing="${g.id}">缺 ${categoryItems.filter(i=>i.group===g.id&&statusOf(i)!=='obtained').length}／${categoryItems.filter(i=>i.group===g.id).length}</button></div>
+ <p>${escape(g.hint)}</p>
+ <ul class="report-list">${items.map(i=>{
   const status=statusOf(i);
-  return `<li id="collect-${i.id}"><label class="check-label" for="collection-ref-${i.id}">
+  return `<li id="collect-${i.id}"><div class="collection-main"><label class="check-label" for="collection-ref-${i.id}">
   <input id="collection-ref-${i.id}" type="checkbox" data-collect-check="${i.id}" ${status==='obtained'?'checked':''} ${status===null?'disabled':''}>
   <span><strong>${escape(i.name)}</strong>
   ${i.officialName&&i.officialName!==i.name?`<small lang="en" class="english-name">${escape(i.officialName)}</small>`:''}
   ${i.section?`<small class="muted">${escape(i.section)}</small>`:''}${i.note?`<small class="report-note">${escape(i.note)}</small>`:''}
   ${status==='unknown'?'<small class="muted">待確認</small>':''}</span></label>
+  ${accessHtml(i,escape)}</div>
   ${i.pin?`<a href="?view=map&amp;item=${i.id}" data-locate="${i.id}">地圖定位</a>`:`<a href="${escape(g.source)}" target="_blank" rel="noopener noreferrer">查來源 ↗</a>`}</li>`;
- }).join('')}</ul>${visible.length?'':'<p class="empty">沒有符合條件的項目。</p>'}
- ${pageCount>1?`<nav class="report-pagination" aria-label="收集分頁">
- <button data-report-page="${current-1}" ${current===1?'disabled':''}>上一頁</button>
- <span>第 ${current}／${pageCount} 頁，共 ${rows.length} 項</span>
- <button data-report-page="${current+1}" ${current===pageCount?'disabled':''}>下一頁</button>
- </nav>`:''}</section>`;
+ }).join('')}</ul></section>`).join('')||'<p class="empty">沒有符合條件的項目。</p>'}
+ </div>`;
 }
-
 export const mappedItems=reportItems.filter(i=>i.pin);
 export {yardPoints,yardAnchors};
 
 export function creaturesHtml({filter,select,search,escape}){
  const kindOptions=[...new Set(creatureRows.map(row=>row[2]))];
  const cols=filter.damageColumn==='all'?damageColumns:[filter.damageColumn];
- const rows=creatureRows.filter(([name,en,kind,values])=>[name,en].join(' ').toLowerCase().includes(filter.search.trim().toLowerCase())
+ const rows=creatureRows.filter(([name,en,kind,values])=>matchesSearch([name,en],filter.search)
   && (filter.creatureKind==='all'||kind===filter.creatureKind)
   && (filter.damageEffect==='all'||cols.some(col=>filter.damageEffect==='weak' ? values?.[col]>0 : values?.[col]<0)));
  const cell=value=>{

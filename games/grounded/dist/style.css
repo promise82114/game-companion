@@ -40,12 +40,17 @@
 .weapon-row+.weapon-row{border-top:1px solid var(--line)}
 .weapon-heading{background:var(--surface);font-weight:600}
 .weapon-row>div{min-width:0;overflow-wrap:anywhere}
+.weapon-upgrades .weapon-row{grid-template-columns:minmax(0,1.1fr) minmax(0,.7fr) minmax(0,.4fr) minmax(0,.9fr) minmax(0,.9fr) minmax(0,.6fr) minmax(0,1.8fr);gap:10px}
+.gear-source{font-size:11px;display:inline-block;margin-top:4px}
+.shield-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.65fr) minmax(0,.5fr) minmax(0,1.5fr) minmax(0,2fr)}
+.advice-table .weapon-row{grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1.35fr) minmax(0,1.5fr)}
+.tool-advice-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.8fr)}
 .weapon-row small{display:block;color:var(--muted);line-height:1.5}
 .weapon-row .weapon-mobile-label{display:none}
 .weapon-damage{font-variant-numeric:tabular-nums}
 .water-yes{color:var(--accent);font-weight:650}
 .armor-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.64fr) minmax(0,1fr) repeat(3,minmax(0,1.12fr))}
-.armor-pieces .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.8fr) repeat(2,minmax(0,1.4fr))}
+.armor-pieces .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,.8fr) repeat(2,minmax(0,1.4fr))}
 .mutation-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1.6fr)}
 .mutation-table [data-mutation]{scroll-margin:18px}
 .mutation-table [data-mutation]:target{background:var(--surface)}
@@ -54,8 +59,57 @@
 .build-gear{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 12px;margin:10px 0}
 .build-gear dt{font-weight:600;color:var(--muted)}
 .build-gear dd{margin:0}
+.build-detail{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:12px 18px;margin:20px 0}
+.build-detail dt{font-weight:600;color:var(--accent)}.build-detail dd{margin:0;max-width:85ch}
+.build-guide [data-progression-build]{scroll-margin:20px}
+.mutation-build-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--line)}
+.mutation-build-matrix{border-collapse:separate;border-spacing:0;table-layout:fixed;min-width:860px;width:100%;font-size:12px;line-height:1.35;font-variant-numeric:tabular-nums}
+.mutation-build-matrix .build-situation-column{width:132px}
+.mutation-build-matrix th,.mutation-build-matrix td{padding:3px 4px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;overflow-wrap:anywhere}
+.mutation-build-matrix thead th{position:sticky;top:0;z-index:1;background:var(--surface);font-weight:600;font-size:12px}
+.mutation-build-matrix tbody th,.mutation-build-matrix thead tr:first-child th:first-child{position:sticky;left:0;text-align:left;background:var(--ground)}
+.mutation-build-matrix thead tr:first-child th:first-child{z-index:2;background:var(--surface)}
+.mutation-build-matrix thead tr:nth-child(2) th{padding:3px 4px;font-weight:400}
+.mutation-build-matrix .build-divider{border-left:3px solid #82958a}
+.mutation-build-matrix .build-core{background:#dce9df;color:#214e36;font-weight:700}
+.mutation-build-matrix .build-option{color:var(--accent);font-weight:600}
+.build-pick-note{display:block;margin-top:2px;font-size:11px;font-weight:400;color:var(--muted);line-height:1.3}
+.mutation-build-intro{font-size:12px;line-height:1.5;margin-block:8px}
+.mutation-build-toolbar{margin-block:10px}
+.mutation-build-toolbar label{display:flex;align-items:center;gap:8px}
+.build-situation-notes{margin-top:24px}.build-situation-notes details{padding:10px 0;border-bottom:1px solid var(--line)}.build-situation-notes summary{cursor:pointer;min-height:40px;align-content:center}
+.collection-main{flex:1;min-width:0}
+.collection-access{margin:6px 0 2px;padding-left:10px;border-left:2px solid var(--line);font-size:13px}
+.collection-access p{margin:4px 0}.collection-access>span{display:block;margin-bottom:4px;color:var(--muted)}
+.collection-access .access-source{display:inline-block;padding:6px 0;font-size:12px}
+.chip-reference h2{margin-bottom:4px}.chip-reference .collection-access{margin-left:0}
+.chip-unlocks{padding-left:20px}.chip-unlocks li{padding:6px 0}.chip-unlocks span,.chip-unlocks small{display:block}.chip-unlocks small{color:var(--muted)}
+.chip-priority{font-weight:600}
+.filter-buttons>span{display:block;font-size:12px;margin-bottom:4px}
+.filter-buttons>div{display:flex;gap:5px;flex-wrap:wrap}
+.filter-buttons button{min-height:42px}
+.filter-buttons button[aria-pressed=true]{background:var(--accent);color:white}
+.view-actions{display:flex;justify-content:flex-end;margin-bottom:8px}
+.stats .stat-link{border:0;border-radius:0;background:transparent;text-align:left;padding:0;color:var(--ink);min-height:56px}
+.stats .stat-link:hover{color:var(--accent);text-decoration:underline}
+.stat-action{display:block;margin-top:5px;color:var(--accent);font-size:12px;text-decoration:underline}
+.trophy-summary{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+#edit-notice{position:fixed;right:16px;bottom:16px;z-index:8;display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);padding:9px 12px;border-radius:4px;box-shadow:0 3px 12px #0001;max-width:calc(100% - 32px)}
+#edit-notice[hidden]{display:none}
+#edit-notice span{min-width:0;overflow-wrap:anywhere}
+#edit-notice button{flex-shrink:0}
+#feedback{bottom:86px}
+.yard-pin.obtained .pin-glyph>image{opacity:.5}
+.map-obtained-check{font-size:14px;fill:var(--accent);font-weight:900;stroke:var(--ground);stroke-width:2px;paint-order:stroke}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:720px){
+ .build-detail{grid-template-columns:minmax(0,1fr);gap:4px}.build-detail dd{margin-bottom:12px}
+ .report-list li{flex-wrap:wrap}.report-list li>a{margin-left:28px}
+ .report-list .collection-main{flex-basis:100%}
+}
 @media(max-width:900px){
- .weapon-row,.armor-table .weapon-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 0}
+ .weapon-row,.weapon-upgrades .weapon-row,.armor-table .weapon-row,.shield-table .weapon-row,.advice-table .weapon-row,.tool-advice-table .weapon-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px 0}
+ .advice-table .weapon-row,.tool-advice-table .weapon-row{grid-template-columns:minmax(0,1fr)}
  .mutation-table .weapon-row{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 0}
  .weapon-heading{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0}
  .weapon-name{grid-column:1/-1}
@@ -78,7 +132,7 @@
 .chip-tech dt{font-weight:650;color:var(--accent)}.chip-tech dd{margin:0}
 .matrix-legend,.map-legend{display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .matrix-legend span{padding:2px 7px;border-radius:3px}
-.creature-scroll{max-height:70vh;overflow:auto;max-width:100%;border:1px solid var(--line)}
+.creature-scroll{overflow-x:auto;max-width:100%;border:1px solid var(--line)}
 .creature-matrix{border-collapse:separate;border-spacing:0;min-width:100%;font-variant-numeric:tabular-nums}
 .creature-matrix th,.creature-matrix td{border-bottom:1px solid var(--line);padding:8px 7px;white-space:nowrap;text-align:center}
 .creature-matrix th{font-weight:650;background:var(--surface)}
@@ -119,8 +173,6 @@
 .report-tabs a[aria-current=page]{background:var(--accent);border-color:var(--accent);color:white;font-weight:650}
 .report-list li>.check-label{min-width:0;align-items:flex-start;flex:1;gap:10px;cursor:pointer}
 .report-list .check-label>span{min-width:0;overflow-wrap:anywhere}.report-list input{margin-top:5px;flex:none}
-.report-pagination{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
-.report-pagination button{min-height:44px}
 .pin-glyph{transform:scale(var(--yard-marker-scale,1))}
 .yard-pin .pin-ring{fill:var(--paper);stroke:var(--accent);visibility:hidden}
 .yard-pin:hover .pin-ring,.yard-pin.selected .pin-ring{visibility:visible}

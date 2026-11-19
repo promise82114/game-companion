@@ -122,6 +122,6 @@ export const armor = [
  ["白蟻護甲", "Termite Armor", 3, "胸部散件", "免疫塵埃效果", "—", "命中有機會放出降低敵人移速與攻速的塵雲"]
 ].map(([name, english, tier, weight, piece, bonus, sleek]) => {
  const resistance = {'輕型':10, '中型':20, '重型':30}[weight];
- const defense = [[3, 9], [7, 15], [10, 20]][tier - 1];
+ const defense = [[3, 9], [7.5, 15], [10, 20]][tier - 1];
  return {name, english, tier, weight, piece, bonus, sleek, resistance, defense:resistance ? defense : null};
 });

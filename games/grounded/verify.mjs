@@ -4,13 +4,19 @@ import vm from 'node:vm';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {trophies,steps,stages,collectibles,categories,regions,superWinConditions} from './dist/data.js';
-import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData} from './dist/model.js';
+import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
+import {weaponUpgrade,shields,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
 import {mutations,mutationCategories} from './dist/mutation-data.js';
 import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
+import {accessRows,accessEntries} from './dist/access-data.js';
+import {itemAccess} from './dist/access.js';
+import {chipCatalog,shopDetails} from './dist/chip-data.js';
+import {captureProgressEdits,revertProgressEdits} from './dist/progress-edits.js';
+import {matchesSearch} from './dist/search.js';
 import {preparations} from './dist/preparations.js';
-import {groups,reportItems,reportConditionItems,collectionTarget,mappedItems,yardPoints} from './dist/report.js';
+import {groups,reportItems,reportConditionItems,collectionTarget,mappedItems,yardPoints,searchReport} from './dist/report.js';
 import {damageColumns,creatureRows} from './dist/creature-data.js';
 import {mainTech} from './dist/chip-tech.js';
 assert.equal(trophies.length,46);for(const [grade,n]of [['platinum',1],['gold',3],['silver',10],['bronze',32]])assert.equal(trophies.filter(t=>t.grade===grade).length,n,grade);
@@ -30,8 +36,42 @@ for(const rows of [weapons,armor]){
  assert.ok(rows.every(row=>row.name&&row.english&&[1,2,3].includes(row.tier)));
 }
 assert.ok(weapons.every(row=>/^\d/.test(row.damage)&&row.damageType&&['yes','no','unknown'].includes(row.underwater)));
+assert.equal(shields.length,5);
+assert.equal(new Set(shields.map(row=>row.english)).size,5);
+assert.equal(shields.filter(row=>row.scope==='第一輪').length,4);
+for(const row of shields)assert.ok(row.block>0&&row.effect&&row.unlock&&row.advice&&row.source.startsWith('https://'),row.english);
+for(const row of weapons){const upgrade=weaponUpgrade(row);assert.ok(upgrade.path&&upgrade.effect&&upgrade.source.startsWith('https://'),row.english);}
+assert.match(weaponUpgrade(weapons.find(row=>row.english==='Mint Mace')).effect,/50 清新/);
+assert.match(weaponUpgrade(weapons.find(row=>row.english==='Termite Axe')).elementEffect,/強悍詞條/);
+assert.equal(weaponUpgrade(weapons.find(row=>row.english==='Arrow')).path,'不可鍛造');
+assert.match(weaponUpgrade(weapons.find(row=>row.english==='Infused Club')).effect,/不繼承/);
+assert.ok(armor.filter(row=>!row.defense).every(row=>utilityArmorStats[row.english]?.defense>0));
+assert.ok(environmentUpgrades.every(row=>armor.some(gear=>gear.english===row.gear)&&row.level&&row.benefit&&row.tradeoff));
+assert.ok(toolUpgrades.every(row=>row.gear.every(name=>weapons.some(gear=>gear.english===name))));
 assert.equal(mutations.length,41);
 assert.equal(new Set(mutations.map(row=>row.id)).size,mutations.length);
+assert.ok(matchesSearch(['Acid Edge'],'酸味戰斧'));
+assert.ok(matchesSearch(['Stump BURG.L Chip'],'蟻丘晶片'));
+assert.equal(matchesSearch(['紅蟻丘晶片','Red Anthill BURG.L Chip'],'蟻丘漢堡小哥晶片'),false);
+assert.ok(matchesSearch(['普通乳牙 01'],'普通乳牙01'));
+assert.ok(searchReport(reportItems,'白蟻斧').some(item=>item.id==='yard-210033'));
+const undoBefore=fresh(),undoAfter=structuredClone(undoBefore);
+setCollection(undoAfter,{id:'synthetic-undo',category:'milk'},'obtained');
+const undoChanges=captureProgressEdits(undoBefore,undoAfter);
+assert.equal(undoChanges.length,1);
+run(undoAfter).steps.other={done:true,note:'later unrelated edit'};
+revertProgressEdits(undoAfter,undoChanges);
+assert.equal(run(undoAfter).collectibles['synthetic-undo'],undefined);
+assert.equal(run(undoAfter).steps.other.note,'later unrelated edit');
+const conflict=structuredClone(undoBefore);
+setCollection(conflict,{id:'synthetic-undo',category:'milk'},'obtained');
+assert.throws(()=>revertProgressEdits(conflict,undoChanges),/之後已被更新/);
+const legacyUndo=structuredClone(undoBefore);
+run(legacyUndo).steps.legacy={done:false,note:'retain',unknown:{keep:true}};
+const editedLegacy=structuredClone(legacyUndo);
+run(editedLegacy).steps.legacy={...run(editedLegacy).steps.legacy,done:true,...stampActor(editedLegacy)};
+revertProgressEdits(editedLegacy,captureProgressEdits(legacyUndo,editedLegacy));
+assert.deepEqual(editedLegacy,legacyUndo);
 for(const row of mutations)assert.ok(row.name&&row.effect&&row.unlock&&Object.hasOwn(mutationCategories,row.category),row.english);
 for(const build of progressionBuilds){
  assert.ok(build.weapons.every(name=>weapons.some(row=>row.english===name&&row.scope==='第一輪')),build.title);
@@ -39,9 +79,11 @@ for(const build of progressionBuilds){
 }
 for(const build of mutationBuilds){
  const picks=[...build.core,...build.extras];
- assert.equal(build.core.length,2,build.title);
- assert.ok(picks.length<=5&&new Set(picks).size===picks.length,build.title);
+ assert.ok(build.core.length>=1&&build.core.length<=3,build.title);
+ assert.ok(build.extras.length>=1&&build.extras.length<=5,build.title);
+ assert.equal(new Set(picks).size,picks.length,build.title);
  assert.ok(picks.every(name=>mutations.some(row=>row.english===name)),build.title);
+ assert.ok(Object.keys(build.notes||{}).every(name=>picks.includes(name)),build.title);
 }
 assert.ok(weapons.every(row=>['one','two','ammo','thrown'].includes(row.hands)));
 assert.equal(weapons.find(row=>row.english==='Salt Morning Star').hands,'one');
@@ -56,7 +98,21 @@ const expectedReportCounts={meta:2,shop:64,chips:11,cards:68,docs:128,sites:108,
 for(const {id} of groups)assert.equal(reportItems.filter(row=>row.group===id).length,expectedReportCounts[id],id);
 assert.equal(new Set(reportItems.map(row=>row.id)).size,reportItems.length);
 const lastMolar=reportItems.filter(row=>row.group==='molars').at(-1);
-assert.deepEqual(collectionTarget(lastMolar),{group:'molars',page:4,hash:'collect-'+lastMolar.id});
+assert.deepEqual(collectionTarget(lastMolar),{group:'molars',hash:'collect-'+lastMolar.id});
+assert.equal(new Set(accessRows.map(row=>row[0])).size,accessRows.length);
+for(const [pin,layer,route,,entry] of accessRows){
+ assert.ok(reportItems.some(item=>item.pin===pin),String(pin));
+ assert.ok(layer&&route);
+ if(entry)assert.ok(accessEntries[entry],String(pin));
+}
+for(const item of reportItems.filter(row=>['molars','mega','scab','chips'].includes(row.group)))assert.ok(itemAccess(item),item.id);
+assert.equal(chipCatalog.length,11);
+assert.equal(new Set(chipCatalog.map(row=>row.shop)).size,11);
+for(const chip of chipCatalog){
+ assert.ok(reportItems.some(item=>item.id===chip.id&&item.group==='chips'));
+ assert.ok(reportItems.some(item=>item.id.startsWith('shop-bwiki-'+chip.shop+'-')));
+}
+for(const id of Object.keys(shopDetails))assert.ok(reportItems.some(item=>item.id===id),id);
 assert.ok(mappedItems.every(row=>yardPoints[row.pin]?.length===2&&yardPoints[row.pin].every(Number.isFinite)));
 assert.equal(new Set(mappedItems.map(row=>row.pin)).size,418);
 assert.deepEqual(reportItems.find(row=>row.id==='chip-hedge').pin,71125);
@@ -96,5 +152,5 @@ run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});
 const w=newWorld('synthetic isolated');p.worlds[w.worldId]=w;p.currentWorldId=w.worldId;assert.equal(collectionState(p,scab),'missing');const restored=importData({records:[{key:'progress',value:p}]});assert.equal(restored.unknownTop.keep,'synthetic');assert.throws(()=>validateProgress({...p,schema:2}));assert.throws(()=>validateProgress({...p,gameId:'talos2'}));
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(new URL('../talos2/dist/shared/sync-core.js',import.meta.url),'utf8'),ctx);const core=ctx.window.SideProjectSync;const remote=JSON.parse(JSON.stringify(p));remote.unknownFuture={note:'preserved'};const plan=core.merge(null,p,remote,{hasBase:false}),next=core.resolve(plan,plan.conflicts.map(()=>'remote'));validateProgress(next);assert.equal(next.unknownFuture.note,'preserved');
-for(const file of ['app.js','data.js','model.js','map.js','roadmap-progress.js','gear-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','model.js','map.js','roadmap-progress.js','gear-data.js','equipment-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,game:'grounded',trophies:trophies.length,stages:stages.length,steps:steps.length,legacyCollectibles:collectibles.length,reportEntries:reportItems.length,mapPins:new Set(mappedItems.map(row=>row.pin)).size,creatures:creatureRows.length,cloud:false}));

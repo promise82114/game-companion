@@ -1,4 +1,5 @@
 import {yardPoints,yardAnchors,mapSource,mappedItems,itemById,collectionTarget,searchReport,reportGroupName,reportItemLink} from './report.js';
+import {accessHtml} from './access.js';
 
 const filters=[['all','全部點位'],['molars','普通乳牙'],['mega','巨型乳牙'],['scab','SCA.B 配色'],['docs','庭院資料'],['sites','地標'],['chips','漢堡小哥晶片'],['defense','防守事件'],['bosses','首領及固定生物卡']];
 const colors={molars:'#ebd9a6',mega:'#e5a82d',scab:'#b56337',docs:'#407aa5',sites:'#74875e',chips:'#2c6e60',defense:'#a64545',bosses:'#4e3a81',cards:'#4e3a81',meta:'#343832'};
@@ -21,12 +22,14 @@ const rectFor=(pin,zoom)=>{
  return [x-width/(2*zoom),y-height/(2*zoom),width/zoom,height/zoom];
 };
 
-export function reportMapHtml({filter,select,search,escape,selectedId}){
- const rows=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup));
+const statusMatches=(item,filter,statusOf)=>filter.mapStatus==='all'
+ || (statusOf(item)==='obtained')===(filter.mapStatus==='obtained');
+export function reportMapHtml({filter,select,search,escape,selectedId,statusOf}){
+ const rows=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup)&&statusMatches(i,filter,statusOf));
  const selected=rows.find(i=>i.id===selectedId);
  const byPin=Map.groupBy(rows,i=>i.pin);
  const markerList=[...byPin].sort(([keyA],[keyB])=>Number(keyA===selected?.pin)-Number(keyB===selected?.pin));
- const mapBox=rectFor(selected?.pin,3);
+ const mapBox=filter.mapBox||rectFor(selected?.pin,3);
  const pointColor=item=>colors[item.group]||colors.sites;
  const overlay=`<svg id="yard-map" viewBox="${mapBox.join(' ')}" role="group" aria-label="庭院收集點圖，北方朝上" tabindex="0">
   <defs><pattern id="yard-grid" width="61" height="61" patternUnits="userSpaceOnUse"><path d="M61 0H0V61" fill="none" stroke="#d0d9c9"/></pattern></defs>
@@ -38,13 +41,16 @@ export function reportMapHtml({filter,select,search,escape,selectedId}){
   ${markerList.map(([pin,items])=>{
    const i=items.find(i=>i.id===selected?.id)||items[0],isSelected=selected?.pin===pin;
    const [x,y]=project(pin),icon=iconKey(i),hasIcon=mapIcons.has(icon);
-   return `<g aria-label="${escape(i.name)}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
+   const obtained=items.every(item=>statusOf(item)==='obtained');
+   return `<g aria-label="${escape(i.name)}${obtained?'，已取得':'，尚未全部取得'}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${obtained?'obtained':''} ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
     <circle class="pin-ring" r="10"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]}</text></g>
     ${hasIcon?`<image href="map-icons/${icon}.png" x="-9" y="-9" width="18" height="18"/>`:''}
+    ${obtained?'<text class="map-obtained-check" x="10" y="-8">✓</text>':''}
    </g></g>`;
   }).join('')}
  </svg>`;
  return `<div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',filters,'mapGroup')}
+ ${select('map-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
  <a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">另開 BWIKI 原圖 ↗</a></div>
  <p class="muted">依地圖來源的逐點座標繪製，北方朝上。地上、地下與水下可能重疊；選點後可查原圖的路線與畫面。</p>
  <div class="map-layout report-map">
@@ -55,27 +61,30 @@ export function reportMapHtml({filter,select,search,escape,selectedId}){
   <details class="yard-basemap" id="yard-basemap"><summary>顯示 BWIKI 原始互動地圖</summary><div id="yard-basemap-frame"></div></details>
  </div>
  <section class="report-map-sidebar" aria-label="點位選擇">
- <div id="map-selection">${mapDetail(selected,rows,escape)}</div>
+ <div id="map-selection">${mapDetail(selected,rows,escape,statusOf)}</div>
  <h2>${rows.length} 個核對項目 · ${byPin.size} 個點位</h2>
- <ul class="map-results">${rows.map(i=>`<li><button data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))}</small></button></li>`).join('')}</ul>
+ <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${statusOf(i)==='obtained'?'✓ ':''}${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusOf(i)==='obtained'?'已取得':'尚未取得'}</small></button></li>`).join('')}</ul>
  ${rows.length?'':'<p class="empty">沒有符合條件的地圖點位。</p>'}</section></div>
  <p class="sources"><a href="${mapSource}" target="_blank" rel="noopener noreferrer">逐點座標 MapGenie ↗</a><a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">原圖與點位圖示 BWIKI ↗</a><a href="?view=sources">遊戲圖像與授權</a></p>`;
 }
 
-function mapDetail(item,rows,escape){
+function mapDetail(item,rows,escape,statusOf){
  if(!item)return '<p class="muted">選地圖標記或右側清單查看點位。</p>';
  const same=rows.filter(i=>i.pin===item.pin&&i.id!==item.id);
- const {group,page,hash}=collectionTarget(item);
- return `<h2>${escape(item.name)}</h2><p>${escape(item.section||reportGroupName(item.group))}${item.note?' · '+escape(item.note):''}</p>
+ const {group,hash}=collectionTarget(item);
+ return `<h2>${escape(item.name)}</h2>
+ <label class="check-label"><input id="map-check-${item.id}" type="checkbox" data-collect-check="${item.id}" ${statusOf(item)==='obtained'?'checked':''} ${statusOf(item)===null?'disabled':''}>已取得</label>
+ <p>${escape(item.section||reportGroupName(item.group))}${item.note?' · '+escape(item.note):''}</p>
  <div class="actions"><a href="${reportItemLink(item)}" target="_blank" rel="noopener noreferrer">查看底圖與點位說明 ↗</a>
- <a href="?view=collectibles&amp;group=${group}&amp;page=${page}#${hash}" data-collection-link="${item.id}">回 100% 清單</a></div>
+ <a href="?view=collectibles&amp;group=${group}#${hash}" data-collection-link="${item.id}">回 100% 清單</a></div>
+ ${accessHtml(item,escape)}
  ${same.length?`<p class="muted">同一點位另有 ${same.map(i=>escape(i.name)).join('、')}</p>`:''}`;
 }
 
-export function bindReportMap({filter,escape,onSelect,onCollection}){
+export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDetail}){
  const svg=document.getElementById('yard-map');
  if(!svg)return;
- const results=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup));
+ const results=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup)&&statusMatches(i,filter,statusOf));
  const detail=document.getElementById('map-selection');
  const basemap=document.getElementById('yard-basemap');
  const frame=document.getElementById('yard-basemap-frame');
@@ -93,6 +102,7 @@ export function bindReportMap({filter,escape,onSelect,onCollection}){
  };
  let box=svg.getAttribute('viewBox').split(' ').map(Number),drag,suppressClick=false;
  const apply=()=>{
+  filter.mapBox=[...box];
   svg.setAttribute('viewBox',box.join(' '));
   svg.style.setProperty('--yard-marker-scale',String(Math.sqrt(box[2]/width)));
  };
@@ -112,7 +122,8 @@ export function bindReportMap({filter,escape,onSelect,onCollection}){
   if(marker){marker.classList.add('selected');svg.append(marker);}
   document.querySelector('[data-map-list][aria-current]')?.removeAttribute('aria-current');
   document.querySelector(`[data-map-list="${CSS.escape(id)}"]`)?.setAttribute('aria-current','true');
-  detail.innerHTML=mapDetail(row,results,escape);
+  detail.innerHTML=mapDetail(row,results,escape,statusOf);
+  onDetail();
   box=rectFor(row.pin,Math.max(2.5,width/box[2]));apply();
  };
  const reset=()=>{box=rectFor(0,1);apply();};
