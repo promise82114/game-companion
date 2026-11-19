@@ -13,6 +13,8 @@ import {armor,weapons} from './dist/gear-data.js';
 import {weaponUpgrade,shields,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
 import {mutations,mutationCategories} from './dist/mutation-data.js';
 import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
+import {targetBuilds} from './dist/target-build-data.js';
+import {ngMolarItems,ngMolarCoordinates} from './dist/ng-molar-data.js';
 import {accessRows,accessEntries} from './dist/access-data.js';
 import {itemAccess} from './dist/access.js';
 import {chipCatalog,shopDetails} from './dist/chip-data.js';
@@ -79,6 +81,23 @@ for(const row of mutations)assert.ok(row.name&&row.effect&&row.unlock&&Object.ha
 for(const build of progressionBuilds){
  assert.ok(build.weapons.every(name=>weapons.some(row=>row.english===name&&row.scope==='第一輪')),build.title);
  assert.ok(build.armor.every(name=>armor.some(row=>row.english===name)),build.title);
+}
+assert.equal(ngMolarItems.length,219);
+assert.equal(ngMolarItems.filter(row=>row.underwater).length,21);
+assert.equal(new Set(ngMolarItems.map(row=>row.id)).size,219);
+assert.deepEqual(ngMolarItems.map(row=>row.number),Array.from({length:219},(_,i)=>i+1));
+assert.ok(ngMolarItems.every(row=>row.access.route&&row.point.every(Number.isFinite)&&!reportItems.some(old=>old.id===row.id)));
+const ngSnapshot=JSON.parse(await fs.readFile(new URL('NG_MOLAR_SOURCES.json',import.meta.url),'utf8'));
+assert.deepEqual(ngMolarCoordinates,ngSnapshot.coordinates);
+for(const [number,pin,limit] of [[2,42703,10],[22,42693,20],[168,210207,15]]){
+ const point=projectYardPoint(ngMolarItems.find(row=>row.number===number).point),anchor=projectYardPoint((await import('./dist/report-data.js')).yardPoints[pin]);
+ assert.ok(Math.hypot(point[0]-anchor[0],point[1]-anchor[1])<limit,'NG+ map axis / scale '+number);
+}
+for(const build of targetBuilds){
+ for(const [hand,picks] of [['one',build.single],['two',build.two]]){
+  assert.ok(picks.length>0,build.target);
+  for(const pick of picks){const weapon=weapons.find(row=>row.english===pick.weapon);assert.ok(weapon?.scope==='第一輪'&&weapon.hands===hand,build.target+' '+pick.weapon);}
+ }
 }
 for(const build of mutationBuilds){
  const picks=[...build.core,...build.extras];

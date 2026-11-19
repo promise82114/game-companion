@@ -2,6 +2,7 @@ import {accessByPin,accessEntries} from './access-data.js';
 import {chipCatalog} from './chip-data.js';
 
 export function itemAccess(item){
+ if(item.access)return item.access;
  const chip=chipCatalog.find(row=>row.id===item.id);
  if(chip)return {layer:chip.kind==='super'?'主線實驗室':'輔助晶片',route:chip.location,entry:chip.entry,prep:'',source:'https://wiki.biligame.com/grounded/科学商店'};
  return ['molars','mega','scab','docs'].includes(item.group)?accessByPin.get(item.pin):null;

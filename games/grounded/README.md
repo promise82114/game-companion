@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.10.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
+模組 1.11.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
 
 從 repo 根執行：
 
@@ -10,6 +10,7 @@ node scripts/build.mjs
 node scripts/verify-site.mjs
 node server.mjs
 node scripts/verify-grounded-browser.mjs
+node scripts/verify-grounded-ng-map-browser.mjs
 ```
 
 入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，庭院底圖隨網站提供，不再嵌入外站互動地圖，站內對應圖示保留 BWIKI 來源署名並由本站載入。Pages 沿用 main workflow。
@@ -36,6 +37,8 @@ node scripts/verify-grounded-browser.mjs
 - 怪物頁可按中英文、類型、傷害欄與弱抗性搜尋。BWIKI 提供 67 種、14 欄，數值缺漏與矛盾標示為待查證。
 - 個人標記、收集備註、世界／成員管理及總覽的共同遊玩規則／今日建議已移除。舊筆記、標記、多世界／成員欄位保存在原 schema 與完整備份中，不顯示或新增這些操作。
 - 保留獨立周目與 NG+ 隨機乳牙計數。新增 NG+ 先下載備份並由使用者確認已在遊戲啟動 REMIX.R，原周目不刪除。原有跨周目繼承規則不變，下一步由實際未完成步驟推導；不再手動設定故事階段。
+- NG+ 地圖另收錄 219 個乳牙候選（198 帶殼、21 水下），與第一輪固定收集分開切換，提供全文抵達路線及共用入口。來源為 Grounded Wiki 原圖修訂 50346，經 GroundedMolar 公開指南轉錄核對；序號與 BWIKI 不同，圖上位置屬概略定位。每輪實際只生成 66 顆，不將 219 當取得目標。可選網站已有 NG+ 周目分開勾選；未建立時僅預覽，不代建周目。勾選保存於該周目的既有 `collectibles`，沿用跨分頁同步、撤銷與保護匯入；不覆寫手動 `ngMolars` 計數，也不切換目前遊玩周目。來源及定位限制見 [NG+ 地圖](NG_MOLAR_RESEARCH.md)。
+- 推薦配裝另有「三階怪／Boss 對策」分頁，24 組對象分列單手、雙手武器、元素分支與實戰空檔；只使用第一輪可取得武器，說明主選、備選與首次取得時序，不宣稱通用 DPS 排名。盾牌表移除取得說明，僅顯示效果與用途。
 - 網站不讀取遊戲 Shared World、不即時共享。Drive adapter 已盤點，但多世界 schema 尚未接入 sync-session；`cloudWritesEnabled:false`，沒有整包 last-write-wins。
 
 ## 檢視與勾選操作

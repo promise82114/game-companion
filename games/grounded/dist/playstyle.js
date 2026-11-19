@@ -4,6 +4,7 @@ import {mutations,mutationCategories,mutationSource,mutationPatch} from './mutat
 import {progressionBuilds,mutationBuilds,armorComparison,armorSwapPhases} from './playstyle-data.js';
 import {matchesSearch} from './search.js';
 import {environmentUpgrades,toolUpgrades,smithingSource} from './equipment-data.js';
+import {targetBuilds,targetSource} from './target-build-data.js';
 
 const nameCell=(row,escape)=>`<div role="cell" class="weapon-name"><strong>${escape(row.name)}</strong><small lang="en" class="english-name">${escape(row.english)}</small></div>`;
 
@@ -35,8 +36,12 @@ function gearLinks(englishNames,rows,view,escape){
  }).join('、');
 }
 
-export function recommendationsHtml({escape}){
- return `<div class="build-guide">
+export function recommendationsHtml(controls){
+ const {filter,escape}=controls;
+ const targetTab=filter.recommendationTab==='targets';
+ const nav=`<nav class="report-tabs equipment-tabs" aria-label="推薦配裝分類"><a href="?view=recommendations&amp;tab=progression" ${targetTab?'':'aria-current="page"'}>階段配裝與強化</a><a href="?view=recommendations&amp;tab=targets" ${targetTab?'aria-current="page"':''}>三階怪／Boss 對策</a></nav>`;
+ if(targetTab)return nav+targetRecommendationsHtml(controls);
+ return nav+`<div class="build-guide">
  <p>以第一輪常見的近戰推進、光滑瓢蟲吸血續戰與火蟻輸出為主線，按實際可取得的裝備逐步替換。搭配依裝備效果與社群常見玩法整理。</p>
  <nav class="report-tabs" aria-label="配裝階段">${progressionBuilds.map((row,index)=>`<a href="#build-${index}">${row.stage}</a>`).join('')}<a href="#armor-comparison">三套防具比較</a><a href="#armor-swap-first">第一輪換裝</a><a href="#armor-swap-ngplus">NG+ 換裝</a><a href="#environment-upgrades">環境裝備強化</a><a href="#tool-upgrades">採集工具強化</a></nav>
  ${progressionBuilds.map((row,index)=>`<article class="row" id="build-${index}" data-progression-build>
@@ -73,6 +78,21 @@ export function recommendationsHtml({escape}){
  <p class="actions"><a href="?view=mutationBuilds">對照各場合的異變矩陣</a><a href="?view=creatures">查怪物弱點與抗性</a><a href="?view=chips">查晶片與解鎖前置</a></p>
  <p class="sources"><a href="https://www.youtube.com/watch?v=GDejYajfGow" target="_blank" rel="noopener noreferrer">社群常見第一輪配裝 ↗</a><a href="https://www.youtube.com/watch?v=VHfa4MF_0JM" target="_blank" rel="noopener noreferrer">瓢蟲吸血配裝示範 ↗</a><a href="https://grounded.obsidian.net/news/grounded/update-1-3" target="_blank" rel="noopener noreferrer">官方裝備調整與 O.R.C. 酸味弱點 ↗</a></p>
  </div>`;
+}
+
+function targetRecommendationsHtml({filter,select,search,escape}){
+ const rows=targetBuilds.filter(row=>(filter.targetKind==='all'||row.kind===filter.targetKind)&&matchesSearch([row.name,row.target,row.weakness,row.tactics,...[...row.single,...row.two].flatMap(pick=>[weapons.find(w=>w.english===pick.weapon)?.name,pick.weapon,pick.branch,pick.note])],filter.search));
+ const picksHtml=picks=>picks.map(pick=>`<div class="target-pick">${gearLinks([pick.weapon],weapons,'weapons',escape)}<strong>${escape(pick.branch)}</strong><small>${escape(pick.note)}</small></div>`).join('');
+ return `<section class="build-guide"><p>只用第一輪可取得的裝備，包含元素鍛造；不含輪迴商店、入注武器或 NG+ 隨機飾品。按弱點、抗性、出手空檔與武器效果選擇，並非固定 DPS 實測排名。單手與雙手各列有效選擇，不保證兩邊同樣強。</p>
+ <p>以主力武器 +7～9、已選對應武器異變為後期比較基準；首遇助理經理則按二階 +5 規劃。單手不一定要拿盾，裝盾會降低造成傷害 20%；能穩定武器招架時可收盾追輸出。雙手也可用武器格擋。火蟻套偏近戰輸出，瓢蟲套偏治療續戰，先選能活著完成連段的組合。</p>
+ <p>元素分支不能事後改回；固有元素武器不能再任選元素。酸味與火蟻酸液不同；棍棒的通用也不等於鎚子的粉碎。蘭花鐮刀選元素會失去揮砍類型，不能照強悍分支的雙類型計算。以下先列有效主選，已有高強化備選時不必為每隻怪重做一把。</p>
+ <div class="toolbar">${search('target-search','搜尋怪物、武器、元素或打法')}${select('target-kind','對象',[['all','全部對象'],['tier3','三階怪'],['boss','Boss']],'targetKind')}</div>
+ <p class="muted">顯示 ${rows.length}／${targetBuilds.length} 組。武器名稱可直達裝備列表，怪物名稱可直達弱抗性矩陣。</p>
+ <div role="table" class="weapon-table advice-table target-advice" aria-label="三階怪與 Boss 單雙手特化武器"><div role="row" class="weapon-row weapon-heading">${['目標／弱抗性','單手選擇','雙手選擇','實際效率與準備'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
+ ${rows.map(row=>`<div role="row" class="weapon-row" data-target-build="${escape(row.target)}">${comparisonCell('目標／弱抗性',`<a href="?view=creatures&amp;q=${encodeURIComponent(row.target)}">${escape(row.name)}</a><small>${escape(row.weakness)}</small>`)}${comparisonCell('單手選擇',picksHtml(row.single))}${comparisonCell('雙手選擇',picksHtml(row.two))}${comparisonCell('實際效率與準備',`${escape(row.tactics)}<a class="gear-source" href="${targetSource(row.target)}" target="_blank" rel="noopener noreferrer">敵人資料 ↗</a>`)}</div>`).join('')}</div>
+ ${rows.length?'':'<p class="empty">沒有符合條件的對策，請清除搜尋或切換對象。</p>'}
+ <p class="actions"><a href="?view=mutationBuilds">搭配各場合異變</a><a href="?view=recommendations&amp;tab=progression#armor-comparison">三套防具生存與輸出比較</a></p>
+ <p class="sources"><a href="https://wiki.biligame.com/grounded/生物大全" target="_blank" rel="noopener noreferrer">BWIKI 本體怪物資料 ↗</a><a href="${smithingSource}" target="_blank" rel="noopener noreferrer">鍛造與元素分支 ↗</a></p></section>`;
 }
 
 export function mutationRecommendationsHtml({filter,select,escape}){

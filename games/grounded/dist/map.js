@@ -2,18 +2,21 @@ import {yardPoints,yardAnchors,mapSource,mappedItems,itemById,collectionTarget,s
 import {accessHtml,itemAccess} from './access.js';
 import {basemap,yardViewport,projectYardPoint,terrainHtml} from './basemap.js';
 import {defenseHtml} from './defense.js';
+import {ngMolarItems,ngMolarById,ngMolarSource} from './ng-molar-data.js';
 
 const filters=[['all','全部點位'],['molars','普通乳牙'],['mega','巨型乳牙'],['scab','SCA.B 配色'],['docs','庭院資料'],['sites','地標'],['chips','漢堡小哥晶片'],['defense','防守事件'],['bosses','首領及固定生物卡']];
 const colors={molars:'#ebd9a6',mega:'#e5a82d',scab:'#b56337',docs:'#407aa5',sites:'#74875e',chips:'#2c6e60',defense:'#a64545',bosses:'#4e3a81',cards:'#4e3a81',meta:'#343832'};
 const bwikiMap='https://wiki.biligame.com/grounded/互动地图';
 const mapIcons=new Set(['molars','mega','scab','defense','lab','station']);
 const symbols={molars:'牙',mega:'巨',scab:'錶',docs:'文',sites:'地',chips:'晶',defense:'守',bosses:'王',cards:'卡',meta:'終'};
-const iconKey=item=>item.group==='sites'
+const iconKey=item=>item.category==='ng-milk'?'molars':item.group==='sites'
  ? (/Field Station/i.test(item.officialName)?'station':/Lab/i.test(item.officialName)?'lab':'sites')
  : item.id==='report-javamatic'?'meta':item.group;
 const groupMatch=(i,group)=>group==='all'||i.group===group||(group==='bosses'&&i.group==='cards');
 const {width,height}=yardViewport;
-const project=pin=>projectYardPoint(yardPoints[pin]);
+const project=pin=>projectYardPoint(ngMolarById.get(pin)?.point||yardPoints[pin]);
+const ngFilters=[['all','全部候選點'],['ground','帶殼乳牙候選'],['underwater','水下乳牙候選']];
+const mapRows=(filter,statusOf)=>searchReport(filter.mapScope==='ng'?ngMolarItems:mappedItems,filter.search).filter(i=>(filter.mapScope==='ng'?(filter.mapGroup==='all'||(i.underwater?filter.mapGroup==='underwater':filter.mapGroup==='ground')):groupMatch(i,filter.mapGroup))&&statusMatches(i,filter,statusOf));
 const selectionTag=(item,escape)=>{
  const name=Array.from(item.name).slice(0,18).join('')+(Array.from(item.name).length>18?'…':'');
  const tagWidth=Math.max(74,Array.from(name).reduce((sum,char)=>sum+(char.charCodeAt(0)<128?6.5:12),0)+18);
@@ -27,13 +30,14 @@ const rectFor=(pin,zoom)=>{
 
 const statusMatches=(item,filter,statusOf)=>filter.mapStatus==='all'
  || (statusOf(item)==='obtained')===(filter.mapStatus==='obtained');
-export function reportMapHtml({filter,select,search,escape,selectedId,statusOf}){
- const rows=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup)&&statusMatches(i,filter,statusOf));
+export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,ngRuns=[]}){
+ const ng=filter.mapScope==='ng',activeFilters=ng?ngFilters:filters;
+ const rows=mapRows(filter,statusOf);
  const selected=rows.find(i=>i.id===selectedId);
  const byPin=Map.groupBy(rows,i=>i.pin);
  const markerList=[...byPin].sort(([keyA],[keyB])=>Number(keyA===selected?.pin)-Number(keyB===selected?.pin));
  const mapBox=filter.mapBox||rectFor(selected?.pin,3);
- const pointColor=item=>colors[item.group]||colors.sites;
+ const pointColor=item=>colors[item.group]||colors.molars;
  const overlay=`<svg id="yard-map" viewBox="${mapBox.join(' ')}" role="group" aria-label="庭院地形與收集點位，北方朝上" tabindex="0">
   <rect x="-1100" y="-830" width="3300" height="2490" fill="#11120c"/>
   ${terrainHtml()}
@@ -45,30 +49,34 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
    const [x,y]=project(pin),icon=iconKey(i),hasIcon=mapIcons.has(icon);
    const obtained=items.every(item=>statusOf(item)==='obtained');
    return `<g aria-label="${escape(i.name)}${obtained?'，已取得':'，尚未全部取得'}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${obtained?'obtained':''} ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
-    <circle class="pin-ring" r="14"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]}</text></g>
+    <circle class="pin-ring" r="14"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]||'牙'}</text></g>
     ${hasIcon?`<image href="map-icons/${icon}.png" x="-9" y="-9" width="18" height="18"/>`:''}
    </g></g>`;
   }).join('')}
   <g id="yard-selection-label" pointer-events="none" aria-hidden="true" ${selected?`transform="translate(${project(selected.pin).join(' ')})"`:'style="display:none"'}>${selected?selectionTag(selected,escape):''}</g>
  </svg>`;
- return `<div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',filters,'mapGroup')}
+ return `<div class="toolbar">${select('map-scope','地圖範圍',[['first','第一輪收集'],['ng','NG+ 乳牙候選']],'mapScope')}
+ ${ng&&ngRuns.length?select('map-ng-run','記錄周目',ngRuns,'mapRunId'):''}</div>
+ ${ng?`<p class="warning">219 個候選位置只會在本輪生成 66 顆（帶殼 56、水下 10）。未勾選不代表此處有生成，只在遊戲實際取得後勾選。序號採 Grounded Wiki，與 BWIKI 不同；位置沿用來源圖概略定位，地下、水下與高處依抵達路線找入口。</p>
+ <p id="ng-map-count">${ngRuns.length?`${escape(ngRuns.find(([id])=>id===filter.mapRunId)?.[1]||'未選周目')} · 地圖已勾選 ${ngMolarItems.filter(i=>statusOf(i)==='obtained').length}／66 顆本輪乳牙；候選共 219 處。`:'尚未建立 NG+ 周目，可先查位置；建立周目後才開放勾選。'} <a href="?view=roadmap&amp;stage=remix#ng-molars">前往 NG+ 周目與手動計數</a></p>`:''}
+ <div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',activeFilters,'mapGroup')}
  ${select('map-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
- <a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">另開 BWIKI 原圖 ↗</a></div>
+ <a href="${ng?ngMolarSource:bwikiMap}" target="_blank" rel="noopener noreferrer">${ng?'另開 NG+ 候選原圖':'另開 BWIKI 原圖'} ↗</a></div>
  <p class="muted">庭院地形與本站點位一起縮放、拖曳，北方朝上。地圖是俯視位置，地下、水下及高處請對照選點後的入口與抵達路線。</p>
  <div class="map-layout report-map">
  <div class="map-frame">
   <div class="map-controls" aria-label="地圖操作"><button data-map-control="in" aria-label="放大">＋</button><button data-map-control="out" aria-label="縮小">−</button><button data-map-control="left" aria-label="向左平移">←</button><button data-map-control="up" aria-label="向上平移">↑</button><button data-map-control="down" aria-label="向下平移">↓</button><button data-map-control="right" aria-label="向右平移">→</button><button data-map-control="reset">全圖</button></div>
   <div class="map-viewport">${overlay}</div>
   <p id="basemap-error" class="warning" role="status" hidden>底圖載入不完整，請重新載入頁面；點位與收集勾選仍可使用，也可另開來源地圖對照。</p>
-  <p class="map-legend">${filters.slice(1).map(([id,label])=>`<span><i class="legend-glyph" style="background:${colors[id]}">${symbols[id]}</i>${label}</span>`).join('')}</p>
+  <p class="map-legend">${(ng?ngFilters:filters).slice(1).map(([id,label])=>`<span><i class="legend-glyph" style="background:${colors[id]||colors.molars}">${symbols[id]||'牙'}</i>${label}</span>`).join('')}</p>
   <p class="map-attribution">${escape(basemap.attribution)}</p>
  </div>
  <section class="report-map-sidebar" aria-label="點位選擇">
  <div id="map-selection">${mapDetail(selected,rows,escape,statusOf)}</div>
- <h2>${rows.length} 個核對項目 · ${byPin.size} 個點位</h2>
+ <h2>${ng?`目前顯示 ${rows.length} 個候選點`:`${rows.length} 個核對項目 · ${byPin.size} 個點位`}</h2>
  <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusOf(i)==='obtained'?'已取得':'尚未取得'}</small></button></li>`).join('')}</ul>
  ${rows.length?'':'<p class="empty">沒有符合條件的地圖點位。</p>'}</section></div>
- <p class="sources"><a href="${mapSource}" target="_blank" rel="noopener noreferrer">逐點座標 MapGenie ↗</a><a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">原圖與點位圖示 BWIKI ↗</a><a href="?view=sources">遊戲圖像與授權</a></p>`;
+ <p class="sources">${ng?`<a href="${ngMolarSource}" target="_blank" rel="noopener noreferrer">NG+ 候選序號與位置：Grounded Wiki ↗</a><a href="https://github.com/gcaraman/GroundedMolar/blob/main/docs/MOLAR_GUIDE_AUDIT.md" target="_blank" rel="noopener noreferrer">候選圖轉錄與查證 ↗</a>`:`<a href="${mapSource}" target="_blank" rel="noopener noreferrer">逐點座標 MapGenie ↗</a>`}<a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">原圖與點位圖示 BWIKI ↗</a><a href="?view=sources">遊戲圖像與授權</a></p>`;
 }
 
 function mapDetail(item,rows,escape,statusOf){
@@ -79,9 +87,9 @@ function mapDetail(item,rows,escape,statusOf){
  return `<h2>${escape(item.name)}</h2>
  <label class="check-label"><input id="map-check-${item.id}" type="checkbox" data-collect-check="${item.id}" ${statusOf(item)==='obtained'?'checked':''} ${statusOf(item)===null?'disabled':''}>已取得</label>
  <p class="map-location-layer"><strong>所在層級</strong> ${escape(access?.layer||'未逐項核對；請依位置說明確認地上、地下或水下')}</p>
- <p>${escape(item.section||reportGroupName(item.group))}${item.note?' · '+escape(item.note):''}</p>
- <div class="actions"><a href="${reportItemLink(item)}" target="_blank" rel="noopener noreferrer">查看底圖與點位說明 ↗</a>
- <a href="?view=collectibles&amp;group=${group}#${hash}" data-collection-link="${item.id}">回 100% 清單</a></div>
+ <p>${escape(item.section||reportGroupName(item.group))}${item.note&&item.category!=='ng-milk'?' · '+escape(item.note):''}</p>
+ <div class="actions"><a href="${item.category==='ng-milk'?ngMolarSource:reportItemLink(item)}" target="_blank" rel="noopener noreferrer">查看底圖與點位說明 ↗</a>
+ ${item.category==='ng-milk'?'<span>本輪是否生成，請在遊戲內確認。</span>':`<a href="?view=collectibles&amp;group=${group}#${hash}" data-collection-link="${item.id}">回 100% 清單</a>`}</div>
  ${accessHtml(item,escape)}
  ${defenseHtml(item,escape)}
  ${same.length?`<p class="muted">同一點位另有 ${same.map(i=>escape(i.name)).join('、')}</p>`:''}`;
@@ -90,7 +98,7 @@ function mapDetail(item,rows,escape,statusOf){
 export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDetail}){
  const svg=document.getElementById('yard-map');
  if(!svg)return;
- const results=searchReport(mappedItems,filter.search).filter(i=>groupMatch(i,filter.mapGroup)&&statusMatches(i,filter,statusOf));
+ const results=mapRows(filter,statusOf);
  const detail=document.getElementById('map-selection');
  for(const tile of svg.querySelectorAll('[data-basemap-tile]'))tile.addEventListener('error',()=>{document.getElementById('basemap-error').hidden=false;});
  detail.onclick=event=>{

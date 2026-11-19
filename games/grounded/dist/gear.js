@@ -87,13 +87,13 @@ export const comparisonCell=(label,html)=>`<div role="cell"><small aria-hidden="
 
 export function shieldsHtml({filter,select,search,escape}){
  const rows=shields.filter(row=>contains(row,filter.search)&&(filter.gearTier==='all'||row.tier===Number(filter.gearTier))&&(filter.gearScope==='all'||row.scope===filter.gearScope));
- return `${equipmentNav('shields')}<div class="toolbar gear-toolbar">${search('shield-search','搜尋中／英文、格擋效果或取得階段')}
+ return `${equipmentNav('shields')}<div class="toolbar gear-toolbar">${search('shield-search','搜尋中／英文、格擋效果或用途')}
  ${select('shield-tier','階級',tiers.map(([id,label])=>[String(id),label]),'gearTier')}
  ${select('shield-scope','出現範圍',[['第一輪','第一輪可取得'],['輪迴','次元輪迴'],['all','全部範圍']],'gearScope')}</div>
  <p class="muted gear-note">顯示 ${rows.length}／${shields.length} 面盾牌，依階級由高到低排列。盾牌不能鍛造，沒有 +6 或光滑分支；格擋強度不是防禦或百分比減傷。</p>
  <p>盾牌搭配單手武器使用；裝備盾牌會使造成的傷害降低 20%。它提供正面格擋的容錯，並非裝著就能擋住所有方向與所有招式；格擋條滿會失衡。熟悉招架後，可視情況收盾提高輸出。</p>
- <div role="table" class="weapon-table shield-table" aria-label="盾牌效果與取得方式比較"><div role="row" class="weapon-row weapon-heading">${['盾牌','階級／範圍','格擋強度','特效','取得與用途'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
- ${rows.map(row=>`<div role="row" class="weapon-row" data-shield><div role="cell" class="weapon-name"><strong>${escape(row.name)}</strong><small lang="en">${escape(row.english)}</small></div>${comparisonCell('階級／範圍',tierLabel(row.tier)+' · '+row.scope)}${comparisonCell('格擋強度',String(row.block))}${comparisonCell('特效',escape(row.effect))}${comparisonCell('取得與用途',`${escape(row.unlock)}<small>${escape(row.advice)}</small><a class="gear-source" href="${escape(row.source)}" target="_blank" rel="noopener noreferrer">效果來源 ↗</a>`)}</div>`).join('')}</div>
+ <div role="table" class="weapon-table shield-table" aria-label="盾牌效果與用途比較"><div role="row" class="weapon-row weapon-heading">${['盾牌','階級／範圍','格擋強度','特效','用途'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
+ ${rows.map(row=>`<div role="row" class="weapon-row" data-shield><div role="cell" class="weapon-name"><strong>${escape(row.name)}</strong><small lang="en">${escape(row.english)}</small></div>${comparisonCell('階級／範圍',tierLabel(row.tier)+' · '+row.scope)}${comparisonCell('格擋強度',String(row.block))}${comparisonCell('特效',escape(row.effect))}${comparisonCell('用途',`${escape(row.advice)}<a class="gear-source" href="${escape(row.source)}" target="_blank" rel="noopener noreferrer">效果來源 ↗</a>`)}</div>`).join('')}</div>
  ${rows.length?'':'<p class="empty">沒有符合篩選的盾牌。</p>'}
  <p class="actions"><a href="?view=weapons">單手武器與 +6 鍛造</a><a href="?view=recommendations">推薦配裝</a></p>
  <p class="sources"><a href="${escape(bwiki.weapons)}" target="_blank" rel="noopener noreferrer">BWIKI 盾牌資料 ↗</a><a href="${smithingSource}" target="_blank" rel="noopener noreferrer">鍛造範圍 ↗</a></p>`;

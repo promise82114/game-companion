@@ -4,6 +4,7 @@ import {collectibles,superWinConditions} from './data.js';
 import {accessHtml,accessSearchValues} from './access.js';
 import {defenseHtml,defenseSearchValues} from './defense.js';
 import {matchesSearch} from './search.js';
+import {ngMolarById} from './ng-molar-data.js';
 
 export const mapSource='https://mapgenie.io/grounded/maps/yard';
 const wiki='https://wiki.biligame.com/grounded/';
@@ -31,7 +32,7 @@ export const reportItems=reportRows.map(([id,group,name,officialName,section,pin
  return {id,group,name,officialName,section,pin,note:locationDescription,locationDescription,category};
 });
 const reportById=new Map(reportItems.map(item=>[item.id,item]));
-export const itemById=id=>reportById.get(id)||legacyById.get(id);
+export const itemById=id=>reportById.get(id)||legacyById.get(id)||ngMolarById.get(id);
 export const reportGroupName=id=>groups.find(g=>g.id===id)?.name||'';
 const bossByStep={broodmother:'hedge-broodmother',schmector:'director-schmector',mantis:'mantis','wasp-queen':'wasp-queen','infected-broodmother':'infected-broodmother'};
 const groupedConditions={shop:['shop','chips'],cards:['cards'],data:['docs'],sites:['sites'],molars:['molars','mega'],mix:['defense'],scab:['scab'],brain:['meta']};
