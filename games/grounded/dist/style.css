@@ -99,8 +99,7 @@
 #edit-notice span{min-width:0;overflow-wrap:anywhere}
 #edit-notice button{flex-shrink:0}
 #feedback{bottom:86px}
-.yard-pin.obtained .pin-glyph>image{opacity:.5}
-.map-obtained-check{font-size:14px;fill:var(--accent);font-weight:900;stroke:var(--ground);stroke-width:2px;paint-order:stroke}
+.yard-pin.obtained .pin-glyph>image,.yard-pin.obtained .pin-fallback{opacity:.3}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:720px){
  .build-detail{grid-template-columns:minmax(0,1fr);gap:4px}.build-detail dd{margin-bottom:12px}
@@ -187,6 +186,10 @@
 .pin-glyph{transform:scale(var(--yard-marker-scale,1))}
 .yard-pin .pin-ring{fill:var(--paper);stroke:var(--accent);visibility:hidden}
 .yard-pin:hover .pin-ring,.yard-pin.selected .pin-ring{visibility:visible}
+.yard-pin.selected .pin-ring{fill:#fff1a8;stroke:#ff8b22;stroke-width:4;filter:drop-shadow(0 0 3px #000)}
+.map-selection-tag{filter:drop-shadow(0 2px 2px #0009)}
+.map-selection-tag rect,.map-selection-tag path{fill:#fff1a8;stroke:#3e2d10;stroke-width:1}
+.report-map .map-frame .map-selection-tag text{font-size:12px;font-weight:700;fill:#2c210c;text-anchor:middle;stroke:none;pointer-events:none}
 .pin-glyph.has-icon .pin-fallback{visibility:hidden}
 .report-map .map-frame .pin-fallback text{font-size:8px;fill:#fff;stroke:#30403a;stroke-width:.7px;paint-order:stroke;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
 .map-legend .legend-glyph{font-size:10px;line-height:14px;width:16px;height:16px;text-align:center;font-style:normal;color:white;text-shadow:0 0 2px black}

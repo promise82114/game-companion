@@ -18,11 +18,16 @@ try{
  const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
  const checklist=await context.newPage();checklist.on('pageerror',error=>errors.push(error.message));
  await visit(checklist,'collectibles&group=molars');
+ await visit(page,'map');
+ assert.equal(await page.locator('#map-status-pending').getAttribute('aria-pressed'),'true','初次進入只看尚未取得');
  await visit(page,'map&item=milk-old-anthill');
  await decodeTiles(page);
  assert.equal(await page.locator('[data-basemap-tile]').count(),64);
  assert.equal(await page.locator('iframe').count(),0);
  assert.equal(await page.locator('#basemap-error').isVisible(),false);
+ assert.equal(await page.locator('#map-status-all').getAttribute('aria-pressed'),'true','具名連結可顯示已取得目標');
+ assert.equal(await page.locator('#yard-selection-label text').textContent(),await page.locator('#map-selection h2').textContent());
+ assert.equal(await page.locator('.yard-pin.selected .pin-ring').evaluate(node=>getComputedStyle(node).strokeWidth),'4px');
  assert.match(await page.locator('#map-selection').innerText(),/所在層級[\s\S]*如何抵達/);
  const registration=()=>page.locator('#yard-map').evaluate(svg=>{
   const terrain=svg.querySelector('[data-basemap-tile]'),marker=svg.querySelector('[data-yard-pin="198242"]');
@@ -43,6 +48,8 @@ try{
  await page.locator('#map-check-milk-old-anthill').check();
  await checklist.locator('#collect-milk-old-anthill').waitFor({state:'hidden'});
  await page.locator('[data-yard-pin="198242"].obtained').waitFor();
+ assert.equal(await page.locator('[data-yard-pin="198242"] image').evaluate(node=>getComputedStyle(node).opacity),'0.3');
+ assert.equal(await page.locator('.map-obtained-check').count(),0,'已取得點位不疊勾號');
  await checklist.locator('#collection-status-obtained').click();
  await checklist.locator('#collection-ref-milk-old-anthill').uncheck();
  await page.locator('#map-check-milk-old-anthill:not(:checked)').waitFor();
@@ -54,6 +61,11 @@ try{
  await page.locator('[data-yard-pin="198242"]').waitFor();
  await page.locator('[data-map-control="reset"]').click();
  await page.locator('#category-filter').selectOption('molars');
+ await page.locator('[data-map-list]').nth(1).click();
+ assert.equal(await page.locator('#yard-selection-label text').textContent(),await page.locator('#map-selection h2').textContent(),'點選後同步名稱標籤');
+ await page.locator('#map-status-all').click();
+ await page.locator('[data-view="weapons"]').click();await page.locator('[data-view="map"]').click();
+ assert.equal(await page.locator('#map-status-all').getAttribute('aria-pressed'),'true','返回地圖保留手動篩選');
  await page.screenshot({path:'outputs/grounded/map-integrated-desktop.png'});
 
  await visit(checklist,'collectibles&group=molars');
@@ -88,7 +100,7 @@ try{
   }
  }
  assert.deepEqual(external,[],'底圖不依賴外站請求');assert.deepEqual(errors,[]);
- console.log('Grounded map/list passed: 64 decoded local tiles, shared zoom/drag projection, cross-tab check/uncheck/undo, pending filter, wide collection rows, 9 defense entries, creature links, 5 widths, no external requests or page errors.');
+ console.log('Grounded map/list passed: 64 decoded local tiles, shared zoom/drag projection, cross-tab check/uncheck/undo, pending default, retained filters, selected name/halo, translucent obtained icons without checks, wide collection rows, 9 defense entries, creature links, 5 widths, no external requests or page errors.');
 }finally{await context.close();await browser.close();}
 
 const failedBrowser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||'msedge'});

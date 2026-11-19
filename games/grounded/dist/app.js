@@ -19,7 +19,7 @@ const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100
 const warningLabels={critical:'不可逆／易錯過',branch:'分歧／備份',prep:'提前準備',recommended:'推薦體驗',later:'可延後'};
 const verificationLabels={verified:'已查證',unverified:'待查證',conflicting:'來源有差異'};
 let progress,review,ngBackupStamp,refreshPending=false;
-const filterDefaults={search:'',reportGroup:defaultReportGroup,reportStatus:'pending',reportCondition:'',mapGroup:'all',mapStatus:'all',mapItem:'',mapBox:null,creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'pending',weaponHand:'all',weaponDamage:'all',weaponElement:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',buildSituation:'all',chipKind:'all',stage:'start',roadmapStatus:'all',conditionStatus:'all'};
+const filterDefaults={search:'',reportGroup:defaultReportGroup,reportStatus:'pending',reportCondition:'',mapGroup:'all',mapStatus:'pending',mapItem:'',mapBox:null,creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'pending',weaponHand:'all',weaponDamage:'all',weaponElement:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',buildSituation:'all',chipKind:'all',stage:'start',roadmapStatus:'all',conditionStatus:'all'};
 const viewStates=new Map();
 let filter,activeView,pendingPosition;
 const undoStack=[];
@@ -62,6 +62,7 @@ function restorePosition(position){
  window.scrollTo(0,anchor?scrollY+anchor.getBoundingClientRect().top-position.offset:position.scroll);
 }
 activateView(view());
+if(view()==='map'&&pageParams().has('item'))filter.mapStatus='all';
 const stageFromUrl=()=>pageParams().get('view')==='ngplus'?'remix':pageParams().get('stage');
 const nameWithEnglish=row=>`${escape(row.name)}${row.officialName&&row.officialName!==row.name?`<small class="english-name" lang="en">${escape(row.officialName)}</small>`:''}`;
 const searchInput=(id,label)=>`<label class="search">${label}<input id="${id}" type="search" data-filter="search" value="${escape(filter.search)}"></label>`;

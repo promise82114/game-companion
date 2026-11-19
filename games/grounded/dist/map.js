@@ -14,6 +14,11 @@ const iconKey=item=>item.group==='sites'
 const groupMatch=(i,group)=>group==='all'||i.group===group||(group==='bosses'&&i.group==='cards');
 const {width,height}=yardViewport;
 const project=pin=>projectYardPoint(yardPoints[pin]);
+const selectionTag=(item,escape)=>{
+ const name=Array.from(item.name).slice(0,18).join('')+(Array.from(item.name).length>18?'…':'');
+ const tagWidth=Math.max(74,Array.from(name).reduce((sum,char)=>sum+(char.charCodeAt(0)<128?6.5:12),0)+18);
+ return `<g class="pin-glyph map-selection-tag"><path d="M-5 -22H5L0 -15Z"/><rect x="${-tagWidth/2}" y="-44" width="${tagWidth}" height="23" rx="4"/><text x="0" y="-28">${escape(name)}</text></g>`;
+};
 const rectFor=(pin,zoom)=>{
  if(!pin)return [0,0,width,height];
  const [x,y]=project(pin);
@@ -40,11 +45,11 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
    const [x,y]=project(pin),icon=iconKey(i),hasIcon=mapIcons.has(icon);
    const obtained=items.every(item=>statusOf(item)==='obtained');
    return `<g aria-label="${escape(i.name)}${obtained?'，已取得':'，尚未全部取得'}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${obtained?'obtained':''} ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
-    <circle class="pin-ring" r="10"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]}</text></g>
+    <circle class="pin-ring" r="14"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]}</text></g>
     ${hasIcon?`<image href="map-icons/${icon}.png" x="-9" y="-9" width="18" height="18"/>`:''}
-    ${obtained?'<text class="map-obtained-check" x="10" y="-8">✓</text>':''}
    </g></g>`;
   }).join('')}
+  <g id="yard-selection-label" pointer-events="none" aria-hidden="true" ${selected?`transform="translate(${project(selected.pin).join(' ')})"`:'style="display:none"'}>${selected?selectionTag(selected,escape):''}</g>
  </svg>`;
  return `<div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',filters,'mapGroup')}
  ${select('map-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
@@ -61,7 +66,7 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf})
  <section class="report-map-sidebar" aria-label="點位選擇">
  <div id="map-selection">${mapDetail(selected,rows,escape,statusOf)}</div>
  <h2>${rows.length} 個核對項目 · ${byPin.size} 個點位</h2>
- <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${statusOf(i)==='obtained'?'✓ ':''}${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusOf(i)==='obtained'?'已取得':'尚未取得'}</small></button></li>`).join('')}</ul>
+ <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusOf(i)==='obtained'?'已取得':'尚未取得'}</small></button></li>`).join('')}</ul>
  ${rows.length?'':'<p class="empty">沒有符合條件的地圖點位。</p>'}</section></div>
  <p class="sources"><a href="${mapSource}" target="_blank" rel="noopener noreferrer">逐點座標 MapGenie ↗</a><a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">原圖與點位圖示 BWIKI ↗</a><a href="?view=sources">遊戲圖像與授權</a></p>`;
 }
@@ -112,6 +117,9 @@ export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDe
   original?.classList.remove('selected');
   const marker=svg.querySelector(`[data-yard-pin="${row.pin}"]`);
   if(marker){marker.classList.add('selected');svg.append(marker);}
+  const label=svg.querySelector('#yard-selection-label');
+  label.innerHTML=selectionTag(row,escape);label.style.display='';
+  label.setAttribute('transform',`translate(${project(row.pin).join(' ')})`);svg.append(label);
   document.querySelector('[data-map-list][aria-current]')?.removeAttribute('aria-current');
   document.querySelector(`[data-map-list="${CSS.escape(id)}"]`)?.setAttribute('aria-current','true');
   detail.innerHTML=mapDetail(row,results,escape,statusOf);
