@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-19",
+  "mapId": 113,
+  "source": "https://mapgenie.io/grounded/maps/yard",
+  "publicData": "https://mapgenie.io/api/v1/maps/113/data",
+  "creatures": 459,
+  "resources": 586,
+  "excludedCategory": 1648,
+  "excludedReason": "Raw Science 屬於收集用途，不混入採集資源頁",
+  "dataSha256": "8d673dda1147f85223176a5e01cc0d60a07b249cba5c50d1773b49f0b0c27adb",
+  "notes": "僅轉錄公開名稱、座標與關聯 ID。層級提示從來源位置關鍵字推導，未提及不表示一定在地面；不轉錄來源攻略全文。"
+}

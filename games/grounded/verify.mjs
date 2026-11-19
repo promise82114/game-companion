@@ -6,6 +6,17 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {basemap,yardTiles,projectYardPoint} from './dist/basemap.js';
 import {defenseEvents} from './dist/defense.js';
+import {fieldItems,fieldById,fieldRows,harvestAdvice} from './dist/field-map-catalog.js';
+assert.equal(fieldItems.filter(r=>r.kind==='creature').length,459);
+assert.equal(fieldItems.filter(r=>r.kind==='resource').length,586);
+assert.equal(fieldById.size,1045,'參考點位 ID 不重複');
+assert.ok(fieldItems.every(r=>r.point.length===2&&r.point.every(Number.isFinite)));
+assert.ok(fieldItems.every(r=>{const [x,y]=projectYardPoint(r.point);return x>-100&&x<900&&y>-100&&y<950;}),'新點位使用同一庭院投影');
+assert.ok(fieldItems.every(r=>r.category!==1648),'原始科學不重複放入採集地圖');
+assert.equal(fieldRows('creature',{fieldType:'Black Widow',search:''}).length,5);
+assert.equal(fieldRows('creature',{fieldType:'all',search:'綠椿'}).length,4);
+assert.match(harvestAdvice(fieldItems.find(r=>r.type==='Pond Moss')),/黑寡婦匕首/);
+assert.ok(fieldRows('resource',{fieldType:'all',search:'Supreme Quartzite'}).length>0);
 import {trophies,steps,stages,collectibles,categories,regions,superWinConditions} from './dist/data.js';
 import {fresh,validateProgress,world,run,player,setCollection,ngMolarState,setNGMolarState,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
@@ -234,5 +245,5 @@ run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});
 const w=newWorld('synthetic isolated');p.worlds[w.worldId]=w;p.currentWorldId=w.worldId;assert.equal(collectionState(p,scab),'missing');const restored=importData({records:[{key:'progress',value:p}]});assert.equal(restored.unknownTop.keep,'synthetic');assert.throws(()=>validateProgress({...p,schema:2}));assert.throws(()=>validateProgress({...p,gameId:'talos2'}));
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(new URL('../talos2/dist/shared/sync-core.js',import.meta.url),'utf8'),ctx);const core=ctx.window.SideProjectSync;const remote=JSON.parse(JSON.stringify(p));remote.unknownFuture={note:'preserved'};const plan=core.merge(null,p,remote,{hasBase:false}),next=core.resolve(plan,plan.conflicts.map(()=>'remote'));validateProgress(next);assert.equal(next.unknownFuture.note,'preserved');
-for(const file of ['app.js','data.js','model.js','map.js','basemap.js','defense.js','roadmap-progress.js','gear-data.js','equipment-data.js','smithing-data.js','smithing.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','model.js','map.js','field-map.js','field-map-data.js','field-map-catalog.js','basemap.js','defense.js','roadmap-progress.js','gear-data.js','equipment-data.js','smithing-data.js','smithing.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,game:'grounded',trophies:trophies.length,stages:stages.length,steps:steps.length,legacyCollectibles:collectibles.length,reportEntries:reportItems.length,mapPins:new Set(mappedItems.map(row=>row.pin)).size,creatures:creatureRows.length,cloud:false}));

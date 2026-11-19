@@ -1,6 +1,6 @@
 # Grounded 庭院手帳
 
-模組 1.13.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
+模組 1.14.0／schema 1，資料複查 2026-11-19。路線圖涵蓋 Grounded 本體。PS4／PS5 46 盃名稱採 BWIKI 用詞並保留英文，白金及部分收集項目使用本站繁中譯名。
 
 從 repo 根執行：
 
@@ -12,6 +12,7 @@ node server.mjs
 node scripts/verify-grounded-browser.mjs
 node scripts/verify-grounded-ng-map-browser.mjs
 node scripts/verify-grounded-smithing-browser.mjs
+node scripts/verify-grounded-field-map-browser.mjs
 ```
 
 入口 `/game-companion/games/grounded/`。需要 HTTP 及建置後共用資源，不使用 file URL。無產品套件、後端、OAuth 或 SW。站內座標與文字索引可在本機建置使用，庭院底圖隨網站提供，不再嵌入外站互動地圖，站內對應圖示保留 BWIKI 來源署名並由本站載入。Pages 沿用 main workflow。
@@ -91,3 +92,13 @@ Haze 新增相關文件的勾選，可能讓舊的已完成步驟重新顯示全
 裝備列表增加第三主頁籤「鍛造說明」，全文呈現武器／防具 +1～+9 的單次消耗、累計效果、不可逆分支、礦石與蟲料替代配方、熔爐材料、晶片／ASL 解鎖、維修膠與 NG+ 軛站。晶片深連結會清除遮蔽目標的搜尋與類別；各裝備分頁切換時重設搜尋與篩選。
 
 資料依 BWIKI 鍛造站與 Grounded Wiki 的 Grounded 1 段落交叉整理，不混入 Grounded 2 的 +4 分支規則。BWIKI 光滑防具欄的攻擊文字以防禦解讀，依 Grounded Wiki 對照。NG+ 防具 +10～+15 加成以官方 1.4.7 更新為準；官方提到消耗較測試版下降 40%，Wiki 軛站材料表仍有版本疑義，因此不把逐級融合水晶數量寫死，以遊戲內顯示為準。未實機核對鍛造數值。來源連結列在 dist/smithing-data.js 與頁面相關段落。
+
+## 1.14.0 怪物與採集點位地圖
+
+側邊欄新增兩個獨立參考頁：怪物點位地圖（459 個來源點位）與採集點位地圖（586 個來源點位）。共用既有本機底圖、投影、粗框選點與名稱標籤、縮放拖曳及鍵盤操作，提供中英文搜尋、種類篩選、位置提示與來源點位連結。怪物資料能對應本站條目時連到弱點抗性表；資源補部分工具需求，黑寡婦、趾甲與沉沒骨頭等少數點另補本站抵達說明。切換功能重設搜尋／篩選，指定點位網址可直接開啟。
+
+來源為 MapGenie 公開 map 113 / Resources、Creatures 分類，排除 Raw Science，沒有將原始科學混入採集頁。只轉錄公開名稱、座標、關聯地標 ID 與從位置文字推導的層級提示，沒有轉錄攻略全文；未提到層級不代表一定在地面。中文生物名沿用本站 BWIKI 對照，其他資源為本站翻譯。來源指標與轉錄 hash 記在 FIELD_MAP_SOURCES.json。點位不代表全部生物或資源，生物可能遊走；來源標記數量不當成即時個體數，也不保證重生時間或 NG+ 入注狀態。工具需求參考 BWIKI 資源節點與 Grounded Wiki 的 Grounded 1 條目（Supreme Quartzite、Pond Moss 等），不套用 Grounded 2 工具。
+
+新頁不提供已取得勾選，也不開啟玩家進度資料庫。100% 收集地圖仍獨立使用原進度與 NG+ 乳牙周目紀錄；沒有新增存檔欄位、schema 或改寫既有 ID。
+
+更新點位時，先取得公開頁的 window.mapData JSON 與公開資料 https://mapgenie.io/api/v1/maps/113/data，再執行 `node games/grounded/import-field-map.mjs <mapData.json> <locations.json>`；腳本離線轉錄，輸出 dist/field-map-data.js 與 FIELD_MAP_SOURCES.json。中文對照、工具與具名路線維護在 dist/field-map-catalog.js。

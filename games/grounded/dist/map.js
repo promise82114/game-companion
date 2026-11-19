@@ -17,14 +17,14 @@ const {width,height}=yardViewport;
 const project=pin=>projectYardPoint(ngMolarById.get(pin)?.point||yardPoints[pin]);
 const ngFilters=[['all','全部候選點'],['ground','帶殼乳牙候選'],['underwater','水下乳牙候選']];
 const mapRows=(filter,statusOf)=>searchReport(filter.mapScope==='ng'?ngMolarItems:mappedItems,filter.search).filter(i=>(filter.mapScope==='ng'?(filter.mapGroup==='all'||(i.underwater?filter.mapGroup==='underwater':filter.mapGroup==='ground')):groupMatch(i,filter.mapGroup))&&statusMatches(i,filter,statusOf));
-const selectionTag=(item,escape)=>{
+export const selectionTag=(item,escape)=>{
  const name=Array.from(item.name).slice(0,18).join('')+(Array.from(item.name).length>18?'…':'');
  const tagWidth=Math.max(74,Array.from(name).reduce((sum,char)=>sum+(char.charCodeAt(0)<128?6.5:12),0)+18);
  return `<g class="pin-glyph map-selection-tag"><path d="M-5 -22H5L0 -15Z"/><rect x="${-tagWidth/2}" y="-44" width="${tagWidth}" height="23" rx="4"/><text x="0" y="-28">${escape(name)}</text></g>`;
 };
-const rectFor=(pin,zoom)=>{
+export const rectFor=(pin,zoom,projector=project)=>{
  if(!pin)return [0,0,width,height];
- const [x,y]=project(pin);
+ const [x,y]=projector(pin);
  return [x-width/(2*zoom),y-height/(2*zoom),width/zoom,height/zoom];
 };
 
@@ -102,10 +102,11 @@ function mapDetail(item,rows,escape,statusOf){
  ${same.length?`<p class="muted">同一點位另有 ${same.map(i=>escape(i.name)).join('、')}</p>`:''}`;
 }
 
-export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDetail}){
+export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDetail,catalog}){
  const svg=document.getElementById('yard-map');
  if(!svg)return;
- const results=mapRows(filter,statusOf);
+ const results=catalog?.rows||mapRows(filter,statusOf);
+ const projector=catalog?.project||project;
  const detail=document.getElementById('map-selection');
  for(const tile of svg.querySelectorAll('[data-basemap-tile]'))tile.addEventListener('error',()=>{document.getElementById('basemap-error').hidden=false;});
  detail.onclick=event=>{
@@ -125,7 +126,7 @@ export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDe
  };
  const pan=(dx,dy)=>{box[0]+=dx;box[1]+=dy;apply();};
  const select=id=>{
-  const row=itemById(id);
+  const row=catalog?catalog.byId.get(id):itemById(id);
   if(!row?.pin)return;
   onSelect(id);
   const original=svg.querySelector('.yard-pin.selected');
@@ -134,12 +135,12 @@ export function bindReportMap({filter,escape,onSelect,onCollection,statusOf,onDe
   if(marker){marker.classList.add('selected');svg.append(marker);}
   const label=svg.querySelector('#yard-selection-label');
   label.innerHTML=selectionTag(row,escape);label.style.display='';
-  label.setAttribute('transform',`translate(${project(row.pin).join(' ')})`);svg.append(label);
+  label.setAttribute('transform',`translate(${projector(row.pin).join(' ')})`);svg.append(label);
   document.querySelector('[data-map-list][aria-current]')?.removeAttribute('aria-current');
   document.querySelector(`[data-map-list="${CSS.escape(id)}"]`)?.setAttribute('aria-current','true');
-  detail.innerHTML=mapDetail(row,results,escape,statusOf);
+  detail.innerHTML=catalog?catalog.detailHtml(row):mapDetail(row,results,escape,statusOf);
   onDetail();
-  box=rectFor(row.pin,Math.max(2.5,width/box[2]));apply();
+  box=rectFor(row.pin,Math.max(2.5,width/box[2]),projector);apply();
  };
  const reset=()=>{box=rectFor(0,1);apply();};
  const move={

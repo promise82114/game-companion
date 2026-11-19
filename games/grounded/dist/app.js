@@ -1,6 +1,8 @@
 import {checkedAt,sources,trophies,steps,stages,collectibles,regions,superWinConditions,ngRules} from './data.js';
 import {config,world,run,player,collectionState,checklistRun,setCollection,ngMolarState,setNGMolarState,stampActor,addRun,runLabel,importData} from './model.js';
 import {reportMapHtml,bindReportMap} from './map.js';
+import {fieldMapHtml,bindFieldMap} from './field-map.js';
+import {fieldById} from './field-map-catalog.js';
 import {creaturesHtml,reportReferenceHtml,collectionTarget,defaultReportGroup,groups,reportItems,itemById,reportConditionItems,reportSource,mapSource} from './report.js';
 import {mainTech,shopSource} from './chip-tech.js';
 import {stepProgress,completedSteps,nextPendingStep,pendingItems,remixReview} from './roadmap-progress.js';
@@ -17,11 +19,11 @@ const sharedPath=import.meta.url.includes('/dist/')?'../../../shared/roadmap-sto
 const {createStore}=await import(new URL(sharedPath,import.meta.url));
 const core=window.SideProjectSync,$=id=>document.getElementById(id);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',equipment:'裝備列表',weapons:'裝備列表',armor:'裝備列表',shields:'裝備列表',smithing:'裝備列表',mutations:'異變列表',recommendations:'推薦配裝',mutationBuilds:'推薦異變',chips:'晶片與解鎖',sources:'來源與查證'};
+const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',monsterMap:'怪物點位地圖',resourceMap:'採集點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',equipment:'裝備列表',weapons:'裝備列表',armor:'裝備列表',shields:'裝備列表',smithing:'裝備列表',mutations:'異變列表',recommendations:'推薦配裝',mutationBuilds:'推薦異變',chips:'晶片與解鎖',sources:'來源與查證'};
 const warningLabels={critical:'不可逆／易錯過',branch:'分歧／備份',prep:'提前準備',recommended:'推薦體驗',later:'可延後'};
 const verificationLabels={verified:'已查證',unverified:'待查證',conflicting:'來源有差異'};
 let progress,review,ngBackupStamp,refreshPending=false;
-const filterDefaults={search:'',reportGroup:defaultReportGroup,reportStatus:'pending',reportCondition:'',mapScope:null,mapRunId:'',mapGroup:'all',mapStatus:'pending',mapItem:'',mapBox:null,creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'pending',weaponHand:'all',weaponDamage:'all',weaponElement:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',recommendationTab:'progression',targetKind:'all',buildSituation:'all',chipKind:'all',stage:'start',roadmapStatus:'all',conditionStatus:'all'};
+const filterDefaults={search:'',reportGroup:defaultReportGroup,reportStatus:'pending',reportCondition:'',fieldType:'all',mapScope:null,mapRunId:'',mapGroup:'all',mapStatus:'pending',mapItem:'',mapBox:null,creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'pending',weaponHand:'all',weaponDamage:'all',weaponElement:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',recommendationTab:'progression',targetKind:'all',buildSituation:'all',chipKind:'all',stage:'start',roadmapStatus:'all',conditionStatus:'all'};
 const viewStates=new Map();
 let filter,activeView,pendingPosition,lastEquipmentView='weapons',lastDefenseView='armor';
 const isEquipment=name=>['weapons','armor','shields','smithing'].includes(name);
@@ -143,6 +145,7 @@ function go(next,extra={},hash='',patch={},forceReset=false){
  activateView(next,reset);
  Object.assign(filter,patch);
  if(next==='map'&&['first','ng'].includes(extra.scope)&&filter.mapScope!==extra.scope)Object.assign(filter,{mapScope:extra.scope,mapGroup:'all',mapStatus:'pending',mapItem:'',mapBox:null,search:''});
+ if(['monsterMap','resourceMap'].includes(next)&&extra.item)Object.assign(filter,{fieldType:'all',search:'',mapItem:extra.item,mapBox:null});
  if(next==='map'&&extra.item)Object.assign(filter,{mapScope:ngMolarById.has(extra.item)?'ng':'first',mapGroup:'all',mapStatus:'all',search:'',mapItem:extra.item,mapBox:null});
  if(['weapons','armor','shields','creatures'].includes(next)&&extra.q)Object.assign(filter,{...defaultFilters(next),gearScope:'all',search:extra.q});
  if(next==='armor')url.searchParams.set('tab',extra.tab||filter.armorTab);
@@ -281,7 +284,7 @@ function render(){
  const controls=[...$('app').querySelectorAll('[data-collect-check],[data-ng-absent],[data-trophy],[data-step],[data-condition],[data-map-list]')];
  const controlIndex=controls.indexOf(active);
  const neighborIds=controlIndex<0?[]:[...controls.slice(controlIndex+1),...controls.slice(0,controlIndex).reverse()].map(node=>node.id).filter(Boolean);
- $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:filter.mapItem,statusOf:mapStatus,ngRuns:mapRuns()}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),shields:()=>shieldsHtml(gearControls),smithing:smithingHtml,mutations:()=>mutationsHtml(gearControls),recommendations:()=>recommendationsHtml(gearControls),mutationBuilds:()=>mutationRecommendationsHtml(gearControls),chips:()=>chipsHtml(gearControls),sources:sourcesHtml}[view()]());
+ $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:filter.mapItem,statusOf:mapStatus,ngRuns:mapRuns()}),monsterMap:()=>fieldMapHtml('creature',gearControls),resourceMap:()=>fieldMapHtml('resource',gearControls),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),shields:()=>shieldsHtml(gearControls),smithing:smithingHtml,mutations:()=>mutationsHtml(gearControls),recommendations:()=>recommendationsHtml(gearControls),mutationBuilds:()=>mutationRecommendationsHtml(gearControls),chips:()=>chipsHtml(gearControls),sources:sourcesHtml}[view()]());
  if(!['overview','sources','smithing'].includes(view())&&(view()!=='recommendations'||['targets','fixed'].includes(filter.recommendationTab)))$('app').insertAdjacentHTML('afterbegin',`<div class="view-actions"><button id="reset-view">重設搜尋與篩選</button></div>`);
  document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view()||(a.dataset.view==='equipment'&&isEquipment(view())))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  document.querySelectorAll('[data-stage]').forEach(a=>{if(view()==='roadmap'&&a.dataset.stage===filter.stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
@@ -302,6 +305,7 @@ function render(){
    go('collectibles',{group},hash,{reportGroup:group,reportStatus:'all',reportCondition:'',search:''});
   }
  });
+ if(['monsterMap','resourceMap'].includes(view()))bindFieldMap(view()==='monsterMap'?'creature':'resource',{filter,escape,onSelect:id=>{filter.mapItem=id;const url=new URL(location.href);url.searchParams.set('item',id);history.replaceState({},'',url);}});
  if(pendingPosition){
   const target=pendingPosition;
   pendingPosition=null;
@@ -419,7 +423,7 @@ function bindControls(){
  });
  document.querySelectorAll('[data-step-peek]').forEach(button=>button.onclick=()=>{const id=button.dataset.stepPeek;if(revealedSteps.has(id))revealedSteps.delete(id);else revealedSteps.add(id);syncRoadmap();});
  if($('resume-progress'))$('resume-progress').onclick=resumeProgress;
- document.querySelectorAll('[data-filter]').forEach(input=>input.addEventListener(input.tagName==='INPUT'?'input':'change',()=>{filter[input.dataset.filter]=input.value;if(input.dataset.filter==='mapRunId'){filter.mapItem='';filter.mapBox=null;const url=new URL(location.href);url.searchParams.set('run',input.value);url.searchParams.delete('item');history.replaceState({},'',url);}if(view()==='collectibles'){const url=new URL(location.href);url.searchParams.delete('page');url.hash='';history.replaceState({},'',url);}render();}));
+ document.querySelectorAll('[data-filter]').forEach(input=>input.addEventListener(input.tagName==='INPUT'?'input':'change',()=>{filter[input.dataset.filter]=input.value;if(['monsterMap','resourceMap'].includes(view())){filter.mapItem='';filter.mapBox=null;const url=new URL(location.href);url.searchParams.delete('item');history.replaceState({},'',url);}if(input.dataset.filter==='mapRunId'){filter.mapItem='';filter.mapBox=null;const url=new URL(location.href);url.searchParams.set('run',input.value);url.searchParams.delete('item');history.replaceState({},'',url);}if(view()==='collectibles'){const url=new URL(location.href);url.searchParams.delete('page');url.hash='';history.replaceState({},'',url);}render();}));
  document.querySelectorAll('[data-filter-choice]').forEach(button=>button.onclick=()=>{
   filter[button.dataset.filterChoice]=button.dataset.value;
   if(button.dataset.filterChoice==='mapScope'){
@@ -540,6 +544,10 @@ function applyReferenceUrl(){
   if(['first','ng'].includes(params.get('scope')))filter.mapScope=params.get('scope');
   if(params.has('run'))filter.mapRunId=params.get('run');
   if(params.has('item')){filter.mapItem=params.get('item');filter.mapScope=ngMolarById.has(filter.mapItem)?'ng':'first';}
+ }
+ if(['monsterMap','resourceMap'].includes(view())&&params.has('item')){
+  const row=fieldById.get(params.get('item'));
+  if(row?.kind===(view()==='monsterMap'?'creature':'resource'))filter.mapItem=row.id;
  }
  if(view()==='armor'&&params.has('tab'))filter.armorTab=params.get('tab')==='pieces'?'pieces':'sets';
  if(['armor','weapons','shields','creatures'].includes(view())&&params.has('q'))filter.search=params.get('q');

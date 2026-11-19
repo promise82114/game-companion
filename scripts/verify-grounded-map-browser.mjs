@@ -51,7 +51,8 @@ try{
  assert.equal(await page.locator('[data-yard-pin="198242"] image').evaluate(node=>getComputedStyle(node).opacity),'0.3');
  assert.equal(await page.locator('.map-obtained-check').count(),0,'已取得點位不疊勾號');
  await checklist.locator('#collection-status-obtained').click();
- await checklist.locator('#collection-ref-milk-old-anthill').uncheck();
+ // 取消後該列立即移出「已取得」結果，以鍵盤操作並由另一頁驗證儲存結果。
+ await checklist.locator('#collection-ref-milk-old-anthill').focus();await checklist.keyboard.press('Space');
  await page.locator('#map-check-milk-old-anthill:not(:checked)').waitFor();
  assert.equal(await page.locator('[data-yard-pin="198242"].obtained').count(),0);
  await page.locator('#map-status-pending').click();
