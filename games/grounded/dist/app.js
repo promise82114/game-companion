@@ -15,13 +15,14 @@ const sharedPath=import.meta.url.includes('/dist/')?'../../../shared/roadmap-sto
 const {createStore}=await import(new URL(sharedPath,import.meta.url));
 const core=window.SideProjectSync,$=id=>document.getElementById(id);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',weapons:'武器列表',armor:'防具列表',shields:'盾牌列表',mutations:'異變列表',recommendations:'推薦配裝',mutationBuilds:'推薦異變',chips:'晶片與解鎖',sources:'來源與查證'};
+const names={overview:'庭院總覽',roadmap:'遊玩路線圖',collectibles:'100% 收集清單',map:'100% 點位地圖',creatures:'怪物弱點與抗性',trophies:'46 項獎盃',equipment:'裝備列表',weapons:'裝備列表',armor:'裝備列表',shields:'裝備列表',mutations:'異變列表',recommendations:'推薦配裝',mutationBuilds:'推薦異變',chips:'晶片與解鎖',sources:'來源與查證'};
 const warningLabels={critical:'不可逆／易錯過',branch:'分歧／備份',prep:'提前準備',recommended:'推薦體驗',later:'可延後'};
 const verificationLabels={verified:'已查證',unverified:'待查證',conflicting:'來源有差異'};
 let progress,review,ngBackupStamp,refreshPending=false;
 const filterDefaults={search:'',reportGroup:defaultReportGroup,reportStatus:'pending',reportCondition:'',mapGroup:'all',mapStatus:'pending',mapItem:'',mapBox:null,creatureKind:'all',damageColumn:'all',damageEffect:'all',trophyCategory:'all',trophyStatus:'pending',weaponHand:'all',weaponDamage:'all',weaponElement:'all',gearTier:'all',weaponKind:'all',water:'all',gearScope:'all',armorWeight:'all',armorTab:'sets',mutationCategory:'all',buildSituation:'all',chipKind:'all',stage:'start',roadmapStatus:'all',conditionStatus:'all'};
 const viewStates=new Map();
-let filter,activeView,pendingPosition;
+let filter,activeView,pendingPosition,lastEquipmentView='weapons',lastDefenseView='armor';
+const isEquipment=name=>['weapons','armor','shields'].includes(name);
 const undoStack=[];
 const revealedSteps=new Set();
 let readingScope='';
@@ -34,6 +35,7 @@ const pageParams=()=>new URL(location.href).searchParams;
 const view=()=>{
  const requested=pageParams().get('view');
  if(!requested||requested==='ngplus')return 'roadmap';
+ if(requested==='equipment')return pageParams().get('kind')==='armor'?(pageParams().get('tab')==='shields'?'shields':'armor'):'weapons';
  return Object.hasOwn(names,requested)?requested:'overview';
 };
 function defaultFilters(name){
@@ -42,6 +44,8 @@ function defaultFilters(name){
 function activateView(name){
  if(!viewStates.has(name))viewStates.set(name,{filter:defaultFilters(name),position:null});
  activeView=name;
+ if(isEquipment(name))lastEquipmentView=name;
+ if(['armor','shields'].includes(name))lastDefenseView=name;
  filter=viewStates.get(name).filter;
 }
 function capturePosition(){
@@ -116,13 +120,20 @@ async function undoLast(){
 }
 function go(next,extra={},hash='',patch={}){
  rememberView();
+ if(next==='equipment'){
+  if(extra.kind==='armor')next=extra.tab==='shields'?'shields':(extra.tab||extra.q?'armor':lastDefenseView);
+  else next=extra.kind==='weapons'?'weapons':lastEquipmentView;
+ }
  const url=new URL(location.href);
  url.search='';
- url.searchParams.set('view',next);
+ url.searchParams.set('view',isEquipment(next)?'equipment':next);
+ if(isEquipment(next))url.searchParams.set('kind',next==='weapons'?'weapons':'armor');
+ if(next==='shields')url.searchParams.set('tab','shields');
  activateView(next);
  Object.assign(filter,patch);
  if(next==='map'&&extra.item)Object.assign(filter,{mapGroup:'all',mapStatus:'all',search:'',mapItem:extra.item,mapBox:null});
  if(['weapons','armor','shields','creatures'].includes(next)&&extra.q)Object.assign(filter,{...defaultFilters(next),gearScope:'all',search:extra.q});
+ if(next==='armor')url.searchParams.set('tab',extra.tab||filter.armorTab);
  if(next==='mutations'&&hash.startsWith('mutation-'))Object.assign(filter,{search:'',mutationCategory:'all'});
  if(next==='roadmap')url.searchParams.set('stage',extra.stage||filter.stage);
  for(const [key,value]of Object.entries(extra))url.searchParams.set(key,value);
@@ -251,7 +262,7 @@ function render(){
  const neighborIds=controlIndex<0?[]:[...controls.slice(controlIndex+1),...controls.slice(0,controlIndex).reverse()].map(node=>node.id).filter(Boolean);
  $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:filter.mapItem,statusOf:checklistStatus}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),shields:()=>shieldsHtml(gearControls),mutations:()=>mutationsHtml(gearControls),recommendations:()=>recommendationsHtml(gearControls),mutationBuilds:()=>mutationRecommendationsHtml(gearControls),chips:()=>chipsHtml(gearControls),sources:sourcesHtml}[view()]());
  if(!['overview','sources','recommendations'].includes(view()))$('app').insertAdjacentHTML('afterbegin',`<div class="view-actions"><button id="reset-view">重設搜尋與篩選</button></div>`);
- document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view())a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view()||(a.dataset.view==='equipment'&&isEquipment(view())))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  document.querySelectorAll('[data-stage]').forEach(a=>{if(view()==='roadmap'&&a.dataset.stage===filter.stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
  if(focusId&&$(focusId)){$(focusId).focus({preventScroll:true});if(selection&&$(focusId).setSelectionRange)try{$(focusId).setSelectionRange(...selection);}catch{}}
  else if(controlIndex>=0){
@@ -393,9 +404,13 @@ function bindControls(){
  document.querySelectorAll('[data-category-link]').forEach(link=>link.onclick=e=>{
   e.preventDefault();go('collectibles',{group:link.dataset.categoryLink},'',{reportCondition:''});
  });
+ document.querySelectorAll('[data-equipment-tab]').forEach(link=>link.onclick=e=>{
+  if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+  e.preventDefault();go('equipment',{kind:link.dataset.equipmentTab});
+ });
  document.querySelectorAll('[data-armor-tab]').forEach(link=>link.onclick=e=>{
   if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-  e.preventDefault();go('armor',{tab:link.dataset.armorTab},'',{armorWeight:'all'});
+  e.preventDefault();go(link.dataset.armorTab==='shields'?'shields':'armor',{tab:link.dataset.armorTab},'',{armorWeight:'all'});
  });
  document.querySelectorAll('[data-locate]').forEach(link=>link.onclick=e=>{
   e.preventDefault();go('map',{item:link.dataset.locate},'',{mapItem:link.dataset.locate,mapGroup:'all',mapStatus:'all',search:'',mapBox:null});

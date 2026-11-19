@@ -13,6 +13,12 @@ const waterLabels = {yes:'可使用',no:'不可使用',unknown:'待確認'};
 const damageParts=value=>value.split(/[／/]/).map(part=>part.replace(/^水下/,''));
 const elementOptions=[['all','全部屬性'],['none','無固有屬性'],...unique(weapons,'element').map(element=>[element,element])];
 
+export function equipmentNav(active,tab='sets'){
+ const defense=active!=='weapons';
+ return `<nav class="report-tabs equipment-tabs" aria-label="裝備分類">${[['weapons','武器列表'],['armor','防具列表']].map(([id,label])=>`<a href="?view=equipment&amp;kind=${id}" data-equipment-tab="${id}" ${(id==='armor')===defense?'aria-current="page"':''}>${label}</a>`).join('')}</nav>
+ ${defense?`<nav class="report-tabs" aria-label="防具分類">${[['sets','套裝'],['pieces','散裝'],['shields','盾牌']].map(([id,label])=>`<a href="?view=equipment&amp;kind=armor&amp;tab=${id}" data-armor-tab="${id}" ${(active==='shields'?'shields':tab)===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`:''}`;
+}
+
 export function weaponsHtml({filter,select,search,escape}) {
  const inScope=weapons.filter(row=>filter.gearScope==='all'||row.scope===filter.gearScope);
  const rows = weapons.filter(row=>contains({...row,hands:handLabels[row.hands],...weaponUpgrade(row)},filter.search)
@@ -23,7 +29,7 @@ export function weaponsHtml({filter,select,search,escape}) {
   && (filter.weaponKind==='all'||row.kind===filter.weaponKind)
   && (filter.water==='all'||row.underwater===filter.water)
   && (filter.gearScope==='all'||row.scope===filter.gearScope));
- return `<div class="toolbar gear-toolbar">${search('weapon-search','中文／英文名稱、屬性或特效')}
+ return `${equipmentNav('weapons')}<div class="toolbar gear-toolbar">${search('weapon-search','中文／英文名稱、屬性或特效')}
   ${select('weapon-tier','階級',tiers.map(([id,label])=>[String(id),label]),'gearTier')}
   ${select('weapon-kind','武器類型',[['all','全部類型'],...unique(weapons,'kind').map(kind=>[kind,kind])],'weaponKind')}
   ${select('weapon-hand','持握',[['all','全部持握'],...Object.entries(handLabels)],'weaponHand')}
@@ -56,9 +62,7 @@ export function armorHtml({filter,select,search,escape}) {
   && (filter.gearTier==='all'||row.tier===Number(filter.gearTier))
   && (filter.armorWeight==='all'||row.weight===filter.armorWeight))
   .sort((a,b)=>b.tier-a.tier);
- return `<nav class="report-tabs" aria-label="防具分類">
-  ${[['sets','套裝'],['pieces','散裝']].map(([id,label])=>`<a href="?view=armor&amp;tab=${id}" data-armor-tab="${id}" ${filter.armorTab===id?'aria-current="page"':''}>${label}</a>`).join('')}
- </nav>
+ return `${equipmentNav('armor',filter.armorTab)}
  <div class="toolbar gear-toolbar">${search('armor-search','中文／英文名稱或效果')}
   ${select('armor-tier','階級',tiers.map(([id,label])=>[String(id),label]),'gearTier')}
   ${select('armor-weight',pieces?'部位':'護甲類型',[['all',pieces?'全部部位':'全部類型'],...unique(category,'weight').map(label=>[label,label])],'armorWeight')}
@@ -83,7 +87,7 @@ export const comparisonCell=(label,html)=>`<div role="cell"><small aria-hidden="
 
 export function shieldsHtml({filter,select,search,escape}){
  const rows=shields.filter(row=>contains(row,filter.search)&&(filter.gearTier==='all'||row.tier===Number(filter.gearTier))&&(filter.gearScope==='all'||row.scope===filter.gearScope));
- return `<div class="toolbar gear-toolbar">${search('shield-search','搜尋中／英文、格擋效果或取得階段')}
+ return `${equipmentNav('shields')}<div class="toolbar gear-toolbar">${search('shield-search','搜尋中／英文、格擋效果或取得階段')}
  ${select('shield-tier','階級',tiers.map(([id,label])=>[String(id),label]),'gearTier')}
  ${select('shield-scope','出現範圍',[['第一輪','第一輪可取得'],['輪迴','次元輪迴'],['all','全部範圍']],'gearScope')}</div>
  <p class="muted gear-note">顯示 ${rows.length}／${shields.length} 面盾牌，依階級由高到低排列。盾牌不能鍛造，沒有 +6 或光滑分支；格擋強度不是防禦或百分比減傷。</p>

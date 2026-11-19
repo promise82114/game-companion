@@ -14,7 +14,14 @@
 - 散件防禦／單件抗傷依 [BWIKI 護甲](https://wiki.biligame.com/grounded/护甲) 個別散件列記錄，不由套裝等級猜算。[瓢蟲面甲個別數值](https://wiki.biligame.com/grounded/瓢虫面甲) 為 7.5，舊套裝總表為 7；採個別條目與 Grounded Wiki 一致的 7.5。
 - [BWIKI 武器盾牌區](https://wiki.biligame.com/grounded/武器)、[火蟻盾](https://wiki.biligame.com/grounded/火蚁盾牌)、[凶猛瓢蟲盾](https://grounded.wiki.gg/wiki/Ladybird_Shield)、[感染螞蟻盾](https://grounded.wiki.gg/wiki/Infected_Ant_Shield)：5 面盾；第一輪 4 面，感染盾為 NG+。格擋強度 25／50／75，不等於護甲減傷；裝備盾會降低玩家輸出 20%，不能鍛造。
 
-## 限制
+## 三套防具與 NG+ 換裝比較（2026-11-19）
+
+- [瓢蟲](https://grounded.wiki.gg/wiki/Ladybug_Armor)、[西瓜蟲](https://grounded.wiki.gg/wiki/Roly_Poly_Armor)、[火蟻](https://grounded.wiki.gg/wiki/Fire_Ant_Armor)與 [BWIKI 護甲](https://wiki.biligame.com/grounded/护甲)：全套基礎防禦 30／40／40，減傷 30%／30%／20%，額外耐力消耗 25%／25%／15%。光滑 +9 防禦依 +45% 計算為 43.5／58／58，並非實測承傷比例。
+- 瓢蟲光滑治療增益的比例與格擋容量在總表／個別條目存在差異，新增比較只使用一致的能力描述；火蟻光滑酸性增傷也不填爭議比例。腐蝕為觸發後受傷 +15%／10 秒，不能視為常駐或三件疊成 +45%；酸液不等於酸味元素。
+- [NG+](https://grounded.wiki.gg/wiki/New_Game%2B)：NG+1 一般傷害 +20%，後續逐輪成長。[灌注怪](https://grounded.wiki.gg/wiki/Infused_Creatures)另有本體強化與隨機傷害效果；[官方 1.4.2](https://grounded.obsidian.net/news/grounded/grounded-patch-142)已修正本體攻擊強化不再額外放大其他灌注效果，不把全部效果直接連乘推算秒殺。
+- [乳牙](https://grounded.wiki.gg/wiki/Milk_Molars_(Grounded))既有加成保留，每輪可再升。短時間倒地屬生命、難度、敵人招式與灌注組合的條件結果，不是 NG+1 每隻怪必然一兩擊擊殺。第一輪／NG+ 換裝建議依能力推論，沒有宣稱執行遊戲傷害或擊殺時間實測。
+
+## 驗證限制
 
 - 不用工具的戰鬥傷害百分比推算所有資源的採集速度，不承諾多產材料。階級採集門檻不因鍛造提高。
 - 舊腳蹼的 +6 新增專屬效果尚未核實；入注武器依實物隨機詞條，不沿用原型加成。輪迴變體已列 +6 終結技種類，未逐項填入所有數值。

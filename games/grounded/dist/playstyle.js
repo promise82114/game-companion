@@ -1,7 +1,7 @@
 import {armor,weapons} from './gear-data.js';
 import {comparisonCell} from './gear.js';
 import {mutations,mutationCategories,mutationSource,mutationPatch} from './mutation-data.js';
-import {progressionBuilds,mutationBuilds} from './playstyle-data.js';
+import {progressionBuilds,mutationBuilds,armorComparison,armorSwapPhases} from './playstyle-data.js';
 import {matchesSearch} from './search.js';
 import {environmentUpgrades,toolUpgrades,smithingSource} from './equipment-data.js';
 
@@ -38,7 +38,7 @@ function gearLinks(englishNames,rows,view,escape){
 export function recommendationsHtml({escape}){
  return `<div class="build-guide">
  <p>以第一輪常見的近戰推進、光滑瓢蟲吸血續戰與火蟻輸出為主線，按實際可取得的裝備逐步替換。搭配依裝備效果與社群常見玩法整理。</p>
- <nav class="report-tabs" aria-label="配裝階段">${progressionBuilds.map((row,index)=>`<a href="#build-${index}">${row.stage}</a>`).join('')}<a href="#environment-upgrades">環境裝備強化</a><a href="#tool-upgrades">採集工具強化</a></nav>
+ <nav class="report-tabs" aria-label="配裝階段">${progressionBuilds.map((row,index)=>`<a href="#build-${index}">${row.stage}</a>`).join('')}<a href="#armor-comparison">三套防具比較</a><a href="#armor-swap-first">第一輪換裝</a><a href="#armor-swap-ngplus">NG+ 換裝</a><a href="#environment-upgrades">環境裝備強化</a><a href="#tool-upgrades">採集工具強化</a></nav>
  ${progressionBuilds.map((row,index)=>`<article class="row" id="build-${index}" data-progression-build>
   <h2>${escape(row.stage)} · ${escape(row.title)}</h2>
   <dl class="build-gear"><dt>武器</dt><dd>${gearLinks(row.weapons,weapons,'weapons',escape)}</dd>
@@ -46,6 +46,18 @@ export function recommendationsHtml({escape}){
   <p>${escape(row.plan)}</p>
   <dl class="build-detail">${[['取得時機',row.timing],['升級順序',row.upgrade],['實戰使用',row.combat],['替換選擇',row.alternatives],['異變搭配',row.mutationNote]].map(([label,text])=>`<dt>${label}</dt><dd>${escape(text)}</dd>`).join('')}</dl>
  </article>`).join('')}
+ <section id="armor-comparison" tabindex="-1"><h2>瓢蟲、西瓜蟲、火蟻：生存與輸出比較</h2>
+ <p>瓢蟲偏治療續戰，西瓜蟲偏直接承傷與多人坦克，火蟻偏近戰輸出。下表比較完整三件套、相同等級與鍛造分支；光滑效果從 +6 解鎖，防禦數字不等於實際減傷百分比。</p>
+ <div role="table" class="weapon-table tool-advice-table" aria-label="三套防具生存與輸出比較"><div role="row" class="weapon-row weapon-heading">${['防具與數值','生存方式','輸出差異'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
+ ${armorComparison.map(row=>`<div role="row" class="weapon-row" data-armor-comparison>${comparisonCell('防具與數值',`${gearLinks([row.gear],armor,'armor',escape)}<p>${escape(row.stats)}</p>`)}${comparisonCell('生存方式',escape(row.survival))}${comparisonCell('輸出差異',escape(row.damage))}</div>`).join('')}</div>
+ <p>西瓜蟲基礎防禦比瓢蟲高約 33%，不代表實際少受 33% 傷害；火蟻與西瓜蟲防禦值相同，也不代表同樣耐打。輸出差距取決於命中頻率、觸發覆蓋、敵人防禦與補血停手時間，沒有通用的固定提升百分比。</p>
+ ${armorSwapPhases.map(phase=>`<section id="armor-swap-${phase.id}" tabindex="-1"><h3>${escape(phase.title)}</h3><p>${escape(phase.intro)}</p>
+ <div role="table" class="weapon-table tool-advice-table" aria-label="${phase.id==='first'?'第一輪':'NG+'}防具換裝時機"><div role="row" class="weapon-row weapon-heading">${['防具','值得保留／換裝的情況','實際做法'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
+ ${phase.choices.map(row=>`<div role="row" class="weapon-row" data-armor-swap="${phase.id}">${comparisonCell('防具',gearLinks([row.gear],armor,'armor',escape))}${comparisonCell('值得保留／換裝的情況',escape(row.when))}${comparisonCell('實際做法',escape(row.plan))}</div>`).join('')}</div></section>`).join('')}
+ <h3>NG+ 真的會一兩下倒地嗎？</h3>
+ <p>有可能，尤其是生命升級不足、強敵連招，或灌注怪本體攻擊再接爆炸／元素效果時；一次動作也可能包含多段傷害，不能只看揮了幾下。這不是每隻 NG+1 怪物的必然結果，也不能保證換三階重甲就能避免。</p>
+ <p>先檢查：進 REMIX.R 前是否補足本輪生命與治療乳牙，進入後是否繼續收集新一輪乳牙、維持滿血、強化裝備並辨識敵人灌注效果。乳牙既有加成會保留，新輪迴可再提升；若仍被爆發打倒，優先增加存活空間與處理危險攻擊，能穩定活下來後再換火蟻追輸出。</p>
+ <p class="sources"><a href="https://wiki.biligame.com/grounded/护甲" target="_blank" rel="noopener noreferrer">BWIKI 三套防具效果 ↗</a><a href="https://grounded.wiki.gg/wiki/Ladybug_Armor" target="_blank" rel="noopener noreferrer">瓢蟲防禦數值 ↗</a><a href="https://grounded.wiki.gg/wiki/Smithing_Station" target="_blank" rel="noopener noreferrer">鍛造數值 ↗</a><a href="https://grounded.wiki.gg/wiki/New_Game%2B" target="_blank" rel="noopener noreferrer">NG+ 成長 ↗</a><a href="https://grounded.wiki.gg/wiki/Infused_Creatures" target="_blank" rel="noopener noreferrer">灌注能力 ↗</a><a href="https://grounded.wiki.gg/wiki/Milk_Molars_(Grounded)" target="_blank" rel="noopener noreferrer">乳牙繼承 ↗</a></p></section>
  <section id="environment-upgrades" tabindex="-1"><h2>環境裝備：先保命，再補強化</h2>
  <p>下表的升級順序是資源分配建議；原有效果與光滑新增效果分開列出。必要的防毒、照明、氧氣、游速及耐熱功能，不必升到 +6 才能使用。</p>
  <p>換一件就會中斷三件套，但其他兩件的單件與光滑效果仍保留。例如瓢蟲頭盔換成防毒面具，會少一件治療增益與整套格擋回血，且單件抗傷由 7.5% 降到 2.5%。強化能提高防禦與耐久，無法恢復失去的套裝效果，也不會把輕甲變成重甲。</p>

@@ -64,7 +64,7 @@ try{
  await page.locator('[data-map-list]').nth(1).click();
  assert.equal(await page.locator('#yard-selection-label text').textContent(),await page.locator('#map-selection h2').textContent(),'點選後同步名稱標籤');
  await page.locator('#map-status-all').click();
- await page.locator('[data-view="weapons"]').click();await page.locator('[data-view="map"]').click();
+ await page.locator('[data-view="equipment"]').click();await page.locator('[data-view="map"]').click();
  assert.equal(await page.locator('#map-status-all').getAttribute('aria-pressed'),'true','返回地圖保留手動篩選');
  await page.screenshot({path:'outputs/grounded/map-integrated-desktop.png'});
 

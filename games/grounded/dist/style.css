@@ -45,6 +45,8 @@
 .shield-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,.65fr) minmax(0,.5fr) minmax(0,1.5fr) minmax(0,2fr)}
 .advice-table .weapon-row{grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1.35fr) minmax(0,1.5fr)}
 .tool-advice-table .weapon-row{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.8fr)}
+.equipment-tabs{border-bottom:2px solid var(--line);padding-bottom:8px;margin-bottom:12px}
+.equipment-tabs a{font-size:15px;font-weight:600}
 .weapon-row small{display:block;color:var(--muted);line-height:1.5}
 .weapon-row .weapon-mobile-label{display:none}
 .weapon-damage{font-variant-numeric:tabular-nums}
