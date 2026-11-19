@@ -19,6 +19,7 @@ try{
  await visit(page,'map&scope=ng&item=ng-molar-001');
  assert.equal(await page.locator('[data-map-list]').count(),219);
  assert.equal(await page.locator('#map-check-ng-molar-001').isDisabled(),true);
+ assert.equal(await page.locator('#map-absent-ng-molar-001').isDisabled(),true);
  assert.match(await page.locator('#ng-map-count').innerText(),/尚未建立 NG\+/);
  await page.locator('#category-filter').selectOption('underwater');assert.equal(await page.locator('[data-map-list]').count(),21);
  await page.locator('#category-filter').selectOption('ground');assert.equal(await page.locator('[data-map-list]').count(),198);
@@ -45,7 +46,34 @@ try{
  assert.equal(w.runs['ng-one'].collectibles['ng-molar-001'].status,'obtained');
  assert.equal(w.runs['ng-one'].ngMolars.count,7,'不覆寫手動計數');
  assert.deepEqual(w.runs.base.collectibles,{});assert.deepEqual(w.runs['ng-two'].collectibles,{});
+ await other.goto(url+'?view=map&scope=ng&run=ng-one&item=ng-molar-002');
+ await other.locator('#map-absent-ng-molar-002').waitFor();
+ await page.locator('#map-item-ng-molar-002').click();
+ await page.locator('#map-absent-ng-molar-002').check();
+ await page.locator('#map-item-ng-molar-002').waitFor({state:'hidden'});
+ await other.locator('#map-absent-ng-molar-002:checked').waitFor();
+ assert.equal(await other.locator('#map-check-ng-molar-002').isChecked(),false);
+ assert.match(await page.locator('#ng-map-count').innerText(),/找過但沒生成 1 處/);
+ let absent=(await read(page)).worlds[p.currentWorldId].runs['ng-one'].collectibles['ng-molar-002'];
+ assert.equal(absent.status,'missing');assert.equal(absent.ngNotSpawned,true);
+ await other.locator('#map-check-ng-molar-002').check();
+ await other.locator('#map-absent-ng-molar-002:not(:checked)').waitFor();
+ await page.waitForFunction(async()=>{const db=await new Promise(resolve=>{const q=indexedDB.open('game-companion.grounded.progress.v1');q.onsuccess=()=>resolve(q.result);});try{return await new Promise(resolve=>{const q=db.transaction('records').objectStore('records').get('progress');q.onsuccess=()=>resolve(q.result.worlds[q.result.currentWorldId].runs['ng-one'].collectibles['ng-molar-002']?.status==='obtained');});}finally{db.close();}});
+ await other.locator('#map-check-ng-molar-002').uncheck();
+ await page.locator('#map-item-ng-molar-002').waitFor();
+ await page.locator('#map-item-ng-molar-002').click();await page.locator('#map-absent-ng-molar-002').check();
+ await page.locator('#map-item-ng-molar-002').waitFor({state:'hidden'});
+ await page.locator('#undo-last').click();await page.locator('#map-item-ng-molar-002').waitFor();
+ await page.locator('#map-item-ng-molar-002').click();await page.locator('#map-absent-ng-molar-002').check();
+ await page.locator('#map-item-ng-molar-002').waitFor({state:'hidden'});
+ await page.locator('#map-status-absent').click();
+ assert.equal(await page.locator('[data-map-list]').count(),1);
+ await page.locator('#map-item-ng-molar-002').click();
+ assert.equal(await page.locator('[data-yard-pin="ng-molar-002"] image').evaluate(node=>getComputedStyle(node).opacity),'0.2');
+ await page.locator('#map-status-pending').click();
  await page.locator('#map-ng-run').selectOption('ng-two');
+ assert.equal(await page.locator('#map-item-ng-molar-002').count(),1,'其他周目未生成標記不繼承');
+ assert.match(await page.locator('#ng-map-count').innerText(),/找過但沒生成 0 處/);
  await page.locator('#map-item-ng-molar-001').click();await page.locator('#map-check-ng-molar-001').check();
  await page.locator('#map-item-ng-molar-001').waitFor({state:'hidden'});
  await page.locator('#undo-last').click();await page.locator('#map-item-ng-molar-001').waitFor();
@@ -57,9 +85,27 @@ try{
  const event=page.waitForEvent('download');await page.locator('#export-progress').click();const download=await event;
  const exported=JSON.parse(await fs.readFile(await download.path(),'utf8'));
  assert.equal(exported.worlds[p.currentWorldId].runs['ng-one'].collectibles['ng-molar-001'].status,'obtained');
+ assert.equal(exported.worlds[p.currentWorldId].runs['ng-one'].collectibles['ng-molar-002'].ngNotSpawned,true);
  assert.equal(exported.futureUnknown.keep,true);
+ const restoredContext=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'});
+ try{
+  const restored=await restoredContext.newPage();await visit(restored,'map');
+  await restored.locator('#open-backup').click();
+  await restored.locator('#import-file').setInputFiles({name:'synthetic-ng-absence.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(exported))});
+  await restored.locator('#import-dialog').waitFor({state:'visible'});await restored.locator('#import-source').click();
+  const beforeApply=restored.waitForEvent('download');await restored.locator('#import-download').click();assert.equal(await (await beforeApply).failure(),null);
+  await restored.locator('#import-ack').check();await restored.locator('#import-apply').click();
+  await restored.locator('#import-dialog').waitFor({state:'hidden'});
+  await visit(restored,'map&scope=ng&run=ng-one&item=ng-molar-002');
+  assert.equal(await restored.locator('#map-absent-ng-molar-002').isChecked(),true);
+  assert.equal(await restored.locator('#map-check-ng-molar-002').isChecked(),false);
+  assert.equal((await read(restored)).futureUnknown.keep,true);
+ }finally{await restoredContext.close();}
  await page.locator('#backup-dialog [data-close]').click();await page.reload();
  await page.locator('#map-check-ng-molar-001:checked').waitFor();
+ await visit(page,'map&scope=ng&run=ng-one');
+ assert.equal(await page.locator('#map-status-pending').getAttribute('aria-pressed'),'true');
+ assert.equal(await page.locator('#map-item-ng-molar-001,#map-item-ng-molar-002').count(),0,'預設結果排除兩種已查明點');
  const before=await read(page);
  for(const width of [1440,1024,768,390,320]){
   await page.setViewportSize({width,height:1000});await visit(page,'map&scope=ng&run=ng-one&item=ng-molar-214');
@@ -71,8 +117,15 @@ try{
   await page.locator('#target-kind-boss').click();assert.equal(await page.locator('[data-target-build]').count(),7);
   await page.locator('#target-search').fill('感染育母');assert.equal(await page.locator('[data-target-build]').count(),1);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  await visit(page,'recommendations&tab=fixed');
+  assert.equal(await page.locator('[data-fixed-build]').count(),24);
+  assert.equal(await page.locator('[data-fixed-build][data-difficulty="1"] [data-fixed-specialized] [data-fixed-pick]').count(),0);
+  assert.equal(await page.locator('[data-fixed-build][data-difficulty="2"] [data-fixed-specialized] [data-fixed-pick]').count(),0);
+  assert.equal(await page.locator('[data-fixed-specialized] [data-fixed-pick="bow"],[data-fixed-specialized] [data-fixed-pick="staff"],[data-fixed-specialized] [data-fixed-pick="acid-axe"],[data-fixed-specialized] [data-fixed-pick="boss-club"]').count(),0);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  if([1440,390].includes(width))await page.screenshot({path:`outputs/grounded/fixed-builds-${width}.png`});
  }
  assert.deepEqual(await read(page),before,'閱讀對策與地圖不改寫進度');
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
- console.log('NG map passed: 219 candidates / 198 shelled / 21 underwater; preview guard; first-run and two NG runs isolated; cross-tab check, pending removal, opacity, undo, reload, export/unknown retention, manual count preserved; 5 widths and 24 first-run target builds.');
+ console.log('NG map passed: 219 candidates; obtained/absent exclusive, default pending excludes both, absent-only filter, cross-tab changes, undo, opacity, reload/export/protected import; first-run/two NG runs and manual count isolated; 5 widths; 24 fixed builds, easy specializations empty, optional weapons transition-only.');
 }finally{await context.close();await browser.close();}

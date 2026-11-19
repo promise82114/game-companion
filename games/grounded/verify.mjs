@@ -7,13 +7,14 @@ import {createHash} from 'node:crypto';
 import {basemap,yardTiles,projectYardPoint} from './dist/basemap.js';
 import {defenseEvents} from './dist/defense.js';
 import {trophies,steps,stages,collectibles,categories,regions,superWinConditions} from './dist/data.js';
-import {fresh,validateProgress,world,run,player,setCollection,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
+import {fresh,validateProgress,world,run,player,setCollection,ngMolarState,setNGMolarState,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
 import {weaponUpgrade,shields,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
 import {mutations,mutationCategories} from './dist/mutation-data.js';
 import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
 import {targetBuilds} from './dist/target-build-data.js';
+import {fixedWeapons,fixedMatchups} from './dist/fixed-build-data.js';
 import {ngMolarItems,ngMolarCoordinates} from './dist/ng-molar-data.js';
 import {accessRows,accessEntries} from './dist/access-data.js';
 import {itemAccess} from './dist/access.js';
@@ -89,6 +90,32 @@ assert.deepEqual(ngMolarItems.map(row=>row.number),Array.from({length:219},(_,i)
 assert.ok(ngMolarItems.every(row=>row.access.route&&row.point.every(Number.isFinite)&&!reportItems.some(old=>old.id===row.id)));
 const ngSnapshot=JSON.parse(await fs.readFile(new URL('NG_MOLAR_SOURCES.json',import.meta.url),'utf8'));
 assert.deepEqual(ngMolarCoordinates,ngSnapshot.coordinates);
+const ngSearchProgress=fresh(),ngCandidate=ngMolarItems[0];
+assert.equal(ngMolarState(ngSearchProgress,ngCandidate,run(ngSearchProgress)),null);
+assert.throws(()=>setNGMolarState(ngSearchProgress,ngCandidate,'absent',run(ngSearchProgress)));
+const ngFirst=addRun(ngSearchProgress);setNGMolarState(ngSearchProgress,ngCandidate,'absent',run(ngSearchProgress));
+assert.equal(ngMolarState(ngSearchProgress,ngCandidate,run(ngSearchProgress)),'absent');
+const restoredNG=importData(JSON.parse(JSON.stringify(ngSearchProgress)));
+assert.equal(ngMolarState(restoredNG,ngCandidate,run(restoredNG)),'absent');
+const ngAbsenceBefore=structuredClone(ngSearchProgress);setNGMolarState(ngSearchProgress,ngCandidate,'obtained',run(ngSearchProgress));
+assert.equal(run(ngSearchProgress).collectibles[ngCandidate.id].ngNotSpawned,false);
+revertProgressEdits(ngSearchProgress,captureProgressEdits(ngAbsenceBefore,ngSearchProgress));
+assert.deepEqual(ngSearchProgress,ngAbsenceBefore);
+addRun(ngSearchProgress);assert.equal(ngMolarState(ngSearchProgress,ngCandidate,run(ngSearchProgress)),'pending');
+assert.equal(ngMolarState(ngSearchProgress,ngCandidate,world(ngSearchProgress).runs[ngFirst]),'absent');
+for(const value of [null,'true',1]){const invalid=structuredClone(ngSearchProgress);world(invalid).runs[ngFirst].collectibles[ngCandidate.id].ngNotSpawned=value;assert.throws(()=>validateProgress(invalid));}
+const conflicting=structuredClone(ngSearchProgress);world(conflicting).runs[ngFirst].collectibles[ngCandidate.id].status='obtained';assert.throws(()=>validateProgress(conflicting));
+const legacyNG=structuredClone(ngAbsenceBefore);delete run(legacyNG).collectibles[ngCandidate.id].ngNotSpawned;validateProgress(legacyNG);assert.equal(ngMolarState(legacyNG,ngCandidate,run(legacyNG)),'pending');
+assert.equal(new Set(fixedWeapons.map(row=>row.weapon)).size,fixedWeapons.length,'每種武器只配一把');
+const fixedById=new Map(fixedWeapons.map(row=>[row.id,row]));
+assert.deepEqual([...fixedMatchups.map(row=>row.target)].sort(),targetBuilds.map(row=>row.target).sort());
+assert.deepEqual(fixedMatchups.map(row=>row.difficulty),fixedMatchups.map(row=>row.difficulty).sort((a,b)=>a-b),'簡單在前');
+for(const fixed of fixedWeapons)assert.equal(weapons.find(row=>row.english===fixed.weapon)?.scope,'第一輪');
+for(const row of fixedMatchups){
+ if(row.difficulty<=2)assert.equal(row.specialized.length,0,'簡單敵人特化留空');
+ for(const pick of [...row.specialized,...row.transition]){assert.ok(fixedById.has(pick.id));if(pick.shield)assert.ok(shields.some(s=>s.english===pick.shield));}
+ for(const pick of row.specialized){const fixed=fixedById.get(pick.id);assert.ok(!fixed.transitionOnly);assert.ok(!['法杖','弓','弩'].includes(weapons.find(w=>w.english===fixed.weapon).kind));}
+}
 for(const [number,pin,limit] of [[2,42703,10],[22,42693,20],[168,210207,15]]){
  const point=projectYardPoint(ngMolarItems.find(row=>row.number===number).point),anchor=projectYardPoint((await import('./dist/report-data.js')).yardPoints[pin]);
  assert.ok(Math.hypot(point[0]-anchor[0],point[1]-anchor[1])<limit,'NG+ map axis / scale '+number);

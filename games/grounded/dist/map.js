@@ -28,8 +28,13 @@ const rectFor=(pin,zoom)=>{
  return [x-width/(2*zoom),y-height/(2*zoom),width/zoom,height/zoom];
 };
 
-const statusMatches=(item,filter,statusOf)=>filter.mapStatus==='all'
- || (statusOf(item)==='obtained')===(filter.mapStatus==='obtained');
+const statusMatches=(item,filter,statusOf)=>{
+ if(filter.mapStatus==='all')return true;
+ const status=statusOf(item);
+ if(item.category==='ng-milk')return filter.mapStatus==='pending'?status===null||status==='pending':status===filter.mapStatus;
+ return (status==='obtained')===(filter.mapStatus==='obtained');
+};
+const statusLabel=(item,statusOf)=>statusOf(item)==='obtained'?'已取得':statusOf(item)==='absent'?'找過但沒生成':item.category==='ng-milk'?'尚未查明':'尚未取得';
 export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,ngRuns=[]}){
  const ng=filter.mapScope==='ng',activeFilters=ng?ngFilters:filters;
  const rows=mapRows(filter,statusOf);
@@ -48,7 +53,8 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,n
    const i=items.find(i=>i.id===selected?.id)||items[0],isSelected=selected?.pin===pin;
    const [x,y]=project(pin),icon=iconKey(i),hasIcon=mapIcons.has(icon);
    const obtained=items.every(item=>statusOf(item)==='obtained');
-   return `<g aria-label="${escape(i.name)}${obtained?'，已取得':'，尚未全部取得'}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${obtained?'obtained':''} ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
+   const absent=items.every(item=>statusOf(item)==='absent');
+   return `<g aria-label="${escape(i.name)}，${i.category==='ng-milk'?statusLabel(i,statusOf):obtained?'已取得':'尚未全部取得'}${items.length>1?'，同處 '+items.length+' 項':''}" data-map-item="${i.id}" data-yard-pin="${pin}" class="yard-pin ${obtained?'obtained':''} ${absent?'absent':''} ${isSelected?'selected':''}" transform="translate(${x.toFixed(2)} ${y.toFixed(2)})"><title>${escape(items.map(row=>row.name).join('、'))}</title><g class="pin-glyph ${hasIcon?'has-icon':''}">
     <circle class="pin-ring" r="14"/><g class="pin-fallback"><circle r="7" fill="${pointColor(i)}"/><text y=".5">${symbols[i.group]||'牙'}</text></g>
     ${hasIcon?`<image href="map-icons/${icon}.png" x="-9" y="-9" width="18" height="18"/>`:''}
    </g></g>`;
@@ -57,10 +63,10 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,n
  </svg>`;
  return `<div class="toolbar">${select('map-scope','地圖範圍',[['first','第一輪收集'],['ng','NG+ 乳牙候選']],'mapScope')}
  ${ng&&ngRuns.length?select('map-ng-run','記錄周目',ngRuns,'mapRunId'):''}</div>
- ${ng?`<p class="warning">219 個候選位置只會在本輪生成 66 顆（帶殼 56、水下 10）。未勾選不代表此處有生成，只在遊戲實際取得後勾選。序號採 Grounded Wiki，與 BWIKI 不同；位置沿用來源圖概略定位，地下、水下與高處依抵達路線找入口。</p>
- <p id="ng-map-count">${ngRuns.length?`${escape(ngRuns.find(([id])=>id===filter.mapRunId)?.[1]||'未選周目')} · 地圖已勾選 ${ngMolarItems.filter(i=>statusOf(i)==='obtained').length}／66 顆本輪乳牙；候選共 219 處。`:'尚未建立 NG+ 周目，可先查位置；建立周目後才開放勾選。'} <a href="?view=roadmap&amp;stage=remix#ng-molars">前往 NG+ 周目與手動計數</a></p>`:''}
+ ${ng?`<p class="warning">219 個候選位置只會在本輪生成 66 顆（帶殼 56、水下 10）。請在遊戲確認後標記「已取得」或「找過但沒生成」；預設只看尚未查明。序號採 Grounded Wiki，與 BWIKI 不同；位置沿用來源圖概略定位，地下、水下與高處依抵達路線找入口。</p>
+ <p id="ng-map-count">${ngRuns.length?`${escape(ngRuns.find(([id])=>id===filter.mapRunId)?.[1]||'未選周目')} · 已取得 ${ngMolarItems.filter(i=>statusOf(i)==='obtained').length}／66 顆；找過但沒生成 ${ngMolarItems.filter(i=>statusOf(i)==='absent').length} 處；尚未查明 ${ngMolarItems.filter(i=>statusOf(i)==='pending').length}／219 處。`:'尚未建立 NG+ 周目，可先查位置；建立周目後才開放勾選。'} <a href="?view=roadmap&amp;stage=remix#ng-molars">前往 NG+ 周目與手動計數</a></p>`:''}
  <div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',activeFilters,'mapGroup')}
- ${select('map-status','取得狀態',[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
+ ${select('map-status',ng?'查找狀態':'取得狀態',ng?[['pending','尚未查明'],['obtained','已取得'],['absent','找過但沒生成'],['all','全部']]:[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
  <a href="${ng?ngMolarSource:bwikiMap}" target="_blank" rel="noopener noreferrer">${ng?'另開 NG+ 候選原圖':'另開 BWIKI 原圖'} ↗</a></div>
  <p class="muted">庭院地形與本站點位一起縮放、拖曳，北方朝上。地圖是俯視位置，地下、水下及高處請對照選點後的入口與抵達路線。</p>
  <div class="map-layout report-map">
@@ -74,7 +80,7 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,n
  <section class="report-map-sidebar" aria-label="點位選擇">
  <div id="map-selection">${mapDetail(selected,rows,escape,statusOf)}</div>
  <h2>${ng?`目前顯示 ${rows.length} 個候選點`:`${rows.length} 個核對項目 · ${byPin.size} 個點位`}</h2>
- <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusOf(i)==='obtained'?'已取得':'尚未取得'}</small></button></li>`).join('')}</ul>
+ <ul class="map-results">${rows.map(i=>`<li><button id="map-item-${i.id}" data-map-list="${i.id}" ${i.id===selected?.id?'aria-current="true"':''}>${escape(i.name)}<small>${escape(i.section||reportGroupName(i.group))} · ${statusLabel(i,statusOf)}</small></button></li>`).join('')}</ul>
  ${rows.length?'':'<p class="empty">沒有符合條件的地圖點位。</p>'}</section></div>
  <p class="sources">${ng?`<a href="${ngMolarSource}" target="_blank" rel="noopener noreferrer">NG+ 候選序號與位置：Grounded Wiki ↗</a><a href="https://github.com/gcaraman/GroundedMolar/blob/main/docs/MOLAR_GUIDE_AUDIT.md" target="_blank" rel="noopener noreferrer">候選圖轉錄與查證 ↗</a>`:`<a href="${mapSource}" target="_blank" rel="noopener noreferrer">逐點座標 MapGenie ↗</a>`}<a href="${bwikiMap}" target="_blank" rel="noopener noreferrer">原圖與點位圖示 BWIKI ↗</a><a href="?view=sources">遊戲圖像與授權</a></p>`;
 }
@@ -86,6 +92,7 @@ function mapDetail(item,rows,escape,statusOf){
  const {group,hash}=collectionTarget(item);
  return `<h2>${escape(item.name)}</h2>
  <label class="check-label"><input id="map-check-${item.id}" type="checkbox" data-collect-check="${item.id}" ${statusOf(item)==='obtained'?'checked':''} ${statusOf(item)===null?'disabled':''}>已取得</label>
+ ${item.category==='ng-milk'?`<label class="check-label"><input id="map-absent-${item.id}" type="checkbox" data-ng-absent="${item.id}" ${statusOf(item)==='absent'?'checked':''} ${statusOf(item)===null?'disabled':''}>找過但沒生成</label><p class="muted">兩個標記互斥；取消標記即可恢復尚未查明。預設隱藏已取得及確認沒生成的點。</p>`:''}
  <p class="map-location-layer"><strong>所在層級</strong> ${escape(access?.layer||'未逐項核對；請依位置說明確認地上、地下或水下')}</p>
  <p>${escape(item.section||reportGroupName(item.group))}${item.note&&item.category!=='ng-milk'?' · '+escape(item.note):''}</p>
  <div class="actions"><a href="${item.category==='ng-milk'?ngMolarSource:reportItemLink(item)}" target="_blank" rel="noopener noreferrer">查看底圖與點位說明 ↗</a>

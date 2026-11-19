@@ -3,8 +3,9 @@ import {comparisonCell} from './gear.js';
 import {mutations,mutationCategories,mutationSource,mutationPatch} from './mutation-data.js';
 import {progressionBuilds,mutationBuilds,armorComparison,armorSwapPhases} from './playstyle-data.js';
 import {matchesSearch} from './search.js';
-import {environmentUpgrades,toolUpgrades,smithingSource} from './equipment-data.js';
+import {environmentUpgrades,toolUpgrades,smithingSource,shields} from './equipment-data.js';
 import {targetBuilds,targetSource} from './target-build-data.js';
+import {fixedWeapons,fixedMatchups,fixedDifficultyLabels} from './fixed-build-data.js';
 
 const nameCell=(row,escape)=>`<div role="cell" class="weapon-name"><strong>${escape(row.name)}</strong><small lang="en" class="english-name">${escape(row.english)}</small></div>`;
 
@@ -39,7 +40,9 @@ function gearLinks(englishNames,rows,view,escape){
 export function recommendationsHtml(controls){
  const {filter,escape}=controls;
  const targetTab=filter.recommendationTab==='targets';
- const nav=`<nav class="report-tabs equipment-tabs" aria-label="推薦配裝分類"><a href="?view=recommendations&amp;tab=progression" ${targetTab?'':'aria-current="page"'}>階段配裝與強化</a><a href="?view=recommendations&amp;tab=targets" ${targetTab?'aria-current="page"':''}>三階怪／Boss 對策</a></nav>`;
+ const fixedTab=filter.recommendationTab==='fixed';
+ const nav=`<nav class="report-tabs equipment-tabs" aria-label="推薦配裝分類"><a href="?view=recommendations&amp;tab=progression" ${!targetTab&&!fixedTab?'aria-current="page"':''}>階段配裝與強化</a><a href="?view=recommendations&amp;tab=targets" ${targetTab?'aria-current="page"':''}>三階怪／Boss 對策</a><a href="?view=recommendations&amp;tab=fixed" ${fixedTab?'aria-current="page"':''}>一把到底懶人包</a></nav>`;
+ if(fixedTab)return nav+fixedRecommendationsHtml(controls);
  if(targetTab)return nav+targetRecommendationsHtml(controls);
  return nav+`<div class="build-guide">
  <p>以第一輪常見的近戰推進、光滑瓢蟲吸血續戰與火蟻輸出為主線，按實際可取得的裝備逐步替換。搭配依裝備效果與社群常見玩法整理。</p>
@@ -78,6 +81,25 @@ export function recommendationsHtml(controls){
  <p class="actions"><a href="?view=mutationBuilds">對照各場合的異變矩陣</a><a href="?view=creatures">查怪物弱點與抗性</a><a href="?view=chips">查晶片與解鎖前置</a></p>
  <p class="sources"><a href="https://www.youtube.com/watch?v=GDejYajfGow" target="_blank" rel="noopener noreferrer">社群常見第一輪配裝 ↗</a><a href="https://www.youtube.com/watch?v=VHfa4MF_0JM" target="_blank" rel="noopener noreferrer">瓢蟲吸血配裝示範 ↗</a><a href="https://grounded.obsidian.net/news/grounded/update-1-3" target="_blank" rel="noopener noreferrer">官方裝備調整與 O.R.C. 酸味弱點 ↗</a></p>
  </div>`;
+}
+
+function fixedRecommendationsHtml({filter,select,search,escape}){
+ const arsenal=new Map(fixedWeapons.map(pick=>[pick.id,pick]));
+ const targets=new Map(targetBuilds.map(row=>[row.target,row]));
+ const rows=fixedMatchups.filter(row=>(filter.targetKind==='all'||targets.get(row.target).kind===filter.targetKind)&&matchesSearch([targets.get(row.target).name,row.target,row.reason,fixedDifficultyLabels[row.difficulty],...[...row.specialized,...row.transition].flatMap(pick=>{const gear=arsenal.get(pick.id);return [gear.weapon,gear.branch,weapons.find(w=>w.english===gear.weapon)?.name,pick.note,pick.shield];})],filter.search));
+ const picksHtml=picks=>picks.map(pick=>{const gear=arsenal.get(pick.id);return `<div class="target-pick" data-fixed-pick="${gear.id}">${gearLinks([gear.weapon],weapons,'weapons',escape)}<strong>${escape(gear.branch)}${pick.shield?' ＋ '+gearLinks([pick.shield],shields,'shields',escape):''}</strong><small>${escape(pick.note)}</small>${gear.transitionOnly?'<small>過渡限定 · 已有才用，可不製作</small>':''}</div>`;}).join('');
+ return `<section class="build-guide"><p>只用第一輪武器，每種練一把、分支固定。先配難敵，簡單敵人沿用過渡；法杖、弓弩與 Boss 武器只列過渡，已有再用。</p>
+ <p>按第一輪單人一般難度由易到難排列（攻略評估，非取得順序）。單手後期配凶猛瓢蟲盾、前期先用黑蟻盾；裝盾傷害 −20%，爆炸、範圍招式與機關仍須閃避。</p>
+ <nav class="report-tabs" aria-label="懶人包段落"><a href="#fixed-matchups">按難度找敵人</a><a href="#fixed-arsenal">查看固定武器分支</a></nav>
+ <div class="toolbar">${search('fixed-search','搜尋對手、固定武器、元素或打法')}${select('fixed-kind','對象',[['all','全部對象'],['tier3','三階怪'],['boss','Boss']],'targetKind')}</div>
+ <section id="fixed-matchups"><h2>由易到難 · 特化與過渡</h2><p class="muted">顯示 ${rows.length}／${fixedMatchups.length} 組。特化欄沒有內容時，直接看過渡；固定分支不隨敵人改動。</p>
+ <div role="table" class="weapon-table advice-table" aria-label="固定一把武器的特化與過渡懶人包"><div role="row" class="weapon-row weapon-heading">${['難度／對手','特化','過渡','生存與使用方式'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>
+ ${rows.map(row=>`<div role="row" class="weapon-row" data-fixed-build="${escape(row.target)}" data-difficulty="${row.difficulty}">${comparisonCell('難度／對手',`<small>${row.difficulty} · ${fixedDifficultyLabels[row.difficulty]}</small><a href="?view=creatures&amp;q=${encodeURIComponent(row.target)}">${escape(targets.get(row.target).name)}</a>`)}<div role="cell" data-fixed-specialized><small class="weapon-mobile-label" aria-hidden="true">特化</small>${picksHtml(row.specialized)}</div>${comparisonCell('過渡',picksHtml(row.transition))}${comparisonCell('生存與使用方式',escape(row.reason))}</div>`).join('')}</div>
+ ${rows.length?'':'<p class="empty">沒有符合條件的對手，可重設搜尋與篩選。</p>'}</section>
+ <section id="fixed-arsenal"><h2>每種武器固定一個分支</h2><p>先為準備挑戰的難敵升級對應主力，感染育母用劍優先 +9；其餘按挑戰需要投資，不必一次把整張表升滿。過渡欄包含共用武器與已有才用的高成本選項。瓢蟲套用於補得回的戰鬥，火蟻套留給已能穩定存活時追輸出。</p>
+ <div role="table" class="weapon-table tool-advice-table" aria-label="懶人包固定武器分支"><div role="row" class="weapon-row weapon-heading">${['武器／唯一分支','用途','優先分配'].map(label=>`<span role="columnheader">${label}</span>`).join('')}</div>${fixedWeapons.map(gear=>`<div role="row" class="weapon-row" data-fixed-weapon="${gear.id}">${comparisonCell('武器／唯一分支',`${gearLinks([gear.weapon],weapons,'weapons',escape)}<small>${escape(gear.branch)}</small>`)}${comparisonCell('用途',escape(gear.role))}${comparisonCell('優先分配',escape(gear.goal))}</div>`).join('')}</div></section>
+ <p class="actions"><a href="?view=recommendations&amp;tab=progression">取得時序與防具強化</a><a href="?view=mutationBuilds">搭配各場合異變</a></p>
+ <p class="sources"><a href="https://grounded.wiki.gg/wiki/Infected_Broodmother" target="_blank" rel="noopener noreferrer">感染育母的清新單手與生存對策 ↗</a><a href="https://grounded.wiki.gg/wiki/Black_Widow" target="_blank" rel="noopener noreferrer">黑寡婦對策 ↗</a><a href="${smithingSource}" target="_blank" rel="noopener noreferrer">元素鍛造規則 ↗</a></p></section>`;
 }
 
 function targetRecommendationsHtml({filter,select,search,escape}){

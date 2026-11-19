@@ -1,5 +1,5 @@
 import {checkedAt,sources,trophies,steps,stages,collectibles,regions,superWinConditions,ngRules} from './data.js';
-import {config,world,run,player,collectionState,checklistRun,setCollection,stampActor,addRun,runLabel,importData} from './model.js';
+import {config,world,run,player,collectionState,checklistRun,setCollection,ngMolarState,setNGMolarState,stampActor,addRun,runLabel,importData} from './model.js';
 import {reportMapHtml,bindReportMap} from './map.js';
 import {creaturesHtml,reportReferenceHtml,collectionTarget,defaultReportGroup,groups,reportItems,itemById,reportConditionItems,reportSource,mapSource} from './report.js';
 import {mainTech,shopSource} from './chip-tech.js';
@@ -267,11 +267,11 @@ function render(){
  if(view()==='roadmap')for(const step of steps)if(!stepProgress(progress,step).complete)revealedSteps.delete(step.id);
  const active=document.activeElement,focusId=active?.id,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;
  const position=capturePosition(),activeTop=active?.getBoundingClientRect().top;
- const controls=[...$('app').querySelectorAll('[data-collect-check],[data-trophy],[data-step],[data-condition],[data-map-list]')];
+ const controls=[...$('app').querySelectorAll('[data-collect-check],[data-ng-absent],[data-trophy],[data-step],[data-condition],[data-map-list]')];
  const controlIndex=controls.indexOf(active);
  const neighborIds=controlIndex<0?[]:[...controls.slice(controlIndex+1),...controls.slice(0,controlIndex).reverse()].map(node=>node.id).filter(Boolean);
  $('app').innerHTML=header()+({overview:overviewHtml,roadmap:roadmapHtml,collectibles:collectiblesHtml,map:()=>reportMapHtml({...gearControls,selectedId:filter.mapItem,statusOf:mapStatus,ngRuns:mapRuns()}),creatures:()=>creaturesHtml(gearControls),trophies:trophyHtml,weapons:()=>weaponsHtml(gearControls),armor:()=>armorHtml(gearControls),shields:()=>shieldsHtml(gearControls),mutations:()=>mutationsHtml(gearControls),recommendations:()=>recommendationsHtml(gearControls),mutationBuilds:()=>mutationRecommendationsHtml(gearControls),chips:()=>chipsHtml(gearControls),sources:sourcesHtml}[view()]());
- if(!['overview','sources'].includes(view())&&(view()!=='recommendations'||filter.recommendationTab==='targets'))$('app').insertAdjacentHTML('afterbegin',`<div class="view-actions"><button id="reset-view">重設搜尋與篩選</button></div>`);
+ if(!['overview','sources'].includes(view())&&(view()!=='recommendations'||['targets','fixed'].includes(filter.recommendationTab)))$('app').insertAdjacentHTML('afterbegin',`<div class="view-actions"><button id="reset-view">重設搜尋與篩選</button></div>`);
  document.querySelectorAll('[data-view]').forEach(a=>{if(a.dataset.view===view()||(a.dataset.view==='equipment'&&isEquipment(view())))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  document.querySelectorAll('[data-stage]').forEach(a=>{if(view()==='roadmap'&&a.dataset.stage===filter.stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
  if(focusId&&$(focusId)){$(focusId).focus({preventScroll:true});if(selection&&$(focusId).setSelectionRange)try{$(focusId).setSelectionRange(...selection);}catch{}}
@@ -308,7 +308,7 @@ function mapRuns(){return Object.entries(world(progress).runs).filter(([,r])=>r.
 function mapStatus(item){
  if(item.category!=='ng-milk')return checklistStatus(item);
  const selectedRun=world(progress).runs[filter.mapRunId];
- return selectedRun?.level>0?collectionState(progress,item,selectedRun):null;
+ return ngMolarState(progress,item,selectedRun);
 }
 function focusItem(id){
  const scrollToItem=()=>requestAnimationFrame(()=>{
@@ -444,8 +444,13 @@ function bindControls(){
     const selectedRun=item.category==='ng-milk'?world(p).runs[mapRunId]:fromReference?checklistRun(p,item):run(p);
     if(item.category==='ng-milk'&&!selectedRun?.level)throw Error('請先建立並選擇 NG+ 周目');
     if(!selectedRun)throw Error('找不到第一輪紀錄');
-    setCollection(p,item,status,selectedRun);
+    if(item.category==='ng-milk')setNGMolarState(p,item,status==='obtained'?'obtained':'pending',selectedRun);
+    else setCollection(p,item,status,selectedRun);
    },(status==='obtained'?'已取得 · ':'取消取得 · ')+item.name));});
+ document.querySelectorAll('[data-ng-absent]').forEach(input=>input.onchange=()=>{
+  const item=itemById(input.dataset.ngAbsent),absent=input.checked,mapRunId=filter.mapRunId;
+  void action(()=>update(p=>setNGMolarState(p,item,absent?'absent':'pending',world(p).runs[mapRunId]),(absent?'找過但沒生成 · ':'恢復尚未查明 · ')+item.name));
+ });
  document.querySelectorAll('[data-condition]').forEach(input=>input.onchange=()=>{const done=input.checked,id=input.dataset.condition;void action(()=>update(p=>{const rows=run(p).conditions;rows[id]={...rows[id],done,...stampActor(p)};}));});
  for(const [id,key,group]of [['run-select','currentRunId','runs']])if($(id))$(id).onchange=e=>{const value=e.target.value;void action(()=>update(p=>{const w=world(p);if(!Object.hasOwn(w[group],value))throw Error('找不到記錄');w[key]=value;}));};
  if($('ng-backup'))$('ng-backup').onclick=()=>void action(async()=>{const raw=await store.stamp();download(JSON.parse(raw),'before-ng');ngBackupStamp=raw;message('下載已發起；請開啟檔案確認保存，再建立周目。');});
@@ -516,7 +521,7 @@ filter.stage=stageFromUrl()||(progress&&run(progress).storyStage)||'start';
 function applyReferenceUrl(){
  const params=pageParams();
  if(view()==='recommendations'){
-  if(params.has('tab'))filter.recommendationTab=params.get('tab')==='targets'?'targets':'progression';
+  if(params.has('tab'))filter.recommendationTab=['targets','fixed'].includes(params.get('tab'))?params.get('tab'):'progression';
   else if(location.hash)filter.recommendationTab='progression';
  }
  if(view()==='roadmap'&&stages.some(row=>row.id===stageFromUrl()))filter.stage=stageFromUrl();

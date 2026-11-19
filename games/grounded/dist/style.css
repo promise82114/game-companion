@@ -105,6 +105,7 @@
 #edit-notice button{flex-shrink:0}
 #feedback{bottom:86px}
 .yard-pin.obtained .pin-glyph>image,.yard-pin.obtained .pin-fallback{opacity:.3}
+.yard-pin.absent .pin-glyph>image,.yard-pin.absent .pin-fallback{opacity:.2;filter:grayscale(1)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:720px){
  .build-detail{grid-template-columns:minmax(0,1fr);gap:4px}.build-detail dd{margin-bottom:12px}
