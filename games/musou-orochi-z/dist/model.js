@@ -2,7 +2,7 @@ export const gameId = 'musou-orochi-z';
 export const weaponLevels = ['lv2', 'lv3', 'lv4'];
 export const wallpaperLevels = [25, 30, 35, 40, 45, 50];
 export const skillKey = (characterId, skillId) => characterId + ':' + skillId;
-const moduleVersion = '1.0.0';
+const moduleVersion = '1.0.1';
 const schema = 1;
 const booleanGroups = ['learnedCharacterSkills', 'extremeStageClears', 'collectedMaterials', 'unlockedCharacters'];
 const groups = ['proficiencyByCharacter', 'weaponsByCharacter', ...booleanGroups];

@@ -65,7 +65,7 @@ sections.dlcCharacters={...sections.characters,title:'DLC 角色清單',short:'D
 let activeView='weapons';
 function sectionItems(key=activeView){const s=sections[key];return availableItems().filter(i=>i.kind===s.kind&&(s.kind==='accessories'||!!i.extra===s.extra));}
 let section='weapons', filter='missing', current=[], undoStack=[], pendingImport=null, storageError='', recovered=false,missionLevel=1,missionMode='weapons',missionRows=[],missionOtherExpanded=false,missionTab='all';
-const fresh=()=>({app:'edfwb-collection',schema:1,catalogVersion:catalog.version,updatedAt:Date.now(),gameId:'edf-wb',moduleVersion:'1.1.0',revision:0,entries:{},favorites:{},content:{},missionNotes:{}});
+const fresh=()=>({app:'edfwb-collection',schema:1,catalogVersion:catalog.version,updatedAt:Date.now(),gameId:'edf-wb',moduleVersion:'1.1.1',revision:0,entries:{},favorites:{},content:{},missionNotes:{}});
 function validate(raw){
   if(raw?.schemaVersion!==undefined){const allowed=[window.SIDE_PROJECT_CLOUD_CONFIG.projectId,'edfwb-checklist'];if(!allowed.includes(raw.projectId))throw Error('備份不屬於這款遊戲。');return window.SideProjectProgress.unpack(raw,raw.projectId,validate);}
   if(!raw||raw.app!=='edfwb-collection'||raw.schema!==1||!raw.entries||typeof raw.entries!=='object'||Array.isArray(raw.entries))throw Error('這不是支援的 EDF WB 備份檔。');
@@ -114,6 +114,7 @@ function saveMissionNote(input){
  const code=input.dataset.missionNote;if(!missionIds.has(code))return;
  mergeLatest();if(missionNote(code)===input.value)return;
  if(!input.noteUndo){undoStack.push([{id:code,before:missionNote(code),type:'note'}]);undoStack=undoStack.slice(-30);input.noteUndo=true;}
+ for(const c of undoStack.at(-1)||[])if(c.type==='note'&&c.id===code)delete c.after;
  state.missionNotes??={};state.missionNotes[code]={...state.missionNotes[code],text:input.value,updatedAt:Date.now()};persist();$('undo').disabled=false;
 }
 function resizeNote(input){input.style.height='auto';input.style.height=input.scrollHeight+'px';}
@@ -138,6 +139,7 @@ function persist(){state.updatedAt=Date.now();state.revision=(Number.isSafeInteg
   state=validate(journal.write(journalView,state,{preserveConcurrent:syncCommit})).data;
   state.storageVersion=2;state.journalSignature=window.SideProjectSync.fingerprint(state);
   localStorage.setItem(KEY,JSON.stringify(state));journalView=JSON.parse(JSON.stringify(state));changeSeq++;storageError='';
+  for(const c of undoStack.at(-1)||[])if(!Object.hasOwn(c,'after'))c.after=JSON.stringify(undoRecord(c));
   journal.compact().catch(()=>{});
   const latest=snapshots()[0];if(!latest||Date.now()-latest.at>10*60*1000)saveSnapshot('自動儲存');
 }catch{storageError='儲存失敗 · 請下載備份';toast('瀏覽器無法儲存，請立即下載進度備份。');}status();window.dispatchEvent(new Event('edf-progress-change'));}
@@ -353,7 +355,8 @@ for(const id of ['missionList','missionOther','favoriteMissionList','recommended
  change([w],e.target.checked);
  }});
 $('filter').onclick=e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));render();};
-$('undo').onclick=()=>{const changes=undoStack.pop();if(!changes)return;mergeLatest();for(const c of changes){if(c.type==='content'){state.content??={};state.content[c.id]={...state.content[c.id],enabled:c.before,updatedAt:Date.now()};}else if(c.type==='note'){state.missionNotes??={};state.missionNotes[c.id]={...state.missionNotes[c.id],text:c.before,updatedAt:Date.now()};}else if(c.type==='favorite'){state.favorites??={};state.favorites[c.id]={...state.favorites[c.id],favorite:c.before,updatedAt:Date.now()};}else state.entries[c.id]={...state.entries[c.id],owned:c.before,updatedAt:Date.now()};}persist();render();toast('已復原上一步。');};
+function undoRecord(c){return state[{content:'content',note:'missionNotes',favorite:'favorites'}[c.type]||'entries']?.[c.id];}
+$('undo').onclick=()=>{const changes=undoStack.at(-1);if(!changes)return;mergeLatest();if(storageError||changes.some(c=>!Object.hasOwn(c,'after')||JSON.stringify(undoRecord(c))!==c.after)){toast('紀錄已有後續變更，撤銷已停止；請回清單核對。');return;}undoStack.pop();syncCommit=true;for(const c of changes){if(c.type==='content'){state.content??={};state.content[c.id]={...state.content[c.id],enabled:c.before,updatedAt:Date.now()};}else if(c.type==='note'){state.missionNotes??={};state.missionNotes[c.id]={...state.missionNotes[c.id],text:c.before,updatedAt:Date.now()};}else if(c.type==='favorite'){state.favorites??={};state.favorites[c.id]={...state.favorites[c.id],favorite:c.before,updatedAt:Date.now()};}else state.entries[c.id]={...state.entries[c.id],owned:c.before,updatedAt:Date.now()};}try{persist();}finally{syncCommit=false;}render();toast(storageError?'撤銷未能保存，請核對備份。':'已復原上一步。');};
 $('markVisible').onclick=()=>{const list=current.filter(i=>!owned(i));if(list.length&&confirm('將目前顯示的 '+list.length+' 個未取得項目全部標記為已取得？')){saveSnapshot('批次勾選前');change(list,true);toast('已勾選 '+list.length+' 項，可以復原。');}};
 $('clearFilters').onclick=()=>switchSection(activeView);$('backupOpen').onclick=()=>{backupInfo();$('backupDialog').showModal();};$('helpOpen').onclick=()=>$('helpDialog').showModal();
 $('export').onclick=()=>{mergeLatest();download(state);try{localStorage.setItem(META,String(Date.now()));}catch{}backupInfo();$('backupMessage').textContent='已送出備份下載，請確認檔案已存到下載資料夾。';};

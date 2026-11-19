@@ -32,3 +32,10 @@ node scripts/verify-site.mjs
 # 另開 server.mjs 後執行
 node scripts/verify-musou-orochi-z-browser.mjs
 ```
+
+
+## 2026-11-19 共通操作調整
+
+1.0.1：單項勾選、熟練度及批次操作均可撤銷；收集清單預設未完成並可查看已完成。統計可連到缺項；備份移至右上，手機功能導覽可收合。切換功能重設條件，指定項目連結會確保目標可見。
+
+沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。

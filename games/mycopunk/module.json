@@ -3,7 +3,7 @@
   "slug": "mycopunk",
   "title": "Mycopunk",
   "description": "雙語攻略、升級收集清單、隱藏解鎖與配裝模擬",
-  "moduleVersion": "1.0.0",
+  "moduleVersion": "1.0.1",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/mycopunk/",

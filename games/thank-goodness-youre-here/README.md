@@ -184,3 +184,10 @@ node scripts/verify-thank-goodness-browser.mjs
 2026-10-31 本機結果：新模組資料檢查、根 verify／build／verify-site、EDF 的 verify-sync、verify-browser、verify-sync-browser 及 Mycopunk 隔離瀏覽器皆通過。新模組隔離瀏覽器測試通過、pageerror 0；含缺 ETag／忽略條件的伺服器阻擋、壞進度原文下載。25 個單一來源或有爭議步驟標為 unverified，74 個為 consensus，1 個白金核對步驟為 verified；33 個獎盃列表資料另已核對。真實 Google 與 PS5 遊玩未驗收。
 
 本次新增本模組的 manifest、README、資料驗證器、`dist/{index.html,style.css,guide.json,model.js,app.js,sw.js,cloud-config.js}` 與五個 shared 檔；新增 `scripts/verify-thank-goodness-browser.mjs`。根 `scripts/verify.mjs`／`verify-site.mjs` 接入必要模組檢查，`verify-browser.mjs` 將 Portal 寫死的三款改成依 registry 驗證完整入口；根 README／ARCHITECTURE 補上整合說明。其他遊戲來源未改動；其他未提交工作不納入本次發布。
+
+
+## 2026-11-19 共通操作調整
+
+1.4.2：新增步驟／獎盃撤銷，未完成篩選勾完立即移除；切換功能重設搜尋與篩選。完成收合仍保留重要警告，跨階段追蹤的未完成群組預設展開。
+
+沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。

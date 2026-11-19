@@ -88,7 +88,7 @@ try{
   await page.evaluate(id=>change([catalog.items.find(i=>i.id===id)],true),firstId);
   await page.locator('#merge').click();assert.match(await page.locator('#migrationMessage').textContent(),/已有變更/);assert.equal(await page.evaluate(id=>state.entries[id].owned,firstId),true);
   // 其他遊戲的 raw/envelope 與損壞輸入不套用。
-  await upload({...source,app:'wrong-game'});assert.equal(await page.locator('#importPreview').isVisible(),false);assert.match(await page.locator('#backupMessage').textContent(),/不是/);
+  await upload({...source,app:'wrong-game'});await page.waitForFunction(()=>document.getElementById('backupMessage').textContent.includes('不是'));assert.equal(await page.locator('#importPreview').isVisible(),false);assert.match(await page.locator('#backupMessage').textContent(),/不是/);
   await page.locator('#backupDialog .close').click();
   await page.locator('#cloudQuick').click();await page.waitForFunction(()=>document.getElementById('cloudConnect').textContent.includes('連接／'));
   assert.equal(await page.locator('#cloudUpload').isDisabled(),true);assert.equal(await page.locator('#cloudAuto').isChecked(),false);

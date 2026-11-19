@@ -25,6 +25,10 @@
     };
     $('import-file').disabled = true; return;
   }
+  const {installUndo}=await import('./progress-undo.js');
+  const edits={update:fn=>store.transact(current=>{const next=fn(current);return {...next,revision:current.revision+1,updatedAt:Date.now()};})};
+  installUndo(edits,{groups:['stepDone','trophyEarned'],parent:document.querySelector('.workspace-bar .actions'),onError:fatal,onSuccess:message});
+  $('filter').value='pending';
   const steps = guide.stages.flatMap(stage => stage.steps), trophyMap = new Map(guide.trophies.map(trophy => [trophy.id, trophy]));
   const roadmap = window.RoadmapProgress.create(guide), milestones = roadmap.milestones;
   const milestoneMap = new Map(milestones.map(item => [item.id, item]));
@@ -53,7 +57,7 @@
     return '<div class="instruction" data-instruction="'+step.id+'"><p class="instruction-location">'+characterText(step.location)+'</p><p class="step-action">'+characterText(step.action)+'</p><p class="step-trigger"><span>時機：</span>'+characterText(step.trigger)+'</p>'+(step.verificationStatus==='unverified'?'<p class="instruction-caution">待查證：此處位置或操作尚未完成實機核對。</p>':'')+(step.verification.startsWith('核對畫面互動已結束')?'':'<p class="instruction-success">判定：'+characterText(step.verification)+'</p>')+'</div>';
   }
   function warningText(item) {
-    const pending=item.steps.filter(step=>!store.data.stepDone[step.id]);
+    const pending=item.steps;
     return [pending.some(step=>step.warningLevel==='critical'&&step.missable)?'容易錯過／留意推進順序':'',pending.some(step=>step.verificationStatus==='unverified')?'含待查證內容':''].filter(Boolean).join(' · ');
   }
   function stepHtml(item, compact = false) {
@@ -61,7 +65,7 @@
     const trophyIds=[...new Set(item.steps.flatMap(step=>step.trophyIds))];
     const checks=guide.routeChecks.filter(check=>item.stepIds.includes(check.beforeStepId)).map(check=>'<div data-route-check="'+check.id+'">'+routeCheckHtml(check)+'</div>').join('');
     const control='<input type="checkbox" data-group="stepDone" data-id="'+item.id+'" '+(complete?'checked':'')+'>';
-    return '<article class="step '+(complete?'done':'')+'" data-step-row="'+item.id+'" data-done="'+complete+'" id="'+rowId+'"><div class="step-head"><label>'+control+'<span class="step-order">第 '+item.steps[0].order+' 步</span><span class="step-location">'+characterText(item.title)+'</span></label><button class="step-reveal" data-step-details="'+item.id+'" aria-controls="'+rowId+'-body" aria-expanded="'+open+'" '+(complete?'':'hidden')+'>'+(open?'收起詳情':'查看已完成細節')+'</button></div><p class="warning critical" '+(!complete&&warningText(item)?'':'hidden')+'>'+escape(warningText(item))+'</p>'+checks+'<div class="step-body" id="'+rowId+'-body" '+(open?'':'hidden')+'>'+item.steps.map(instructionHtml).join('')+(item.steps.some(step=>step.warningLevel==='critical'&&step.missable)?'<p class="milestone-recovery">錯過後：'+characterText(item.steps.find(step=>step.warningLevel==='critical'&&step.missable).recovery)+'</p>':'')+(trophyIds.length?'<div class="trophy-inline">'+trophyIds.map(trophyInput).join('')+'</div>':'')+'</div></article>';
+    return '<article class="step '+(complete?'done':'')+'" data-step-row="'+item.id+'" data-done="'+complete+'" id="'+rowId+'"><div class="step-head"><label>'+control+'<span class="step-order">第 '+item.steps[0].order+' 步</span><span class="step-location">'+characterText(item.title)+'</span></label><button class="step-reveal" data-step-details="'+item.id+'" aria-controls="'+rowId+'-body" aria-expanded="'+open+'" '+(complete?'':'hidden')+'>'+(open?'收起詳情':'查看已完成細節')+'</button></div><p class="warning critical" '+(warningText(item)?'':'hidden')+'>'+escape(warningText(item))+'</p>'+checks+'<div class="step-body" id="'+rowId+'-body" '+(open?'':'hidden')+'>'+item.steps.map(instructionHtml).join('')+(item.steps.some(step=>step.warningLevel==='critical'&&step.missable)?'<p class="milestone-recovery">錯過後：'+characterText(item.steps.find(step=>step.warningLevel==='critical'&&step.missable).recovery)+'</p>':'')+(trophyIds.length?'<div class="trophy-inline">'+trophyIds.map(trophyInput).join('')+'</div>':'')+'</div></article>';
   }
   function preserveReadingPosition(update) {
     const focus=document.activeElement;let anchor=readingAnchor||focus?.closest('.step-head, summary');const fromEdit=!!readingAnchor;readingAnchor=null;
@@ -78,7 +82,7 @@
       const open=!complete||expandedSteps.has(item.id),button=row.querySelector('[data-step-details]');
       row.querySelector('.step-body').hidden=!open;button.hidden=!complete;button.setAttribute('aria-expanded',String(open));button.textContent=open?'收起詳情':'查看已完成細節';
       row.querySelector('.step-head input').checked=complete;
-      const warning=row.querySelector('.warning');warning.textContent=warningText(item);warning.hidden=complete||!warning.textContent;
+      const warning=row.querySelector('.warning');warning.textContent=warningText(item);warning.hidden=!warning.textContent;
     });
     document.querySelectorAll('[data-stage-panel]').forEach(panel=>{const complete=stageDone(guide.stages.find(stage=>stage.id===panel.dataset.stagePanel));if(panel.dataset.complete!==String(complete))panel.open=!complete;panel.dataset.complete=String(complete);});
     document.querySelectorAll('[data-route-check]').forEach(node=>node.innerHTML=routeCheckHtml(guide.routeChecks.find(check=>check.id===node.dataset.routeCheck)));
@@ -116,7 +120,7 @@
     $('chapter-select').innerHTML=guide.stages.map(stage=>'<option value="'+stage.id+'" '+(activeStage===stage.id?'selected':'')+'>'+escape(stage.title)+'</option>').join('');
     $('section-select').innerHTML='<option value="">本章步驟…</option>'+roadmap.forStage(activeStage).map(item=>'<option value="'+item.id+'">'+escape(item.title)+'</option>').join('');
     $('stage-nav').innerHTML=guide.stages.map(stage=>'<button data-stage="'+stage.id+'" aria-label="'+escape(stage.title)+'" '+(activeStage===stage.id?'aria-current="step"':'')+'>'+stage.title.slice(0,2)+'</button>').join('');
-    const reveal=$('search').value.trim()||$('filter').value!=='all';
+    const reveal=$('search').value.trim()||!['all','pending'].includes($('filter').value);
     if(reveal)milestones.filter(item=>matches(item,'milestone')&&done(item)).forEach(item=>expandedSteps.add(item.id));
     if(view==='roadmap'){
       $('content').innerHTML=guide.stages.map(stage=>{
@@ -127,7 +131,7 @@
     }else if(view==='trackers'){
       $('content').innerHTML=guide.trackers.map(tracker=>{
         const visible=[...new Set(tracker.stepIds.map(id=>roadmap.byStep.get(id)))].filter(item=>matches(item,'milestone'));if(!visible.length)return '';
-        return '<details class="tracker"><summary><strong>'+characterText(tracker.title)+'</strong><span class="count" data-tracker-count="'+tracker.id+'"></span></summary><div class="tracker-body"><p class="meta">'+characterText(tracker.note)+'</p>'+visible.map(item=>stepHtml(item,true)).join('')+'</div></details>';
+        return '<details class="tracker" '+(!tracker.stepIds.every(id=>store.data.stepDone[id])?'open':'')+'><summary><strong>'+characterText(tracker.title)+'</strong><span class="count" data-tracker-count="'+tracker.id+'"></span></summary><div class="tracker-body"><p class="meta">'+characterText(tracker.note)+'</p>'+visible.map(item=>stepHtml(item,true)).join('')+'</div></details>';
       }).join('');
     }else if(view==='trophies'){
       $('content').innerHTML='<p class="meta">攻略步驟與獎盃分別記錄；勾完步驟不會自動勾選獎盃，白金也需手動確認。</p>'+guide.trophies.filter(trophy=>matches(trophy,'trophyEarned')).map(trophy=>'<article class="trophy-row"><input id="trophy-'+trophy.id+'" type="checkbox" data-group="trophyEarned" data-id="'+trophy.id+'" '+(store.data.trophyEarned[trophy.id]?'checked':'')+'><div><label for="trophy-'+trophy.id+'">'+trophyNameHtml(trophy)+' '+trophyProgressHtml(trophy)+'</label>'+(trophy.progress?'<p class="trophy-progress-note">'+escape(trophy.progress.note)+'</p>':'')+'<p>'+characterText(trophy.description)+'</p><div class="links">'+[...new Set(steps.filter(step=>step.trophyIds.includes(trophy.id)).map(step=>roadmap.byStep.get(step.id)))].map(item=>'<button data-jump="'+item.id+'">'+characterText(item.title)+'</button>').join('')+'</div></div><small>'+{platinum:'白金',story:'主線',optional:'支線／收集'}[trophy.category]+'</small></article>').join('');
@@ -139,6 +143,7 @@
     converge();stats();
   }
   function syncUi() {
+    if($('filter').value!=='all'){const focused=document.activeElement,group=focused?.dataset.group,id=focused?.dataset.id,inputs=[...$('content').querySelectorAll('input[data-group]')],at=inputs.indexOf(focused),neighbors=[...inputs.slice(at+1),...inputs.slice(0,Math.max(0,at)).reverse()].map(el=>[el.dataset.group,el.dataset.id]),top=scrollY;render();const next=document.querySelector('input[data-group="'+group+'"][data-id="'+id+'"]')||neighbors.map(([g,k])=>document.querySelector('input[data-group="'+g+'"][data-id="'+k+'"]')).find(Boolean)||$('content');if(group){next.tabIndex=next.tabIndex<0?-1:next.tabIndex;next.focus({preventScroll:true});scrollTo(0,top);}message('已儲存在此裝置');return;}
     preserveReadingPosition(()=>{document.querySelectorAll('input[data-group]').forEach(input=>input.checked=!!store.data[input.dataset.group][input.dataset.id]);converge();stats();message('已儲存在此裝置');});
   }
   function jump(id) {
@@ -147,14 +152,14 @@
   }
   document.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
-    if(button.dataset.view){view=button.dataset.view;history.pushState(null,'','?view='+view+'#'+activeStage);render();}
+    if(button.dataset.view){$('search').value='';$('filter').value='pending';view=button.dataset.view;history.pushState(null,'','?view='+view+'#'+activeStage);render();}
     if(button.dataset.jump)jump(button.dataset.jump);if(button.dataset.stage)selectStage(button.dataset.stage);
     if(button.dataset.stepDetails)preserveReadingPosition(()=>{const id=button.dataset.stepDetails;if(expandedSteps.has(id))expandedSteps.delete(id);else expandedSteps.add(id);converge();});
   });
   document.addEventListener('change',async event=>{
     const input=event.target;if(!input.matches('input[data-group]'))return;
     const hadFocus=document.activeElement===input;readingAnchor=input.closest('.step-head');input.disabled=true;message('儲存中…');
-    try{await store.toggle(input.dataset.group,input.dataset.id,input.checked);}catch(error){syncUi();fatal(error);}finally{input.disabled=false;readingAnchor=null;if(hadFocus&&input.getClientRects().length)input.focus({preventScroll:true});}
+    try{await edits.update(current=>{current[input.dataset.group][input.dataset.id]=input.checked;return current;});}catch(error){syncUi();fatal(error);}finally{input.disabled=false;readingAnchor=null;if(hadFocus&&input.getClientRects().length)input.focus({preventScroll:true});}
   });
   window.addEventListener('roadmap-progress-change',()=>{syncUi();cloudRender();});
   window.addEventListener('focus',()=>store.refresh().then(syncUi).catch(fatal));

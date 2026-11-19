@@ -1,6 +1,6 @@
 export const appId = 'mycopunk-checklist';
 export const gameId = 'mycopunk';
-export const moduleVersion = '1.0.0';
+export const moduleVersion = '1.0.1';
 export const storagePrefix = 'game-companion.mycopunk.';
 export const storageKey = storagePrefix + 'progress.v1';
 export const beforeImportKey = storagePrefix + 'before-import.v1';

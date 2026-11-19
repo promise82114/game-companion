@@ -80,6 +80,7 @@ Grounded 已完成本機整合：`/game-companion/games/grounded/` 提供七階�
 Thank Goodness You're Here! 已整合並納入 main 的 Pages 發布流程：[模組說明](games/thank-goodness-youre-here/README.md)。[正式測試入口](https://promise82114.github.io/game-companion/games/thank-goodness-youre-here/)包含 PS5 本體 33 獎盃、8 階段、100 個獨立步驟與 13 組跨階段追蹤。IndexedDB 分開保存攻略與獎盃狀態，Drive 沿用既有安全同步核心。執行 `node scripts/verify-thank-goodness-browser.mjs` 驗證新模組；真實 PS5 跳盃與正式 Google Drive 尚待人工驗收。
 
 - [目前架構](docs/ARCHITECTURE.md)
+- [共通介面偏好](docs/UI_PREFERENCES.md)：跨電腦共用的路線圖、完整清單與篩選操作規範。
 - [新增遊戲模組契約](docs/MODULE_CONTRACT.md)
 - [資料遷移與回復](docs/MIGRATION_PLAN.md)
 - [驗收結果與限制](docs/ACCEPTANCE.md)

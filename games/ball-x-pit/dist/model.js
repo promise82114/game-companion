@@ -1,7 +1,7 @@
 export const clone=value=>value===undefined?undefined:JSON.parse(JSON.stringify(value));
 export const groups=['clears','stepDone','blueprintObtained','buildingBuilt','recipeMade','encyclopediaUnlocked','trophyEarned'];
 export const storagePrefix='game-companion.ball-x-pit.';
-export function fresh(){return {gameId:'ball-x-pit',schema:1,moduleVersion:'1.0.0',dataVersion:'2026-11-09.1',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(k=>[k,{}]))};}
+export function fresh(){return {gameId:'ball-x-pit',schema:1,moduleVersion:'1.0.1',dataVersion:'2026-11-09.1',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(k=>[k,{}]))};}
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 let knownIds;
 export function configureCatalog(data){knownIds={clears:new Set(data.characters.flatMap(c=>data.levels.map(l=>clearId(c.id,l.id)))),stepDone:new Set(data.roadmapSteps.map(r=>r.id)),blueprintObtained:new Set(data.buildings.map(r=>r.id)),buildingBuilt:new Set(data.buildings.map(r=>r.id)),recipeMade:new Set(data.recipes.map(r=>r.id)),encyclopediaUnlocked:new Set(data.encyclopedia.map(r=>r.id)),trophyEarned:new Set(data.trophies.map(r=>r.id))};}
@@ -12,7 +12,7 @@ export function validateProgress(p){
  for(const g of groups){if(!object(p[g]))throw Error('進度群組損壞：'+g);for(const [id,v]of Object.entries(p[g]))if(knownIds[g].has(id)&&typeof v!=='boolean')throw Error('完成紀錄必須是布林值：'+g);}
  return p;
 }
-export const config={gameId:'ball-x-pit',moduleVersion:'1.0.0',storagePrefix,exportSyncState:false,fresh,validateProgress};
+export const config={gameId:'ball-x-pit',moduleVersion:'1.0.1',storagePrefix,exportSyncState:false,fresh,validateProgress};
 export function parseImport(value,side='localRaw',depth=0){
  if(depth>5)throw Error('復原檔巢狀過深，請選原始 JSON。');
  if(value?.gameId!=='ball-x-pit')throw Error('不是 BALL x PIT 備份；未修改資料。');

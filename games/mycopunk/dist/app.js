@@ -65,14 +65,19 @@ function renderStorageNotice() {
   $('#storage-notice').hidden = !storageBlocked && storageWritable;
   $('#storage-notice').textContent = storageBlocked ? '原有收集資料無法讀取，已保留原檔並暫停修改。可到來源說明下載原始資料，或用有效備份修復。' : '瀏覽器儲存不可用，勾選暫存在記憶體。請至收集清單匯出備份。';
 }
-function writeRecord(id, patch) {
-  const persisted = readStorage();
-  if (storageBlocked) { renderStorageNotice(); showToast('請先以有效備份修復收集資料。'); return; }
-  if (persisted) collection = mergeCollections(persisted, collection).collection;
-  collection.records[id] = { ...(collection.records[id] || { collected: false, tracked: false, note: '' }), ...patch, updatedAt: new Date().toISOString() };
-  collection.revision = (collection.revision ?? 0)+1;
-  try { rawStorage = JSON.stringify(collection); localStorage.setItem(storageKey, rawStorage); storageWritable = true; } catch { storageWritable = false; }
-  renderStorageNotice(); refresh();
+const edits={update:async change=>{
+ const save=()=>{
+  const latest=readStorage();if(storageBlocked||!storageWritable)throw Error('儲存不可用，已停止修改；請先備份。');
+  const current=latest||collection,next=change(structuredClone(current));next.revision=(current.revision||0)+1;
+  const raw=JSON.stringify(next);localStorage.setItem(storageKey,raw);rawStorage=raw;collection=next;refresh();return structuredClone(next);
+ };
+ return navigator.locks?navigator.locks.request(storageKey+'.edit',save):save();
+}};
+const {installUndo}=await import(new URL(import.meta.url.includes('/dist/')?'../../../shared/progress-undo.js':'../../shared/progress-undo.js',import.meta.url));
+installUndo(edits,{groups:['records'],parent:document.querySelector('.header-tools'),onError:e=>showToast(e.message),onSuccess:showToast});
+async function writeRecord(id,patch){
+ try{await edits.update(current=>{current.records[id]={...(current.records[id]||{collected:false,tracked:false,note:''}),...patch,updatedAt:new Date().toISOString()};return current;});}
+ catch(e){renderStorageNotice();showToast(e.message);}
 }
 function urlFor(patch) {
   const next = { ...defaults, ...patch };
@@ -92,13 +97,13 @@ function readUrl() {
   filters.query = (params.get('query') || '').slice(0, 500);
   if (rarities.includes(params.get('rarity'))) filters.rarity = params.get('rarity');
   if (Object.hasOwn(tagLabels, params.get('tag'))) filters.tag = params.get('tag');
-  if (['all', 'missing', 'collected', 'tracked'].includes(params.get('status'))) filters.status = params.get('status');
+  if (['all', 'missing', 'collected', 'tracked'].includes(params.get('status'))) filters.status = params.get('status');else if(filters.view==='collection')filters.status='missing';
   if (['source', 'name', 'rarity', 'size', 'missing'].includes(params.get('sort'))) filters.sort = params.get('sort');
   if (filters.view === 'recommendations') { filters.category = 'weapons'; if (!recommendationIndex?.owners.has(filters.owner) && !dataset.owners.some(o => o.id === filters.owner && o.category === 'weapons')) filters.owner = ''; }
   if (filters.view === 'planner' && filters.owner && !['characters','weapons','grenades','heavy'].includes(ownersById.get(filters.owner)?.category)) { filters.owner = ''; filters.category = 'all'; }
 }
 function navigate(patch, scroll = true) {
-  Object.assign(filters, defaults, patch);
+  Object.assign(filters,defaults,patch);if(filters.view==='collection'&&!Object.hasOwn(patch,'status'))filters.status='missing';
   history.pushState(null, '', urlFor(filters));
   refresh();
   if (scroll) { $('#main').focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
@@ -150,7 +155,7 @@ function renderGearProfile(profile) {
 }
 function renderCollection() {
   const upgrades = scopeUpgrades(); const count = countCollected(upgrades);
-  return `<section class="collection-summary"><div><span class="eyebrow">CATALOGUE RECORDS / 圖鑑收集進度</span><p><b>${count}</b> / ${upgrades.length}<span>${(100 * count / (upgrades.length || 1)).toFixed(1)}%</span></p><progress max="${upgrades.length || 1}" value="${count}" aria-label="收集進度"></progress></div><div><p>Progress is stored in this browser. / 紀錄僅儲存於此瀏覽器。</p><button type="button" data-action="backup">備份與還原</button></div></section><div class="collection-groups">${[['all','All','全部'],...wikiCategories,['general','General','通用']].map(([id,en,zh])=>`<button type="button" data-collection-category="${id}" aria-pressed="${filters.category===id}">${en} <span>${zh}</span></button>`).join('')}</div><p class="data-note">Catalogue counts are not a verified trophy total. Two archived Workbook entries are retained for existing saves. / 圖鑑筆數不等於獎盃總數；兩筆舊表項目另行保留，不計入進度，並於列內標註。</p>`;
+  return `<section class="collection-summary"><div><span class="eyebrow">CATALOGUE RECORDS / 圖鑑收集進度</span><p><button type="button" data-action="collection-missing">查看尚未蒐集 <b>${count}</b> / ${upgrades.length}</button><span>${(100 * count / (upgrades.length || 1)).toFixed(1)}%</span></p><progress max="${upgrades.length || 1}" value="${count}" aria-label="收集進度"></progress></div><div><p>Progress is stored in this browser. / 紀錄僅儲存於此瀏覽器。</p><button type="button" data-action="backup">備份與還原</button></div></section><div class="collection-groups">${[['all','All','全部'],...wikiCategories,['general','General','通用']].map(([id,en,zh])=>`<button type="button" data-collection-category="${id}" aria-pressed="${filters.category===id}">${en} <span>${zh}</span></button>`).join('')}</div><p class="data-note">Catalogue counts are not a verified trophy total. Two archived Workbook entries are retained for existing saves. / 圖鑑筆數不等於獎盃總數；兩筆舊表項目另行保留，不計入進度，並於列內標註。</p>`;
 }
 function renderUnlocks() {
   if (!fieldGuide?.hiddenPaths) return '<p class="data-note">Hidden paths could not load. Please reload. / 隱藏路徑未能載入，請重新整理。</p>';
@@ -238,6 +243,7 @@ function setupEvents() {
   document.addEventListener('click',event=>{
     const element=event.target.closest('button,a[data-home],a[data-route]');if(!element||element.disabled)return;const data=element.dataset;
     if($('#nav-dialog').open&&$('#sidebar').contains(element))closeNavigation();
+    if(data.action==='collection-missing')navigate({view:'collection',status:'missing',category:filters.category,owner:filters.owner});
     if(data.home!==undefined){event.preventDefault();navigate({view:'home'});}
     if(data.route){event.preventDefault();navigate({view:data.route});}
     if(data.view)navigate({view:data.view,category:data.view==='recommendations'?'weapons':'all'});
@@ -264,8 +270,8 @@ function setupEvents() {
   document.addEventListener('submit',event=>{if(event.target.id==='filters'){event.preventDefault();return;}if(event.target.id==='site-search'){event.preventDefault();navigate({view:'library',query:$('#home-query').value.slice(0,500)});}});
   $('#search').addEventListener('input',event=>{filters.query=event.target.value.slice(0,500);renderResults();history.replaceState(null,'',urlFor(filters));});
   $('#filters').addEventListener('change',event=>{const fields={'rarity-filter':'rarity','tag-filter':'tag','status-filter':'status','sort-filter':'sort'};if(fields[event.target.id]){filters[fields[event.target.id]]=event.target.value;renderResults();history.replaceState(null,'',urlFor(filters));}});
-  document.addEventListener('change',event=>{
-    const id=event.target.dataset.collect;if(id){writeRecord(id,{collected:event.target.checked});const root=filters.view==='recommendations'?$('#recommendations-view'):$('#upgrade-list');(root.querySelector(`[data-collect="${id}"]`)||$(filters.view==='recommendations'?'#rec-missing':'#status-filter')).focus();}
+  document.addEventListener('change',async event=>{
+    const id=event.target.dataset.collect;if(id){await writeRecord(id,{collected:event.target.checked});const root=filters.view==='recommendations'?$('#recommendations-view'):$('#upgrade-list');(root.querySelector(`[data-collect="${id}"]`)||$(filters.view==='recommendations'?'#rec-missing':'#status-filter')).focus();}
     if(event.target.id==='import-file')void previewImport(event.target.files[0]);
     const fields={'rec-source':'source','rec-tier':'tier','rec-missing':'missing'};if(fields[event.target.id]){recommendationState[fields[event.target.id]]=event.target.id==='rec-missing'?event.target.checked:event.target.value;renderRecommendationPage();$('#'+event.target.id)?.focus();}
   });

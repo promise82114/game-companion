@@ -72,3 +72,10 @@ node verify.mjs
 正式網址：https://promise82114.github.io/edfwb-checklist/ 。網址不含 `dist`；從本機網址移轉進度時，先下載 JSON 備份，再到正式網址匯入。
 
 `outputs/` 為忽略的本機截圖、擷取工作檔與測試備份，不納入網站或 Git。
+
+
+## 2026-11-19 共通操作調整
+
+1.1.1：撤銷比對項目操作後的完整紀錄（含 journal changeId），遇到其他分頁的後續修改即停止；撤銷寫入沿用條件式 journal，不無條件蓋回舊值。
+
+沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。

@@ -9,6 +9,9 @@ const views = {characters: '全武將', stages: '全關卡', skills: '全特技'
 const modes = {original: '原版', rebirth: '再臨', drama: '戲劇模式'};
 const factions = ['蜀', '魏', '吳', '戰國', '遠呂智'];
 const filters = {};
+let lastView;
+const {installUndo}=await import(new URL(import.meta.url.includes('/dist/')?'../../../shared/progress-undo.js':'../../shared/progress-undo.js',import.meta.url));
+
 const openedCharacters = new Map();
 const normalProficiencyStops = [10, 20, ...wallpaperLevels];
 const specialProficiencyStops = [20];
@@ -32,7 +35,7 @@ const checkboxInput = (group, id, attrs = '') => '<input type="checkbox" data-gr
 const check = (group, id, label, attrs = '', style = '') => '<label class="check ' + style + '">' +
   checkboxInput(group, id, attrs) + '<span>' + esc(label) + '</span></label>';
 
-let catalog, model, store, progress, materialsByStage, references, view, review, undo;
+let catalog, model, store, progress, materialsByStage, references, view, review;
 let busy = false;
 let ready = false;
 let saving = Promise.resolve();
@@ -41,7 +44,7 @@ let proficiencyDrag;
 function report(message) {
   $('notice').hidden = false;
   $('message').textContent = message;
-  $('undo').hidden = !undo;
+  // Undo visibility is managed by the session history.
 }
 
 function route() {
@@ -61,8 +64,8 @@ function renderStats() {
   const roster = catalog.characters.length;
   const normalRoster = catalog.characters.filter(row => !row.special).length;
   const stat = (label, value, total, description = label) =>
-    '<div><span>' + label + '</span><strong>' + value + ' / ' + total + '</strong>' +
-    '<progress aria-label="' + description + '" value="' + value + '" max="' + total + '"></progress></div>';
+    '<button type="button" data-stat-label="'+esc(label)+'"><span>' + label + '</span><strong>' + value + ' / ' + total + '</strong>' +
+    '<progress aria-label="' + description + '" value="' + value + '" max="' + total + '"></progress></button>';
   $('stats').innerHTML = [
     ...count.weaponCounts.map((value, i) => stat('Lv.' + (i + 2) + ' 武器', value, roster)),
     stat('武器合計', count.weapons, roster * weaponLevels.length),
@@ -77,16 +80,16 @@ function toolbar() {
   const search = '<input type="search" data-filter="query" aria-label="搜尋名稱" placeholder="搜尋名稱">';
   if (view === 'characters') {
     return search + select('status', '武將進度篩選', [['', '全部進度'], ['skills', '特技未全習得'], ['costumes', '服裝未達標'],
-        ['weapons', '武器未收齊'], ['incomplete', '未完成']]);
+        ['weapons', '武器未收齊'], ['lv2','Lv.2 武器未取得'], ['lv3','Lv.3 武器未取得'], ['lv4','Lv.4 武器未取得'], ['wallpapers','壁紙未收齊'], ['incomplete', '未完成'], ['complete','已完成']]);
   }
   if (view === 'stages') {
     return search + select('mode', '劇本模式', [['', '所有模式'], ...Object.entries(modes)]) +
       select('status', '通關進度篩選', [['', '全部進度'], ['incomplete', '未完成']]);
   }
   if (view === 'materials') {
-    return search + select('status', '素材進度篩選', [['', '全部進度'], ['incomplete', '未取得']]);
+    return search + select('status', '素材進度篩選', [['', '全部進度'], ['incomplete', '未取得'], ['complete','已取得']]);
   }
-  return view === 'skills' ? search : '';
+  return view==='skills'?search+select('status','特技進度篩選',[['','全部'],['incomplete','未完成'],['complete','已完成']]):'';
 }
 
 function factionTabs() {
@@ -203,7 +206,7 @@ function render() {
   if ($('stage-dialog').open) $('stage-dialog').close();
   const [nextView, target] = route();
   view = nextView;
-  if (target) filters[view] = {};
+  if(lastView!==view||target)filters[view]={status:target?'':'incomplete'};lastView=view;
   for (const link of document.querySelectorAll('#navigation a, .source-link')) {
     if (link.hash === '#' + view) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
@@ -319,22 +322,22 @@ function applyFilters() {
       const summary = model.characterStatus(progress, character);
       const statuses = {
         skills: summary.learned < summary.assigned.length, costumes: !summary.costumes,
-        weapons: summary.weapons < weaponLevels.length, incomplete: !summary.complete
+        weapons: summary.weapons < weaponLevels.length, incomplete: !summary.complete, complete:summary.complete, wallpapers:!character.special&&summary.wallpaper<8, ...Object.fromEntries(weaponLevels.map(level=>[level,!isChecked(progress.weaponsByCharacter[id]||{},level)]))
       };
       show = matches(q, character.nameZh, character.nameJa) && (!faction || character.faction === faction) && (!status || statuses[status]);
     } else if (view === 'stages') {
       const stage = model.stages.get(id);
       show = matches(q, stageName(stage), stage.titleZh, stage.titleJa, stageLabel(stage)) &&
         (!faction || stage.faction === faction) && (!mode || stage.mode === mode) &&
-        (!status || !isChecked(progress.extremeStageClears, id));
+        (!status || isChecked(progress.extremeStageClears,id)===(status==='complete'));
     } else if (view === 'materials') {
       const item = model.materials.get(id);
       const stage = model.stages.get(item.stageId);
       show = matches(q, item.nameZh, item.nameJa, stageName(stage), stage.titleJa, stageLabel(stage)) &&
-        (!status || !isChecked(progress.collectedMaterials, id));
+        (!status || isChecked(progress.collectedMaterials,id)===(status==='complete'));
     } else {
       const skill = model.skills.get(id);
-      show = matches(q, skill.nameZh, skill.nameJa);
+      const eligible=model.charactersBySkill.get(id)||[];const done=eligible.every(c=>isChecked(progress.learnedCharacterSkills,skillKey(c.id,id)));show=matches(q,skill.nameZh,skill.nameJa)&&(!status||done===(status==='complete'));
     }
     row.hidden = !show;
     if (show) visible++;
@@ -530,41 +533,37 @@ workspace.addEventListener('click', event => {
   const isWeapon = bulk === 'weapons';
   const ids = isWeapon ? weaponLevels : model.skillsByCharacter.get(id).map(skill => skillKey(id, skill.id));
   const get = data => isWeapon ? (data.weaponsByCharacter[id] ??= {}) : data.learnedCharacterSkills;
-  let operation;
+  let nextValue;
   void update(data => {
     const map = get(data);
     const next = !ids.every(key => isChecked(map, key));
-    const before = ids.map(key => [key, map[key]]);
     for (const key of ids) map[key] = next;
-    operation = {get, next, before};
+    nextValue = next;
     return data;
   }).then(saved => {
     if (!saved) return;
-    undo = operation;
-    report(model.characters.get(id).nameZh + ' · ' + (isWeapon ? '武器' : '特技') + (undo.next ? '已全勾' : '已全取消'));
+    report(model.characters.get(id).nameZh + ' · ' + (isWeapon ? '武器' : '特技') + (nextValue ? '已全勾' : '已全取消'));
   });
 });
-
-$('undo').onclick = () => {
-  if (!undo) return;
-  const operation = undo;
-  undo = undefined;
-  $('undo').hidden = true;
-  void update(data => {
-    const map = operation.get(data);
-    if (operation.before.some(([key]) => map[key] !== operation.next)) throw Error('紀錄已有後續修改，撤銷已停止。');
-    for (const [key, value] of operation.before) {
-      if (value === undefined) delete map[key];
-      else map[key] = value;
-    }
-    return data;
-  }).then(saved => { if (saved) report('已撤銷全勾操作。'); });
-};
 
 workspace.addEventListener('keydown', event => {
   if (event.key === 'Enter' && event.target.matches('input[type="number"][data-prof]')) event.target.blur();
 });
 window.addEventListener('hashchange', render);
+
+$('stats').onclick=event=>{
+ const label=event.target.closest('[data-stat-label]')?.dataset.statLabel;if(!label)return;
+ const target=label.includes('激難')?'stages':label.includes('素材')?'materials':label.includes('特技')?'skills':'characters';
+ const weaponLevel=label.match(/^Lv\.(\d)/);const status=target==='characters'?(weaponLevel?'lv'+weaponLevel[1]:label.includes('武器')?'weapons':label.includes('壁紙')?'wallpapers':'incomplete'):'incomplete';
+ location.hash='#'+target;lastView=target;filters[target]={status};render();$('view-title').focus({preventScroll:true});
+};
+$('nav-toggle').onclick=()=>{const open=$('nav-toggle').getAttribute('aria-expanded')!=='true';$('navigation').hidden=!open;$('nav-toggle').setAttribute('aria-expanded',String(open));};
+const mobileNav=matchMedia('(max-width:720px)');
+const syncNavigation=()=>{$('navigation').hidden=mobileNav.matches;$('nav-toggle').hidden=!mobileNav.matches;$('nav-toggle').setAttribute('aria-expanded','false');};
+mobileNav.addEventListener('change',syncNavigation);syncNavigation();
+document.querySelectorAll('#navigation a').forEach(link=>link.addEventListener('click',()=>{if(mobileNav.matches){$('navigation').hidden=true;$('nav-toggle').setAttribute('aria-expanded','false');}}));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mobileNav.matches){$('navigation').hidden=true;$('nav-toggle').setAttribute('aria-expanded','false');}});
+
 
 function download(value, kind) {
   const blob = new Blob([JSON.stringify(value, null, 2) + '\n'], {type: 'application/json'});
@@ -724,7 +723,6 @@ $('import-apply').onclick = async () => {
   try {
     await saving;
     progress = await store.update(() => core.resolve(currentReview.plan, currentReview.choices).progress, currentReview.localRaw);
-    undo = undefined;
     refresh();
     $('import-dialog').close();
     $('save-state').textContent = '已保存於此瀏覽器';
@@ -770,6 +768,7 @@ try {
   materialsByStage = Map.groupBy(catalog.materials, row => row.stageId);
   references = new Map(catalog.references.map(row => [row.id, row]));
   store = createStore(model.config, core, syncDisplay);
+  installUndo(store,{groups:['proficiencyByCharacter','weaponsByCharacter','learnedCharacterSkills','extremeStageClears','collectedMaterials','unlockedCharacters'],button:$('undo'),onError:e=>report(e.message),onSuccess:text=>{report(text);void store.get().then(data=>{progress=data;refresh();});}});
   progress = await store.open();
   ready = true;
   $('open-backup').disabled = false;

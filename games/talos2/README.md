@@ -138,3 +138,10 @@ Drive 保留每次 grant 合成檔驗證、strong If-Match、412、競爭測試�
 官方逐盃數字 ID 尚無可靠對照。`trophyRefs` 是網站自有的穩定英文名稱鍵，`officialId: null`，步驟 `trophyIds: []`；沒有把清單排序或第三方網站 ID 冒充官方 ID。所有本體獎盃均有名稱對照與手動狀態。完整證據、限制與測試見 [查證與整合報告](docs/RESEARCH.md)。
 
 新路線回歸：本機 server 啟動後執行 `node scripts/verify-talos2-navigation-browser.mjs`，沿用既有 Edge／Playwright、新 context 與合成進度，包含六種寬度、標籤邊界、舊深連結與關閉解法時的行走指引。
+
+
+## 2026-11-19 共通操作調整
+
+1.6.9：新增一般操作撤銷；獎盃預設尚未取得、區域收集總覽可切換尚未收齊／全部／已收齊。項目篩除後焦點交給鄰近項或結果區；保留原章節／區域片段分類。
+
+沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。

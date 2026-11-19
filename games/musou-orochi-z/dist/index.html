@@ -5,27 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="《無双OROCHI Z》PS3 武將、激難通關、特技與鍊成素材紀錄。">
   <title>無双OROCHI Z · Game Companion</title>
-  <link rel="stylesheet" href="style.css?v=20261112-wallpaper-count">
-  <script type="module" src="app.js?v=20261112-wallpaper-count"></script>
+  <link rel="stylesheet" href="style.css?v=20261119-ui-preferences">
+  <script type="module" src="app.js?v=20261119-ui-preferences"></script>
 </head>
 <body>
   <header class="masthead">
     <a href="../../">← 遊戲目錄</a>
-    <span id="save-state" role="status">載入中</span>
+    <span id="save-state" role="status">載入中</span><div class="header-tools"><button id="undo" type="button" hidden>撤銷上一步</button><button id="open-backup" type="button" disabled>備份與匯入</button></div>
   </header>
   <div class="shell">
     <aside class="rail">
       <div class="game-title"><span aria-hidden="true" class="mark">Z</span><div><h1>無双OROCHI Z</h1><span>PlayStation 3</span></div></div>
+      <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>功能選單</button>
       <nav aria-label="收集清單" id="navigation">
         <a href="#characters">全武將</a><a href="#stages">全關卡</a>
         <a href="#skills">全特技</a><a href="#materials">全鍊成素材</a>
       </nav>
-      <button id="open-backup" type="button" disabled>備份與匯入</button>
+
       <a class="source-link" href="#sources">資料來源與判定</a>
     </aside>
     <main class="sheet">
       <div id="stats" class="stats" aria-label="依已輸入資料推算的進度"></div>
-      <div id="notice" class="notice" hidden><span id="message" role="status"></span><button type="button" id="undo" hidden>撤銷全勾操作</button></div>
+      <div id="notice" class="notice" hidden><span id="message" role="status"></span></div>
       <section id="workspace" aria-labelledby="view-title"><p>正在載入《Z》資料與本機紀錄。</p></section>
     </main>
   </div>

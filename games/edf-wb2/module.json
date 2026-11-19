@@ -2,7 +2,7 @@
   "gameId": "edf-wb2",
   "slug": "edf-wb2",
   "title": "EDF World Brothers 2",
-  "moduleVersion": "1.1.0",
+  "moduleVersion": "1.1.1",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/edf-wb2/",

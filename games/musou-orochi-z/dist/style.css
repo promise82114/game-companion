@@ -453,3 +453,6 @@ dialog input[type="file"] { max-width: 100%; }
   .skill summary { padding-inline: 5px; }
   .skill-count { font-size: 12px; }
 }
+
+.stats>button{color:inherit;text-align:left;background:var(--surface,#fff);border:1px solid var(--border,#d8ded7);padding:12px;cursor:pointer}.stats>button strong,.stats>button small,.stats>button span{display:block}.stats>button:hover{border-color:var(--accent,#356249)}
+[hidden]{display:none!important}.masthead .header-tools{display:flex;gap:8px;margin-left:auto}.masthead #save-state{margin-left:auto}#nav-toggle{min-height:44px}@media(max-width:720px){#navigation{width:100%;flex-direction:column}.masthead{flex-wrap:wrap}.stats>button{padding:6px}}
