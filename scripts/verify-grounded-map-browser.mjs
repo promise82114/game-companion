@@ -65,7 +65,7 @@ try{
  assert.equal(await page.locator('#yard-selection-label text').textContent(),await page.locator('#map-selection h2').textContent(),'點選後同步名稱標籤');
  await page.locator('#map-status-all').click();
  await page.locator('[data-view="equipment"]').click();await page.locator('[data-view="map"]').click();
- assert.equal(await page.locator('#map-status-all').getAttribute('aria-pressed'),'true','返回地圖保留手動篩選');
+ assert.equal(await page.locator('#map-status-pending').getAttribute('aria-pressed'),'true','返回地圖重設為尚未取得');
  await page.screenshot({path:'outputs/grounded/map-integrated-desktop.png'});
 
  await visit(checklist,'collectibles&group=molars');
@@ -84,7 +84,7 @@ try{
  assert.equal(await checklist.locator('.creature-matrix tbody tr').count(),1);
  assert.match(await checklist.locator('.creature-matrix tbody tr').innerText(),/Green Shield Bug/);
  await checklist.goBack();await checklist.locator('#collection-search').waitFor();
- assert.equal(await checklist.locator('#collection-search').inputValue(),'Green Shield Bug');
+ assert.equal(await checklist.locator('#collection-search').inputValue(),'');
 
  for(const width of [1440,1024,768,390,320]){
   await page.setViewportSize({width,height:900});await checklist.setViewportSize({width,height:900});
@@ -100,7 +100,7 @@ try{
   }
  }
  assert.deepEqual(external,[],'底圖不依賴外站請求');assert.deepEqual(errors,[]);
- console.log('Grounded map/list passed: 64 decoded local tiles, shared zoom/drag projection, cross-tab check/uncheck/undo, pending default, retained filters, selected name/halo, translucent obtained icons without checks, wide collection rows, 9 defense entries, creature links, 5 widths, no external requests or page errors.');
+ console.log('Grounded map/list passed: 64 decoded local tiles, shared zoom/drag projection, cross-tab check/uncheck/undo, pending default, reset filters, selected name/halo, translucent obtained icons without checks, wide collection rows, 9 defense entries, creature links, 5 widths, no external requests or page errors.');
 }finally{await context.close();await browser.close();}
 
 const failedBrowser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||'msedge'});

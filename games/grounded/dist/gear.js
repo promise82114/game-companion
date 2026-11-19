@@ -14,8 +14,8 @@ const damageParts=value=>value.split(/[／/]/).map(part=>part.replace(/^水下/,
 const elementOptions=[['all','全部屬性'],['none','無固有屬性'],...unique(weapons,'element').map(element=>[element,element])];
 
 export function equipmentNav(active,tab='sets'){
- const defense=active!=='weapons';
- return `<nav class="report-tabs equipment-tabs" aria-label="裝備分類">${[['weapons','武器列表'],['armor','防具列表']].map(([id,label])=>`<a href="?view=equipment&amp;kind=${id}" data-equipment-tab="${id}" ${(id==='armor')===defense?'aria-current="page"':''}>${label}</a>`).join('')}</nav>
+ const defense=['armor','shields'].includes(active);
+ return `<nav class="report-tabs equipment-tabs" aria-label="裝備分類">${[['weapons','武器列表'],['armor','防具列表'],['smithing','鍛造說明']].map(([id,label])=>`<a href="?view=equipment&amp;kind=${id}" data-equipment-tab="${id}" ${(id==='armor'?defense:active===id)?'aria-current="page"':''}>${label}</a>`).join('')}</nav>
  ${defense?`<nav class="report-tabs" aria-label="防具分類">${[['sets','套裝'],['pieces','散裝'],['shields','盾牌']].map(([id,label])=>`<a href="?view=equipment&amp;kind=armor&amp;tab=${id}" data-armor-tab="${id}" ${(active==='shields'?'shields':tab)===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`:''}`;
 }
 

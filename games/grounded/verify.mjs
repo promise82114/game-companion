@@ -10,6 +10,7 @@ import {trophies,steps,stages,collectibles,categories,regions,superWinConditions
 import {fresh,validateProgress,world,run,player,setCollection,ngMolarState,setNGMolarState,collectionState,addRun,newPlayer,newWorld,importData,stampActor} from './dist/model.js';
 import {stepProgress,completedSteps,nextPendingStep,conditionItems,pendingItems,remixReview} from './dist/roadmap-progress.js';
 import {armor,weapons} from './dist/gear-data.js';
+import {upgradeLevels,baseMaterials,branchMaterials,smithingUnlocks,ngArmorLevels} from './dist/smithing-data.js';
 import {weaponUpgrade,shields,utilityArmorStats,environmentUpgrades,toolUpgrades} from './dist/equipment-data.js';
 import {mutations,mutationCategories} from './dist/mutation-data.js';
 import {progressionBuilds,mutationBuilds} from './dist/playstyle-data.js';
@@ -19,6 +20,15 @@ import {ngMolarItems,ngMolarCoordinates} from './dist/ng-molar-data.js';
 import {accessRows,accessEntries} from './dist/access-data.js';
 import {itemAccess} from './dist/access.js';
 import {chipCatalog,shopDetails} from './dist/chip-data.js';
+assert.deepEqual(upgradeLevels.map(r=>r.level),[1,2,3,4,5,6,7,8,9]);
+const materialTotal=(key,start,end)=>upgradeLevels.filter(r=>r.level>=start&&r.level<=end).reduce((sum,r)=>sum+r[key],0);
+assert.deepEqual([materialTotal('weapon',1,5),materialTotal('weapon',6,7),materialTotal('weapon',8,9)],[30,15,15]);
+assert.deepEqual([materialTotal('armor',1,5),materialTotal('armor',6,7),materialTotal('armor',8,9)],[15,6,6]);
+assert.equal(upgradeLevels.at(-1).weaponBonus,65);assert.equal(upgradeLevels.at(-1).sleek,45);
+assert.equal(baseMaterials.length,6);assert.equal(branchMaterials.length,5);
+assert.ok(baseMaterials.every(r=>smithingUnlocks.some(u=>u.name===r.oreUnlock)&&smithingUnlocks.some(u=>u.name===r.renewableUnlock)));
+assert.ok(smithingUnlocks.filter(r=>r.chip).every(r=>chipCatalog.some(c=>c.id===r.chip)),'鍛造解鎖連到現有晶片');
+assert.deepEqual(ngArmorLevels.map(r=>r.level),[10,11,12,13,14,15]);assert.equal(ngArmorLevels.at(-1).bonus,215);
 import {captureProgressEdits,revertProgressEdits} from './dist/progress-edits.js';
 import {matchesSearch} from './dist/search.js';
 import {preparations} from './dist/preparations.js';
@@ -224,5 +234,5 @@ run(p).steps.hedge={done:true,note:'synthetic'};const milk=collectibles.find(i=>
 const first=player(p);first.trophies['science-rules']={earned:true};const second=newPlayer('synthetic second');world(p).players[second.playerId]=second;world(p).currentPlayerId=second.playerId;assert.deepEqual(player(p).trophies,{});
 const w=newWorld('synthetic isolated');p.worlds[w.worldId]=w;p.currentWorldId=w.worldId;assert.equal(collectionState(p,scab),'missing');const restored=importData({records:[{key:'progress',value:p}]});assert.equal(restored.unknownTop.keep,'synthetic');assert.throws(()=>validateProgress({...p,schema:2}));assert.throws(()=>validateProgress({...p,gameId:'talos2'}));
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(new URL('../talos2/dist/shared/sync-core.js',import.meta.url),'utf8'),ctx);const core=ctx.window.SideProjectSync;const remote=JSON.parse(JSON.stringify(p));remote.unknownFuture={note:'preserved'};const plan=core.merge(null,p,remote,{hasBase:false}),next=core.resolve(plan,plan.conflicts.map(()=>'remote'));validateProgress(next);assert.equal(next.unknownFuture.note,'preserved');
-for(const file of ['app.js','data.js','model.js','map.js','basemap.js','defense.js','roadmap-progress.js','gear-data.js','equipment-data.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
+for(const file of ['app.js','data.js','model.js','map.js','basemap.js','defense.js','roadmap-progress.js','gear-data.js','equipment-data.js','smithing-data.js','smithing.js','gear.js','localization.js','preparations.js','report.js','report-data.js','creature-data.js','chip-tech.js','mutation-data.js','playstyle-data.js','playstyle.js','access-data.js','access.js','chip-data.js','chips.js','search.js','progress-edits.js']){const check=spawnSync(process.execPath,['--check',fileURLToPath(new URL('dist/'+file,import.meta.url))],{encoding:'utf8'});assert.equal(check.status,0,check.stderr);}
 console.log(JSON.stringify({passed:true,game:'grounded',trophies:trophies.length,stages:stages.length,steps:steps.length,legacyCollectibles:collectibles.length,reportEntries:reportItems.length,mapPins:new Set(mappedItems.map(row=>row.pin)).size,creatures:creatureRows.length,cloud:false}));

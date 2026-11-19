@@ -11,7 +11,7 @@ async function routeExternal(context){
  });
 }
 const get=page=>page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config}=await import('./model.js');const s=createStore(config,window.SideProjectSync);try{return await s.open();}finally{s.close();}});
-const visit=async(page,view)=>{await page.goto(url+'?view='+view);await page.locator('#app h1').waitFor();};
+const visit=async(page,view)=>{await page.goto(url+'?view='+view);try{await page.locator('#app h1').waitFor();}catch(error){console.error({view,pageErrors:errors,body:await page.locator('#app').innerText()});throw error;}};
 const w=p=>p.worlds[p.currentWorldId],r=p=>w(p).runs[w(p).currentRunId],pl=p=>w(p).players[w(p).currentPlayerId];
 const upload=async(page,data)=>{await page.locator('#open-backup').click();await page.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.locator('#import-dialog').waitFor({state:'visible'});};
 const download=async(page,id)=>{const pending=page.waitForEvent('download');await page.locator(id).click();const file=await pending;assert.equal(await file.failure(),null);return JSON.parse(await fs.readFile(await file.path(),'utf8'));};
@@ -156,7 +156,7 @@ try{
 }finally{await browser.close();}
 
 async function preferenceAudit(){
- console.log('Interface phase: retained filters / first-run weapons');
+ console.log('Interface phase: reset filters / first-run weapons');
  const context=await browser.newContext({acceptDownloads:true,serviceWorkers:'block',viewport:{width:1440,height:900}});
  await routeExternal(context);
  const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
@@ -173,22 +173,22 @@ async function preferenceAudit(){
   await page.locator('[data-equipment-tab="armor"]').click();
   await page.locator('#armor-search').fill('瓢蟲');
   await page.locator('[data-equipment-tab="weapons"]').click();
-  assert.equal(await page.locator('#weapon-search').inputValue(),'生鏽');
-  assert.equal(await page.locator('#weapon-water').inputValue(),'yes');
-  assert.equal(await page.locator('#weapon-scope').inputValue(),'all');
+  assert.equal(await page.locator('#weapon-search').inputValue(),'');
+  assert.equal(await page.locator('#weapon-water').inputValue(),'all');
+  assert.equal(await page.locator('#weapon-scope').inputValue(),'第一輪');
   await page.locator('[data-equipment-tab="armor"]').click();
-  assert.equal(await page.locator('#armor-search').inputValue(),'瓢蟲');
+  assert.equal(await page.locator('#armor-search').inputValue(),'');
   await page.locator('[data-armor-tab="shields"]').click();
   assert.equal(new URL(page.url()).searchParams.get('view'),'equipment');
   assert.equal(new URL(page.url()).searchParams.get('tab'),'shields');
   assert.equal(await page.locator('[data-shield]').count(),4);
   await page.locator('#shield-search').fill('火蟻');
   await page.locator('[data-equipment-tab="weapons"]').click();
-  assert.equal(await page.locator('#weapon-search').inputValue(),'生鏽');
+  assert.equal(await page.locator('#weapon-search').inputValue(),'');
   await page.locator('[data-equipment-tab="armor"]').click();
-  assert.equal(await page.locator('#shield-search').inputValue(),'火蟻');
+  assert.equal(await page.locator('#shield-search').inputValue(),'');
   await page.locator('[data-armor-tab="sets"]').click();
-  assert.equal(await page.locator('#armor-search').inputValue(),'瓢蟲');
+  assert.equal(await page.locator('#armor-search').inputValue(),'');
   await page.locator('#armor-search').fill('synthetic-no-armor');
   assert.equal(await page.locator('[data-armor]').count(),0);
   await page.locator('#reset-view').click();
@@ -203,9 +203,9 @@ async function preferenceAudit(){
   assert.equal(await page.locator('[data-weapon]').count(),1);
   assert.match(await page.locator('[data-weapon]').innerText(),/Acid Edge/);
   await page.locator('#reset-view').click();await page.locator('#weapon-scope').selectOption('all');
-  await page.evaluate(()=>scrollTo(0,1000));const scroll=await page.evaluate(()=>scrollY);
+  await page.evaluate(()=>scrollTo(0,1000));
   await page.locator('[data-view="mutations"]').click();await page.locator('[data-view="equipment"]').click();
-  await page.waitForFunction(expected=>Math.abs(scrollY-expected)<12,scroll);
+  await page.waitForFunction(()=>scrollY===0);assert.equal(await page.locator('#weapon-scope').inputValue(),'第一輪');
 
   console.log('Interface phase: checklist removal / undo / map');
   await visit(page,'collectibles&group=molars');
@@ -300,7 +300,7 @@ async function preferenceAudit(){
   assert.equal(await page.locator('.mutation-build-scroll').evaluate(node=>getComputedStyle(node).maxHeight),'none');
   await page.locator('[data-view="creatures"]').click();
   assert.equal(await page.locator('.creature-scroll').evaluate(node=>getComputedStyle(node).maxHeight),'none');
-  console.log('Interface preferences passed: retained view state / undo races / failed writes / counts / aliases / first-run scope');
+  console.log('Interface preferences passed: reset view filters / undo races / failed writes / counts / aliases / first-run scope');
  }finally{await context.close();}
 }
 
@@ -415,8 +415,8 @@ async function platinumAudit(){
    assert.deepEqual((await page.getByRole('columnheader').allTextContents()).slice(-3),['單件效果','套裝效果','光滑鍛造 +6 起']);
    await page.locator('[data-armor-tab="pieces"]').click();
    assert.equal(new URL(page.url()).searchParams.get('tab'),'pieces');
-   assert.equal(await page.locator('[data-armor]').count(),0);
-   assert.equal(await page.locator('#armor-search').inputValue(),'瓢蟲');
+   assert.equal(await page.locator('[data-armor]').count(),6);
+   assert.equal(await page.locator('#armor-search').inputValue(),'');
    await page.locator('#reset-view').click();
    assert.equal(await page.locator('[data-armor]').count(),6);
    const pieceTiers=await armorTiers();assert.deepEqual(pieceTiers,pieceTiers.toSorted((a,b)=>b-a));
