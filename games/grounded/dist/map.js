@@ -4,7 +4,7 @@ import {basemap,yardViewport,projectYardPoint,terrainHtml} from './basemap.js';
 import {defenseHtml} from './defense.js';
 import {ngMolarItems,ngMolarById,ngMolarSource} from './ng-molar-data.js';
 
-const filters=[['all','全部點位'],['molars','普通乳牙'],['mega','巨型乳牙'],['scab','SCA.B 配色'],['docs','庭院資料'],['sites','地標'],['chips','漢堡小哥晶片'],['defense','防守事件'],['bosses','首領及固定生物卡']];
+const filters=[['all','全部點位'],['molars','普通乳牙'],['mega','巨型乳牙'],['scab','SCA.B 配色'],['docs','庭院資料'],['sites','地標'],['chips','漢堡小哥晶片'],['defense','防守事件'],['bosses','首領及固定生物卡'],['meta','結局與報告卡']];
 const colors={molars:'#ebd9a6',mega:'#e5a82d',scab:'#b56337',docs:'#407aa5',sites:'#74875e',chips:'#2c6e60',defense:'#a64545',bosses:'#4e3a81',cards:'#4e3a81',meta:'#343832'};
 const bwikiMap='https://wiki.biligame.com/grounded/互动地图';
 const mapIcons=new Set(['molars','mega','scab','defense','lab','station']);
@@ -16,7 +16,8 @@ const groupMatch=(i,group)=>group==='all'||i.group===group||(group==='bosses'&&i
 const {width,height}=yardViewport;
 const project=pin=>projectYardPoint(ngMolarById.get(pin)?.point||yardPoints[pin]);
 const ngFilters=[['all','全部候選點'],['ground','帶殼乳牙候選'],['underwater','水下乳牙候選']];
-const mapRows=(filter,statusOf)=>searchReport(filter.mapScope==='ng'?ngMolarItems:mappedItems,filter.search).filter(i=>(filter.mapScope==='ng'?(filter.mapGroup==='all'||(i.underwater?filter.mapGroup==='underwater':filter.mapGroup==='ground')):groupMatch(i,filter.mapGroup))&&statusMatches(i,filter,statusOf));
+const matchesCategory=(item,group,ng)=>ng?(item.underwater?group==='underwater':group==='ground'):groupMatch(item,group);
+export const mapRows=(filter,statusOf)=>searchReport(filter.mapScope==='ng'?ngMolarItems:mappedItems,filter.search).filter(i=>(!Array.isArray(filter.mapGroups)||filter.mapGroups.some(group=>matchesCategory(i,group,filter.mapScope==='ng')))&&statusMatches(i,filter,statusOf));
 export const selectionTag=(item,escape)=>{
  const name=Array.from(item.name).slice(0,18).join('')+(Array.from(item.name).length>18?'…':'');
  const tagWidth=Math.max(74,Array.from(name).reduce((sum,char)=>sum+(char.charCodeAt(0)<128?6.5:12),0)+18);
@@ -38,6 +39,10 @@ const statusLabel=(item,statusOf)=>statusOf(item)==='obtained'?'已取得':statu
 export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,ngRuns=[]}){
  const ng=filter.mapScope==='ng',activeFilters=ng?ngFilters:filters;
  const rows=mapRows(filter,statusOf);
+ const available=mapRows({...filter,mapGroups:null},statusOf);
+ const choices=activeFilters.slice(1);
+ const selectedGroups=Array.isArray(filter.mapGroups)?filter.mapGroups:choices.map(([id])=>id);
+ const typeList=`<fieldset class="field-type-panel"><legend>蒐集種類</legend><p class="muted">可多選，同時查看同區的不同蒐集物。</p><div class="map-type-actions"><button type="button" data-map-types="all">全選</button><button type="button" data-map-types="none">清空</button></div><div id="field-type-options" class="field-type-options">${choices.map(([id,label])=>`<label class="field-type-choice"><input id="map-type-${id}" type="checkbox" data-map-type="${id}" ${selectedGroups.includes(id)?'checked':''}><span>${escape(label)}</span><small>${available.filter(item=>matchesCategory(item,id,ng)).length}</small></label>`).join('')}</div></fieldset>`;
  const selected=rows.find(i=>i.id===selectedId);
  const byPin=Map.groupBy(rows,i=>i.pin);
  const markerList=[...byPin].sort(([keyA],[keyB])=>Number(keyA===selected?.pin)-Number(keyB===selected?.pin));
@@ -65,11 +70,11 @@ export function reportMapHtml({filter,select,search,escape,selectedId,statusOf,n
  ${ng&&ngRuns.length?select('map-ng-run','記錄周目',ngRuns,'mapRunId'):''}</div>
  ${ng?`<p class="warning">219 個候選位置只會在本輪生成 66 顆（帶殼 56、水下 10）。請在遊戲確認後標記「已取得」或「找過但沒生成」；預設只看尚未查明。序號採 Grounded Wiki，與 BWIKI 不同；位置沿用來源圖概略定位，地下、水下與高處依抵達路線找入口。</p>
  <p id="ng-map-count">${ngRuns.length?`${escape(ngRuns.find(([id])=>id===filter.mapRunId)?.[1]||'未選周目')} · 已取得 ${ngMolarItems.filter(i=>statusOf(i)==='obtained').length}／66 顆；找過但沒生成 ${ngMolarItems.filter(i=>statusOf(i)==='absent').length} 處；尚未查明 ${ngMolarItems.filter(i=>statusOf(i)==='pending').length}／219 處。`:'尚未建立 NG+ 周目，可先查位置；建立周目後才開放勾選。'} <a href="?view=roadmap&amp;stage=remix#ng-molars">前往 NG+ 周目與手動計數</a></p>`:''}
- <div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}${select('category-filter','點位分類',activeFilters,'mapGroup')}
+ <div class="toolbar">${search('collection-search','搜尋名稱、遊戲分類或地區')}
  ${select('map-status',ng?'查找狀態':'取得狀態',ng?[['pending','尚未查明'],['obtained','已取得'],['absent','找過但沒生成'],['all','全部']]:[['all','全部'],['pending','尚未取得'],['obtained','已取得']],'mapStatus')}
  <a href="${ng?ngMolarSource:bwikiMap}" target="_blank" rel="noopener noreferrer">${ng?'另開 NG+ 候選原圖':'另開 BWIKI 原圖'} ↗</a></div>
  <p class="muted">庭院地形與本站點位一起縮放、拖曳，北方朝上。地圖是俯視位置，地下、水下及高處請對照選點後的入口與抵達路線。</p>
- <div class="map-layout report-map">
+ <div class="map-layout report-map field-map collection-map">${typeList}
  <div class="map-frame">
   <div class="map-controls" aria-label="地圖操作"><button data-map-control="in" aria-label="放大">＋</button><button data-map-control="out" aria-label="縮小">−</button><button data-map-control="left" aria-label="向左平移">←</button><button data-map-control="up" aria-label="向上平移">↑</button><button data-map-control="down" aria-label="向下平移">↓</button><button data-map-control="right" aria-label="向右平移">→</button><button data-map-control="reset">全圖</button></div>
   <div class="map-viewport">${overlay}</div>

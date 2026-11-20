@@ -22,8 +22,10 @@ try{
  assert.equal(await page.locator('#map-check-ng-molar-001').isDisabled(),true);
  assert.equal(await page.locator('#map-absent-ng-molar-001').isDisabled(),true);
  assert.match(await page.locator('#ng-map-count').innerText(),/尚未建立 NG\+/);
- await page.locator('#category-filter').selectOption('underwater');assert.equal(await page.locator('[data-map-list]').count(),21);
- await page.locator('#category-filter').selectOption('ground');assert.equal(await page.locator('[data-map-list]').count(),198);
+ await page.locator('[data-map-types=none]').click();await page.locator('#map-type-underwater').check();assert.equal(await page.locator('[data-map-list]').count(),21);
+ await page.locator('[data-map-types=none]').click();await page.locator('#map-type-ground').check();assert.equal(await page.locator('[data-map-list]').count(),198);
+ await page.locator('#map-type-underwater').check();assert.equal(await page.locator('[data-map-list]').count(),219,'NG+ 兩種候選可同時顯示');
+ await page.locator('#map-type-ground').uncheck();assert.equal(await page.locator('[data-map-list]').count(),21);
  await page.locator('#map-scope-first').click();
  assert.equal(await page.locator('[data-map-list]').count(),433);
  assert.equal(await page.locator('[data-map-list^="ng-molar-"]').count(),0);

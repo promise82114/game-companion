@@ -125,7 +125,7 @@ try{
  assert.equal(await page.locator('#yard-basemap,iframe').count(),0);
  assert.equal(await page.locator('#basemap-error').isVisible(),false);
  assert.ok(r(await get(page)).customMarkers['legacy-marker']);
- await page.locator('#category-filter').selectOption('mega');
+ await page.locator('[data-map-types=none]').click();await page.locator('#map-type-mega').check();
  assert.equal(await page.locator('[data-map-item]').count(),45);
  await page.locator('[data-map-list="mega-oak-battery"]').focus();
  await page.keyboard.press('Enter');

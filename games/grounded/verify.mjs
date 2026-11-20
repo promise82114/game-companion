@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {basemap,yardTiles,projectYardPoint} from './dist/basemap.js';
 import {defenseEvents} from './dist/defense.js';
+import {mapRows} from './dist/map.js';
 import {fieldItems,fieldById,fieldRows,harvestAdvice} from './dist/field-map-catalog.js';
 assert.equal(fieldItems.filter(r=>r.kind==='creature').length,459);
 assert.equal(fieldItems.filter(r=>r.kind==='resource').length,586);
@@ -46,6 +47,17 @@ import {preparations} from './dist/preparations.js';
 import {groups,reportItems,reportConditionItems,collectionTarget,mappedItems,yardPoints,searchReport} from './dist/report.js';
 import {damageColumns,creatureRows} from './dist/creature-data.js';
 import {mainTech} from './dist/chip-tech.js';
+const collectionMapFilter={mapScope:'first',search:'',mapStatus:'pending',mapGroups:null};
+const mapStatus=()=> 'missing';
+assert.equal(mapRows(collectionMapFilter,mapStatus).length,mappedItems.length);
+assert.equal(mapRows({...collectionMapFilter,mapGroups:['molars','mega','scab','docs','sites','chips','defense','bosses','meta']},mapStatus).length,mappedItems.length,'所有種類手動勾回後仍包含結局點位');
+assert.equal(mapRows({...collectionMapFilter,mapGroups:[]},mapStatus).length,0);
+const mapUnion=mapRows({...collectionMapFilter,mapGroups:['molars','mega']},mapStatus);
+assert.equal(mapUnion.length,123);assert.equal(new Set(mapUnion.map(row=>row.id)).size,123);
+assert.ok(mapUnion.every(row=>['molars','mega'].includes(row.group)));
+assert.equal(mapRows({...collectionMapFilter,mapScope:'ng',mapGroups:['ground','underwater']},()=> 'pending').length,219);
+assert.equal(mapRows({...collectionMapFilter,mapScope:'ng',mapGroups:['underwater']},()=> 'pending').length,21);
+
 assert.equal(trophies.length,46);for(const [grade,n]of [['platinum',1],['gold',3],['silver',10],['bronze',32]])assert.equal(trophies.filter(t=>t.grade===grade).length,n,grade);
 for(const list of [trophies,steps,stages,collectibles,categories,regions,superWinConditions])assert.equal(new Set(list.map(i=>i.id)).size,list.length);
 for(const s of steps){assert.ok(stages.some(v=>v.id===s.stageId));assert.ok(typeof s.experienceNote==='string'&&s.experienceNote.trim(),'完整體驗說明缺失：'+s.id);for(const id of s.prerequisites)assert.ok(steps.some(v=>v.id===id));for(const id of s.trophyIds)assert.ok(trophies.some(v=>v.id===id));for(const id of s.collectibleIds)assert.ok(collectibles.some(v=>v.id===id));}

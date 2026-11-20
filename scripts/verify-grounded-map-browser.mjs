@@ -19,6 +19,23 @@ try{
  const checklist=await context.newPage();checklist.on('pageerror',error=>errors.push(error.message));
  await visit(checklist,'collectibles&group=molars');
  await visit(page,'map');
+ assert.equal(await page.locator('#app h1').innerText(),'蒐集點位地圖');
+ const beforeTypes=await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config}=await import('./model.js');const store=createStore(config,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
+ const allTypesCount=await page.locator('[data-map-list]').count();
+ await page.locator('[data-map-types=none]').click();assert.equal(await page.locator('[data-map-list]').count(),0);
+ await page.locator('#map-type-molars').check();assert.equal(await page.locator('[data-map-list]').count(),78);
+ await page.locator('#map-type-mega').check();assert.equal(await page.locator('[data-map-list]').count(),123);
+ await page.locator('[data-map-control=in]').click();const typeBox=await page.locator('#yard-map').getAttribute('viewBox');
+ await page.locator('#map-type-scab').check();assert.equal(await page.locator('[data-map-list]').count(),174);
+ assert.equal(await page.locator('#yard-map').getAttribute('viewBox'),typeBox,'多選種類保持查看中的區域');
+ await page.locator('#map-type-mega').uncheck();assert.equal(await page.locator('[data-map-list]').count(),129);
+ assert.equal(await page.locator('[data-map-type]:checked').count(),2);
+ await page.screenshot({path:'outputs/grounded/collection-map-multi-desktop.png'});
+ const afterTypes=await page.evaluate(async()=>{const {createStore}=await import('../../shared/roadmap-store.js');const {config}=await import('./model.js');const store=createStore(config,window.SideProjectSync);try{return await store.open();}finally{store.close();}});
+ assert.deepEqual(afterTypes,beforeTypes,'種類多選只改顯示，不改取得進度');
+ await page.locator('[data-map-types=all]').click();assert.equal(await page.locator('[data-map-list]').count(),allTypesCount);
+ await page.locator('#map-type-meta').uncheck();assert.equal(await page.locator('[data-map-list]').count(),allTypesCount-1);
+ await page.locator('#map-type-meta').check();assert.equal(await page.locator('[data-map-list]').count(),allTypesCount,'手動勾回所有種類包含結局點位');
  assert.equal(await page.locator('#map-status-pending').getAttribute('aria-pressed'),'true','初次進入只看尚未取得');
  await visit(page,'map&item=milk-old-anthill');
  await decodeTiles(page);
@@ -61,7 +78,7 @@ try{
  await page.locator('#undo-last').click();
  await page.locator('[data-yard-pin="198242"]').waitFor();
  await page.locator('[data-map-control="reset"]').click();
- await page.locator('#category-filter').selectOption('molars');
+ await page.locator('[data-map-types=none]').click();await page.locator('#map-type-molars').check();
  await page.locator('[data-map-list]').nth(1).click();
  assert.equal(await page.locator('#yard-selection-label text').textContent(),await page.locator('#map-selection h2').textContent(),'點選後同步名稱標籤');
  await page.locator('#map-status-all').click();
@@ -89,6 +106,8 @@ try{
 
  for(const width of [1440,1024,768,390,320]){
   await page.setViewportSize({width,height:900});await checklist.setViewportSize({width,height:900});
+  const types=await page.locator('.field-type-panel').boundingBox(),map=await page.locator('.map-frame').boundingBox(),points=await page.locator('.report-map-sidebar').boundingBox();
+  assert.ok(width>1050?types.x+types.width<=map.x&&map.x+map.width<=points.x:types.y<map.y&&map.y<points.y,'蒐集地圖的種類／底圖／點位排列 '+width);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'map overflow '+width);
   await visit(checklist,'collectibles&group=molars');
   assert.equal(await checklist.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'collection overflow '+width);
