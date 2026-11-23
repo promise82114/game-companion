@@ -4,7 +4,7 @@ export const groups=['steps','collectibles','trophies','skills','objectives','co
 export const clone=value=>value===undefined?undefined:JSON.parse(JSON.stringify(value));
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const safe=id=>!['__proto__','prototype','constructor'].includes(id);
-export function fresh(){return {gameId,platform:'ps5',schema:1,schemaVersion:1,moduleVersion:'1.2.1',dataVersion:'2026-11-23.2',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(g=>[g,{}]))};}
+export function fresh(){return {gameId,platform:'ps5',schema:1,schemaVersion:1,moduleVersion:'1.2.2',dataVersion:'2026-11-23.2',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(g=>[g,{}]))};}
 export function validateProgress(p){
  if(!object(p)||p.gameId!==gameId||p.platform!=='ps5'||p.schema!==1||p.schemaVersion!==1)throw Error('遊戲識別、平台或進度版本不符，已停止寫入。');
  if(!Number.isSafeInteger(p.revision)||p.revision<0||!Number.isFinite(p.updatedAt)||p.updatedAt<0)throw Error('修訂或時間欄位損壞。');
@@ -18,7 +18,7 @@ export function validateProgress(p){
   if(row.updatedAt!==undefined&&(!Number.isFinite(row.updatedAt)||row.updatedAt<0))throw Error('項目時間無效');
  }}return p;
 }
-export const config={gameId,moduleVersion:'1.2.1',storagePrefix,driveProjectId:'game-companion.'+gameId,exportSyncState:false,fresh,validateProgress};
+export const config={gameId,moduleVersion:'1.2.2',storagePrefix,driveProjectId:'game-companion.'+gameId,exportSyncState:false,fresh,validateProgress};
 export const isDone=(p,group,id)=>p[group]?.[id]?.done===true;
 export const count=(p,group,rows)=>rows.filter(r=>isDone(p,group,r.id)).length;
 export const nextStep=(p,d)=>d.steps.find(s=>s.requiredForRoute&&!isDone(p,'steps',s.id));

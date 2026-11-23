@@ -1,6 +1,6 @@
 import {configureLocalization,translate,localizeDom} from './localization.js';
 import {stepBriefs,importantTerms} from './reading.js';
-import {config,gameId,groups,clone,isDone,count,nextStep,edit,undoEdit,envelope,importData,differences,applyDifferences,trophyCondition} from './model.js?v=1.2.1';
+import {config,gameId,groups,clone,isDone,count,nextStep,edit,undoEdit,envelope,importData,differences,applyDifferences,trophyCondition} from './model.js?v=1.2.2';
 const source=import.meta.url.includes('/dist/');
 const {createStore}=await import(new URL(source?'../../../shared/roadmap-store.js':'../../shared/roadmap-store.js',import.meta.url));
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
