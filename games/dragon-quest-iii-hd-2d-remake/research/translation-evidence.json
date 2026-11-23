@@ -1,0 +1,47 @@
+{
+  "entries": [
+    {
+      "en": "Burning Breath",
+      "zh": "灼燒氣息",
+      "url": "https://dragon-quest.org/wiki/Burning_Breath",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    },
+    {
+      "en": "Cop Out",
+      "zh": "架甲",
+      "url": "https://dragon-quest.org/wiki/Cop_Out",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    },
+    {
+      "en": "Wild Side",
+      "zh": "野獸模式",
+      "url": "https://dragon-quest.org/wiki/Wild_Side",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    },
+    {
+      "en": "Zin",
+      "zh": "扎奧",
+      "url": "https://dragon-quest.org/wiki/Zin",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    },
+    {
+      "en": "Monster Pile-On",
+      "zh": "召喚怪物",
+      "url": "https://dragon-quest.org/wiki/Monster_Pile-On",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    },
+    {
+      "en": "Fog of War",
+      "zh": "黑霧",
+      "url": "https://dragon-quest.org/wiki/Fog_of_War",
+      "accessedAt": "2026-11-23",
+      "status": "Wiki 繁體中文語言欄；未逐項 PS5 實機驗收"
+    }
+  ],
+  "note": "小批次 API 核對六項常用技能；擴大查詢遇連線逾時後停止。其餘名稱使用已列中文攻略或明示的說明譯名，不宣稱全部官方核實。"
+}

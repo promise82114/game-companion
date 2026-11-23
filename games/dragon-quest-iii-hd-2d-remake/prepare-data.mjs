@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {configureLocalization,expandSearch,translate,localizationSources} from './dist/localization.js';
 const root=new URL('./',import.meta.url);
 const raw=await fs.readFile(new URL('../../dragon-quest-iii-hd-2d-remake_GAME_COMPANION_SPEC.md',root),'utf8');
 const clean=s=>s.trim().replace(/`|\*\*/g,'');
@@ -72,5 +73,8 @@ const sources=[...raw.matchAll(/\[([^\]\n]+)\]\((https?:\/\/[^)]+)\)/g)].map((m,
 const aliases=[['S01','PlayStation 台灣','https://www.playstation.com/zh-hant-tw/games/dragon-quest-iii/'],['S02','Square Enix 更新履歷','https://www.dragonquest.jp/roto-trilogy/dq3/update/index.html'],['S03','PSRay PS5 獎盃','https://psray.net/trophies/29978?lang=zh-Hant'],['S04','GameFAQs PS5 攻略','https://gamefaqs.gamespot.com/ps5/466973-dragon-quest-iii-hd-2d-remake/faqs/81593'],['S05','RPG Site HD-2D 路線','https://www.rpgsite.net/guide/16522-dragon-quest-iii-hd-2d-remake-walkthrough-where-to-go-all-mini-medals-secret-spots-friendly-monsters-step-by-step-guide']];
 sources.unshift(...aliases.map(([id,label,url])=>({id,label,url,accessedAt:'2026-11-23'})));
 const catalog={gameId:'dragon-quest-iii-hd-2d-remake',platform:'ps5',versionBaseline:'1.1.1.0',dataVersion:'2026-11-23.1',specSha256:createHash('sha256').update(raw).digest('hex'),phases,readingUnits,steps,locations,collectibles,skills,trophies,rewards,wishes,trials,arena,supplies,objectives,counters,advice,sources,collectionGuidance:section('### 友善魔物','### 擊敗魔物'),counterGuidance:section('### 門檻補量攻略','## 2.'),routeGuidance:section('### Roadmap 的完成','## 3.')};
+catalog.dataVersion='2026-11-23.2';catalog.localization={locale:'zh-Hant',monsterCoverage:163,friendlySpecies:57,skillNames:'中文對照／說明譯名，未逐項實機核對台灣官方字串',sources:localizationSources,evidence:JSON.parse(await fs.readFile(new URL('research/translation-evidence.json',root),'utf8'))};
+configureLocalization(catalog);
+for(const row of [...steps,...collectibles,...skills,...trophies,...supplies,...objectives]){row.localizedSearch=expandSearch(JSON.stringify(row));if(row.name)row.displayName=translate(row.name);}
 await fs.mkdir(new URL('dist/',root),{recursive:true});await fs.writeFile(new URL('dist/data.json',root),JSON.stringify(catalog,null,2)+'\n');
 console.log(JSON.stringify({steps:steps.length,collectibles:collectibles.length,skills:skills.length,trophies:trophies.length,rewards:rewards.length,arena:arena.length}));

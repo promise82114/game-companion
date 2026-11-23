@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {fresh,validateProgress,writeRecord,nextStep,envelope,importData,differences,applyDifferences,trophyCondition,edit,undoEdit,clone} from './dist/model.js';
+import {configureLocalization,translate,enemyNames} from './dist/localization.js';
+import {stepBriefs} from './dist/reading.js';
 const d=JSON.parse(await fs.readFile(new URL('./dist/data.json',import.meta.url),'utf8'));
 const spec=await fs.readFile(new URL('../../dragon-quest-iii-hd-2d-remake_GAME_COMPANION_SPEC.md',import.meta.url),'utf8');
 assert.equal(d.specSha256,createHash('sha256').update(spec).digest('hex'),'資料與規格需一致，請執行 prepare-data');
@@ -10,6 +12,15 @@ assert.deepEqual(['mm','fm','enemy'].map(c=>d.collectibles.filter(x=>x.category=
 assert.deepEqual(['白金','金','銀','銅'].map(g=>d.trophies.filter(t=>t.grade===g).length),[1,4,6,31]);
 assert.deepEqual(['spell','ability'].map(kind=>d.skills.filter(x=>x.kind===kind).length),[66,69]);
 assert.equal(d.arena.length,11);assert.equal(d.wishes.length,7);assert.equal(d.trials.length,5);assert.equal(d.rewards.length,24);
+configureLocalization(d);assert.equal(enemyNames.length,163);assert.equal(stepBriefs.length,38);
+for(const r of d.collectibles.filter(r=>r.category!=='mm'))assert.match(translate(r.name),/[\u4e00-\u9fff]/,r.id+' 必須有中文對照');
+for(const r of d.skills){assert.match(r.displayName,/[\u4e00-\u9fff]/,r.id+' 必須有中文對照');assert.equal(r.displayName,translate(r.name),r.id+' 中文資料需重新產生');}
+assert.deepEqual(d.localization.evidence,JSON.parse(await fs.readFile(new URL('./research/translation-evidence.json',import.meta.url),'utf8')));
+assert.equal(translate('Aliahan Castle'),'亞里亞罕城');assert.equal(translate('Ra’s Mirror'),'拉之鏡');assert.equal(translate('Zin'),'扎奧');assert.equal(translate('Cock-a-Doodle-Doo'),'查梅哈');
+assert.equal(translate('Monster Pile-On'),'召喚怪物');assert.equal(translate('Fog of War'),'黑霧');assert.equal(translate('Cop Out'),'架甲');assert.equal(translate('Burning Breath'),'灼燒氣息');
+assert.equal(translate('https://example.com/Hero/Mage'),'https://example.com/Hero/Mage');
+assert.ok(d.collectibles.find(r=>r.id==='enemy-001').localizedSearch.includes('史萊姆'));
+assert.ok(d.collectibles.find(r=>r.id==='fm-016').localizedSearch.includes('波爾托加'));
 assert.equal(d.supplies.reduce((s,r)=>s+r.required*r.price,0),615000);
 const all=[...d.steps,...d.collectibles,...d.skills,...d.trophies,...d.objectives];assert.equal(new Set(all.map(r=>r.id)).size,all.length);
 const ids=new Set(all.map(r=>r.id)),stepIds=new Set(d.steps.map(r=>r.id)),sourceIds=new Set(d.sources.map(s=>s.id));
