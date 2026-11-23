@@ -4,6 +4,11 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../_site/',import.meta.url));
 let files=0,links=0;
+const dq3=path.join(root,'games/dragon-quest-iii-hd-2d-remake');
+for(const name of ['index.html','app.js','model.js','style.css','data.json'])await fs.access(path.join(dq3,name));
+const dq3Data=JSON.parse(await fs.readFile(path.join(dq3,'data.json'),'utf8'));
+assert.equal(dq3Data.trophies.length,42);assert.equal(dq3Data.collectibles.length,394);assert.equal(dq3Data.skills.length,135);
+assert.ok((await fs.readFile(path.join(root,'index.html'),'utf8')).includes('href="games/dragon-quest-iii-hd-2d-remake/"'));
 async function visit(dir){for(const entry of await fs.readdir(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isDirectory()){assert.ok(!['.git','.openai','upstream','outputs'].includes(entry.name));await visit(file);continue;}files++;
  if(file.endsWith('.html')){const html=await fs.readFile(file,'utf8');for(const match of html.matchAll(/(?:src|href)="([^"]+)"/g)){const url=match[1];if(/^(https?:|#|data:|mailto:)/.test(url))continue;const target=path.resolve(path.dirname(file),url.split(/[?#]/)[0]||'.');assert.ok(target===path.resolve(root)||target.startsWith(path.resolve(root)+path.sep));await fs.access(target);links++;}}
 }}

@@ -1,5 +1,7 @@
 # Game Companion
 
+2026-11-23 新增《勇者鬥惡龍III HD-2D Remake》PS5 本機攻略：4 階段／11 行進段落／38 步驟、42 盃、110 徽章、121 友善個體、163 討伐與 135 種去重技能，另有配隊、練等、七願、競技場與試煉備料。獨立 IndexedDB、逐鍵撤銷與保護式 JSON 匯入；沒有 Drive／SW；2026-11-23 使用者已授權 commit／push，沿既有 main Pages 流程發布，結果以對應提交 Actions 為準。[模組與啟動說明](games/dragon-quest-iii-hd-2d-remake/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/dragon-quest-iii-hd-2d-remake/)。啟動 server 後執行 `node scripts/verify-dq3-browser.mjs` 驗證隔離合成資料。PS5 逐點實機與跳盃仍待人工核對。
+
 跨平台遊戲的收集清單、攻略與進度工具。Portal 只提供遊戲目錄；每款遊戲保有自己的介面、資料與儲存，不需要中央帳號或後端。
 
 《無双OROCHI Z》（PS3）提供 96 名武將、140 個劇本、325 筆特技關聯及 30 項鍊成素材。進度存於本機，支援 JSON 備份與匯入。[模組與本機操作](games/musou-orochi-z/README.md)。

@@ -1,0 +1,34 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {fresh,validateProgress,writeRecord,nextStep,envelope,importData,differences,applyDifferences,trophyCondition,edit,undoEdit,clone} from './dist/model.js';
+const d=JSON.parse(await fs.readFile(new URL('./dist/data.json',import.meta.url),'utf8'));
+const spec=await fs.readFile(new URL('../../dragon-quest-iii-hd-2d-remake_GAME_COMPANION_SPEC.md',import.meta.url),'utf8');
+assert.equal(d.specSha256,createHash('sha256').update(spec).digest('hex'),'資料與規格需一致，請執行 prepare-data');
+assert.equal(d.steps.length,38);assert.equal(d.trophies.length,42);assert.equal(d.skills.length,135);
+assert.deepEqual(['mm','fm','enemy'].map(c=>d.collectibles.filter(x=>x.category===c).length),[110,121,163]);
+assert.deepEqual(['白金','金','銀','銅'].map(g=>d.trophies.filter(t=>t.grade===g).length),[1,4,6,31]);
+assert.deepEqual(['spell','ability'].map(kind=>d.skills.filter(x=>x.kind===kind).length),[66,69]);
+assert.equal(d.arena.length,11);assert.equal(d.wishes.length,7);assert.equal(d.trials.length,5);assert.equal(d.rewards.length,24);
+assert.equal(d.supplies.reduce((s,r)=>s+r.required*r.price,0),615000);
+const all=[...d.steps,...d.collectibles,...d.skills,...d.trophies,...d.objectives];assert.equal(new Set(all.map(r=>r.id)).size,all.length);
+const ids=new Set(all.map(r=>r.id)),stepIds=new Set(d.steps.map(r=>r.id)),sourceIds=new Set(d.sources.map(s=>s.id));
+for(const r of all){for(const id of r.sourceIds||[])assert.ok(sourceIds.has(id),r.id+' source '+id);for(const id of r.relatedIds||[])assert.ok(ids.has(id),r.id+' link '+id);if(r.firstPracticalStepId)assert.ok(stepIds.has(r.firstPracticalStepId),r.id);if(r.stepId)assert.ok(stepIds.has(r.stepId),r.id);}
+for(const r of d.collectibles)assert.ok(d.steps.find(s=>s.id===r.firstPracticalStepId).relatedIds.includes(r.id),r.id+' 必須能從路線進入');
+assert.deepEqual(d.collectibles.filter(r=>['mm-109','mm-110'].includes(r.id)).map(r=>r.substepId),['trial-northwest','trial-northeast']);
+assert.equal(d.collectibles.find(r=>r.id==='enemy-163').firstPracticalStepId,'dq3-r37-grand');
+assert.equal(d.collectibles.find(r=>r.id==='fm-121').firstPracticalStepId,'dq3-r37-grand');
+assert.equal(d.steps[23].requirements.length,6);assert.match(d.steps[36].warnings.join(' '),/11–20.*≤10/);
+let p=fresh();writeRecord(p,'settings','phase',{value:'phase-4'});assert.equal(nextStep(p,d).id,d.steps[0].id);
+for(const r of d.collectibles)writeRecord(p,'collectibles',r.id,{done:true});for(const r of d.skills)writeRecord(p,'skills',r.id,{done:true});writeRecord(p,'objectives','reward-110',{done:true});
+assert.equal(trophyCondition(p,d.trophies[24],d).met,true);assert.equal(trophyCondition(p,d.trophies[20],d).met,true);assert.deepEqual(p.trophies,{});
+assert.deepEqual(importData(envelope(p)),p);assert.throws(()=>importData({...envelope(p),schemaVersion:2}));assert.throws(()=>validateProgress({...p,gameId:'grounded'}));assert.throws(()=>validateProgress({...p,counters:{gold:{value:-1}}}));
+const incoming=clone(p);incoming.future={preserve:1};incoming.collectibles['future-id']={done:true,unknown:{keep:'yes'}};
+const rows=differences(p,incoming),selected=new Set(rows.map(r=>r.group+'/'+r.id));const merged=applyDifferences(clone(p),rows,selected);assert.equal(merged.future.preserve,1);assert.equal(merged.collectibles['future-id'].unknown.keep,'yes');
+const missing=differences(merged,p);assert.equal(applyDifferences(clone(merged),missing,new Set(missing.map(r=>r.group+'/'+r.id))).future.preserve,1);
+// 真正的 per-key 撤銷合約：不同鍵可撤銷，同鍵後寫／ABA 皆阻擋。
+let state=fresh();const store={update:async fn=>{const next=fn(clone(state));next.revision=state.revision+1;validateProgress(next);state=next;return clone(state);}};
+const first=await edit(store,'collectibles','mm-001',{done:true});await edit(store,'collectibles','mm-002',{done:true});await undoEdit(store,first.undo);assert.equal(state.collectibles['mm-001'].done,false);assert.equal(state.collectibles['mm-002'].done,true);
+const same=await edit(store,'collectibles','mm-001',{done:true});await edit(store,'collectibles','mm-001',{done:false});await edit(store,'collectibles','mm-001',{done:true});await assert.rejects(()=>undoEdit(store,same.undo),/後續變更/);
+const local=fresh(),old=clone(local);local.counters.gold={value:10,updatedAt:200};old.counters.gold={value:5,updatedAt:100};const oldRows=differences(local,old);assert.throws(()=>applyDifferences(clone(local),oldRows,new Set(['counters/gold'])),/來源較舊/);
+console.log(JSON.stringify({passed:true,slug:d.gameId,steps:38,trophies:42,medals:110,friendlyMonsters:121,enemies:163,skills:135,arena:11,undo:'per-key-revision',unknownData:'retained'}));

@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-23 DQ3 HD-2D 1.0.0 本機新增：`games/dragon-quest-iii-hd-2d-remake/` 原生 ES modules／JSON，以規格 SHA256 固定離線資料來源。4 階段／11 行進段落／38 步驟，42 盃、110 徽章、121 友善個體、163 討伐、135 去重技能。schema1 的八個 map 分開記錄路線、收藏、PSN、技能、子目標、手動計數、供品與閱讀書籤；各處引用同一 ID，條件僅推導、不寫回獎盃。沿用根 `shared/roadmap-store.js` 交易與 BroadcastChannel，模組內以每鍵 `keyRevision` 檢查撤銷衝突；寫入失敗回復畫面並提供重試。資料庫、快照、匯入原文皆限本遊戲前綴；不載入同步 core、OAuth、Drive 或 SW。匯入逐筆選差異、下載兩端備份、額外核對較舊來源，再以原文條件交易套用。資料／產物／隔離瀏覽器驗證見 [模組紀錄](../games/dragon-quest-iii-hd-2d-remake/docs/IMPLEMENTATION.md)。2026-11-23 使用者已授權 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 為準。
+
 2026-11-08 IRON RAIN 1.4.0 本機武器索引修正：新增 research/weapon-catalog.json，prepare-data 離線合併 360 款（本體312／DLC40／特典8），保留舊55款 ID；equipment sources／audit 提供逐類計數與名稱／成本證據。dist/model.js 的 arsenalProgress 僅從 platinumRequired 與 purchased 推導本體持有條件，不寫獎盃；dist/weapons.js 增加唯讀內容範圍篩選。維持 schema1、同一 weapons map、namespace／store／Drive／保護式匯入契約，沒有新增儲存系統。道具／外觀仍為部分庫；使用者已授權本批 commit／push，沿既有 main Pages 流程發布，結果以對應提交 Actions 為準。
 
 2026-11-08 IRON RAIN 1.3.0：新增模組內 dist/weapons.js（緊湊清單與唯讀篩選）、dist/advice.js 與 research/advice-research.json → dist/data/advice.json（出擊需求、開局升級、刷取心得）。介面以白金為主，沿用 schema1／namespace／交易 store／Drive；舊目標與 unknown 狀態保留，武器 purchased 與 target 共用原紀錄，未新增平行配裝存檔。部分武器庫 55 款、其中 45 款成本完整；52 關／55 Drone／44 盃不變。使用者已授權連同白金 UI／checklist 沿 main Pages 合併發布，結果以對應提交 Actions 與正式資源核對為準。

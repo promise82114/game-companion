@@ -12,6 +12,7 @@ try{
  for(const slug of moduleSlugs)assert.equal(await portal.locator(`.open-game[href="games/${slug}/"]`).count(),1);
  assert.equal(await portal.locator('.open-game[href="games/mycopunk/"]').count(),1);
  const roadmapCount=await portal.locator('.game[data-kind="roadmap"]').count();
+ assert.equal(await portal.locator('.game[data-kind="roadmap"] .open-game[href="games/dragon-quest-iii-hd-2d-remake/"]').count(),1);
  assert.equal(await portal.locator('.game[data-kind="roadmap"] .open-game[href="games/ball-x-pit/"]').count(),1);
  await portal.locator('button[data-kind="roadmap"]').click();assert.equal(await portal.locator('.game:visible').count(),roadmapCount);assert.ok((await portal.locator('#visible-count').textContent()).includes(String(roadmapCount)));
  await portal.locator('#game-search').fill('Talos');assert.equal(await portal.locator('.game:visible').count(),1);assert.equal(await portal.locator('.game:visible h3').textContent(),'The Talos Principle II');

@@ -26,6 +26,7 @@ assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
 const presentation={
+ 'dragon-quest-iii-hd-2d-remake':{kind:'roadmap',features:['42 座 PS5 獎盃','110 徽章、121 魔物、163 討伐','全技能與試煉查漏']},
  'musou-orochi-z':{kind:'checklist',features:['96 名武將與武器','140 個劇本激難紀錄','特技與鍊成素材']},
  'ball-x-pit':{kind:'roadmap',features:['64 個 PS5 獎盃','128 格本體通關','基地、配方與圖鑑']},
  'edf-wb':{kind:'checklist',features:['武器與角色','配件收集','手動 Drive 同步']},

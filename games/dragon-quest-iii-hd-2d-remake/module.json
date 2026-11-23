@@ -1,0 +1,12 @@
+{
+  "gameId": "dragon-quest-iii-hd-2d-remake",
+  "slug": "dragon-quest-iii-hd-2d-remake",
+  "title": "勇者鬥惡龍III HD-2D Remake",
+  "description": "PS5 白金路線、110 枚小徽章、121 隻友善魔物、163 項討伐與全技能查漏",
+  "moduleVersion": "1.0.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/dragon-quest-iii-hd-2d-remake/",
+  "storagePrefix": "game-companion.dragon-quest-iii-hd-2d-remake.",
+  "cloudWritesEnabled": false
+}
