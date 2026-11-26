@@ -69,6 +69,8 @@ Mycopunk 整合版入口：[Mycopunk Field Guide](https://promise82114.github.io
 
 ## 維護文件
 
+文件依用途保留：已結束且無程式依賴的一次性建站／稽核任務稿可移除；目前規範、資料來源、已知限制與驗證紀錄持續保留。DQ3 與 BALL x PIT 的根目錄規格 MD 仍供離線資料產生器使用，不可當成舊稿刪除。新增或重建遊戲時，另依當時需求撰寫新規格。
+
 IRON RAIN 1.4.0 本機修正：武器圖鑑補為 360 款（本體 312／Golden Storm DLC 40／特典 8），預設全部顯示；白金持有條件固定只計本體 312。14 類與獨立英文清單交叉核對，原有 55 款 ID 保留；缺成本／英文逐筆標示，道具及外觀仍是部分庫。2026-11-08 使用者已授權本批 commit／push，沿既有 main Pages 流程發布；部署結果以對應提交 Actions 及正式資源核對為準。見[模組說明](games/edfir/README.md)與[驗證紀錄](games/edfir/docs/IMPLEMENTATION.md)。
 
 IRON RAIN 1.3.0：以白金為主、進度簡化為勾選，武器改為緊湊 checklist 與交叉篩選；新增出擊與養成頁、4 條開局升級路線及 5 條分階段刷取心得。武器部分庫擴為 55 款，來源限制與未知成本保留。2026-11-08 使用者已授權上述內容合併 commit／push／部署，沿既有 main Pages 流程發布；正式 Google 與遊戲實機未驗收。見[模組說明](games/edfir/README.md)與[驗證及發布紀錄](games/edfir/docs/IMPLEMENTATION.md)。
