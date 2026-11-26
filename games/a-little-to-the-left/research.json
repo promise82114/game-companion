@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-27",
+  "platformLimit": "初版文字補查；後續 39 題圖像與操作表查證見 layout-guides.mjs／layout-assets.json。Steam 圖文及公開實玩影片已核對，尚未於 PS5 重現。",
+  "supplements": {
+    "c02-p13": {
+      "sourceId": "S04",
+      "title": "貓食罐三塔：來源的十步移動表",
+      "steps": ["右塔的雞罐搬到左塔。", "中塔頂端兩個魚罐整段搬到右塔。", "中塔的豬罐搬到右塔。", "左塔的雞罐搬到中塔。", "左塔的豬罐搬到中塔。", "左塔的雞罐搬到中塔。", "右塔的豬罐搬到左塔。", "中塔的雞罐搬到右塔。", "中塔的豬罐搬到左塔。", "右塔的雞罐搬到中塔。"],
+      "note": "從來源原始局面依序操作；同類堆疊時抓取整段。最終左豬、中雞、右魚。若目前局面不同，正常重試再按表核對。尚缺每步快照，不宣稱最少步或 PS5 已驗證。"
+    },
+    "c02-p14": {
+      "sourceId": "S04",
+      "title": "明信片：依印字對照排列",
+      "steps": ["由左至右接 Adventure awaits、Home、Stay Awhile。", "Welcome 放在 Stay Awhile 上方。", "Greetings 接在右側；Penko Park 放其下方。", "wish you were here 接住 Greetings，微調至海平線與雲層連續。"],
+      "note": "印字保留原文以辨識物件；仍須與來源完成圖核對高度。"
+    },
+    "c03-p08": {
+      "sourceId": "S05",
+      "title": "鈕扣：新舊版本的解法差異",
+      "steps": ["來源目前將洞數與顏色歸為同一解，另一解依紋理分類。", "可辨識紋理為木紋、外圈皺褶內圈平滑、貝殼狀凸邊、兩條紋、外圈平滑中央凹陷。"],
+      "note": "作者留言表示 2025-06-26 更新後調整過本題。仍保留兩個解法，不新增第三星；PS5 到版與逐星核對待確認。"
+    }
+  },
+  "englishAliases": {
+    "c01": ["Cat Picture", "Cat Toys", "Coloured Pencils", "Yellow Sticky Notes", "Picture Frames", "Stacking Papers", "Books", "NES Cartridges", "Envelopes", "Green Sticky Notes", "Pinboard", "Calendar Stickers", "Red Books with Patterns", "Slanted Picture Frames", "Red Sticky Notes", "Coloured Pencils II", "Junk Papers", "Patterned Books II", "Lead Pencils", "Record Player"],
+    "c02": ["Tomato Cans", "Pickles", "Spoons", "Bowls", "Spice Jars", "Eggs", "Bread Tags", "Fruit", "Pasta", "Sea Themed Drinking Glasses", "Plate and Cutlery", "Breakfast Plate", "Cat Food Cans", "Postcards", "Groceries", "Polaroids"],
+    "c03": ["Cleaning Supplies", "Batteries", "Coins", "Kitchen Utensils", "Lightbulbs", "Junk Drawer", "Paint Cans", "Buttons", "Keys", "Toolbox Parts", "Bathroom Cupboard", "Hanging Up Tools", "Coin Polishing", "Sorting Boxes of Items", "Taped Boxes", "Wilted Flowers"],
+    "c04": ["Broken Vase", "Pawprints", "Plant Pruning", "Leaves", "Potted Plants", "Gems", "Shells", "Vine Pruning", "Rock Collection", "Seedpods", "Coloured Rocks", "Gem Mosaic", "Clovers", "Snowflakes Under Microscope", "Spider Web"],
+    "c05": ["Moving Pictures", "Clock", "Chess Pieces", "Constellations", "Desk", "Match Boxes", "Candles", "Mirror", "Birds Under Lamp", "Callback Puzzles", "Compacting Containers", "Container Stacking"]
+  }
+}

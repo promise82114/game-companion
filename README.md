@@ -2,6 +2,8 @@
 
 2026-11-27《人中之龍８》本機1.1.0增補完整110攝影／90追憶逐點清單，附位置、章節／時段／前置與逐筆來源，整合章節區域閱讀與查漏。沿用schema1，舊版手填總數保留且不與逐點數相加；PSN獨立確認。來源異說與檢查見[收集查核](games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。2026-11-27使用者已授權本批commit／push與既有main Pages發布，結果以對應提交Actions及正式資源核對為準。
 
+2026-11-27《靠左一些些／A Little to the Left》1.1.0 本機圖文攻略：五章 79 個編輯導航單元、108 個解法紀錄、200 個操作核對、PS5 本體 48 盃。原列 39／39 題配置已補本機完成圖與繁中操作表，共 104 張圖解、8 種貼紙圖案、15 組可播放操作；花瓶另有八張旋轉實玩畫面。保留乾淨首輪提醒、每日整理兩路線、原 ID／schema、獨立 IndexedDB 與保護式匯入；PS5 實機尚未驗收。2026-11-27 使用者已授權本遊戲專屬變更 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 及正式資源核對為準。[模組說明](games/a-little-to-the-left/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/a-little-to-the-left/)。隔離回歸：`node scripts/verify-alttl-browser.mjs`。
+
 2026-11-27 本機新增《人中之龍８／Like a Dragon: Infinite Wealth》PS5 本體白金攻略：14章／100個主線動作、65盃、52條支線、40段羈絆、兩迷宮含EX與16項計數。獨立本機進度、逐鍵撤銷及保護式匯入，沒有Drive／SW。詳見[模組說明](games/like-a-dragon-infinite-wealth/README.md)與[本機入口](http://127.0.0.1:4190/game-companion/games/like-a-dragon-infinite-wealth/)。隔離瀏覽器：`node scripts/verify-lad8-browser.mjs`。攝影／追憶為門檻及區域指引，非完整逐點庫；尚未PS5實機核對。2026-11-27 使用者已授權 commit／push 與正式站發布，部署結果以對應提交的 GitHub Actions 及正式資源核對為準。
 
 2026-11-23 新增《勇者鬥惡龍III HD-2D Remake》PS5 本機攻略：4 階段／11 行進段落／38 步驟、42 盃、110 徽章、121 友善個體、163 討伐與 135 種去重技能，另有配隊、練等、七願、競技場與試煉備料。獨立 IndexedDB、逐鍵撤銷與保護式 JSON 匯入；沒有 Drive／SW；2026-11-23 使用者已授權 commit／push，沿既有 main Pages 流程發布，結果以對應提交 Actions 為準。[模組與啟動說明](games/dragon-quest-iii-hd-2d-remake/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/dragon-quest-iii-hd-2d-remake/)。啟動 server 後執行 `node scripts/verify-dq3-browser.mjs` 驗證隔離合成資料。PS5 逐點實機與跳盃仍待人工核對。

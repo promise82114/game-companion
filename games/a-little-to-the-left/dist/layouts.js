@@ -1,0 +1,15 @@
+const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const modeLabels={normal:'普通外觀',assist:'色彩輔助'};
+export function renderImage(figure,{large=false}={}){
+ const markers=figure.markers||[];
+ return `<div class="layout-image ${large?'large':''}" data-image-figure="${figure.figureId}" style="--source-width:${figure.width}px"><img src="./${escape(figure.file)}" width="${figure.width}" height="${figure.height}" alt="${escape(figure.caption)}" ${large?'':'loading="lazy"'} decoding="async">${markers.map(m=>`<span class="layout-marker" style="left:${m.x*100}%;top:${m.y*100}%" aria-hidden="true">${escape(m.label)}</span>`).join('')}<p class="image-error" role="status" hidden>配置圖載入失敗，請重新載入；下方操作表仍可閱讀。</p></div>`;
+}
+export function renderLayout(p,mode='normal'){
+ const g=p.layout;if(!g)return '';
+ const hasModes=g.figures.some(f=>f.mode!=='shared');
+ const tables=g.tables.filter(t=>!t.mode||t.mode===mode);
+ return `<section class="layout-guide" aria-labelledby="layout-title-${p.key}" data-layout-key="${p.key}"><header><div><h3 id="layout-title-${p.key}">${escape(g.title)}</h3><small>配置圖與操作表 · 來源畫面已逐張核對 · ${g.checkedAt}</small></div></header>${hasModes?`<div class="tabs" aria-label="${escape(p.titleZh)}圖解外觀">${Object.entries(modeLabels).map(([value,label])=>`<button id="mode-${p.key}-${value}" data-layout-mode="${value}" data-puzzle-key="${p.key}" aria-pressed="${mode===value}">${label}</button>`).join('')}</div>`:''}${(g.notes||[]).map(n=>'<p class="notice">'+escape(n)+'</p>').join('')}
+ ${tables.map(t=>`<h4>${escape(t.title)}</h4><div class="layout-table-wrap ${t.rows.length>10?'is-long':''}" tabindex="0" role="region" aria-label="${escape(g.title+' '+t.title)}"><table class="layout-table"><thead><tr>${t.headers.map(h=>`<th scope="col">${escape(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map((row,i)=>'<tr>'+row.map((cell,j)=>`<${j===0?'th scope="row"':'td'}>${j===0&&g.stickerIcons?.[i]?`<img class="sticker-icon" src="./${escape(g.stickerIcons[i].file)}" alt="" width="32" height="32" loading="lazy">`:''}${escape(cell)}</${j===0?'th':'td'}>`).join('')+'</tr>').join('')}</tbody></table></div>`).join('')}
+ <div class="layout-gallery">${g.figures.filter(f=>f.mode==='shared'||f.mode===mode).map(f=>`<figure class="layout-figure" id="${f.figureId}"><figcaption><strong>圖 ${f.number} · ${escape(f.caption)}</strong>${f.mode!=='shared'?`<small>${modeLabels[f.mode]}</small>`:''}</figcaption>${renderImage({...f,markers:f.number===1?g.markers:[]})}<div class="figure-controls"><button data-enlarge="${f.figureId}" aria-haspopup="dialog">放大配置圖 ${f.number}</button>${f.animationFile?`<button data-play="${f.figureId}" aria-pressed="false">播放步驟示範</button>`:''}</div><small class="figure-credit">遊戲畫面／來源：${escape(f.author)} · <a href="${escape(f.sourceUrl)}" target="_blank" rel="noopener noreferrer">原始段落</a></small></figure>`).join('')}</div>
+ <p class="completion-check"><strong>完成判據：</strong>${escape(g.completion)}</p><p class="muted">${escape(g.retry)}</p></section>`;
+}

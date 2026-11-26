@@ -26,6 +26,7 @@ assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
 const presentation={
+ 'a-little-to-the-left':{kind:'roadmap',features:['48 座 PS5 本體獎盃','五章逐題文字與解法查漏','每日整理與乾淨首輪提醒']},
  'like-a-dragon-infinite-wealth':{kind:'roadmap',features:['65 座 PS5 本體獎盃','110 攝影、90 追憶逐點查漏','14 章路線與52支線']},
  'dragon-quest-iii-hd-2d-remake':{kind:'roadmap',features:['42 座 PS5 獎盃','110 徽章、121 魔物、163 討伐','全技能與試煉查漏']},
  'musou-orochi-z':{kind:'checklist',features:['96 名武將與武器','140 個劇本激難紀錄','特技與鍊成素材']},
