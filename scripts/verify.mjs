@@ -7,6 +7,8 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const results=[];
+const lad8Check=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/like-a-dragon-infinite-wealth'),encoding:'utf8'});
+assert.equal(lad8Check.status,0,lad8Check.stdout+lad8Check.stderr);results.push(JSON.parse(lad8Check.stdout));
 const dq3Check=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/dragon-quest-iii-hd-2d-remake'),encoding:'utf8'});
 assert.equal(dq3Check.status,0,dq3Check.stdout+dq3Check.stderr);results.push(JSON.parse(dq3Check.stdout));
 const orochiCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/musou-orochi-z'),encoding:'utf8'});

@@ -1,0 +1,2450 @@
+{
+  "gameId": "like-a-dragon-infinite-wealth",
+  "sourceSha256": "29f42c606d7614fddc3d90406ae76fb342bfb01f5c902f3b3a975fcf8f8c787e",
+  "chapters": [
+    {
+      "id": "chapter-01",
+      "label": "第 1 章｜橫濱開場",
+      "intro": "**主要流程**：完成工作與同伴事件 → 春日恢復勇者 → 購買三人基本裝備 → 青龍會入口碰壁後找流浪漢打聽 → 經地下水道進入青龍會 → 完成章末戰。\n\n- 水道前先補血與購買便宜回復品。教學中學會背擊、抓技破防、利用地上物件。\n- 支線 #01 隨流程完成，解鎖播放清單。此章不用為獎盃繞完整張地圖。\n- 遇到休息與存檔點就利用；主線迷宮內不能假設任何位置都能手動存檔。[S6]",
+      "steps": [
+        "chapter-01-主要流程-1",
+        "chapter-01-主要流程-2",
+        "chapter-01-主要流程-3",
+        "chapter-01-主要流程-4",
+        "chapter-01-主要流程-5",
+        "chapter-01-主要流程-6"
+      ],
+      "checks": [
+        "chapter-01-check-1",
+        "chapter-01-check-3"
+      ],
+      "substories": [
+        "SS01"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-02",
+      "label": "第 2 章｜前往夏威夷",
+      "intro": "**主要流程**：澤城交代 → 酒吧與掃墓事件 → 解鎖敵人圖鑑 → 出發夏威夷 → 計程車事件 → 與英二同行 → 山井戰 → 前往茜的住處。\n\n- 支線 #02 解鎖 Sujidex。此後主要靠打倒各種敵人累積，不是去抓 200 隻。\n- 初期金錢有限，先買回復品；不在開放區硬挑高等敵人。[S7]",
+      "steps": [
+        "chapter-02-主要流程-1",
+        "chapter-02-主要流程-2",
+        "chapter-02-主要流程-3",
+        "chapter-02-主要流程-4",
+        "chapter-02-主要流程-5",
+        "chapter-02-主要流程-6",
+        "chapter-02-主要流程-7",
+        "chapter-02-主要流程-8"
+      ],
+      "checks": [
+        "chapter-02-check-1"
+      ],
+      "substories": [
+        "SS02",
+        "SS03"
+      ],
+      "notes": "**資料修正**：部分攻略索引把 #03 Crazy Money 歸在第 2 章；逐章流程則是在第 3 章取得外派幫手、替 Jeff 籌 $30 時觸發。本指引把實際操作提醒放在第 3 章，避免提前找不到事件。[S2][S8]\n\n"
+    },
+    {
+      "id": "chapter-03",
+      "label": "第 3 章｜建立夏威夷探索習慣",
+      "intro": "**主要流程**：桐生加入 → Revolve 據點 → 返回茜的住處並由富澤入隊 → 找回物品、追查護照 → Jeff 的餐車 → 外派幫手與 Crazy 送教學 → Diamond Head 酒吧／Roman 戰 → 返回據點。\n\n**順路做**\n\n- #03、#04、#05：配送、外派幫手、ALOHA Links 系統教學。\n- #06：取得 Street Surfer 代步工具。此後可減少跑圖時間。\n- #07、#08：開啟交友軟體與可疑者抓拍，都是獎盃相關活動。\n- 在 Aloha Beach 順做 #09、#10、#14、#16→#17→#18；在 Little Japan／餐廳周邊做 #11、#12、#13；另外遇到 #15、#19 時接取。完整索引見第 7 節。\n- 到 Revolve 廁所調查可互動馬桶，取得道具便能解鎖雜項杯。\n- 夏威夷雨後出現彩虹就拍，不必現在站著等天氣。沒遇到便記下，往後繼續留意。[S2][S8][S16]",
+      "steps": [
+        "chapter-03-主要流程-1",
+        "chapter-03-主要流程-2",
+        "chapter-03-主要流程-3",
+        "chapter-03-主要流程-4",
+        "chapter-03-主要流程-5",
+        "chapter-03-主要流程-6",
+        "chapter-03-主要流程-7",
+        "chapter-03-主要流程-8"
+      ],
+      "checks": [
+        "chapter-03-check-1",
+        "chapter-03-check-2",
+        "chapter-03-check-3",
+        "chapter-03-check-4",
+        "chapter-03-check-5",
+        "chapter-03-check-6"
+      ],
+      "substories": [
+        "SS03",
+        "SS04",
+        "SS05",
+        "SS06",
+        "SS07",
+        "SS08",
+        "SS09",
+        "SS10",
+        "SS14",
+        "SS16",
+        "SS17",
+        "SS18",
+        "SS11",
+        "SS12",
+        "SS13",
+        "SS15",
+        "SS19"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-04",
+      "label": "第 4 章｜製作武器、聯盟與第一段長迷宮",
+      "intro": "**主要流程**：Julie's Gearworks 教學 → Anaconda 購物中心 → 江湖寶貝對戰教學 → 準備物資 → 第五地區 → 地下／工廠 → 千歲入隊 → Dwight 戰。\n\n- 進第五地區前按遊戲提示檢查等級與裝備；此處有較長連戰，先存另一格。\n- #20 解鎖工坊，先改善春日球棒；「製作」與單純「強化」分開記。白金採製作 10 種裝備的安全做法。\n- #37 解鎖江湖寶貝對戰與捕捉。先抓可用隊伍，20 次激戰區與 10 次捕捉逐漸累積，不必立即衝冠軍。\n- 順做 #21–28；#28 接在 #15、#27 後。\n- #26 Anaconda Escape 在購物中心二樓。它不需要最高分才算完成支線；若想拿較好獎勵，留意電腦問答與寶箱。\n- #29 需投入 $3,000 並有較高等級戰鬥，可延後。#43–46 朝倉連鎖則有單挑與後期戰，當成額外技能／體驗路線，不列進本文件預設 40 條。[S2][S9]",
+      "steps": [
+        "chapter-04-主要流程-1",
+        "chapter-04-主要流程-2",
+        "chapter-04-主要流程-3",
+        "chapter-04-主要流程-4",
+        "chapter-04-主要流程-5",
+        "chapter-04-主要流程-6",
+        "chapter-04-主要流程-7",
+        "chapter-04-主要流程-8"
+      ],
+      "checks": [
+        "chapter-04-check-1",
+        "chapter-04-check-2",
+        "chapter-04-check-3",
+        "chapter-04-check-4",
+        "chapter-04-check-5"
+      ],
+      "substories": [
+        "SS20",
+        "SS37",
+        "SS21",
+        "SS28",
+        "SS15",
+        "SS27",
+        "SS26",
+        "SS29",
+        "SS43",
+        "SS22",
+        "SS23",
+        "SS24",
+        "SS25",
+        "SS44",
+        "SS45",
+        "SS46"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-05",
+      "label": "第 5 章｜白金養成的第一個整理點",
+      "intro": "**主要流程**：回 Revolve → 富澤羈絆劇場教學 → 孤兒院與食物事件 → Alo-Happy → 攝影尋寶 → Palekana 巡邏 → Hawaiian Haunt 教學 → Art Walls 戰。\n\n**順路做**\n\n1. 完成 #31、#32、#34。先體驗免費職業行程，再依能力與金錢逐步開其他行程，累積本體 8 種。\n2. 採「原職業主力＋繼承補洞」：不用為了白金讓春日單人輪練七個職業。不同隊友維持七種不同職業至 Rank 30 較自然。\n3. 富澤、千歲開始看羈絆劇場。富澤最後一戰約 Lv.32，初期即使羈絆滿也能先留著；千歲最後一段要等第 13 章。\n4. 攝影先拍據點、工坊、市場與目前路過的區域；達到 30 張可拿杯，湊整區則另有裝備報酬。\n5. Hawaiian Haunt 教學完成不等於迷宮杯完成。現在只拿來補等與養職業，EX 留後段。\n6. 做 10 種證照提升綜合能力，資金允許再多考；小遊戲不需要在這章全部刷完。[S10][S13][S1][S5]",
+      "steps": [
+        "chapter-05-主要流程-1",
+        "chapter-05-主要流程-2",
+        "chapter-05-主要流程-3",
+        "chapter-05-主要流程-4",
+        "chapter-05-主要流程-5",
+        "chapter-05-主要流程-6",
+        "chapter-05-主要流程-7",
+        "chapter-05-主要流程-8"
+      ],
+      "checks": [
+        "chapter-05-check-1",
+        "chapter-05-check-2",
+        "chapter-05-check-3",
+        "chapter-05-check-4",
+        "chapter-05-check-5",
+        "chapter-05-check-6"
+      ],
+      "substories": [
+        "SS31",
+        "SS32",
+        "SS34"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-06",
+      "label": "第 6 章｜咚咚島解鎖，主線與經營分開安排",
+      "intro": "**主要流程**：依主線觸發海灘／島嶼事件 → 完成咚咚島必要教學 → 返回夏威夷 → 繼續山井、黃拓與據點相關主線。\n\n- #33 解鎖咚咚島。想繼續 RPG 主線，完成能離島的教學即可；喜歡經營可在此多玩。整套經營留通關後也可。\n- 若留下經營，優先清理土地、升工具、準備可入住的設施，別只裝飾而拖延遊客累計。五項目標見第 5 節。\n- #35 在大導寺據點事件後可開始，後續需要白天；事件沒續接就先推主線，往後可補。\n- 本章後段與下一章開頭有戰鬥，休息與補給時把 HP／MP、復活道具整備好。[S2][S12]",
+      "steps": [
+        "chapter-06-主要流程-1",
+        "chapter-06-主要流程-2",
+        "chapter-06-主要流程-3",
+        "chapter-06-主要流程-4"
+      ],
+      "checks": [
+        "chapter-06-check-1",
+        "chapter-06-check-3"
+      ],
+      "substories": [
+        "SS33",
+        "SS35"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-07",
+      "label": "第 7 章｜足立加入，準備雙主角分線",
+      "intro": "**主要流程**：山井戰 → 據點與海灘 → 足立、難波加入 → 刺青店 → 劇場 → 找主鑰匙上樓 → 山井再戰 → Palekana。\n\n- 新加入隊友先查看裝備與職業，不只看人物等級。\n- 劇場先處理小兵；山井反擊姿態時用回復、增益或遠距手段，別連續正面硬打。\n- 開始足立羈絆路線；富澤最後一戰現在較適合處理。\n- 此後桐生、難波返回日本；春日與桐生內容分開記錄，不要求一隊處理另一隊的專屬事件。[S11]",
+      "steps": [
+        "chapter-07-主要流程-1",
+        "chapter-07-主要流程-2",
+        "chapter-07-主要流程-3",
+        "chapter-07-主要流程-4",
+        "chapter-07-主要流程-5",
+        "chapter-07-主要流程-6",
+        "chapter-07-主要流程-7",
+        "chapter-07-主要流程-8"
+      ],
+      "checks": [
+        "chapter-07-check-1",
+        "chapter-07-check-2",
+        "chapter-07-check-3",
+        "chapter-07-check-4"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-08",
+      "label": "第 8 章｜桐生線：追憶、臨終劇場與能力",
+      "intro": "**主要流程**：橫濱同伴事件 → 打擊中心 → 春日住處整理願望清單 → 紗榮子入隊 → Survive／青龍會事件 → 臨終劇場教學 → 亞門教學戰 → 青龍會戰鬥。\n\n- 建議先等隊伍湊齊再展開長距離收集，順便增加多名隊友羈絆。\n- 地圖上已有標記的追憶，按你目前主線所在區域逐區收；可到神室町時也順便補那邊的標記。\n- 追憶帶心技體經驗；70 篇是獎盃門檻，能力還差時可繼續收，不必在 70 停手。\n- 難波、紗榮子、善熙開始羈絆劇場；橫濱 Alo-Happy 支店可查看新職業。\n- 臨終劇場目前不會全部開放。亞門這場是教學流程，先依遊戲事件進入桐生強化模式，不要把它當後期亞門挑戰硬刷。[S14][S4]",
+      "steps": [
+        "chapter-08-主要流程-1",
+        "chapter-08-主要流程-2",
+        "chapter-08-主要流程-3",
+        "chapter-08-主要流程-4",
+        "chapter-08-主要流程-5",
+        "chapter-08-主要流程-6",
+        "chapter-08-主要流程-7",
+        "chapter-08-主要流程-8"
+      ],
+      "checks": [
+        "chapter-08-check-1",
+        "chapter-08-check-2",
+        "chapter-08-check-3",
+        "chapter-08-check-4",
+        "chapter-08-check-5"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-09",
+      "label": "第 9 章｜春日線：資金與順路支線整理",
+      "intro": "**主要流程**：離開據點按標記前進 → 極羈絆技教學 → 劇場／山井 → 刺青店所需 $10,000 → Revolve 休息 → Harbor Street 後續戰。\n\n- 先保留 $10,000，不要剛好全投入工坊。\n- 春日承受山井攻擊時優先保命；能造成大量傷害也不值得冒主角倒地的風險。\n- #36：到 Aloha Beach 西端接挖土機事件，依事件離開再回訪；兩台約 Lv.31、弱火。\n- 主線空檔可補 #29→30、朝倉系列或聯盟；它們不是本章都必須清完的事。[S15][S2]",
+      "steps": [
+        "chapter-09-主要流程-1",
+        "chapter-09-主要流程-2",
+        "chapter-09-主要流程-3",
+        "chapter-09-主要流程-4",
+        "chapter-09-主要流程-5",
+        "chapter-09-主要流程-6"
+      ],
+      "checks": [
+        "chapter-09-check-1",
+        "chapter-09-check-3",
+        "chapter-09-check-4"
+      ],
+      "substories": [
+        "SS36",
+        "SS29"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "chapter-10",
+      "label": "第 10 章｜桐生線：橫濱迷宮與趙",
+      "intro": "**主要流程**：Survive 與善熙對話 → 趙加入 → 橫濱迷宮教學 → 陣內站 → 青龍會設施連戰／澤城戰 → 返回住處。\n\n- 橫濱迷宮不必現在打完才能推主線。需要練等時再進入適合等級的區段。\n- 趙開始累積羈絆，最後一戰約 Lv.40；等級不足可留第 12 章。\n- 接續已開的臨終劇場、補地圖追憶；仍未接到下一段時先看章節與覺醒條件，不要當成漏接。\n- 澤城戰先減少小兵，再專心處理頭目與 QTE。[S17][S1]",
+      "steps": [
+        "chapter-10-主要流程-1",
+        "chapter-10-主要流程-2",
+        "chapter-10-主要流程-3",
+        "chapter-10-主要流程-4",
+        "chapter-10-主要流程-5",
+        "chapter-10-主要流程-6"
+      ],
+      "checks": [
+        "chapter-10-check-1",
+        "chapter-10-check-2",
+        "chapter-10-check-3",
+        "chapter-10-check-4"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-11",
+      "label": "第 11 章｜春日線：分隊連戰前準備",
+      "intro": "**主要流程**：據點 → 刺青店／大導寺據點／旅館 → Club Guilty → 千歲回隊 → 劇場工地 → 挖土機 → 分隊 → 毒氣區。\n\n- 進工地前確保四人都有可用裝備。後面會分成春日＋千歲、足立＋富澤，不能只把一名補師的能力當全隊保障。\n- 挖土機後有恢復與存檔機會，先處理再與足立對話繼續。\n- 毒氣區優先摧毀產生器，再清敵人；兩隊都準備回復道具。\n- 千歲羈絆最後一段此時仍先留待第 13 章。[S18][S1]",
+      "steps": [
+        "chapter-11-主要流程-1",
+        "chapter-11-主要流程-2",
+        "chapter-11-主要流程-3",
+        "chapter-11-主要流程-4",
+        "chapter-11-主要流程-5",
+        "chapter-11-主要流程-6",
+        "chapter-11-主要流程-7",
+        "chapter-11-主要流程-8"
+      ],
+      "checks": [
+        "chapter-11-check-1",
+        "chapter-11-check-2",
+        "chapter-11-check-3"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-12",
+      "label": "第 12 章｜桐生線：重要 Boss 與臨終劇場收束",
+      "intro": "**主要流程**：神室町調查 → 返回橫濱 → 陣內站前往會面 → 真島／冴島／堂島戰 → 住處 → 青龍會東京支部 → 楢崎戰。\n\n- 前往陣內站的重要會面前先存檔；可參考遊戲約 Lv.41 的準備提示。\n- 三位頭目準備火、冰、電三種屬性；避免平均削血一起推入危險階段。先集中一人、清分身、維持桐生 HP，再處理其他人。\n- 後段臨終劇場在此章開放，但仍需要覺醒條件。以覺醒 Lv.9 為解鎖檢查點；心技體各項也要平均補，至少一項最後升到 Lv.10。\n- 主線有長段連戰，準備 MP 道具與保險箱鑰匙。劇情迷宮裝備值得拿，但沒有逐個寶箱全收的白金要求。[S19][S1]",
+      "steps": [
+        "chapter-12-主要流程-1",
+        "chapter-12-主要流程-2",
+        "chapter-12-主要流程-3",
+        "chapter-12-主要流程-4",
+        "chapter-12-主要流程-5",
+        "chapter-12-主要流程-6",
+        "chapter-12-主要流程-7"
+      ],
+      "checks": [
+        "chapter-12-check-1",
+        "chapter-12-check-2",
+        "chapter-12-check-3",
+        "chapter-12-check-4"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-13",
+      "label": "第 13 章｜春日線：韓俊基與千歲羈絆收尾",
+      "intro": "**主要流程**：調查前往 Nele 的方法 → 第五地區地下 → 港口與 Dwight 戰 → 後續日本／山井相關事件 → 最終章準備。\n\n- 韓俊基加入後開始五段羈絆；最後一戰約 Lv.44，先補裝備與羈絆，再接戰。\n- 千歲最後羈絆劇場終於可完成。若前段已看、羈絆已達門檻，回 Revolve 接續。\n- 支線仍可繼續補；本章不要求把島嶼經營、兩座 EX、Lv.70 全做完。\n- 上船與進地下前看清不可暫返的提示，準備好春日隊伍。[S20][S1]",
+      "steps": [
+        "chapter-13-主要流程-1",
+        "chapter-13-主要流程-2",
+        "chapter-13-主要流程-3",
+        "chapter-13-主要流程-4",
+        "chapter-13-主要流程-5"
+      ],
+      "checks": [
+        "chapter-13-check-1",
+        "chapter-13-check-2",
+        "chapter-13-check-3",
+        "chapter-13-check-4"
+      ],
+      "substories": [],
+      "notes": ""
+    },
+    {
+      "id": "chapter-finale",
+      "label": "最終章｜雙隊最終戰",
+      "intro": "**春日線**：夏威夷最後整備 → 港口確認出發 → 海上頭目 → Nele 島 → 島上連戰／大型頭目 → Bryce。\n\n**桐生線**：日本最後整備 → 向大導寺人員確認 → 神室町／千禧塔 → 海老名。\n\n- 兩隊分別在各自出發前補好裝備。約 Lv.50 是舒服的準備目標，並非解鎖最終章的硬條件。\n- 春日隊帶電與冰系攻擊，以及可靠群補；島上先避開地雷，遇休息點補滿。\n- 海老名變換階段後弱點會改變；前段刀／電有效，後段改以槍／火／冰，依畫面弱點調整。\n- 沒清完支線可以通關後再補。保存通關資料，進入 Premium Adventure，這不是 DLC 的 NG+。[S21]",
+      "steps": [
+        "chapter-finale-春日線-1",
+        "chapter-finale-春日線-2",
+        "chapter-finale-春日線-3",
+        "chapter-finale-春日線-4",
+        "chapter-finale-春日線-5",
+        "chapter-finale-春日線-6",
+        "chapter-finale-桐生線-1",
+        "chapter-finale-桐生線-2",
+        "chapter-finale-桐生線-3",
+        "chapter-finale-桐生線-4"
+      ],
+      "checks": [
+        "chapter-finale-check-1",
+        "chapter-finale-check-2",
+        "chapter-finale-check-3"
+      ],
+      "substories": [],
+      "notes": ""
+    }
+  ],
+  "steps": [
+    {
+      "id": "chapter-01-主要流程-1",
+      "chapterId": "chapter-01",
+      "label": "完成工作與同伴事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-01-主要流程-2",
+      "chapterId": "chapter-01",
+      "label": "春日恢復勇者",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-01-主要流程-3",
+      "chapterId": "chapter-01",
+      "label": "購買三人基本裝備",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-01-主要流程-4",
+      "chapterId": "chapter-01",
+      "label": "青龍會入口碰壁後找流浪漢打聽",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-01-主要流程-5",
+      "chapterId": "chapter-01",
+      "label": "經地下水道進入青龍會",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-01-主要流程-6",
+      "chapterId": "chapter-01",
+      "label": "完成章末戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-1",
+      "chapterId": "chapter-02",
+      "label": "澤城交代",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-2",
+      "chapterId": "chapter-02",
+      "label": "酒吧與掃墓事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-3",
+      "chapterId": "chapter-02",
+      "label": "解鎖敵人圖鑑",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-4",
+      "chapterId": "chapter-02",
+      "label": "出發夏威夷",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-5",
+      "chapterId": "chapter-02",
+      "label": "計程車事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-6",
+      "chapterId": "chapter-02",
+      "label": "與英二同行",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-7",
+      "chapterId": "chapter-02",
+      "label": "山井戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-02-主要流程-8",
+      "chapterId": "chapter-02",
+      "label": "前往茜的住處",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-1",
+      "chapterId": "chapter-03",
+      "label": "桐生加入",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-2",
+      "chapterId": "chapter-03",
+      "label": "Revolve 據點",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-3",
+      "chapterId": "chapter-03",
+      "label": "返回茜的住處並由富澤入隊",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-4",
+      "chapterId": "chapter-03",
+      "label": "找回物品、追查護照",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-5",
+      "chapterId": "chapter-03",
+      "label": "Jeff 的餐車",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-6",
+      "chapterId": "chapter-03",
+      "label": "外派幫手與 Crazy 送教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-7",
+      "chapterId": "chapter-03",
+      "label": "Diamond Head 酒吧／Roman 戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-03-主要流程-8",
+      "chapterId": "chapter-03",
+      "label": "返回據點",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-1",
+      "chapterId": "chapter-04",
+      "label": "Julie's Gearworks 教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-2",
+      "chapterId": "chapter-04",
+      "label": "Anaconda 購物中心",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-3",
+      "chapterId": "chapter-04",
+      "label": "江湖寶貝對戰教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-4",
+      "chapterId": "chapter-04",
+      "label": "準備物資",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-5",
+      "chapterId": "chapter-04",
+      "label": "第五地區",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-6",
+      "chapterId": "chapter-04",
+      "label": "地下／工廠",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-7",
+      "chapterId": "chapter-04",
+      "label": "千歲入隊",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-04-主要流程-8",
+      "chapterId": "chapter-04",
+      "label": "Dwight 戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-1",
+      "chapterId": "chapter-05",
+      "label": "回 Revolve",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-2",
+      "chapterId": "chapter-05",
+      "label": "富澤羈絆劇場教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-3",
+      "chapterId": "chapter-05",
+      "label": "孤兒院與食物事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-4",
+      "chapterId": "chapter-05",
+      "label": "Alo-Happy",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-5",
+      "chapterId": "chapter-05",
+      "label": "攝影尋寶",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-6",
+      "chapterId": "chapter-05",
+      "label": "Palekana 巡邏",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-7",
+      "chapterId": "chapter-05",
+      "label": "Hawaiian Haunt 教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-05-主要流程-8",
+      "chapterId": "chapter-05",
+      "label": "Art Walls 戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-06-主要流程-1",
+      "chapterId": "chapter-06",
+      "label": "依主線觸發海灘／島嶼事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-06-主要流程-2",
+      "chapterId": "chapter-06",
+      "label": "完成咚咚島必要教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-06-主要流程-3",
+      "chapterId": "chapter-06",
+      "label": "返回夏威夷",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-06-主要流程-4",
+      "chapterId": "chapter-06",
+      "label": "繼續山井、黃拓與據點相關主線",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-1",
+      "chapterId": "chapter-07",
+      "label": "山井戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-2",
+      "chapterId": "chapter-07",
+      "label": "據點與海灘",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-3",
+      "chapterId": "chapter-07",
+      "label": "足立、難波加入",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-4",
+      "chapterId": "chapter-07",
+      "label": "刺青店",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-5",
+      "chapterId": "chapter-07",
+      "label": "劇場",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-6",
+      "chapterId": "chapter-07",
+      "label": "找主鑰匙上樓",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-7",
+      "chapterId": "chapter-07",
+      "label": "山井再戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-07-主要流程-8",
+      "chapterId": "chapter-07",
+      "label": "Palekana",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-1",
+      "chapterId": "chapter-08",
+      "label": "橫濱同伴事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-2",
+      "chapterId": "chapter-08",
+      "label": "打擊中心",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-3",
+      "chapterId": "chapter-08",
+      "label": "春日住處整理願望清單",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-4",
+      "chapterId": "chapter-08",
+      "label": "紗榮子入隊",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-5",
+      "chapterId": "chapter-08",
+      "label": "Survive／青龍會事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-6",
+      "chapterId": "chapter-08",
+      "label": "臨終劇場教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-7",
+      "chapterId": "chapter-08",
+      "label": "亞門教學戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-08-主要流程-8",
+      "chapterId": "chapter-08",
+      "label": "青龍會戰鬥",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-1",
+      "chapterId": "chapter-09",
+      "label": "離開據點按標記前進",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-2",
+      "chapterId": "chapter-09",
+      "label": "極羈絆技教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-3",
+      "chapterId": "chapter-09",
+      "label": "劇場／山井",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-4",
+      "chapterId": "chapter-09",
+      "label": "刺青店所需 $10,000",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-5",
+      "chapterId": "chapter-09",
+      "label": "Revolve 休息",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-09-主要流程-6",
+      "chapterId": "chapter-09",
+      "label": "Harbor Street 後續戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-1",
+      "chapterId": "chapter-10",
+      "label": "Survive 與善熙對話",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-2",
+      "chapterId": "chapter-10",
+      "label": "趙加入",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-3",
+      "chapterId": "chapter-10",
+      "label": "橫濱迷宮教學",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-4",
+      "chapterId": "chapter-10",
+      "label": "陣內站",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-5",
+      "chapterId": "chapter-10",
+      "label": "青龍會設施連戰／澤城戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-10-主要流程-6",
+      "chapterId": "chapter-10",
+      "label": "返回住處",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-1",
+      "chapterId": "chapter-11",
+      "label": "據點",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-2",
+      "chapterId": "chapter-11",
+      "label": "刺青店／大導寺據點／旅館",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-3",
+      "chapterId": "chapter-11",
+      "label": "Club Guilty",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-4",
+      "chapterId": "chapter-11",
+      "label": "千歲回隊",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-5",
+      "chapterId": "chapter-11",
+      "label": "劇場工地",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-6",
+      "chapterId": "chapter-11",
+      "label": "挖土機",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-7",
+      "chapterId": "chapter-11",
+      "label": "分隊",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-11-主要流程-8",
+      "chapterId": "chapter-11",
+      "label": "毒氣區",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-1",
+      "chapterId": "chapter-12",
+      "label": "神室町調查",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-2",
+      "chapterId": "chapter-12",
+      "label": "返回橫濱",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-3",
+      "chapterId": "chapter-12",
+      "label": "陣內站前往會面",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-4",
+      "chapterId": "chapter-12",
+      "label": "真島／冴島／堂島戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-5",
+      "chapterId": "chapter-12",
+      "label": "住處",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-6",
+      "chapterId": "chapter-12",
+      "label": "青龍會東京支部",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-12-主要流程-7",
+      "chapterId": "chapter-12",
+      "label": "楢崎戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-13-主要流程-1",
+      "chapterId": "chapter-13",
+      "label": "調查前往 Nele 的方法",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-13-主要流程-2",
+      "chapterId": "chapter-13",
+      "label": "第五地區地下",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-13-主要流程-3",
+      "chapterId": "chapter-13",
+      "label": "港口與 Dwight 戰",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-13-主要流程-4",
+      "chapterId": "chapter-13",
+      "label": "後續日本／山井相關事件",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-13-主要流程-5",
+      "chapterId": "chapter-13",
+      "label": "最終章準備",
+      "lane": "主要流程"
+    },
+    {
+      "id": "chapter-finale-春日線-1",
+      "chapterId": "chapter-finale",
+      "label": "夏威夷最後整備",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-春日線-2",
+      "chapterId": "chapter-finale",
+      "label": "港口確認出發",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-春日線-3",
+      "chapterId": "chapter-finale",
+      "label": "海上頭目",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-春日線-4",
+      "chapterId": "chapter-finale",
+      "label": "Nele 島",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-春日線-5",
+      "chapterId": "chapter-finale",
+      "label": "島上連戰／大型頭目",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-春日線-6",
+      "chapterId": "chapter-finale",
+      "label": "Bryce",
+      "lane": "春日線"
+    },
+    {
+      "id": "chapter-finale-桐生線-1",
+      "chapterId": "chapter-finale",
+      "label": "日本最後整備",
+      "lane": "桐生線"
+    },
+    {
+      "id": "chapter-finale-桐生線-2",
+      "chapterId": "chapter-finale",
+      "label": "向大導寺人員確認",
+      "lane": "桐生線"
+    },
+    {
+      "id": "chapter-finale-桐生線-3",
+      "chapterId": "chapter-finale",
+      "label": "神室町／千禧塔",
+      "lane": "桐生線"
+    },
+    {
+      "id": "chapter-finale-桐生線-4",
+      "chapterId": "chapter-finale",
+      "label": "海老名",
+      "lane": "桐生線"
+    }
+  ],
+  "substories": [
+    {
+      "id": "SS01",
+      "label": "Radio Active",
+      "condition": "第1章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS02",
+      "label": "Sujimon, Generation II",
+      "condition": "第2章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS03",
+      "label": "Crazy Money",
+      "condition": "第3章實際事件（部分索引誤列第2章）",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS04",
+      "label": "Busted!",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS05",
+      "label": "Welcome to Hawaii, MFer!",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS06",
+      "label": "Surfin’ the Streets!",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS07",
+      "label": "Miss Match",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS08",
+      "label": "Snap Those Sickos",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS09",
+      "label": "A Love as Sweet as Lemons",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS10",
+      "label": "Coming Out of Her Shell",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS11",
+      "label": "Wait for Me",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS12",
+      "label": "Saved by Kindness",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS13",
+      "label": "Rock and Roil",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS14",
+      "label": "Neck Deep in Love",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS15",
+      "label": "Samurai, May We Walk Together?",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS16",
+      "label": "Beach Guardian: Water, Water Everywhere",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS17",
+      "label": "Beach Guardian: No Kidding Around",
+      "condition": "第3章；#16",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS18",
+      "label": "Beach Guardian: Heroes of the Sand",
+      "condition": "第3章；#17",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS19",
+      "label": "Home to Roost",
+      "condition": "第3章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS20",
+      "label": "A Better Bat",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS21",
+      "label": "Playing With Fire",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS22",
+      "label": "Rise and Grind",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS23",
+      "label": "The More the Plumeria",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS24",
+      "label": "Let It Snow",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS25",
+      "label": "Embrace Your Wild Side",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS26",
+      "label": "Anaconda Escape",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS27",
+      "label": "The Pursuit of Realism",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS28",
+      "label": "An Authentic Blockbuster",
+      "condition": "第4章；#15、#27",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS29",
+      "label": "Litterbugged",
+      "condition": "第4章",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS30",
+      "label": "Close Encounters of the Bird Kind?",
+      "condition": "第5章；#29；夜間",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS31",
+      "label": "Let’s Go Alo-Happy!",
+      "condition": "第5章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS32",
+      "label": "Tropical Photo Rally",
+      "condition": "第5章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS33",
+      "label": "The Island at Rock Bottom",
+      "condition": "第6章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS34",
+      "label": "The Legend of the Labyrinth",
+      "condition": "第5章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS35",
+      "label": "Love and Punishment",
+      "condition": "第6章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS36",
+      "label": "Relics of the Past",
+      "condition": "第9章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS37",
+      "label": "Choose Your Starter",
+      "condition": "第4章",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS38",
+      "label": "The CEO of Suji",
+      "condition": "依系統進度；訓練師 Rank 10",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS39",
+      "label": "The Queen’s Subilee",
+      "condition": "依系統進度；Rank 20",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS40",
+      "label": "A True Gym Battle",
+      "condition": "依系統進度；Rank 30",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS41",
+      "label": "Sodachi’s Revenge",
+      "condition": "依系統進度；Rank 35→40",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS42",
+      "label": "Atop the Plateau",
+      "condition": "依系統進度；#41",
+      "route": "預設40條"
+    },
+    {
+      "id": "SS43",
+      "label": "A Man Named Asakura",
+      "condition": "第4章",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS44",
+      "label": "A Changed Man",
+      "condition": "第4章；#43",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS45",
+      "label": "The Final Showdown for Real",
+      "condition": "第4章；#44",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS46",
+      "label": "A Man Facing the Future",
+      "condition": "第4章；#45",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS47",
+      "label": "Certifiable Lover",
+      "condition": "依系統進度；21 證照",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS48",
+      "label": "The Ultimate Alo-Happy Activity!",
+      "condition": "依系統進度；8 次 Alo-Happy",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS49",
+      "label": "She Never Misses",
+      "condition": "依系統進度；10 位約會",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS50",
+      "label": "Together, Forever…",
+      "condition": "依系統進度；Poundmates Silver",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS51",
+      "label": "Experimental Procedures",
+      "condition": "依系統進度；Julie 投資 Lv.4",
+      "route": "替補／額外體驗"
+    },
+    {
+      "id": "SS52",
+      "label": "Surviving Paradise",
+      "condition": "依系統進度；#47–51",
+      "route": "替補／額外體驗"
+    }
+  ],
+  "trophies": [
+    {
+      "id": "T01",
+      "label": "人中之龍８",
+      "condition": "獲得所有獎盃。"
+    },
+    {
+      "id": "T02",
+      "label": "故事進度1",
+      "condition": "完成主線故事第一章。"
+    },
+    {
+      "id": "T03",
+      "label": "故事進度2",
+      "condition": "完成主線故事第二章。"
+    },
+    {
+      "id": "T04",
+      "label": "故事進度3",
+      "condition": "完成主線故事第三章。"
+    },
+    {
+      "id": "T05",
+      "label": "故事進度4",
+      "condition": "完成主線故事第四章。"
+    },
+    {
+      "id": "T06",
+      "label": "故事進度5",
+      "condition": "完成主線故事第五章。"
+    },
+    {
+      "id": "T07",
+      "label": "故事進度6",
+      "condition": "完成主線故事第六章。"
+    },
+    {
+      "id": "T08",
+      "label": "故事進度7",
+      "condition": "完成主線故事第七章。"
+    },
+    {
+      "id": "T09",
+      "label": "故事進度8",
+      "condition": "完成主線故事第八章。"
+    },
+    {
+      "id": "T10",
+      "label": "故事進度9",
+      "condition": "完成主線故事第九章。"
+    },
+    {
+      "id": "T11",
+      "label": "故事進度10",
+      "condition": "完成主線故事第十章。"
+    },
+    {
+      "id": "T12",
+      "label": "故事進度11",
+      "condition": "完成主線故事第十一章。"
+    },
+    {
+      "id": "T13",
+      "label": "故事進度12",
+      "condition": "完成主線故事第十二章。"
+    },
+    {
+      "id": "T14",
+      "label": "故事進度13",
+      "condition": "完成主線故事第十三章。"
+    },
+    {
+      "id": "T15",
+      "label": "英雄有名",
+      "condition": "完成主線故事。"
+    },
+    {
+      "id": "T16",
+      "label": "完成支線故事10",
+      "condition": "完成10個以上的支線故事。"
+    },
+    {
+      "id": "T17",
+      "label": "完成支線故事20",
+      "condition": "完成20個以上的支線故事。"
+    },
+    {
+      "id": "T18",
+      "label": "完成支線故事40",
+      "condition": "完成40個以上的支線故事。"
+    },
+    {
+      "id": "T19",
+      "label": "與難波的羈絆",
+      "condition": "觀看所有與難波的羈絆劇場。"
+    },
+    {
+      "id": "T20",
+      "label": "與足立的羈絆",
+      "condition": "觀看所有與足立的羈絆劇場。"
+    },
+    {
+      "id": "T21",
+      "label": "與紗榮子的羈絆",
+      "condition": "觀看所有與紗榮子的羈絆劇場。"
+    },
+    {
+      "id": "T22",
+      "label": "與韓俊基的羈絆",
+      "condition": "觀看所有與韓俊基的羈絆劇場。"
+    },
+    {
+      "id": "T23",
+      "label": "與趙的羈絆",
+      "condition": "觀看所有與趙的羈絆劇場。"
+    },
+    {
+      "id": "T24",
+      "label": "與千歲的羈絆",
+      "condition": "觀看所有與千歲的羈絆劇場。"
+    },
+    {
+      "id": "T25",
+      "label": "與富澤的羈絆",
+      "condition": "觀看所有與富澤的羈絆劇場。"
+    },
+    {
+      "id": "T26",
+      "label": "與善熙的羈絆",
+      "condition": "觀看所有與善熙的羈絆劇場。"
+    },
+    {
+      "id": "T27",
+      "label": "初學者之龍",
+      "condition": "春日達到Lv.10以上。"
+    },
+    {
+      "id": "T28",
+      "label": "半吊子之龍",
+      "condition": "春日達到Lv.30以上。"
+    },
+    {
+      "id": "T29",
+      "label": "獨當一面之龍",
+      "condition": "春日達到Lv.50以上。"
+    },
+    {
+      "id": "T30",
+      "label": "傳說之龍",
+      "condition": "春日達到Lv.70以上。"
+    },
+    {
+      "id": "T31",
+      "label": "我的長處",
+      "condition": "春日的其中一項綜合能力達到MAX。"
+    },
+    {
+      "id": "T32",
+      "label": "完美之人",
+      "condition": "春日的綜合能力全部達到MAX。"
+    },
+    {
+      "id": "T33",
+      "label": "活著就不能逃避",
+      "condition": "完成所有的臨終劇場。"
+    },
+    {
+      "id": "T34",
+      "label": "充滿回憶",
+      "condition": "收集30個追憶日記。"
+    },
+    {
+      "id": "T35",
+      "label": "人生盡是回憶",
+      "condition": "收集70個追憶日記。"
+    },
+    {
+      "id": "T36",
+      "label": "這就是我的風格",
+      "condition": "桐生的心·技·體其中一項達到MAX。"
+    },
+    {
+      "id": "T37",
+      "label": "暢遊夏威夷之男",
+      "condition": "體驗8種休閒活動。"
+    },
+    {
+      "id": "T38",
+      "label": "這就是我的天職",
+      "condition": "1種以上的職業階級達到30。"
+    },
+    {
+      "id": "T39",
+      "label": "副業也很順利",
+      "condition": "3種以上的職業階級達到30。"
+    },
+    {
+      "id": "T40",
+      "label": "無所不能",
+      "condition": "7種以上的職業階級達到30。"
+    },
+    {
+      "id": "T41",
+      "label": "VIP客戶",
+      "condition": "外派幫手累積呼叫30次以上。"
+    },
+    {
+      "id": "T42",
+      "label": "強求得不到的東西",
+      "condition": "在Julie's Gearworks製作10種以上的裝備。"
+    },
+    {
+      "id": "T43",
+      "label": "投資才能",
+      "condition": "完成對茱莉的投資。"
+    },
+    {
+      "id": "T44",
+      "label": "你喜歡江湖寶貝吧？",
+      "condition": "江湖寶貝圖鑑內登錄100種以上的江湖寶貝。"
+    },
+    {
+      "id": "T45",
+      "label": "你就是江湖寶貝博士",
+      "condition": "江湖寶貝圖鑑內登錄200種以上的江湖寶貝。"
+    },
+    {
+      "id": "T46",
+      "label": "橫濱迷宮大師",
+      "condition": "突破橫濱迷宮。"
+    },
+    {
+      "id": "T47",
+      "label": "夏威夷迷宮大師",
+      "condition": "突破夏威夷迷宮。"
+    },
+    {
+      "id": "T48",
+      "label": "小混混聚集地清潔工",
+      "condition": "在激戰區戰鬥勝利20次。"
+    },
+    {
+      "id": "T49",
+      "label": "寶神冠軍",
+      "condition": "完成江湖寶貝對戰故事。"
+    },
+    {
+      "id": "T50",
+      "label": "我得到江湖寶貝了",
+      "condition": "在捕捉江湖寶貝機會中抓到10個江湖寶貝。"
+    },
+    {
+      "id": "T51",
+      "label": "他就是我的夥伴！",
+      "condition": "1個江湖寶貝的等級及信賴度達到MAX。"
+    },
+    {
+      "id": "T52",
+      "label": "回收大師",
+      "condition": "透過DIY製作100種家具。"
+    },
+    {
+      "id": "T53",
+      "label": "入住一百人也沒問題",
+      "condition": "咚咚島累積入住100位遊客。"
+    },
+    {
+      "id": "T54",
+      "label": "一起咚咚咚地努力吧！",
+      "condition": "播出咚咚島的電視廣告。"
+    },
+    {
+      "id": "T55",
+      "label": "咚咚島大復活！",
+      "condition": "度假區階級達到4顆星。"
+    },
+    {
+      "id": "T56",
+      "label": "愉快度假勝地咚咚島",
+      "condition": "完成咚咚島故事。"
+    },
+    {
+      "id": "T57",
+      "label": "玩咖",
+      "condition": "在10種以上的娛樂場所遊玩過。"
+    },
+    {
+      "id": "T58",
+      "label": "證照大師",
+      "condition": "在證照學院取得10種以上的證照。"
+    },
+    {
+      "id": "T59",
+      "label": "Mr. Crazy",
+      "condition": "通過Crazy送的所有賽程。"
+    },
+    {
+      "id": "T60",
+      "label": "可疑者攝影師",
+      "condition": "完成所有的可疑者抓拍。"
+    },
+    {
+      "id": "T61",
+      "label": "像個觀光客",
+      "condition": "在攝影尋寶拍下30種照片。"
+    },
+    {
+      "id": "T62",
+      "label": "你能交到100位朋友嗎？",
+      "condition": "透過ALOHA Links交到50位朋友。"
+    },
+    {
+      "id": "T63",
+      "label": "現代的交友方式",
+      "condition": "和5位透過交友軟體認識的人約會。"
+    },
+    {
+      "id": "T64",
+      "label": "嗯嗯，這個道具真不錯",
+      "condition": "從廁所馬桶中獲得道具。"
+    },
+    {
+      "id": "T65",
+      "label": "雨後的天空",
+      "condition": "用相機拍下在夏威夷的彩虹。"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "chapter-01-check-1",
+      "label": "C01 主線完成，已確認「故事進度1」。",
+      "chapterId": "chapter-01",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-01-check-3",
+      "label": "三名主力已換掉明顯落後的裝備。",
+      "chapterId": "chapter-01",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-02-check-1",
+      "label": "C02 主線完成，已確認「故事進度2」。",
+      "chapterId": "chapter-02",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-1",
+      "label": "C03 主線完成，已確認「故事進度3」。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-2",
+      "label": "#03／04／05 系統教學已完成。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-3",
+      "label": "#06／07／08 已解鎖或記為待補。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-4",
+      "label": "已開始打招呼累積 50 人。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-5",
+      "label": "馬桶道具杯已確認，或記為回 Revolve 時補。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-03-check-6",
+      "label": "#09–19 已完成者有記錄；不要求全部在本章清掉。",
+      "chapterId": "chapter-03",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-04-check-1",
+      "label": "C04 主線完成，已確認「故事進度4」。",
+      "chapterId": "chapter-04",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-04-check-2",
+      "label": "SS20、SS37 已完成。",
+      "chapterId": "chapter-04",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-04-check-3",
+      "label": "已開始「激戰區 20 次」與「實際捕捉 10 次」兩筆獨立計數。",
+      "chapterId": "chapter-04",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-04-check-4",
+      "label": "#21–28 可做者已記錄；#28 的前置沒有漏。",
+      "chapterId": "chapter-04",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-04-check-5",
+      "label": "沒為工坊投資或轉蛋用光生活資金。",
+      "chapterId": "chapter-04",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-1",
+      "label": "C05 主線完成，已確認「故事進度5」。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-2",
+      "label": "SS31、SS32、SS34 已完成。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-3",
+      "label": "已替主力設定有用的繼承技能。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-4",
+      "label": "攝影進度：____／30。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-5",
+      "label": "證照：____／10；Alo-Happy：____／8。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-05-check-6",
+      "label": "富澤、千歲羈絆劇場已看到目前可做的段落。",
+      "chapterId": "chapter-05",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-06-check-1",
+      "label": "C06 主線完成，已確認「故事進度6」。",
+      "chapterId": "chapter-06",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-06-check-3",
+      "label": "咚咚島決定「現在繼續」或「通關後補」，避免以為已解完。",
+      "chapterId": "chapter-06",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-07-check-1",
+      "label": "C07 主線完成，已確認「故事進度7」。",
+      "chapterId": "chapter-07",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-07-check-2",
+      "label": "足立的羈絆／職業已安排。",
+      "chapterId": "chapter-07",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-07-check-3",
+      "label": "富澤五段若已看完，另確認 PSN 實際跳盃。",
+      "chapterId": "chapter-07",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-07-check-4",
+      "label": "仍在使用的隊伍有回復與復活手段。",
+      "chapterId": "chapter-07",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-08-check-1",
+      "label": "C08 主線完成，已確認「故事進度8」。",
+      "chapterId": "chapter-08",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-08-check-2",
+      "label": "願望清單、追憶、臨終劇場已解鎖。",
+      "chapterId": "chapter-08",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-08-check-3",
+      "label": "追憶累計：____／70。",
+      "chapterId": "chapter-08",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-08-check-4",
+      "label": "難波／紗榮子／善熙的可看段落已處理。",
+      "chapterId": "chapter-08",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-08-check-5",
+      "label": "心／技／體目前等級：____／____／____。",
+      "chapterId": "chapter-08",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-09-check-1",
+      "label": "C09 主線完成，已確認「故事進度9」。",
+      "chapterId": "chapter-09",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-09-check-3",
+      "label": "春日六項能力已檢查，之後多選能補低項的活動。",
+      "chapterId": "chapter-09",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-09-check-4",
+      "label": "支線完成總數：____／40。",
+      "chapterId": "chapter-09",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-10-check-1",
+      "label": "C10 主線完成，已確認「故事進度10」。",
+      "chapterId": "chapter-10",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-10-check-2",
+      "label": "橫濱迷宮入口已解鎖。",
+      "chapterId": "chapter-10",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-10-check-3",
+      "label": "趙加入，開始記錄五段羈絆。",
+      "chapterId": "chapter-10",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-10-check-4",
+      "label": "臨終劇場已補到目前可觸發段落。",
+      "chapterId": "chapter-10",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-11-check-1",
+      "label": "C11 主線完成，已確認「故事進度11」。",
+      "chapterId": "chapter-11",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-11-check-2",
+      "label": "分隊前四人的回復／裝備都已確認。",
+      "chapterId": "chapter-11",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-11-check-3",
+      "label": "千歲前段羈絆已補，不把最後一段錯記為完成。",
+      "chapterId": "chapter-11",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-12-check-1",
+      "label": "C12 主線完成，已確認「故事進度12」。",
+      "chapterId": "chapter-12",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-12-check-2",
+      "label": "難波／紗榮子／善熙／趙羈絆已全看，或列出明確缺段。",
+      "chapterId": "chapter-12",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-12-check-3",
+      "label": "追憶：____／70；心技體至少一項 MAX：____。",
+      "chapterId": "chapter-12",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-12-check-4",
+      "label": "臨終劇場已全部完成，或記下覺醒／時段／事件缺口。",
+      "chapterId": "chapter-12",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-13-check-1",
+      "label": "C13 主線完成，已確認「故事進度13」。",
+      "chapterId": "chapter-13",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-13-check-2",
+      "label": "富澤／足立／千歲／韓俊基羈絆已全看，或有可執行缺段清單。",
+      "chapterId": "chapter-13",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-13-check-3",
+      "label": "春日隊伍有群補、復活、不同傷害屬性。",
+      "chapterId": "chapter-13",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-13-check-4",
+      "label": "手動存檔已另留一格。",
+      "chapterId": "chapter-13",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-finale-check-1",
+      "label": "C14 主線通關，已確認「英雄有名」。",
+      "chapterId": "chapter-finale",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-finale-check-2",
+      "label": "通關資料已保存，能進入 Premium Adventure。",
+      "chapterId": "chapter-finale",
+      "category": "章末核對"
+    },
+    {
+      "id": "chapter-finale-check-3",
+      "label": "仍未完成的支線與活動保留原紀錄，沒有重開一份當新周目。",
+      "chapterId": "chapter-finale",
+      "category": "章末核對"
+    },
+    {
+      "id": "bond-富澤-1",
+      "label": "富澤 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；約 Lv.32，初期不硬打"
+    },
+    {
+      "id": "bond-富澤-2",
+      "label": "富澤 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；約 Lv.32，初期不硬打"
+    },
+    {
+      "id": "bond-富澤-3",
+      "label": "富澤 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；約 Lv.32，初期不硬打"
+    },
+    {
+      "id": "bond-富澤-4",
+      "label": "富澤 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；約 Lv.32，初期不硬打"
+    },
+    {
+      "id": "bond-富澤-5",
+      "label": "富澤 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；約 Lv.32，初期不硬打"
+    },
+    {
+      "id": "bond-千歲-1",
+      "label": "千歲 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；最後一段第13章"
+    },
+    {
+      "id": "bond-千歲-2",
+      "label": "千歲 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；最後一段第13章"
+    },
+    {
+      "id": "bond-千歲-3",
+      "label": "千歲 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；最後一段第13章"
+    },
+    {
+      "id": "bond-千歲-4",
+      "label": "千歲 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；最後一段第13章"
+    },
+    {
+      "id": "bond-千歲-5",
+      "label": "千歲 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第5章；最後一段第13章"
+    },
+    {
+      "id": "bond-足立-1",
+      "label": "足立 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第7章；約 Lv.32"
+    },
+    {
+      "id": "bond-足立-2",
+      "label": "足立 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第7章；約 Lv.32"
+    },
+    {
+      "id": "bond-足立-3",
+      "label": "足立 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第7章；約 Lv.32"
+    },
+    {
+      "id": "bond-足立-4",
+      "label": "足立 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第7章；約 Lv.32"
+    },
+    {
+      "id": "bond-足立-5",
+      "label": "足立 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第7章；約 Lv.32"
+    },
+    {
+      "id": "bond-難波-1",
+      "label": "難波 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-難波-2",
+      "label": "難波 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-難波-3",
+      "label": "難波 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-難波-4",
+      "label": "難波 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-難波-5",
+      "label": "難波 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-紗榮子-1",
+      "label": "紗榮子 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-紗榮子-2",
+      "label": "紗榮子 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-紗榮子-3",
+      "label": "紗榮子 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-紗榮子-4",
+      "label": "紗榮子 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-紗榮子-5",
+      "label": "紗榮子 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-善熙-1",
+      "label": "善熙 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-善熙-2",
+      "label": "善熙 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-善熙-3",
+      "label": "善熙 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-善熙-4",
+      "label": "善熙 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-善熙-5",
+      "label": "善熙 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第8章；約 Lv.32"
+    },
+    {
+      "id": "bond-趙-1",
+      "label": "趙 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第10章；約 Lv.40"
+    },
+    {
+      "id": "bond-趙-2",
+      "label": "趙 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第10章；約 Lv.40"
+    },
+    {
+      "id": "bond-趙-3",
+      "label": "趙 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第10章；約 Lv.40"
+    },
+    {
+      "id": "bond-趙-4",
+      "label": "趙 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第10章；約 Lv.40"
+    },
+    {
+      "id": "bond-趙-5",
+      "label": "趙 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第10章；約 Lv.40"
+    },
+    {
+      "id": "bond-韓俊基-1",
+      "label": "韓俊基 羈絆劇場第 1 段",
+      "category": "羈絆劇場",
+      "condition": "第13章；約 Lv.44"
+    },
+    {
+      "id": "bond-韓俊基-2",
+      "label": "韓俊基 羈絆劇場第 2 段",
+      "category": "羈絆劇場",
+      "condition": "第13章；約 Lv.44"
+    },
+    {
+      "id": "bond-韓俊基-3",
+      "label": "韓俊基 羈絆劇場第 3 段",
+      "category": "羈絆劇場",
+      "condition": "第13章；約 Lv.44"
+    },
+    {
+      "id": "bond-韓俊基-4",
+      "label": "韓俊基 羈絆劇場第 4 段",
+      "category": "羈絆劇場",
+      "condition": "第13章；約 Lv.44"
+    },
+    {
+      "id": "bond-韓俊基-5",
+      "label": "韓俊基 羈絆劇場第 5 段",
+      "category": "羈絆劇場",
+      "condition": "第13章；約 Lv.44"
+    },
+    {
+      "id": "dungeon-夏威夷-Sector 1",
+      "label": "夏威夷迷宮 Sector 1",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-夏威夷-Sector 2",
+      "label": "夏威夷迷宮 Sector 2",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-夏威夷-Sector 3",
+      "label": "夏威夷迷宮 Sector 3",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-夏威夷-EX",
+      "label": "夏威夷迷宮 EX",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-橫濱-Sector 1",
+      "label": "橫濱迷宮 Sector 1",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-橫濱-Sector 2",
+      "label": "橫濱迷宮 Sector 2",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-橫濱-Sector 3",
+      "label": "橫濱迷宮 Sector 3",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "dungeon-橫濱-EX",
+      "label": "橫濱迷宮 EX",
+      "category": "兩座迷宮",
+      "condition": "先補裝備、群補與復活手段；教學與第30層不等於EX完成。"
+    },
+    {
+      "id": "activity-1",
+      "label": "春日熱情 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-2",
+      "label": "春日自信 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-3",
+      "label": "春日開朗 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-4",
+      "label": "春日溫柔 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-5",
+      "label": "春日知性 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-6",
+      "label": "春日時尚 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-7",
+      "label": "桐生心技體至少一項 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-8",
+      "label": "臨終劇場全部完成",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-9",
+      "label": "江湖寶貝等級及信賴度 MAX",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-10",
+      "label": "工坊投資完成",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-11",
+      "label": "Revolve馬桶取得道具",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-12",
+      "label": "夏威夷彩虹照片",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-13",
+      "label": "咚咚島4星",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-14",
+      "label": "咚咚島故事完成",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-15",
+      "label": "播出咚咚島電視廣告",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-16",
+      "label": "Crazy送 Easy",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-17",
+      "label": "Crazy送 Normal",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-18",
+      "label": "Crazy送 Hard",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-19",
+      "label": "Crazy送 Crazy",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-20",
+      "label": "可疑者抓拍 Aloha Beach",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-21",
+      "label": "可疑者抓拍 Sunset St.",
+      "category": "活動與養成"
+    },
+    {
+      "id": "activity-22",
+      "label": "可疑者抓拍 Night St.",
+      "category": "活動與養成"
+    }
+  ],
+  "counters": [
+    {
+      "id": "memoirs",
+      "label": "追憶日記",
+      "target": 70,
+      "tip": "遊戲總量90；依地圖標記收集，未收錄逐點位置。"
+    },
+    {
+      "id": "photos",
+      "label": "攝影尋寶",
+      "target": 30,
+      "tip": "遊戲總量110；以遊戲認定的不同照片計數。"
+    },
+    {
+      "id": "level",
+      "label": "春日等級",
+      "target": 70,
+      "tip": "角色等級，與職業階級分開。"
+    },
+    {
+      "id": "jobs",
+      "label": "Rank30的不同職業",
+      "target": 7,
+      "tip": "跨角色核對七種不同職業。"
+    },
+    {
+      "id": "sujidex",
+      "label": "敵人圖鑑",
+      "target": 200,
+      "tip": "遊戲總量317；登錄與捕捉分開。"
+    },
+    {
+      "id": "battles",
+      "label": "激戰區勝利",
+      "target": 20,
+      "tip": "春日隊實際戰鬥，不是訓練師對戰。"
+    },
+    {
+      "id": "captures",
+      "label": "捕捉機會成功",
+      "target": 10,
+      "tip": "轉蛋不計。"
+    },
+    {
+      "id": "diy",
+      "label": "DIY不同家具",
+      "target": 100,
+      "tip": "重複製作不增加種類。"
+    },
+    {
+      "id": "guests",
+      "label": "島嶼累積遊客",
+      "target": 100,
+      "tip": "以島內建議箱累計為準。"
+    },
+    {
+      "id": "alo",
+      "label": "Alo-Happy行程",
+      "target": 8,
+      "tip": "本體8種行程，不是娛樂10種。"
+    },
+    {
+      "id": "cert",
+      "label": "不同證照",
+      "target": 10,
+      "tip": "以通過種類計算。"
+    },
+    {
+      "id": "dates",
+      "label": "不同對象約會",
+      "target": 5,
+      "tip": "已見面，不只配對。"
+    },
+    {
+      "id": "links",
+      "label": "ALOHA Links朋友",
+      "target": 50,
+      "tip": "不要求摯友。"
+    },
+    {
+      "id": "poundmates",
+      "label": "外派幫手呼叫",
+      "target": 30,
+      "tip": "兩主角各自紀錄加總。"
+    },
+    {
+      "id": "craft",
+      "label": "工坊製作不同裝備",
+      "target": 10,
+      "tip": "只強化不計。"
+    },
+    {
+      "id": "entertainment",
+      "label": "不同娛樂種類",
+      "target": 10,
+      "tip": "同一玩法不同店家不重複。"
+    }
+  ],
+  "postgame": [
+    {
+      "id": "P01",
+      "label": "聯盟先收完",
+      "body": "\n- [ ] SS37→38→39→40→41→42 全完成。\n- [ ] 激戰區勝利 20 次；這是春日等人親自打的激戰區，不是訓練師對戰 20 次。\n- [ ] 捕捉機會實際成功 10 次；抽轉蛋不替代此條件。\n- [ ] 至少一隻江湖寶貝 Lv.50，且信賴度 MAX。\n\n訓練師階級與寶貝等級分開看。打到目前等級上限，再挑戰下一個聯盟關卡解鎖新上限；最後把常用那隻養滿。純效率可通關後利用較強寶貝與充裕資源完成。本體流程不使用 DLC 贈送角色。[S1][S2]\n\n"
+    },
+    {
+      "id": "P02",
+      "label": "咚咚島五項一次處理",
+      "body": "\n- [ ] 度假區 4 星杯。\n- [ ] 繼續升級並打完咚咚島故事，確認故事完成杯。\n- [ ] DIY 製作 100 種不同家具；重複做同一種不能湊種類。\n- [ ] 累積入住遊客 100；以島內建議箱的累計數為準，不用收集 100 個不同名字。\n- [ ] 播出電視廣告。\n\n**經營建議**：可擴充住宿時優先建住宿，讓遊客累計與升星並行；每天處理入侵者，避免住宿被破壞。工具、土地與住宿是先投資的項目，美化再逐步補。製作新種類時看已製作標記。遊客數在旅遊批次結算時再檢查，別只數當天剛到的人；島上天數是遊戲內循環，無須每天現實登入。[S1]\n\n"
+    },
+    {
+      "id": "P03",
+      "label": "能力、羈絆與小遊戲查漏",
+      "body": "\n先完成想做的支線、拍照、證照與小遊戲，再看春日六項能力缺哪項；選直接加該能力的挑戰，避免盲刷。\n\n桐生先做追憶、臨終劇場與順路救援；仍差能力時再挑簡單的未了心願。70 篇追憶達杯後，剩下的仍可協助養成。[S1][S4]\n\n- [ ] 支線至少 40，且聯盟鏈完整。\n- [ ] 八名隊友各五段羈絆全完成。\n- [ ] 臨終劇場全完成。\n- [ ] 追憶至少 70。\n- [ ] 春日六項能力全 MAX；桐生心技體至少一項 MAX。\n- [ ] 第 6 節各活動缺項已補。\n\n"
+    },
+    {
+      "id": "P04",
+      "label": "兩座迷宮含 EX",
+      "body": "\n每座都追蹤 Sector 1、2、3、EX；完成教學或只到第 30 層不能直接當迷宮杯已完成。\n\n| 迷宮 | Sector 1 | Sector 2 | Sector 3 | EX | 實際跳盃 |\n|---|---|---|---|---|---|\n| Hawaiian Haunt／夏威夷迷宮 | [ ] | [ ] | [ ] | [ ] | [ ] |\n| Yokohama Underground／橫濱迷宮 | [ ] | [ ] | [ ] | [ ] | [ ] |\n\n進 EX 前：裝備已更新、群補／復活技能與道具足夠、傷害屬性多樣。隊伍打前區還吃力時先補能力與裝備，不靠消耗品硬磨。迷宮布局有隨機性，本文件不提供虛假的固定房間路線。[S1][S22]\n\n"
+    },
+    {
+      "id": "P05",
+      "label": "無 DLC 的春日 Lv.70",
+      "body": "\n1. 把前述白金項目先做完，讓經驗自然累積。\n2. Premium Adventure 組隊時把春日放進實際出戰隊伍。\n3. 裝角色經驗加成配件，確認不是只有職業經驗加成。\n4. 反覆跑橫濱迷宮高區，優先處理高角色經驗的 Vagabond 類敵人。\n5. 同時處理尚未滿 Rank 30 的職業與可順路完成的能力挑戰；春日到 70 後確認實際跳盃。\n\n無 DLC 路線不需要購買 Big Swell、重開周目或挑戰 Hard／Legend。角色升級道具若打算使用，可留到後段；本指引不假設你持有付費升級包或未核實的固定數量免費道具。[S1][S16]\n\n"
+    }
+  ],
+  "articles": {
+    "1": "開始前先知道\n\n- 本體共 65 座獎盃，包含白金；DLC 9 座不列入。主線 13 章加最終章，共 14 個階段。\n- 單周目可白金，沒有永久錯過獎盃、沒有連線杯；通關後 Premium Adventure 可補支線與活動。部分事件仍受主角、時段、章節限制。\n- 攻略站估計白金約 70–100 小時；本文件建議你按喜好探索，無 DLC 的 Lv.70 練等另保留時間，不把估時當承諾。[S1]\n- 主要路線：主線＋順路累積 → 補聯盟與咚咚島 → 羈絆／臨終劇場／能力查漏 → 兩座迷宮含 EX → 春日 Lv.70。\n- 章末清單是「建議離開前檢查」，不是所有項目沒勾就不能過章。未完成項目記錄後可在後續或通關後補。\n- 遊戲進入長段戰鬥前通常有提示。看到建議等級與暫不能返回的警告，先存另一格、補 HP／MP／復活品，再前進。\n\n### 白金門檻與不必過度收集的部分\n\n| 系統 | 白金所需 | 本路線處理方式 |\n|---|---|---|\n| 支線 | 任意 40／52；聯盟任務鏈另必做 | 先走下方指定 40 條，可替換非聯盟支線 |\n| 羈絆劇場 | 8 名隊友各看完 5 段 | 隨入隊與章節進度完成，不只衝羈絆數字 |\n| 追憶日記 | 70／90 | 桐生跑圖順路收；未達能力門檻時可繼續收 |\n| 臨終劇場 | 全部 | 桐生線第 8／10／12 章逐段處理 |\n| 攝影尋寶 | 30／110 | 第 5 章起按目前區域拍，整套獎勵另有價值 |\n| 敵人圖鑑 | 200 種 | 兩座迷宮＋主支線補，不要求全 317 種 |\n| 職業 | 7 種達 Rank 30 | 分散不同隊友的專屬職業即可，不要求春日獨練七職 |\n| 證照 | 10 種 | 全考可協助能力，但不是白金硬門檻 |\n| 交友軟體 | 與 5 位不同對象約會 | 不只成功配對或聊天；確認已見面 |\n| ALOHA Links | 50 位朋友 | 不必全 200、不必 50 位全成為摯友 |\n| 咚咚島 | 4 星杯＋故事完成＋100 種 DIY＋100 遊客＋廣告 | 故事要繼續走完，不能四星就離島當完成 |\n\n門檻以本體獎盃清單核對，追憶與攝影總量依專項攻略。[S1][S3][S4][S5]\n\n",
+    "2": "每次出門維持的順路習慣\n\n1. 夏威夷遇到可互動路人便打招呼；看到彩虹立即用遊戲內相機拍。打招呼在取得 50 人獎盃後仍能幫春日能力。\n2. 遇到隊友散步對話，順路觸發；回據點檢查新羈絆劇場。不要把「羈絆 50」當成「五段已看完」。\n3. 第 5 章起邊跑圖邊查看攝影尋寶；第 8 章起桐生看到可收追憶就收。\n4. 打得過的激戰區順路清，戰後有捕捉機會便抓；這與一般圖鑑登錄是不同目標。\n5. 錢寬裕後逐漸使用外派幫手，不在初期為湊 30 次花光資金。\n6. 只在需要的職業與主力裝備上花錢，保留消耗品與主線用途的資金。第 9 章有 $10,000 需求。\n\n以上是本文件安排的遊玩習慣，不是每日任務；沒做完也不會失去白金資格。\n\n",
+    "5": "隊伍與養成小訣竅\n\n### 5.1 不用急著全員轉職\n\n專屬職業可維持主力。推薦起步：春日勇者、桐生堂島之龍、富澤計程車司機、千歲原職業；等需要更強群補或屬性覆蓋再調整。這是易上手方案，不宣稱唯一最強。\n\n轉職價值主要是學能帶回主職業的技能。在 Alo-Happy Room 設定繼承，優先補：群體回復、復活、缺少的屬性、破防／抓技。不因為學會技能就假設已裝到繼承欄。\n\n同伴繼承欄與羈絆有關；春日依綜合能力解鎖。多做散步對話與餐桌對話，會同時幫戰鬥合作與養成。千歲可考慮 Geodancer 當群補方案；日本隊可讓紗榮子走 Idol，技能中文以遊戲顯示為準。[S13][S18][S23]\n\n### 5.2 戰鬥先把「站位」用起來\n\n- 能背擊、撞向隊友、擊倒後追擊時，先調整站位再出手。\n- 遇防禦敵人，換抓技或繞背，別一直用同種正面攻擊。\n- 有小兵的頭目戰通常先減少敵方行動數；但會無限補兵的戰鬥要依機制改為打頭目。\n- 主角 HP 比多打一回合重要。補血與丟道具不必全交同一角色，誰先動、誰能保住主角就先處理。\n- 藍色弱敵可用遊戲提供的快速戰鬥縮短跑圖；遇難關改手動操作，注意 QTE 與 Perfect Guard。\n\n這些是通用戰術建議；個別頭目以當章機制與遊戲畫面為準。\n\n### 5.3 錢、武器與素材\n\n- 不需每個角色都做滿最終武器才白金。先把主要隊伍的武器與防具跟上，再視 EX 難度提升。\n- 七星最終武器材料如魚翅、空咳嗽藥罐等，不要隨便賣掉。\n- 工坊的製作消費會幫助投資進度，先做需要的裝備，再補差額；不要把純強化當成完成製作杯。\n- 資金不足時少做昂貴外派幫手；後期再補 30 次較輕鬆。\n- 第 9 章預留 $10,000。工坊最終投資門檻很高，不要在初開工坊時硬繳清。[S1][S15]\n\n",
+    "6": "活動與長期目標 checklist\n\n### 6.1 羈絆劇場\n\n每人五段；常見門檻是羈絆 10／20／30／40／50。達到數字後仍須實際觀看，部分最終段另有章節限制與戰鬥。[S1]\n\n| 同伴 | 開始處理時機 | 1 | 2 | 3 | 4 | 5 | 最終段提醒 |\n|---|---|---|---|---|---|---|---|\n| 富澤 | 第5章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.32，初期不硬打 |\n| 千歲 | 第5章 | [ ] | [ ] | [ ] | [ ] | [ ] | 最後一段第13章 |\n| 足立 | 第7章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.32 |\n| 難波 | 第8章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.32 |\n| 紗榮子 | 第8章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.32 |\n| 善熙 | 第8章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.32 |\n| 趙 | 第10章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.40 |\n| 韓俊基 | 第13章 | [ ] | [ ] | [ ] | [ ] | [ ] | 約 Lv.44 |\n\n### 6.2 春日、桐生與職業\n\n- [ ] 春日 Lv.10　[ ] Lv.30　[ ] Lv.50　[ ] Lv.70。\n- [ ] 春日熱情 MAX　[ ] 自信 MAX　[ ] 開朗 MAX　[ ] 溫柔 MAX　[ ] 知性 MAX　[ ] 時尚 MAX（名稱請對照遊戲）。\n- [ ] 桐生心 MAX 或技 MAX 或體 MAX。\n- [ ] 臨終劇場全部完成。當前未完成事件／門檻：________________。\n- [ ] 追憶 30　[ ] 追憶 70；遊戲內現值：____。\n- [ ] 1 種職業 Rank30　[ ] 3 種　[ ] 7 種。\n\n| 已達 Rank30 的不同職業 | 使用角色 | 達標 |\n|---|---|---|\n| 1. __________ | __________ | [ ] |\n| 2. __________ | __________ | [ ] |\n| 3. __________ | __________ | [ ] |\n| 4. __________ | __________ | [ ] |\n| 5. __________ | __________ | [ ] |\n| 6. __________ | __________ | [ ] |\n| 7. __________ | __________ | [ ] |\n\n職業杯採七種不同職業的穩妥紀錄方式；各隊友的專屬職業可分攤，不必一人輪七職。[S1][S24]\n\n### 6.3 小遊戲與雜項\n\n| 目標 | 已達量／完成 | 如何核對 |\n|---|---|---|\n| Alo-Happy 本體8種行程 | ____／8 | 行程實際體驗，不是娛樂場所10種 |\n| 證照10種 | ____／10 | 不同證照通過 |\n| Miss Match 不同5人約會 | ____／5 | 已成功見面，不只配對 |\n| 攝影尋寶30張 | ____／30 | 不同已認定照片，不是一般相簿張數 |\n| ALOHA Links50人 | ____／50 | 朋友名單，不要求摯友 |\n| 外派幫手30次 | ____／30 | 兩主角各自紀錄需加總查看 |\n| 工坊製作10種裝備 | ____／10 | 製作，不只強化 |\n| 工坊投資完成 | [ ] | 工坊最高投資等級 |\n| 馬桶取得道具 | [ ] | Revolve可互動馬桶 |\n| 夏威夷彩虹照片 | [ ] | 遊戲內相機拍到彩虹 |\n| 圖鑑100／200種 | ____／200 | Sujidex，不是捕捉倉庫 |\n\n**Crazy 送**：四賽程依序通過。[S1]\n\n- [ ] Easy　[ ] Normal　[ ] Hard　[ ] Crazy（難度名稱依遊戲對照）。\n\n**可疑者抓拍**：三條路線各達通過分數，不要求拍到每名目標。[S1]\n\n- [ ] Aloha Beach 電車站。\n- [ ] Sunset St. 電車站／港灣線。\n- [ ] Night St. 電車站。\n\n**娛樂 10 種**：先採十種不同玩法、實際開始遊玩一局，不用全部精通。下面是可選候選，不把商店或同種遊戲不同店家重複計入保證數。[S16]\n\n- [ ] 卡拉OK　[ ] 飛鏢　[ ] 打擊中心　[ ] 高爾夫練習場　[ ] 撿罐。\n- [ ] Crazy送　[ ] 可疑者抓拍　[ ] 交友軟體　[ ] 釣魚　[ ] 遊樂場街機。\n- 替補：將棋、麻將、撲克等。若十項後未跳盃，查看遊戲挑戰實際紀錄，再做不同類型；不需為此學會所有賭博遊戲。\n\n### 6.4 收集品怎麼查漏\n\n**攝影**：打開該區攝影清單 → 先拍主線附近的空項 → 地點正確但沒登錄時調整取景，等遊戲辨識攝影目標再拍 → 整區完成後回報領獎。建議順序 Little Japan／Waikiki → Anaconda → 其他夏威夷區 → 桐生跑圖時補橫濱。\n\n**追憶**：按目前城市與主線路段清地圖標記 → 記錄遊戲內總數 → 未達70時查看還沒讀到的白色書本事件、臨終劇場獎勵與後期章節標記。完整位置來源見 [S4]，不要為了一個尚未開放事件空跑。\n\n本文件提供白金所需門檻與區域處理方法；未聲稱已逐點收錄全部 110 張或90篇。若後續製作控制台，逐筆資料須補查後再建立，不能用30個匿名空格冒充30個實際攝影地點。\n\n",
+    "9": "回鍋時只看這一段\n\n1. 現在是第幾章、哪位主角、哪座城市：________。\n2. 回到對應章節，看「主要流程」找下一個主線目標。\n3. 看章末 checklist，挑附近能順路處理的未完成項；不要先逐頁掃全部支線。\n4. 如果已通關，從 P01→P05 找第一個沒完成的大項。\n5. 紀錄現值：支線____／40；追憶____／70；照片____／30；羈絆完成____／8；PSN本體____／65。\n\n",
+    "10": "研究狀態、來源與限制\n\n- 本次為網頁查證與路線整理，沒有宣稱 PS5 實機測試。\n- 已覆蓋：14個主線階段、65座本體獎盃對照、52條支線索引、指定40條選擇、8人羈絆追蹤、兩座迷宮、島嶼與聯盟檢查、無DLC練等路線。\n- 未逐筆覆蓋：全90追憶、110攝影點、317敵人、所有配方、每個寶箱、每段臨終劇場的具名地址與電話條件。這不阻塞按遊戲內標記進行本體白金，但阻塞宣稱「所有收集品都有逐點導航」的完整控制台。\n- 部分攻略有索引錯字、章節誤列。#03採第3章實際事件；最終章獨立於第13章；不把通關後自由模式誤認為付費NG+。\n- 若某事件不出現，先查主角、時段、先前事件完成、人物是否已入隊，再查來源。未開放不等於永久錯過。\n- 下列為第三方攻略，S23為官方系統說明；攻略估時、隊伍建議與本文件安排皆不是官方保證。\n\n查閱日期均為2026-11-27；來源未必為同一更新版本，不據此聲稱你的已安裝版本號。\n\n| ID | 來源／連結 | 使用範圍 |\n|---|---|---|\n| S1 | [PowerPyx獎盃攻略](https://www.powerpyx.com/like-a-dragon-infinite-wealth-trophy-guide-roadmap/) | 周目、無錯過、羈絆門檻、迷宮EX、活動數量、Lv70 |\n| S2 | [PowerPyx支線攻略](https://www.powerpyx.com/like-a-dragon-infinite-wealth-substories-guide/) | 52支線、前置、聯盟與時段 |\n| S3 | [Exophase PS5繁中獎盃](https://www.exophase.com/game/like-a-dragon-infinite-wealth-psn/trophies/zh-TW/) | 本體與DLC分組、繁中條件 |\n| S4 | [追憶日記位置](https://www.powerpyx.com/like-a-dragon-infinite-wealth-memoirs-of-a-dragon-guide/) | 總量90、70門檻、地圖與章節 |\n| S5 | [攝影尋寶位置](https://www.powerpyx.com/like-a-dragon-infinite-wealth-all-photo-rally-locations/) | 總量110、30門檻、逐點補查 |\n| S6 | [CyricZ第1章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-1-doin-the-best-i-can) | 第1章路標與整備 |\n| S7 | [The Review Geek第2章](https://www.thereviewgeek.com/likeadragoninfinitewealth-walkthrough-chapter2/) | 出發與夏威夷初戰 |\n| S8 | [The Review Geek第3章](https://www.thereviewgeek.com/likeadragoninfinitewealth-walkthrough-chapter3/) | Jeff籌錢、Crazy送實際觸發、Roman |\n| S9 | [The Review Geek第4章](https://www.thereviewgeek.com/likeadragoninfinitewealth-walkthrough-chapter4/) | 工坊、第五地區、工廠 |\n| S10 | [CyricZ第5章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-5-suspicious-minds) | 職業、攝影、迷宮教學、巡邏 |\n| S11 | [CyricZ第7章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-7-trouble) | 劇場、主鑰匙、隊伍拆分 |\n| S12 | [章節總表](https://samurai-gamers.com/like-a-dragon-infinite-wealth/yakuza-8-all-chapter-walkthroughs-list/) | 第6章島嶼等系統與各章階段 |\n| S13 | [CyricZ職業與繼承](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/the-job-system-at-a-glance) | 轉職、技能繼承、欄位解鎖 |\n| S14 | [CyricZ第8章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-8-return-to-sender) | 願望清單、紗榮子、亞門教學 |\n| S15 | [Samurai Gamers第9章](https://samurai-gamers.com/like-a-dragon-infinite-wealth/yakuza-8-chapter-9-walkthrough/) | 刺青店$10000、山井、主線次序 |\n| S16 | [PlatGet獎盃攻略](https://platget.com/guides/like-a-dragon-infinite-wealth-trophy-guide/) | 馬桶、彩虹、娛樂、無DLC查漏 |\n| S17 | [Samurai Gamers第10章](https://samurai-gamers.com/like-a-dragon-infinite-wealth/yakuza-8-chapter-10-walkthrough/) | 趙、橫濱迷宮、澤城 |\n| S18 | [Samurai Gamers第11章](https://samurai-gamers.com/like-a-dragon-infinite-wealth/yakuza-8-chapter-11-walkthrough/) | 分隊、挖土機、毒氣 |\n| S19 | [CyricZ第12章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-12-for-ol-times-sake) | 三人Boss與東京支部 |\n| S20 | [The Review Geek第13章](https://www.thereviewgeek.com/likeadragoninfinitewealth-walkthrough-chapter13/) | 第五地區與碼頭流程 |\n| S21 | [CyricZ最終章](https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/finale-if-i-can-dream) | 雙隊整備與最終Boss |\n| S22 | [SEGA官方冒險系統](https://ryu-ga-gotoku.com/eight/asia_en/adventure/) | 隨機迷宮、羈絆、工坊 |\n| S23 | [SEGA官方冒險系統](https://ryu-ga-gotoku.com/eight/asia_en/adventure/) | 綜合能力、羈絆、江湖寶貝 |\n| S24 | [職業杯解說](https://www.trueachievements.com/a423151/ultimate-hustle-achievement) | 七種職業跨角色累積；社群解說，採保守七種記錄 |\n\n"
+  }
+}

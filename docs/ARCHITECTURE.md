@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 人中之龍８ 1.0.0 本機新增：`games/like-a-dragon-infinite-wealth/` 原生 ES modules／JSON，由根研究稿及SHA256離線產生14章、100主線動作、52支線、65盃、40段羈絆與16項計數。獨立 `game-companion.like-a-dragon-infinite-wealth.progress.v1` IndexedDB，使用 `shared/roadmap-store.js` 交易／BroadcastChannel，沿用DQ3本機model的逐鍵撤銷、原文封存及下載確認後條件匯入；不載入OAuth、Drive、SW或其他遊戲進度。既有T01–T65、SS01–SS52及章節ID保留，PSN獨立確認。2026-11-27使用者已授權commit／push與既有main Pages發布，結果以對應提交Actions及正式資源核對為準；驗證與內容限制見[模組紀錄](../games/like-a-dragon-infinite-wealth/docs/IMPLEMENTATION.md)。
+
 2026-11-23 DQ3 HD-2D 1.0.0 本機新增：`games/dragon-quest-iii-hd-2d-remake/` 原生 ES modules／JSON，以規格 SHA256 固定離線資料來源。4 階段／11 行進段落／38 步驟，42 盃、110 徽章、121 友善個體、163 討伐、135 去重技能。schema1 的八個 map 分開記錄路線、收藏、PSN、技能、子目標、手動計數、供品與閱讀書籤；各處引用同一 ID，條件僅推導、不寫回獎盃。沿用根 `shared/roadmap-store.js` 交易與 BroadcastChannel，模組內以每鍵 `keyRevision` 檢查撤銷衝突；寫入失敗回復畫面並提供重試。資料庫、快照、匯入原文皆限本遊戲前綴；不載入同步 core、OAuth、Drive 或 SW。匯入逐筆選差異、下載兩端備份、額外核對較舊來源，再以原文條件交易套用。資料／產物／隔離瀏覽器驗證見 [模組紀錄](../games/dragon-quest-iii-hd-2d-remake/docs/IMPLEMENTATION.md)。2026-11-23 使用者已授權 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 為準。
 
 2026-11-08 IRON RAIN 1.4.0 本機武器索引修正：新增 research/weapon-catalog.json，prepare-data 離線合併 360 款（本體312／DLC40／特典8），保留舊55款 ID；equipment sources／audit 提供逐類計數與名稱／成本證據。dist/model.js 的 arsenalProgress 僅從 platinumRequired 與 purchased 推導本體持有條件，不寫獎盃；dist/weapons.js 增加唯讀內容範圍篩選。維持 schema1、同一 weapons map、namespace／store／Drive／保護式匯入契約，沒有新增儲存系統。道具／外觀仍為部分庫；使用者已授權本批 commit／push，沿既有 main Pages 流程發布，結果以對應提交 Actions 為準。

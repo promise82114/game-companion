@@ -1,0 +1,52 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {chromium} from './browser-runtime.mjs';
+const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4190/game-companion/',url=base+'games/like-a-dragon-infinite-wealth/';
+const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||'msedge'}),errors=[],external=[];
+await fs.mkdir('outputs/lad8',{recursive:true});
+const state=page=>page.evaluate(async()=>{const {config,clone}=await import('./model.js');const {createStore}=await import('../../shared/roadmap-store.js');const s=createStore(config,{clone});try{return await s.open();}finally{s.close();}});
+async function visit(p,q=''){await p.goto(url+q);await p.locator('h1').filter({hasText:/冒險路線|支線與活動|PS5 獎盃|養成小訣竅|來源與範圍/}).waitFor();}
+async function download(p,id){if(!await p.locator('#backup-dialog').isVisible()&&['#export-progress','#export-all'].includes(id))await p.locator('#open-backup').click();const event=p.waitForEvent('download');await p.locator(id).click();const file=await event;assert.equal(await file.failure(),null);return JSON.parse(await fs.readFile(await file.path(),'utf8'));}
+async function upload(p,value){if(!await p.locator('#backup-dialog').isVisible())await p.locator('#open-backup').click();await p.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(typeof value==='string'?value:JSON.stringify(value))});}
+try{
+ const context=await browser.newContext({acceptDownloads:true,serviceWorkers:'block',viewport:{width:1440,height:1000}});
+ await context.route('https://**',r=>{external.push(r.request().url());return r.abort();});const p=await context.newPage();p.setDefaultTimeout(15000);p.on('pageerror',e=>errors.push(e.message));
+ await visit(p);assert.equal(await p.locator('.stat-card').count(),5);assert.equal(await p.locator('#phase-navigation a').count(),19);
+ await p.evaluate(()=>localStorage.setItem('game-companion.grounded.synthetic','untouched'));
+ console.log('lad8: start');
+ const blank=await state(p);await p.locator('#phase-navigation a').filter({hasText:'最終章'}).click();assert.deepEqual(await state(p),blank);await p.locator('#continue').click();
+ console.log('lad8: steps');
+ const first='chapter-01-主要流程-1';assert.ok(p.url().includes('target='));await p.locator(`[data-group="steps"][data-id="${first}"]`).check();await p.locator('#entry-'+first+' .row-body').waitFor({state:'hidden'});assert.deepEqual((await state(p)).trophies,{});
+ await p.locator(`[data-peek="${first}"]`).click();await p.locator('#entry-'+first+' .row-body').waitFor({state:'visible'});assert.equal((await state(p)).steps[first].done,true);await p.reload();await p.locator('#entry-'+first+' .row-body').waitFor({state:'hidden'});
+ console.log('lad8: collections');
+ await visit(p,'?view=collections');await p.locator('[data-id="SS01"]').check();await p.locator('[data-id="SS01"]').waitFor({state:'detached'});await p.locator('#status').selectOption('all');assert.equal(await p.locator('[data-id="SS01"]').isChecked(),true);
+ await p.locator('#search').fill('SS3');assert.equal(await p.locator('main article').count(),1);await p.locator('#search').fill('不存在的合成查詢');await p.locator('.empty').waitFor();await p.locator('[data-reset]').first().click();
+ await p.locator('[data-view="trophies"]').click();await p.locator('[data-view="collections"]').click();assert.equal(await p.locator('#search').inputValue(),'');assert.equal(await p.locator('#status').inputValue(),'pending');
+ // Cross-tab writes and undo use per-key revisions.
+ console.log('lad8: cross-tab');
+ const mirror=await context.newPage();await visit(mirror,'?view=collections');await p.locator('[data-id="SS02"]').check();await p.locator('[data-id="SS02"]').waitFor({state:'detached'});await mirror.locator('[data-id="SS02"]').waitFor({state:'detached'});await mirror.locator('[data-id="SS03"]').check();await mirror.locator('[data-id="SS03"]').waitFor({state:'detached'});await p.locator('#undo').click();await p.locator('[data-id="SS02"]').waitFor();assert.equal((await state(p)).substories.SS03.done,true);
+ await p.locator('[data-id="SS02"]').check();await p.locator('[data-id="SS02"]').waitFor({state:'detached'});await mirror.locator('#status').selectOption('all');await mirror.locator('[data-id="SS02"]').uncheck();await p.locator('[data-id="SS02"]').waitFor();await p.locator('#undo').click();await p.waitForFunction(()=>document.querySelector('#feedback').textContent.includes('後續變更'));assert.equal((await state(p)).substories.SS02.done,false);
+ console.log('lad8: write-failure');
+ await p.evaluate(()=>{window.savedPut=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(){throw Error('synthetic write failure');};});await p.locator('[data-id="SS04"]').check();await p.waitForFunction(()=>document.querySelector('#feedback').textContent.includes('保存失敗'));assert.equal(await p.locator('[data-id="SS04"]').isChecked(),false);await p.evaluate(()=>IDBObjectStore.prototype.put=window.savedPut);await p.locator('#retry').click();await p.locator('[data-id="SS04"]').waitFor({state:'detached'});
+ console.log('lad8: counters');
+ await visit(p,'?view=collections&category=counters&target=photos');await p.locator('#counter-photos').fill('30');await p.locator('#counter-photos').press('Tab');await p.waitForFunction(()=>document.querySelector('#feedback').textContent.includes('已保存'));assert.equal((await state(p)).counters.photos.value,30);assert.deepEqual((await state(p)).trophies,{});
+ console.log('lad8: backup');
+ const exported=await download(p,'#export-progress');const incoming=structuredClone(exported);incoming.progress.future={keep:'synthetic'};incoming.progress.substories['future-id']={done:true,unknown:{keep:1}};
+ await upload(p,incoming);await p.locator('#import-dialog').waitFor({state:'visible'});assert.equal(await p.locator('#import-apply').isDisabled(),true);await p.locator('#choose-source').click();const bundle=await download(p,'#download-recovery');assert.equal(JSON.parse(bundle.recoveryBundle.sourceRaw).progress.future.keep,'synthetic');await p.locator('#import-ack').check();await p.locator('#import-apply').click();await p.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await state(p)).future.keep,'synthetic');
+ const all=await download(p,'#export-all');assert.ok(all.records.some(r=>r.key.includes('.import.raw.')));assert.ok(all.records.some(r=>r.key.includes('.snapshot.')));
+ await upload(p,incoming);await p.locator('#import-dialog').waitFor({state:'visible'});await p.locator('#choose-source').click();await download(p,'#download-recovery');await p.locator('#import-ack').check();await mirror.locator('[data-id="SS05"]').check();await p.waitForFunction(()=>document.querySelector('#import-status').textContent.includes('過期'));assert.equal(await p.locator('#import-apply').isDisabled(),true);await p.locator('#import-close').click();
+ await upload(p,incoming);await p.locator('#import-dialog').waitFor({state:'visible'});await p.evaluate(()=>{window.savedURL=URL.createObjectURL;URL.createObjectURL=()=>{throw Error('synthetic download failure');};});await p.locator('#download-recovery').click();assert.match(await p.locator('#import-status').textContent(),/備份失敗/);assert.equal(await p.locator('#import-apply').isDisabled(),true);await p.evaluate(()=>URL.createObjectURL=window.savedURL);await p.locator('#import-close').click();
+ console.log('lad8: bad-files');
+ const beforeBad=await state(p);await upload(p,{...exported,gameId:'grounded'});await p.waitForFunction(()=>document.querySelector('#feedback').textContent.includes('不支援'));assert.deepEqual(await state(p),beforeBad);await upload(p,'{broken');await p.waitForFunction(()=>document.querySelector('#feedback').textContent.includes('JSON'));assert.deepEqual(await state(p),beforeBad);
+ if(await p.locator('#backup-dialog').isVisible())await p.keyboard.press('Escape');
+ await visit(p,'?view=collections&target=SS01');assert.equal(await p.locator('[data-id="SS01"]').isChecked(),true);
+ console.log('lad8: responsive');
+ for(const width of [1440,768,390,360,1920,2560]){await p.setViewportSize({width,height:1000});for(const q of ['', '?view=collections','?view=trophies','?view=advice','?view=backup','?chapter=P04']){await visit(p,q);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'overflow '+width+' '+q);}await visit(p);const alignment=await p.evaluate(()=>{const m=document.querySelector('main').getBoundingClientRect(),b=document.querySelector('.topbar').getBoundingClientRect();return [m.left,b.left,m.width,b.width,m.right-parseFloat(getComputedStyle(document.querySelector('main')).paddingRight),document.querySelector('#open-backup').getBoundingClientRect().right];});assert.equal(alignment[0],alignment[1]);assert.equal(alignment[2],alignment[3]);assert.ok(Math.abs(alignment[4]-alignment[5])<=1);await p.screenshot({path:`outputs/lad8/${width}.png`});await p.locator('#open-backup').click();await p.locator('#backup-dialog').waitFor({state:'visible'});await p.keyboard.press('Escape');assert.equal(await p.locator('#open-backup').evaluate(el=>el===document.activeElement),true);}
+ assert.equal(await p.evaluate(()=>localStorage.getItem('game-companion.grounded.synthetic')),'untouched');assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+ await visit(p,'?chapter=P04');assert.equal(await p.locator('[data-group="objectives"]').count(),8);
+ await visit(p,'?chapter=chapter-05');assert.equal(await p.locator('[data-id="bond-千歲-5"]').count(),1);
+ await visit(p,'?view=backup&target=source-S6');assert.equal(await p.locator('#entry-source-S6').count(),1);
+ console.log('lad8: restore');
+ const restore=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),r=await restore.newPage();await visit(r);await upload(r,exported);await r.locator('#import-dialog').waitFor({state:'visible'});await r.locator('#choose-source').click();await download(r,'#download-recovery');await r.locator('#import-ack').check();await r.locator('#import-apply').click();await r.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await state(r)).counters.photos.value,30);await restore.close();await context.close();
+ console.log(JSON.stringify({passed:true,module:'like-a-dragon-infinite-wealth',isolatedContexts:2,widths:[360,390,768,1440,1920,2560],backup:true,undo:true,externalRequests:0}));
+}finally{await browser.close();}
