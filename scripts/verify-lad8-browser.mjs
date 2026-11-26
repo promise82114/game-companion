@@ -5,7 +5,7 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:4190/game-companion/',ur
 const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||'msedge'}),errors=[],external=[];
 await fs.mkdir('outputs/lad8',{recursive:true});
 const state=page=>page.evaluate(async()=>{const {config,clone}=await import('./model.js');const {createStore}=await import('../../shared/roadmap-store.js');const s=createStore(config,{clone});try{return await s.open();}finally{s.close();}});
-async function visit(p,q=''){await p.goto(url+q);await p.locator('h1').filter({hasText:/冒險路線|支線與活動|PS5 獎盃|養成小訣竅|來源與範圍/}).waitFor();}
+async function visit(p,q=''){await p.goto(url+q);await p.locator('h1').filter({hasText:/冒險路線|支線與活動|攝影尋寶查漏|追憶日記查漏|PS5 獎盃|養成小訣竅|來源與範圍/}).waitFor();}
 async function download(p,id){if(!await p.locator('#backup-dialog').isVisible()&&['#export-progress','#export-all'].includes(id))await p.locator('#open-backup').click();const event=p.waitForEvent('download');await p.locator(id).click();const file=await event;assert.equal(await file.failure(),null);return JSON.parse(await fs.readFile(await file.path(),'utf8'));}
 async function upload(p,value){if(!await p.locator('#backup-dialog').isVisible())await p.locator('#open-backup').click();await p.locator('#import-file').setInputFiles({name:'synthetic.json',mimeType:'application/json',buffer:Buffer.from(typeof value==='string'?value:JSON.stringify(value))});}
 try{
@@ -46,6 +46,27 @@ try{
  await visit(p,'?chapter=P04');assert.equal(await p.locator('[data-group="objectives"]').count(),8);
  await visit(p,'?chapter=chapter-05');assert.equal(await p.locator('[data-id="bond-千歲-5"]').count(),1);
  await visit(p,'?view=backup&target=source-S6');assert.equal(await p.locator('#entry-source-S6').count(),1);
+ console.log('lad8: 200 sourced collectibles');
+ await visit(p,'?view=collections&category=photos');assert.equal(await p.locator('.collectible-row').count(),110);
+ assert.match(await p.locator('main').textContent(),/舊版.*30/);
+ await p.locator('#collectible-area').selectOption('夏威夷｜小日本');assert.equal(await p.locator('.collectible-row').count(),15);
+ await p.locator('[data-id="photo-lj-01"]').focus();await p.keyboard.press('Space');await p.locator('[data-id="photo-lj-01"]').waitFor({state:'detached'});
+ assert.equal(await p.evaluate(()=>document.activeElement.dataset.id),'photo-lj-02');
+ assert.equal((await state(p)).objectives['photo-lj-01'].done,true);assert.equal((await state(p)).counters.photos.value,30);assert.deepEqual((await state(p)).trophies,{});
+ await visit(p,'?view=collections&category=photos&target=photo-lj-01');assert.equal(await p.locator('[data-id="photo-lj-01"]').isChecked(),true);
+ const beforeRoute=await state(p);await p.locator('.row-footer [data-route]').click();assert.equal(await p.locator('#route-collectible-unit').inputValue(),'photos|夏威夷|小日本');assert.equal(await p.locator('#collectible-detail-photo-lj-01').getAttribute('open'),null);assert.deepEqual(await state(p),beforeRoute);
+ await p.locator('[data-id="photo-lj-01"]').uncheck();await p.locator('#entry-photo-lj-01 .row-body').waitFor();assert.match(await p.locator('#entry-photo-lj-01').textContent(),/Makani/);assert.ok(await p.locator('#entry-photo-lj-01 .source-links a').count()>=2);
+ await p.locator('[data-id="photo-lj-01"]').check();await p.locator('#entry-photo-lj-01 details').waitFor();await p.locator('#entry-photo-lj-01 summary').click();assert.equal((await state(p)).objectives['photo-lj-01'].done,true);
+ // 舊備份缺少新地點，不刪本機已核對紀錄。
+ await upload(p,exported);await p.locator('#import-dialog').waitFor({state:'visible'});await p.locator('#choose-source').click();await download(p,'#download-recovery');await p.locator('#import-ack').check();await p.locator('#import-apply').click();await p.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await state(p)).objectives['photo-lj-01'].done,true);
+ await visit(p,'?view=collections&category=photos');await p.locator('#search').fill('Coconut Turtle');assert.equal(await p.locator('.collectible-row').count(),0);await p.locator('#status').selectOption('all');assert.equal(await p.locator('.collectible-row').count(),1);
+ await p.locator('[data-view="trophies"]').click();await p.locator('[data-view="collections"]').click();await p.locator('#category').selectOption('photos');assert.equal(await p.locator('#search').inputValue(),'');assert.equal(await p.locator('#collectible-area').inputValue(),'');assert.equal(await p.locator('#status').inputValue(),'pending');
+ await p.locator('#category').selectOption('memoirs');assert.equal(await p.locator('.collectible-row').count(),90);await p.locator('#collectible-chapter').selectOption('8');assert.equal(await p.locator('[data-id="memoir-ijincho-37"]').count(),0);assert.equal(await p.locator('[data-id="memoir-kamurocho-35"]').count(),1);
+ await visit(p,'?view=collections&category=memoirs&target=memoir-kamurocho-40');await p.locator('#entry-memoir-kamurocho-40 summary').click();assert.match(await p.locator('#entry-memoir-kamurocho-40').textContent(),/異人町追憶36/);assert.equal(await p.locator('#entry-memoir-kamurocho-40 [data-route]').count(),3);
+ await p.locator('[data-id="memoir-kamurocho-40"]').check();await p.locator('[data-id="memoir-kamurocho-40"]').waitFor();assert.equal((await state(p)).objectives['memoir-kamurocho-40'].done,true);assert.equal((await state(p)).counters.memoirs,undefined);
+ await visit(p,'?view=backup&target=source-C06');assert.equal(await p.locator('#entry-source-C06').count(),1);
+ for(const width of [360,768,1440]){await p.setViewportSize({width,height:1000});for(const q of ['?view=collections&category=photos','?view=collections&category=memoirs','?chapter=chapter-05','?chapter=chapter-finale&target=memoir-ijincho-37']){await visit(p,q);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'collectible overflow '+width+' '+q);}await p.screenshot({path:`outputs/lad8/collectibles-${width}.png`});}
+ assert.deepEqual(errors,[]);
  console.log('lad8: restore');
  const restore=await browser.newContext({acceptDownloads:true,serviceWorkers:'block'}),r=await restore.newPage();await visit(r);await upload(r,exported);await r.locator('#import-dialog').waitFor({state:'visible'});await r.locator('#choose-source').click();await download(r,'#download-recovery');await r.locator('#import-ack').check();await r.locator('#import-apply').click();await r.locator('#import-dialog').waitFor({state:'hidden'});assert.equal((await state(r)).counters.photos.value,30);await restore.close();await context.close();
  console.log(JSON.stringify({passed:true,module:'like-a-dragon-infinite-wealth',isolatedContexts:2,widths:[360,390,768,1440,1920,2560],backup:true,undo:true,externalRequests:0}));

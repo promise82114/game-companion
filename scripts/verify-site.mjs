@@ -8,6 +8,8 @@ const lad8=path.join(root,'games/like-a-dragon-infinite-wealth');
 for(const file of ['index.html','app.js','model.js','style.css','data.json'])await fs.access(path.join(lad8,file));
 const lad8Data=JSON.parse(await fs.readFile(path.join(lad8,'data.json'),'utf8'));
 assert.equal(lad8Data.trophies.length,65);assert.equal(lad8Data.substories.length,52);assert.equal(lad8Data.chapters.length,14);
+assert.equal(lad8Data.collectibles.filter(r=>r.type==='photos').length,110);assert.equal(lad8Data.collectibles.filter(r=>r.type==='memoirs').length,90);
+await fs.access(path.join(lad8,'collectibles.js'));
 assert.ok((await fs.readFile(path.join(root,'index.html'),'utf8')).includes('href="games/like-a-dragon-infinite-wealth/"'));
 const dq3=path.join(root,'games/dragon-quest-iii-hd-2d-remake');
 for(const name of ['index.html','app.js','model.js','style.css','data.json'])await fs.access(path.join(dq3,name));

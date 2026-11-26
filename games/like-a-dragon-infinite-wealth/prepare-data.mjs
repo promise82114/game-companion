@@ -27,5 +27,12 @@ for(const city of ['夏威夷','橫濱'])for(const sector of ['Sector 1','Sector
 const counters=[['memoirs','追憶日記',70,'遊戲總量90；依地圖標記收集，未收錄逐點位置。'],['photos','攝影尋寶',30,'遊戲總量110；以遊戲認定的不同照片計數。'],['level','春日等級',70,'角色等級，與職業階級分開。'],['jobs','Rank30的不同職業',7,'跨角色核對七種不同職業。'],['sujidex','敵人圖鑑',200,'遊戲總量317；登錄與捕捉分開。'],['battles','激戰區勝利',20,'春日隊實際戰鬥，不是訓練師對戰。'],['captures','捕捉機會成功',10,'轉蛋不計。'],['diy','DIY不同家具',100,'重複製作不增加種類。'],['guests','島嶼累積遊客',100,'以島內建議箱累計為準。'],['alo','Alo-Happy行程',8,'本體8種行程，不是娛樂10種。'],['cert','不同證照',10,'以通過種類計算。'],['dates','不同對象約會',5,'已見面，不只配對。'],['links','ALOHA Links朋友',50,'不要求摯友。'],['poundmates','外派幫手呼叫',30,'兩主角各自紀錄加總。'],['craft','工坊製作不同裝備',10,'只強化不計。'],['entertainment','不同娛樂種類',10,'同一玩法不同店家不重複。']];
 data.counters=counters.map(([id,label,target,tip])=>({id,label,target,tip}));
 data.articles=Object.fromEntries([1,2,5,6,9,10].map(i=>[i,sections[i]]));
+const collectibleBytes=await fs.readFile(new URL('research/collectibles.json',base));
+const collectibleResearch=JSON.parse(collectibleBytes);
+data.collectibles=collectibleResearch.rows;data.collectibleSources=collectibleResearch.sources;data.photoSets=collectibleResearch.sets;
+data.collectiblesSha256=createHash('sha256').update(collectibleBytes).digest('hex');data.dataVersion=collectibleResearch.version;
+// 研究原稿保留不變；呈現內容明列本次增補，避免舊版限制誤指新增逐點庫。
+data.articles[10]=data.articles[10].replace(/^- 未逐筆覆蓋：.+$/m,'- 本次補充逐筆攝影110點及追憶90篇，附解鎖條件與來源；原稿未覆蓋的全敵人、配方、寶箱仍不在此模組範圍。逐點資料另見本頁「攝影與追憶來源」。');
+for(const c of data.counters.filter(c=>['photos','memoirs'].includes(c.id))){c.label+='（遊戲內總數）';c.tip='獨立手填值／舊版紀錄保留；不與逐點勾選相加、不自動分配到任何地點。';}
 await fs.mkdir(new URL('dist/',base),{recursive:true});await fs.writeFile(new URL('dist/data.json',base),JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify(Object.fromEntries(['chapters','steps','substories','trophies','objectives','counters'].map(k=>[k,data[k].length]))));

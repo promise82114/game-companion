@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 人中之龍８ 1.1.0 本機資料擴充：`research/collectibles.json`維護200筆具名位置與14項來源登錄，prepare-data以獨立SHA256納入dist/data.json；新dist/collectibles.js負責唯讀路線分組與摘要、共用列呈現。110攝影／90追憶均沿用schema1的objectives map，DB／namespace／匯入與交易層不變，舊counters.photos／memoirs保留為獨立手填值；摘要從逐點勾選推導，不相加或猜測舊玩家已完成地點。章節按城市／區域選閱讀單元，查漏可依區域／最早章節篩選；前置只提醒，不鎖住內容。2026-11-27使用者已授權本批commit／push與main Pages發布，結果以對應提交Actions及正式資源核對為準；來源差異見[查核紀錄](../games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。
+
 2026-11-27 人中之龍８ 1.0.0 本機新增：`games/like-a-dragon-infinite-wealth/` 原生 ES modules／JSON，由根研究稿及SHA256離線產生14章、100主線動作、52支線、65盃、40段羈絆與16項計數。獨立 `game-companion.like-a-dragon-infinite-wealth.progress.v1` IndexedDB，使用 `shared/roadmap-store.js` 交易／BroadcastChannel，沿用DQ3本機model的逐鍵撤銷、原文封存及下載確認後條件匯入；不載入OAuth、Drive、SW或其他遊戲進度。既有T01–T65、SS01–SS52及章節ID保留，PSN獨立確認。2026-11-27使用者已授權commit／push與既有main Pages發布，結果以對應提交Actions及正式資源核對為準；驗證與內容限制見[模組紀錄](../games/like-a-dragon-infinite-wealth/docs/IMPLEMENTATION.md)。
 
 2026-11-23 DQ3 HD-2D 1.0.0 本機新增：`games/dragon-quest-iii-hd-2d-remake/` 原生 ES modules／JSON，以規格 SHA256 固定離線資料來源。4 階段／11 行進段落／38 步驟，42 盃、110 徽章、121 友善個體、163 討伐、135 去重技能。schema1 的八個 map 分開記錄路線、收藏、PSN、技能、子目標、手動計數、供品與閱讀書籤；各處引用同一 ID，條件僅推導、不寫回獎盃。沿用根 `shared/roadmap-store.js` 交易與 BroadcastChannel，模組內以每鍵 `keyRevision` 檢查撤銷衝突；寫入失敗回復畫面並提供重試。資料庫、快照、匯入原文皆限本遊戲前綴；不載入同步 core、OAuth、Drive 或 SW。匯入逐筆選差異、下載兩端備份、額外核對較舊來源，再以原文條件交易套用。資料／產物／隔離瀏覽器驗證見 [模組紀錄](../games/dragon-quest-iii-hd-2d-remake/docs/IMPLEMENTATION.md)。2026-11-23 使用者已授權 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 為準。

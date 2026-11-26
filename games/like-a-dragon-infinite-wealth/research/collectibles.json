@@ -1,0 +1,5003 @@
+{
+  "version": "2026-11-27.2",
+  "sources": [
+    {
+      "id": "C01",
+      "label": "PowerPyx：110攝影點",
+      "url": "https://www.powerpyx.com/like-a-dragon-infinite-wealth-all-photo-rally-locations/",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C02",
+      "label": "RPG Site：攝影分區對照",
+      "url": "https://www.rpgsite.net/guide/15364-like-a-dragon-infinite-wealth-photo-rally-guide-where-to-find-all-camera-spots",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C03",
+      "label": "Gamepressure：異人町50追憶",
+      "url": "https://www.gamepressure.com/like-a-dragon-infinite-wealth/memoirs-of-a-dragon-in-yokohama/zc11208",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C04",
+      "label": "Gamepressure：神室町40追憶",
+      "url": "https://www.gamepressure.com/like-a-dragon-infinite-wealth/memoirs-of-a-dragon-in-kamurocho/zd11209",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C05",
+      "label": "PowerPyx：追憶事件前置",
+      "url": "https://www.powerpyx.com/like-a-dragon-infinite-wealth-memoirs-of-a-dragon-guide/",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C06",
+      "label": "CyricZ：第8章追憶",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-8-memoirs",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C07",
+      "label": "CyricZ：第12章追憶",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/chapter-12-memoirs",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C08",
+      "label": "CyricZ：最終章追憶",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/finale-memoirs",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C09",
+      "label": "CyricZ：願望清單與覺醒門檻",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/the-bucket-list-mid-game-spoilers",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C10",
+      "label": "Neoseeker：臨終劇場逐段條件",
+      "url": "https://www.neoseeker.com/like-a-dragon-infinite-wealth/guides/Life_Links",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C11",
+      "label": "SEGA：官方願望清單系統",
+      "url": "https://ryu-ga-gotoku.com/eight/asia_en/adventure/",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C12",
+      "label": "CyricZ：攝影取景與編號",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/photo-rally",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C13",
+      "label": "CyricZ：夏威夷店鋪／賭場",
+      "url": "https://gamefaqs.gamespot.com/ps5/409974-like-a-dragon-infinite-wealth/faqs/81106/honolulu-hawaii",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "C14",
+      "label": "CyricZ：賭博入口（門檻異說）",
+      "url": "https://gamefaqs.gamespot.com/pc/409949-like-a-dragon-infinite-wealth/faqs/81106/gambling-games",
+      "checkedAt": "2026-11-27"
+    }
+  ],
+  "sets": [
+    {
+      "id": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "total": 15
+    },
+    {
+      "id": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "total": 15
+    },
+    {
+      "id": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "total": 10
+    },
+    {
+      "id": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "total": 15
+    },
+    {
+      "id": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "total": 15
+    },
+    {
+      "id": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "total": 10
+    },
+    {
+      "id": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "total": 15
+    },
+    {
+      "id": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "total": 15
+    }
+  ],
+  "rows": [
+    {
+      "id": "photo-lj-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "住宅海龜",
+      "originalName": "Coconut Turtle on Housing Complex Wall",
+      "location": "Makani Ave.西側、Waikiki St.路口附近；兩座黃色樓梯之間的牆上角色。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "Momo街櫥窗",
+      "originalName": "Streetside Window Display",
+      "location": "Momo St.西側店家櫥窗，Captain's Trophies旁。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "Jeff餐車",
+      "originalName": "Golden Food Truck",
+      "location": "West Waikiki的Jeff's Taco Truck，拍金色餐車。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "松本刨冰店壁畫",
+      "originalName": "Shave Ice Shop Painting",
+      "location": "進入Matsumoto Shave Ice，面向店內牆上繪畫。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "Revolve招牌",
+      "originalName": "Popular Bar and Hangout Spot",
+      "location": "Revolve Bar正門上方。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "Yamabiko招牌",
+      "originalName": "Equipment Store Near Revolve",
+      "location": "Revolve對街的Yamabiko裝備店門面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "信箱富士山盆栽",
+      "originalName": "On a Residential Mailbox",
+      "location": "Tsubaki St.住宅信箱，Revolve以南；找信箱上的小富士山。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "賭場招財貓",
+      "originalName": "This One Takes Confidence",
+      "location": "Yamabiko附近巷內先找守門男子；進Gambling Hall拍大招財貓。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。另須通過賭場門口男子的自信檢定。來源有3／4／5級異說，建議自信5再訪；以遊戲提示為準。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "caution": "自信精確門檻來源不一致，未宣稱實機確認。",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "住宅海豚壁畫",
+      "originalName": "On a Housing Wall",
+      "location": "Fuji St.神社東南側的住宅外牆。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "壽司店忍者",
+      "originalName": "The Ninja Up Where Ninja Sup",
+      "location": "Shinobi Sushi店內，櫃檯左側靠天花板的忍者。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "龍海神社內部",
+      "originalName": "Inside the Shrine Building",
+      "location": "Ryukai Shrine建築內，拍祭壇。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "巖流島武具櫥窗",
+      "originalName": "Samurai Window Display",
+      "location": "Ganryujima Armory店外的武士展示窗。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "武具店達摩",
+      "originalName": "Inside the Weapons Shop",
+      "location": "Ganryujima Armory內，收銀處旁的達摩。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "貨櫃餐廳",
+      "originalName": "Garden in a Shipping Container",
+      "location": "Waikiki St.上的Ahi Poke Garden貨櫃店面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-lj-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "lj",
+      "city": "夏威夷",
+      "region": "小日本",
+      "label": "街角披薩店",
+      "originalName": "Street Corner Restaurant Sign",
+      "location": "East Waikiki電車站旁、Ahi Poke Garden以東的Big King Pizza招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "海洋寶物櫥窗",
+      "originalName": "Tropical Window Display",
+      "location": "Seaworthy Treasures入口西側的展示窗。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "甜點店衝浪板招牌",
+      "originalName": "Surfboard Sweets Shop Sign",
+      "location": "Cream & Berry（Waikiki）店內。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "小公園海豚",
+      "originalName": "Middle of Park Square",
+      "location": "Seaside Ave.與Waikiki St.交會的小公園廣場。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Mohala刨冰菜單",
+      "originalName": "Shave Ice Menu Board",
+      "location": "Mohala Shave Ice攤位的菜單板。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Alo-Happy教學照片",
+      "originalName": "Alo-Happy Tours",
+      "location": "Worldwide Market Village的Alo-Happy Tours；SS32教學指定取景。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章支線SS32教學指定拍攝；完成教學後確認清單已登錄。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "世界市場入口",
+      "originalName": "Shopping Center Entrance",
+      "location": "Worldwide Market Village街廓西南角，Aloha St.與Kaku Ave.附近的大招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "可麗餅店旁櫥窗",
+      "originalName": "Streetside Window Display",
+      "location": "Crêpes for Me店門附近的街邊展示窗。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "衝浪店背牆",
+      "originalName": "Behind the Surf Shop",
+      "location": "No Surf No Life外側南牆。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "冰淇淋霓虹",
+      "originalName": "Ice Cream Stand Neon Sign",
+      "location": "Snowtown USA外牆的霓虹標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Guava果汁店",
+      "originalName": "Beside Mocha Mahalo",
+      "location": "Mocha Mahalo正北側店面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Julie工坊標誌",
+      "originalName": "Garage Logo",
+      "location": "Julie's Gearworks夏威夷本店內，拍車庫牆面標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Oahu漢堡店",
+      "originalName": "Inside the Restaurant",
+      "location": "Oahu Burger店內、櫃檯旁招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "海灘衝浪板像",
+      "originalName": "Surfboard Statue on the Sands",
+      "location": "Aloha Beachfront計程車點南側沙灘。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "海灘旁小巷",
+      "originalName": "Alleyway by the Beach",
+      "location": "West Aloha Beach計程車點北側的小巷與衝浪板。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-wk-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "wk",
+      "city": "夏威夷",
+      "region": "威基基",
+      "label": "Crystal Aloha飯店徽記",
+      "originalName": "Famed Hotel Insignia",
+      "location": "Crystal Aloha Resort北入口旁外牆標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "商場停車場牆牌",
+      "originalName": "Shopping Center 1F",
+      "location": "Anaconda一樓停車場，Hilo Hattie以東的牆牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "Anaconda遊樂場",
+      "originalName": "Shopping Center 1F",
+      "location": "一樓東南側Anaconda Arcade的招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "Reef Riders對面看板",
+      "originalName": "Shopping Center 1F",
+      "location": "一樓東側，Reef Riders附近、電扶梯旁的人臉拍照板。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "二樓蛇雕塑",
+      "originalName": "Shopping Center 2F",
+      "location": "Anaconda二樓中央中庭的蛇瓶／動態雕塑。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "商場北入口",
+      "originalName": "Shopping Center North Entrance",
+      "location": "Anaconda Blvd.側北入口上方；抬高鏡頭。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "商場南入口",
+      "originalName": "Shopping Center South Entrance",
+      "location": "Harbor St.側停車場入口上方。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "商場西入口",
+      "originalName": "Shopping Center West Entrance",
+      "location": "一樓西側，Sunset World Market旁的入口標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "Fiddler花台小蛇",
+      "originalName": "Shopping Center 2F",
+      "location": "二樓Fiddler Brand南側花台角落的小蛇。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "ABC旁櫥窗小蛇",
+      "originalName": "Shopping Center 2F",
+      "location": "二樓ABC Store（Anaconda）西側櫥窗內的小蛇。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ac-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "ac",
+      "city": "夏威夷",
+      "region": "Anaconda購物中心",
+      "label": "洗手間地板小蛇",
+      "originalName": "Shopping Center Restroom",
+      "location": "一樓東側洗手間，小便斗附近地板。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "第五地區塗鴉",
+      "originalName": "Wall Graffiti in District Five",
+      "location": "District Five大門外左側高牆的章魚塗鴉。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "不合群披薩片",
+      "originalName": "One Mismatched Slice",
+      "location": "Club Guilty以東的Buster's Pizza櫥窗。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "Club Guilty霓虹",
+      "originalName": "Cuffed Nightspot",
+      "location": "Club Guilty夜店門面的霓虹招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "廢墟中的椅子",
+      "originalName": "Inside Ruins",
+      "location": "Club Guilty西側小巷；由木板縫隙往廢屋內找椅子。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "Soramame店內吉祥物",
+      "originalName": "Store Shelf Mascot",
+      "location": "Cafe Soramame內的貨架吉祥物。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。先完成SS22，Cafe Soramame才開放進入。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32",
+        "SS22"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "孤兒院旁噴泉",
+      "originalName": "Streetside Water Installation",
+      "location": "Orphanage計程車點以西、Sunset Park南側水景。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "Kolonahe街水景",
+      "originalName": "Streetside Water Installation",
+      "location": "Downtown北側Kolonahe St.附近、Shark Teeth Souvenirs以東的噴泉。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "鯊魚牙紀念品",
+      "originalName": "Serrated Storefront",
+      "location": "Shark Teeth Souvenirs店門面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "武術兵器店熊貓",
+      "originalName": "Chinese Weapons Dealer",
+      "location": "House of Wushu武器店內的熊貓擺飾。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "Nirvana飯店招牌",
+      "originalName": "Sign of Bliss",
+      "location": "Chinatown北側Nirvana Hotel門面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "中藥店吉祥物",
+      "originalName": "Herbal Store Mascot",
+      "location": "Wan Shang Tong Herbal Medicine店外的人參吉祥物。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "電梯熊貓",
+      "originalName": "Elevator Panda",
+      "location": "Fantasia Mahjong入口電梯上方的懸掛熊貓。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "Another Bottle酒舖",
+      "originalName": "Local Liquor Market",
+      "location": "Clean-Clean Household Supplies以東、Black Hibiscus以西的酒舖。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "小窗口果汁店",
+      "originalName": "Hole-in-the-Wall Smoothie Shop",
+      "location": "Mikasa's Coconut Juice Stand附近的小窗口攤位。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dc-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "dc",
+      "city": "夏威夷",
+      "region": "Downtown／Chinatown／第五地區",
+      "label": "家用品店雨傘",
+      "originalName": "Umbrellas on a Corner Store",
+      "location": "Clean-Clean Household Supplies店面上方吊傘。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "港灣公園小橋",
+      "originalName": "Seaside Park Bridge",
+      "location": "Anaconda Harbor Park池塘上的橋；到橋面再取景。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "嬉戲海豚雕塑",
+      "originalName": "Dolphins at Play",
+      "location": "Onaga Maritime Fare北側、Docks計程車點東北的雕塑。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Horizon藥局門面",
+      "originalName": "Street Corner Near the Parking Lot",
+      "location": "Anaconda商場西北角停車場旁的Horizon Drugs。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Klotzman旁櫥窗",
+      "originalName": "Window Near Klotzman Entrance",
+      "location": "Night Marchers對面、Klotzman Digital入口附近的玫瑰展示窗。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Dolls & Devils招牌",
+      "originalName": "For Adults Seeking Playtime",
+      "location": "Dolls & Devils Playhouse建築入口上方。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Hyper Ecstasy櫥窗",
+      "originalName": "Raunchy Corset Display",
+      "location": "文化區Hyper Ecstasy店外的束身衣展示。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Hip Hop Shrimp餐車",
+      "originalName": "Food Truck Near Ship Landing",
+      "location": "Harbor St.、港灣上船點附近餐車招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Art Walls壁畫",
+      "originalName": "Art Walls Mural",
+      "location": "Art Walls區域東北角的壁畫。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Psychedelic咖啡店",
+      "originalName": "Groovy Cafe Sign",
+      "location": "Psychedelic Coffee入口上方招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "Bar Moderne",
+      "originalName": "Streetside Art Walls bar",
+      "location": "Bluebird Gallery建築南側、Art Walls街邊酒吧招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "證照學校標誌",
+      "originalName": "Lobby of an Educational Facility",
+      "location": "Ounabara Vocational School大廳內牆面標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "El Dorado劇院",
+      "originalName": "Currently Closed Theater",
+      "location": "Loco Fiesta Liquor附近的Cabaret El Dorado招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "武器店外鳳梨",
+      "originalName": "Pineapples for Sale",
+      "location": "Bullet Hell武器店外的鳳梨陳列。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "LiberTea招牌",
+      "originalName": "Streetside Cafe",
+      "location": "LiberTea街邊咖啡店牆面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-cp-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "cp",
+      "city": "夏威夷",
+      "region": "文化區／港灣公園",
+      "label": "歇業酒吧霓虹",
+      "originalName": "Lit-Up Sign for a Closed Bar",
+      "location": "Twilight Drive上、Sushi Bar Limbo以東、Hyper Ecstasy對面；不必等招牌點亮。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 5,
+      "chapterId": "chapter-05",
+      "unlock": "第5章完成支線SS32攝影教學後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [
+        "SS32"
+      ],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "一番製菓門面",
+      "originalName": "Former Company Headquarters",
+      "location": "Ichiban Confections店外布招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "大臉雕塑",
+      "originalName": "Sculpture on a Building Corner",
+      "location": "Hustle Boutique以南街角建築的大臉。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Hustle時裝店",
+      "originalName": "Trendy Clothing Shop",
+      "location": "Hustle Boutique店門上方招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Survive旁咖啡店",
+      "originalName": "Cafe Near a Local Hangout",
+      "location": "Survive Bar旁／對面的黃色遮棚店面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Survive酒吧標誌",
+      "originalName": "Popular Bar and Hangout Spot",
+      "location": "Survive Bar入口上方的壁面招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "二樓白色吉祥物",
+      "originalName": "Bar District 2F",
+      "location": "Harbor Light／Bar Rodriguez建築沿河樓梯上二樓，在通道拍白色雕像。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "caution": "目標是二樓通道吉祥物，不是壽司店店名。Ginsharin須先完成異人町追憶36才出現；不用先等店名出現才找通道。",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Rodriguez右側店鋪",
+      "originalName": "Shop Amid the Street Downtown",
+      "location": "Bar Rodriguez門口右邊緊鄰的小店招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "紫色旅館招牌",
+      "originalName": "Convenient Streetside Hotel",
+      "location": "Bar Rodriguez稍北側、對街建築的紫色招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "金華橋旁居酒屋",
+      "originalName": "Local Izakaya",
+      "location": "地圖Kinka Bridge字樣旁，酒吧區北端建築木牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-bd-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "bd",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "街角占卜店",
+      "originalName": "Street Corner Psychic",
+      "location": "上項居酒屋的街道西側，金華橋西端附近店面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "河邊休息店面",
+      "originalName": "Nice Spot to Relax",
+      "location": "Poppo（Tsurukame Hwy.）西北側、面河的建築門面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "韓國街拱門",
+      "originalName": "Street Archway Sculpture",
+      "location": "Eomeoni's Vow以東、Hyakkei St.入口北側的金屬街道拱門。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "韓國街居酒屋",
+      "originalName": "Local Izakaya",
+      "location": "金華藥局向東到巷口；Yokohama Blvd.住宅區計程車點東南側。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "日本Julie工坊",
+      "originalName": "Recently Rebranded Workshop",
+      "location": "Julie's Gearworks（Japan）店門招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "Hello Work旁照相館",
+      "originalName": "Photo Developer by Hello Work",
+      "location": "Hello Work北側沿W Central St.往西，找綠色照相館招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "就業中心標誌",
+      "originalName": "Employment Office of Yokohama",
+      "location": "Hello Work建築南牆的標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "大街咖啡店",
+      "originalName": "Cafe on Main Street",
+      "location": "W Tsurukame Hwy.與Isobe Lane街角、Sasaki Arcade北側對街店面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "Pinky Rabbit招牌",
+      "originalName": "Rose-Colored Corner Store",
+      "location": "Love Magic入口以東、春日住處以南的粉紅店牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "春日住處屋頂",
+      "originalName": "Local Theater’s Rooftop View",
+      "location": "春日住處外的屋頂，拍紅色劇院招牌背面。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "海鷗電影院",
+      "originalName": "Currently Closed Movie Theater",
+      "location": "Restaurant Row南端、Zhou Long Distribution以南的歇業戲院。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "百景巷街角雕塑",
+      "originalName": "Street Corner Sculpture",
+      "location": "Hyakkei St.與Hyakkei Alley交會處，抬頭找Hotel Bunny's上方雕塑。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "書店吉祥物",
+      "originalName": "Mascot of a Franchise Bookseller",
+      "location": "E Tsurukame Hwy.計程車點旁Revenge Bookstore街角。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "Old Mountain餐廳",
+      "originalName": "Rustic Streetside Restaurant",
+      "location": "Isezaki Rd.入口附近、吉野家以西的餐廳招牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "Wette恐龍",
+      "originalName": "Might Fast Food Mascot",
+      "location": "Wette Kitchen（Isezaki Rd.）屋頂的恐龍標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-dt-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "dt",
+      "city": "異人町",
+      "region": "市中心",
+      "label": "伊勢佐木路牌",
+      "originalName": "Iconic Sign of Isezaki Ijincho",
+      "location": "N Isezaki Rd.北入口的大型路牌；退到北側再拍。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-01",
+      "type": "photos",
+      "number": 1,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "誠稜高中校門",
+      "originalName": "Entrance of a Local High School",
+      "location": "Seiryo High School北門，Heaven's Golf以西、河對岸。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-02",
+      "type": "photos",
+      "number": 2,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "高爾夫招牌",
+      "originalName": "Logo of a Golf Center",
+      "location": "Heaven's Golf入口。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-03",
+      "type": "photos",
+      "number": 3,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "鐵捲門車庫",
+      "originalName": "Shuttered Garage",
+      "location": "Kappo Katsumi附近、Jinnai Service Rd.南側的車庫；找有機車圖案的鐵捲門。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-04",
+      "type": "photos",
+      "number": 4,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "陣內站入口牌",
+      "originalName": "Entrance Gate Sign",
+      "location": "West Jinnai Station入口／閘門方向的站牌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-05",
+      "type": "photos",
+      "number": 5,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "日本Alo-Happy",
+      "originalName": "Alo-Happy Crosses Borders",
+      "location": "Jinnai Station的Alo-Happy Tours店前人物看板。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-06",
+      "type": "photos",
+      "number": 6,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "The Bee室內",
+      "originalName": "Inside The Bee",
+      "location": "The Bee店內吧台前的大樹裝飾。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-07",
+      "type": "photos",
+      "number": 7,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "未來打擊中心",
+      "originalName": "Inside the Batting Center",
+      "location": "MIRAI Batting Center內，入口旁牆邊鯊魚標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-08",
+      "type": "photos",
+      "number": 8,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "陣內銅像飯店",
+      "originalName": "Face of a Large Hotel",
+      "location": "Jinnai Bronze Hotel的大型圓窗門面，Carriage Hwy.與Bayside St.附近。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-09",
+      "type": "photos",
+      "number": 9,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "m HOLD'EM窗牌",
+      "originalName": "View of a Poker Parlor",
+      "location": "m HOLD'EM（Jinnai）窗上的M標誌。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-10",
+      "type": "photos",
+      "number": 10,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "街角大型建築",
+      "originalName": "Large Cornerside Building",
+      "location": "Smile Burger餐車以北、la chatte blanche西南的街角。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-11",
+      "type": "photos",
+      "number": 11,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "濱北公園噴泉像",
+      "originalName": "Statue in the Heart of the Park",
+      "location": "Hamakita Park中央噴泉的雕像。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-12",
+      "type": "photos",
+      "number": 12,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "中華街豬雕塑",
+      "originalName": "Chinatown Art Piece",
+      "location": "Chinatown東北側、Vista Mahjong以東的豬雕塑。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-13",
+      "type": "photos",
+      "number": 13,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "中華街涼亭",
+      "originalName": "Fixture of the Chinatown Park",
+      "location": "Chinatown東側空地的涼亭。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-14",
+      "type": "photos",
+      "number": 14,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "平安樓",
+      "originalName": "Authentic Chinese Restaurant",
+      "location": "Heian Tower中華餐館的正面入口。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "photo-ut-15",
+      "type": "photos",
+      "number": 15,
+      "setId": "ut",
+      "city": "異人町",
+      "region": "北部／中華街",
+      "label": "甜品店旁牌樓",
+      "originalName": "Archway Before the Dragon",
+      "location": "Sweet Heaven西側大牌樓，從西邊朝牌樓取景。",
+      "actions": "用遊戲內相機對準目標，確認攝影圖示後拍攝；以攝影尋寶清單登錄為完成判定。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章桐生線推進Alo-Happy／攝影相關主線，開啟橫濱攝影清單後。",
+      "timeOfDay": "不要求特定時段；店內點需能進入該店。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C01",
+        "C02",
+        "C12"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-01",
+      "type": "memoirs",
+      "number": 1,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "飯店小路／餐廳街",
+      "label": "廢棄電影院",
+      "originalName": "Stars Shine Brightest in the Dark",
+      "location": "Ijin St.靠You Tian的歇業電影院入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-02",
+      "type": "memoirs",
+      "number": 2,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "濱北公園",
+      "label": "沖繩海邊往事",
+      "originalName": "Days by the Okinawan Sea",
+      "location": "Hamakita Park北側水岸的追憶標記；不是東端舞台。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-03",
+      "type": "memoirs",
+      "number": 3,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "中華街",
+      "label": "小野道夫商品",
+      "originalName": "I'm Glad We Could Michi",
+      "location": "Kai Xin Specialty Store店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-04",
+      "type": "memoirs",
+      "number": 4,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "伊勢佐木路",
+      "label": "可靠的同伴",
+      "originalName": "Reliable Allies",
+      "location": "Welcome Pharmacy店門前。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-05",
+      "type": "memoirs",
+      "number": 5,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "大濱街",
+      "label": "泡泡浴往事",
+      "originalName": "What's a Soapland?",
+      "location": "Ohama St.泡泡浴店的關閉入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-06",
+      "type": "memoirs",
+      "number": 6,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "濱北公園",
+      "label": "擂台之龍",
+      "originalName": "The Dragon of the Ring",
+      "location": "Hamakita Park最東端廣場的舞台。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-07",
+      "type": "memoirs",
+      "number": 7,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "日出街／橋梁",
+      "label": "橋上的往事",
+      "originalName": "Bridge Over Troubled Waters",
+      "location": "Sunrise Bridge橋上。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-08",
+      "type": "memoirs",
+      "number": 8,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "校園回憶",
+      "originalName": "Memories of Youth",
+      "location": "Seiryo High School北門，Heaven's Golf西側。",
+      "actions": "到場後先清掉阻擋互動的敵人；可有Lv33頭目戰。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。到場後先清掉阻擋互動的敵人；可有Lv33頭目戰。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-09",
+      "type": "memoirs",
+      "number": 9,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "昔日戀情",
+      "originalName": "An Old Flame",
+      "location": "Kinka St.的Heaven's Golf接待處內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-10",
+      "type": "memoirs",
+      "number": 10,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "韓國街",
+      "label": "遙的賭運",
+      "originalName": "Haruka's Gambler Instincts",
+      "location": "Yokohama Blvd.入口通往的地下Gambling Hall內。",
+      "actions": "先和入口坐著的男子說話開放賭場，再進內找標記。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。先和入口坐著的男子說話開放賭場，再進內找標記。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-11",
+      "type": "memoirs",
+      "number": 11,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "韓國街",
+      "label": "善熙與異人町",
+      "originalName": "Our Queen, Seonhee",
+      "location": "Fukutokucho街道的封鎖巷口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-12",
+      "type": "memoirs",
+      "number": 12,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "鶴龜街",
+      "label": "遊戲廳往事",
+      "originalName": "Nothing Like a Good Game",
+      "location": "E Tsurukame Alley的Sasaki Arcade內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-13",
+      "type": "memoirs",
+      "number": 13,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "中央街",
+      "label": "大海與男人",
+      "originalName": "Man Versus the Sea",
+      "location": "E Central St.的Gindaco Highball Tavern門外。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-14",
+      "type": "memoirs",
+      "number": 14,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "來生的願望",
+      "originalName": "In My Next Life",
+      "location": "Hustle Boutique店外。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-15",
+      "type": "memoirs",
+      "number": 15,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "最後的打擊練習",
+      "originalName": "One Last Game",
+      "location": "W Carriage Hwy.的MIRAI Batting Center入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-16",
+      "type": "memoirs",
+      "number": 16,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "熟悉的地方",
+      "originalName": "The Usual Place",
+      "location": "Fukutoku Bridge西端，酒吧區沿河一側。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-17",
+      "type": "memoirs",
+      "number": 17,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "日出街／橋梁",
+      "label": "高速公路記憶",
+      "originalName": "Highway Trauma",
+      "location": "Kinka Bridge西側行人穿越處。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-18",
+      "type": "memoirs",
+      "number": 18,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "奇妙組合",
+      "originalName": "A Perfectly Strange Combination",
+      "location": "W Carriage Hwy.的Cafe Brave店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-19",
+      "type": "memoirs",
+      "number": 19,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "孩子與孫輩",
+      "originalName": "Grandchildren...",
+      "location": "MIRAI打擊中心以東、W Carriage Hwy.遊樂空地旁的母子。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-20",
+      "type": "memoirs",
+      "number": 20,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "歌聲中的回憶",
+      "originalName": "What's in a Song",
+      "location": "Survive Bar外。",
+      "actions": "先完成第8章主線拜訪Survive的事件。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。先完成第8章主線拜訪Survive的事件。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-21",
+      "type": "memoirs",
+      "number": 21,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "服裝與風格",
+      "originalName": "Attention to Style",
+      "location": "Hustle Boutique店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-22",
+      "type": "memoirs",
+      "number": 22,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "大濱街",
+      "label": "東城會",
+      "originalName": "The Tojo Clan",
+      "location": "Romance St.、春日住處南側的青龍會附近。",
+      "actions": "第10章主線拜訪倉庫後再找書本標記。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章主線拜訪倉庫後再找書本標記。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-23",
+      "type": "memoirs",
+      "number": 23,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "冴島大河",
+      "originalName": "A Man Named Taiga Saejima",
+      "location": "MIRAI打擊中心以南、橫濱迷宮西側的水岸步道。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-24",
+      "type": "memoirs",
+      "number": 24,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "城堡般的建築",
+      "originalName": "The Castle Within",
+      "location": "E Carriage Hwy.的Sunlight Castle養老院入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-25",
+      "type": "memoirs",
+      "number": 25,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "伊勢佐木路",
+      "label": "橫濱因緣",
+      "originalName": "Yokohama Connection",
+      "location": "N Isezaki Rd.北入口路牌處。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-26",
+      "type": "memoirs",
+      "number": 26,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "關西娛樂之都",
+      "originalName": "The Entertainment Capital of the West",
+      "location": "酒吧區南側沿河觀景步道、停車場對面。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-27",
+      "type": "memoirs",
+      "number": 27,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "福岡的記憶",
+      "originalName": "Memories of Fukuoka",
+      "location": "Bayside St.、The Bee門前計程車旁。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-28",
+      "type": "memoirs",
+      "number": 28,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "濱北公園",
+      "label": "尾道的記憶",
+      "originalName": "Thoughts on Onomichi",
+      "location": "Hamakita Park北側大船停泊處。",
+      "actions": "先完成現場戰鬥，再調查追憶；可能有Lv41頭目。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。先完成現場戰鬥，再調查追憶；可能有Lv41頭目。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-29",
+      "type": "memoirs",
+      "number": 29,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "由美的夢想",
+      "originalName": "Yumi's Dream",
+      "location": "W Carriage Hwy.飯店入口前。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-30",
+      "type": "memoirs",
+      "number": 30,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "韓國街",
+      "label": "從敵人到朋友",
+      "originalName": "From Foe to Friend",
+      "location": "Fukutokucho的Eomeoni's Vow餐廳外。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-31",
+      "type": "memoirs",
+      "number": 31,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "大濱街",
+      "label": "夜晚的蝴蝶",
+      "originalName": "Butterflies of the Night",
+      "location": "Ohama St.、春日住處附近Rose Blossom看板。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-32",
+      "type": "memoirs",
+      "number": 32,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "陣內／北部",
+      "label": "便利商店往事",
+      "originalName": "Superior Convenience",
+      "location": "Poppo（Jinnai Station）店門前。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-33",
+      "type": "memoirs",
+      "number": 33,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "飯店小路／餐廳街",
+      "label": "劍豪的另一段人生",
+      "originalName": "Dreams of a Past Life: The Swordmaster",
+      "location": "Ijin Lane的Wette Kitchen旁建築入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-34",
+      "type": "memoirs",
+      "number": 34,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "日出街／橋梁",
+      "label": "維新的另一段人生",
+      "originalName": "Dreams of a Past Life: The Revolutionary",
+      "location": "Homeless Camp與Tsurukame Bridge附近。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-35",
+      "type": "memoirs",
+      "number": 35,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Survive店長",
+      "originalName": "Names and Faces",
+      "location": "Survive Bar內的店長。",
+      "actions": "第12章回到日本時與店長對話到底。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能。第12章回到日本時與店長對話到底。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C07"
+      ],
+      "aliases": [
+        "Memories of the Bartender"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-36",
+      "type": "memoirs",
+      "number": 36,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "雪紀的壽司店",
+      "originalName": "Shooting for the Stars",
+      "location": "Harbor Light沿河樓梯上二樓，Chirashi Sushi Bar Ginsharin。",
+      "actions": "第12章先完成神室町追憶39，再進Ginsharin找雪紀。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能。第12章先完成神室町追憶39，再進Ginsharin找雪紀。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-kamurocho-39"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C07"
+      ],
+      "aliases": [
+        "Memories of Yuki"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-37",
+      "type": "memoirs",
+      "number": 37,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "日出街／橋梁",
+      "label": "村長留下的傳承",
+      "originalName": "Legacies Live Forever",
+      "location": "Homeless Camp內的村長（Chief）。",
+      "actions": "最終章以桐生靠近觸發事件，之後再主動交談一次。",
+      "minChapter": 14,
+      "chapterId": "chapter-finale",
+      "unlock": "最終章；桐生已開啟願望清單／追憶功能。最終章以桐生靠近觸發事件，之後再主動交談一次。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C08"
+      ],
+      "aliases": [
+        "Memories of the Chief"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-38",
+      "type": "memoirs",
+      "number": 38,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "日出街／橋梁",
+      "label": "濱子的茶敘",
+      "originalName": "A Guilty Conscience",
+      "location": "Sunrise Bridge西南端、Sunrise St.交會處找濱子。",
+      "actions": "第8章紗榮子入隊、收到返回春日住處目標後，答應喝茶並看完對話。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。第8章紗榮子入隊、收到返回春日住處目標後，答應喝茶並看完對話。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "aliases": [
+        "Memories of Hamako"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-39",
+      "type": "memoirs",
+      "number": 39,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "地下武器商",
+      "originalName": "The Underground Weapons Dealer",
+      "location": "Kinka Bridge與N Sakura River St.交角欄杆旁，沿梯下水道到木筏。",
+      "actions": "紗榮子入隊、返回春日住處目標出現後；下梯找黑衣男子並打贏周家龍Lv32。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。紗榮子入隊、返回春日住處目標出現後；下梯找黑衣男子並打贏周家龍Lv32。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "aliases": [
+        "Memories of Chau Ka Long"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-40",
+      "type": "memoirs",
+      "number": 40,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "濱北公園",
+      "label": "贖罪的宗教家",
+      "originalName": "Repenting for the Past",
+      "location": "Hamakita Park北側水岸祈禱人群。",
+      "actions": "收到前往青龍會目標後，白天與人群交談並打贏戰鬥。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。收到前往青龍會目標後，白天與人群交談並打贏戰鬥。",
+      "timeOfDay": "白天。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "aliases": [
+        "Memories of Munan Suzuki"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-41",
+      "type": "memoirs",
+      "number": 41,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "飯店小路／餐廳街",
+      "label": "亞門與新力量",
+      "originalName": "Newfound Strength",
+      "location": "Restaurant Row的Qing Jin，依不明來電指示前往。",
+      "actions": "第8章臨終劇場教學後的主線事件；照劇情啟用桐生強化，不是迷宮EX亞門。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。第8章臨終劇場教學後的主線事件；照劇情啟用桐生強化，不是迷宮EX亞門。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "aliases": [
+        "Memories of Amon"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-42",
+      "type": "memoirs",
+      "number": 42,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "大濱街",
+      "label": "太一的近況",
+      "originalName": "Memories of Taichi",
+      "location": "Ohama St.與E Central St.附近的Rose Blossom。",
+      "actions": "第8章主線收到伊達電話後前往，完成教學劇場及後續事件。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能。第8章主線收到伊達電話後前往，完成教學劇場及後續事件。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 1,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-43",
+      "type": "memoirs",
+      "number": 43,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "伊達的安排",
+      "originalName": "Memories of Date",
+      "location": "Harbor Light酒吧找伊達。",
+      "actions": "第10章、先完成追憶42，心／技／體全到3級並等伊達電話。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章、先完成追憶42，心／技／體全到3級並等伊達電話。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-42"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 2,
+      "awakeningAll": 3,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-44",
+      "type": "memoirs",
+      "number": 44,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "Stardust的老朋友",
+      "originalName": "Memories of Stardust",
+      "location": "Harbor Light接受伊達安排，事件帶往神室町Stardust／New Serena。",
+      "actions": "第10章、先完成追憶43，心／技／體全到4級並等電話。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章、先完成追憶43，心／技／體全到4級並等電話。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-43"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 3,
+      "awakeningAll": 4,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-45",
+      "type": "memoirs",
+      "number": 45,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "廣瀨一家的朋友",
+      "originalName": "Memories of the Hirose Family",
+      "location": "Harbor Light與伊達及松永、田頭會面。",
+      "actions": "第10章、先完成追憶44，心／技／體全到5級；完成劇場與戰鬥。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章、先完成追憶44，心／技／體全到5級；完成劇場與戰鬥。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-44"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 4,
+      "awakeningAll": 5,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-46",
+      "type": "memoirs",
+      "number": 46,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "中嶋社長",
+      "originalName": "Memories of Nakajima",
+      "location": "Harbor Light，接受伊達安排的長洲計程車社長會面。",
+      "actions": "第10章、先完成追憶45，心／技／體全到6級並等電話。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章、先完成追憶45，心／技／體全到6級並等電話。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-45"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 5,
+      "awakeningAll": 6,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-47",
+      "type": "memoirs",
+      "number": 47,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "狹山的近況",
+      "originalName": "Memories of Sayama",
+      "location": "Harbor Light找伊達，再依事件轉往咖啡店。",
+      "actions": "第10章、先完成追憶46，心／技／體全到7級並等電話。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。第10章、先完成追憶46，心／技／體全到7級並等電話。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-46"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 6,
+      "awakeningAll": 7,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-48",
+      "type": "memoirs",
+      "number": 48,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "秋山的重逢",
+      "originalName": "Memories of Akiyama",
+      "location": "Harbor Light接受伊達安排的秋山事件。",
+      "actions": "第12章、先完成追憶47，心／技／體全到8級；打完秋山戰。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能。第12章、先完成追憶47，心／技／體全到8級；打完秋山戰。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-47"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 7,
+      "awakeningAll": 8,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-49",
+      "type": "memoirs",
+      "number": 49,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "酒吧區",
+      "label": "遙與最後的劇場",
+      "originalName": "Memories of Haruka",
+      "location": "由伊達電話開始，在Harbor Light接洽後依標記赴神室町New Serena。",
+      "actions": "第12章、先完成追憶48，心／技／體全到9級；看完事件並打贏後續敵人。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能。第12章、先完成追憶48，心／技／體全到9級；看完事件並打贏後續敵人。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-48"
+      ],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11",
+        "C10",
+        "C05"
+      ],
+      "lifeLink": 8,
+      "awakeningAll": 9,
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-ijincho-50",
+      "type": "memoirs",
+      "number": 50,
+      "setId": "ijincho",
+      "city": "異人町",
+      "region": "主線事件",
+      "label": "花輪的記憶",
+      "originalName": "Memories of Hanawa",
+      "location": "第10章桐生線開場劇情，自動事件位置。",
+      "actions": "看完第10章開場事件後到遊戲內追憶清單核對；沒有另設可跑圖光點。",
+      "minChapter": 10,
+      "chapterId": "chapter-10",
+      "unlock": "第10章；桐生已開啟願望清單／追憶功能。看完第10章開場事件後到遊戲內追憶清單核對；沒有另設可跑圖光點。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C03",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-01",
+      "type": "memoirs",
+      "number": 1,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "昭和通",
+      "label": "伊達真",
+      "originalName": "A Man Named Makoto Date",
+      "location": "Showa St.、Nakamichi St.入口附近的神室町派出所。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-02",
+      "type": "memoirs",
+      "number": 2,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千兩大道",
+      "label": "谷村正義",
+      "originalName": "A Man Named Masayoshi Tanimura",
+      "location": "N Senryo Ave.、Little Asia東側小巷入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-03",
+      "type": "memoirs",
+      "number": 3,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "旅館街",
+      "label": "鄉田龍司",
+      "originalName": "A Man Named Ryuji Goda",
+      "location": "Hotel District西北側的追憶點。",
+      "actions": "觸發後須打倒現場機器敵人T-380；可有Lv42戰鬥。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。觸發後須打倒現場機器敵人T-380；可有Lv42戰鬥。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-04",
+      "type": "memoirs",
+      "number": 4,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "亞細亞街",
+      "label": "宇佐美勇太",
+      "originalName": "Man Named Yuta Usami",
+      "location": "E Taihei Blvd.的Little Asia封閉入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-05",
+      "type": "memoirs",
+      "number": 5,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千兩大道",
+      "label": "堂島大吾",
+      "originalName": "A Man Named Daigo Dojima",
+      "location": "神室町東側Kyushu No.1 Star餐廳前。",
+      "actions": "最終章再到餐廳前找新增書本標記。",
+      "minChapter": 14,
+      "chapterId": "chapter-finale",
+      "unlock": "最終章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。最終章再到餐廳前找新增書本標記。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-06",
+      "type": "memoirs",
+      "number": 6,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "神秘放貸人",
+      "originalName": "The Mysterious Moneylender",
+      "location": "New Serena後巷樓梯上一樓，秋山舊事務所入口。",
+      "actions": "最終章且完成異人町追憶48（秋山）後。",
+      "minChapter": 14,
+      "chapterId": "chapter-finale",
+      "unlock": "最終章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。最終章且完成異人町追憶48（秋山）後。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [
+        "memoir-ijincho-48"
+      ],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-07",
+      "type": "memoirs",
+      "number": 7,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "神室町Hills",
+      "label": "另一世界的入口",
+      "originalName": "Gateway to Another Realm",
+      "location": "地圖東北端Kamurocho Hills關閉大門。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-08",
+      "type": "memoirs",
+      "number": 8,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "神室町Hills",
+      "label": "溫泉中的記憶",
+      "originalName": "Shrouded in Steam",
+      "location": "北部Hills Garden街上的Yunosono Hot Springs關閉入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-09",
+      "type": "memoirs",
+      "number": 9,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "Stardust入口",
+      "originalName": "Leaving the Others in the Dust",
+      "location": "Tenkaichi St.的Stardust夜店入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-10",
+      "type": "memoirs",
+      "number": 10,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "中道通",
+      "label": "工作中的練習",
+      "originalName": "On-the-Job Training",
+      "location": "Nakamichi St.的Cafe Alps店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-11",
+      "type": "memoirs",
+      "number": 11,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "昭和通",
+      "label": "惠比壽屋",
+      "originalName": "All You Need in One Spot",
+      "location": "神室町南部Ebisu Pawn店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-12",
+      "type": "memoirs",
+      "number": 12,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "劇場廣場",
+      "label": "曾經的王者",
+      "originalName": "The Heavy Head that Wore the Crown",
+      "location": "Theater Square以東、Theater Ave.的封閉建築。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-13",
+      "type": "memoirs",
+      "number": 13,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "粉紅街",
+      "label": "母親的角色",
+      "originalName": "As a Mother",
+      "location": "神室町東南小巷的書本標記。",
+      "actions": "現場可能有Lv34頭目及小兵，先打完再完成回憶。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。現場可能有Lv34頭目及小兵，先打完再完成回憶。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-14",
+      "type": "memoirs",
+      "number": 14,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千兩大道",
+      "label": "未知的世界",
+      "originalName": "The Unknown World",
+      "location": "神室町東側Senryo Ave.街邊光點。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-15",
+      "type": "memoirs",
+      "number": 15,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "過去的傳說",
+      "originalName": "A Legend from the Past",
+      "location": "Tenkaichi St.入口附近封閉建築門口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-16",
+      "type": "memoirs",
+      "number": 16,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "中道通",
+      "label": "未來的傳說",
+      "originalName": "A Legend for the Future",
+      "location": "Nakamichi Alley南側封閉建築入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-17",
+      "type": "memoirs",
+      "number": 17,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "旅館街",
+      "label": "美好的時光",
+      "originalName": "It's All Good Times",
+      "location": "北部Hotel District旅館門前的書本標記。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-18",
+      "type": "memoirs",
+      "number": 18,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千禧塔",
+      "label": "城市頂點",
+      "originalName": "At the Top of the City",
+      "location": "Millennium Tower正門前的小廣場。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-19",
+      "type": "memoirs",
+      "number": 19,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千禧塔",
+      "label": "初次相遇之處",
+      "originalName": "The Place Where We First Met",
+      "location": "E Millennium Tower St.的Bantam酒吧入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-20",
+      "type": "memoirs",
+      "number": 20,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "故事起點之門",
+      "originalName": "The Gate of Beginnings",
+      "location": "Tenkaichi St.入口牌樓、計程車下車處。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-21",
+      "type": "memoirs",
+      "number": 21,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "泰平通",
+      "label": "田中真司",
+      "originalName": "A Man Named Shinji Tanaka",
+      "location": "E Taihei Blvd.的泡泡浴建築前。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-22",
+      "type": "memoirs",
+      "number": 22,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "寧靜的所在",
+      "originalName": "A Place of Serenity",
+      "location": "Tenkaichi St.的New Serena入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-23",
+      "type": "memoirs",
+      "number": 23,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "適合打架的地方",
+      "originalName": "The Best Place to Throw Down",
+      "location": "New Serena後方、神室町西南的後巷空地。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-24",
+      "type": "memoirs",
+      "number": 24,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "冠軍街",
+      "label": "神室町迷宮",
+      "originalName": "The Labyrinth in Kamurocho",
+      "location": "Champion District西側入口附近。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-25",
+      "type": "memoirs",
+      "number": 25,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "打擊中心",
+      "label": "人生的變化球",
+      "originalName": "When Life Throws Curveballs...",
+      "location": "神室町北部Yoshida Batting Center入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-26",
+      "type": "memoirs",
+      "number": 26,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "打擊中心",
+      "label": "品田辰雄",
+      "originalName": "A Man Named Tatsuo Shinada",
+      "location": "Yoshida Batting Center屋頂；從建築東側／後方樓梯上去。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-27",
+      "type": "memoirs",
+      "number": 27,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "昭和通",
+      "label": "戒指的往事",
+      "originalName": "Memories of a Ring",
+      "location": "E Showa St.的Le Marche店內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-28",
+      "type": "memoirs",
+      "number": 28,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "兒童公園",
+      "label": "地底的迷宮",
+      "originalName": "The Labyrinth Runs Deep",
+      "location": "Children's Park內的下水道入口附近。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-29",
+      "type": "memoirs",
+      "number": 29,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "劇場廣場",
+      "label": "今日的城鎮",
+      "originalName": "The Town Today",
+      "location": "Theater Square中央。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-30",
+      "type": "memoirs",
+      "number": 30,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千禧塔",
+      "label": "空白的一坪",
+      "originalName": "The Empty Lot",
+      "location": "Millennium Tower後方、Shichifuku St.旁的封閉空地入口。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-31",
+      "type": "memoirs",
+      "number": 31,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "打擊中心",
+      "label": "真島吾朗",
+      "originalName": "A Man Named Goro Majima",
+      "location": "Yoshida Batting Center室內南側走廊。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-32",
+      "type": "memoirs",
+      "number": 32,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千兩大道",
+      "label": "拉麵的曲折往事",
+      "originalName": "Ramen Served With Twists and Turns",
+      "location": "Kyushu No.1 Star餐廳內。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-33",
+      "type": "memoirs",
+      "number": 33,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "粉紅街",
+      "label": "傳說中的刺青師",
+      "originalName": "The Legendary Tattoo Artist",
+      "location": "Pink Alley南側轉角。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-34",
+      "type": "memoirs",
+      "number": 34,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "中道通",
+      "label": "末日的另一段人生",
+      "originalName": "Dreams of Another Life: The Apocalypse",
+      "location": "Nakamichi St.北端、Taihei Blvd.與Beef Zone附近。",
+      "actions": "以桐生走到書本標記的光點，互動並看完追憶；以遊戲追憶清單顯示取得為準。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-35",
+      "type": "memoirs",
+      "number": 35,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "兒童公園",
+      "label": "軌道車與友情",
+      "originalName": "Friendship Has No Finish Line",
+      "location": "Children's Park接事件，再去Tenkaichi Alley的Public Park 3。",
+      "actions": "第8章收到前往青龍會目標並能自由到神室町後，白天接取；打贏公園兩名惡徒。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。第8章收到前往青龍會目標並能自由到神室町後，白天接取；打贏公園兩名惡徒。",
+      "timeOfDay": "白天。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "caution": "Gamepressure列第12章，CyricZ與PowerPyx列第8章；採後兩者交叉一致的第8章條件，若當前無標記可後續回訪。",
+      "aliases": [
+        "Memories of Pocket Circuit"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-36",
+      "type": "memoirs",
+      "number": 36,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "天下一通",
+      "label": "柄本醫院",
+      "originalName": "Some Things Never Change",
+      "location": "Tenkaichi St.的Wild Jackson以東，倒地街友旁。",
+      "actions": "第8章能自由到神室町後，選擇找醫院，再到西側標記建築搭電梯。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。第8章能自由到神室町後，選擇找醫院，再到西側標記建築搭電梯。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "caution": "Gamepressure列第12章，CyricZ與PowerPyx列第8章；採後兩者交叉一致的第8章條件，若當前無標記可後續回訪。",
+      "aliases": [
+        "Memories of Emoto Clinic"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-37",
+      "type": "memoirs",
+      "number": 37,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "主線事件",
+      "label": "小野道夫再會",
+      "originalName": "Thank You Very Michi!",
+      "location": "第12章神室町主線遇見Shizuko的位置，依劇情標記。",
+      "actions": "第12章主線自動事件；看完後核對追憶清單。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。第12章主線自動事件；看完後核對追憶清單。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C07"
+      ],
+      "aliases": [
+        "Memories of Ono Michio"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-38",
+      "type": "memoirs",
+      "number": 38,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "冠軍街",
+      "label": "古牧對決",
+      "originalName": "A Duel for the Ages",
+      "location": "Champion District南側／東南空地。",
+      "actions": "第8章能自由到神室町後；先打三名敵人，再以桐生單挑古牧，入場前補滿HP／MP。",
+      "minChapter": 8,
+      "chapterId": "chapter-08",
+      "unlock": "第8章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。第8章能自由到神室町後；先打三名敵人，再以桐生單挑古牧，入場前補滿HP／MP。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C05",
+        "C06"
+      ],
+      "caution": "Gamepressure列第12章，CyricZ與PowerPyx列第8章；採後兩者交叉一致的第8章條件，若當前無標記可後續回訪。",
+      "aliases": [
+        "Memories of Komaki"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-39",
+      "type": "memoirs",
+      "number": 39,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千禧塔",
+      "label": "小雪的近況",
+      "originalName": "Will the Stars Shine Again?",
+      "location": "Millennium Tower東北側Four Shine。",
+      "actions": "第12章主線造訪Four Shine，完成與小雪的事件。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。第12章主線造訪Four Shine，完成與小雪的事件。",
+      "timeOfDay": "來源未列固定時段；若無標記，先核對主線與遊戲追憶提示。",
+      "prerequisites": [],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C07"
+      ],
+      "aliases": [
+        "Memories of Koyuki"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "memoir-kamurocho-40",
+      "type": "memoirs",
+      "number": 40,
+      "setId": "kamurocho",
+      "city": "神室町",
+      "region": "千禧塔",
+      "label": "Four Shine重開",
+      "originalName": "x4 Shine!",
+      "location": "Four Shine門外與女子交談。",
+      "actions": "先完成神室町追憶39→異人町追憶36，白天回Four Shine，完成三人戰與劇情。",
+      "minChapter": 12,
+      "chapterId": "chapter-12",
+      "unlock": "第12章；桐生已開啟願望清單／追憶功能，且主線允許自由前往神室町。先完成神室町追憶39→異人町追憶36，白天回Four Shine，完成三人戰與劇情。",
+      "timeOfDay": "白天。",
+      "prerequisites": [
+        "memoir-kamurocho-39",
+        "memoir-ijincho-36"
+      ],
+      "sourceRefs": [
+        "C04",
+        "C09",
+        "C11",
+        "C07"
+      ],
+      "aliases": [
+        "Memories of Four Shine"
+      ],
+      "checkedAt": "2026-11-27"
+    }
+  ]
+}
