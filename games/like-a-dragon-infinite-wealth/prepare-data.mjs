@@ -31,8 +31,14 @@ const collectibleBytes=await fs.readFile(new URL('research/collectibles.json',ba
 const collectibleResearch=JSON.parse(collectibleBytes);
 data.collectibles=collectibleResearch.rows;data.collectibleSources=collectibleResearch.sources;data.photoSets=collectibleResearch.sets;
 data.collectiblesSha256=createHash('sha256').update(collectibleBytes).digest('hex');data.dataVersion=collectibleResearch.version;
+const substoryBytes=await fs.readFile(new URL('research/substories.json',base)),substoryResearch=JSON.parse(substoryBytes);
+if(substoryResearch.rows.length!==52||new Set(substoryResearch.rows.map(r=>r.id)).size!==52)throw Error('支線研究資料須為52個獨立ID');
+data.substories=data.substories.map(r=>{const details=substoryResearch.rows.find(s=>s.id===r.id);if(!details?.steps?.length||!details.completion)throw Error('缺少支線詳情：'+r.id);return {...r,...details};});
+data.substorySources=substoryResearch.sources;data.substoriesSha256=createHash('sha256').update(substoryBytes).digest('hex');data.dataVersion=substoryResearch.version;
+for(const r of data.substories){const c=data.chapters.find(c=>c.id===r.chapterId);if(!c.substories.includes(r.id))c.substories.push(r.id);}
 // 研究原稿保留不變；呈現內容明列本次增補，避免舊版限制誤指新增逐點庫。
 data.articles[10]=data.articles[10].replace(/^- 未逐筆覆蓋：.+$/m,'- 本次補充逐筆攝影110點及追憶90篇，附解鎖條件與來源；原稿未覆蓋的全敵人、配方、寶箱仍不在此模組範圍。逐點資料另見本頁「攝影與追憶來源」。');
+data.articles[10]=data.articles[10].replace('52條支線索引','52條支線詳細攻略（觸發地點／前置／步驟／完成條件與逐條來源）');
 for(const c of data.counters.filter(c=>['photos','memoirs'].includes(c.id))){c.label+='（遊戲內總數）';c.tip='獨立手填值／舊版紀錄保留；不與逐點勾選相加、不自動分配到任何地點。';}
 await fs.mkdir(new URL('dist/',base),{recursive:true});await fs.writeFile(new URL('dist/data.json',base),JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify(Object.fromEntries(['chapters','steps','substories','trophies','objectives','counters'].map(k=>[k,data[k].length]))));

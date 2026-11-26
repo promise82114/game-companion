@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 人中之龍８ 1.2.0：research/substories.json離線維護52條詳細攻略與逐條來源，prepare-data以獨立SHA256合併；dist/substories.js共用路線與查漏呈現。沿用substories.SS01～SS52及schema1／namespace，不新增重複進度；路線依當章主角／可開始章節提供區域與系列閱讀單元，前置可互跳。關係支線三份禮物與商店、人格及特殊門檻分開列示。資料、建置、產物與隔離瀏覽器檢查通過，2026-11-27使用者已授權本批commit／push及既有main Pages發布，結果以對應提交Actions與正式資源核對為準。來源限制見[支線查核](../games/like-a-dragon-infinite-wealth/docs/SUBSTORIES_RESEARCH.md)。
+
 2026-11-27 人中之龍８ 1.1.0 本機資料擴充：`research/collectibles.json`維護200筆具名位置與14項來源登錄，prepare-data以獨立SHA256納入dist/data.json；新dist/collectibles.js負責唯讀路線分組與摘要、共用列呈現。110攝影／90追憶均沿用schema1的objectives map，DB／namespace／匯入與交易層不變，舊counters.photos／memoirs保留為獨立手填值；摘要從逐點勾選推導，不相加或猜測舊玩家已完成地點。章節按城市／區域選閱讀單元，查漏可依區域／最早章節篩選；前置只提醒，不鎖住內容。2026-11-27使用者已授權本批commit／push與main Pages發布，結果以對應提交Actions及正式資源核對為準；來源差異見[查核紀錄](../games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。
 
 2026-11-27 A Little to the Left 1.1.0 本機圖文：`games/a-little-to-the-left/` 以根規格 SHA、`research.json`、`layout-guides.mjs` 與 `layout-assets.json` 離線產生 JSON。79 個編輯單元、108 解法、200 操作與 48 盃的 ID／schema 不變；原列 39 題均有本機配置表，104 張圖解與 15 組動畫按需載入。`dist/layouts.js` 管理圖表、普通／輔助外觀、放大及動畫，不寫玩家進度。來源圖與影片擷取畫面逐檔記錄來源／hash／時間點，部署只含本機 WebP，不含研究 HTML 或影片抓取工具。獨立 `game-companion.alttl.progress.v1`、共用交易 store／逐鍵撤銷／保護式匯入不變，無雲端或 SW。PS5 實機未驗收；2026-11-27 使用者已授權本遊戲專屬變更 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 及正式資源核對為準；見[模組紀錄](../games/a-little-to-the-left/docs/IMPLEMENTATION.md)。

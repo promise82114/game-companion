@@ -27,6 +27,22 @@ assert.ok(!routeCollectibles(data,'chapter-08').some(r=>r.id==='memoir-ijincho-3
 for(const [key,total] of Object.entries({chapters:14,steps:100,trophies:65,substories:52,counters:16,postgame:5})){assert.equal(data[key].length,total,key);assert.equal(new Set(data[key].map(r=>r.id)).size,total);}
 assert.equal(data.objectives.filter(r=>r.category==='羈絆劇場').length,40);assert.equal(data.objectives.filter(r=>r.category==='兩座迷宮').length,8);
 assert.equal(data.substories.filter(r=>r.route==='預設40條').length,40);
+assert.equal(data.substoriesSha256,createHash('sha256').update(await fs.readFile(new URL('research/substories.json',root))).digest('hex'));
+for(const [i,r] of data.substories.entries()){
+ assert.equal(r.id,'SS'+String(i+1).padStart(2,'0'));
+ for(const key of ['nameZh','city','region','location','unlock','timeOfDay','completion','checkedAt'])assert.ok(typeof r[key]==='string'&&r[key].trim(),r.id+' '+key);
+ assert.ok(r.steps.length>=2&&r.steps.every(s=>typeof s==='string'&&s.trim()));assert.ok(r.sourceRefs.length>=2);
+ for(const id of r.sourceRefs)assert.ok(data.substorySources.some(s=>s.id===id),id);
+ const chapter=data.chapters.find(c=>c.id===r.chapterId);assert.ok(chapter.substories.includes(r.id));assert.equal(data.chapters.indexOf(chapter)+1,r.minChapter);
+ for(const id of r.prerequisites){assert.ok(data.substories.some(s=>s.id===id),id);assert.notEqual(id,r.id);}
+ if(i>=46){assert.equal(r.gifts.length,3);assert.equal(r.personality.finalLevel,7);assert.equal(r.personality.evidence,'SSRC11');}
+}
+const ss=Object.fromEntries(data.substories.map(r=>[r.id,r]));
+function visitPrerequisite(id,path=[]){assert.ok(!path.includes(id),'循環前置 '+id);for(const next of ss[id].prerequisites)visitPrerequisite(next,[...path,id]);}
+for(const r of data.substories)visitPrerequisite(r.id);
+assert.deepEqual(ss.SS28.prerequisites,['SS15','SS27']);assert.deepEqual(ss.SS52.prerequisites,['SS47','SS48','SS49','SS50','SS51']);
+assert.ok(ss.SS23.steps[0].includes('Sunset Park')&&ss.SS23.steps[0].includes('Harbor Park'));assert.ok(ss.SS26.steps.join(' ').includes('8931'));assert.ok(ss.SS29.steps.join(' ').includes('3,000'));
+assert.match(ss.SS30.timeOfDay,/夜間/);assert.match(ss.SS41.unlock,/Rank35.*Rank40/);assert.match(ss.SS47.unlock,/21/);assert.match(ss.SS49.unlock,/10/);
 assert.ok(data.chapters[2].substories.includes('SS19'));assert.equal(data.chapters.at(-1).id,'chapter-finale');
 for(const c of data.chapters){assert.ok(c.steps.length);for(const id of c.steps)assert.ok(data.steps.some(s=>s.id===id&&s.chapterId===c.id));for(const id of c.substories)assert.ok(data.substories.some(s=>s.id===id));}
 let p=model.fresh();p.future={preserve:1};p.substories.SS01={done:true,unknown:{keep:1}};
