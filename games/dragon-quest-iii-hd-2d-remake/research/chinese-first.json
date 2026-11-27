@@ -1,0 +1,16 @@
+{
+  "locale": "zh-Hant",
+  "status": "reference",
+  "checkedAt": "2026-11-27",
+  "notice": "新增中文為本站參考譯名；既有有來源譯名沿用，不宣稱逐項還原官方中文。",
+  "terms": {
+    "Necrogond": "奈克羅剛鐸",
+    "Rubiss": "露比絲",
+    "Spells/Abilities": "咒文／特技",
+    "Xenlon": "神龍",
+    "Roadmap": "路線圖",
+    "Boss": "頭目",
+    "Misc.": "其他",
+    "Info": "資訊"
+  }
+}

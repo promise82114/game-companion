@@ -1,3 +1,4 @@
+import {chineseView,nameHtml} from './chinese-first.js';
 import { createImportReview } from './migration.js';
 import { storageKey, beforeImportKey, corruptPrefix, backupTimeKey, maxBackupBytes, rarities, rarityLabels, tagLabels, emptyCollection, parseCollection, mergeCollections, makeBackup, buildSearchIndex, filterUpgrades, sortUpgrades } from './model.js';
 import { validateRecommendations, renderRecommendations } from './recommendations.js';
@@ -109,8 +110,8 @@ function navigate(patch, scroll = true) {
   if (scroll) { $('#main').focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
 }
 function renderDirectory() {
-  const nav = wikiCategories.map(([id, en, zh]) => `<div class="directory-group"><button type="button" data-category="${id}" aria-current="${filters.category === id && !filters.owner ? 'page' : 'false'}"><span>${en}<small>${zh}</small></span><span class="directory-total">${profiles.filter(p => p.category === id).length}</span></button>${filters.category === id ? `<div class="owner-list">${profiles.filter(p => p.category === id).map(p => `<button type="button" data-owner="${p.ownerId}" aria-current="${filters.owner === p.ownerId ? 'page' : 'false'}">${escapeHtml(p.nameEn)}<small>${escapeHtml(p.nameZh)}</small></button>`).join('')}</div>` : ''}</div>`).join('');
-  $('#directory').innerHTML = nav + '<button class="directory-secondary" type="button" data-category="general">General upgrades <small>通用升級</small></button><button class="directory-secondary" type="button" data-action="all-upgrades">All upgrades <small>全部升級資料</small></button>';
+  const nav = wikiCategories.map(([id, en, zh]) => `<div class="directory-group"><button type="button" data-category="${id}" aria-current="${filters.category === id && !filters.owner ? 'page' : 'false'}"><span>${en}<small class="zh-copy">${zh}</small></span><span class="directory-total">${profiles.filter(p => p.category === id).length}</span></button>${filters.category === id ? `<div class="owner-list">${profiles.filter(p => p.category === id).map(p => `<button type="button" data-owner="${p.ownerId}" aria-current="${filters.owner === p.ownerId ? 'page' : 'false'}">${escapeHtml(p.nameEn)}<small class="zh-copy">${escapeHtml(p.nameZh)}</small></button>`).join('')}</div>` : ''}</div>`).join('');
+  $('#directory').innerHTML = nav + '<button class="directory-secondary" type="button" data-category="general">General upgrades <small class="zh-copy">通用升級</small></button><button class="directory-secondary" type="button" data-action="all-upgrades">All upgrades <small class="zh-copy">全部升級資料</small></button>';
 }
 function renderHeading() {
   const owner = ownersById.get(filters.owner);
@@ -125,13 +126,13 @@ function renderHeading() {
   if (filters.view === 'recommendations') { title = 'Weapon tier guides <span>武器分級與搭配</span>'; description = 'Community rankings with their original sources. / 保留作者、版本與來源；搭配方向為效果整理。'; }
   if (filters.view === 'library' && filters.category === 'all' && !owner) { title = 'Upgrade reference <span>升級資料總覽</span>'; description = 'Effects, statistics and patterns in one list. / 效果、數值與形狀直接展開，無須逐一開啟詳情。'; }
   $('#page-title').innerHTML = title;
-  $('#page-description').innerHTML = description;
+  $('#page-description').innerHTML = description.replace(/^(.*?)<br>(.*)$/s,(_,en,zh)=>'<span class="zh-copy">'+zh+'</span><small class="cf-original cf-original-block">'+en+'</small>');
   $('#eyebrow').textContent = home ? 'AN INDEPENDENT FIELD GUIDE / 非官方攻略手冊' : filters.view === 'collection' ? 'COMPLETION / 獎盃玩家工具' : 'FIELD REFERENCE / 攻略資料';
-  $('#breadcrumbs').innerHTML = home ? '' : `<button type="button" data-view="home">Field guide / 攻略首頁</button><span>/</span>${owner ? `<button type="button" data-category="${owner.category}">${en} / ${zh}</button><span>/</span>${escapeHtml(owner.nameEn)}` : escapeHtml(filters.view === 'library' ? en : filters.view)}`;
+  $('#breadcrumbs').innerHTML = home ? '' : `<button type="button" data-view="home">Field guide / 攻略首頁</button><span>/</span>${owner ? `<button type="button" data-category="${owner.category}">${en} / ${zh}</button><span>/</span>${nameHtml(owner.nameEn,owner.nameZh)}` : escapeHtml(filters.view === 'library' ? en : filters.view)}`;
   document.body.classList.toggle('home-page', home);
   if(filters.view==='library')$('#sidebar .equipment-nav').open=true;
   for (const button of document.querySelectorAll('.primary-nav [data-view]')) button.setAttribute('aria-current', button.dataset.view === filters.view || (button.dataset.view === 'home' && filters.view === 'library') ? 'page' : 'false');
-  document.title = (home ? 'Mycopunk Field Guide' : (owner?.nameEn || (filters.view === 'library' ? en : filters.view))) + ' — 裝備與升級攻略';
+  document.title = (home ? 'Mycopunk Field Guide' : (owner?.nameZh || (filters.view === 'library' ? en : filters.view))) + ' — 裝備與升級攻略';
 }
 function categoryCard([id, en, zh, detailEn, detailZh], index) {
   return `<button type="button" class="category-card category-${id}" data-category="${id}"><div class="card-top"><span>0${index + 1}</span><span>${profiles.filter(p => p.category === id).length} entries / 項</span></div><div class="category-art">${categoryArt(id)}</div><div class="card-bottom"><h2>${en}<span>${zh}</span></h2><span class="card-arrow">↗</span></div>${dual(detailEn, detailZh)}</button>`;
@@ -141,7 +142,7 @@ function gearCard(profile) {
   return `<button type="button" class="gear-card" data-owner="${profile.ownerId}"><div class="gear-card-icon">${equipmentArt(profile.ownerId) || categoryArt(profile.category)}</div><div><h2>${escapeHtml(profile.nameEn)}<span>${escapeHtml(profile.nameZh)}</span></h2>${dual(profile.summaryEn, profile.summaryZh)}<span class="gear-card-foot">${count ? `${count} upgrades / 筆升級` : 'Gear introduction / 裝備介紹'} <b>↗</b></span></div></button>`;
 }
 function renderHome() {
-  return `<form id="site-search" class="home-search" role="search"><label for="home-query">Find an upgrade <span>查找升級效果</span></label><div><input id="home-query" name="query" type="search" placeholder="Try: ricochet, Heated Battery, 跳彈…" maxlength="500"><button type="submit">Search / 搜尋 →</button></div></form><section class="category-grid" aria-label="四大裝備分類">${wikiCategories.map(categoryCard).join('')}</section><section class="home-quick-links"><a href="${urlFor({view:'unlocks'})}" data-route="unlocks"><span class="quick-icon">⌘</span><div><span class="eyebrow">UPGRADE BOARD</span><h2>Hidden paths <span>面板裡的隱藏解鎖</span></h2><p>What triggers them, and what is still unknown.<br>怎樣觸發、與一般升級有何不同、哪些資訊仍待確認。</p></div><span>→</span></a><a href="${urlFor({view:'library'})}" data-route="library"><span class="quick-icon">≡</span><div><span class="eyebrow">QUICK REFERENCE</span><h2>Upgrade index <span>升級資料總表</span></h2><p>Wiki-first upgrade records, fully readable.<br>英文與繁中效果、數值並列，支援分類搜尋。</p></div><span>→</span></a></section><div class="home-source-note"><p>Based on <strong>Mycopunk Wiki</strong> and <strong>Mycopunk Upgrades v1.6</strong>.</p><p>升級內容以 Wiki 最新查核修訂為主，舊工作簿作補充；每項保留來源。<button type="button" data-action="about">Read source notes / 來源說明 ↗</button></p></div>`;
+  return `<form id="site-search" class="home-search" role="search"><label for="home-query">Find an upgrade <span class="zh-copy">查找升級效果</span></label><div><input id="home-query" name="query" type="search" placeholder="例如：跳彈、Heated Battery…" maxlength="500"><button type="submit">Search / 搜尋 →</button></div></form><section class="category-grid" aria-label="四大裝備分類">${wikiCategories.map(categoryCard).join('')}</section><section class="home-quick-links"><a href="${urlFor({view:'unlocks'})}" data-route="unlocks"><span class="quick-icon">⌘</span><div><span class="eyebrow">UPGRADE BOARD</span><h2>Hidden paths <span>面板裡的隱藏解鎖</span></h2><p>What triggers them, and what is still unknown.<br>怎樣觸發、與一般升級有何不同、哪些資訊仍待確認。</p></div><span>→</span></a><a href="${urlFor({view:'library'})}" data-route="library"><span class="quick-icon">≡</span><div><span class="eyebrow">QUICK REFERENCE</span><h2>Upgrade index <span>升級資料總表</span></h2><p>Wiki-first upgrade records, fully readable.<br>英文與繁中效果、數值並列，支援分類搜尋。</p></div><span>→</span></a></section><div class="home-source-note"><p>Based on <strong>Mycopunk Wiki</strong> and <strong>Mycopunk Upgrades v1.6</strong>.</p><p>升級內容以 Wiki 最新查核修訂為主，舊工作簿作補充；每項保留來源。<button type="button" data-action="about">Read source notes / 來源說明 ↗</button></p></div>`;
 }
 function renderGearProfile(profile) {
   const acquisitionSource = profile.acquisition.sourceUrl || profile.sourceRevisionUrl || profile.sourceUrl;
@@ -172,6 +173,7 @@ function renderResults() {
   $('#result-count').textContent = `${rows.length} upgrades / 筆升級資料`;
   $('#table-header').innerHTML = rows.length ? upgradeHeader : '';
   $('#upgrade-list').innerHTML = rows.map(renderRow).join('') || `<div class="empty-state"><h3>${scopeUpgrades().length ? 'No matching upgrades / 沒有符合條件的升級' : 'Upgrade data not yet recorded / 尚未收錄升級資料'}</h3><p>${scopeUpgrades().length ? 'Adjust the search or filters. / 可清除關鍵字或調整篩選。' : 'No upgrades found in the checked Wiki revision. / 本次查核的 Wiki 修訂未列出升級。'}</p></div>`;
+  chineseView($('#upgrade-list'));chineseView($('#table-header'));
   $('#upgrade-data-note').textContent = 'Wiki-first · checked 2026-10-24. Each row links its source revision; file versions are shown beside patterns. / 以 Wiki 為主，2026-10-24 查核；每列附固定修訂來源，格形另標圖檔版本。Wiki 未註明的遊戲版本不推定。';
 }
 function renderRecommendationPage() {
@@ -180,6 +182,7 @@ function renderRecommendationPage() {
   if(recommendationStatus==='error') root.innerHTML=`<div class="empty-state"><h2>Recommendations unavailable / 推薦資料無法載入</h2><p>${escapeHtml(recommendationError)}</p><button type="button" data-action="retry-recommendations">Retry / 重試</button></div>`;
   else if(!recommendations) root.innerHTML='<p>Loading rankings… / 正在載入榜單</p>';
   else renderRecommendations(root,recommendations,recommendationIndex,dataset,collection.records,filters.owner,recommendationState,renderRow);
+  chineseView(root);
 }
 async function loadRecommendations() {
   if(['loading','ready'].includes(recommendationStatus))return;
@@ -213,6 +216,7 @@ function refresh() {
     if(!buildPlanner)buildPlanner=createBuildPlanner($('#build-view'),dataset,fieldGuide,()=>collection.records,id=>{filters.owner=id;filters.category=ownersById.get(id)?.category||'all';history.replaceState(null,'',urlFor(filters));renderHeading();renderDirectory();});
     buildPlanner.show(filters.owner);
   } else buildPlanner?.hide();
+  chineseView(document.body);
 }
 function showUpgrade(id) {
   const upgrade=dataset.upgrades.find(u=>u.id===id);if(!upgrade)return;
@@ -223,7 +227,7 @@ function openAbout() {
   $('#about-content').innerHTML=`<dl class="source-list"><dt>Equipment / 裝備介紹</dt><dd>${sourceAnchor('https://mycopunk.miraheze.org/wiki/Main_Page')} · checked ${fieldGuide?.equipment?.checkedOn || '—'}<br>改寫、繁中翻譯：本站。Wiki contributors 原文與改作文字依 CC BY-SA 4.0 提供。裝備頁列出個別修訂來源與未記載的取得條件。</dd><dt>Equipment illustrations / 裝備示意圖</dt><dd>27 張簡化 SVG 依 Mycopunk Wiki 裝備外觀與功能符號重繪（2026-10-25），以輪廓、結構與主色幫助辨識；不是精確模型或造型預覽。投擲物採元素／功能符號。${sourceAnchor('https://mycopunk.miraheze.org/wiki/Characters', 'Characters ↗')} · ${sourceAnchor('https://mycopunk.miraheze.org/wiki/Weapons', 'Weapons ↗')} · ${sourceAnchor('https://mycopunk.miraheze.org/wiki/Grenades', 'Grenades ↗')}；重武器見個別頁。本站重繪圖依 CC BY-SA 4.0 提供，遊戲設計權利仍屬原權利人；來源未註明外觀適用版本。</dd><dt>Upgrade dataset / 升級資料</dt><dd>Mycopunk Wiki · checked ${dataset.primarySource.checkedOn} · ${dataset.counts.wikiRecords} Wiki records<br>以 Wiki 升級清單、品質、效果、數值為主，列內附來源修訂。未標示遊戲版本時不推定；來源空白格形會明示。${escapeHtml(dataset.source.filename)} 保留為補充及舊存檔相容，兩筆舊項目只列於收集清單。</dd><dt>Unlocks & patterns / 解鎖與格形</dt><dd>Wiki 與玩家資料分開標示來源、版本與限制。占格數不等於形狀，不以猜測補圖；未找到完整 Hidden Paths 路徑座標時會明示。</dd><dt>Collection / 收集資料</dt><dd>紀錄只存在此網址的瀏覽器，不會上傳。穩定 ID、舊追蹤與筆記均保留，攻略已移除筆記編輯介面；備份仍包含舊資料。網址、裝置或瀏覽器不同時需匯出／匯入。</dd><dt>Import / 匯入</dt><dd>新站使用獨立儲存，不讀取舊站進度。匯入先保存兩端原文、顯示逐筆差異，下載復原備份並確認後才套用；預覽後有新變更會停止，未對應 ID 與未知欄位保留。</dd></dl>`;
   $('#raw-export').hidden=rawStorage===null;
   try{$('#previous-export').hidden=localStorage.getItem(beforeImportKey)===null;}catch{$('#previous-export').hidden=true;}
-  $('#about-dialog').showModal();
+  chineseView($('#about-content'));$('#about-dialog').showModal();
 }
 async function previewImport(file) {
   try {if($('#backup-dialog').open)$('#backup-dialog').close();await importReview.preview(file);} catch(error) {showToast(error.message);} finally {renderStorageNotice();$('#import-file').value='';}
@@ -259,7 +263,7 @@ function setupEvents() {
     if(data.action==='all-upgrades')navigate({view:'library'});
     if(data.action==='retry-recommendations')void loadRecommendations();
     if(data.track){writeRecord(data.track,{tracked:!collection.records[data.track]?.tracked});document.querySelector(`[data-track="${data.track}"]`)?.focus();}
-    if(element.id==='language-toggle'){const englishOnly=document.body.classList.toggle('english-only');element.setAttribute('aria-pressed',String(!englishOnly));}
+    if(element.id==='language-toggle'){const hidden=document.body.classList.toggle('hide-original');element.setAttribute('aria-pressed',String(!hidden));element.textContent='原文對照：'+(hidden?'關':'開');}
     if(element.id==='export-button')exportCollection();
     if(element.id==='import-button')$('#import-file').click();
     if(element.id==='apply-import')applyImport();

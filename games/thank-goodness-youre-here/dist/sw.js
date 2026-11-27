@@ -1,5 +1,5 @@
-const PREFIX='game-companion.thank-goodness-youre-here.assets.',CACHE=PREFIX+'v13';
-const ASSETS=['./','./index.html','./style.css','./guide.json','./model.js','./roadmap.js','./app.js','./progress-undo.js','./characters.js','./characters.svg','./cloud-config.js','./shared/progress-envelope.js','./shared/sync-core.js','./shared/sync-session.js','./shared/google-auth.js','./shared/drive-appdata.js'];
+const PREFIX='game-companion.thank-goodness-youre-here.assets.',CACHE=PREFIX+'v14';
+const ASSETS=['./','./index.html','./style.css','./guide.json','./model.js','./roadmap.js','./app.js','./chinese-first.js','./shared/chinese-first.js','./progress-undo.js','./characters.js','./characters.svg','./cloud-config.js','./shared/progress-envelope.js','./shared/sync-core.js','./shared/sync-session.js','./shared/google-auth.js','./shared/drive-appdata.js'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

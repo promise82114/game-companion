@@ -1,5 +1,6 @@
 (async function () {
   'use strict';
+  const {cf}=await import('./chinese-first.js');
   const $ = id => document.getElementById(id), model = window.RoadmapModel;
   const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const characterText = window.RoadmapCharacters?.html || escape;
@@ -41,7 +42,7 @@
   const stageDone = stage => roadmap.forStage(stage.id).every(done) && !pendingChecks(stage).length;
   activeStage = guide.stages.find(stage => stage.id === location.hash.slice(1))?.id || guide.stages.find(stage => !stageDone(stage))?.id || guide.stages[0].id;
   function sourceLinks(refs) { return refs.map(id => {const source = guide.sources.find(value => value.id === id); return '<a href="'+escape(source.url)+'" target="_blank" rel="noopener">'+escape(source.title)+'</a>';}).join(' · '); }
-  function trophyNameHtml(trophy) { return '<span class="trophy-name-en">'+escape(trophy.officialName)+'</span><span class="trophy-name-zh" lang="zh-Hant">｜'+escape(trophy.nameZhTW)+'</span>'; }
+  function trophyNameHtml(trophy) { return cf.name(trophy.officialName,trophy.nameZhTW); }
   function trophyProgressText(trophy) { const progress=trophy.progress;return progress.label+' ('+progress.stepIds.filter(id=>store.data.stepDone[id]===true).length+'/'+progress.stepIds.length+')'; }
   function trophyProgressHtml(trophy) { return trophy.progress ? '<span class="trophy-progress" data-trophy-progress="'+trophy.id+'" title="'+escape(trophy.progress.note)+'">'+escape(trophyProgressText(trophy))+'</span>' : ''; }
   function trophyInput(id) { const trophy=trophyMap.get(id);return '<label><input type="checkbox" data-group="trophyEarned" data-id="'+id+'" '+(store.data.trophyEarned[id] ? 'checked' : '')+'><span>已跳盃：'+trophyNameHtml(trophy)+' '+trophyProgressHtml(trophy)+'</span></label>'; }
@@ -93,7 +94,7 @@
   function matches(item, group) {
     const query=$('search').value.trim().toLocaleLowerCase(),filter=$('filter').value;
     const refs=item.steps?item.steps.flatMap(step=>step.trophyIds):item.trophyIds||[];
-    const text=JSON.stringify(item)+refs.map(id=>trophyMap.get(id).officialName+' '+trophyMap.get(id).nameZhTW).join(' ');
+    const text=cf.search(JSON.stringify(item))+refs.map(id=>trophyMap.get(id).officialName+' '+trophyMap.get(id).nameZhTW).join(' ');
     if(query&&!text.toLocaleLowerCase().includes(query))return false;
     const complete=group==='milestone'?done(item):store.data[group][item.id];
     if(filter==='pending'&&complete)return false;if(filter==='completed'&&!complete)return false;
@@ -140,11 +141,11 @@
     }
     if(!$('content').children.length)$('content').innerHTML='<p class="empty">沒有符合條件的項目。請清除搜尋或改回「全部」。</p>';
     if(view!=='sources'&&!$('content').querySelector('.empty'))$('content').insertAdjacentHTML('afterbegin','<p class="trophy-progress-hint">每個步驟各自勾選；攻略完成與實際跳盃分別記錄。回訪／路線計數滿格不代表已跳盃。</p>');
-    converge();stats();
+    converge();stats();cf.decorate(document.querySelector('.topbar'));cf.decorate($('handbook-nav'));cf.decorate($('view-title'));cf.decorate($('summary'));cf.decorate($('content'));cf.decorate($('chapter-picker'));cf.decorate($('checkpoint'));cf.notice($('content'));
   }
   function syncUi() {
     if($('filter').value!=='all'){const focused=document.activeElement,group=focused?.dataset.group,id=focused?.dataset.id,inputs=[...$('content').querySelectorAll('input[data-group]')],at=inputs.indexOf(focused),neighbors=[...inputs.slice(at+1),...inputs.slice(0,Math.max(0,at)).reverse()].map(el=>[el.dataset.group,el.dataset.id]),top=scrollY;render();const next=document.querySelector('input[data-group="'+group+'"][data-id="'+id+'"]')||neighbors.map(([g,k])=>document.querySelector('input[data-group="'+g+'"][data-id="'+k+'"]')).find(Boolean)||$('content');if(group){next.tabIndex=next.tabIndex<0?-1:next.tabIndex;next.focus({preventScroll:true});scrollTo(0,top);}message('已儲存在此裝置');return;}
-    preserveReadingPosition(()=>{document.querySelectorAll('input[data-group]').forEach(input=>input.checked=!!store.data[input.dataset.group][input.dataset.id]);converge();stats();message('已儲存在此裝置');});
+    preserveReadingPosition(()=>{document.querySelectorAll('input[data-group]').forEach(input=>input.checked=!!store.data[input.dataset.group][input.dataset.id]);converge();stats();cf.decorate($('content'));cf.decorate($('summary'));cf.decorate($('checkpoint'));message('已儲存在此裝置');});
   }
   function jump(id) {
     const item=roadmap.byStep.get(id);if(!item)return;view='roadmap';activeStage=item.stageId;$('search').value='';$('filter').value='all';history.replaceState(null,'','?view=roadmap#'+activeStage);render();

@@ -1,3 +1,4 @@
+import {cf} from './chinese-first.js';
 import {config,gameId,clone,isDone,count,nextStep,edit,undoEdit,envelope,importData,differences,applyDifferences} from './model.js';
 import {collectibleTypes,collectionRows,collectionCount,routeCollectibles,unitKey,collectibleRow,collectibleSummary} from './collectibles.js';
 import {substoryUnit,substoryRow} from './substories.js';
@@ -19,7 +20,7 @@ function markdown(text){let out='',table=[];const flush=()=>{if(!table.length)re
 const check=(group,id,label)=>`<label class="check"><input id="${esc(group+'-'+id)}" type="checkbox" data-group="${group}" data-id="${esc(id)}" ${isDone(progress,group,id)?'checked':''}><span>${esc(label)}</span></label>`;
 const options=(rows,value)=>rows.map(([id,label])=>`<option value="${esc(id)}" ${id===value?'selected':''}>${esc(label)}</option>`).join('');
 const normalize=v=>String(v).toLowerCase().replace(/’/g,"'").replace(/(?:ss|#)0?(\d+)\b/g,(_,n)=>'ss'+String(Number(n)).padStart(2,'0'));
-const match=(r,g)=> (!target||target===r.id)&&(!search||normalize(JSON.stringify(r)).includes(normalize(search)))&&(status==='all'||(g==='counters'?(progress.counters[r.id]?.value||0)>=r.target:isDone(progress,g,r.id))===(status==='done'));
+const match=(r,g)=> (!target||target===r.id)&&(!search||normalize(cf.search(JSON.stringify(r))).includes(normalize(search)))&&(status==='all'||(g==='counters'?(progress.counters[r.id]?.value||0)>=r.target:isDone(progress,g,r.id))===(status==='done'));
 function toolbar(){return `<div class="toolbar"><label>搜尋名稱、原文或 ID<input id="search" type="search" value="${esc(search)}" placeholder="例如 SS03、千歲、EX、Makani"></label><label>顯示<select id="status">${options([['pending','未完成'],['all','全部'],['done','已完成']],status)}</select></label><button data-reset>重設條件</button></div>`;}
 const empty=()=>'<p class="empty">目前條件沒有符合項目。<button data-reset>重設條件</button></p>';
 function row(r,g,embedded=false){if(g==='substories')return substoryRow(r,{data,progress,esc,link,check,embedded});const done=isDone(progress,g,r.id),expanded=!done||peeks.has(r.id);return `<article class="row ${done?'done':''}" id="entry-${esc(r.id)}">${check(g,r.id,r.label)}${done?`<button class="peek" data-peek="${esc(r.id)}">${expanded?'收合':'回看'}</button>`:''}<div class="row-body" ${expanded?'':'hidden'}>${r.condition?'<p>'+inline(r.condition)+'</p>':''}${r.route?'<small>'+esc(r.route)+'</small>':''}<small>${esc(r.id)}</small>${embedded?'':routeFor(r,g)}</div></article>`;}
@@ -73,10 +74,10 @@ function collectibleSourceSection(){return `<h2>攝影與追憶來源</h2><p>逐
 function reset(){area='';chapterFilter='';search='';status=view()==='roadmap'?'all':'pending';target='';}
 function render(preserve=false){const openDetails=[...document.querySelectorAll('main details[open][id]')].map(el=>el.id);const active=document.activeElement,focusId=active?.id,y=scrollY,selection=active?.type==='search'?[active.selectionStart,active.selectionEnd]:null;const old=[...document.querySelectorAll('main article')],anchor=old.find(el=>el.getBoundingClientRect().bottom>0),anchorId=anchor?.id,top=anchor?.getBoundingClientRect().top;
  $('main').innerHTML=({roadmap:road,collections,trophies,advice,backup}[view()])();
- if(preserve)for(const id of openDetails){const el=$(id);if(el?.tagName==='DETAILS')el.open=true;}
+ cf.decorate($('main'));cf.notice($('main'));if(preserve)for(const id of openDetails){const el=$(id);if(el?.tagName==='DETAILS')el.open=true;}
  $('phase-navigation').innerHTML=[...data.chapters,...data.postgame].map(c=>`<li><a data-route href="${href('roadmap',{chapter:c.id})}" ${view()==='roadmap'&&chapter().id===c.id?'aria-current="location"':''}>${esc(c.label)}${c.steps?'<small>'+c.steps.filter(id=>isDone(progress,'steps',id)).length+' / '+c.steps.length+' 步驟</small>':''}</a></li>`).join('');
  document.querySelectorAll('[data-view]').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view()?'page':'false'));
- if(target)$('main').insertAdjacentHTML('afterbegin',`<p>正在定位 ${esc(target)} <button data-reset>清除定位</button></p>`);
+ cf.decorate($('phase-navigation'));if(target)$('main').insertAdjacentHTML('afterbegin',`<p>正在定位 ${esc(target)} <button data-reset>清除定位</button></p>`);
  if(preserve){const removed=old.findIndex(el=>el.contains(active));const neighbor=old.slice(removed+1).map(el=>$(el.id)).find(Boolean);const next=$(focusId)||(removed>=0?neighbor?.querySelector('input,button,a'):null)||$('main');next.focus({preventScroll:true});if(selection&&next.type==='search')next.setSelectionRange(...selection);const same=anchorId&&$(anchorId);scrollTo(0,same?y+same.getBoundingClientRect().top-top:y);}
 }
 function navigate(v,extra={}){history.pushState({},'',href(v,extra));reset();category=extra.category||'substories';target=extra.target||'';if(target)status='all';render();if(matchMedia('(max-width:720px)').matches)$('menu').open=false;requestAnimationFrame(()=>{const el=target?$('entry-'+target):null;if(el){el.scrollIntoView();(el.querySelector('input')||el).focus({preventScroll:true});}else{scrollTo(0,0);$('main').focus({preventScroll:true});}});}

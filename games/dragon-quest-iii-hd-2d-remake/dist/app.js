@@ -1,14 +1,15 @@
+import {cf} from './chinese-first.js';
 import {configureLocalization,translate,localizeDom} from './localization.js';
 import {stepBriefs,importantTerms} from './reading.js';
-import {config,gameId,groups,clone,isDone,count,nextStep,edit,undoEdit,envelope,importData,differences,applyDifferences,trophyCondition} from './model.js?v=1.2.3';
+import {config,gameId,groups,clone,isDone,count,nextStep,edit,undoEdit,envelope,importData,differences,applyDifferences,trophyCondition} from './model.js?v=1.3.0';
 const source=import.meta.url.includes('/dist/');
 const {createStore}=await import(new URL(source?'../../../shared/roadmap-store.js':'../../shared/roadmap-store.js',import.meta.url));
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={roadmap:'冒險路線 Roadmap',collections:'收藏與查漏',trophies:'PS5 獎盃',advice:'建議攻略',backup:'資料管理／來源'};
 const cats={mm:'小徽章',fm:'友善魔物',enemy:'討伐圖鑑',skills:'咒文與特技',counters:'遊戲計數',supplies:'試煉備料',arena:'怪物競技場',wishes:'Xenlon 七願',rewards:'徽章兌獎'};
 let data,progress,ready=false,busy=false,refreshPending=false,review,lastUndo,retry,search='',status='pending',category='mm',region='',vocation='',trophyType='',target='';
-const peeks=new Set();let showEnglish=false;
-function nameMarkup(label){const parts=String(label).split('／'),bilingual=parts.length===2&&/[\u4e00-\u9fff]/.test(parts[0])&&/^[A-Za-z]/.test(parts[1]);const primary=bilingual?parts[0]:translate(label),original=bilingual?parts[1]:label;return `<span class="name-zh">${esc(primary)}</span>${primary!==original?`<small class="original-name">${esc(original)}</small>`:''}`;}
+const peeks=new Set();let showEnglish=true;
+function nameMarkup(label){const parts=String(label).split('／'),bilingual=parts.length===2&&/[\u4e00-\u9fff]/.test(parts[0])&&/^[A-Za-z]/.test(parts[1]);const primary=cf.plain(bilingual?parts[0]:translate(label)),original=bilingual?parts[1]:label;return `<span class="name-zh">${esc(primary)}</span>${primary!==original?`<small class="original-name">${esc(original)}</small>`:''}`;}
 function sentences(text){return String(text).split(/(?<=[。；])/u).map(t=>t.trim()).filter(Boolean);}
 function actionMarkup(text){let hits=0;return esc(translate(String(text).replace(/\*\*/g,''))).replace(new RegExp(importantTerms.join('|'),'g'),term=>++hits<=2?'<strong>'+term+'</strong>':term);}
 function actionList(text){return '<ol class="action-list">'+sentences(text).map(line=>'<li>'+actionMarkup(line)+'</li>').join('')+'</ol>';}
@@ -28,7 +29,7 @@ const checked=(g,id)=>isDone(progress,g,id)?'checked':'';
 function check(g,id,label){return `<label class="check"><input type="checkbox" id="${esc(g+'-'+id)}" data-group="${g}" data-id="${esc(id)}" ${checked(g,id)}><span class="row-title">${nameMarkup(label)}</span></label>`;}
 function options(rows,value){return rows.map(([id,label])=>`<option value="${esc(id)}" ${id===value?'selected':''}>${esc(label)}</option>`).join('');}
 function match(row,g){return (status==='all'||isDone(progress,g,row.id)===(status==='done'))&&(!search||searchText(row).includes(searchText(search)))&&(!target||row.id===target);}
-function searchText(value){return (typeof value==='string'?value:JSON.stringify(value)).toLowerCase().replace(/’/g,"'").replace(/immigrant town/g,'merchantburg').replace(/shallows? shrine/g,'shallows shrine').replace(/馴獸師|魔物使|魔物大師|馴魔師/g,'monster wrangler').replace(/北西/g,'西北').replace(/北東/g,'東北');}
+function searchText(value){return (typeof value==='string'?value:cf.search(JSON.stringify(value))).toLowerCase().replace(/’/g,"'").replace(/immigrant town/g,'merchantburg').replace(/shallows? shrine/g,'shallows shrine').replace(/馴獸師|魔物使|魔物大師|馴魔師/g,'monster wrangler').replace(/北西/g,'西北').replace(/北東/g,'東北');}
 function toolbar(extra=''){return `<div class="toolbar"><label class="search">搜尋名稱、地點、別名或 ID<input type="search" id="search" value="${esc(search)}" placeholder="例如 羅馬利亞、史萊姆、mm-001"></label>${extra}<label>顯示狀態<select id="status">${options([['pending','未完成／未取得'],['all','全部'],['done','已完成／已取得']],status)}</select></label><button data-reset>重設條件</button></div>`;}
 const empty=()=>`<p class="empty">${search?'搜尋無符合項目':status==='pending'?'此區已查完，或目前條件沒有未完成項目':'目前條件沒有項目'}。<button data-reset>重設篩選</button></p>`;
 function stats(){
@@ -71,7 +72,7 @@ function render(preserve=false){if(!ready)return;const filtersOpen=document.quer
  const controls=[...document.querySelectorAll('main input,main button,main select')],index=controls.indexOf(active);
  $('main').innerHTML=({roadmap:road,collections,trophies,advice,backup}[view()])();
  const filters=document.querySelector('.road-filters');if(filters)filters.open=preserve?!!filtersOpen:matchMedia('(min-width:721px)').matches;
- renderPhaseNavigation();localizeDom($('main'));document.body.classList.toggle('show-english',showEnglish);
+ renderPhaseNavigation();localizeDom($('main'));cf.decorate($('main'));cf.notice($('main'));document.body.classList.toggle('show-english',showEnglish);
  document.querySelectorAll('[data-view]').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view()?'page':'false'));
  if(target){const element=$('entry-'+target);if(element)element.classList.add('target');$('main').insertAdjacentHTML('afterbegin','<p class="summary-line">正在定位：'+esc(target)+' <button data-reset>清除定位</button></p>');}
  if(preserve){let node=focusId?$(focusId):null;if(!node&&index>=0){const id=active?.dataset.id;const row=scrolls.findIndex(r=>r.id==='entry-'+id);for(const candidate of scrolls.slice(row+1)){const found=$(candidate.id);if(found){node=found.querySelector('input,button,a');break;}}node||=$('main');}node?.focus({preventScroll:true});if(selection&&node?.type==='search')node.setSelectionRange(...selection);const same=anchorId&&$(anchorId);if(same)scrollTo(0,y+same.getBoundingClientRect().top-top);else scrollTo(0,y);}

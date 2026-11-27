@@ -32,12 +32,12 @@ try{
  await page.locator('#language-toggle').click();assert.equal(await page.locator('#language-toggle').getAttribute('aria-pressed'),'false');await page.locator('#language-toggle').click();
  await page.locator('.primary-nav [data-view="collection"]').click();assert.equal(await page.locator('#upgrade-list [data-collect]').count(),842);
  assert.equal(await page.locator('#upgrade-list [data-collect]:checked').count(),0);
- await page.locator(`[data-collect="${sample.id}"]`).check();
- await page.reload();await page.locator('#upgrade-list [data-collect]').first().waitFor();assert.equal(await page.locator(`[data-collect="${sample.id}"]`).isChecked(),true);
+ await page.locator('#status-filter').selectOption('all');await page.locator(`[data-collect="${sample.id}"]`).check();await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key))?.records[id]?.collected,{key,id:sample.id});
+ await page.reload();await page.locator('#upgrade-list [data-collect]').first().waitFor();await page.locator('#status-filter').selectOption('all');assert.equal(await page.locator(`[data-collect="${sample.id}"]`).isChecked(),true);
  await page.locator('#search').fill(sample.nameZh);assert.ok(await page.locator('#upgrade-list [data-collect]').count()>0);
  await page.locator('#search').fill('synthetic-no-match-7dfe');assert.equal(await page.locator('.empty-state').isVisible(),true);await page.locator('#clear-filters').click();
  const other=await context.newPage();await other.goto(url+'?view=collection');await other.locator(`[data-collect="${second.id}"]`).check();
- await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key)).records[id]?.collected,{key,id:second.id});
+ await page.waitForFunction(({key,id})=>JSON.parse(localStorage.getItem(key))?.records[id]?.collected,{key,id:second.id});
  await page.waitForFunction(id=>document.querySelector(`[data-collect="${id}"]`)?.checked,second.id);await other.close();
  await page.evaluate(({key})=>{const data=JSON.parse(localStorage.getItem(key));data.currentOnly={keep:'local'};data.collision='local';localStorage.setItem(key,JSON.stringify(data));}, {key});await page.reload();await page.locator('#upgrade-list [data-collect]').first().waitFor();
  const upload=async data=>{await page.locator('#backupOpen').click();const chooser=page.waitForEvent('filechooser');await page.locator('#import-button').click();await (await chooser).setFiles({name:'synthetic-legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.locator('#import-dialog').waitFor();assert.equal(await page.locator('#backup-dialog').isVisible(),false);};

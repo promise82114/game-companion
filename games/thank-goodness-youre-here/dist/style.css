@@ -39,3 +39,8 @@ body>main,.workspace-bar{width:auto;max-width:1620px;margin-left:244px;margin-ri
 @media(max-width:720px){.stage>summary{flex-wrap:wrap}.stage-risk{order:4;flex-basis:100%;padding-left:20px}.step-head{flex-wrap:wrap}.step-reveal{margin-left:auto}.route-check{margin-left:0}.instruction{margin-left:28px}.step.done .step-head label{min-width:150px}.trophy-confirm-label{display:block}}
 /* 原始步驟逐項追蹤；章內步數是路線順序，方便辨識回訪與剩餘操作。 */
 .step-head label .step-order{flex:none;white-space:nowrap;font-size:12px;font-weight:400;color:var(--muted)}
+
+/* 共通中文主名與原文對照；小字不承接清單的縮排。 */
+.cf-name{font:inherit;overflow-wrap:anywhere}.cf-name>.cf-zh{font:inherit}.cf-name>.cf-original,.cf-original{display:inline;margin:0;padding:0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:normal;color:#52625b;white-space:normal;overflow-wrap:anywhere}.cf-notice{font-size:12px;line-height:1.6;font-weight:400;color:#52625b;margin:12px 0}.cf-primary{font-size:14px;color:inherit}.cf-original-block{display:block}.sidebar .cf-original,.rail .cf-original{color:inherit;opacity:.85}
+
+.cf-name,.stats .cf-name,.cf-name>.cf-zh{display:inline}.cf-name>.cf-original{display:inline;margin:0}

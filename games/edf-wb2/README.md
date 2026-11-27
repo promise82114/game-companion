@@ -83,3 +83,12 @@ DLC 取得條件依 https://w.atwiki.jp/edfwb2/pages/188.html、https://w.atwiki
 1.1.1：撤銷比對項目操作後的完整紀錄（含 journal changeId），遇到其他分頁的後續修改即停止；撤銷寫入沿用條件式 journal，不無條件蓋回舊值。
 
 沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。
+
+
+## 2026-11-27 中文優先調整
+
+本機依共通介面偏好第20項，名稱、導航與攻略以中文為主，原文放後方或下一行小字對照；新增名稱為本站參考譯名，未逐項核對遊戲官方中文。原名、ID、schema與進度鍵保留，搜尋涵蓋中文及原文。
+
+沿用既有中文對照與來源資料，調整雙語呈現層級。
+
+共用隔離檢查：`node scripts/verify-chinese-first-browser.mjs`。範圍、維護與驗證限制見[十款調整紀錄](../../docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。使用者已授權本批 commit／push；main push 將自動觸發既有 Pages 流程，結果以對應 Actions 為準。

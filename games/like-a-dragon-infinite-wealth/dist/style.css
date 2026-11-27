@@ -12,3 +12,8 @@
 
 /* 字級與點擊範圍分開：手機縮小文字後仍保留主要控制項的高度。 */
 @media(max-width:720px){button,select,input[type=search],input[type=number]{min-height:44px}}
+
+/* 共通中文主名與原文對照；小字不承接清單的縮排。 */
+.cf-name{font:inherit;overflow-wrap:anywhere}.cf-name>.cf-zh{font:inherit}.cf-name>.cf-original,.cf-original{display:inline;margin:0;padding:0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:normal;color:#52625b;white-space:normal;overflow-wrap:anywhere}.cf-notice{font-size:12px;line-height:1.6;font-weight:400;color:#52625b;margin:12px 0}.cf-primary{font-size:14px;color:inherit}.cf-original-block{display:block}.sidebar .cf-original,.rail .cf-original{color:inherit;opacity:.85}
+
+.cf-name,.stats .cf-name,.cf-name>.cf-zh{display:inline}.cf-name>.cf-original{display:inline;margin:0}

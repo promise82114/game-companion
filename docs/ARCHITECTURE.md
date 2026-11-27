@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 十款中文優先：新增純顯示／搜尋工具 `shared/chinese-first.js`，七款獨立詞彙由 `research/chinese-first.json` 經 `scripts/prepare-chinese-first.mjs` 產生追蹤的 `dist/chinese-first.js` 與來源hash；root verifier檢查一致與覆蓋。EDF沿用原翻譯表重排，Mycopunk沿用原雙語資料。TGYH使用自身scope內的共用副本與SW預載；沒有新增框架、儲存或同步層。詳見[調整紀錄](reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。
+
 2026-11-27 中文優先試行：Cat Quest II 1.2.0／III 1.3.0 各自維護 research/localization.json，由原 prepare-data 命令透過 scripts/lib/prepare-chinese-glossary.mjs 產生追蹤的 dist/localization.js（含來源hash）。shared/chinese-text.js 是純顯示／搜尋工具，以安全DOM文字節點提供中文主名與原文小字；不存取進度、不改寫原始名稱或已發布ID。原有產生器的 data.json 及schema不變；verifier檢查詞彙覆蓋與產物一致，參考譯名與攻略查證狀態分開。詳見[試行紀錄](reports/CAT_QUEST_CHINESE_FIRST_20261127.md)。
 
 2026-11-27 Cat Quest III 1.2.0：新增followup-research.json的20筆針對性補查與followupHash；在原spec／research後疊加，維持211事實及schema1。每筆review保存前版證據等級、本次結論、未解範圍與來源，清單詳情與路線共用；未因證據更新代填進度或獎盃。沿既有main Pages流程依授權發布，結果以對應Actions及正式資源為準。[補查紀錄](../games/cat-quest-iii/docs/FOLLOWUP_AUDIT.md)。

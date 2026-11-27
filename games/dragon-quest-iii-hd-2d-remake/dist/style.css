@@ -25,3 +25,10 @@
 #phase-navigation{list-style:none;margin:0 0 10px 9px;padding:0 0 0 12px;border-left:1px solid #cbdade;display:grid;gap:3px}#navigation #phase-navigation a{display:block;min-height:40px;padding:6px 7px;border-radius:4px;font-size:.8125rem;line-height:1.6;color:#536a76}#phase-navigation a span{display:block}#phase-navigation a small{display:block;font-size:.75rem;color:#526974;font-variant-numeric:tabular-nums}#navigation #phase-navigation a:hover{background:#e6eef1;color:#244e60}#navigation #phase-navigation a[aria-current=location]{background:#fff;color:#245a6d;font-weight:650}#navigation #phase-navigation a[aria-current=location] small{color:#496c7c}
 @media(min-width:721px) and (max-width:1100px){.stats{gap:7px}.stats .stat-card{padding:9px 8px}.stat-numbers{flex-wrap:wrap;gap:2px 5px}}
 @media(max-width:720px){.road-stats,.collection-stats{display:block}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-block:14px}.stats .stat-card{gap:5px;padding:9px 11px}.stats .stat-card:last-child:nth-child(odd){grid-column:1/-1}.stats .stat-card strong{font-size:1.0625rem}.current-phase{display:none}#navigation>[data-view=roadmap],#phase-navigation{grid-column:1/-1}#phase-navigation{grid-template-columns:1fr 1fr;margin:0 0 6px;padding-left:10px;gap:4px}#navigation #phase-navigation a{min-height:48px;padding:6px 8px}}
+
+/* 共通中文主名與原文對照；小字不承接清單的縮排。 */
+.cf-name{font:inherit;overflow-wrap:anywhere}.cf-name>.cf-zh{font:inherit}.cf-name>.cf-original,.cf-original{display:inline;margin:0;padding:0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:normal;color:#52625b;white-space:normal;overflow-wrap:anywhere}.cf-notice{font-size:12px;line-height:1.6;font-weight:400;color:#52625b;margin:12px 0}.cf-primary{font-size:14px;color:inherit}.cf-original-block{display:block}.sidebar .cf-original,.rail .cf-original{color:inherit;opacity:.85}
+
+.cf-name,.stats .cf-name,.cf-name>.cf-zh{display:inline}.cf-name>.cf-original{display:inline;margin:0}
+
+body:not(.show-english) .cf-original{display:none}

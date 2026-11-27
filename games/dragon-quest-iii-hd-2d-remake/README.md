@@ -49,3 +49,12 @@ node scripts/verify-dq3-browser.mjs
 ```
 
 沿用 repo 的 Playwright／Edge 及 `PLAYWRIGHT_REQUIRE_FROM`／`TEST_BASE_URL`／`BROWSER_CHANNEL`。只用新 context 與合成資料，截圖在忽略的 `outputs/dq3/`。來源、驗證證據與限制見 [IMPLEMENTATION.md](docs/IMPLEMENTATION.md)。2026-11-23 使用者已授權 commit／push，沿既有 main Pages 流程發布，部署結果以對應提交 Actions 為準。[正式測試入口](https://promise82114.github.io/game-companion/games/dragon-quest-iii-hd-2d-remake/)。PS5 逐點實機與跳盃未驗收。
+
+
+## 2026-11-27 中文優先調整
+
+本機依共通介面偏好第20項，名稱、導航與攻略以中文為主，原文放後方或下一行小字對照；新增名稱為本站參考譯名，未逐項核對遊戲官方中文。原名、ID、schema與進度鍵保留，搜尋涵蓋中文及原文。
+
+本模組詞彙維護於 `research/chinese-first.json`，修改後從 repo 根目錄執行 `node scripts/prepare-chinese-first.mjs`；資料驗證會檢查產物是否過期。
+
+共用隔離檢查：`node scripts/verify-chinese-first-browser.mjs`。範圍、維護與驗證限制見[十款調整紀錄](../../docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。使用者已授權本批 commit／push；main push 將自動觸發既有 Pages 流程，結果以對應 Actions 為準。

@@ -1,3 +1,4 @@
+import {prepareChineseFirst} from './prepare-chinese-first.mjs';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
 import path from 'node:path';
@@ -7,6 +8,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const results=[];
+console.log(JSON.stringify({chineseFirst:await prepareChineseFirst({check:true})}));
 const alttlCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/a-little-to-the-left'),encoding:'utf8'});
 assert.equal(alttlCheck.status,0,alttlCheck.stdout+alttlCheck.stderr);results.push(JSON.parse(alttlCheck.stdout));
 const lad8Check=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/like-a-dragon-infinite-wealth'),encoding:'utf8'});
@@ -43,7 +45,8 @@ for(const slug of ['edf-wb','edf-wb2']){
  const adapter=new w.SideProjectDrive.DriveAppData({token(){throw Error('不應取得 Token');}},w.SIDE_PROJECT_CLOUD_CONFIG.fileName);
  await assert.rejects(adapter.write(raw,null),error=>error.code==='write-disabled');
  const manifest=JSON.parse(await fs.readFile(path.join(dir,'source-manifest.json'),'utf8'));
- const unchanged=manifest.files.filter(file=>file.path.startsWith('dist/')&&!['dist/app.js','dist/index.html','dist/sw.js','dist/cloud-config.js','dist/cloud-sync.js','dist/shared/drive-appdata.js','dist/shared/google-auth.js'].includes(file.path));
+ // 2026-11-27 user-authorized Chinese-first styles; keep the original import hashes unchanged.
+ const unchanged=manifest.files.filter(file=>file.path.startsWith('dist/')&&!['dist/app.js','dist/index.html','dist/style.css','dist/sw.js','dist/cloud-config.js','dist/cloud-sync.js','dist/shared/drive-appdata.js','dist/shared/google-auth.js'].includes(file.path));
  for(const file of unchanged){const data=await fs.readFile(path.join(dir,file.path),'utf8');assert.equal(createHash('sha256').update(data.replace(/\r\n/g,'\n')).digest('hex'),file.sha256LF,'攻略內容／UI 樣式不可變更：'+slug+'/'+file.path);}
  results.push({slug,items:catalog.items.length,missions:w.EDF_MISSIONS.rows.length,immutableFiles:unchanged.length,unknownData:'retained',cloudWrite:'blocked-until-current-grant-proven'});
 }

@@ -145,3 +145,12 @@ Drive 保留每次 grant 合成檔驗證、strong If-Match、412、競爭測試�
 1.6.9：新增一般操作撤銷；獎盃預設尚未取得、區域收集總覽可切換尚未收齊／全部／已收齊。項目篩除後焦點交給鄰近項或結果區；保留原章節／區域片段分類。
 
 沿用既有進度格式、穩定 ID、遊戲儲存隔離及手動同步。新增撤銷只記在本次頁面記憶體；使用共用交易 store 的模組採保守修訂檢查，有其他新進度時停止撤銷。詳細範圍、驗證命令及限制見[本批驗證紀錄](../../docs/reports/UI_PREFERENCES_ALIGNMENT_20261119.md)。2026-11-19 使用者已授權本批 commit／push，沿用 main 的 Pages 流程發布；部署結果以對應提交的 GitHub Actions 為準。
+
+
+## 2026-11-27 中文優先調整
+
+本機依共通介面偏好第20項，名稱、導航與攻略以中文為主，原文放後方或下一行小字對照；新增名稱為本站參考譯名，未逐項核對遊戲官方中文。原名、ID、schema與進度鍵保留，搜尋涵蓋中文及原文。
+
+本模組詞彙維護於 `research/chinese-first.json`，修改後從 repo 根目錄執行 `node scripts/prepare-chinese-first.mjs`；資料驗證會檢查產物是否過期。
+
+共用隔離檢查：`node scripts/verify-chinese-first-browser.mjs`。範圍、維護與驗證限制見[十款調整紀錄](../../docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。使用者已授權本批 commit／push；main push 將自動觸發既有 Pages 流程，結果以對應 Actions 為準。

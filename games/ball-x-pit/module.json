@@ -3,7 +3,7 @@
   "slug": "ball-x-pit",
   "title": "BALL x PIT",
   "description": "八層白金路線、128 格角色通關、64 獎盃、建築與進化配方查詢",
-  "moduleVersion": "1.0.1",
+  "moduleVersion": "1.1.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/ball-x-pit/",

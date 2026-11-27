@@ -22,3 +22,12 @@
 逐點攝影與追憶已全數列入；沒有317敵人完整圖鑑、配方或寶箱位置庫。仍未進行 PS5 實機跳盃驗收，來源門檻異說明示於項目。1.0版已依使用者授權發布；2026-11-27使用者已授權1.1.0增補commit／push與既有main Pages發布；結果以對應提交Actions及正式資源核對為準。詳見 [實作紀錄](docs/IMPLEMENTATION.md)。
 
 2026-11-27：1.2.0支線增補已在本機完成及驗證，2026-11-27使用者已授權本批commit／push及既有main Pages發布，結果以對應提交Actions與正式資源核對為準；既有schema1存檔直接沿用。
+
+
+## 2026-11-27 中文優先調整
+
+本機依共通介面偏好第20項，名稱、導航與攻略以中文為主，原文放後方或下一行小字對照；新增名稱為本站參考譯名，未逐項核對遊戲官方中文。原名、ID、schema與進度鍵保留，搜尋涵蓋中文及原文。
+
+本模組詞彙維護於 `research/chinese-first.json`，修改後從 repo 根目錄執行 `node scripts/prepare-chinese-first.mjs`；資料驗證會檢查產物是否過期。
+
+共用隔離檢查：`node scripts/verify-chinese-first-browser.mjs`。範圍、維護與驗證限制見[十款調整紀錄](../../docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。使用者已授權本批 commit／push；main push 將自動觸發既有 Pages 流程，結果以對應 Actions 為準。

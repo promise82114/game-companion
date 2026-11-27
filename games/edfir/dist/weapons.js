@@ -1,10 +1,11 @@
+import {cf} from './chinese-first.js';
 import {itemName} from './guide.js';
 
 export const weaponTypes={'Assault Rifle':'突擊步槍','Shotgun':'霰彈槍','Sniper Rifle':'狙擊步槍','Rocket Launcher':'火箭發射器','Missile Launcher':'飛彈發射器','Grenade Launcher':'榴彈發射器','Laser Rifle':'雷射步槍','Laser Cannon':'雷射砲','Energy Thrower':'能量投射器','Sword':'劍','Minigun':'機槍','Railgun':'磁軌砲','Satellite Weapon':'衛星武器','Special Weapon':'特殊武器'};
 export const weaponScopes={all:'全部武器',base:'本體・白金',dlc:'Golden Storm DLC',bonus:'特典／另購'};
 export const unlockKinds={initial:'初始裝備',mission:'任務完成','dlc-mission':'DLC 任務',bonus:'特典／另購','enemy-kills':'累計擊殺','drone-count':'Drone 收集'};
 export const freshWeaponFilters=()=>({search:'',scope:'all',type:'all',rank:'all',kind:'all',mission:'all',unpurchased:false,locked:false,target:false,sort:'catalog'});
-const normalize=value=>String(value??'').normalize('NFKC').toLocaleLowerCase().replace(/\bm0?(\d{1,2})\b/g,(_,n)=>'m'+String(n).padStart(2,'0'));
+const normalize=value=>cf.search(value).normalize('NFKC').toLocaleLowerCase().replace(/\bm0?(\d{1,2})\b/g,(_,n)=>'m'+String(n).padStart(2,'0'));
 export function filterWeapons(weapons,progress,filters,{ignoreChecks=false}={}){
  const tokens=normalize(filters.search).trim().split(/\s+/).filter(Boolean);
  return weapons.filter(w=>{

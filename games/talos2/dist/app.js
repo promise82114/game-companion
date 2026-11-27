@@ -1,3 +1,4 @@
+import {cf} from './chinese-first.js';
 import {auditDate,puzzleReviewLevel,puzzleReviewCounts,correctedFindings} from './puzzle-audit.js';
 import {safetyChecks} from './ux-safety.js';
 import {childIds,collectionsForStep,needsAttention as stepNeedsAttention,nextAction} from './roadmap/attention.js';
@@ -54,7 +55,7 @@ function stepStatusHtml(state){
  return `<div class="step-status"><span class="step-state">${state==='completed'?'完成':'未開始'}</span></div>`;
 }
 function trophyCheckbox(trophy,context,card=false){
- return `<label class="${card?'trophy-card':'trophy-row'}"><input type="checkbox" data-trophy="${trophy.id}" data-trophy-context="${context}" ${progress.trophies[trophy.id]?.earned?'checked':''}><span class="trophy-name">${escape(trophyLabel(trophy))}${card?trophyProgress(trophy,progress,data).map(c=>`<span class="inline-trophy-progress">${escape(c.label)} (${c.done}/${c.total})</span>`).join(''):''}</span></label>`;
+ return `<label class="${card?'trophy-card':'trophy-row'}"><input type="checkbox" data-trophy="${trophy.id}" data-trophy-context="${context}" ${progress.trophies[trophy.id]?.earned?'checked':''}><span class="trophy-name">${cf.name(trophy.officialName,trophy.nameZhTW)}${card?trophyProgress(trophy,progress,data).map(c=>`<span class="inline-trophy-progress">${escape(c.label)} (${c.done}/${c.total})</span>`).join(''):''}</span></label>`;
 }
 function safetyPending(id){
  const check=safetyChecks[id];return check&&(check.items.some(([trophy])=>!progress.trophies[trophy]?.earned)||(check.steps||[]).some(id=>!done(progress,id)));
@@ -76,7 +77,7 @@ function stepHtml(step){
  ${complete&&['irreversible','branch'].includes(step.warningLevel)?'<p class="persistent-warning">'+escape(step.id==='w2-backup'?'W2 實驗室進入前仍須確認 PS5 入口備份；網站勾選不能代替遊戲存檔。':step.verificationStatus==='unverified'?'觸發與補救仍待查證；完成勾選不表示遊戲旗標已驗證。':step.warningLevel==='branch'?'分歧選擇與前期條件仍需核對；完成勾選不保證遊戲結果。':'此處有不可逆事件；返回重選前，先核對遊戲存檔與下方詳情。')+'</p>':''}
  ${trophies.length?'<div class="step-trophies" role="group" aria-label="'+escape(step.title)+' 獎盃">'+trophies.map(t=>trophyCheckbox(t,step.id,true)).join('')+'</div>':''}
  ${safetyCheckHtml(step.id)}
- ${step.backupRecommended?`<div class="backup-check"><span>${backup?.confirmedAt?'PS5 備份・玩家手動紀錄 '+escape(new Date(backup.confirmedAt).toLocaleString('zh-TW'))+(backup.note?' · '+escape(backup.note):''):'PS5 存檔備份・尚未手動確認'}</span><button data-backup="${step.id}">${backup?.confirmedAt?'更新 PS5 紀錄':'記錄 PS5 備份'}</button></div>`:''}
+ ${step.backupRecommended?`<div class="backup-check"><span>${backup?.confirmedAt?'PS5 備份・玩家手動紀錄 '+escape(new Date(backup.confirmedAt).toLocaleString('zh-TW'))+(backup.note?' · <span data-preserve-original>'+escape(backup.note)+'</span>':''):'PS5 存檔備份・尚未手動確認'}</span><button data-backup="${step.id}">${backup?.confirmedAt?'更新 PS5 紀錄':'記錄 PS5 備份'}</button></div>`:''}
  <div class="step-body completion-body" id="body-${id}" ${isCompact(id,compactable)?'hidden':''}>
  ${step.trigger&&step.trigger!=='抵達上述地點，離開前查看本步驟。'?'<p class="step-trigger">'+escape(step.trigger)+'</p>':''}
  ${step.prerequisites.length?'<p class="step-prerequisites">前置：'+step.prerequisites.map(id=>`<a href="#step-${id}" data-step-link="${id}">${escape(data.steps.find(s=>s.id===id)?.title||id)}</a>`).join('、')+'</p>':''}
@@ -94,7 +95,7 @@ function branchHtml(branch){
 }
 function roadmapHtml(){
  const o=currentOverview(),part=currentSection(),current=data.stages.find(s=>s.id===o.stage),local=part.steps.map(id=>data.steps.find(s=>s.id===id));
- const searchMatches=step=>JSON.stringify([step,waypointsForStep(step.id),puzzlesForStep(step.id).map(p=>[p.title,p.label]),collectionsForStep(step.id),step.trophyRefs.map(id=>data.trophies.find(t=>t.id===id))]).toLocaleLowerCase().includes(query.toLocaleLowerCase());
+ const searchMatches=step=>cf.search(JSON.stringify([step,waypointsForStep(step.id),puzzlesForStep(step.id).map(p=>[p.title,p.label]),collectionsForStep(step.id),step.trophyRefs.map(id=>data.trophies.find(t=>t.id===id))])).toLocaleLowerCase().includes(query.toLocaleLowerCase());
  const items=local.filter(step=>matches(step,progress,filter)||(filter==='pending'&&needsAttention(step)));
  const results=query?data.steps.filter(step=>searchMatches(step)&&(matches(step,progress,filter)||(filter==='pending'&&needsAttention(step)))):[];
  const content=query?`<section class="search-results" aria-label="所有章節搜尋結果"><h2>搜尋結果 · ${results.length}</h2>${results.map(step=>`<article><a href="#step-${step.id}" data-step-link="${step.id}">${escape(step.title)}</a><p>${step.stageId} · ${escape(sectionForStep(step.id).label)} · ${escape(step.location)}</p></article>`).join('')||'<p>沒有符合條件的步驟。</p>'}</section>`:`<section class="stage" id="stage-${o.stage}" data-stage-detail="${o.stage}"><header class="stage-heading"><div><p>${o.stage} · ${escape(current.title)}</p><h2>${escape(part.label)}</h2></div><span>${local.filter(step=>done(progress,step.id)).length} / ${local.length}</span></header>${part.region?'<p class="section-preflight">先閱讀沿途提醒與收集位置。私訊／劇情以遊戲提示出現時處理；尚未觸發可先解題，不必等到全部勾完才往下走。</p>':''}${o.stage==='P6'?'<p class="section-preflight">每條路線各自驗收；先核對前期選擇與 W2 入口備份，再照所選路線進行。三條是不同遊戲分歧，不能在同一段遊戲進度依次作答。</p>':''}${items.length?items.map(stepHtml).join(''):'<p class="empty">本片段沒有符合條件的步驟。</p>'}</section>`;
@@ -127,7 +128,7 @@ function render(){
  for(const region of manualOpen){const panel=document.querySelector('[data-region-collection="'+region+'"] .artifact-manual');if(panel)panel.open=true;}
  $('roadmap-chapters').hidden=view!=='roadmap';$('roadmap-chapters').innerHTML=view==='roadmap'?chapterNavigation(data,currentOverview().stage,currentSection().id,progress,escape):'';$('handbook-nav').scrollTop=navScroll;
  document.querySelectorAll('[data-view]').forEach(el=>view===el.dataset.view?el.setAttribute('aria-current','page'):el.removeAttribute('aria-current'));
- if(focusId){const selector=`[${focusAttr}="${focusId}"]`+(focusContext?'[data-trophy-context="'+focusContext+'"]':counterRegion?'[data-counter-region="'+counterRegion+'"]':'');let next=document.querySelector(selector)||neighbors.map(attr=>document.querySelector('['+attr+']')).find(Boolean)||$('app');if(next?.closest('[hidden]'))next=document.querySelector('.stage-heading>.completion-peek')||next.closest('.step')?.querySelector('.step-top input');if(next){next.focus({preventScroll:true});if(focusTop>=0&&focusTop<innerHeight){const desired=scrollY+next.getBoundingClientRect().top-focusTop,baseMaximum=document.documentElement.scrollHeight-innerHeight-readingTail;readingTail=Math.max(0,Math.ceil(desired-baseMaximum));$('app').style.setProperty('--reading-tail',readingTail+'px');if(Math.abs(scrollY-desired)>1)window.scrollTo(0,desired);}}}
+ cf.decorate($('app'));cf.notice($('app'));cf.decorate($('handbook-nav'));cf.decorate($('roadmap-chapters'));if(focusId){const selector=`[${focusAttr}="${focusId}"]`+(focusContext?'[data-trophy-context="'+focusContext+'"]':counterRegion?'[data-counter-region="'+counterRegion+'"]':'');let next=document.querySelector(selector)||neighbors.map(attr=>document.querySelector('['+attr+']')).find(Boolean)||$('app');if(next?.closest('[hidden]'))next=document.querySelector('.stage-heading>.completion-peek')||next.closest('.step')?.querySelector('.step-top input');if(next){next.focus({preventScroll:true});if(focusTop>=0&&focusTop<innerHeight){const desired=scrollY+next.getBoundingClientRect().top-focusTop,baseMaximum=document.documentElement.scrollHeight-innerHeight-readingTail;readingTail=Math.max(0,Math.ceil(desired-baseMaximum));$('app').style.setProperty('--reading-tail',readingTail+'px');if(Math.abs(scrollY-desired)>1)window.scrollTo(0,desired);}}}
  if(solutionFocus)$('show-solutions')?.focus({preventScroll:true});
  $('open-sync').onclick=()=>sync.open();$('open-backup').onclick=()=>{$('backup-tools-content').innerHTML=backupHtml();bindBackupTools();$('backup-tools-dialog').showModal();};
  if(view==='roadmap'){
@@ -170,8 +171,8 @@ function updateMapSelection(id,manual=false){
 }
 function refreshMaps(){
  const code=mapRegion();if(!regionMaps[code])return;
- const aside=document.querySelector('.region-map-aside');if(aside)aside.innerHTML=regionMapHtml(code,mapOptions());
- if($('map-dialog').open){$('map-dialog-title').textContent=(regionMaps[code].name||code)+' 地圖';$('map-dialog-content').innerHTML=regionMapHtml(code,mapOptions(),{dialog:true});}
+ const aside=document.querySelector('.region-map-aside');if(aside)aside.innerHTML=regionMapHtml(code,mapOptions());cf.decorate(aside);
+ if($('map-dialog').open){$('map-dialog-title').textContent=(regionMaps[code].name||code)+' 地圖';$('map-dialog-content').innerHTML=regionMapHtml(code,mapOptions(),{dialog:true});cf.decorate($('map-dialog-content'));}
  const floating=document.querySelector('.map-floating');if(floating)floating.textContent=(regionMaps[code].name||code)+' 地圖';
 }
 function targetMap(target){const puzzle=puzzles.find(p=>puzzleProgressId(p.id)===target),waypoint=storyWaypoints.find(w=>waypointProgressId(w.id)===target),item=collectionItems.find(c=>collectionProgressId(c.id)===target);return waypoint?.mapKey||puzzle?.mapKey||puzzle?.region||item?.region||mapRegion();}
@@ -190,7 +191,7 @@ function bindMapSelection(){
  mapObserver=new IntersectionObserver(scheduleReadingMap,{rootMargin:'-100px 0px -80px 0px',threshold:0});
  document.querySelectorAll('.puzzle,.collection-item,.artifact-item,.waypoint').forEach(el=>mapObserver.observe(el));
 }
-function openMap(){if(view!=='roadmap'||!mapRegion())return;$('map-dialog-title').textContent=(regionMaps[mapRegion()].name||mapRegion())+' 地圖';$('map-dialog-content').innerHTML=regionMapHtml(mapRegion(),mapOptions(),{dialog:true});$('map-dialog').showModal();}
+function openMap(){if(view!=='roadmap'||!mapRegion())return;$('map-dialog-title').textContent=(regionMaps[mapRegion()].name||mapRegion())+' 地圖';$('map-dialog-content').innerHTML=regionMapHtml(mapRegion(),mapOptions(),{dialog:true});cf.decorate($('map-dialog-content'));$('map-dialog').showModal();}
 function bindBackupTools(){
  $('export-progress').onclick=()=>action(exportProgress);
  $('export-recovery').onclick=()=>action(async()=>download(await store.exportAll(),'recovery-archive'));

@@ -3,7 +3,7 @@
   "slug": "a-little-to-the-left",
   "title": "靠左一些些｜A Little to the Left",
   "description": "PS5 本體 48 盃、五章逐題攻略、39 題本機配置圖與操作表、每日整理",
-  "moduleVersion": "1.1.0",
+  "moduleVersion": "1.2.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/a-little-to-the-left/",

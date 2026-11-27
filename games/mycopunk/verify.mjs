@@ -11,7 +11,7 @@ assert.equal(config.gameId,gameId);assert.equal(config.moduleVersion,moduleVersi
 for(const key of [storageKey,beforeImportKey,importPrefix,corruptPrefix,backupTimeKey,snapshotPrefix,cachePrefix])assert.ok(key.startsWith('game-companion.mycopunk.'));
 const manifest=JSON.parse(await fs.readFile(path.join(root,'source-manifest.json'),'utf8'));
 assert.equal(manifest.commit,config.sourceCommit);
-const changed=new Set(['dist/model.js','dist/app.js','dist/index.html','package.json','research/collect-wiki-shapes.py','research/collect-wiki-catalogue.py']);
+const changed=new Set(['dist/model.js','dist/app.js','dist/index.html','dist/wiki.js','dist/build-planner.js','dist/styles.css','package.json','research/collect-wiki-shapes.py','research/collect-wiki-catalogue.py']);
 let immutable=0;
 for(const file of manifest.files){
  const bytes=await fs.readFile(path.join(root,file.path));

@@ -1,5 +1,7 @@
 # Game Companion
 
+2026-11-27 本機十款中文優先調整：BALL x PIT、IRON RAIN、靠左一些些、Talos II、Mycopunk、EDF兩代、Thank Goodness You're Here!、DQ3與人中之龍８以中文主名、原文小字對照；保留原名、ID與進度。新增譯名為參考翻譯，未宣稱官方逐項還原。使用者已授權本批 commit／push；main push 會自動觸發既有 Pages 流程，發布結果以對應 Actions 為準。見[調整紀錄](docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。
+
 2026-11-27 中文優先試行：Cat Quest II 1.2.0／Cat Quest III 1.3.0 在清單、路線、地點與獎盃以繁中參考譯名為主、原文小字對照，中外文都可搜尋。原始名稱、ID及進度保留；尚非遊戲官方中文逐項還原。使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 及正式資源核對為準。見[試行紀錄](docs/reports/CAT_QUEST_CHINESE_FIRST_20261127.md)。
 
 2026-11-27 本機1.1.1優先補查：Fursaken Cave加入來源記載的完整行進順序；Excalipurr補Laketown三連任務與領劍步驟，英文物品名配對仍保留候選；Bat Cove墓碑支路加入秘密路徑及待核實篩選，入口仍待查。來源87筆，26個地城提醒／16個秘密路徑提醒；沿用原ID與schema1。2026-11-27使用者已授權本批commit／push及既有main GitHub Pages發布；結果以對應Actions及正式資源核對為準。 [補查紀錄](games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。

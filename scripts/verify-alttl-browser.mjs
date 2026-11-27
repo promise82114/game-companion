@@ -15,7 +15,7 @@ try{
  const context=await browser.newContext({acceptDownloads:true,serviceWorkers:'block',viewport:{width:1440,height:1000}});
  await context.route('https://**',r=>{external.push(r.request().url());return r.abort();});
  const page=await context.newPage();page.setDefaultTimeout(12000);page.on('pageerror',e=>errors.push(e.message));
- await visit(page);assert.equal(await page.locator('.stat').count(),3);assert.equal(await page.locator('#chapter-nav a').count(),5);assert.match(await page.locator('.warning').first().textContent(),/不開 Hint/);
+ await visit(page);assert.equal(await page.locator('.stat').count(),3);assert.equal(await page.locator('#chapter-nav a').count(),5);assert.match(await page.locator('.warning').first().textContent(),/不開\s*提示/);
  await page.evaluate(()=>localStorage.setItem('game-companion.grounded.synthetic','keep'));
  const blank=await state(page);await page.locator('#chapter-nav a').last().click();assert.deepEqual(await state(page),blank);await page.locator('#continue').click();assert.match(decodeURIComponent(page.url()),/target=alttl:base:c01-p01/);
  await visit(page,'?view=roadmap&chapter=c01');assert.equal(await page.locator('.puzzle').count(),20);assert.equal(await page.locator('.puzzle .body').count(),20);assert.equal(await page.locator('#status').inputValue(),'all');

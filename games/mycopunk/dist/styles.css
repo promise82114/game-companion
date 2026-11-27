@@ -27,3 +27,14 @@
 /* 閱讀正文維持 15px，來源與輔助標籤至少 13px。 */
 .dual,.upgrade-effect .dual,.inline-turbo .dual,.mechanic-card .dual,.path-instructions .dual,.path-version-notes .dual{font-size:15px;line-height:1.8}.upgrade-identity h3{font-size:18px}.upgrade-identity p,.stat,.upgrade-stats .stat,.stat b,.upgrade-stats .stat b{font-size:14px}.gear-card .dual,.category-card>.dual,.home-quick-links p{font-size:14px}.filter-panel label,.filter-panel input,.filter-panel select{font-size:15px}.owner-list button{font-size:14px}.primary-nav button{font-size:14px}.primary-nav button>span{font-size:13px}.brand-sub{letter-spacing:.03em}.gear-facts .bilingual-copy{font-size:15px}
 @media(max-width:650px){.primary-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.primary-nav button{font-size:14px;min-width:0}.primary-nav button>span{font-size:13px}.brand-sub{font-size:11px}.directory-group>button,.directory-secondary{font-size:13px}.gear-summary .zh-copy{font-size:15px}.upgrade-effect .dual,.inline-turbo .dual{font-size:15px}}
+
+/* 共通中文主名與原文對照；小字不承接清單的縮排。 */
+.cf-name{font:inherit;overflow-wrap:anywhere}.cf-name>.cf-zh{font:inherit}.cf-name>.cf-original,.cf-original{display:inline;margin:0;padding:0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:normal;color:#52625b;white-space:normal;overflow-wrap:anywhere}.cf-notice{font-size:12px;line-height:1.6;font-weight:400;color:#52625b;margin:12px 0}.cf-primary{font-size:14px;color:inherit}.cf-original-block{display:block}.sidebar .cf-original,.rail .cf-original{color:inherit;opacity:.85}
+
+.dual>.cf-primary,.bilingual-copy>.cf-primary{font-size:14px;color:var(--text);margin:0}.dual>.cf-original,.bilingual-copy>.cf-original{font-size:12px;color:#52625b;margin:5px 0 0}.bilingual-copy{display:flex;flex-direction:column;gap:0}.gear-card h2>.cf-name,.upgrade-identity h3>.cf-name{font-size:14px;color:inherit}.cf-name>.cf-original{display:inline;font-size:12px;margin:0;line-height:1.6;font-weight:400}.primary-nav .cf-original{display:block}.cf-name>.cf-zh{color:inherit}.gear-card .cf-original{letter-spacing:normal}
+
+.cf-name,.stats .cf-name,.cf-name>.cf-zh{display:inline}.cf-name>.cf-original{display:inline;margin:0}
+
+.hide-original .cf-original{display:none!important}
+
+.home-page #page-title .cf-name,.home-page #page-title .cf-zh{font:inherit;display:inline}.home-search button .cf-original,button.primary .cf-original{color:inherit}

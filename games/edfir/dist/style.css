@@ -37,3 +37,8 @@ body[data-view=weapons] .page-heading{margin-bottom:18px}body[data-view=weapons]
 .weapon-audit-table table{border-collapse:collapse;width:100%;max-width:680px;font-size:13px;margin:14px 0}.weapon-audit-table th,.weapon-audit-table td{text-align:left;border-bottom:1px solid var(--line);padding:8px}.weapon-audit-table td{font-variant-numeric:tabular-nums}.weapon-audit-table tbody th{font-weight:400}
 
 .stats>button{color:inherit;text-align:left;background:var(--surface,#fff);border:1px solid var(--border,#d8ded7);padding:12px;cursor:pointer}.stats>button strong,.stats>button small,.stats>button span{display:block}.stats>button:hover{border-color:var(--accent,#356249)}
+
+/* 共通中文主名與原文對照；小字不承接清單的縮排。 */
+.cf-name{font:inherit;overflow-wrap:anywhere}.cf-name>.cf-zh{font:inherit}.cf-name>.cf-original,.cf-original{display:inline;margin:0;padding:0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:normal;color:#52625b;white-space:normal;overflow-wrap:anywhere}.cf-notice{font-size:12px;line-height:1.6;font-weight:400;color:#52625b;margin:12px 0}.cf-primary{font-size:14px;color:inherit}.cf-original-block{display:block}.sidebar .cf-original,.rail .cf-original{color:inherit;opacity:.85}
+
+.cf-name,.stats .cf-name,.cf-name>.cf-zh{display:inline}.cf-name>.cf-original{display:inline;margin:0}

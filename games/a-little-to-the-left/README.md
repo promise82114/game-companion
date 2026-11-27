@@ -68,3 +68,12 @@ node scripts/verify-alttl-browser.mjs
 ```
 
 瀏覽器沿用 `scripts/browser-runtime.mjs` 的 Playwright／Edge，全新 context 與合成資料，封鎖外部請求與 SW。可設 `TEST_BASE_URL`（含 `/game-companion/` 與尾斜線）。結果與限制見 [實作紀錄](docs/IMPLEMENTATION.md)。
+
+
+## 2026-11-27 中文優先調整
+
+本機依共通介面偏好第20項，名稱、導航與攻略以中文為主，原文放後方或下一行小字對照；新增名稱為本站參考譯名，未逐項核對遊戲官方中文。原名、ID、schema與進度鍵保留，搜尋涵蓋中文及原文。
+
+本模組詞彙維護於 `research/chinese-first.json`，修改後從 repo 根目錄執行 `node scripts/prepare-chinese-first.mjs`；資料驗證會檢查產物是否過期。
+
+共用隔離檢查：`node scripts/verify-chinese-first-browser.mjs`。範圍、維護與驗證限制見[十款調整紀錄](../../docs/reports/CHINESE_FIRST_ALIGNMENT_20261127.md)。使用者已授權本批 commit／push；main push 將自動觸發既有 Pages 流程，結果以對應 Actions 為準。

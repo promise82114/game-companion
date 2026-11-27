@@ -1,3 +1,4 @@
+import {cf} from '../chinese-first.js';
 import {collectionRegions,collectionItems,artifactCandidates} from '../collection-data.js';
 import {puzzles,puzzleProgressId} from './solutions.js';
 import {revealButton,completionBody} from './completion.js';
@@ -30,7 +31,7 @@ function counterHtml(region,kind,label,progress){return `<label>${label}<input t
 function artifactCountNote(progress){const c=artifactCounts(progress);return `<p class="artifact-count-note">已勾選 ${c.checked} 種遺物；手動紀錄 ${c.manual} 件。目標進度取兩者較大值，不相加，避免把同一件算兩次。舊件數無法推定是哪一種物品，請依遊戲內實際取得逐項核對。</p>`;}
 function artifactHtml(site,{escape,progress}){
  const item=humanArtifacts.find(item=>item.id===site.artifactId),complete=artifactDone(progress,item.id),found=artifactFoundIn(progress,item.id),regions=[...new Set(artifactCandidates.filter(other=>other.artifactId===item.id).map(other=>other.region))];
- return `<article class="artifact-item${complete?' artifact-done':''}" id="artifact-${site.id}" data-artifact-site="${site.id}"><label><input type="checkbox" data-artifact-complete="${item.id}" data-artifact-region="${site.region}" ${complete?'checked':''}><strong>${escape(item.title)}｜${escape(item.nameZhTW)}</strong><span class="artifact-status">${complete?'已取得（全區共用）':'尚未記錄取得'}</span></label><p class="artifact-shared">${complete?(found?'已在 '+escape(found)+' 記錄取得；此處不用再找。':'已記錄取得；此處不用再找。'):'可能出現於 '+regions.join('、')+'；這些是同一物品的候選位置，不是每處各一件。'}</p><p class="artifact-location">${escape(site.location)} ${imageLink(site,escape)} ${mapLocateButton('artifact-'+site.id,escape)}</p></article>`;
+ return `<article class="artifact-item${complete?' artifact-done':''}" id="artifact-${site.id}" data-artifact-site="${site.id}"><label><input type="checkbox" data-artifact-complete="${item.id}" data-artifact-region="${site.region}" ${complete?'checked':''}><strong>${cf.name(item.title,item.nameZhTW)}</strong><span class="artifact-status">${complete?'已取得（全區共用）':'尚未記錄取得'}</span></label><p class="artifact-shared">${complete?(found?'已在 '+escape(found)+' 記錄取得；此處不用再找。':'已記錄取得；此處不用再找。'):'可能出現於 '+regions.join('、')+'；這些是同一物品的候選位置，不是每處各一件。'}</p><p class="artifact-location">${escape(site.location)} ${imageLink(site,escape)} ${mapLocateButton('artifact-'+site.id,escape)}</p></article>`;
 }
 export function regionCollectionsHtml(code,{escape,progress}){
  const region=collectionRegions.find(r=>r.code===code);if(!region)return '';

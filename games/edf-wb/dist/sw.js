@@ -1,4 +1,4 @@
-const CACHE='game-companion.edf-wb.assets.v6';
+const CACHE='game-companion.edf-wb.assets.v7';
 const prefix='game-companion.edf-wb.assets.';
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./app.js','./shared/sync-core.js','./style.css','./usability.css','./typography.css','./data.js','./details.js','./character-accessories.js','./translations.js','./acquisition.js','./mission-facts.js','./missions.js','./recommendations.js','./content.js','./cloud-config.js','./shared/progress-envelope.js','./shared/google-auth.js','./shared/drive-appdata.js','./cloud-sync.js','./shared/sync-session.js','./migration.js','./migration.css'])));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(prefix)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
