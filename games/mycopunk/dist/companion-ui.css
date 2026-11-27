@@ -26,3 +26,17 @@
 @media(min-width:1500px){.site-header{padding-left:64px;padding-right:64px}.main,.home-page .main,.is-planner .main{padding-left:64px;padding-right:64px}}
 @media(min-width:721px) and (max-width:1100px){.sidebar,.home-page .sidebar,.is-planner .sidebar{width:195px;padding:24px 18px}.site-header{margin-left:195px;padding-left:26px;padding-right:26px}.main,.home-page .main,.is-planner .main{margin-left:195px;padding-left:26px;padding-right:26px}.header-tools{gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{font-size:12px;padding:7px 9px}.sidebar>.brand{gap:8px}.sidebar .brand strong{font-size:15px}.sidebar .brand-sub{display:block;white-space:normal;letter-spacing:.03em}.sidebar .brand-sub>span{display:block}}
 @media(max-width:720px){.site-header{display:grid;grid-template-columns:minmax(0,1fr);margin-left:0;padding:12px 16px;gap:10px}.workspace-heading{justify-content:space-between}.workspace-heading>span{font-size:12px}.header-tools{justify-content:flex-end;gap:6px}.header-tools button,.header-tools a,.header-tools #language-toggle{min-height:44px;font-size:12px;padding:7px 9px}.main,.home-page .main,.is-planner .main{margin-left:0;padding:20px 16px 0}.sidebar,.home-page .sidebar,.is-planner .sidebar{display:none}.nav-drawer .sidebar{display:flex;position:static;inset:auto;width:100%;height:auto;min-height:100dvh;max-height:none;overflow:visible;padding:16px 20px 24px}#menuOpen,#nav-close{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:13px;padding:7px 12px}#nav-close{align-self:flex-end;margin-bottom:12px}.sidebar>.primary-nav{grid-template-columns:1fr;gap:4px}.backup-actions{display:grid;grid-template-columns:1fr}.backup-actions button{text-align:left}}
+
+/* 共通字級：保留來源樣式，以模組既有補充層對齊緊湊閱讀尺度。 */
+:root{font-size:14px}
+h1,.home-page h1,.is-planner #page-title{font-size:24px}
+h1>span,.home-page h1>span{font-size:15px}
+h2,.card-bottom h2,.gear-card h2,.section-heading h2,.unlock-intro h2,.mechanic-heading h2,.path-version h2,.rec-select-prompt h2,.rec-guide-heading h2,.build-workspace-heading h2{font-size:18px}
+.hidden-path-card h3,.rec-source-card h3,.upgrade-identity h3,.path-order{font-size:16px}
+.path-version h2>span,.is-planner #page-title>span{font-size:14px}
+.collection-summary b{font-size:22px}
+.dual,.upgrade-effect .dual,.inline-turbo .dual,.mechanic-card .dual,.path-instructions .dual,.path-version-notes .dual,.gear-facts .bilingual-copy,.gear-summary .zh-copy{font-size:14px}
+.filter-panel label,.filter-panel input,.filter-panel select{font-size:14px}
+button{min-height:40px}
+@media(max-width:720px){h1,.home-page h1,.is-planner #page-title{font-size:22px}button,input[type=search],select{min-height:44px}}
+@media(max-width:720px){.filter-panel #clear-filters,.build-category-buttons button,.build-quality-filters button,.build-expansion-choice button,.build-solve-actions button{min-height:44px}}
