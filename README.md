@@ -1,5 +1,7 @@
 # Game Companion
 
+2026-11-27《Cat Quest II》1.1.0補查：108件裝備分為72具名來源、35候選池與1待核對應；26個地城有通路／入口／回收提醒，其中15個涉及秘密路徑。路線與查漏共用原進度，地城可原處核對相關裝備，來源衝突與未核實走法保留。2026-11-27使用者已授權本批commit／push與既有main GitHub Pages發布，部署結果以對應提交Actions及正式資源核對為準。[補查紀錄](games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
+
 2026-11-27 本機新增《Cat Quest II》雙王白金手冊：PS5 執行 PS4 版，六階段19步、20座獎盃、67支線、73基準地城、12法術、101＋7裝備與22金箱文字索引。獨立本機進度、逐鍵撤銷及保護式匯入；全逐洞走法與裝備出處仍有明示缺口，未經遊戲實機驗收。2026-11-27 使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 與正式資源核對為準。[模組說明](games/cat-quest-ii/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/cat-quest-ii/)。隔離檢查：`node scripts/verify-cq2-browser.mjs`。
 
 2026-11-27《人中之龍８》本機1.1.0增補完整110攝影／90追憶逐點清單，附位置、章節／時段／前置與逐筆來源，整合章節區域閱讀與查漏。沿用schema1，舊版手填總數保留且不與逐點數相加；PSN獨立確認。來源異說與檢查見[收集查核](games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。2026-11-27使用者已授權本批commit／push與既有main Pages發布，結果以對應提交Actions及正式資源核對為準。

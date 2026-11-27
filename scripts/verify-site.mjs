@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../_site/',import.meta.url));
 let files=0,links=0;
 const cq2=path.join(root,'games/cat-quest-ii');
-for(const file of ['index.html','app.js','model.js','style.css','data.json'])await fs.access(path.join(cq2,file));
+for(const file of ['index.html','app.js','model.js','style.css','data.json','locations.js'])await fs.access(path.join(cq2,file));
 const cq2Data=JSON.parse(await fs.readFile(path.join(cq2,'data.json'),'utf8'));
 assert.equal(cq2Data.trophies.length,20);assert.equal(cq2Data.phases.length,6);assert.equal(cq2Data.entities.filter(e=>e.kind==='sideQuest').length,67);
 assert.ok((await fs.readFile(path.join(root,'index.html'),'utf8')).includes('href="games/cat-quest-ii/"'));
