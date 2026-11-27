@@ -1,5 +1,7 @@
 # Game Companion
 
+2026-11-27 本機新增《Cat Quest II》雙王白金手冊：PS5 執行 PS4 版，六階段19步、20座獎盃、67支線、73基準地城、12法術、101＋7裝備與22金箱文字索引。獨立本機進度、逐鍵撤銷及保護式匯入；全逐洞走法與裝備出處仍有明示缺口，未經遊戲實機驗收。2026-11-27 使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 與正式資源核對為準。[模組說明](games/cat-quest-ii/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/cat-quest-ii/)。隔離檢查：`node scripts/verify-cq2-browser.mjs`。
+
 2026-11-27《人中之龍８》本機1.1.0增補完整110攝影／90追憶逐點清單，附位置、章節／時段／前置與逐筆來源，整合章節區域閱讀與查漏。沿用schema1，舊版手填總數保留且不與逐點數相加；PSN獨立確認。來源異說與檢查見[收集查核](games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。2026-11-27使用者已授權本批commit／push與既有main Pages發布，結果以對應提交Actions及正式資源核對為準。
 
 2026-11-27《靠左一些些／A Little to the Left》1.1.0 本機圖文攻略：五章 79 個編輯導航單元、108 個解法紀錄、200 個操作核對、PS5 本體 48 盃。原列 39／39 題配置已補本機完成圖與繁中操作表，共 104 張圖解、8 種貼紙圖案、15 組可播放操作；花瓶另有八張旋轉實玩畫面。保留乾淨首輪提醒、每日整理兩路線、原 ID／schema、獨立 IndexedDB 與保護式匯入；PS5 實機尚未驗收。2026-11-27 使用者已授權本遊戲專屬變更 commit／push 與既有 main Pages 發布，結果以對應提交 Actions 及正式資源核對為準。[模組說明](games/a-little-to-the-left/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/a-little-to-the-left/)。隔離回歸：`node scripts/verify-alttl-browser.mjs`。

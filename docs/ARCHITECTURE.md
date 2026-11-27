@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 Cat Quest II 本機1.0.0：`games/cat-quest-ii/`以根規格SHA256離線產生六階段19步、292個實體與20座PS4獎盃。原生ES模組沿用`shared/roadmap-store.js`交易儲存，獨立`game-companion.cat-quest-ii.progress.v1`，steps／entities／trophies／counters／settings各自保存；一般寫入與撤銷檢查逐鍵修訂，收藏關聯與推定門檻不代填其他狀態。無Drive／SW，Portal只增加模組入口及封面。保護式差異匯入保留兩端原文與未知資料、過期停止；資料缺口在小訣竅頁顯示。見[實作紀錄](../games/cat-quest-ii/docs/IMPLEMENTATION.md)，2026-11-27 使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 與正式資源核對為準。
+
 2026-11-27 人中之龍８ 1.2.0：research/substories.json離線維護52條詳細攻略與逐條來源，prepare-data以獨立SHA256合併；dist/substories.js共用路線與查漏呈現。沿用substories.SS01～SS52及schema1／namespace，不新增重複進度；路線依當章主角／可開始章節提供區域與系列閱讀單元，前置可互跳。關係支線三份禮物與商店、人格及特殊門檻分開列示。資料、建置、產物與隔離瀏覽器檢查通過，2026-11-27使用者已授權本批commit／push及既有main Pages發布，結果以對應提交Actions與正式資源核對為準。來源限制見[支線查核](../games/like-a-dragon-infinite-wealth/docs/SUBSTORIES_RESEARCH.md)。
 
 2026-11-27 人中之龍８ 1.1.0 本機資料擴充：`research/collectibles.json`維護200筆具名位置與14項來源登錄，prepare-data以獨立SHA256納入dist/data.json；新dist/collectibles.js負責唯讀路線分組與摘要、共用列呈現。110攝影／90追憶均沿用schema1的objectives map，DB／namespace／匯入與交易層不變，舊counters.photos／memoirs保留為獨立手填值；摘要從逐點勾選推導，不相加或猜測舊玩家已完成地點。章節按城市／區域選閱讀單元，查漏可依區域／最早章節篩選；前置只提醒，不鎖住內容。2026-11-27使用者已授權本批commit／push與main Pages發布，結果以對應提交Actions及正式資源核對為準；來源差異見[查核紀錄](../games/like-a-dragon-infinite-wealth/docs/COLLECTIBLES_RESEARCH.md)。

@@ -1,0 +1,7569 @@
+{
+  "gameId": "cat-quest-ii",
+  "catalogVersion": "2026-11-27.1",
+  "specSha256": "918e1bf44590f03f55b2d3c37aaad5d9d3ea5be37849cfe87ade87d4994cedc7",
+  "phases": [
+    {
+      "id": "A",
+      "label": "階段 A｜開場、貓國與第一碎片",
+      "steps": [
+        "cq2-r-tutorial",
+        "cq2-r-smiths",
+        "cq2-r-sigil",
+        "cq2-r-lionardo"
+      ]
+    },
+    {
+      "id": "B",
+      "label": "階段 B｜進犬國、武器匠與第二碎片",
+      "steps": [
+        "cq2-r-cross-border",
+        "cq2-r-woofhauser"
+      ]
+    },
+    {
+      "id": "C",
+      "label": "階段 C｜返回貓國、燈塔三任務與水行",
+      "steps": [
+        "cq2-r-final-shard",
+        "cq2-r-water-walking"
+      ]
+    },
+    {
+      "id": "D",
+      "label": "階段 D｜水行後的收集開放與主線後段",
+      "steps": [
+        "cq2-r-ocean-spells",
+        "cq2-r-golden-key",
+        "cq2-r-first-kings",
+        "cq2-r-lupus-tomb"
+      ]
+    },
+    {
+      "id": "E",
+      "label": "階段 E｜支線補齊、兩國收復與結局",
+      "steps": [
+        "cq2-r-regional-quests",
+        "cq2-r-reclaim",
+        "cq2-r-aelius"
+      ]
+    },
+    {
+      "id": "F",
+      "label": "階段 F｜分區掃尾與白金確認",
+      "steps": [
+        "cq2-r-felingard-sweep",
+        "cq2-r-lupus-sweep",
+        "cq2-r-hard-caves",
+        "cq2-r-final-audit"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "cq2-r-tutorial",
+      "code": "A01",
+      "phaseId": "A",
+      "chapterId": "A",
+      "label": "Mewment Shores → Brave Cave → South Pawt",
+      "instructions": [
+        "跟 Kirry 進 Brave Cave，完成教學戰鬥、讀石碑，確認法術選單已有 Flamepurr 與 Freezepaw。",
+        "跟隨後續引導使用 Kingsmarker，抵達 South Pawt 並完成到達對話。",
+        "當場提示：`Catventure Begins`；完成第一任務後核對實際跳盃。",
+        "離開前：新取得裝備照實勾；地城另以完整清洞狀態勾，不因走出另一出口就推定。",
+        "補救：法術選單缺少任一種時回教學石碑；不是要求重開。[S03、S04]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-flamepurr",
+        "cq2-sp-freezepaw",
+        "cq2-dg-brave-cave"
+      ],
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-smiths",
+      "code": "A02",
+      "phaseId": "A",
+      "chapterId": "A",
+      "label": "救出 Kit Cat，開放裝備與法術升級",
+      "instructions": [
+        "先循主線到 Kit Cat 工坊，再追到 Seaside Cove 取得所需材料、救人並回訪工坊。",
+        "到 Arcane Headpawters 完成主線引導；開始把金錢投入正在用的防具與常用法術。",
+        "順路：South Pawt 三支線、Fishercat Village 三支線、Kit Cat 信箱系列。一次完成當前可接且適合等級的段落，不要求全部連續解鎖。",
+        "Cave Grotto 的石碑可學 Furry Shield；把它放在早期路過時提醒，而非通關後才說漏法術。",
+        "檢查：休息存檔、是否能在選單裝備法術。若主線戰鬥變慢，先做附近藍色驚嘆號補等。[S02、S04、S06]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-furry-shield",
+        "cq2-dg-cave-grotto",
+        "cq2-dg-seaside-cove"
+      ],
+      "sources": [
+        "S02",
+        "S04",
+        "S06"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-sigil",
+      "code": "A03",
+      "phaseId": "A",
+      "chapterId": "A",
+      "label": "The Purrsecutor：King Sigil 島與補血",
+      "instructions": [
+        "跟主線到 Lioner 所在島；先處理可擊敗的小兵，無法有效傷害 Lioner 時依劇情存活，等事件繼續，不在這裡硬耗。",
+        "**回程前**讀島上 Healpaw 石碑，裝上補血再試用一次。",
+        "走 King Sigil 的路徑完成主要目標並回大陸。",
+        "順路提示：連同 Cave Grotto 法術，初期可累積到四種；達到時核對 Arcane Paws I，不固定要求某一步才跳。",
+        "補救：漏讀 Healpaw 可回訪；在查漏頁點該法術能定位 King Sigil 周邊。[S04、S06]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-healpaw",
+        "cq2-dg-cave-grotto",
+        "cq2-dg-king-sigil"
+      ],
+      "sources": [
+        "S04",
+        "S06"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-lionardo",
+      "code": "A04",
+      "phaseId": "A",
+      "chapterId": "A",
+      "label": "Kingsblade 前置 → King Lionardo 試煉",
+      "instructions": [
+        "按主線找 Kit Cat，完成戰鬥取得試煉鑰匙，前往東側 King Lionardo's Ruins／Trial。",
+        "試煉傳送路線依點亮的燈選路，擊敗末端敵人取得第一碎片。",
+        "當場提示：確認新 Royal Art：Pawer Rolling。這不是新法術，不計進 12 法術。",
+        "順路支線：Cat-Face Outlook／古代法師系列、Whiskerest、Catnip Farm；有進洞任務時順便清該洞，不為掃洞中斷主線。",
+        "本階段可能自然取得：Kinghood I、Furriend of the People I、Dungeon Master I、Fashionista Tails I。只是條件提示，不宣稱固定時點。[S04、S18]",
+        "### 階段 B｜進犬國、武器匠與第二碎片"
+      ],
+      "relatedEntityIds": [
+        "cq2-art-rolling"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-cross-border",
+      "code": "B01",
+      "phaseId": "B",
+      "chapterId": "B",
+      "label": "The First Kings → Lupus Empire",
+      "instructions": [
+        "跟 Kit Cat 北行，從 Felingard's Statue／First Bridge 穿越，按劇情處理追兵並離開通道。",
+        "檢查 `The Lupus Empire` 是否實際跳盃。",
+        "前往 Hotto Doggo 工坊；主線要過 Wall of Lupus 時，到 Pound Town 按要求找回骨頭、交換餅乾再回城牆。",
+        "順路：Lightnyan 的戶外石碑，在 Pound Town 北側／Wall of Lupus 西側一帶；抵達犬國時即提醒讀取。",
+        "順路支線：Pound Town、Wall of Lupus 的吟遊詩人系列，能接就做；避免把尚未開放部分當遺漏。[S04、S06]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-lightnyan"
+      ],
+      "sources": [
+        "S04",
+        "S06"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-woofhauser",
+      "code": "B02",
+      "phaseId": "B",
+      "chapterId": "B",
+      "label": "找 Hotto Doggo → 北方試煉",
+      "instructions": [
+        "完成找回武器匠的主線，取得試煉鑰匙。",
+        "北側正路被擋時，找 Far-Fetched Cave 通路；進洞時讀 Forcewoofer 石碑，穿到試煉區。",
+        "按試煉事件完成 Wolfen 戰鬥，返回武器匠推進 The Kei-Nein，到 Throne of Lupus 完成碎片相關事件。",
+        "當場提示：確認 Pawer Smash；新版是翻滾後接攻擊，舊攻略寫隨機傷害增益已不適用。[S05、S18]",
+        "順路：Doge Town 家庭系列；有空可找 The Banished／沙漠入口附近的 Manapaw 石碑。",
+        "檢查：需要升級武器時回 Hotto Doggo，不能只升防具而忽略輸出。打不過先補同區支線。[S04、S06、S17]",
+        "### 階段 C｜返回貓國、燈塔三任務與水行"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-forcewoofer",
+        "cq2-sp-manapaw",
+        "cq2-art-smash"
+      ],
+      "sources": [
+        "S05",
+        "S18",
+        "S04",
+        "S06",
+        "S17"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-final-shard",
+      "code": "C01",
+      "phaseId": "C",
+      "chapterId": "C",
+      "label": "The Final Shard → Purrn Cave",
+      "instructions": [
+        "回 Kit Cat 工坊取得下一線索，前往 Catpital 北方 Purrn Cave。",
+        "避開尖刺、按主線目標找到傳送／石碑線索，跟後續目標到西方海岸。",
+        "現在跨海受阻是正常前置：下一步先找 Pawt Bay 燈塔總督。",
+        "順路：Laketown 系列、貓國尚未做完的早中期支線與 Whisk Cove 的 Purrserk 石碑。",
+        "Pawt Cave 若未清，先顯示多入口提醒：有一處入口通往怪物箱，水行後由海面找其他入口；不要把同洞各入口建立成多個清洞框。[S04、S06、S19]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-purrserk",
+        "cq2-dg-pawt-cave",
+        "cq2-dg-purrn-cave",
+        "cq2-dg-whisk-cove"
+      ],
+      "sources": [
+        "S04",
+        "S06",
+        "S19"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-water-walking",
+      "code": "C02",
+      "phaseId": "C",
+      "chapterId": "C",
+      "label": "Book → Artefact → Gift",
+      "instructions": [
+        "到 Pawt Bay Lighthouse 找總督，依序接 `Book of Water Walking`、`Artefact of Water Walking`、`Gift of Water Walking`。",
+        "追書頁、到 Bay Cave 取關鍵物，再回交付；最後進儀式入口，處理召喚敵人與 First Governor 戰鬥。",
+        "取得後在安全海岸踏上水面確認；這三個也計入 67 支線，不能只勾「水行」就漏掉任務數。",
+        "檢查 Royal Fur：前三項 Royal Arts 已學習時核對實際跳盃。",
+        "**此時起才安排離島／金鑰匙回收。** 航行經驗不適用：本作這段是步行水面，不借用三代船隻系統。[S04、S18]",
+        "### 階段 D｜水行後的收集開放與主線後段"
+      ],
+      "relatedEntityIds": [
+        "cq2-sq-book-of-water-walking",
+        "cq2-sq-artefact-of-water-walking",
+        "cq2-sq-gift-of-water-walking",
+        "cq2-dg-bay-cave",
+        "cq2-art-water"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-ocean-spells",
+      "code": "D01",
+      "phaseId": "D",
+      "chapterId": "D",
+      "label": "先拿通過區域的法術",
+      "instructions": [
+        "以接下來主線／支線地區為順序補戶外法術：Twin Towns 北方島的 Astropaw、西北 Drakoth's Vault 周邊島的 Cattrap。",
+        "前往 Throne of Lupus 一帶時進 Tomb of the Follower 讀 Gravi-ruff；後續打 Mimics／高等敵人可用來拉住敵人，仍須留意免疫、位移與敵方施法。",
+        "Cactus Cave 的 Celestail 留到能安全清該區時再補，不為取得第 12 法術強迫此時打高等洞。",
+        "有水行也不代表所有洞門都已解鎖；先檢查個別任務／鑰匙。",
+        "檢查四／八法術門檻；未學到的每項可直接跳至法術清單。[S06]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-astropaw",
+        "cq2-sp-cattrap",
+        "cq2-sp-gravi-ruff",
+        "cq2-sp-celestail",
+        "cq2-dg-cactus-cave",
+        "cq2-dg-drakoth-s-vault",
+        "cq2-dg-tomb-of-the-follower"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-golden-key",
+      "code": "D02",
+      "phaseId": "D",
+      "chapterId": "D",
+      "label": "開發者島 → Hidden Cave → Golden Key",
+      "instructions": [
+        "前置：已有水行；能應付約 Lv99 對手。75–80 僅是早期攻略作者建議，本文件建議以實際戰鬥承受度決定。**打得吃力就先進 D03、E 階段，再回來；不把此卡當主線前置。**",
+        "1. 地圖往東南找到 Founders Island II，依序與四名開發者接四個支線；顯示 999 是玩笑，無須練至999。",
+        "2. 最後 `This Is It!` 前先休息存檔，擊敗四名 Lv99 開發者。拉距離法杖射擊、短暫冰凍控速，避免四人近戰包圍；伙伴倒地時先把敵人帶開再救。",
+        "3. 完成對話，確認拿到 **Hidden Key** 與 Gentle Suit。這把尚不能開金箱。",
+        "4. 回 Felingard 的 Hidden Cave：Catnip Farm 東側／King Lionardo 試煉西側山區。用 Hidden Key 開內門。",
+        "5. 擊敗三個 Golden Mimics：不要貼臉換血，Gravi-ruff 配遠程與閃避；保留補血魔力。打完拾取 **Golden Key**。",
+        "6. 開 Hidden Cave 前段金箱，確認 The Architect；回開發者島開金箱，確認 Gentle Monocle。",
+        "7. 三件裝備各自勾取得；鑰匙分開記；實際開成功一個金箱後才確認金鑰匙旗標。",
+        "補救：若島上已無任務，先看是否已有 Hidden Key，去 Hidden Cave 核對；不要為重接島上任務重開遊戲。若尚打不過 Mimics，保留進度晚點再來。[S07、S08]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sq-this-is-it",
+        "cq2-sp-gravi-ruff",
+        "cq2-dg-hidden-cave",
+        "cq2-eq-gentle-monocle",
+        "cq2-eq-gentle-suit",
+        "cq2-eq-the-architect",
+        "cq2-key-hidden",
+        "cq2-key-golden"
+      ],
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "requiredForRoute": false
+    },
+    {
+      "id": "cq2-r-first-kings",
+      "code": "D03",
+      "phaseId": "D",
+      "chapterId": "D",
+      "label": "First Kings 試煉 → Kings of Old",
+      "instructions": [
+        "按主線跨海前往 Trial of the First Kings，讀題選對應答案、完成戰鬥取得最後碎片。",
+        "回工坊推進事件，進入異空間後按指引穿越，不將暫時失去能力當存檔損毀。",
+        "到 King's Paw 區域，完成 Cave Valor、Cave Mercy、Cave Virtue 的主線要求，再進下一個主線地點。",
+        "三洞各自確認清洞；劇情石碑與長廊只作主線地點，不擅自都加成 73 地城紀錄。",
+        "本段題目各版本文字與精確答案順序未逐題核實，保留遊戲題目可讀；若希望頁面直接顯示所有答案，屬 G06 補查項，不能自填一串藍／橘按鈕假裝核實。[S04]"
+      ],
+      "relatedEntityIds": [
+        "cq2-dg-cave-mercy",
+        "cq2-dg-cave-valor",
+        "cq2-dg-cave-virtue",
+        "cq2-loc-trial-first-kings"
+      ],
+      "sources": [
+        "S04"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-lupus-tomb",
+      "code": "D04",
+      "phaseId": "D",
+      "chapterId": "D",
+      "label": "回兩國探查 → King Lupus I",
+      "instructions": [
+        "隨主線在兩座王城周邊探查，再回 Hotto Doggo 取得專屬主線鑰匙。",
+        "Lupus 墓區正門不通時，按目標走旁邊 Unknown／Path to Lupus Tomb 通路，從中段出口進內側。",
+        "到石像完成主線互動，核對能力恢復與 Full Royal。Full Royal 為後來能力，不是 Royal Fur 額外要求第四項。",
+        "檢查：水行可正常使用；金鑰匙卡若尚未完成，仍保留待辦，不因本段完成而自動勾掉。[S04、S18]",
+        "### 階段 E｜支線補齊、兩國收復與結局"
+      ],
+      "relatedEntityIds": [
+        "cq2-dg-path-to-lupus-tomb",
+        "cq2-art-full"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-regional-quests",
+      "code": "E01",
+      "phaseId": "E",
+      "chapterId": "E",
+      "label": "依聚落完成未完成支線",
+      "instructions": [
+        "用第 6 節完整具名表，依「目前所在區域 → 鄰近聚落 → 任務系列」處理；可與主線穿插，這裡是最後總檢查。",
+        "優先查 Kit Cat／Hotto Doggo 的信箱，South Pawt、Cat-Face Outlook、Doge Town、Throne of Lupus、The Banished、Twin Towns、Founders Island II。",
+        "任務條件不符就看主線進度；不要靠反覆殺野怪等待出現。部分 NPC／接續位置會移動，精確起點有衝突的條目看清單備註。",
+        "**Bat Cove 開門**：先完成 `The Doge Knight` 再回洞；清單顯示任務關聯。",
+        "**Pawful Cave 墓碑**：做 `Tale of a Cat and a Dog` 時，利用場景陷阱或 Royal Damage，普通武器無效不表示傷害太低；不能誤指 Cattrap 法術就是必要場景陷阱。",
+        "達37／67時核對 Furriend of the People II／III。若未到67，列出剩餘具名任務，不只顯示一個進度條。[S09、S20、S21]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sq-tale-of-a-cat-and-a-dog",
+        "cq2-sq-the-doge-knight",
+        "cq2-sp-cattrap",
+        "cq2-dg-bat-cove",
+        "cq2-dg-pawful-cave"
+      ],
+      "sources": [
+        "S09",
+        "S20",
+        "S21"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-reclaim",
+      "code": "E02",
+      "phaseId": "E",
+      "chapterId": "E",
+      "label": "Final Purreperations → Reclaim Felingard／Empire",
+      "instructions": [
+        "回工坊完成準備，升當前武器、防具與主要補血／傷害法術；休息後往 Catpital。",
+        "完成 Lioner 的兩階段戰鬥，再按主線去 Throne of Lupus，通過尖刺區後戰 Wolfen。",
+        "Wolfen 分身出現時辨識能實際造成傷害的本體，避免持續打無效目標。",
+        "出戰前提示：可以先做支線變強；尚有查漏不會因本段永久失去機會。",
+        "檢查：主線已顯示 The Eye of Eternity；記住晚期兩洞是在擊敗 Aelius 後解鎖，不是要求先清完所有支線。[S04、S22、S23]"
+      ],
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S22",
+        "S23"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-aelius",
+      "code": "E03",
+      "phaseId": "E",
+      "chapterId": "E",
+      "label": "The Eye of Eternity → Epilogue → Continue",
+      "instructions": [
+        "按海面主線標記挑戰 Aelius，避開手部與眼部攻擊；一輪結束取得 Kingsblade 後，依遊戲提示換上／使用它完成後續戰鬥。",
+        "回 Mewment Shores 完成 Epilogue 對話，核對 Paws Together 實際跳盃。",
+        "回主選單選 **Continue** 進同一存檔查漏。先不要進 NG+ 或 Mew Game；白金不需要重跑。",
+        "離開前檢查：兩國地圖可繼續探索；已獲得的新裝備要自己勾。若裝備表少 Kingsblade，先核對主線實際是否拿到，不能只因路線打勾就推定。",
+        "補救：即使已看結局，仍用 Continue 掃尾。不要把舊攻略的劇情警告寫成必須備份才能補救的永久錯過。[S02、S04]",
+        "### 階段 F｜分區掃尾與白金確認"
+      ],
+      "relatedEntityIds": [
+        "cq2-eq-the-kingsblade"
+      ],
+      "sources": [
+        "S02",
+        "S04"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-felingard-sweep",
+      "code": "F01",
+      "phaseId": "F",
+      "chapterId": "F",
+      "label": "貓國與近海",
+      "instructions": [
+        "完成貓國剩餘支線後，以南部 → 王城／湖區 → 西岸／Pawt → 北部森林的地理順序掃未完成洞。這是合理路線建議，非經過座標最短路演算法驗證。",
+        "看地圖問號與菱形對照具名表。Pawt Cave 找其他入口；秘密路徑不明就展開該洞已有提示／來源，不用全圖盲撞。",
+        "有金鑰匙後沿途開固定裝備金箱；金箱只有金錢也照實記，不強迫把它當新裝備。",
+        "補 Furry Shield／Purrserk 等遺漏法術，順便檢查水行後島上 Astropaw。",
+        "到 Cave of the Lion 前提示其解鎖條件與三件固定裝備；不因地城總數已73就略過缺裝備的此洞。[S19、S22、S25]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-furry-shield",
+        "cq2-sp-purrserk",
+        "cq2-sp-astropaw",
+        "cq2-dg-cave-of-the-lion",
+        "cq2-dg-pawt-cave"
+      ],
+      "sources": [
+        "S19",
+        "S22",
+        "S25"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-lupus-sweep",
+      "code": "F02",
+      "phaseId": "F",
+      "chapterId": "F",
+      "label": "犬國、藏寶與島群",
+      "instructions": [
+        "從城牆與 Pound Town 往 Doge Town、王城，再到 Pawasis／沙漠查漏。先把區內支線結清，再處理地城深處。",
+        "**Ultimutt Stash → Hidden Stash**：到 Ultimutt 時先看入口第一支火炬，向其西南找秘密路，照紙條搜出 Hidden Stash 的鑰匙。清洞狀態不能代表已拿到這把鑰匙。",
+        "取鑰匙後到 Dog Barracks／Throne of Lupus 東南附近的 Hidden Stash 開封門；不與 Hidden Cave 混淆。",
+        "**Tombstone Cave**：墓碑需陷阱／Royal Damage；不標有衝突的洞口等級。精確秘密箱通道尚未完整核實，見 G05，不偽造箭頭導航。",
+        "**Troll Cave**：Doge Town 東側離島／Wall of Lupus 東北；三個金箱需開完才清洞，中間即使沒有敵人也不是已完成。",
+        "**Drakoth 路線**：收 Mewment Shores 南島與 Throne of Lupus 西島群兩把專屬鑰匙，再進 Drakoth's Vault 開內門、拿完三件裝備；Golden Key 不能代替它們。可與西島群 Cattrap 一起處理。[S10–S14、S24]"
+      ],
+      "relatedEntityIds": [
+        "cq2-sp-cattrap",
+        "cq2-sp-celestail",
+        "cq2-dg-drakoth-s-vault",
+        "cq2-dg-hidden-cave",
+        "cq2-dg-hidden-stash",
+        "cq2-dg-tombstone-cave",
+        "cq2-dg-troll-cave",
+        "cq2-dg-ultimutt-stash",
+        "cq2-eq-drakoth-armor",
+        "cq2-eq-drakoth-helmet",
+        "cq2-eq-the-dragonmaker",
+        "cq2-key-golden",
+        "cq2-key-hidden-stash",
+        "cq2-key-drakoth-south",
+        "cq2-key-drakoth-west"
+      ],
+      "sources": [
+        "S10",
+        "S14",
+        "S24"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-hard-caves",
+      "code": "F03",
+      "phaseId": "F",
+      "chapterId": "F",
+      "label": "兩個150洞與 Lonely Cave",
+      "instructions": [
+        "Aelius 勝利後開放 Cave of the Lion 與 Tomb of the Wolf。為方便本路線排在 Epilogue＋Continue 後，不代表開放硬條件是看完 Epilogue。",
+        "Cave of the Lion：挑戰特殊敵人，確認 Purrsecutor Armor／Helm／Purrsecution 三件。",
+        "Tomb of the Wolf：確認 Labrathor Vest／Helm／Pawlonijr 三件。",
+        "Lonely Cave（Whiskerest 東北）：危險的高等刺蝟；先存檔、補血、升常用裝備，遠距＋控場嘗試。完成後確認 Jester Bee Cap／Suit／Zero Faith。",
+        "各洞內每個箱子都要處理；精確哪一個是怪物箱有來源衝突，不強寫方向。三件各自核對背包。",
+        "無需先練150或200。失敗就回去清支線、開固定裝備箱、升核心裝備；不用進 NG+ 讓敵人更強。[S22、S23、S26]"
+      ],
+      "relatedEntityIds": [
+        "cq2-dg-cave-of-the-lion",
+        "cq2-dg-lonely-cave",
+        "cq2-dg-tomb-of-the-wolf",
+        "cq2-eq-jester-bee-cap",
+        "cq2-eq-jester-bee-suit",
+        "cq2-eq-labrathor-helm",
+        "cq2-eq-labrathor-vest",
+        "cq2-eq-pawlonijr",
+        "cq2-eq-purrsecution",
+        "cq2-eq-purrsecutor-armor",
+        "cq2-eq-purrsecutor-helm",
+        "cq2-eq-zero-faith"
+      ],
+      "sources": [
+        "S22",
+        "S23",
+        "S26"
+      ],
+      "requiredForRoute": true
+    },
+    {
+      "id": "cq2-r-final-audit",
+      "code": "F04",
+      "phaseId": "F",
+      "chapterId": "F",
+      "label": "最後查漏，不再漫無目的刷",
+      "instructions": [
+        "依下列順序檢查：",
+        "主線含 Epilogue 已完成，Paws Together 已跳。",
+        "遊戲支線計數67；清單不足時先查支線表與信箱、開發者島、燈塔三任務。",
+        "遊戲地城計數至少73；清單差異可並存，查沒有符號／菱形與隱藏入口。",
+        "12個法術已學；不足直接看法術名，不靠不斷跑洞碰運氣。",
+        "不同裝備至少101；先查固定金箱、Drakoth／兩個150洞／Lonely Cave／任務獎勵，再查隨機池。",
+        "等級至少99；若不足，先做尚未完成支線和地城，最後才考慮額外刷等。",
+        "所有19個非白金獎盃都實際取得；最後確認 Pawlatinum。",
+        "例：73/73洞、67/67任務但100/101裝備時，不應叫玩家無差別重跑所有洞；先檢查是否漏了晚期固定裝備洞，或金箱、任務專屬品。已超過獎盃門檻但未跳時，先核對同一存檔、不同件數與PS獎盃列表，保留畫面證據；不先建議刪存檔／重開。"
+      ],
+      "relatedEntityIds": [
+        "cq2-dg-lonely-cave"
+      ],
+      "sources": [],
+      "requiredForRoute": true
+    }
+  ],
+  "entities": [
+    {
+      "id": "cq2-sq-spell-of-the-cats",
+      "kind": "sideQuest",
+      "name": "Spell of the Cats",
+      "locationText": "A起｜South Pawt",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜South Pawt",
+      "level": "10",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-curse-of-the-dogs",
+      "kind": "sideQuest",
+      "name": "Curse of the Dogs",
+      "locationText": "A起｜South Pawt",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-return-of-the-cats",
+        "cq2-dg-catpital-cave"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09",
+        "S29"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜South Pawt",
+      "level": "12",
+      "tip": "South Pawt 北的卷軸引導進 Catpital Cave，探查洞內居民，出洞回報；後續為 Return of the Cats。"
+    },
+    {
+      "id": "cq2-sq-return-of-the-cats",
+      "kind": "sideQuest",
+      "name": "Return of the Cats",
+      "locationText": "A起｜South Pawt",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-curse-of-the-dogs",
+        "cq2-eq-dog-soldier-armor"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09",
+        "S28"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜South Pawt",
+      "level": "15",
+      "tip": "前項完成後找 Not the Head Towncat，沿路護送、擊退兩次埋伏後交付。"
+    },
+    {
+      "id": "cq2-sq-the-confurrsation-of-secrets",
+      "kind": "sideQuest",
+      "name": "The Confurrsation of Secrets",
+      "locationText": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "level": "10",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-ancient-realm",
+      "kind": "sideQuest",
+      "name": "The Ancient Realm",
+      "locationText": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "level": "13",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-order-of-the-emeowrald",
+      "kind": "sideQuest",
+      "name": "The Order of the Emeowrald",
+      "locationText": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-white-mage-robes"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09",
+        "S30"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "level": "19",
+      "tip": "古代法師指向 Paw’s Cave，處理洞末敵人、拿任務箱回報。"
+    },
+    {
+      "id": "cq2-sq-the-purrotected-maze",
+      "kind": "sideQuest",
+      "name": "The Purrotected Maze",
+      "locationText": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "level": "22",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-revenge-of-furindelmeow",
+      "kind": "sideQuest",
+      "name": "Revenge of Furindelmeow",
+      "locationText": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜古代法師，由Arcane Headpawters至Cat-Face Outlook",
+      "level": "25",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-meat",
+      "kind": "sideQuest",
+      "name": "Meat",
+      "locationText": "A起｜Fishercat Village",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Fishercat Village",
+      "level": "12",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-meat-meat",
+      "kind": "sideQuest",
+      "name": "Meat Meat",
+      "locationText": "A起｜Fishercat Village",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Fishercat Village",
+      "level": "15",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-meat-meat-meeeaaat",
+      "kind": "sideQuest",
+      "name": "Meat Meat Meeeaaat",
+      "locationText": "A起｜Fishercat Village",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Fishercat Village",
+      "level": "18",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-rock-paper-scissors",
+      "kind": "sideQuest",
+      "name": "Rock, Paper, Scissors!",
+      "locationText": "A起｜Catnip Farm",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Catnip Farm",
+      "level": "15",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-case-of-the-missing-blueprint",
+      "kind": "sideQuest",
+      "name": "Case of the Missing Blueprint",
+      "locationText": "A起｜Kit Cat信箱／Catpital周邊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Kit Cat信箱／Catpital周邊",
+      "level": "15",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-case-of-the-coded-note",
+      "kind": "sideQuest",
+      "name": "Case of the Coded Note",
+      "locationText": "A起｜Kit Cat信箱／Catpital周邊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Kit Cat信箱／Catpital周邊",
+      "level": "18",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-case-of-the-secret-password",
+      "kind": "sideQuest",
+      "name": "Case of the Secret Password",
+      "locationText": "A起｜Kit Cat信箱／Catpital周邊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Kit Cat信箱／Catpital周邊",
+      "level": "20",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-case-of-the-hidden-grudge",
+      "kind": "sideQuest",
+      "name": "Case of the Hidden Grudge",
+      "locationText": "A起｜Kit Cat信箱／Catpital周邊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Kit Cat信箱／Catpital周邊",
+      "level": "22",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-case-of-the-missing-piece",
+      "kind": "sideQuest",
+      "name": "Case of the Missing Piece",
+      "locationText": "A起｜Kit Cat信箱／Catpital周邊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A起｜Kit Cat信箱／Catpital周邊",
+      "level": "25",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-fur-the-greater-good",
+      "kind": "sideQuest",
+      "name": "Fur the Greater Good",
+      "locationText": "A至C｜Whiskerest",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A至C｜Whiskerest",
+      "level": "20",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-steal-from-the-rich",
+      "kind": "sideQuest",
+      "name": "Steal from the Rich",
+      "locationText": "A至C｜Whiskerest",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A至C｜Whiskerest",
+      "level": "25",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-give-to-the-poor",
+      "kind": "sideQuest",
+      "name": "Give to the Poor",
+      "locationText": "A至C｜Whiskerest",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "A至C｜Whiskerest",
+      "level": "30",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-lost-treasure",
+      "kind": "sideQuest",
+      "name": "The Lost Treasure",
+      "locationText": "B起｜Pound Town與西南側接續NPC",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Pound Town與西南側接續NPC",
+      "level": "25",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-tale-of-a-cat-and-a-dog",
+      "kind": "sideQuest",
+      "name": "Tale of a Cat and a Dog",
+      "locationText": "B起｜Pound Town與西南側接續NPC",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-pawful-cave"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09",
+        "S21"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Pound Town與西南側接續NPC",
+      "level": "28",
+      "tip": "到 Pawful Cave 完成骷髏的身體相關事件，遇墓碑用環境陷阱／Royal Damage，回洞外對話。"
+    },
+    {
+      "id": "cq2-sq-pundora-s-box",
+      "kind": "sideQuest",
+      "name": "Pundora’s Box",
+      "locationText": "B起｜Pound Town與西南側接續NPC",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Pound Town與西南側接續NPC",
+      "level": "35",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-prelude",
+      "kind": "sideQuest",
+      "name": "Prelude",
+      "locationText": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "level": "30",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-second-movement",
+      "kind": "sideQuest",
+      "name": "The Second Movement",
+      "locationText": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "level": "32",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-coda",
+      "kind": "sideQuest",
+      "name": "Coda",
+      "locationText": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B起｜Wall of Lupus，Hotto Doggo工坊南方",
+      "level": "35",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-spirit-in-the-lake",
+      "kind": "sideQuest",
+      "name": "The Spirit in the Lake",
+      "locationText": "C｜Laketown",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Laketown",
+      "level": "30",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-of-metals-and-magic",
+      "kind": "sideQuest",
+      "name": "Of Metals and Magic",
+      "locationText": "C｜Laketown",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Laketown",
+      "level": "32",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-of-swords-and-the-worthy",
+      "kind": "sideQuest",
+      "name": "Of Swords and the Worthy",
+      "locationText": "C｜Laketown",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Laketown",
+      "level": "35",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-fur-s-a-crowd",
+      "kind": "sideQuest",
+      "name": "Fur’s a Crowd",
+      "locationText": "C｜The Catpital",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜The Catpital",
+      "level": "35",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-fur-the-son",
+      "kind": "sideQuest",
+      "name": "Fur the Son",
+      "locationText": "B至C｜Doge Town",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B至C｜Doge Town",
+      "level": "37",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-fur-the-mother",
+      "kind": "sideQuest",
+      "name": "Fur the Mother",
+      "locationText": "B至C｜Doge Town",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B至C｜Doge Town",
+      "level": "40",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-fur-the-furmily",
+      "kind": "sideQuest",
+      "name": "Fur the Furmily",
+      "locationText": "B至C｜Doge Town",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "B至C｜Doge Town",
+      "level": "45",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-book-of-water-walking",
+      "kind": "sideQuest",
+      "name": "Book of Water Walking",
+      "locationText": "C｜Pawt City／Pawt Bay燈塔",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Pawt City／Pawt Bay燈塔",
+      "level": "50",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-artefact-of-water-walking",
+      "kind": "sideQuest",
+      "name": "Artefact of Water Walking",
+      "locationText": "C｜Pawt City／Pawt Bay燈塔",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Pawt City／Pawt Bay燈塔",
+      "level": "52",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-gift-of-water-walking",
+      "kind": "sideQuest",
+      "name": "Gift of Water Walking",
+      "locationText": "C｜Pawt City／Pawt Bay燈塔",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C｜Pawt City／Pawt Bay燈塔",
+      "level": "55",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-rivals-of-a-kind",
+      "kind": "sideQuest",
+      "name": "Rivals of a Kind",
+      "locationText": "C至D｜Felingard Statue附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "C至D｜Felingard Statue附近",
+      "level": "50",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-bad-propawganda",
+      "kind": "sideQuest",
+      "name": "Bad Propawganda",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "55",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-bad-doggos",
+      "kind": "sideQuest",
+      "name": "Bad Doggos",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "60",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-true-weapon",
+      "kind": "sideQuest",
+      "name": "The True Weapon",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "65",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-pawsitively-secret-contact",
+      "kind": "sideQuest",
+      "name": "The Pawsitively Secret Contact",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cave-of-the-lion",
+        "cq2-dg-pawasis-cave",
+        "cq2-eq-general-s-mace"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09",
+        "S31"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "70",
+      "tip": "依指引入 Pawasis Cave，翻滾穿過魔法圈、取箱，送往 Cave of the Lion 附近聯絡人；General’s Mace 為核對獎勵。"
+    },
+    {
+      "id": "cq2-sq-the-doge-knight",
+      "kind": "sideQuest",
+      "name": "The Doge Knight",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bat-cove"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "70",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-skull-of-a-warrior",
+      "kind": "sideQuest",
+      "name": "Skull of a Warrior",
+      "locationText": "D至E｜Throne of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Throne of Lupus",
+      "level": "80",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-twin-delivery",
+      "kind": "sideQuest",
+      "name": "The Twin Delivery",
+      "locationText": "D至E｜Twin Towns",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Twin Towns",
+      "level": "60",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-twin-delivery-again",
+      "kind": "sideQuest",
+      "name": "The Twin Delivery…again",
+      "locationText": "D至E｜Twin Towns",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Twin Towns",
+      "level": "63",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-twin-caves",
+      "kind": "sideQuest",
+      "name": "The Twin Caves",
+      "locationText": "D至E｜Twin Towns",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Twin Towns",
+      "level": "65",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-twin-caves-again",
+      "kind": "sideQuest",
+      "name": "The Twin Caves…again",
+      "locationText": "D至E｜Twin Towns",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Twin Towns",
+      "level": "65",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-finding-purr-rivate-mewan",
+      "kind": "sideQuest",
+      "name": "Finding Purr-rivate Mewan",
+      "locationText": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bat-cove"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "level": "65",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-tracking-purr-rivate-mewan",
+      "kind": "sideQuest",
+      "name": "Tracking Purr-rivate Mewan",
+      "locationText": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bat-cove"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "level": "67",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-faking-purr-rivate-mewan",
+      "kind": "sideQuest",
+      "name": "Faking Purr-rivate Mewan",
+      "locationText": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bat-cove"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "level": "70",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-rescuing-purr-rivate-mewan",
+      "kind": "sideQuest",
+      "name": "Rescuing Purr-rivate Mewan",
+      "locationText": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bat-cove"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Purrmaha Beach → 犬國王城／Bat Cove → 回海灘",
+      "level": "72",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-pawlatinum-chef",
+      "kind": "sideQuest",
+      "name": "The Pawlatinum Chef",
+      "locationText": "D至E｜Hotto Doggo信箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Hotto Doggo信箱",
+      "level": "65",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-power-of-the-horde",
+      "kind": "sideQuest",
+      "name": "The Power of the Horde",
+      "locationText": "D至E｜Hotto Doggo信箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Hotto Doggo信箱",
+      "level": "70",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-over-the-limit",
+      "kind": "sideQuest",
+      "name": "Over the Limit",
+      "locationText": "D至E｜Hotto Doggo信箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Hotto Doggo信箱",
+      "level": "80",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-good-intentions",
+      "kind": "sideQuest",
+      "name": "Good Intentions",
+      "locationText": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bullet-heaven"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "level": "70",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-bad-consequences",
+      "kind": "sideQuest",
+      "name": "Bad Consequences",
+      "locationText": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bullet-heaven"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "level": "73",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-wooftopia",
+      "kind": "sideQuest",
+      "name": "Wooftopia",
+      "locationText": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-bullet-heaven"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜The Pawasis／Bullet Heaven外接續",
+      "level": "75",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-young-pup",
+      "kind": "sideQuest",
+      "name": "The Young Pup",
+      "locationText": "E｜The Banished／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E｜The Banished／Barkara Desert",
+      "level": "80",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-talented-soldier",
+      "kind": "sideQuest",
+      "name": "The Talented Soldier",
+      "locationText": "E｜The Banished／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E｜The Banished／Barkara Desert",
+      "level": "85",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-magic-user",
+      "kind": "sideQuest",
+      "name": "The Magic User",
+      "locationText": "E｜The Banished／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E｜The Banished／Barkara Desert",
+      "level": "90",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-powerful-one",
+      "kind": "sideQuest",
+      "name": "The Powerful One",
+      "locationText": "E｜The Banished／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E｜The Banished／Barkara Desert",
+      "level": "95",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-dragonblood",
+      "kind": "sideQuest",
+      "name": "The Dragonblood",
+      "locationText": "E｜The Banished／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E｜The Banished／Barkara Desert",
+      "level": "99",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-the-epic-staredown",
+      "kind": "sideQuest",
+      "name": "The Epic Staredown",
+      "locationText": "E至F｜North Watch",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "E至F｜North Watch",
+      "level": "100",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-accept-this-now",
+      "kind": "sideQuest",
+      "name": "Accept This Now!",
+      "locationText": "D至E｜Founders Island II",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Founders Island II",
+      "level": "999（玩笑標示）",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-deleting-data-now",
+      "kind": "sideQuest",
+      "name": "Deleting Data Now!",
+      "locationText": "D至E｜Founders Island II",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Founders Island II",
+      "level": "999（玩笑標示）",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-oh-you-re-gonna-get-it-now",
+      "kind": "sideQuest",
+      "name": "Oh, You’re Gonna Get It Now!",
+      "locationText": "D至E｜Founders Island II",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Founders Island II",
+      "level": "999（玩笑標示）",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sq-this-is-it",
+      "kind": "sideQuest",
+      "name": "This Is It!",
+      "locationText": "D至E｜Founders Island II",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-gentle-suit",
+        "cq2-key-hidden"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S09"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "regionId": "D至E｜Founders Island II",
+      "level": "999（玩笑標示）",
+      "tip": "具名、區域與參考時機已收錄；個別解謎步驟尚未收錄。完成交付後再核對 NPC／信箱的後續任務。"
+    },
+    {
+      "id": "cq2-sp-flamepurr",
+      "kind": "spell",
+      "name": "Flamepurr",
+      "locationText": "A01，Brave Cave教學",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-brave-cave"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "近身範圍傷害"
+    },
+    {
+      "id": "cq2-sp-freezepaw",
+      "kind": "spell",
+      "name": "Freezepaw",
+      "locationText": "A01，Brave Cave教學",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-brave-cave"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "控速，幫助拉距離"
+    },
+    {
+      "id": "cq2-sp-healpaw",
+      "kind": "spell",
+      "name": "Healpaw",
+      "locationText": "A03，King Sigil島上戶外石碑",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-king-sigil"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "基礎補血，先裝上"
+    },
+    {
+      "id": "cq2-sp-furry-shield",
+      "kind": "spell",
+      "name": "Furry Shield",
+      "locationText": "A02起，Cave Grotto",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cave-grotto"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "防禦輔助"
+    },
+    {
+      "id": "cq2-sp-lightnyan",
+      "kind": "spell",
+      "name": "Lightnyan",
+      "locationText": "B01，Pound Town北／Wall of Lupus西",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "另一屬性傷害選擇"
+    },
+    {
+      "id": "cq2-sp-forcewoofer",
+      "kind": "spell",
+      "name": "Forcewoofer",
+      "locationText": "B02，Far-Fetched Cave",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-far-fetched-cave"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "戰鬥輔助／傷害，依遊戲說明搭配"
+    },
+    {
+      "id": "cq2-sp-manapaw",
+      "kind": "spell",
+      "name": "Manapaw",
+      "locationText": "B02起，The Banished東／Barkara入口北附近戶外",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "魔力支援"
+    },
+    {
+      "id": "cq2-sp-purrserk",
+      "kind": "spell",
+      "name": "Purrserk",
+      "locationText": "A後至C，Whisk Cove",
+      "aliases": [
+        "Purrzerk"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-whisk-cove"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "攻擊輔助；來源也拼Purrzerk"
+    },
+    {
+      "id": "cq2-sp-astropaw",
+      "kind": "spell",
+      "name": "Astropaw",
+      "locationText": "D01水行後，Twin Towns北方離島／The Long Road西北",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "離島收集"
+    },
+    {
+      "id": "cq2-sp-cattrap",
+      "kind": "spell",
+      "name": "Cattrap",
+      "locationText": "D01水行後，Drakoth's Vault西側島上",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-drakoth-s-vault"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "場地法術；非墓碑必要的環境陷阱"
+    },
+    {
+      "id": "cq2-sp-gravi-ruff",
+      "kind": "spell",
+      "name": "Gravi-ruff",
+      "locationText": "D01，Tomb of the Follower",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-tomb-of-the-follower"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "集中敵人，金鑰匙戰可用"
+    },
+    {
+      "id": "cq2-sp-celestail",
+      "kind": "spell",
+      "name": "Celestail",
+      "locationText": "F02，Cactus Cave",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cactus-cave"
+      ],
+      "sources": [
+        "S06"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "tip": "最後查漏，先確認戰力"
+    },
+    {
+      "id": "cq2-dg-barking-cave",
+      "kind": "dungeon",
+      "name": "Barking Cave",
+      "locationText": "Wall of Lupus西北（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-bat-cove",
+      "kind": "dungeon",
+      "name": "Bat Cove",
+      "locationText": "王城西側；The Doge Knight任務鑰匙",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-the-doge-knight",
+        "cq2-sq-finding-purr-rivate-mewan",
+        "cq2-sq-tracking-purr-rivate-mewan",
+        "cq2-sq-faking-purr-rivate-mewan",
+        "cq2-sq-rescuing-purr-rivate-mewan"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "E",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-bay-cave",
+      "kind": "dungeon",
+      "name": "Bay Cave",
+      "locationText": "水行任務Artefact相關",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-blue-cave",
+      "kind": "dungeon",
+      "name": "Blue Cave",
+      "locationText": "Puss Fields（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-brave-cave",
+      "kind": "dungeon",
+      "name": "Brave Cave",
+      "locationText": "教學兩法術；開場海岸",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-flamepurr",
+        "cq2-sp-freezepaw"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-bullet-heaven",
+      "kind": "dungeon",
+      "name": "Bullet Heaven",
+      "locationText": "Throne of Lupus東側（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-good-intentions",
+        "cq2-sq-bad-consequences",
+        "cq2-sq-wooftopia"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cactus-cave",
+      "kind": "dungeon",
+      "name": "Cactus Cave",
+      "locationText": "Pawasis北；Celestail與金箱Zero Willpower",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-celestail",
+        "cq2-eq-zero-willpower",
+        "cq2-gc-cactus"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-catpital-cave",
+      "kind": "dungeon",
+      "name": "Catpital Cave",
+      "locationText": "Catpital湖區（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-curse-of-the-dogs"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-grotto",
+      "kind": "dungeon",
+      "name": "Cave Grotto",
+      "locationText": "Catpital湖區；Furry Shield",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-furry-shield"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-mercy",
+      "kind": "dungeon",
+      "name": "Cave Mercy",
+      "locationText": "King's Paw離島（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-of-the-lion",
+      "kind": "dungeon",
+      "name": "Cave of the Lion",
+      "locationText": "Puss Fields；擊敗Aelius後解鎖，三件Purrsecutor裝備",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-the-pawsitively-secret-contact",
+        "cq2-eq-purrsecution",
+        "cq2-eq-purrsecutor-armor",
+        "cq2-eq-purrsecutor-helm"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-peasy",
+      "kind": "dungeon",
+      "name": "Cave Peasy",
+      "locationText": "Whiskerest附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-valor",
+      "kind": "dungeon",
+      "name": "Cave Valor",
+      "locationText": "King's Paw離島（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cave-virtue",
+      "kind": "dungeon",
+      "name": "Cave Virtue",
+      "locationText": "King's Paw離島（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-cursed-ruins",
+      "kind": "dungeon",
+      "name": "Cursed Ruins",
+      "locationText": "The Deep Forest（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-decem-ruins",
+      "kind": "dungeon",
+      "name": "Decem Ruins",
+      "locationText": "Cat-Face Outlook一帶（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-devigni-ruins",
+      "kind": "dungeon",
+      "name": "Devigni Ruins",
+      "locationText": "Doge Town西北（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-drakoth-s-vault",
+      "kind": "dungeon",
+      "name": "Drakoth's Vault",
+      "locationText": "王城西島；兩把Drakoth鑰匙，固定三裝備",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-cattrap",
+        "cq2-eq-drakoth-armor",
+        "cq2-eq-drakoth-helmet",
+        "cq2-eq-the-dragonmaker"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-duodecim-ruins",
+      "kind": "dungeon",
+      "name": "Duodecim Ruins",
+      "locationText": "Doge Town西南（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-duo-s-ruins",
+      "kind": "dungeon",
+      "name": "Duo's Ruins",
+      "locationText": "Whiskerest一帶；與King Duos Ruins名稱對應待核實",
+      "aliases": [
+        "King Duos Ruins（對應待核實）"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-empty-hole",
+      "kind": "dungeon",
+      "name": "Empty Hole",
+      "locationText": "Wall of Lupus北側（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-far-fetched-cave",
+      "kind": "dungeon",
+      "name": "Far-fetched Cave",
+      "locationText": "Doge Town北；北方通路與Forcewoofer",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-forcewoofer"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-furrest-cave",
+      "kind": "dungeon",
+      "name": "Furrest Cave",
+      "locationText": "Cat-Face Outlook一帶（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-furrible-purrison",
+      "kind": "dungeon",
+      "name": "Furrible Purrison",
+      "locationText": "湖區；與Furrible Cave名稱對應待核實",
+      "aliases": [
+        "Furrible Cave（對應待核實）"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-fursaken-cave",
+      "kind": "dungeon",
+      "name": "Fursaken Cave",
+      "locationText": "The Deep Forest（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-hidden-cave",
+      "kind": "dungeon",
+      "name": "Hidden Cave",
+      "locationText": "Catnip Farm東；Hidden Key、3 Mimics、Golden Key、The Architect",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-the-architect",
+        "cq2-gc-felingard-hidden-cave",
+        "cq2-key-hidden",
+        "cq2-key-golden"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "E"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-hidden-stash",
+      "kind": "dungeon",
+      "name": "Hidden Stash",
+      "locationText": "王城東南／Dog Barracks附近；需Ultimutt鑰匙",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-ultimutt-stash"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-howling-maze",
+      "kind": "dungeon",
+      "name": "Howling Maze",
+      "locationText": "The Pawasis附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-king-lionardo-s-trial",
+      "kind": "dungeon",
+      "name": "King Lionardo's Trial",
+      "locationText": "貓國東北／北岸試煉；主線鑰匙；Ruins為來源別名",
+      "aliases": [
+        "King Lionardo’s Ruins"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-king-sigil",
+      "kind": "dungeon",
+      "name": "King Sigil",
+      "locationText": "Arcane Headpawters附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-healpaw"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-king-woofhauser-s-trial",
+      "kind": "dungeon",
+      "name": "King Woofhauser's Trial",
+      "locationText": "北方試煉區；走Far-Fetched通路；Ruins為別名",
+      "aliases": [
+        "King Woofhauser’s Ruins"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-lonely-cave",
+      "kind": "dungeon",
+      "name": "Lonely Cave",
+      "locationText": "Whiskerest東北；高等刺蝟，三固定裝備",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-jester-bee-cap",
+        "cq2-eq-jester-bee-suit",
+        "cq2-eq-zero-faith"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-mountain-cave",
+      "kind": "dungeon",
+      "name": "Mountain Cave",
+      "locationText": "Blue Mountains（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-novem-ruins",
+      "kind": "dungeon",
+      "name": "Novem Ruins",
+      "locationText": "貓國北岸（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-octo-ruins",
+      "kind": "dungeon",
+      "name": "Octo Ruins",
+      "locationText": "Catpital周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-path-to-lupus-tomb",
+      "kind": "dungeon",
+      "name": "Path to Lupus Tomb",
+      "locationText": "沙漠墓區；主線側路通道，Unknown為候選別名",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-paw-s-cave",
+      "kind": "dungeon",
+      "name": "Paw's Cave",
+      "locationText": "Catpital周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-pawasis-cave",
+      "kind": "dungeon",
+      "name": "Pawasis Cave",
+      "locationText": "The Pawasis附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-the-pawsitively-secret-contact"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-pawful-cave",
+      "kind": "dungeon",
+      "name": "Pawful Cave",
+      "locationText": "Pound Town附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-tale-of-a-cat-and-a-dog"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-pawreign-cave",
+      "kind": "dungeon",
+      "name": "Pawreign Cave",
+      "locationText": "Twin Towns附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-pawt-cave",
+      "kind": "dungeon",
+      "name": "Pawt Cave",
+      "locationText": "Pawt City附近；多入口，水行後找通往怪物箱入口",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-jester-aee-mace",
+        "cq2-gc-pawt-north"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-pugger-maze",
+      "kind": "dungeon",
+      "name": "Pugger Maze",
+      "locationText": "西方島群；Puggy／Pugger對應待核實",
+      "aliases": [
+        "Puggy Maze（對應待核實）"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-purrcluded-cave",
+      "kind": "dungeon",
+      "name": "Purrcluded Cave",
+      "locationText": "Cat-Face Outlook一帶（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-purrn-cave",
+      "kind": "dungeon",
+      "name": "Purrn Cave",
+      "locationText": "Purrning Forest（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-puss-cave",
+      "kind": "dungeon",
+      "name": "Puss Cave",
+      "locationText": "Twin Towns附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-quadecim-ruins",
+      "kind": "dungeon",
+      "name": "Quadecim Ruins",
+      "locationText": "Wall of Lupus附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-quattor-ruins",
+      "kind": "dungeon",
+      "name": "Quattor Ruins",
+      "locationText": "Felingard湖區（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-quindecim-ruins",
+      "kind": "dungeon",
+      "name": "Quindecim Ruins",
+      "locationText": "The Pawasis北側（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-quinque-ruins",
+      "kind": "dungeon",
+      "name": "Quinque Ruins",
+      "locationText": "Pawt City西方海域（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-dragonfire",
+        "cq2-gc-quinque-west"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-river-hole",
+      "kind": "dungeon",
+      "name": "River Hole",
+      "locationText": "Catpital周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-riverside-cove",
+      "kind": "dungeon",
+      "name": "Riverside Cove",
+      "locationText": "Catpital周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-roverdose-maze",
+      "kind": "dungeon",
+      "name": "Roverdose Maze",
+      "locationText": "Throne of Lupus附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-ruff-cove",
+      "kind": "dungeon",
+      "name": "Ruff Cove",
+      "locationText": "Pound Town附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-sandy-pit",
+      "kind": "dungeon",
+      "name": "Sandy Pit",
+      "locationText": "Doge Town周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-saxim-ruins",
+      "kind": "dungeon",
+      "name": "Saxim Ruins",
+      "locationText": "Felingard湖區（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-jester-aee-suit",
+        "cq2-gc-saxim"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-seaside-cove",
+      "kind": "dungeon",
+      "name": "Seaside Cove",
+      "locationText": "Catpital湖區（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-sedecim-ruins",
+      "kind": "dungeon",
+      "name": "Sedecim Ruins",
+      "locationText": "Throne of Lupus南方島（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-septem-ruins",
+      "kind": "dungeon",
+      "name": "Septem Ruins",
+      "locationText": "Catpital周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-septencin-ruins",
+      "kind": "dungeon",
+      "name": "Septencin Ruins",
+      "locationText": "Doge Town北側（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-terrier-fying-tomb",
+      "kind": "dungeon",
+      "name": "Terrier-fying Tomb",
+      "locationText": "The Pawasis附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-tomb-of-the-follower",
+      "kind": "dungeon",
+      "name": "Tomb of the Follower",
+      "locationText": "Throne of Lupus附近；Gravi-ruff",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-gravi-ruff"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-tomb-of-the-wolf",
+      "kind": "dungeon",
+      "name": "Tomb of the Wolf",
+      "locationText": "王城西側；擊敗Aelius後解鎖，三件Labrathor裝備",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-labrathor-helm",
+        "cq2-eq-labrathor-vest",
+        "cq2-eq-pawlonijr"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-tombstone-cave",
+      "kind": "dungeon",
+      "name": "Tombstone Cave",
+      "locationText": "沙漠南；墓碑用環境陷阱／Royal Damage；等級資料衝突",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-tres-ruins",
+      "kind": "dungeon",
+      "name": "Tres Ruins",
+      "locationText": "Felingard湖區（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-triginta-ruins",
+      "kind": "dungeon",
+      "name": "Triginta Ruins",
+      "locationText": "The Pawasis西側（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-troll-cave",
+      "kind": "dungeon",
+      "name": "Troll Cave",
+      "locationText": "Doge Town東島；三金箱開完才清洞",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-ultimutt-stash",
+      "kind": "dungeon",
+      "name": "Ultimutt Stash",
+      "locationText": "Dog Barracks周邊／王城西南；找Hidden Stash鑰匙",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-hidden-stash",
+        "cq2-key-hidden-stash"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-undecim-ruins",
+      "kind": "dungeon",
+      "name": "Undecim Ruins",
+      "locationText": "Pound Town附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-undevinti-ruins",
+      "kind": "dungeon",
+      "name": "Undevinti Ruins",
+      "locationText": "Throne of Lupus附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-unus-ruins",
+      "kind": "dungeon",
+      "name": "Unus Ruins",
+      "locationText": "Whiskerest附近（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "C",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-whisk-cove",
+      "kind": "dungeon",
+      "name": "Whisk Cove",
+      "locationText": "Eastpaw Beach；Purrserk",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sp-purrserk"
+      ],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "A",
+        "C"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-winding-cave",
+      "kind": "dungeon",
+      "name": "Winding Cave",
+      "locationText": "Wall of Lupus周邊（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "B",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-dg-wyvern-nest",
+      "kind": "dungeon",
+      "name": "Wyvern Nest",
+      "locationText": "Pound Town東南（文字初步定位）",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S03",
+        "S25"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "suggestedPhaseIds": [
+        "D",
+        "F"
+      ],
+      "tip": "位置索引可用，逐房間走法尚未收錄。清敵、開箱後以遊戲 Dungeon Complete 與入口狀態確認。"
+    },
+    {
+      "id": "cq2-eq-arcane-mage-hat",
+      "kind": "equipment",
+      "name": "Arcane Mage Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-arcane-mage-vest",
+      "kind": "equipment",
+      "name": "Arcane Mage Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-arcane-staff",
+      "kind": "equipment",
+      "name": "Arcane Staff",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-bard-hat",
+      "kind": "equipment",
+      "name": "Bard Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-bard-lute",
+      "kind": "equipment",
+      "name": "Bard Lute",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-bard-vest",
+      "kind": "equipment",
+      "name": "Bard Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-blue-mage-hat",
+      "kind": "equipment",
+      "name": "Blue Mage Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-blue-mage-vest",
+      "kind": "equipment",
+      "name": "Blue Mage Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-bone-raiser",
+      "kind": "equipment",
+      "name": "Bone-raiser",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-cat-rags",
+      "kind": "equipment",
+      "name": "Cat Rags",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-cat-soldier-armor",
+      "kind": "equipment",
+      "name": "Cat Soldier Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-cat-soldier-helm",
+      "kind": "equipment",
+      "name": "Cat Soldier Helm",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [
+        "Cat Soldier Helmet"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-cat-soldier-sword",
+      "kind": "equipment",
+      "name": "Cat Soldier Sword",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-catnip-bravo-jumper",
+      "kind": "equipment",
+      "name": "Catnip Bravo Jumper",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-catnip-bravo-mask",
+      "kind": "equipment",
+      "name": "Catnip Bravo Mask",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-catventurer-blade",
+      "kind": "equipment",
+      "name": "Catventurer Blade",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-catventurer-hat",
+      "kind": "equipment",
+      "name": "Catventurer Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-catventurer-vest",
+      "kind": "equipment",
+      "name": "Catventurer Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-chef-hat",
+      "kind": "equipment",
+      "name": "Chef Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-chef-vest",
+      "kind": "equipment",
+      "name": "Chef Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-crimson-armor",
+      "kind": "equipment",
+      "name": "Crimson Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-crimson-edge",
+      "kind": "equipment",
+      "name": "Crimson Edge",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-crimson-helm",
+      "kind": "equipment",
+      "name": "Crimson Helm",
+      "locationText": "Catnip Farm附近金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-catnip"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-dog-rags",
+      "kind": "equipment",
+      "name": "Dog Rags",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-dog-soldier-armor",
+      "kind": "equipment",
+      "name": "Dog Soldier Armor",
+      "locationText": "Return of the Cats獎勵之一",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-return-of-the-cats"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-dog-soldier-helmet",
+      "kind": "equipment",
+      "name": "Dog Soldier Helmet",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-dog-soldier-sword",
+      "kind": "equipment",
+      "name": "Dog Soldier Sword",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-doge-knight-armor",
+      "kind": "equipment",
+      "name": "Doge Knight Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-doge-knight-cowl",
+      "kind": "equipment",
+      "name": "Doge Knight Cowl",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-dragonfire",
+      "kind": "equipment",
+      "name": "Dragonfire",
+      "locationText": "Quinque Ruins西側金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-quinque-ruins",
+        "cq2-gc-quinque-west"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-dragonfrost",
+      "kind": "equipment",
+      "name": "Dragonfrost",
+      "locationText": "Catpital東北金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-catpital-northeast"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-dragonvoid",
+      "kind": "equipment",
+      "name": "Dragonvoid",
+      "locationText": "Barkara Desert金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-barkara"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-drakoth-armor",
+      "kind": "equipment",
+      "name": "Drakoth Armor",
+      "locationText": "F02；Drakoth's Vault固定三裝備之一",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-drakoth-s-vault"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-drakoth-helmet",
+      "kind": "equipment",
+      "name": "Drakoth Helmet",
+      "locationText": "F02；Drakoth's Vault固定三裝備之一",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-drakoth-s-vault"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-dumbbell",
+      "kind": "equipment",
+      "name": "Dumbbell",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-elder-mage-beard",
+      "kind": "equipment",
+      "name": "Elder Mage Beard",
+      "locationText": "Barkara北側入口附近金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-barkara-north"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-elder-mage-robes",
+      "kind": "equipment",
+      "name": "Elder Mage Robes",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-elder-stick",
+      "kind": "equipment",
+      "name": "Elder Stick",
+      "locationText": "Arcane Headpawters南側金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-arcane-south"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-excalipurr",
+      "kind": "equipment",
+      "name": "Excalipurr",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-fire-mage-hat",
+      "kind": "equipment",
+      "name": "Fire Mage Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-fire-mage-vest",
+      "kind": "equipment",
+      "name": "Fire Mage Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-fire-staff",
+      "kind": "equipment",
+      "name": "Fire Staff",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-general-s-mace",
+      "kind": "equipment",
+      "name": "General’s Mace",
+      "locationText": "The Pawsitively Secret Contact任務獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-the-pawsitively-secret-contact"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-gentle-monocle",
+      "kind": "equipment",
+      "name": "Gentle Monocle",
+      "locationText": "D02；開發者島金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-founders"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-gentle-suit",
+      "kind": "equipment",
+      "name": "Gentle Suit",
+      "locationText": "D02；開發者島This Is It!任務獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-this-is-it"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-healing-staff",
+      "kind": "equipment",
+      "name": "Healing Staff",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-ice-mage-hat",
+      "kind": "equipment",
+      "name": "Ice Mage Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-ice-mage-vest",
+      "kind": "equipment",
+      "name": "Ice Mage Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-ice-staff",
+      "kind": "equipment",
+      "name": "Ice Staff",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-invisibility-fur-coat",
+      "kind": "equipment",
+      "name": "Invisibility Fur Coat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-jester-aee-cap",
+      "kind": "equipment",
+      "name": "Jester Aee Cap",
+      "locationText": "King's Paw西側金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-kings-paw-west"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-jester-aee-mace",
+      "kind": "equipment",
+      "name": "Jester Aee Mace",
+      "locationText": "Pawt Cave北出口附近金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-pawt-cave",
+        "cq2-gc-pawt-north"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-jester-aee-suit",
+      "kind": "equipment",
+      "name": "Jester Aee Suit",
+      "locationText": "Saxim Ruins附近金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-saxim-ruins",
+        "cq2-gc-saxim"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-jester-bee-cap",
+      "kind": "equipment",
+      "name": "Jester Bee Cap",
+      "locationText": "F03；Lonely Cave固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-lonely-cave"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-jester-bee-mace",
+      "kind": "equipment",
+      "name": "Jester Bee Mace",
+      "locationText": "The Purrsecutor島金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-purrsecutor-island"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-jester-bee-suit",
+      "kind": "equipment",
+      "name": "Jester Bee Suit",
+      "locationText": "F03；Lonely Cave固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-lonely-cave"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-knight-armor",
+      "kind": "equipment",
+      "name": "Knight Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-knight-axe",
+      "kind": "equipment",
+      "name": "Knight Axe",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-knight-helm",
+      "kind": "equipment",
+      "name": "Knight Helm",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-labrathor-helm",
+      "kind": "equipment",
+      "name": "Labrathor Helm",
+      "locationText": "F03；Tomb of the Wolf固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-tomb-of-the-wolf"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-labrathor-vest",
+      "kind": "equipment",
+      "name": "Labrathor Vest",
+      "locationText": "F03；Tomb of the Wolf固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-tomb-of-the-wolf"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-lightning-staff",
+      "kind": "equipment",
+      "name": "Lightning Staff",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-mewlder-wand",
+      "kind": "equipment",
+      "name": "Mewlder Wand",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-ninja-hood",
+      "kind": "equipment",
+      "name": "Ninja Hood",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-ninja-katana",
+      "kind": "equipment",
+      "name": "Ninja Katana",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-ninja-shroud",
+      "kind": "equipment",
+      "name": "Ninja Shroud",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-old-master-body",
+      "kind": "equipment",
+      "name": "Old Master Body",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-old-master-head",
+      "kind": "equipment",
+      "name": "Old Master Head",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-old-master-mace",
+      "kind": "equipment",
+      "name": "Old Master Mace",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-pawlonijr",
+      "kind": "equipment",
+      "name": "Pawlonijr",
+      "locationText": "F03；Tomb of the Wolf固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-tomb-of-the-wolf"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-pawple-katana",
+      "kind": "equipment",
+      "name": "Pawple Katana",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-pawple-ninja-hood",
+      "kind": "equipment",
+      "name": "Pawple Ninja Hood",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-pawple-ninja-shroud",
+      "kind": "equipment",
+      "name": "Pawple Ninja Shroud",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-pawtimate-armor",
+      "kind": "equipment",
+      "name": "Pawtimate Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [
+        "Pawtimate"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-purrsecution",
+      "kind": "equipment",
+      "name": "Purrsecution",
+      "locationText": "F03；Cave of the Lion固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cave-of-the-lion"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-purrsecutor-armor",
+      "kind": "equipment",
+      "name": "Purrsecutor Armor",
+      "locationText": "F03；Cave of the Lion固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cave-of-the-lion"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-purrsecutor-helm",
+      "kind": "equipment",
+      "name": "Purrsecutor Helm",
+      "locationText": "F03；Cave of the Lion固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cave-of-the-lion"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-ranger-axe",
+      "kind": "equipment",
+      "name": "Ranger Axe",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-ranger-cap",
+      "kind": "equipment",
+      "name": "Ranger Cap",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-ranger-vest",
+      "kind": "equipment",
+      "name": "Ranger Vest",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-scout-armor",
+      "kind": "equipment",
+      "name": "Scout Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-scout-helmet",
+      "kind": "equipment",
+      "name": "Scout Helmet",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-scout-sword",
+      "kind": "equipment",
+      "name": "Scout Sword",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-skeleton-king-armor",
+      "kind": "equipment",
+      "name": "Skeleton King Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-skeleton-king-crown",
+      "kind": "equipment",
+      "name": "Skeleton King Crown",
+      "locationText": "Deep Forest金箱；另有其他來源",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-deep-forest"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-storm-armor",
+      "kind": "equipment",
+      "name": "Storm Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-storm-helm",
+      "kind": "equipment",
+      "name": "Storm Helm",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-stormbringer",
+      "kind": "equipment",
+      "name": "Stormbringer",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-the-architect",
+      "kind": "equipment",
+      "name": "The Architect",
+      "locationText": "D02；Hidden Cave前段金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-hidden-cave",
+        "cq2-gc-felingard-hidden-cave"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-the-bataxe",
+      "kind": "equipment",
+      "name": "The Bataxe",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-the-dragonmaker",
+      "kind": "equipment",
+      "name": "The Dragonmaker",
+      "locationText": "F02；Drakoth's Vault固定三裝備之一",
+      "aliases": [
+        "The Dragonmaler"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-drakoth-s-vault"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-the-hawt-dog",
+      "kind": "equipment",
+      "name": "The Hawt Dog",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [
+        "Hawt Dawg"
+      ],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-the-kingsblade",
+      "kind": "equipment",
+      "name": "The Kingsblade",
+      "locationText": "E03；The Eye of Eternity事件",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-white-mage-hat",
+      "kind": "equipment",
+      "name": "White Mage Hat",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-white-mage-robes",
+      "kind": "equipment",
+      "name": "White Mage Robes",
+      "locationText": "The Order of the Emeowrald獎勵之一",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-the-order-of-the-emeowrald"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-wraith-armor",
+      "kind": "equipment",
+      "name": "Wraith Armor",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-wraith-helm",
+      "kind": "equipment",
+      "name": "Wraith Helm",
+      "locationText": "特定出處未逐件核實；先對照背包，不填假位置",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-wraith-mace",
+      "kind": "equipment",
+      "name": "Wraith Mace",
+      "locationText": "Excavation Site金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-excavation"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-zero-courage",
+      "kind": "equipment",
+      "name": "Zero Courage",
+      "locationText": "Cathulu附近金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-gc-cathulu"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-zero-faith",
+      "kind": "equipment",
+      "name": "Zero Faith",
+      "locationText": "F03；Lonely Cave固定獎勵",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-lonely-cave"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-zero-willpower",
+      "kind": "equipment",
+      "name": "Zero Willpower",
+      "locationText": "Cactus Cave金箱",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cactus-cave",
+        "cq2-gc-cactus"
+      ],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-bam-bam-hammer",
+      "kind": "equipment",
+      "name": "Bam Bam Hammer",
+      "locationText": "更新物品；精確取得點待查，遇到可記",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-dark-old-master-axe",
+      "kind": "equipment",
+      "name": "Dark Old Master Axe",
+      "locationText": "Infinity Tomb更新挑戰；白金不強制",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-dark-old-master-body",
+      "kind": "equipment",
+      "name": "Dark Old Master Body",
+      "locationText": "Infinity Tomb更新挑戰；白金不強制",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "身體"
+    },
+    {
+      "id": "cq2-eq-dark-old-master-head",
+      "kind": "equipment",
+      "name": "Dark Old Master Head",
+      "locationText": "Infinity Tomb更新挑戰；白金不強制",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "頭"
+    },
+    {
+      "id": "cq2-eq-dark-old-master-mace",
+      "kind": "equipment",
+      "name": "Dark Old Master Mace",
+      "locationText": "Infinity Tomb更新挑戰；白金不強制",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-eq-dark-old-master-staff",
+      "kind": "equipment",
+      "name": "Dark Old Master Staff",
+      "locationText": "Infinity Tomb更新挑戰；白金不強制",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "法杖"
+    },
+    {
+      "id": "cq2-eq-mystery-meat",
+      "kind": "equipment",
+      "name": "Mystery Meat",
+      "locationText": "更新物品；精確取得點待查，遇到可記",
+      "aliases": [],
+      "scope": "free-update",
+      "relatedEntityIds": [],
+      "sources": [
+        "S06",
+        "S15",
+        "S32",
+        "S33"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "part": "近戰武器"
+    },
+    {
+      "id": "cq2-gc-felingard-hidden-cave",
+      "kind": "goldChest",
+      "name": "貓國／Hidden Cave",
+      "locationText": "貓國／Hidden Cave",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-hidden-cave",
+        "cq2-eq-the-architect"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "The Architect"
+    },
+    {
+      "id": "cq2-gc-purrsecutor-island",
+      "kind": "goldChest",
+      "name": "貓國／The Purrsecutor島",
+      "locationText": "貓國／The Purrsecutor島",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-jester-bee-mace"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Jester Bee Mace"
+    },
+    {
+      "id": "cq2-gc-catpital-northeast",
+      "kind": "goldChest",
+      "name": "貓國／Catpital東北",
+      "locationText": "貓國／Catpital東北",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-dragonfrost"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Dragonfrost"
+    },
+    {
+      "id": "cq2-gc-deep-forest",
+      "kind": "goldChest",
+      "name": "貓國／Deep Forest",
+      "locationText": "貓國／Deep Forest",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-skeleton-king-crown"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Skeleton King Crown"
+    },
+    {
+      "id": "cq2-gc-cathulu",
+      "kind": "goldChest",
+      "name": "海域／Cathulu附近",
+      "locationText": "海域／Cathulu附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-zero-courage"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Zero Courage"
+    },
+    {
+      "id": "cq2-gc-arcane-south",
+      "kind": "goldChest",
+      "name": "貓國／Arcane Headpawters南方",
+      "locationText": "貓國／Arcane Headpawters南方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-elder-stick"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Elder Stick"
+    },
+    {
+      "id": "cq2-gc-quinque-west",
+      "kind": "goldChest",
+      "name": "海域／Quinque Ruins西方",
+      "locationText": "海域／Quinque Ruins西方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-quinque-ruins",
+        "cq2-eq-dragonfire"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Dragonfire"
+    },
+    {
+      "id": "cq2-gc-pawt-north",
+      "kind": "goldChest",
+      "name": "貓國／Pawt Cave北側出口附近",
+      "locationText": "貓國／Pawt Cave北側出口附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-pawt-cave",
+        "cq2-eq-jester-aee-mace"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Jester Aee Mace"
+    },
+    {
+      "id": "cq2-gc-saxim",
+      "kind": "goldChest",
+      "name": "貓國／Saxim Ruins附近",
+      "locationText": "貓國／Saxim Ruins附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-saxim-ruins",
+        "cq2-eq-jester-aee-suit"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Jester Aee Suit"
+    },
+    {
+      "id": "cq2-gc-founders",
+      "kind": "goldChest",
+      "name": "東南島／Founders Island II",
+      "locationText": "東南島／Founders Island II",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-gentle-monocle"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Gentle Monocle"
+    },
+    {
+      "id": "cq2-gc-kings-paw-west",
+      "kind": "goldChest",
+      "name": "King's Paw西方",
+      "locationText": "King's Paw西方",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-jester-aee-cap"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Jester Aee Cap"
+    },
+    {
+      "id": "cq2-gc-catnip",
+      "kind": "goldChest",
+      "name": "貓國／Catnip Farm附近",
+      "locationText": "貓國／Catnip Farm附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-crimson-helm"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Crimson Helm"
+    },
+    {
+      "id": "cq2-gc-purrmaha",
+      "kind": "goldChest",
+      "name": "貓國／Purrmaha Beach",
+      "locationText": "貓國／Purrmaha Beach",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-gc-felingard-lake",
+      "kind": "goldChest",
+      "name": "貓國／Felingard Lake",
+      "locationText": "貓國／Felingard Lake",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-gc-whiskerest",
+      "kind": "goldChest",
+      "name": "貓國／Whiskerest",
+      "locationText": "貓國／Whiskerest",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-gc-cactus",
+      "kind": "goldChest",
+      "name": "犬國／Cactus Cave",
+      "locationText": "犬國／Cactus Cave",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-cactus-cave",
+        "cq2-eq-zero-willpower"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Zero Willpower"
+    },
+    {
+      "id": "cq2-gc-barkara",
+      "kind": "goldChest",
+      "name": "犬國／Barkara Desert",
+      "locationText": "犬國／Barkara Desert",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-dragonvoid"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Dragonvoid"
+    },
+    {
+      "id": "cq2-gc-barkara-north",
+      "kind": "goldChest",
+      "name": "犬國／Barkara北側入口附近",
+      "locationText": "犬國／Barkara北側入口附近",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-elder-mage-beard"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Elder Mage Beard"
+    },
+    {
+      "id": "cq2-gc-excavation",
+      "kind": "goldChest",
+      "name": "犬國／Excavation Site",
+      "locationText": "犬國／Excavation Site",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-eq-wraith-mace"
+      ],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "fixed",
+      "tip": "Wraith Mace"
+    },
+    {
+      "id": "cq2-gc-wall",
+      "kind": "goldChest",
+      "name": "犬國／Wall of Lupus",
+      "locationText": "犬國／Wall of Lupus",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-gc-far-fetched-marker",
+      "kind": "goldChest",
+      "name": "犬國／Far-Fetched Sands附近Kingsmarker",
+      "locationText": "犬國／Far-Fetched Sands附近Kingsmarker",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-gc-barracks",
+      "kind": "goldChest",
+      "name": "犬國／Dog Barracks",
+      "locationText": "犬國／Dog Barracks",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S16"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      },
+      "rewardMode": "pool",
+      "tip": "隨機傳說池；不保證新物品"
+    },
+    {
+      "id": "cq2-key-hidden",
+      "kind": "key",
+      "name": "Hidden Key",
+      "locationText": "D02；完成 Founders Island II 的 This Is It!",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-sq-this-is-it",
+        "cq2-dg-hidden-cave"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-key-golden",
+      "kind": "key",
+      "name": "Golden Key",
+      "locationText": "D02；Hidden Cave 內擊敗三個 Golden Mimics，實際開一個金箱再確認",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-hidden-cave"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-key-hidden-stash",
+      "kind": "key",
+      "name": "Hidden Stash Key",
+      "locationText": "F02；Ultimutt Stash 入口第一火炬西南秘密路",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [
+        "cq2-dg-ultimutt-stash"
+      ],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-key-drakoth-south",
+      "kind": "key",
+      "name": "Drakoth 南島鑰匙",
+      "locationText": "F02；Mewment Shores 南島",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-key-drakoth-west",
+      "kind": "key",
+      "name": "Drakoth 西島鑰匙",
+      "locationText": "F02；Throne of Lupus 西島群",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-art-rolling",
+      "kind": "royalArt",
+      "name": "Pawer Rolling",
+      "locationText": "A04；King Lionardo 試煉",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-art-smash",
+      "kind": "royalArt",
+      "name": "Pawer Smash",
+      "locationText": "B02；翻滾後接攻擊",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-art-water",
+      "kind": "royalArt",
+      "name": "Water Walking",
+      "locationText": "C02；完成燈塔三任務",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-art-full",
+      "kind": "royalArt",
+      "name": "Full Royal",
+      "locationText": "D04；主線能力恢復，非 Royal Fur 第四條件",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    },
+    {
+      "id": "cq2-loc-trial-first-kings",
+      "kind": "location",
+      "name": "Trial of the First Kings",
+      "locationText": "D03；劇情地點，不額外計入73洞",
+      "aliases": [],
+      "scope": "base-reference",
+      "relatedEntityIds": [],
+      "sources": [
+        "S04",
+        "S18"
+      ],
+      "dataQuality": {
+        "name": "source-stated",
+        "location": "source-stated",
+        "walkthrough": "index-only"
+      }
+    }
+  ],
+  "trophies": [
+    {
+      "id": "cq2-tr-pawlatinum",
+      "name": "Pawlatinum",
+      "grade": "白金",
+      "condition": "其餘19座實際取得後確認",
+      "kind": null,
+      "target": 19,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-kinghood-1",
+      "name": "Kinghood I",
+      "grade": "銅",
+      "condition": "角色等級10",
+      "kind": "level",
+      "target": 10,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-kinghood-2",
+      "name": "Kinghood II",
+      "grade": "銀",
+      "condition": "角色等級50",
+      "kind": "level",
+      "target": 50,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-kinghood-3",
+      "name": "Kinghood III",
+      "grade": "金",
+      "condition": "角色等級99",
+      "kind": "level",
+      "target": 99,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-dungeon-1",
+      "name": "Dungeon Master I",
+      "grade": "銅",
+      "condition": "清洞8",
+      "kind": "dungeon",
+      "target": 8,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-dungeon-2",
+      "name": "Dungeon Master II",
+      "grade": "銀",
+      "condition": "清洞38",
+      "kind": "dungeon",
+      "target": 38,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-dungeon-3",
+      "name": "Dungeon Master III",
+      "grade": "金",
+      "condition": "清洞73",
+      "kind": "dungeon",
+      "target": 73,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-people-1",
+      "name": "Furriend of the People I",
+      "grade": "銅",
+      "condition": "完成支線7",
+      "kind": "sideQuest",
+      "target": 7,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-people-2",
+      "name": "Furriend of the People II",
+      "grade": "銀",
+      "condition": "完成支線37",
+      "kind": "sideQuest",
+      "target": 37,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-people-3",
+      "name": "Furriend of the People III",
+      "grade": "金",
+      "condition": "完成支線67",
+      "kind": "sideQuest",
+      "target": 67,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-paws-together",
+      "name": "Paws Together",
+      "grade": "金",
+      "condition": "主線與Epilogue完成",
+      "kind": null,
+      "target": null,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-arcane-1",
+      "name": "Arcane Paws I",
+      "grade": "銅",
+      "condition": "學4種法術",
+      "kind": "spell",
+      "target": 4,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-arcane-2",
+      "name": "Arcane Paws II",
+      "grade": "銀",
+      "condition": "學8種法術",
+      "kind": "spell",
+      "target": 8,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-arcane-3",
+      "name": "Arcane Paws III",
+      "grade": "金",
+      "condition": "學12種法術",
+      "kind": "spell",
+      "target": 12,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-fashion-1",
+      "name": "Fashionista Tails I",
+      "grade": "銅",
+      "condition": "取得34件不同裝備",
+      "kind": "equipment",
+      "target": 34,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-fashion-2",
+      "name": "Fashionista Tails II",
+      "grade": "銀",
+      "condition": "取得67件不同裝備",
+      "kind": "equipment",
+      "target": 67,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-fashion-3",
+      "name": "Fashionista Tails III",
+      "grade": "金",
+      "condition": "取得101件不同裝備",
+      "kind": "equipment",
+      "target": 101,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-lupus",
+      "name": "The Lupus Empire",
+      "grade": "金",
+      "condition": "經主線首次到犬國",
+      "kind": null,
+      "target": null,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-catventure",
+      "name": "Catventure Begins",
+      "grade": "銅",
+      "condition": "完成開場第一任務",
+      "kind": null,
+      "target": null,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    },
+    {
+      "id": "cq2-tr-royal-fur",
+      "name": "Royal Fur",
+      "grade": "金",
+      "condition": "解鎖3項Royal Arts；與12法術不同",
+      "kind": null,
+      "target": 3,
+      "sources": [
+        "S01",
+        "S27"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "label": "The Wayside：PS4獎盃列表",
+      "url": "https://thewayside.no/trophies/games/trophy:NPWR18608_00",
+      "note": "實際開頁；20座名稱／等級／門檻，與其他表交叉核對；非官方獎盃API"
+    },
+    {
+      "id": "S02",
+      "label": "PlatGet：Cat Quest 2 Trophy Guide",
+      "url": "https://platget.com/guides/cat-quest-2-trophy-guide/",
+      "note": "實際開頁／表格；單周目、Continue、門檻與位置；支線實際66列，金鑰匙戰鬥順序有錯，已更正，不整段照搬"
+    },
+    {
+      "id": "S03",
+      "label": "CHRsuperstar：CatQuest II Guide",
+      "url": "https://chrsuperstar.com/catquest2/en/",
+      "note": "實際開頁；67支線／73洞的名字索引；其101裝備含更新替換，不能作原始版本完整名單"
+    },
+    {
+      "id": "S04",
+      "label": "Gamer Walkthroughs：主線",
+      "url": "https://gamerwalkthroughs.com/cat-quest-2/",
+      "note": "實際開頁；主線地點與流程；編號13後跳15，且把水行三支線混入，因此不用它編號作官方ID"
+    },
+    {
+      "id": "S05",
+      "label": "PlayStation.Blog：Mew World免費更新",
+      "url": "https://blog.playstation.com/2020/08/07/cat-quest-ii-embraces-the-mew-world-with-a-new-free-update/",
+      "note": "官方發行方2020-08-07文章，實際開頁；Pawer Smash改版、防禦條、加速與地圖等級提示"
+    },
+    {
+      "id": "S06",
+      "label": "Knoef：Cat Quest II Trophy Guide",
+      "url": "https://knoef.info/trophy-guides/ps4-guides/cat-quest-ii-trophy-guide/",
+      "note": "實際開頁；早期原始裝備索引、12法術位置、先支線後清洞；不可沿用其永久回不去措辭與舊Royal Art描述"
+    },
+    {
+      "id": "S07",
+      "label": "Prima Games：Founders Island II與Golden Key",
+      "url": "https://primagames.com/gaming/cat-quest-2-guide-how-to-unlock-all-golden-chests-and-beat-founders-island-ii",
+      "note": "實際開頁；早期PC實測、四開發者及三Mimics所在位置與獎勵鏈；建議等級非硬條件"
+    },
+    {
+      "id": "S08",
+      "label": "Cat Quest 2 Wiki：Hidden Cave",
+      "url": "https://catquest2.fandom.com/wiki/Hidden_Cave",
+      "note": "頁面索引；位置、三Mimics與Golden Key，與Prima交叉核對"
+    },
+    {
+      "id": "S09",
+      "label": "Cat Quest 2 Wiki：Side Quests",
+      "url": "https://catquest2.fandom.com/wiki/Side_Quests",
+      "note": "頁面索引；系列分組與South Pawt第三任務；只用於內容事實，不複製劇情對話"
+    },
+    {
+      "id": "S10",
+      "label": "Cat Quest 2 Wiki：Ultimutt Stash",
+      "url": "https://catquest2.fandom.com/wiki/Ultimutt_Stash",
+      "note": "頁面索引；Hidden Stash鑰匙來源"
+    },
+    {
+      "id": "S11",
+      "label": "The Gentlebros：Ultimutt紙條第二段回覆",
+      "url": "https://steamcommunity.com/app/914710/discussions/0/3338785229797428286/",
+      "note": "實際開頁；開發者2019-11-16親答：入口第一火炬西南"
+    },
+    {
+      "id": "S12",
+      "label": "Cat Quest 2 Wiki：Hidden Stash",
+      "url": "https://catquest2.fandom.com/wiki/Hidden_Stash",
+      "note": "頁面索引；王城東南，內門需要Ultimutt鑰匙"
+    },
+    {
+      "id": "S13",
+      "label": "Cat Quest 2 Wiki：Troll Cave",
+      "url": "https://catquest2.fandom.com/wiki/Troll_Cave",
+      "note": "頁面索引；三個金錢金箱需開完才清洞"
+    },
+    {
+      "id": "S14",
+      "label": "Cat Quest 2 Wiki：Drakoth’s Vault",
+      "url": "https://catquest2.fandom.com/wiki/Drakoth%E2%80%99s_Vault",
+      "note": "頁面索引；兩把專屬鑰匙與三件固定裝備"
+    },
+    {
+      "id": "S15",
+      "label": "Cat Quest 2 Wiki：Equipment",
+      "url": "https://catquest2.fandom.com/wiki/Equipment",
+      "note": "頁面索引；套裝名稱、部位與更新系列；完整總量未核實"
+    },
+    {
+      "id": "S16",
+      "label": "Cat Quest 2 Wiki：Golden Chest",
+      "url": "https://catquest2.fandom.com/wiki/Golden_Chest",
+      "note": "頁面索引；22定位點與固定／隨機池，無精確座標"
+    },
+    {
+      "id": "S17",
+      "label": "Cat Quest 2 Wiki：Upgrades",
+      "url": "https://catquest2.fandom.com/wiki/Upgrades",
+      "note": "頁面索引；重複品升級，工坊分類"
+    },
+    {
+      "id": "S18",
+      "label": "Cat Quest 2 Wiki：Royal Arts",
+      "url": "https://catquest2.fandom.com/wiki/Royal_Arts",
+      "note": "頁面索引；前三能力與Full Royal時機，與官方更新核對Pawer Smash"
+    },
+    {
+      "id": "S19",
+      "label": "Cat Quest 2 Wiki：Pawt Cave",
+      "url": "https://catquest2.fandom.com/wiki/Pawt_Cave",
+      "note": "頁面索引；多入口與怪物箱入口；內文誤寫Cave Peasy，位置慎用並交叉核對"
+    },
+    {
+      "id": "S20",
+      "label": "Cat Quest 2 Wiki：Tombstone",
+      "url": "https://catquest2.fandom.com/wiki/Tombstone",
+      "note": "頁面索引；只受環境陷阱／Royal Damage"
+    },
+    {
+      "id": "S21",
+      "label": "Cat Quest 2 Wiki：Tale of a Cat and a Dog",
+      "url": "https://catquest2.fandom.com/wiki/Tale_of_a_Cat_and_a_Dog",
+      "note": "頁面索引；Pawful Cave、墓碑機制與任務回報"
+    },
+    {
+      "id": "S22",
+      "label": "Cat Quest 2 Wiki：Cave of the Lion",
+      "url": "https://catquest2.fandom.com/wiki/Cave_of_the_Lion",
+      "note": "頁面索引；Aelius後解鎖，三件固定裝備；單件頁對箱子類型有衝突，未硬寫"
+    },
+    {
+      "id": "S23",
+      "label": "Cat Quest 2 Wiki：Tomb of the Wolf",
+      "url": "https://catquest2.fandom.com/wiki/Tomb_of_the_Wolf",
+      "note": "頁面索引；Aelius後解鎖，Labrathor三件；頁面Empire欄錯標Felingard，不沿用"
+    },
+    {
+      "id": "S24",
+      "label": "The Wayside：Trophy Guide",
+      "url": "https://thewayside.no/guides/trophies/cat-quest-ii",
+      "note": "實際開頁；索引型交叉參考，來源廣但非本次實機證據"
+    },
+    {
+      "id": "S25",
+      "label": "Cat Quest 2 Wiki：Dungeons",
+      "url": "https://catquest2.fandom.com/wiki/Dungeons",
+      "note": "頁面索引；兩國具名地城，非精確完整計數驗證"
+    },
+    {
+      "id": "S26",
+      "label": "Cat Quest 2 Wiki：Lonely Cave",
+      "url": "https://catquest2.fandom.com/wiki/Lonely_Cave",
+      "note": "頁面索引；Lv200、刺蝟與三件固定裝備"
+    },
+    {
+      "id": "S27",
+      "label": "PlayStationTrophies：Asia列表",
+      "url": "https://www.playstationtrophies.org/game/cat-quest-ii-asia/print-list/",
+      "note": "搜尋索引返回20座門檻；直接頁面403，未假稱完整開頁讀取"
+    },
+    {
+      "id": "S28",
+      "label": "Cat Quest 2 Wiki：Return of the Cats",
+      "url": "https://catquest2.fandom.com/wiki/Return_of_the_Cats",
+      "note": "頁面索引；第三任務、South Pawt／Lv15、Dog Soldier Armor，補齊66列缺項"
+    },
+    {
+      "id": "S29",
+      "label": "Cat Quest 2 Wiki：Curse of the Dogs",
+      "url": "https://catquest2.fandom.com/wiki/Curse_of_the_Dogs",
+      "note": "頁面索引；前後任務與Catpital Cave流程"
+    },
+    {
+      "id": "S30",
+      "label": "Cat Quest 2 Wiki：The Order of the Emeowrald",
+      "url": "https://catquest2.fandom.com/wiki/The_Order_of_the_Emeowrald",
+      "note": "頁面索引；Paw’s Cave流程與White Mage Robes"
+    },
+    {
+      "id": "S31",
+      "label": "Cat Quest 2 Wiki：The Pawsitively Secret Contact",
+      "url": "https://catquest2.fandom.com/wiki/The_Pawsitively_Secret_Contact",
+      "note": "頁面索引；主線／任務前置與General’s Mace獎勵"
+    },
+    {
+      "id": "S32",
+      "label": "攻略空間.Puki：裝備",
+      "url": "https://kouryakukuukan-puki.com/catquest2-equipment/",
+      "note": "實際開頁；日文原始裝備分類／出處參考，舊版數值不直接套現版"
+    },
+    {
+      "id": "S33",
+      "label": "ミルピリブログ：裝備與入手方法",
+      "url": "https://milpiriblog.com/cat_quest_ii-equipments-parts",
+      "note": "實際開頁，2024文章；日文裝備與更新分類對照，未核實跨語對應不硬填官方繁中名稱"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "label": "Puggy／Pugger、Furrible與Duo等別名，以及劇情通道的實際清洞計數對應",
+      "research": "對照PS4版實機洞口名、地圖與清洞計數前後；保留截圖證據",
+      "blocks": "阻塞宣稱「原始地城逐一完整核實」；不阻塞追蹤索引與UI"
+    },
+    {
+      "id": "G02",
+      "label": "各平台更新完整地城／裝備總量，108並非確定所有模式完整總量",
+      "research": "官方補丁、目前PS4版裝備清單與Mew Game範圍分開比對",
+      "blocks": "阻塞世界100%分母；不阻塞固定白金門檻"
+    },
+    {
+      "id": "G03",
+      "label": "大部分裝備的逐件固定出處或隨機池尚未逐一核實",
+      "research": "查個別物品與地城掉落表，對照PS4錄影／實測",
+      "blocks": "阻塞「任一缺裝備都能精確導航出處」的功能完成聲明"
+    },
+    {
+      "id": "G04",
+      "label": "67任務的全部精確開放前置、移動NPC接續位置與個別解法",
+      "research": "逐任務頁、PS4流程影片與實機任務標記；先處理會卡進度的任務",
+      "blocks": "不阻塞全名checklist；阻塞全支線逐步解謎完成聲明"
+    },
+    {
+      "id": "G05",
+      "label": "73基準洞的全部秘密箱精確起點／完整路徑未齊；Tombstone等級衝突",
+      "research": "每洞截圖或錄影，記位置、操作、出口／箱狀態；不靠一般貼牆建議充數",
+      "blocks": "不阻塞已核實特殊提醒；阻塞全逐洞導航聲明"
+    },
+    {
+      "id": "G06",
+      "label": "First Kings試煉題目、全部解答與正式主線編號尚未逐題核實",
+      "research": "PS4版錄影逐題核對與Wiki個別任務",
+      "blocks": "阻塞直接答案按鈕；不阻塞其他主流程"
+    },
+    {
+      "id": "G07",
+      "label": "22個金箱定位表的精確坐標、額外金箱總量與部分地標細節",
+      "research": "開箱錄影與實機位置；確認是否固定或隨機",
+      "blocks": "阻塞精確互動地圖與全金箱世界100%；不阻塞文字索引"
+    },
+    {
+      "id": "G08",
+      "label": "使用者實際版本號、背包語言、已取得進度與repo契約未知",
+      "research": "開工讀repo；玩家邊玩核對；非必要不要求先人工填完",
+      "blocks": "不阻塞研究交付；實作前必須核對repo規範"
+    }
+  ],
+  "aliases": {
+    "cq2-eq-cat-soldier-helm": [
+      "Cat Soldier Helmet"
+    ],
+    "cq2-eq-pawtimate-armor": [
+      "Pawtimate"
+    ],
+    "cq2-eq-the-hawt-dog": [
+      "Hawt Dawg"
+    ],
+    "cq2-eq-the-dragonmaker": [
+      "The Dragonmaler"
+    ],
+    "cq2-sp-purrserk": [
+      "Purrzerk"
+    ],
+    "cq2-dg-pugger-maze": [
+      "Puggy Maze（對應待核實）"
+    ],
+    "cq2-dg-furrible-purrison": [
+      "Furrible Cave（對應待核實）"
+    ],
+    "cq2-dg-duo-s-ruins": [
+      "King Duos Ruins（對應待核實）"
+    ],
+    "cq2-dg-king-lionardo-s-trial": [
+      "King Lionardo’s Ruins"
+    ],
+    "cq2-dg-king-woofhauser-s-trial": [
+      "King Woofhauser’s Ruins"
+    ]
+  },
+  "advice": "## 3. 遊玩時先記住的規則\n\n1. **支線先於該區最後掃洞。** 藍色驚嘆號是支線；做完交付再與 NPC／信箱互動，查看後續任務。系列每一個任務各計一次，不是一條系列才計一次。\n2. **殺光看得到的怪物不等於清洞。** 一併拿箱子、怪物鎖箱及秘密支路；以遊戲 Dungeon Complete／入口狀態與計數核對。入口問號表示未探索，菱形表示仍有未完成內容。\n3. **沒鑰匙、水行或任務前置時先離開。** 不用一直撞同一扇門；Roadmap 將這些集中到回訪卡。\n4. **裝備重複取得是升級，不增加不同裝備件數。** 不需要把兩名角色各配一次才算，也不需要每件升滿。[S17]\n5. **一個近戰、一個法杖是起步建議。** 遇抗性或傷害很低時換角色／武器；不要把一套 Build 視為保證可通關。\n6. **晚期高等洞口不是練等硬門檻。** 150／200 是敵方危險提示，白金只要求等級 99；先完成其他收集和常用裝備升級再挑戰。\n7. 每次取得新東西，只勾實際獲得的那個實體；路線完成、清洞、學法術、拿裝備、實際跳盃各自記錄。\n\n\n## 11. 小訣竅與Build：短、可換、順路取得\n\n### 前期：先讓戰鬥順，不追終局神裝\n\n- 近戰角色用短連段補魔，再閃避；另一名拿法杖補足遠程與不同傷害類型。\n- Healpaw先確保會用，常用傷害法術選一兩個升級，避免把錢平均灑到用不到的東西。\n- Kit Cat升防具／頭部，Hotto Doggo升武器，Arcane Temple升法術。重複裝備也會升既有那件。[S17]\n- 看紅色範圍離開再輸出；被圍時先移動，不為救伙伴站著硬吃傷害。\n- 新版防禦條會吸收傷害並在不受攻擊時慢慢恢復，拉開距離有實際作用；持續跑會加速，移動不用全程滾。[S05]\n\n### 中後期：金鑰匙路線取得後的施法支援\n\n- Gentle Suit＋Gentle Monocle＋The Architect是可考慮的減耗組合，三件就在D02鏈上。\n- 使用Gravi-ruff限制敵人移動，再配合遠程與閃避；不要把它寫成「所有Boss永久無法行動」。\n- 裝備等級與被動都要看，低等新裝不一定勝過目前主力。不要為了照抄套裝犧牲生存。\n- Mewlder Wand等極端減血裝不列一般白金必備；先以穩定為主。\n\n### 最後掃尾\n\n- Lv99通常會隨支線與清洞累積；先清未完成內容，再評估是否真的需要專門刷等。\n- 不要求練滿級、全裝備升滿、全額外模式或每日上線。\n- 不能以網站清單已勾滿，替代遊戲計數或PS獎盃跳盃確認。\n\n"
+}

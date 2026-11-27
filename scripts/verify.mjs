@@ -61,4 +61,6 @@ const edfirCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'
 results.push({slug:'edfir',missions:52,drones:55,baseTrophiesIncludingPlatinum:44,weapons:'312 base / 40 DLC / 8 bonus',cloudWrite:'blocked-until-current-grant-proven'});
 const ballCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/ball-x-pit'),encoding:'utf8'});assert.equal(ballCheck.status,0,ballCheck.stdout+ballCheck.stderr);console.log(ballCheck.stdout.trim());
 results.push({slug:'ball-x-pit',trophies:64,baseMatrix:128,cloudWrite:'not implemented'});
+const cq2Check=spawnSync(process.execPath,['games/cat-quest-ii/verify.mjs'],{cwd:root,encoding:'utf8'});assert.equal(cq2Check.status,0,cq2Check.stdout+cq2Check.stderr);console.log(cq2Check.stdout.trim());
+results.push({slug:'cat-quest-ii',trophies:20,sideQuests:67,dungeons:73,equipment:'101 reference + 7 update',cloudWrite:'not implemented'});
 console.log(JSON.stringify({passed:true,modules:results}));
