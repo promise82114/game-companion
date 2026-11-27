@@ -3,7 +3,7 @@
   "slug": "cat-quest-ii",
   "title": "Cat Quest II｜雙王白金手冊",
   "description": "PS5 執行 PS4 版：六階段路線、67支線、73地城索引與裝備查漏",
-  "moduleVersion": "1.1.0",
+  "moduleVersion": "1.1.1",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/cat-quest-ii/",

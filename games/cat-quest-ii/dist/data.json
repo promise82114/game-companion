@@ -1,6 +1,6 @@
 {
   "gameId": "cat-quest-ii",
-  "catalogVersion": "2026-11-27.2",
+  "catalogVersion": "2026-11-27.3",
   "specSha256": "918e1bf44590f03f55b2d3c37aaad5d9d3ea5be37849cfe87ade87d4994cedc7",
   "phases": [
     {
@@ -1322,7 +1322,8 @@
       "aliases": [],
       "scope": "base-reference",
       "relatedEntityIds": [
-        "cq2-eq-ice-mage-vest"
+        "cq2-eq-ice-mage-vest",
+        "cq2-eq-excalipurr"
       ],
       "sources": [
         "S02",
@@ -1345,7 +1346,9 @@
       "locationText": "C｜Laketown",
       "aliases": [],
       "scope": "base-reference",
-      "relatedEntityIds": [],
+      "relatedEntityIds": [
+        "cq2-eq-excalipurr"
+      ],
       "sources": [
         "S02",
         "S03",
@@ -2592,10 +2595,11 @@
       "tip": "已補以下特定通路／回收提醒；仍不是整洞逐房間導航。",
       "exploration": {
         "entityId": "cq2-dg-bat-cove",
-        "type": "gated",
+        "type": "secret",
         "steps": [
-          "完成The Doge Knight取任務開門條件，再回Throne of Lupus西側Bat Cove。",
-          "分別核對東、北、南三個固定裝備箱。"
+          "完成The Doge Knight取得開門條件，再回Throne of Lupus西側Bat Cove。",
+          "先分別核對東箱Doge Knight Cowl、北箱Doge Knight Armor、南箱The Bataxe；背包取得各自勾選。",
+          "另有通往Pawmas與Mafang Woofayne墓碑的秘密支路；目前只能確認來源記載其存在，不能提供可靠起點。"
         ],
         "routeCodes": [
           "E01"
@@ -2603,7 +2607,7 @@
         "sourceIds": [
           "R31"
         ],
-        "uncertainty": "另有Pawmas／Mafang墓碑秘密支路，但入口起點未核實；不寫假方向。",
+        "uncertainty": "墓碑支路入口、逐轉彎方向、是否有額外獎勵及是否影響Dungeon Complete仍待核實；三個裝備箱不等於已走過墓碑支路。",
         "evidence": "source-stated",
         "checkedAt": "2026-11-27",
         "platformVerified": false
@@ -3282,7 +3286,8 @@
         "S03",
         "S25",
         "R01",
-        "R26"
+        "R26",
+        "R52"
       ],
       "dataQuality": {
         "name": "source-stated",
@@ -3293,21 +3298,27 @@
         "D",
         "F"
       ],
-      "tip": "已補以下特定通路／回收提醒；仍不是整洞逐房間導航。",
+      "tip": "已收錄來源記載的完整行進順序；PS4實機與逐箱配對仍待核實。",
       "exploration": {
         "entityId": "cq2-dg-fursaken-cave",
         "type": "secret",
         "steps": [
-          "Deep Forest內依岩島間看不見的連接路逐段前進；先核對東、西、北三箱。"
+          "從Deep Forest的Fursaken Cave入口出發，穿過南側兩支火炬之間，再向東沿隱形連接路過島。",
+          "續往東南清敵；再取向西延伸的隱形支路，開西側寶箱。",
+          "原路退回兩座島，再改走北側分支；清敵後回收東側寶箱。",
+          "接著向西開怪物箱，核對三箱、敵人與遊戲Dungeon Complete後離開。",
+          "北箱固定Skeleton King Armor；東／西箱各為Armor或Crown候選，未取得Crown不代表漏箱。上述行進順序的最後怪物箱與掉落表北箱尚未逐箱配對，不把兩者強行視為同箱。"
         ],
         "routeCodes": [
           "F01"
         ],
         "sourceIds": [
           "R01",
-          "R26"
+          "R26",
+          "R52"
         ],
-        "uncertainty": "已核對島嶼式路線與三箱配置；完整起點及逐轉彎方向仍待核實，不套用未證實的南→東順序。",
+        "walkthroughScope": "source-route",
+        "uncertainty": "完整行進順序已由原攻略搜尋索引核對；仍未經PS4實機／錄影驗收。行進順序與掉落表的箱子對應仍待核實，遇到版本差異以現場地形和完成提示核對。",
         "evidence": "source-stated",
         "checkedAt": "2026-11-27",
         "platformVerified": false
@@ -6954,10 +6965,12 @@
       "id": "cq2-eq-excalipurr",
       "kind": "equipment",
       "name": "Excalipurr",
-      "locationText": "C｜Laketown：Of Swords and the Worthy（日文表對應候選）",
+      "locationText": "Laketown 湖靈三連任務：Of Swords and the Worthy（第三段）",
       "aliases": [],
       "scope": "base-reference",
       "relatedEntityIds": [
+        "cq2-sq-the-spirit-in-the-lake",
+        "cq2-sq-of-metals-and-magic",
         "cq2-sq-of-swords-and-the-worthy"
       ],
       "sources": [
@@ -6965,7 +6978,9 @@
         "S15",
         "S32",
         "S33",
-        "R02"
+        "R02",
+        "R53",
+        "R54"
       ],
       "dataQuality": {
         "name": "source-stated",
@@ -6978,17 +6993,21 @@
         {
           "entityId": "cq2-eq-excalipurr",
           "mode": "candidate",
-          "where": "C｜Laketown：Of Swords and the Worthy（日文表對應候選）",
+          "where": "Laketown 湖靈三連任務：Of Swords and the Worthy（第三段）",
           "relatedEntityIds": [
+            "cq2-sq-the-spirit-in-the-lake",
+            "cq2-sq-of-metals-and-magic",
             "cq2-sq-of-swords-and-the-worthy"
           ],
           "routeCodes": [
             "C01"
           ],
           "sourceIds": [
-            "R02"
+            "R02",
+            "R53",
+            "R54"
           ],
-          "note": "任務系列／順序可對照；英文獎勵對應仍待PS4核實，先作優先查找候選，不保證交付即得。",
+          "note": "先依序完成The Spirit in the Lake、Of Metals and Magic，再接Of Swords and the Worthy。第三段依任務標記借出魔力、處理搶劍者，拾劍後回湖靈對話，最後在背包核對Excalipurr再勾取得。日文表指湖區第三任務；英文腳本確認第三段會留下劍，但沒有物品名。影片僅核對標題／說明，尚未確認獎勵畫面；英文物品配對仍待核實，保留候選。",
           "evidence": "source-stated",
           "checkedAt": "2026-11-27",
           "platformVerified": false
@@ -12238,6 +12257,27 @@
       "url": "https://catquest2.fandom.com/wiki/Fire_Staff",
       "note": "搜尋索引；Ruff Cove固定箱與Fur the Mother獎勵。",
       "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "R52",
+      "label": "TrueAchievements：Fursaken行進順序",
+      "url": "https://www.trueachievements.com/game/Cat-Quest-II/walkthrough/3",
+      "note": "搜尋索引回傳原攻略Fursaken整段：入口南側雙火炬、東接東南、西箱、退兩島北行、東箱及西側怪物箱。直接開頁403；屬Xbox攻略，未以PS4錄影複核。",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "R53",
+      "label": "VincentGrite：Laketown第三任務對話",
+      "url": "https://gamefaqs.gamespot.com/switch/239257-cat-quest-ii/faqs/78262",
+      "note": "原頁SF22～SF24已開啟：第三任務取劍並獲准保留；腳本沒有Excalipurr物品名稱，不能單獨證實英文獎勵配對。Switch腳本，非PS4驗收。",
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "R54",
+      "label": "Chreos Gaming：Behold Excalipurr",
+      "url": "https://www.youtube.com/watch?v=cuk-aCbZ6yA",
+      "note": "只核對標題及說明：Laketown湖靈、三個英文任務順序。尚未檢視獎勵畫面，不把影片標題當直接取得證據。",
+      "checkedAt": "2026-11-27"
     }
   ],
   "gaps": [
@@ -12268,7 +12308,7 @@
     },
     {
       "id": "G05",
-      "label": "已補特定秘密路徑與入口提醒；其餘地城及Fursaken完整逐轉彎走法仍未核實。",
+      "label": "Fursaken已補來源記載的完整行進順序；Bat Cove墓碑支路起點、其餘地城及PS4實機走法仍待核實。",
       "research": "每洞截圖或錄影，記位置、操作、出口／箱狀態；不靠一般貼牆建議充數",
       "blocks": "不阻塞已核實特殊提醒；阻塞全逐洞導航聲明",
       "originalLabel": "73基準洞的全部秘密箱精確起點／完整路徑未齊；Tombstone等級衝突"
@@ -12326,7 +12366,7 @@
     ]
   },
   "advice": "## 3. 遊玩時先記住的規則\n\n1. **支線先於該區最後掃洞。** 藍色驚嘆號是支線；做完交付再與 NPC／信箱互動，查看後續任務。系列每一個任務各計一次，不是一條系列才計一次。\n2. **殺光看得到的怪物不等於清洞。** 一併拿箱子、怪物鎖箱及秘密支路；以遊戲 Dungeon Complete／入口狀態與計數核對。入口問號表示未探索，菱形表示仍有未完成內容。\n3. **沒鑰匙、水行或任務前置時先離開。** 不用一直撞同一扇門；Roadmap 將這些集中到回訪卡。\n4. **裝備重複取得是升級，不增加不同裝備件數。** 不需要把兩名角色各配一次才算，也不需要每件升滿。[S17]\n5. **一個近戰、一個法杖是起步建議。** 遇抗性或傷害很低時換角色／武器；不要把一套 Build 視為保證可通關。\n6. **晚期高等洞口不是練等硬門檻。** 150／200 是敵方危險提示，白金只要求等級 99；先完成其他收集和常用裝備升級再挑戰。\n7. 每次取得新東西，只勾實際獲得的那個實體；路線完成、清洞、學法術、拿裝備、實際跳盃各自記錄。\n\n\n## 11. 小訣竅與Build：短、可換、順路取得\n\n### 前期：先讓戰鬥順，不追終局神裝\n\n- 近戰角色用短連段補魔，再閃避；另一名拿法杖補足遠程與不同傷害類型。\n- Healpaw先確保會用，常用傷害法術選一兩個升級，避免把錢平均灑到用不到的東西。\n- Kit Cat升防具／頭部，Hotto Doggo升武器，Arcane Temple升法術。重複裝備也會升既有那件。[S17]\n- 看紅色範圍離開再輸出；被圍時先移動，不為救伙伴站著硬吃傷害。\n- 新版防禦條會吸收傷害並在不受攻擊時慢慢恢復，拉開距離有實際作用；持續跑會加速，移動不用全程滾。[S05]\n\n### 中後期：金鑰匙路線取得後的施法支援\n\n- Gentle Suit＋Gentle Monocle＋The Architect是可考慮的減耗組合，三件就在D02鏈上。\n- 使用Gravi-ruff限制敵人移動，再配合遠程與閃避；不要把它寫成「所有Boss永久無法行動」。\n- 裝備等級與被動都要看，低等新裝不一定勝過目前主力。不要為了照抄套裝犧牲生存。\n- Mewlder Wand等極端減血裝不列一般白金必備；先以穩定為主。\n\n### 最後掃尾\n\n- Lv99通常會隨支線與清洞累積；先清未完成內容，再評估是否真的需要專門刷等。\n- 不要求練滿級、全裝備升滿、全額外模式或每日上線。\n- 不能以網站清單已勾滿，替代遊戲計數或PS獎盃跳盃確認。\n\n",
-  "researchSha256": "caee2fd31f8809192bc4681e894a82c12eb4844302ffe4fd6d4d5bded831a0e4",
+  "researchSha256": "d45454233734982c204f9d740b9fb1345d68adc312034df8365601e03414875f",
   "locationResearch": {
     "checkedAt": "2026-11-27",
     "coverage": {
@@ -12337,7 +12377,7 @@
       "unverified": 0,
       "dungeons": 73,
       "exploration": 26,
-      "secretPaths": 15
+      "secretPaths": 16
     },
     "note": "具名來源／候選池與資料缺口分開；來源記載不等於PS4實機驗收。"
   }

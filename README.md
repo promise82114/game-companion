@@ -1,5 +1,7 @@
 # Game Companion
 
+2026-11-27 本機1.1.1優先補查：Fursaken Cave加入來源記載的完整行進順序；Excalipurr補Laketown三連任務與領劍步驟，英文物品名配對仍保留候選；Bat Cove墓碑支路加入秘密路徑及待核實篩選，入口仍待查。來源87筆，26個地城提醒／16個秘密路徑提醒；沿用原ID與schema1。2026-11-27使用者已授權本批commit／push及既有main GitHub Pages發布；結果以對應Actions及正式資源核對為準。 [補查紀錄](games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
+
 2026-11-27《Cat Quest II》1.1.0補查：108件裝備分為72具名來源、35候選池與1待核對應；26個地城有通路／入口／回收提醒，其中15個涉及秘密路徑。路線與查漏共用原進度，地城可原處核對相關裝備，來源衝突與未核實走法保留。2026-11-27使用者已授權本批commit／push與既有main GitHub Pages發布，部署結果以對應提交Actions及正式資源核對為準。[補查紀錄](games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
 
 2026-11-27 本機新增《Cat Quest III》PS5白金航海手帳：四階段19段路線、31盃、原版96裝備及解謎／失物／懸賞查漏。獨立本機進度、逐鍵撤銷及保護式匯入；裝備精確定位與船藍圖集合仍有明示缺口，未經PS5實機驗收。2026-11-27使用者已授權本批commit／push及既有main Pages發布，部署結果以對應Actions及正式資源核對為準。[模組說明](games/cat-quest-iii/README.md)、[本機入口](http://127.0.0.1:4190/game-companion/games/cat-quest-iii/)。隔離驗證：`node scripts/verify-cq3-browser.mjs`。

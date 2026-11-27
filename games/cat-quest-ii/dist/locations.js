@@ -5,7 +5,7 @@ export function matchesResearch(e,value){
  if(!value)return true;
  if(value==='named')return hasNamedSource(e);
  if(value==='pool')return !hasNamedSource(e)&&e.acquisitionRoutes?.some(r=>r.mode==='pool');
- if(value==='uncertain')return e.acquisitionRoutes?.some(r=>['candidate','unverified'].includes(r.mode))||!!e.researchConflict;
+ if(value==='uncertain')return e.acquisitionRoutes?.some(r=>['candidate','unverified'].includes(r.mode))||!!e.researchConflict||!!e.exploration?.uncertainty;
  if(value==='secret')return e.exploration?.type==='secret';
  if(value==='explored')return !!e.exploration;
  if(value==='missing')return e.kind==='dungeon'&&!e.exploration;
@@ -17,7 +17,7 @@ export function locationDetails(e,{data,esc,inline,link,sources,check,suffix=''}
  if(e.acquisitionRoutes){html+='<section class="location-guide" aria-label="取得來源"><h4>取得來源</h4><p class="muted">來源記載，未經 PS4 實機驗收；開箱、清洞與取得各自確認。</p><ul class="acquisition-list">';
  for(const r of e.acquisitionRoutes){html+=`<li><strong>${esc(acquisitionModes[r.mode])}</strong><p>${inline(r.where)}</p>${r.mode==='pool'?'<p class="uncertainty">只能確認這個箱子有機會出；不保證取得此件，也不代表箱子能刷新。</p>':''}${r.note?'<p class="uncertainty">'+inline(r.note)+'</p>':''}<div class="related">${r.relatedEntityIds.map(id=>{const target=data.entities.find(x=>x.id===id);return link('collections',target.name,{category:target.kind,target:id});}).join('')}</div>${sources(r.sourceIds)}</li>`;}
  html+='</ul></section>';}
- if(e.exploration){const p=e.exploration;html+=`<section class="location-guide" aria-label="通路與回收"><h4>${p.type==='secret'?'秘密路徑與漏箱':'入口與回收順序'}</h4><p class="muted">已收錄特定提醒，完整逐房間導航仍未驗收。</p><ol>${p.steps.map(s=>'<li>'+inline(s)+'</li>').join('')}</ol>${p.uncertainty?'<p class="uncertainty">待核實／注意：'+inline(p.uncertainty)+'</p>':''}${sources(p.sourceIds)}</section>`;}
+ if(e.exploration){const p=e.exploration;html+=`<section class="location-guide" aria-label="通路與回收"><h4>${p.type==='secret'?'秘密路徑與漏箱':'入口與回收順序'}</h4><p class="muted">${p.walkthroughScope==='source-route'?'已收錄來源記載的完整行進順序；PS4實機與逐箱配對仍待核實。':'已收錄特定提醒，完整逐房間導航仍未驗收。'}</p><ol>${p.steps.map(s=>'<li>'+inline(s)+'</li>').join('')}</ol>${p.uncertainty?'<p class="uncertainty">待核實／注意：'+inline(p.uncertainty)+'</p>':''}${sources(p.sourceIds)}</section>`;}
  if(e.researchConflict)html+='<p class="uncertainty">來源衝突：'+inline(e.researchConflict)+'</p>';
  if(e.kind==='dungeon'){
  const rewards=data.entities.filter(item=>item.kind==='equipment'&&item.acquisitionRoutes?.some(r=>r.relatedEntityIds.includes(e.id)));

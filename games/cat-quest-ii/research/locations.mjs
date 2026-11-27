@@ -51,7 +51,10 @@ export const sources=[
  ['R48','Wiki：Wooftopia',wiki('Wooftopia'),'搜尋索引；Elder Mage Robes獎勵。'],
  ['R49','Wiki：Pundora’s Box',wiki('Pundora%27s_Box'),'搜尋索引；箱子交給Barkthan Drayke後Wraith Armor獎勵。'],
  ['R50','Wiki：The Hawt Dog',wiki('The_Hawt_Dog'),'搜尋索引；Over the Limit獎勵。'],
- ['R51','Wiki：Fire Staff',wiki('Fire_Staff'),'搜尋索引；Ruff Cove固定箱與Fur the Mother獎勵。']
+ ['R51','Wiki：Fire Staff',wiki('Fire_Staff'),'搜尋索引；Ruff Cove固定箱與Fur the Mother獎勵。'],
+ ['R52','TrueAchievements：Fursaken行進順序','https://www.trueachievements.com/game/Cat-Quest-II/walkthrough/3','搜尋索引回傳原攻略Fursaken整段：入口南側雙火炬、東接東南、西箱、退兩島北行、東箱及西側怪物箱。直接開頁403；屬Xbox攻略，未以PS4錄影複核。'],
+ ['R53','VincentGrite：Laketown第三任務對話','https://gamefaqs.gamespot.com/switch/239257-cat-quest-ii/faqs/78262','原頁SF22～SF24已開啟：第三任務取劍並獲准保留；腳本沒有Excalipurr物品名稱，不能單獨證實英文獎勵配對。Switch腳本，非PS4驗收。'],
+ ['R54','Chreos Gaming：Behold Excalipurr','https://www.youtube.com/watch?v=cuk-aCbZ6yA','只核對標題及說明：Laketown湖靈、三個英文任務順序。尚未檢視獎勵畫面，不把影片標題當直接取得證據。']
 ].map(([id,label,url,note])=>({id,label,url,note,checkedAt:'2026-11-27'}));
 
 export const equipment=[];
@@ -102,7 +105,8 @@ const questCandidates=[
  ['old-master-body','the-powerful-one','E01'],['scout-armor','the-magic-user','E01'],['elder-mage-robes','wooftopia','E01'],
  ['storm-armor','bad-consequences','E01'],['the-hawt-dog','over-the-limit','E01']
 ];
-for(const [items,quest,route] of questCandidates)eq(items,'candidate','日文裝備表記載的任務獎勵；對照 '+quest,[sq(quest)],route,'R02',{note:'任務系列／順序可對照；英文獎勵對應仍待PS4核實，先作優先查找候選，不保證交付即得。'});
+for(const [items,quest,route] of questCandidates){if(items==='excalipurr')continue;eq(items,'candidate','日文裝備表記載的任務獎勵；對照 '+quest,[sq(quest)],route,'R02',{note:'任務系列／順序可對照；英文獎勵對應仍待PS4核實，先作優先查找候選，不保證交付即得。'});}
+eq('excalipurr','candidate','Laketown 湖靈三連任務：Of Swords and the Worthy（第三段）',[sq('the-spirit-in-the-lake'),sq('of-metals-and-magic'),sq('of-swords-and-the-worthy')],'C01','R02 R53 R54',{note:'先依序完成The Spirit in the Lake、Of Metals and Magic，再接Of Swords and the Worthy。第三段依任務標記借出魔力、處理搶劍者，拾劍後回湖靈對話，最後在背包核對Excalipurr再勾取得。日文表指湖區第三任務；英文腳本確認第三段會留下劍，但沒有物品名。影片僅核對標題／說明，尚未確認獎勵畫面；英文物品配對仍待核實，保留候選。'});
 eq('storm-helm','quest','The Banished：The Talented Soldier，取回頭盔後回報並開獎勵箱',[sq('the-talented-soldier')],'E01','R42');
 eq('general-s-mace','quest','Throne of Lupus：The Pawsitively Secret Contact，交付任務物品後領獎',[sq('the-pawsitively-secret-contact')],'E01','S31 R02');
 eq('gentle-suit','quest','Founders Island II：完成 This Is It! 後對話領取',[sq('this-is-it'),key('hidden')],'D02','S07 R02');
@@ -154,10 +158,10 @@ path('pawt-cave','entrance',['先清大陸入口能到的敵人，讓怪物箱�
 path('ultimutt-stash','secret',['進洞後先記住第一支火炬的位置。','向東找三塊石頭，再向南至狗與箱子的支路；回到第一火炬。','鑰匙支路在第一火炬西南，另行確認實際拾起Hidden Stash Key。'],'F02','R01 R38',{uncertainty:'清洞訊息不能替代拿鑰匙；鑰匙分支逐個轉折仍待PS4核對。'});
 path('hidden-stash','gated',['先從Ultimutt Stash取得專用鑰匙。','至Throne of Lupus東南／Dog Barracks附近開內門，打敗Skeleton King並開獎勵箱。'],'F02','S10 S12',{uncertainty:'此鑰匙與Hidden Key／Golden Key不同。'});
 path('drakoth-s-vault','gated',['水行到Mewment Shores南島與Throne of Lupus西島群，分別完成兩個鑰匙試煉。','帶兩把Drakoth專用鑰匙回寶物庫，開內門並取完三個固定裝備箱。'],'F02','R29 S14');
-path('bat-cove','gated',['完成The Doge Knight取任務開門條件，再回Throne of Lupus西側Bat Cove。','分別核對東、北、南三個固定裝備箱。'],'E01','R31',{uncertainty:'另有Pawmas／Mafang墓碑秘密支路，但入口起點未核實；不寫假方向。'});
+path('bat-cove','secret',['完成The Doge Knight取得開門條件，再回Throne of Lupus西側Bat Cove。','先分別核對東箱Doge Knight Cowl、北箱Doge Knight Armor、南箱The Bataxe；背包取得各自勾選。','另有通往Pawmas與Mafang Woofayne墓碑的秘密支路；目前只能確認來源記載其存在，不能提供可靠起點。'],'E01','R31',{uncertainty:'墓碑支路入口、逐轉彎方向、是否有額外獎勵及是否影響Dungeon Complete仍待核實；三個裝備箱不等於已走過墓碑支路。'});
 path('wyvern-nest','entrance',['清第一房間並擊敗Red (Fire) Dragon。','使用傳送台進第二房間，另開第二房間箱；只拿第一房怪物箱不足。'],'F02','R12');
 path('path-to-lupus-tomb','entrance',['在Barkara Desert找三個標示Unknown的入口。','依主線走側路通道，從中途出口進墓區；內部箱子與主線互動各自核對。'],'D04','R39 R01');
-path('fursaken-cave','secret',['Deep Forest內依岩島間看不見的連接路逐段前進；先核對東、西、北三箱。'],'F01','R01 R26',{uncertainty:'已核對島嶼式路線與三箱配置；完整起點及逐轉彎方向仍待核實，不套用未證實的南→東順序。'});
+path('fursaken-cave','secret',['從Deep Forest的Fursaken Cave入口出發，穿過南側兩支火炬之間，再向東沿隱形連接路過島。','續往東南清敵；再取向西延伸的隱形支路，開西側寶箱。','原路退回兩座島，再改走北側分支；清敵後回收東側寶箱。','接著向西開怪物箱，核對三箱、敵人與遊戲Dungeon Complete後離開。','北箱固定Skeleton King Armor；東／西箱各為Armor或Crown候選，未取得Crown不代表漏箱。上述行進順序的最後怪物箱與掉落表北箱尚未逐箱配對，不把兩者強行視為同箱。'],'F01','R01 R26 R52',{walkthroughScope:'source-route',uncertainty:'完整行進順序已由原攻略搜尋索引核對；仍未經PS4實機／錄影驗收。行進順序與掉落表的箱子對應仍待核實，遇到版本差異以現場地形和完成提示核對。'});
 path('hidden-cave','gated',['Founders Island II任務後拿Hidden Key，回洞開內門。','擊敗三個Golden Mimics，拾起Golden Key，再回前段金箱拿The Architect。'],'D02','S07 S08');
 path('cave-of-the-lion','reward',['先擊敗Aelius，再以Continue回同一存檔。','完成洞內挑戰後開完三個Purrsecutor獎勵箱，逐件核對背包。'],'F03','R27',{uncertainty:'未收錄全戰鬥逐秒操作；沒有假設特定計時條件。'});
 path('tomb-of-the-wolf','reward',['先擊敗Aelius，再以Continue回同一存檔。','完成Dark Wolfen挑戰後核對Labrathor兩件與Pawlonijr，三箱都檢查。'],'F03','R28 R36',{uncertainty:'Pawlonijr箱型有來源衝突，不固定稱東箱或怪物箱。'});
