@@ -33,3 +33,12 @@ node scripts/verify-cq3-browser.mjs
 本模組遵循共通介面偏好28的14px緊湊字級。介面是可連續操作的攻略工具，採既有側欄、完成度方塊及清單；不套用行銷網站的一屏一節、大型主視覺或動畫版型。未核實位置的裝備不冒充終章掉落，集中於查漏清單；全部已收錄名稱可直接勾選；攻略詳細步驟可按需展開，來源差異在收合時仍可見。
 
 限制及測試紀錄見 [實作報告](docs/IMPLEMENTATION.md)。本批已獲使用者授權提交、推送，沿既有main GitHub Pages流程發布；實機跳盃與PS5現版集合仍未驗收。
+
+
+## 2026-11-27 中文優先試行 · 1.3.0
+
+211 個實體與 31 座獎盃的主要名稱補入繁中參考譯名，中文在前、原文以12px小字對照；路線、地點、關聯連結、區域選單及行內關鍵字共用詞彙表。中文與原名皆可搜尋，原始name／label、ID、資料來源、schema與進度鍵不改。
+
+本批沒有可直接認定為遊戲官方繁中的逐項證據；新增名稱均屬本站參考譯名，少數專名採音譯，並非官方用詞還原。翻譯範圍在清單提示與資料頁集中說明，不因譯名補齊而提升取得位置或條件的查證等級。
+
+維護 `research/localization.json` 後執行原 `prepare-data` 命令，產生 `dist/localization.js`；verify檢查詞彙表hash、產物一致與中文名稱覆蓋。獨立語系回歸：`node scripts/verify-cat-quest-localization-browser.mjs`。規則與限制見[中文優先試行紀錄](../../docs/reports/CAT_QUEST_CHINESE_FIRST_20261127.md)。2026-11-27使用者已授權本批commit／push，沿既有main Pages流程發布；結果以對應提交Actions與正式資源核對為準，正式站人工驗收由使用者進行。

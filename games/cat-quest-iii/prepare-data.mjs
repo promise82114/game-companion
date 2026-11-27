@@ -1,3 +1,4 @@
+import {prepareChineseGlossary} from '../../scripts/lib/prepare-chinese-glossary.mjs';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const root=new URL('./',import.meta.url),raw=await fs.readFile(new URL('../../cat-quest-iii_GAME_COMPANION_SPEC.md',root),'utf8');
@@ -60,5 +61,6 @@ for(const step of steps){step.entityIds=entities.filter(e=>e.route===step.id).ma
 const coverage=table(section(3));coverage.find(r=>r[0].includes('原版裝備'))[2]='96筆均有取得提示、來源與路線；單源及衝突可見，未PS5實機驗證。';coverage.find(r=>r[0].includes('船藍圖'))[2]='13被動與4炮彈均有查漏攻略；名稱、階級與金盃集合仍有來源差異，不作白金分母。';
 const gaps=table(section(11));gaps.find(r=>r[0]==='U02')[1]='96件已有取得提示與來源；部分精確箱、固定／隨機說法及中文對照待核。';gaps.find(r=>r[0]==='U02')[3]='不阻塞查漏；不宣稱全數位置已實機證實。';gaps.find(r=>r[0]==='U03')[1]='13被動與4炮彈已有逐項流程；++階級、固定箱／掉落及PS5金盃集合仍有差異。';
 const data={gameId:'cat-quest-iii',version:'2026-11-27.3',specHash:createHash('sha256').update(raw).digest('hex'),supplementHash:createHash('sha256').update(JSON.stringify(supplement)).digest('hex'),followupHash:createHash('sha256').update(JSON.stringify(followup)).digest('hex'),reviewedIds:followup.rows.map(r=>r.id),chapters,steps,entities,trophies,sources,gaps,coverage,bookGuide:sub('5.4').split('**戀愛書選擇提示**：')[1]?.trim(),scope:section(3).split('\n\n').at(-1)};
+await prepareChineseGlossary(root,data);
 await fs.mkdir(new URL('dist/',root),{recursive:true});await fs.writeFile(new URL('dist/data.json',root),JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({steps:steps.length,entities:entities.length,trophies:trophies.length}));

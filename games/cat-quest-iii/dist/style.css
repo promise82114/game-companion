@@ -11,3 +11,8 @@
 .row>details{margin:8px 0 8px 32px}.row>details>summary{cursor:pointer;min-height:36px;padding:6px 0}.row>details p,.row>details li{font-size:14px}.entity-line>ol,.entity-line>p{font-size:14px}.row>.warning,.entity-line>.warning{font-size:14px;margin-left:32px}.compact-location{margin-left:32px}.row .row-footer{margin-top:8px}ol{padding-left:24px}li{margin:6px 0}.entity-line .progress-note{margin-left:32px}@media(max-width:720px){.row>details>summary{min-height:44px}}
 /* 跳到正文連結仍可鍵盤聚焦，離焦時確實裁切，避免長頁截圖出現浮字。 */
 .skip{top:0;clip-path:inset(50%);width:1px;height:1px;padding:0;overflow:hidden;white-space:nowrap}.skip:focus{clip-path:none;width:auto;height:auto;padding:12px;overflow:visible}
+
+/* Chinese leads; the original is a readable secondary reference. */
+.localized-name{font:inherit;overflow-wrap:anywhere}.localized-name .name-zh{font:inherit}.localized-name .original-name{display:inline;font-size:12px;line-height:1.65;font-weight:400;color:#53625a;white-space:normal;overflow-wrap:anywhere}.translation-note{font-size:13px;line-height:1.65;color:#43554b}.translation-policy{margin:16px 0;padding:12px;border-left:3px solid #547761}.translation-policy p{font-size:14px}.check .localized-name{min-width:0}
+
+.sidebar .localized-name .original-name{color:#c8ddd4}.brand .localized-name>.original-name{display:block}

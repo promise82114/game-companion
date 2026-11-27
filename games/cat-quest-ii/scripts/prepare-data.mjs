@@ -1,3 +1,4 @@
+import {prepareChineseGlossary} from '../../../scripts/lib/prepare-chinese-glossary.mjs';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {mergeLocations} from './merge-locations.mjs';
@@ -39,5 +40,6 @@ for(const step of data.steps){const text=step.instructions.join('\n');step.sourc
 for(const e of data.entities){e.relatedEntityIds=data.entities.filter(other=>other.id!==e.id&&((e.locationText+' '+e.tip).includes(other.name)||(other.locationText+' '+other.tip).includes(e.name))).map(r=>r.id);if(e.kind==='goldChest'&&e.rewardMode==='fixed'){const reward=data.entities.find(r=>r.kind==='equipment'&&norm(r.name)===norm(e.tip));if(reward&&!e.relatedEntityIds.includes(reward.id))e.relatedEntityIds.push(reward.id);}}
 data.advice=section('## 3.','## 4.')+'\n'+section('## 11.','## 12.');
 await mergeLocations(data);
+await prepareChineseGlossary(new URL('../',import.meta.url),data);
 await fs.writeFile(new URL('../dist/data.json',import.meta.url),JSON.stringify(data,null,2)+'\n');
 console.log({phases:data.phases.length,steps:data.steps.length,entities:data.entities.length,trophies:data.trophies.length,sources:data.sources.length});

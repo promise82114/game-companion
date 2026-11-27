@@ -1,9 +1,9 @@
 {
   "gameId": "cat-quest-ii",
   "slug": "cat-quest-ii",
-  "title": "Cat Quest II｜雙王白金手冊",
+  "title": "貓咪鬥惡龍II／Cat Quest II",
   "description": "PS5 執行 PS4 版：六階段路線、67支線、73地城索引與裝備查漏",
-  "moduleVersion": "1.1.1",
+  "moduleVersion": "1.2.0",
   "progressSchema": 1,
   "entry": "dist/index.html",
   "publicPath": "games/cat-quest-ii/",

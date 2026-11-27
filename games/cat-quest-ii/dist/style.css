@@ -15,3 +15,8 @@ nav li a,nav small,.row-body a,.peek,.stat-card{font-size:13px}
 @media(max-width:720px){h1{font-size:22px}h2{font-size:18px}.stat-card strong{font-size:20px}button,select,input[type=search],input[type=number]{min-height:44px}.check{min-height:44px}}
 
 .location-guide h4,.related-rewards h4{font-size:14px;margin:14px 0 6px}.location-guide ol,.acquisition-list{padding-left:22px}.location-guide li{margin:8px 0}.location-guide li p{margin:4px 0}.uncertainty{border-left:2px solid #947232;padding-left:10px;color:#685726;font-size:13px}.research-coverage{font-size:13px;border-left:2px solid var(--accent);padding:6px 12px}.research-filter{display:inline-flex;align-items:center;gap:8px;margin:0 12px 14px 0}.related-rewards>div{padding:6px 0;border-bottom:1px solid var(--rule)}.related-rewards small{margin-left:32px}.location-guide .related{margin:6px 0}.location-guide .related a{overflow-wrap:anywhere}@media(max-width:720px){.research-filter{display:flex;flex-wrap:wrap}.location-guide ol,.acquisition-list{padding-left:18px}}
+
+/* Chinese leads; the original is a readable secondary reference. */
+.localized-name{font:inherit;overflow-wrap:anywhere}.localized-name .name-zh{font:inherit}.localized-name .original-name{display:inline;font-size:12px;line-height:1.65;font-weight:400;color:#53625a;white-space:normal;overflow-wrap:anywhere}.translation-note{font-size:13px;line-height:1.65;color:#43554b}.translation-policy{margin:16px 0;padding:12px;border-left:3px solid #547761}.translation-policy p{font-size:14px}.check .localized-name{min-width:0}
+
+.brand .localized-name>.original-name{display:block}

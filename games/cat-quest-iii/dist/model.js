@@ -4,7 +4,7 @@ export const groups=['steps','facts','trophies','counters','settings'];
 export const clone=value=>value===undefined?undefined:JSON.parse(JSON.stringify(value));
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const safe=id=>!['__proto__','prototype','constructor'].includes(id);
-export function fresh(){return {gameId,platform:'ps5',schema:1,schemaVersion:1,moduleVersion:'1.2.0',dataVersion:'2026-11-27.3',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(g=>[g,{}]))};}
+export function fresh(){return {gameId,platform:'ps5',schema:1,schemaVersion:1,moduleVersion:'1.3.0',dataVersion:'2026-11-27.3',revision:0,updatedAt:Date.now(),...Object.fromEntries(groups.map(g=>[g,{}]))};}
 function safeTree(value){if(!value||typeof value!=='object')return;for(const [key,item] of Object.entries(value)){if(!safe(key))throw Error('不安全的資料鍵');safeTree(item);}}
 export function validateProgress(p){
  safeTree(p);
@@ -20,7 +20,7 @@ export function validateProgress(p){
   if(row.updatedAt!==undefined&&(!Number.isFinite(row.updatedAt)||row.updatedAt<0))throw Error('項目時間無效');
  }}return p;
 }
-export const config={gameId,moduleVersion:'1.2.0',storagePrefix,driveProjectId:'game-companion.'+gameId,exportSyncState:false,fresh,validateProgress};
+export const config={gameId,moduleVersion:'1.3.0',storagePrefix,driveProjectId:'game-companion.'+gameId,exportSyncState:false,fresh,validateProgress};
 export const isDone=(p,group,id)=>p[group]?.[id]?.done===true;
 export const count=(p,group,rows)=>rows.filter(r=>isDone(p,group,r.id)).length;
 export const nextStep=(p,d)=>d.steps.find(s=>!isDone(p,'steps',s.id));

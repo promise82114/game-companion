@@ -1,8 +1,10 @@
+import {verifyChineseGlossary} from '../../scripts/lib/prepare-chinese-glossary.mjs';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import * as m from './dist/model.js';
 const root=new URL('./',import.meta.url),d=JSON.parse(await fs.readFile(new URL('dist/data.json',root))),manifest=JSON.parse(await fs.readFile(new URL('module.json',root)));
+await verifyChineseGlossary(root,d);
 assert.equal(d.specHash,createHash('sha256').update(await fs.readFile(new URL('../../cat-quest-iii_GAME_COMPANION_SPEC.md',root))).digest('hex'));
 assert.equal(d.supplementHash,createHash('sha256').update(JSON.stringify(JSON.parse(await fs.readFile(new URL('research.json',root))))).digest('hex'));
 const followup=JSON.parse(await fs.readFile(new URL('followup-research.json',root)));assert.equal(d.followupHash,createHash('sha256').update(JSON.stringify(followup)).digest('hex'));assert.equal(d.reviewedIds.length,20);assert.equal(new Set(d.reviewedIds).size,20);for(const id of d.reviewedIds){const row=d.entities.find(e=>e.id===id);assert.ok(row?.review?.remaining);for(const ref of row.review.sourceIds)assert.ok(d.sources.some(s=>s.id===ref));}

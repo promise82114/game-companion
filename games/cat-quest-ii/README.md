@@ -28,3 +28,12 @@ IndexedDB `game-companion.cat-quest-ii.progress.v1` 只保存本遊戲紀錄。�
 字級遵循共通偏好28：正文14px、次要13px、標題24／18／16px（手機頁標題22px），手機主要控件44px。以既有工具介面為優先，沒有套用宣傳頁的滿屏hero／動畫段落。
 
 實作及驗證見 [IMPLEMENTATION.md](docs/IMPLEMENTATION.md)。2026-11-27 使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 與正式資源核對為準。
+
+
+## 2026-11-27 中文優先試行 · 1.2.0
+
+292 個實體與 20 座獎盃的主要名稱補入繁中參考譯名，中文在前、原文以12px小字對照；路線、地點、關聯連結、區域選單及行內關鍵字共用詞彙表。中文與原名皆可搜尋，原始name／label、ID、資料來源、schema與進度鍵不改。
+
+本批沒有可直接認定為遊戲官方繁中的逐項證據；新增名稱均屬本站參考譯名，少數專名採音譯，並非官方用詞還原。翻譯範圍在清單提示與資料頁集中說明，不因譯名補齊而提升取得位置或條件的查證等級。
+
+維護 `research/localization.json` 後執行原 `prepare-data` 命令，產生 `dist/localization.js`；verify檢查詞彙表hash、產物一致與中文名稱覆蓋。獨立語系回歸：`node scripts/verify-cat-quest-localization-browser.mjs`。規則與限制見[中文優先試行紀錄](../../docs/reports/CAT_QUEST_CHINESE_FIRST_20261127.md)。2026-11-27使用者已授權本批commit／push，沿既有main Pages流程發布；結果以對應提交Actions與正式資源核對為準，正式站人工驗收由使用者進行。

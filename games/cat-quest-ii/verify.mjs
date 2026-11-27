@@ -1,7 +1,9 @@
+import {verifyChineseGlossary} from '../../scripts/lib/prepare-chinese-glossary.mjs';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 const data=JSON.parse(await fs.readFile(new URL('./dist/data.json',import.meta.url),'utf8'));
+await verifyChineseGlossary(new URL('./',import.meta.url),data);
 assert.equal(data.specSha256,createHash('sha256').update(await fs.readFile(new URL('../../cat-quest-ii_GAME_COMPANION_SPEC.md',import.meta.url))).digest('hex'));
 for(const [kind,n] of Object.entries({sideQuest:67,dungeon:73,spell:12,equipment:108,goldChest:22,key:5,royalArt:4,location:1}))assert.equal(data.entities.filter(e=>e.kind===kind).length,n,kind);
 assert.equal(data.entities.filter(e=>e.kind==='equipment'&&e.scope==='base-reference').length,101);

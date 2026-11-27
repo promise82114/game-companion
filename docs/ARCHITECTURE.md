@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 中文優先試行：Cat Quest II 1.2.0／III 1.3.0 各自維護 research/localization.json，由原 prepare-data 命令透過 scripts/lib/prepare-chinese-glossary.mjs 產生追蹤的 dist/localization.js（含來源hash）。shared/chinese-text.js 是純顯示／搜尋工具，以安全DOM文字節點提供中文主名與原文小字；不存取進度、不改寫原始名稱或已發布ID。原有產生器的 data.json 及schema不變；verifier檢查詞彙覆蓋與產物一致，參考譯名與攻略查證狀態分開。詳見[試行紀錄](reports/CAT_QUEST_CHINESE_FIRST_20261127.md)。
+
 2026-11-27 Cat Quest III 1.2.0：新增followup-research.json的20筆針對性補查與followupHash；在原spec／research後疊加，維持211事實及schema1。每筆review保存前版證據等級、本次結論、未解範圍與來源，清單詳情與路線共用；未因證據更新代填進度或獎盃。沿既有main Pages流程依授權發布，結果以對應Actions及正式資源為準。[補查紀錄](../games/cat-quest-iii/docs/FOLLOWUP_AUDIT.md)。
 
 2026-11-27 Cat Quest II 1.1.0：research/locations.mjs與原規格以獨立SHA256疊加產生catalog；108裝備的取得來源／候選池及26地城提醒由dist/locations.js呈現，共用原entities紀錄，schema1與namespace不變。來源與查證範圍篩選只影響檢視，地城清洞不代填裝備／鑰匙；Infinity Tomb五件仍在額外內容。2026-11-27使用者已授權本批commit／push與既有main GitHub Pages發布，部署結果以對應提交Actions及正式資源核對為準。見[補查紀錄](../games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
