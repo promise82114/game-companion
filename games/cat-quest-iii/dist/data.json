@@ -1,8 +1,31 @@
 {
   "gameId": "cat-quest-iii",
-  "version": "2026-11-27.2",
+  "version": "2026-11-27.3",
   "specHash": "1321c653ec720cb89654e514dc11d52ddfb1a60ec350534f6da7340e742c8abd",
   "supplementHash": "c69a745d676d8d6443c97aab044c99907f6ca807f382695579d29fc027c05491",
+  "followupHash": "797f90562eb478a80f88a3eb5907c988b06eee6d088f594bfe8a1642c3d5081d",
+  "reviewedIds": [
+    "cq3-equip-body-oinker-garments",
+    "cq3-equip-melee-rogue-claws",
+    "cq3-equip-body-spicy-vest",
+    "cq3-equip-body-fire-mage-vest",
+    "cq3-equip-head-fishercat-hat",
+    "cq3-equip-body-fishercat-attire",
+    "cq3-equip-head-purrmaid-helm",
+    "cq3-equip-body-purrmaid-vest",
+    "cq3-equip-melee-tri-claws",
+    "cq3-equip-trinket-magical-glove",
+    "cq3-equip-trinket-magical-punching-bag",
+    "cq3-equip-trinket-magical-purse",
+    "cq3-equip-trinket-oinker-necklace",
+    "cq3-ship-ship-hull-plus",
+    "cq3-ship-ammo-capacity-plus",
+    "cq3-ship-ammo-capacity-plus-plus",
+    "cq3-ship-ship-hull-plus-plus",
+    "cq3-ship-firing-rate-plus-plus",
+    "cq3-ship-cannon-reload-plus-plus",
+    "cq3-cannonpaw-super-cannonpaw"
+  ],
   "chapters": [
     {
       "id": "stage-1",
@@ -270,6 +293,7 @@
         "cq3-spell-icepaw",
         "cq3-bounty-fire-pi-rat-captain-defeated",
         "cq3-bounty-fire-pi-rat-captain-claimed",
+        "cq3-ship-ammo-capacity-plus-plus",
         "cq3-ship-cannon-reload-plus-plus",
         "cq3-equip-head-fire-mage-hat",
         "cq3-equip-head-spicy-bandana",
@@ -360,7 +384,6 @@
         "cq3-puzzle-world-pillars",
         "cq3-puzzle-world-pillars-reward",
         "cq3-quest-purrmaid-return",
-        "cq3-ship-ammo-capacity-plus-plus",
         "cq3-ship-pawer-boost",
         "cq3-equip-head-gentlebro-hat",
         "cq3-equip-body-gentlebro-tuxedo",
@@ -1490,14 +1513,15 @@
       "id": "cq3-ship-ammo-capacity-plus",
       "kind": "ship-passive",
       "label": "Ammo Capacity +",
-      "tip": "沿河道駛近，用船炮破門，清守軍後開箱。",
+      "tip": "Purvanna東北Fort Wreck：沿河道駛近、炮破門，清敵後開箱取得Ammo Capacity +。",
       "route": "cq3-r04",
       "sourceIds": [
         "S25",
-        "S22"
+        "S22",
+        "S28"
       ],
       "scope": "unresolved",
-      "evidence": "single-source",
+      "evidence": "cross-checked",
       "location": "Purvanna 北部／Fort Wreck",
       "method": "ship",
       "prerequisites": [
@@ -1508,32 +1532,51 @@
         "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "北部破門堡獎勵由S25支持；Fort Wreck名稱定位需再核對。不採S16將Fort Wreck列為++的說法。"
+      "caveat": "S28直接列Fort Wreck的+；S16列++的差異保留於++項目，不以該文代換階級。",
+      "review": {
+        "result": "新增流程直接寫Fort Wreck與Ammo Capacity +，補足原先只知北部堡壘的缺口。",
+        "remaining": "不能據此將S16所列++也歸為同一獎勵。",
+        "sourceIds": [
+          "S28"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "single-source"
+      }
     },
     {
       "id": "cq3-ship-ammo-capacity-plus-plus",
       "kind": "ship-passive",
       "label": "Ammo Capacity ++",
-      "tip": "完成八個電話水點後回人魚，檢查身後新開寶箱。",
-      "route": "cq3-r17",
+      "tip": "救人魚時清西側敵船與章魚、炮破木柵後查箱；沒取得再於八水點回報後檢查人魚身後。",
+      "route": "cq3-r12",
       "sourceIds": [
         "S26",
         "S23",
-        "S16"
+        "S16",
+        "S30"
       ],
       "scope": "unresolved",
       "evidence": "conflicting",
-      "location": "Sunset 人魚回報處",
+      "location": "Sunset人魚池／西側木柵後",
       "method": "ship",
       "prerequisites": [
-        "Shell Phone、八個水點及人魚結尾回報。"
+        "取得船；當下能否開箱依遊戲狀態確認，不一律要求先收八個水點。"
       ],
       "instructions": [
-        "依上述地標完成戰鬥、解謎或回程取箱。",
-        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+        "首次救援人魚時先清西側敵船、章魚，炮破木柵後查箱並核對++階級。",
+        "若仍缺少，完成八水點並回報後再查身後箱；兩路線是查漏候選，不重複計數。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S26：人魚任務後方箱；S23未標++；S16列Fort Wreck。先依人魚流程查漏，階級與唯一位置仍待實機核對。"
+      "caveat": "S30列救援當下清敵破門取++；S26列八水點後方箱；S16列Fort Wreck。位置／前置差異仍未解，不再把八水點寫成唯一硬前置。",
+      "review": {
+        "result": "Sunset人魚附近取得++有新增流程；發現前置說法仍不同。",
+        "remaining": "首次救援清敵破門即可開箱，或必須八水點回報，兩說尚未核實。",
+        "sourceIds": [
+          "S30"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-ship-cannon-power-plus",
@@ -1614,7 +1657,8 @@
       "sourceIds": [
         "S22",
         "S23",
-        "S16"
+        "S16",
+        "S33"
       ],
       "scope": "unresolved",
       "evidence": "conflicting",
@@ -1624,11 +1668,20 @@
         "已取得船，海上木柵以船炮破壞。"
       ],
       "instructions": [
-        "依上述地標完成戰鬥、解謎或回程取箱。",
-        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+        "在Sunset西側螺旋海岸找四藍石，先看清每塊的羅馬數字。",
+        "開船依I至IV迅速命中；必要時靠岸下船補最後一石，成功後另開獎勵箱。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S22／S23支持海岸解謎固定箱，S16稱隨機箱。先查固定點，仍需核對背包階級。"
+      "caveat": "S22、S23及S33支持四石獎勵；S16泛稱隨機箱仍保留。命中順序按石頭數字，不照未核實絕對方位。",
+      "review": {
+        "result": "Sunset西側四石限時解法再次對照，補入船上命中順序。",
+        "remaining": "S16隨機箱說未核；以遊戲羅馬數字順序為準。",
+        "sourceIds": [
+          "S33"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-ship-firing-rate-plus",
@@ -1657,12 +1710,15 @@
       "id": "cq3-ship-firing-rate-plus-plus",
       "kind": "ship-passive",
       "label": "Firing Rate ++",
-      "tip": "擊敗兩隻 Heartpurroken，檢查解鎖獎勵箱。",
+      "tip": "Heartpurreak入口岔路走南側金幣路徑查箱；可清兩隻追擊怪後再安心回收。",
       "route": "cq3-r06",
       "sourceIds": [
         "S22",
         "S23",
-        "S16"
+        "S16",
+        "S31",
+        "S37",
+        "S38"
       ],
       "scope": "unresolved",
       "evidence": "conflicting",
@@ -1672,11 +1728,22 @@
         "已取得船，海上木柵以船炮破壞。"
       ],
       "instructions": [
-        "依上述地標完成戰鬥、解謎或回程取箱。",
-        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+        "需要清怪時引兩隻Heartpurroken撞尖刺，待封門解除再探索。",
+        "回入口岔路，沿南側金幣路徑開箱，核對Firing Rate ++。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S22／S23支持Heartpurreak固定箱，S16稱隨機箱；採可重現地城路線，不保證任何隨機箱必出。"
+      "caveat": "S31與S37支持入口岔路南側箱，S38 38:58索引記錄相同地城；S16隨機箱說仍未核實。",
+      "review": {
+        "result": "兩份獨立逐洞文字支持入口岔路南側箱，已補走法。",
+        "remaining": "S16泛稱隨機箱與其他逐箱資料不同，不能保證任意塔箱必出。",
+        "sourceIds": [
+          "S31",
+          "S37",
+          "S38"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-ship-pawer-boost",
@@ -1705,50 +1772,72 @@
       "id": "cq3-ship-ship-hull-plus",
       "kind": "ship-passive",
       "label": "Ship Hull +",
-      "tip": "嘗試開鎖箱引出敵船，擊沉後回箱子領取。",
+      "tip": "由Long Island南側炮破Fort Tail木柵，嘗試開鎖箱引出敵船；擊沉後回箱領取。",
       "route": "cq3-r03",
       "sourceIds": [
         "S26",
-        "S16"
+        "S16",
+        "S29"
       ],
       "scope": "unresolved",
-      "evidence": "conflicting",
-      "location": "Long Island",
+      "evidence": "cross-checked",
+      "location": "Long Island／Fort Tail",
       "method": "ship",
       "prerequisites": [
         "已取得船，海上木柵以船炮破壞。"
       ],
       "instructions": [
-        "依上述地標完成戰鬥、解謎或回程取箱。",
-        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+        "從Long Island南側進Fort Tail，先清高台投彈敵人、炮破木柵。",
+        "開北側鎖箱引出船戰，擊沉敵船後回到同一個箱子取Ship Hull。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S26為Long Island鎖箱，S16列Fort Tail；保留來源差異，先查Long Island船戰。"
+      "caveat": "Fort Tail位於Long Island內，先前的地名衝突已排除；S29省略+號，船選單階級仍由玩家核對。",
+      "review": {
+        "result": "已釐清Long Island與Fort Tail是區域與內部據點，非兩個互斥地點。",
+        "remaining": "原攻略省略+號；以船選單核對階級，未實機驗證。",
+        "sourceIds": [
+          "S29"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-ship-ship-hull-plus-plus",
       "kind": "ship-passive",
       "label": "Ship Hull ++",
-      "tip": "從第三樓末端梯子下回二樓鎖房，開先前不能到的箱。",
+      "tip": "Antares三樓先往右清敵，從末端側梯下到二樓箱；可在四樓Boss前順路取。",
       "route": "cq3-r08-antares",
       "sourceIds": [
         "S22",
         "S23",
-        "S16"
+        "S16",
+        "S32",
+        "S34"
       ],
       "scope": "unresolved",
       "evidence": "conflicting",
       "location": "Antares Ruins",
       "method": "ship",
       "prerequisites": [
-        "已取得船，海上木柵以船炮破壞。"
+        "可進入Antares Ruins；不要求先擊敗頂層Boss。"
       ],
       "instructions": [
-        "依上述地標完成戰鬥、解謎或回程取箱。",
-        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+        "到第三樓先不走通往四樓的主樓梯，沿右側通路清敵。",
+        "走末端梯子下二樓開箱，確認Ship Hull ++後再返回主線。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S22／S23支持Antares回程箱，S16列敵船掉落；不能把任意擊沉敵船當成已取得。"
+      "caveat": "S32流程與S34 03:50／Antares索引支持此箱；不再限定Boss後回程。S16敵船掉落仍為未核實替代來源。",
+      "review": {
+        "result": "補入逐層流程：三樓側梯下二樓可先取，不需先打四樓Boss。",
+        "remaining": "S16敵船掉落說未能排除；原攻略固定箱路線有支持，非所有隨機箱皆可保證。",
+        "sourceIds": [
+          "S32",
+          "S34"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-ship-the-fires-of-cathulhu",
@@ -1816,7 +1905,15 @@
         "完成上述取得流程，檢查船選單。",
         "炮彈與被動獨立登錄；不以4種炮彈加13被動保證PS5金盃。"
       ],
-      "checkedAt": "2026-11-27"
+      "checkedAt": "2026-11-27",
+      "caveat": "初始取得仍為單源；請核對船選單。未以只有名稱的清單提高證據等級。",
+      "review": {
+        "result": "已補查，仍只有S16明確寫教學取得。",
+        "remaining": "其他來源僅列名稱或玩家配裝，不能獨立證明首次取得觸發。",
+        "sourceIds": [],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "single-source"
+      }
     },
     {
       "id": "cq3-cannonpaw-magma-cannonpaw",
@@ -2006,11 +2103,13 @@
       "id": "cq3-equip-head-fishercat-hat",
       "kind": "equipment",
       "label": "Fishercat Hat",
-      "tip": "清北岸敵船接請求，趕魚上岸後領箱。",
+      "tip": "可先接漁夫任務、捕Blue Catfish；獨立流程在Straits記錄帽子。",
       "route": "cq3-r05",
       "sourceIds": [
         "S17",
-        "S27"
+        "S27",
+        "S34",
+        "S35"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -2023,7 +2122,17 @@
         "對話後領取獎勵、檢查背包，再勾選此件。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+      "caveat": "魚種對應箱與隨機分配仍有異說；新索引不證明每次開箱必相同。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "魚種對應箱與隨機分配仍有異說；新索引不證明每次開箱必相同。",
+        "sourceIds": [
+          "S34",
+          "S35"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-head-gentlebro-hat",
@@ -2343,11 +2452,12 @@
       "id": "cq3-equip-head-purrmaid-helm",
       "kind": "equipment",
       "label": "Purrmaid Helm",
-      "tip": "Shell Phone 水點獎勵；先查 Furggy 南部與 Furtigua 水點。",
+      "tip": "取得電話後先查Furggy／Furtigua水點；其餘水點保留為候選。",
       "route": "cq3-r14",
       "sourceIds": [
         "S17",
-        "S23"
+        "S23",
+        "S35"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -2362,7 +2472,16 @@
         "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+      "caveat": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+        "sourceIds": [
+          "S35"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-head-rogue-bandana",
@@ -2529,7 +2648,8 @@
       "sourceIds": [
         "S03",
         "S18",
-        "S24"
+        "S24",
+        "S35"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -2542,18 +2662,28 @@
         "沿途檢查三個候選地城的剩餘箱；不要把來源差異當成三件不同裝備。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S03：Fire Hideout；S18：Lovepurr Cave；S24：Heartpurreak Cave。三處互異，尚不能指定唯一取得點。"
+      "caveat": "S03：Fire Hideout；S18：Lovepurr；S24及S35：Heartpurreak。多處記錄不證明哪處唯一／必出，仍保留差異。",
+      "review": {
+        "result": "新增逐箱資料仍列不同地城，保留候選而非強行統一。",
+        "remaining": "Fire Hideout／Lovepurr／Heartpurreak的固定或隨機內容尚不能統一。",
+        "sourceIds": [
+          "S35"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-body-fishercat-attire",
       "kind": "equipment",
       "label": "Fishercat Attire",
-      "tip": "趕魚上岸開箱；Rock Catfish 的箱子有此服記錄。",
+      "tip": "可先查Rock Catfish與Sunset Catfish獎勵箱，再核對背包是否已有服裝。",
       "route": "cq3-r05",
       "sourceIds": [
         "S18",
         "S23",
-        "S24"
+        "S24",
+        "S35"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -2566,7 +2696,16 @@
         "對話後領取獎勵、檢查背包，再勾選此件。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+      "caveat": "魚種對應箱與隨機分配仍有異說；新索引不證明每次開箱必相同。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "魚種對應箱與隨機分配仍有異說；新索引不證明每次開箱必相同。",
+        "sourceIds": [
+          "S35"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-body-gentlebro-tuxedo",
@@ -2732,23 +2871,33 @@
       "id": "cq3-equip-body-oinker-garments",
       "kind": "equipment",
       "label": "Oinker Garments",
-      "tip": "北岸休息點東側藍石附近，往南檢查灌木箱。",
+      "tip": "Twilight 北岸休息鳥向東走，能南轉時往南，檢查左側樹叢箱。",
       "route": "cq3-r06",
       "sourceIds": [
-        "S03"
+        "S03",
+        "S28"
       ],
       "scope": "base",
-      "evidence": "single-source",
+      "evidence": "cross-checked",
       "category": "body",
       "location": "Twilight Isles",
       "method": "chest",
       "prerequisites": [],
       "instructions": [
-        "進入所列區域，依提示檢查寶箱或支路。",
-        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+        "從北側水道炮破木柵，上岸以休息鳥為起點。",
+        "先向東、再沿可通路線南轉，在左側樹叢開箱，核對Oinker Garments。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+      "caveat": "S03與S28支持Twilight地表樹叢箱；未實機驗證每個轉彎。",
+      "review": {
+        "result": "原單源已補獨立逐段流程，Twilight地表箱位置相符。",
+        "remaining": "細部仍未PS5實機核對；不宣稱只有一個來源。",
+        "sourceIds": [
+          "S28"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "single-source"
+      }
     },
     {
       "id": "cq3-equip-body-orions-armor",
@@ -2887,12 +3036,13 @@
       "id": "cq3-equip-body-purrmaid-vest",
       "kind": "equipment",
       "label": "Purrmaid Vest",
-      "tip": "有 Shell Phone 後回港口查漣漪；亦有 Twin／Catuga 水點記錄。",
+      "tip": "有電話後先查Pawt Purvanna西北水點，再查Twin／Catuga。",
       "route": "cq3-r02",
       "sourceIds": [
         "S18",
         "S23",
-        "S24"
+        "S24",
+        "S35"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -2907,7 +3057,16 @@
         "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+      "caveat": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+        "sourceIds": [
+          "S35"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-body-rogue-vest",
@@ -2935,11 +3094,13 @@
       "id": "cq3-equip-body-spicy-vest",
       "kind": "equipment",
       "label": "Spicy Vest",
-      "tip": "洞口南側箱為候選，先沿海岸檢查。",
+      "tip": "Sunset主島中央湖以南上岸，向東再北查守箱敵人；Spicy Cave南側箱仍是候選。",
       "route": "cq3-r12",
       "sourceIds": [
         "S03",
-        "S24"
+        "S24",
+        "S30",
+        "S36"
       ],
       "scope": "base",
       "evidence": "single-source",
@@ -2948,11 +3109,21 @@
       "method": "chest",
       "prerequisites": [],
       "instructions": [
-        "進入所列區域，依提示檢查寶箱或支路。",
-        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+        "從Sunset主島中央湖往南航行，在可上岸處下船。",
+        "沿陸地向東、再向北找箱，清守軍後核對裝備；不因打倒某Boss代勾。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "Sunset區域一致；洞口南側的精確箱位置僅S03明載，仍需實機核對。"
+      "caveat": "已補S30具體走法；與S03的Spicy Cave南側是否同箱仍待核。S36另列Spiciest Squid，不據此新增硬前置。",
+      "review": {
+        "result": "補入Sunset地表走法，仍不把區域相符等同精確箱已核實。",
+        "remaining": "S30火焰敵人守箱與S36 Spiciest Squid解鎖說法需再核對。",
+        "sourceIds": [
+          "S30",
+          "S36"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "single-source"
+      }
     },
     {
       "id": "cq3-equip-body-takomeowkis-coat",
@@ -3247,13 +3418,14 @@
       "id": "cq3-equip-melee-rogue-claws",
       "kind": "equipment",
       "label": "Rogue Claws",
-      "tip": "山間地表寶箱。",
+      "tip": "Purvanna地表箱；優先查Golden Tower西南山間。",
       "route": "cq3-r04",
       "sourceIds": [
-        "S03"
+        "S03",
+        "S34"
       ],
       "scope": "base",
-      "evidence": "single-source",
+      "evidence": "cross-checked",
       "category": "melee",
       "location": "Purvanna／Golden Tower 西南",
       "method": "chest",
@@ -3263,7 +3435,16 @@
         "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+      "caveat": "S34 25:17記錄Rogue Claws／Purvanna；西南山間細部為S03單源。影片只核對章節索引，未逐格觀看。",
+      "review": {
+        "result": "獨立流程章節索引支持Purvanna地表取得。",
+        "remaining": "Golden Tower西南山間的精確箱仍只由S03文字支持。",
+        "sourceIds": [
+          "S34"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "single-source"
+      }
     },
     {
       "id": "cq3-equip-melee-the-dragonbone",
@@ -3315,11 +3496,12 @@
       "id": "cq3-equip-melee-tri-claws",
       "kind": "equipment",
       "label": "Tri-Claws",
-      "tip": "拿 Shell Phone 後先查人魚附近漣漪。",
+      "tip": "救出Sunset人魚取得電話後，先查附近漣漪。",
       "route": "cq3-r12",
       "sourceIds": [
         "S19",
-        "S23"
+        "S23",
+        "S30"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -3334,7 +3516,16 @@
         "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+      "caveat": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "取得水點流程相符；逐點固定內容與隨機說法仍未統一。",
+        "sourceIds": [
+          "S30"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-melee-tsurai",
@@ -3832,11 +4023,13 @@
       "id": "cq3-equip-trinket-magical-glove",
       "kind": "equipment",
       "label": "Magical Glove",
-      "tip": "完成石頭謎題開獎勵箱；逐區內容有來源差異。",
+      "tip": "先查Purvanna高低石及Sunset五石；完成後另開箱核對獎勵。",
       "route": "cq3-r04",
       "sourceIds": [
         "S21",
-        "S23"
+        "S23",
+        "S07",
+        "S33"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -3849,17 +4042,29 @@
         "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+      "caveat": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+        "sourceIds": [
+          "S07",
+          "S33"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-trinket-magical-punching-bag",
       "kind": "equipment",
       "label": "Magical Punching Bag",
-      "tip": "依 II、V、III、IV、I、VI 解謎後取箱。",
+      "tip": "優先查Purvanna Watchcat石頭；Long Island亦有獎勵記錄。",
       "route": "cq3-r04",
       "sourceIds": [
         "S21",
-        "S23"
+        "S23",
+        "S07",
+        "S29"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -3872,18 +4077,29 @@
         "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+      "caveat": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+        "sourceIds": [
+          "S07",
+          "S29"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-trinket-magical-purse",
       "kind": "equipment",
       "label": "Magical Purse",
-      "tip": "Code 島依 I 至 V 解謎開箱；其他石頭箱也有記錄。",
+      "tip": "優先查Code Island I至V與Sandy同時亮石獎勵箱。",
       "route": "cq3-r03",
       "sourceIds": [
         "S21",
         "S03",
-        "S23"
+        "S23",
+        "S07"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -3896,7 +4112,16 @@
         "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+      "caveat": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "解謎操作可對照，獎勵種類與隨機性仍有差異；不自動連動裝備取得。",
+        "sourceIds": [
+          "S07"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-trinket-meowtallikas-pick",
@@ -3926,11 +4151,12 @@
       "id": "cq3-equip-trinket-oinker-necklace",
       "kind": "equipment",
       "label": "Oinker Necklace",
-      "tip": "塔西北周邊箱為候選；亦有 Oinker 掉落說法。",
+      "tip": "從Twilight北岸休息鳥回船向西，炮破南側木柵，上岸左側箱為可查路線。",
       "route": "cq3-r06",
       "sourceIds": [
         "S03",
-        "S01"
+        "S01",
+        "S28"
       ],
       "scope": "base",
       "evidence": "conflicting",
@@ -3943,7 +4169,16 @@
         "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
       ],
       "checkedAt": "2026-11-27",
-      "caveat": "S03列地表箱，S01列Oinker掉落；保留兩條候選，不保證單次戰鬥取得。"
+      "caveat": "地表箱有更多支持，但不能據此排除其他攻略所述敵人掉落。",
+      "review": {
+        "result": "補強可查路線；保留未解的獎勵分配／其他來源問題。",
+        "remaining": "地表箱有更多支持，但不能據此排除其他攻略所述敵人掉落。",
+        "sourceIds": [
+          "S28"
+        ],
+        "checkedAt": "2026-11-27",
+        "previousEvidence": "conflicting"
+      }
     },
     {
       "id": "cq3-equip-trinket-pawer-milk",
@@ -4605,6 +4840,61 @@
       "id": "S27",
       "body": "[攻略空間 裝備](https://kouryakukuukan-puki.com/catquest3-equipment/amp/)",
       "note": "2026-11-27公開網頁／索引查核；原版攻略，未證明PS5現版條件。"
+    },
+    {
+      "id": "S28",
+      "body": "[Neoseeker Centauri 主線清區](https://www.neoseeker.com/cat-quest-iii/Centauri_Tower)",
+      "note": "2026-11-27：公開索引有逐段走法；正文403，未核對圖片。"
+    },
+    {
+      "id": "S29",
+      "body": "[Neoseeker 開局與Long Island](https://www.neoseeker.com/cat-quest-iii/The_North_Star_Treasure)",
+      "note": "2026-11-27：公開索引明示Long Island內Fort Tail；正文403，未核對圖片。"
+    },
+    {
+      "id": "S30",
+      "body": "[Neoseeker Volcano前Sunset清區](https://www.neoseeker.com/cat-quest-iii/Volcano_Mountain)",
+      "note": "2026-11-27：公開索引有救人魚、開箱與Spicy Vest流程；正文403。"
+    },
+    {
+      "id": "S31",
+      "body": "[Neoseeker Heartpurreak洞窟](https://www.neoseeker.com/cat-quest-iii/Heartpurreak_Cave)",
+      "note": "2026-11-27：公開索引記錄入口岔路南行的Firing Rate++箱。"
+    },
+    {
+      "id": "S32",
+      "body": "[Neoseeker Antares逐層流程](https://www.neoseeker.com/cat-quest-iii/Antares_Ruins)",
+      "note": "2026-11-27：公開索引先寫三樓下梯取Ship Hull++，後寫四樓Boss；未核對圖片。"
+    },
+    {
+      "id": "S33",
+      "body": "[Neoseeker Sunset地表清單](https://www.neoseeker.com/cat-quest-iii/Sunset_Islands)",
+      "note": "2026-11-27：公開索引支持Sunset西側四石獎勵；未核對圖片。"
+    },
+    {
+      "id": "S34",
+      "body": "[Game Guides Channel流程Part3](https://www.youtube.com/watch?v=ZI3NCS_smzE)",
+      "note": "2026-11-27：只查到公開章節索引：03:50 Ship Hull++／Antares；25:17 Rogue Claws／Purvanna；33:20 Fishercat Hat／Straits。未逐格觀看影片。"
+    },
+    {
+      "id": "S35",
+      "body": "[MapMaster逐箱文字](https://mapmaster.io/games/cat-quest-iii/guides/Treasure%20Chest)",
+      "note": "2026-11-27：正文逐箱文字可讀；與部分攻略箱內容不同，僅作新增候選，不視為唯一掉落證明。"
+    },
+    {
+      "id": "S36",
+      "body": "[MapMaster Boss獎勵](https://mapmaster.io/games/cat-quest-iii/guides/Boss)",
+      "note": "2026-11-27：索引列Spiciest Squid與Spicy Vest；不以其總覽代替精確地城定位。"
+    },
+    {
+      "id": "S37",
+      "body": "[Siliconera戀愛城堡與三洞窟](https://www.siliconera.com/how-to-complete-the-lovepurr-castle-quest-in-cat-quest-3/)",
+      "note": "2026-11-27：正文可讀；Firing Rate++路線與S31相符，其他洞窟裝備有差異，不延伸採用。"
+    },
+    {
+      "id": "S38",
+      "body": "[Game Guides Channel流程Part2](https://www.youtube.com/watch?v=BIn6LHaJqec)",
+      "note": "2026-11-27：公開章節索引38:58標Firing Rate++／Heartpurreak；未逐格觀看影片。"
     }
   ],
   "gaps": [

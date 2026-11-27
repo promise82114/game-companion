@@ -1,5 +1,9 @@
 # Cat Quest III · PS5 白金航海手帳
 
+1.2.0補查：針對13件裝備及7個船部件建立20筆結論與未解問題。裝備現為85件多來源、1件細部單源、10件仍有差異；修正Long Island／Fort Tail同地異名、Antares可在Boss前取船體，以及人魚彈藥的前置異說。[本輪補查](docs/FOLLOWUP_AUDIT.md)。
+
+以下1.1.0為前版紀錄：
+
 1.1.0：原版96件裝備、13被動與4炮彈均已加入取得地點、提示、前置與步驟；83件裝備多來源對照、3件單源、10件有差異，均未PS5實機驗證。詳見[逐件研究與差異](docs/EQUIPMENT_RESEARCH.md)。
 
 本機入口：<http://127.0.0.1:4190/game-companion/games/cat-quest-iii/>
@@ -24,7 +28,7 @@ node scripts/verify-cq3-browser.mjs
 
 測試工具沿用 `scripts/browser-runtime.mjs`；必要時設 `PLAYWRIGHT_REQUIRE_FROM` 為本機Playwright的require起點。不安裝產品依賴。瀏覽器測試只建立新的context及合成資料，不操作現有profile。
 
-資料由根規格 `cat-quest-iii_GAME_COMPANION_SPEC.md` 與 `research.json` 離線產生；兩者hash寫入 `dist/data.json`。根規格仍為必要來源，不可刪除。名稱ID在此版建立後凍結。更新來源不得重編ID。
+資料由根規格 `cat-quest-iii_GAME_COMPANION_SPEC.md` 、`research.json` 及 `followup-research.json` 離線產生；各份hash寫入 `dist/data.json`。根規格仍為必要來源，不可刪除。名稱ID在此版建立後凍結。更新來源不得重編ID。
 
 本模組遵循共通介面偏好28的14px緊湊字級。介面是可連續操作的攻略工具，採既有側欄、完成度方塊及清單；不套用行銷網站的一屏一節、大型主視覺或動畫版型。未核實位置的裝備不冒充終章掉落，集中於查漏清單；全部已收錄名稱可直接勾選；攻略詳細步驟可按需展開，來源差異在收合時仍可見。
 

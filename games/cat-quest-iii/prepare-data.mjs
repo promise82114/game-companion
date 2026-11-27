@@ -55,9 +55,10 @@ for(const e of entities.filter(e=>e.kind==='lost'))e.tip=lostTips[e.id.split('-'
 const supplement=JSON.parse(await fs.readFile(new URL('research.json',root),'utf8'));
 sources.push(...supplement.sources);
 for(const row of supplement.rows){const e=entities.find(e=>e.id===row.id);if(!e)throw Error('補充ID失聯：'+row.id);Object.assign(e,row);}
+const followup=JSON.parse(await fs.readFile(new URL('followup-research.json',root),'utf8'));sources.push(...followup.sources);for(const row of followup.rows){const e=entities.find(e=>e.id===row.id);if(!e)throw Error('補查ID失聯：'+row.id);Object.assign(e,row);}
 for(const step of steps){step.entityIds=entities.filter(e=>e.route===step.id).map(e=>e.id);}
 const coverage=table(section(3));coverage.find(r=>r[0].includes('原版裝備'))[2]='96筆均有取得提示、來源與路線；單源及衝突可見，未PS5實機驗證。';coverage.find(r=>r[0].includes('船藍圖'))[2]='13被動與4炮彈均有查漏攻略；名稱、階級與金盃集合仍有來源差異，不作白金分母。';
 const gaps=table(section(11));gaps.find(r=>r[0]==='U02')[1]='96件已有取得提示與來源；部分精確箱、固定／隨機說法及中文對照待核。';gaps.find(r=>r[0]==='U02')[3]='不阻塞查漏；不宣稱全數位置已實機證實。';gaps.find(r=>r[0]==='U03')[1]='13被動與4炮彈已有逐項流程；++階級、固定箱／掉落及PS5金盃集合仍有差異。';
-const data={gameId:'cat-quest-iii',version:'2026-11-27.2',specHash:createHash('sha256').update(raw).digest('hex'),supplementHash:createHash('sha256').update(JSON.stringify(supplement)).digest('hex'),chapters,steps,entities,trophies,sources,gaps,coverage,bookGuide:sub('5.4').split('**戀愛書選擇提示**：')[1]?.trim(),scope:section(3).split('\n\n').at(-1)};
+const data={gameId:'cat-quest-iii',version:'2026-11-27.3',specHash:createHash('sha256').update(raw).digest('hex'),supplementHash:createHash('sha256').update(JSON.stringify(supplement)).digest('hex'),followupHash:createHash('sha256').update(JSON.stringify(followup)).digest('hex'),reviewedIds:followup.rows.map(r=>r.id),chapters,steps,entities,trophies,sources,gaps,coverage,bookGuide:sub('5.4').split('**戀愛書選擇提示**：')[1]?.trim(),scope:section(3).split('\n\n').at(-1)};
 await fs.mkdir(new URL('dist/',root),{recursive:true});await fs.writeFile(new URL('dist/data.json',root),JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({steps:steps.length,entities:entities.length,trophies:trophies.length}));

@@ -1,5 +1,7 @@
 # Game Companion 目前架構
 
+2026-11-27 Cat Quest III 1.2.0：新增followup-research.json的20筆針對性補查與followupHash；在原spec／research後疊加，維持211事實及schema1。每筆review保存前版證據等級、本次結論、未解範圍與來源，清單詳情與路線共用；未因證據更新代填進度或獎盃。沿既有main Pages流程依授權發布，結果以對應Actions及正式資源為準。[補查紀錄](../games/cat-quest-iii/docs/FOLLOWUP_AUDIT.md)。
+
 2026-11-27 Cat Quest II 1.1.0：research/locations.mjs與原規格以獨立SHA256疊加產生catalog；108裝備的取得來源／候選池及26地城提醒由dist/locations.js呈現，共用原entities紀錄，schema1與namespace不變。來源與查證範圍篩選只影響檢視，地城清洞不代填裝備／鑰匙；Infinity Tomb五件仍在額外內容。2026-11-27使用者已授權本批commit／push與既有main GitHub Pages發布，部署結果以對應提交Actions及正式資源核對為準。見[補查紀錄](../games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
 
 2026-11-27 Cat Quest III 1.1.0：`games/cat-quest-iii/`原生ES模組，根規格與research.json雙hash離線產生四階段19段路線、211個原子事實與31盃。`game-companion.cat-quest-iii.progress.v1`獨立IndexedDB，沿用共用交易store／BroadcastChannel；steps／facts／trophies／counters／settings分開，逐鍵撤銷及條件匯入。Portal只增加目錄入口與原創封面；無Drive／SW，沒有改動其他遊戲儲存。資料缺口及驗證見[實作報告](../games/cat-quest-iii/docs/IMPLEMENTATION.md)，本批已獲授權沿main Pages流程發布，結果以對應Actions及正式資源為準。
