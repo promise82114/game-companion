@@ -1,0 +1,4724 @@
+{
+  "gameId": "cat-quest-iii",
+  "version": "2026-11-27.2",
+  "specHash": "1321c653ec720cb89654e514dc11d52ddfb1a60ec350534f6da7340e742c8abd",
+  "supplementHash": "c69a745d676d8d6443c97aab044c99907f6ca807f382695579d29fc027c05491",
+  "chapters": [
+    {
+      "id": "stage-1",
+      "label": "開局與 Purvanna 周邊"
+    },
+    {
+      "id": "stage-2",
+      "label": "主線遺跡與南部支線"
+    },
+    {
+      "id": "stage-3",
+      "label": "主線開路與北部工具"
+    },
+    {
+      "id": "stage-4",
+      "label": "集中結清與終章"
+    }
+  ],
+  "steps": [
+    {
+      "id": "cq3-r01",
+      "chapterId": "stage-1",
+      "label": "Catuga／入門與取得船",
+      "body": "- 前置：新遊戲；選自己舒服的難度。\n- 操作：跟著教學取得船、練習下船／上船與船炮。海面木柵先試船炮，不以人物攻擊反覆撞牆。\n- 順路：開面前箱子；取得初始裝備後可記錄。第一次使用存檔鳥時順手完成 `Bird Poop` 收藏：攻擊休息點鸚鵡數次，拾取掉落。[S15]\n- 驗收：能自由航行、取得物品出現在背包。\n- 離區檢查：不要把「裝備過」當作「獨特種類＋1」。\n- 補救：回到休息點與島上補拿。",
+      "entityIds": [
+        "cq3-ripple-catuga",
+        "cq3-spell-flamepurr",
+        "cq3-cannonpaw-super-cannonpaw",
+        "cq3-equip-head-pirate-bandana",
+        "cq3-equip-body-pirate-shirt",
+        "cq3-equip-melee-pirate-cutlass",
+        "cq3-equip-ranged-blunderpuss",
+        "cq3-equip-trinket-bird-poop",
+        "cq3-equip-trinket-bomb-satchel"
+      ]
+    },
+    {
+      "id": "cq3-r02",
+      "chapterId": "stage-1",
+      "label": "Pawt Purvanna／先啟動回報中心",
+      "body": "- 操作：進酒館看懸賞；到 Magic Bone 找 Mage Bonny 交談；認識鍛造 NPC Kidd Cat。\n- 順路：取得 Lightnyan；找海岸 NPC 的灌木提示，攻擊目標灌木並開隱藏箱 `cq3-secret-port`。\n- 失物：Purrier Beach 查提示石，再沿沙灘找牛奶；歸還 Mama Milka，接後續請求。\n- 驗收：牛奶「取得」「歸還」可分別記錄；隱藏箱與背包獎勵分別確認。\n- 關聯：Commewnity Helper、Furst Secret；後續 Cathulhu 任務。[S07、S09]",
+      "entityIds": [
+        "cq3-secret-port",
+        "cq3-ripple-port",
+        "cq3-lost-milk-found",
+        "cq3-lost-milk-returned",
+        "cq3-spell-lightnyan",
+        "cq3-equip-body-purrmaid-vest",
+        "cq3-equip-melee-knight-shield",
+        "cq3-equip-ranged-furlintlock"
+      ]
+    },
+    {
+      "id": "cq3-r03",
+      "chapterId": "stage-1",
+      "label": "近岸小島／第一批解謎與洞窟",
+      "body": "- 推薦串接 Long Island → 附近 Furst Cave → Sandy Islands → Code Island；已在附近者可調整順序。\n- 按第5節完成 `puzzle-long`、`puzzle-sandy`、`puzzle-code`，同時開出現的箱子。\n- 順路：Sandy 小沙洲紅海星為隱藏物；Furst Cave 留意 Warrior's Braid，地上／洞口附近武器也要檢查。\n- 驗收：不是只把石頭點亮，要看獎勵出現與拾取；洞窟未清空可回頭找支路。\n- 關聯：Purrzzler、裝備10種、寶箱20個等累積杯。[S02、S06]",
+      "entityIds": [
+        "cq3-puzzle-long",
+        "cq3-puzzle-long-reward",
+        "cq3-puzzle-code",
+        "cq3-puzzle-code-reward",
+        "cq3-puzzle-sandy",
+        "cq3-puzzle-sandy-reward",
+        "cq3-secret-sandy",
+        "cq3-ship-cannon-power-plus",
+        "cq3-ship-ship-hull-plus",
+        "cq3-equip-head-rogue-bandana",
+        "cq3-equip-melee-purccaneer-cutlass",
+        "cq3-equip-trinket-magical-purse",
+        "cq3-equip-trinket-warriors-braid"
+      ]
+    },
+    {
+      "id": "cq3-r04",
+      "chapterId": "stage-1",
+      "label": "Purvanna 掃支線／第一本書",
+      "body": "- 造訪 Booty Cave 周邊 Patchy、Watchcat、Postmutt、Monster Researcher，按遊戲任務標記完成已可處理的支線。\n- 西岸 Furrlorn Cave 找紙頁路徑，取第一本戀愛書 `cq3-book-furrlorn`。\n- 北部 Golden Tower 先取得塔內鑰匙；西北岸看到移動金幣時追到底，收世界鑰匙 `cq3-key-purvanna`。\n- 解研究者／郵差附近高低石與 Watchcat 羅馬數字石；研究者附近的紅海星另算隱藏物。\n- 驗收：支線已結案且領到獎勵才勾任務完成；石頭、隱藏物、書各有自己的勾選。\n- 回訪：高難敵人與未解鎖門不阻塞其他區域。[S07、S11]",
+      "entityIds": [
+        "cq3-puzzle-watchcat",
+        "cq3-puzzle-watchcat-reward",
+        "cq3-puzzle-height",
+        "cq3-puzzle-height-reward",
+        "cq3-secret-researcher",
+        "cq3-ripple-purvanna-lake",
+        "cq3-book-furrlorn",
+        "cq3-key-tower",
+        "cq3-key-purvanna",
+        "cq3-bounty-boar-king-defeated",
+        "cq3-bounty-boar-king-claimed",
+        "cq3-ship-ammo-capacity-plus",
+        "cq3-ship-cannon-reload-plus",
+        "cq3-cannonpaw-magma-cannonpaw",
+        "cq3-equip-head-gunner-eyepatch",
+        "cq3-equip-head-knight-hat",
+        "cq3-equip-head-patchys-hood",
+        "cq3-equip-head-purccaneer-bandana",
+        "cq3-equip-body-patchys-coat",
+        "cq3-equip-body-purccaneer-shirt",
+        "cq3-equip-melee-meowtallika-axe",
+        "cq3-equip-melee-patchys-claws",
+        "cq3-equip-melee-rogue-claws",
+        "cq3-equip-ranged-meowchine-gun",
+        "cq3-equip-trinket-boar-tusk",
+        "cq3-equip-trinket-chimeowra-claw",
+        "cq3-equip-trinket-lousy-boot",
+        "cq3-equip-trinket-lousy-gloves",
+        "cq3-equip-trinket-magical-glove",
+        "cq3-equip-trinket-magical-punching-bag",
+        "cq3-equip-trinket-the-furst-mail"
+      ]
+    },
+    {
+      "id": "cq3-r05",
+      "chapterId": "stage-2",
+      "label": "Straits Island／冰系與釣魚任務",
+      "body": "- 清 Ice Pi-rat Hideout，處理 Ice Pi-rat Captain；檢查冰系裝備與 Freezepaw。\n- 岸邊六石按第5節逆時針射擊；失敗即重試，不是不可逆失誤。\n- 北端清漁夫旁敵船後交談，啟動釣魚支線；看見魚要把魚趕往可捕捉岸邊，不是等釣魚計時器。\n- 驗收：敵船清掉不代表任務已接取；回漁夫對話並確認紀錄。\n- 關聯：冰船長懸賞、裝備、魔法、Fishercat 裝備。[S08、S09]",
+      "entityIds": [
+        "cq3-puzzle-straits",
+        "cq3-puzzle-straits-reward",
+        "cq3-spell-freezepaw",
+        "cq3-bounty-ice-pi-rat-captain-defeated",
+        "cq3-bounty-ice-pi-rat-captain-claimed",
+        "cq3-equip-head-fishercat-hat",
+        "cq3-equip-head-ice-mage-hat",
+        "cq3-equip-body-fishercat-attire",
+        "cq3-equip-body-ice-mage-vest",
+        "cq3-equip-ranged-ice-wand",
+        "cq3-equip-trinket-ice-crystal",
+        "cq3-quest-fishercat-start"
+      ]
+    },
+    {
+      "id": "cq3-r06",
+      "chapterId": "stage-2",
+      "label": "Twilight Isles／Centauri 與失落鐵鎚",
+      "body": "- 依主線啟動兩座遺跡門開關，進 Centauri Ruins；結束後檢查回程支路與箱子。\n- 看見 Aelius 時完成對話並記錄一次，不能只走近就勾選。\n- 北部提示石與休息點附近地面找 Smithy Hammer；回鎮交給 Kidd Cat，後續要 Dragon Bone。\n- Heartpurreak Cave 取得第二本書 `cq3-book-heartpurreak`。\n- 若尚未拿 Shell Phone，只標此地水點未完成，不需為了打勾立即往返。\n- 驗收：主線取得必要物品、書入手、鐵鎚已歸還；Oinker Chief 領賞另記。[S07、S08]",
+      "entityIds": [
+        "cq3-ripple-twilight",
+        "cq3-lost-hammer-found",
+        "cq3-lost-hammer-returned",
+        "cq3-book-heartpurreak",
+        "cq3-aelius-twilight",
+        "cq3-bounty-oinker-chief-defeated",
+        "cq3-bounty-oinker-chief-claimed",
+        "cq3-ship-cannon-power-plus-plus",
+        "cq3-ship-firing-rate-plus-plus",
+        "cq3-equip-head-oinker-headdress",
+        "cq3-equip-body-knight-armor",
+        "cq3-equip-body-oinker-garments",
+        "cq3-equip-melee-oinker-shield",
+        "cq3-equip-trinket-oinker-necklace"
+      ]
+    },
+    {
+      "id": "cq3-r07",
+      "chapterId": "stage-2",
+      "label": "Furtigua／Orion 與支路回收",
+      "body": "- 依主線完成 Orion Ruins，取得 Lightwhisker。\n- Boss 後回走檢查先前鎖住支路，勿只看戰鬥結束畫面就離開。\n- 掃海岸三角木片中的岩石隱藏物；碰見 Aelius 完成對話。\n- 本區原文地名容易與 Furggy 混淆，清單必須顯示完整名稱，不能都簡稱「南島」。\n- 驗收：魔法入手；遺跡箱子查漏；隱藏箱開啟。[S06、S07]",
+      "entityIds": [
+        "cq3-secret-furtigua",
+        "cq3-ripple-furtigua",
+        "cq3-aelius-furtigua",
+        "cq3-spell-lightwhisker",
+        "cq3-ship-firing-rate-plus",
+        "cq3-equip-head-meowtallika-helm",
+        "cq3-equip-head-orions-cavalier",
+        "cq3-equip-body-meowtallika-shirt",
+        "cq3-equip-body-rogue-vest",
+        "cq3-equip-melee-blade-of-orion",
+        "cq3-equip-trinket-electric-circuit"
+      ]
+    },
+    {
+      "id": "cq3-r08",
+      "chapterId": "stage-2",
+      "label": "Lovepurr／第三本書與戀愛城堡",
+      "body": "- Lovepurr Cave 取得第三本書，與前兩本一同帶入 Lovepurr Castle。\n- 與 Clawford 交談可取得 Healpaw；進三本故事，依第5節完成選擇。\n- 三章獎勵各開；進城堡後門擊敗 Clawford，回入口再交談與領獎。\n- 驗收：三章完成、Boss擊倒、回報完成；獎盃是否跳出另外勾選。\n- 關聯：Love is Furever、Clawford 懸賞、Heartbreaker／Heartmender 等裝備。[S07、S08、S09]",
+      "entityIds": [
+        "cq3-book-lovepurr",
+        "cq3-spell-healpaw",
+        "cq3-bounty-clawford-defeated",
+        "cq3-bounty-clawford-claimed",
+        "cq3-equip-head-clawfords-hat",
+        "cq3-equip-body-clawfords-vest",
+        "cq3-equip-body-gunner-vest",
+        "cq3-equip-melee-heartbreaker",
+        "cq3-equip-melee-heartmender",
+        "cq3-quest-clawford-return",
+        "cq3-quest-lovepurr-chapter-1",
+        "cq3-quest-lovepurr-chapter-2",
+        "cq3-quest-lovepurr-chapter-3"
+      ]
+    },
+    {
+      "id": "cq3-r08-antares",
+      "chapterId": "stage-2",
+      "label": "Antares Ruins／第三處主線要件",
+      "body": "- 按主線遺跡標記航行至 Antares Ruins；若已先完成，直接核對獎勵即可，不強迫重跑。\n- 清遺跡與 Boss，取得 Mewteors 及主線鑰匙；回程檢查地城支路與未開箱。\n- 驗收：Centauri、Orion、Antares 三處的主線要件都在，才前往 Polaris；不能把 Lovepurr 當成三處主線之一。\n- 三處遺跡的推薦次序可互換；這是清區導航，不是遊戲硬性前置順序。[S03、S09]",
+      "entityIds": [
+        "cq3-spell-mewteors",
+        "cq3-ship-ship-hull-plus-plus",
+        "cq3-equip-head-antares-cavalier",
+        "cq3-equip-ranged-fire-wand",
+        "cq3-equip-ranged-stave-of-antares"
+      ]
+    },
+    {
+      "id": "cq3-r09",
+      "chapterId": "stage-3",
+      "label": "Polaris Ruins／三組石頭不要漏算",
+      "body": "- 前置：三處主要遺跡的主線要件完成；按遊戲指引開門。\n- 按第5節處理三組石頭；它們是12組總數的一部分，不是額外裝飾。\n- 取得演唱會門票後，路線顯示「可去演唱會」，不強制當場傳送。\n- 驗收：主線與三組解謎分開；遺跡完成不自動代勾解謎。[S06、S08]",
+      "entityIds": [
+        "cq3-puzzle-polaris-1",
+        "cq3-puzzle-polaris-1-reward",
+        "cq3-puzzle-polaris-2",
+        "cq3-puzzle-polaris-2-reward",
+        "cq3-puzzle-polaris-3",
+        "cq3-puzzle-polaris-3-reward",
+        "cq3-equip-body-antares-armor",
+        "cq3-equip-body-orions-armor"
+      ]
+    },
+    {
+      "id": "cq3-r10",
+      "chapterId": "stage-3",
+      "label": "Meowtallika／陸戰獎勵與海戰裝備",
+      "body": "- 用門票進 Meowtallika's Concert，擊敗 Captain Meowtallika，取獎勵。\n- 另行擊沉外海 Meowtallicurse，取得 Electric Cannonpaw；它是海戰炮彈，不能混成演唱會陸戰 Boss。\n- 建議：用手上適合的閃電裝備組合推進；不要求特定數值或硬刷完美 Build。\n- 驗收：Boss杯、懸賞回報、炮彈入手分別記錄。\n- 後續用途：Electric Cannonpaw 是後段海戰的實用選項。[S01、S08]",
+      "entityIds": [
+        "cq3-bounty-captain-meowtallika-defeated",
+        "cq3-bounty-captain-meowtallika-claimed",
+        "cq3-cannonpaw-electric-cannonpaw",
+        "cq3-equip-head-meowtallikas-tricorne",
+        "cq3-equip-body-meowtallikas-jacket",
+        "cq3-equip-melee-the-rocker",
+        "cq3-equip-trinket-meowtallikas-pick"
+      ]
+    },
+    {
+      "id": "cq3-r11",
+      "chapterId": "stage-3",
+      "label": "Infinity Tower／主線事件與回鎮補法術",
+      "body": "- 依主線進 Infinity Tower 處理劇情事件；這與反覆刷塔是不同工作。\n- 事件後回 Magic Bone 再與 Bonny 交談，檢查 Furry Shield 是否取得。\n- Weird Mushroom 先列待補；若正在塔中可順便開 Boss 獎勵箱，沒出就離開繼續路線，不提前耗時刷到底。\n- 驗收：主線可繼續，法術背包實際出現；無限塔沒有「必須登頂」白金條件。[S02、S09]",
+      "entityIds": [
+        "cq3-spell-furry-shield",
+        "cq3-equip-trinket-weird-mushroom"
+      ]
+    },
+    {
+      "id": "cq3-r12",
+      "chapterId": "stage-3",
+      "label": "Sunset Islands／先拿 Shell Phone",
+      "body": "- 從北側靠近人魚池，以船炮清木柵；交談拿 Shell Phone。\n- 下船浮在水中，靠漣漪使用電話；先收人魚附近水點，其餘按第5節旅途中補。\n- 讀失物提示後，去星塔／紅灌木小島找 Voodoo Doll，回鎮交 Bonny。\n- 清 Fire Pi-rat Hideout，取得 Firepurrism；海岸排列石與西側8-bit周邊石依第5節完成。\n- 在後段三鎖門附近遇 Aelius 時對話，加入終章檢查。\n- 驗收：電話在手、娃娃歸還、火系法術入手；不是看到水點就算已收。[S09、S10、S12]",
+      "entityIds": [
+        "cq3-puzzle-sunset-row",
+        "cq3-puzzle-sunset-row-reward",
+        "cq3-puzzle-eight-bit-coast",
+        "cq3-puzzle-eight-bit-coast-reward",
+        "cq3-ripple-sunset",
+        "cq3-lost-doll-found",
+        "cq3-lost-doll-returned",
+        "cq3-key-sunset",
+        "cq3-aelius-sunset",
+        "cq3-spell-firepurrism",
+        "cq3-spell-icepaw",
+        "cq3-bounty-fire-pi-rat-captain-defeated",
+        "cq3-bounty-fire-pi-rat-captain-claimed",
+        "cq3-ship-cannon-reload-plus-plus",
+        "cq3-equip-head-fire-mage-hat",
+        "cq3-equip-head-spicy-bandana",
+        "cq3-equip-body-fire-mage-vest",
+        "cq3-equip-body-spicy-vest",
+        "cq3-equip-melee-tri-claws",
+        "cq3-equip-ranged-squiderpuss",
+        "cq3-equip-trinket-flame-crystal",
+        "cq3-quest-shell-phone"
+      ]
+    },
+    {
+      "id": "cq3-r13",
+      "chapterId": "stage-4",
+      "label": "Twin Islands／Bonny 任務與黃金鑰匙",
+      "body": "- 前置：已接 Bonny 尋書請求較好；未接先回鎮談到請求出現。\n- 進 Twin Castle Manors，按鑰匙與門來回兩棟，處理 Necromouser；拾取 Necropawmicon。\n- 回 Bonny 交書，取 Pawer Up。不要將「書拿到」代替「任務回報」。\n- Twin Islands 西北小沙島追金幣取得鑰匙；有電話後掃兩島間水點。\n- 驗收：法術、支線回報、懸賞領賞分開確認。[S07、S09、S11]",
+      "entityIds": [
+        "cq3-ripple-twin",
+        "cq3-key-twin",
+        "cq3-spell-pawer-up",
+        "cq3-bounty-necromouser-defeated",
+        "cq3-bounty-necromouser-claimed",
+        "cq3-equip-head-arcane-mage-hat",
+        "cq3-equip-body-arcane-mage-vest",
+        "cq3-equip-ranged-arcane-wand",
+        "cq3-equip-trinket-the-necropawmicon",
+        "cq3-quest-bonny-return"
+      ]
+    },
+    {
+      "id": "cq3-r14",
+      "chapterId": "stage-4",
+      "label": "Furggy／Pi-rat King 與鍛造回報",
+      "body": "- 先處理島上 Pi-rat Boss，再擊沉北岸 The Undying；返回龍屍互動，進巢穴擊敗真正 Pi-rat King。\n- 此流程不能用「打倒第一隻海盜」取代整段。\n- 取得 Dragon Bone 後回 Kidd Cat 交付；檢查 The Dragonbone。\n- 同區補：南部木片圍岩隱藏物、移動金幣鑰匙、南部水點。\n- 驗收：King of Pi-rats No More、Meowsterwork 各自檢查；該船的炮彈也另列。\n- 關聯：終章前保守檢查項之一，但不斷言海盜王是隱藏結局的獨立硬前置。[S08]",
+      "entityIds": [
+        "cq3-secret-furggy",
+        "cq3-ripple-furggy",
+        "cq3-key-furggy",
+        "cq3-bounty-pi-rat-king-defeated",
+        "cq3-bounty-pi-rat-king-claimed",
+        "cq3-cannonpaw-cursed-cannonpaw",
+        "cq3-equip-head-pi-rat-kings-bicorne",
+        "cq3-equip-head-purrivateer-hat",
+        "cq3-equip-head-purrmaid-helm",
+        "cq3-equip-body-pi-rat-kings-coat",
+        "cq3-equip-melee-deaths-hook",
+        "cq3-equip-melee-the-dragonbone",
+        "cq3-quest-kidd-return"
+      ]
+    },
+    {
+      "id": "cq3-r15",
+      "chapterId": "stage-4",
+      "label": "三個專項地城／一趟清掉",
+      "body": "1. **Golden Tower**：依第5節確認5把鑰匙；逐層開門、拿獎勵、完成頂層戰鬥。\n2. **Eight Bit Castle**：船炮開入口；打倒 Dratcula 後檢查 Boss 房、回程解鎖區與畫像，不是只打王即離場。\n3. **Lovepurr**：若先前只拿 Healpaw，這裡補三書與三章、Clawford及回報。\n\n驗收：各自對應地城杯、裝備與回報已檢查；缺箱則回入口逐支路找，並查看遊戲內地圖清空標記。[S01、S11]",
+      "entityIds": [
+        "cq3-secret-eight-bit",
+        "cq3-bounty-dratcula-defeated",
+        "cq3-bounty-dratcula-claimed",
+        "cq3-equip-head-dratculas-topper",
+        "cq3-equip-head-golden-helm",
+        "cq3-equip-body-dratculas-coat",
+        "cq3-equip-body-golden-armor",
+        "cq3-equip-body-purrivateer-vest",
+        "cq3-equip-melee-bloodsucker",
+        "cq3-equip-melee-golden-shield"
+      ]
+    },
+    {
+      "id": "cq3-r16",
+      "chapterId": "stage-4",
+      "label": "後段海戰／Cathulhu 與 Duck of Doom",
+      "body": "- 先檢查船血量、被動升級、炮彈；打不動就回收附近箱子／強化，不用硬磨。\n- Cathulhu 在東北 Cathulhu's Rest；完成 Mama Milka 請求後記得回酒館對話。\n- Duck of Doom 是海面巡航敵人，不能以固定點保證出現；看見時可先定位，船裝齊再打。\n- 驗收：兩隻各自的擊倒杯；Cathulhu 的任務回報杯、Duck 的懸賞領獎與船獎勵另記。\n- 補救：保持航行避招再射擊；遊玩指引不寫未查證的無敵／固定掉落率。[S01、S02、S08]",
+      "entityIds": [
+        "cq3-bounty-duck-of-doom-defeated",
+        "cq3-bounty-duck-of-doom-claimed",
+        "cq3-ship-the-fires-of-cathulhu",
+        "cq3-ship-the-fowlmidable",
+        "cq3-quest-milka-return"
+      ]
+    },
+    {
+      "id": "cq3-r17",
+      "chapterId": "stage-4",
+      "label": "世界一圈／補電話、石柱與隱藏區",
+      "body": "- 先按清單缺項掃8個水點，全部取得後回人魚完成結尾。\n- 五座大石柱依第5節連續一圈；這趟不要插入室內或劇情，避免重置。\n- Furggy 以南的世界邊界缺口出海，沿淺色水路找 Gentlebros；談話、收三份稿紙、領完三件裝備。\n- 回酒館逐張已達成海報領賞；不要只看戰鬥紀錄。\n- 驗收：人魚結尾、謎題石柱獎勵、隱藏區獎勵實際取得。[S01、S03、S12]",
+      "entityIds": [
+        "cq3-puzzle-world-pillars",
+        "cq3-puzzle-world-pillars-reward",
+        "cq3-quest-purrmaid-return",
+        "cq3-ship-ammo-capacity-plus-plus",
+        "cq3-ship-pawer-boost",
+        "cq3-equip-head-gentlebro-hat",
+        "cq3-equip-body-gentlebro-tuxedo",
+        "cq3-equip-ranged-the-architect",
+        "cq3-equip-ranged-the-sons-rod",
+        "cq3-equip-trinket-hearty-milk",
+        "cq3-equip-trinket-magic-milk",
+        "cq3-equip-trinket-pawer-milk",
+        "cq3-quest-fishercat-return"
+      ]
+    },
+    {
+      "id": "cq3-r18",
+      "chapterId": "stage-4",
+      "label": "終章前檢查／通關與查漏",
+      "body": "- 跟主線推進 Volcano／Takomeowki 及後續終章，進入最終流程前先停一下。\n- 檢查三次 Aelius 對話已完成；位置提示：Twilight 西側開關塔附近通道、Furtigua 的 Orion Ruins 西南沙灘、Sunset 主島中北側三鎖門入口西側。已檢視 S10 的三組地圖圖片；三處可依航線造訪，不強制先後次序。\n- 建議海盜王已完成；這本來也是白金必做，可避免來源爭議造成往返。\n- 通關確認 My North Star was Always You。若未跳，先核對結局條件，不要立刻重開新檔。\n- 結局後選 Continue，與左側水晶互動回到世界；若缺 Aelius 對話，補齊後再挑戰結局。這是額外重打的時間風險，並非永久錯過；白金清理完前不需要進 NG+。\n- 最後以實際 PS5 獎盃列表核對剩餘項目，取得白金後可停止白金範圍工作。[S01、S07、S10]",
+      "entityIds": [
+        "cq3-bounty-captain-takomeowki-defeated",
+        "cq3-bounty-captain-takomeowki-claimed",
+        "cq3-equip-head-takomeowkis-bicorne",
+        "cq3-equip-body-takomeowkis-coat",
+        "cq3-equip-melee-tsurai"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "cq3-puzzle-long",
+      "kind": "puzzle",
+      "label": "Long Island",
+      "tip": "按周圍小石數，依下→上→左→右攻擊。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-long-reward",
+      "kind": "reward",
+      "label": "Long Island · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-straits",
+      "kind": "puzzle",
+      "label": "Straits Island",
+      "tip": "從南端起，沿海岸逆時針快速射擊六石。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-straits-reward",
+      "kind": "reward",
+      "label": "Straits Island · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-watchcat",
+      "kind": "puzzle",
+      "label": "Purvanna Watchcat",
+      "tip": "II→V→III→IV→I→VI。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-watchcat-reward",
+      "kind": "reward",
+      "label": "Purvanna Watchcat · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-height",
+      "kind": "puzzle",
+      "label": "Purvanna 高低石",
+      "tip": "從矮至高；以實際石頭高度為準。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-height-reward",
+      "kind": "reward",
+      "label": "Purvanna 高低石 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-code",
+      "kind": "puzzle",
+      "label": "Code Island",
+      "tip": "I→II→III→IV→V。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-code-reward",
+      "kind": "reward",
+      "label": "Code Island · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-sandy",
+      "kind": "puzzle",
+      "label": "Sandy Islands",
+      "tip": "對準一線石頭，用範圍法術一次／迅速全亮。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-sandy-reward",
+      "kind": "reward",
+      "label": "Sandy Islands · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-1",
+      "kind": "puzzle",
+      "label": "Polaris 第一組",
+      "tip": "把 Lightwhisker 放到石群中央。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-1-reward",
+      "kind": "reward",
+      "label": "Polaris 第一組 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-2",
+      "kind": "puzzle",
+      "label": "Polaris 第二組",
+      "tip": "Flamepurr 對準同線石。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-2-reward",
+      "kind": "reward",
+      "label": "Polaris 第二組 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-3",
+      "kind": "puzzle",
+      "label": "Polaris 第三組",
+      "tip": "Flamepurr 處理並排三石，再快速遠程命中兩側。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-polaris-3-reward",
+      "kind": "reward",
+      "label": "Polaris 第三組 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-sunset-row",
+      "kind": "puzzle",
+      "label": "Sunset 五石",
+      "tip": "以左右排列標號1–5，依4→5→1→2→3；先確認與對岸提示排列對應。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-sunset-row-reward",
+      "kind": "reward",
+      "label": "Sunset 五石 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-eight-bit-coast",
+      "kind": "puzzle",
+      "label": "8-bit 海岸",
+      "tip": "乘船依I→II→III→IV迅速命中，航行轉向前先對準。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-eight-bit-coast-reward",
+      "kind": "reward",
+      "label": "8-bit 海岸 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-world-pillars",
+      "kind": "puzzle",
+      "label": "世界五大柱",
+      "tip": "港口／Long Island附近起點→Lovepurr→Sunset→Twilight→Furggy，連續一趟；不進室內。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S06",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-puzzle-world-pillars-reward",
+      "kind": "reward",
+      "label": "世界五大柱 · 獎勵箱",
+      "tip": "解謎後開啟出現的寶箱，確認獎勵入手。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S06"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-port",
+      "kind": "secret",
+      "label": "港口西岸 NPC 提示的灌木",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-researcher",
+      "kind": "secret",
+      "label": "研究者塔附近，淺色海星群中的紅海星",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-sandy",
+      "kind": "secret",
+      "label": "Sandy／Code 附近小沙洲，單獨紅海星",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-furtigua",
+      "kind": "secret",
+      "label": "Furtigua 外小島，三角木片中央岩石",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-furggy",
+      "kind": "secret",
+      "label": "Furggy 南岸，木片／叉記號附近岩石",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-secret-eight-bit",
+      "kind": "secret",
+      "label": "8-bit城堡周圍狹長沙洲，大紅海星",
+      "tip": "攻擊所述場景物，開啟隱藏獎勵箱並確認入手。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-sunset",
+      "kind": "ripple",
+      "label": "人魚附近水面",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-port",
+      "kind": "ripple",
+      "label": "Pawt Purvanna 西北岸",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-catuga",
+      "kind": "ripple",
+      "label": "Catuga 北岸、取船周邊",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-twilight",
+      "kind": "ripple",
+      "label": "Twilight 礁石／水雷區",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-furggy",
+      "kind": "ripple",
+      "label": "Furggy 南部海灣",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-twin",
+      "kind": "ripple",
+      "label": "Twin Islands 兩島之間",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-furtigua",
+      "kind": "ripple",
+      "label": "Furtigua 東南岸周邊",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-ripple-purvanna-lake",
+      "kind": "ripple",
+      "label": "Cat-face Mountain 東南的內湖",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-purrmaid-return",
+      "kind": "quest",
+      "label": "8點完成後回人魚，看結尾",
+      "tip": "先取得 Shell Phone，下船靠近漣漪使用；結尾回人魚。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-milk-found",
+      "kind": "lost",
+      "label": "牛奶 · 已取得",
+      "tip": "Purrier Beach 提示石周邊沙灘找牛奶；歸還 Mama Milka。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-milk-returned",
+      "kind": "lost",
+      "label": "牛奶 · 已歸還",
+      "tip": "Purrier Beach 提示石周邊沙灘找牛奶；歸還 Mama Milka。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-hammer-found",
+      "kind": "lost",
+      "label": "鐵鎚 · 已取得",
+      "tip": "Twilight 北部提示石與休息點附近地面找 Smithy Hammer；歸還 Kidd Cat。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-hammer-returned",
+      "kind": "lost",
+      "label": "鐵鎚 · 已歸還",
+      "tip": "Twilight 北部提示石與休息點附近地面找 Smithy Hammer；歸還 Kidd Cat。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-doll-found",
+      "kind": "lost",
+      "label": "娃娃 · 已取得",
+      "tip": "Sunset 星塔／紅灌木小島找 Voodoo Doll；歸還 Bonny。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-lost-doll-returned",
+      "kind": "lost",
+      "label": "娃娃 · 已歸還",
+      "tip": "Sunset 星塔／紅灌木小島找 Voodoo Doll；歸還 Bonny。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-book-furrlorn",
+      "kind": "book",
+      "label": "書一",
+      "tip": "Furrlorn Cave，Purvanna。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-book-heartpurreak",
+      "kind": "book",
+      "label": "書二",
+      "tip": "Heartpurreak Cave，Twilight。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-book-lovepurr",
+      "kind": "book",
+      "label": "書三",
+      "tip": "Lovepurr Cave。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-key-tower",
+      "kind": "key",
+      "label": "塔內鑰匙",
+      "tip": "塔內初段小Boss。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S11"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-key-purvanna",
+      "kind": "key",
+      "label": "西北Purvanna鑰匙",
+      "tip": "追移動金幣。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S11"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-key-twin",
+      "kind": "key",
+      "label": "Twin西北沙島鑰匙",
+      "tip": "追移動金幣。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S11"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-key-sunset",
+      "kind": "key",
+      "label": "Sunset小島鑰匙",
+      "tip": "追移動金幣。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S11"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-key-furggy",
+      "kind": "key",
+      "label": "Furggy鑰匙",
+      "tip": "追移動金幣。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S11"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-aelius-twilight",
+      "kind": "encounter",
+      "label": "Aelius · twilight",
+      "tip": "Twilight 西側開關塔附近通道；完整對話後再勾選，終章前核對。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S10",
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-aelius-furtigua",
+      "kind": "encounter",
+      "label": "Aelius · furtigua",
+      "tip": "Furtigua 的 Orion Ruins 西南沙灘；完整對話後再勾選，終章前核對。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S10",
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-aelius-sunset",
+      "kind": "encounter",
+      "label": "Aelius · sunset",
+      "tip": "Sunset 主島中北側三鎖門入口西側；完整對話後再勾選，終章前核對。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S10",
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-flamepurr",
+      "kind": "spell",
+      "label": "Flamepurr",
+      "tip": "開局。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-lightnyan",
+      "kind": "spell",
+      "label": "Lightnyan",
+      "tip": "港口 Bonny 初次交談。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-healpaw",
+      "kind": "spell",
+      "label": "Healpaw",
+      "tip": "Lovepurr Castle NPC。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-furry-shield",
+      "kind": "spell",
+      "label": "Furry Shield",
+      "tip": "Infinity Tower 劇情後回 Bonny 交談。",
+      "route": "cq3-r11",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-mewteors",
+      "kind": "spell",
+      "label": "Mewteors",
+      "tip": "Antares 遺跡Boss。",
+      "route": "cq3-r08-antares",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-lightwhisker",
+      "kind": "spell",
+      "label": "Lightwhisker",
+      "tip": "Orion 遺跡Boss。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-freezepaw",
+      "kind": "spell",
+      "label": "Freezepaw",
+      "tip": "冰船長。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-firepurrism",
+      "kind": "spell",
+      "label": "Firepurrism",
+      "tip": "火船長。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-icepaw",
+      "kind": "spell",
+      "label": "Icepaw",
+      "tip": "還娃娃給 Bonny。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-spell-pawer-up",
+      "kind": "spell",
+      "label": "Pawer Up",
+      "tip": "Bonny 尋書請求結案。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S09"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-bounty-boar-king-defeated",
+      "kind": "bounty",
+      "label": "Boar King · 已擊倒",
+      "tip": "Purvanna 鎖門周邊。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-boar-king-claimed",
+      "kind": "bounty",
+      "label": "Boar King · 已領賞",
+      "tip": "Purvanna 鎖門周邊。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-ice-pi-rat-captain-defeated",
+      "kind": "bounty",
+      "label": "Ice Pi-rat Captain · 已擊倒",
+      "tip": "Straits 冰藏身處。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-ice-pi-rat-captain-claimed",
+      "kind": "bounty",
+      "label": "Ice Pi-rat Captain · 已領賞",
+      "tip": "Straits 冰藏身處。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-oinker-chief-defeated",
+      "kind": "bounty",
+      "label": "Oinker Chief · 已擊倒",
+      "tip": "Centauri。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-oinker-chief-claimed",
+      "kind": "bounty",
+      "label": "Oinker Chief · 已領賞",
+      "tip": "Centauri。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-clawford-defeated",
+      "kind": "bounty",
+      "label": "Clawford · 已擊倒",
+      "tip": "Lovepurr。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-clawford-claimed",
+      "kind": "bounty",
+      "label": "Clawford · 已領賞",
+      "tip": "Lovepurr。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-fire-pi-rat-captain-defeated",
+      "kind": "bounty",
+      "label": "Fire Pi-rat Captain · 已擊倒",
+      "tip": "Sunset 火藏身處。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-fire-pi-rat-captain-claimed",
+      "kind": "bounty",
+      "label": "Fire Pi-rat Captain · 已領賞",
+      "tip": "Sunset 火藏身處。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-dratcula-defeated",
+      "kind": "bounty",
+      "label": "Dratcula · 已擊倒",
+      "tip": "Eight Bit Castle。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-dratcula-claimed",
+      "kind": "bounty",
+      "label": "Dratcula · 已領賞",
+      "tip": "Eight Bit Castle。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-necromouser-defeated",
+      "kind": "bounty",
+      "label": "Necromouser · 已擊倒",
+      "tip": "Twin Castle Manors。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-necromouser-claimed",
+      "kind": "bounty",
+      "label": "Necromouser · 已領賞",
+      "tip": "Twin Castle Manors。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-captain-meowtallika-defeated",
+      "kind": "bounty",
+      "label": "Captain Meowtallika · 已擊倒",
+      "tip": "持票進演唱會。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-captain-meowtallika-claimed",
+      "kind": "bounty",
+      "label": "Captain Meowtallika · 已領賞",
+      "tip": "持票進演唱會。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-captain-takomeowki-defeated",
+      "kind": "bounty",
+      "label": "Captain Takomeowki · 已擊倒",
+      "tip": "Volcano 主線。",
+      "route": "cq3-r18",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-captain-takomeowki-claimed",
+      "kind": "bounty",
+      "label": "Captain Takomeowki · 已領賞",
+      "tip": "Volcano 主線。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r18",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-pi-rat-king-defeated",
+      "kind": "bounty",
+      "label": "Pi-rat King · 已擊倒",
+      "tip": "Furggy 龍屍巢穴。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-pi-rat-king-claimed",
+      "kind": "bounty",
+      "label": "Pi-rat King · 已領賞",
+      "tip": "Furggy 龍屍巢穴。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-bounty-duck-of-doom-defeated",
+      "kind": "bounty",
+      "label": "Duck of Doom · 已擊倒",
+      "tip": "海上巡航。",
+      "route": "cq3-r16",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "defeated"
+    },
+    {
+      "id": "cq3-bounty-duck-of-doom-claimed",
+      "kind": "bounty",
+      "label": "Duck of Doom · 已領賞",
+      "tip": "海上巡航。 返回 Pawt Purvanna 酒館，逐張海報互動領賞。",
+      "route": "cq3-r16",
+      "sourceIds": [
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed",
+      "action": "claimed"
+    },
+    {
+      "id": "cq3-ship-ammo-capacity-plus",
+      "kind": "ship-passive",
+      "label": "Ammo Capacity +",
+      "tip": "沿河道駛近，用船炮破門，清守軍後開箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S25",
+        "S22"
+      ],
+      "scope": "unresolved",
+      "evidence": "single-source",
+      "location": "Purvanna 北部／Fort Wreck",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "北部破門堡獎勵由S25支持；Fort Wreck名稱定位需再核對。不採S16將Fort Wreck列為++的說法。"
+    },
+    {
+      "id": "cq3-ship-ammo-capacity-plus-plus",
+      "kind": "ship-passive",
+      "label": "Ammo Capacity ++",
+      "tip": "完成八個電話水點後回人魚，檢查身後新開寶箱。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S26",
+        "S23",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "conflicting",
+      "location": "Sunset 人魚回報處",
+      "method": "ship",
+      "prerequisites": [
+        "Shell Phone、八個水點及人魚結尾回報。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S26：人魚任務後方箱；S23未標++；S16列Fort Wreck。先依人魚流程查漏，階級與唯一位置仍待實機核對。"
+    },
+    {
+      "id": "cq3-ship-cannon-power-plus",
+      "kind": "ship-passive",
+      "label": "Cannon Power +",
+      "tip": "清中央守軍，打開堡內寶箱。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S22",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Purricade Island／Fort Purricade",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-cannon-power-plus-plus",
+      "kind": "ship-passive",
+      "label": "Cannon Power ++",
+      "tip": "Oinker 戰前回查下層隱藏房寶箱。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S22",
+        "S23",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Centauri Ruins",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-cannon-reload-plus",
+      "kind": "ship-passive",
+      "label": "Cannon Reload +",
+      "tip": "首樓入口存檔鳥附近向左查隱藏房。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S22",
+        "S23"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Ruined Castle／Castle Ruins",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-cannon-reload-plus-plus",
+      "kind": "ship-passive",
+      "label": "Cannon Reload ++",
+      "tip": "依羅馬數字限時打亮四顆藍石，再開獎勵箱。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S22",
+        "S23",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "conflicting",
+      "location": "Sunset 西側／Eight Bit 海岸",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S22／S23支持海岸解謎固定箱，S16稱隨機箱。先查固定點，仍需核對背包階級。"
+    },
+    {
+      "id": "cq3-ship-firing-rate-plus",
+      "kind": "ship-passive",
+      "label": "Firing Rate +",
+      "tip": "第三樓下側／左下支路箱。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S22",
+        "S23"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Orion Ruins",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-firing-rate-plus-plus",
+      "kind": "ship-passive",
+      "label": "Firing Rate ++",
+      "tip": "擊敗兩隻 Heartpurroken，檢查解鎖獎勵箱。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S22",
+        "S23",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "conflicting",
+      "location": "Heartpurreak Cave",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S22／S23支持Heartpurreak固定箱，S16稱隨機箱；採可重現地城路線，不保證任何隨機箱必出。"
+    },
+    {
+      "id": "cq3-ship-pawer-boost",
+      "kind": "ship-passive",
+      "label": "Pawer Boost",
+      "tip": "清島上敵人與周邊船，回島開箱。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S16",
+        "S26"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Lonely Isle",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-ship-hull-plus",
+      "kind": "ship-passive",
+      "label": "Ship Hull +",
+      "tip": "嘗試開鎖箱引出敵船，擊沉後回箱子領取。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S26",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "conflicting",
+      "location": "Long Island",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S26為Long Island鎖箱，S16列Fort Tail；保留來源差異，先查Long Island船戰。"
+    },
+    {
+      "id": "cq3-ship-ship-hull-plus-plus",
+      "kind": "ship-passive",
+      "label": "Ship Hull ++",
+      "tip": "從第三樓末端梯子下回二樓鎖房，開先前不能到的箱。",
+      "route": "cq3-r08-antares",
+      "sourceIds": [
+        "S22",
+        "S23",
+        "S16"
+      ],
+      "scope": "unresolved",
+      "evidence": "conflicting",
+      "location": "Antares Ruins",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S22／S23支持Antares回程箱，S16列敵船掉落；不能把任意擊沉敵船當成已取得。"
+    },
+    {
+      "id": "cq3-ship-the-fires-of-cathulhu",
+      "kind": "ship-passive",
+      "label": "The Fires of Cathulhu",
+      "tip": "接Milka任務後擊倒Cathulhu，另開生成的獎勵箱。",
+      "route": "cq3-r16",
+      "sourceIds": [
+        "S01",
+        "S22"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "Cathulhu’s Rest／Milka 請求",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-ship-the-fowlmidable",
+      "kind": "ship-passive",
+      "label": "The Fowlmidable",
+      "tip": "準備船裝後擊倒巡航鴨船，確認掉落入手。",
+      "route": "cq3-r16",
+      "sourceIds": [
+        "S01",
+        "S22"
+      ],
+      "scope": "unresolved",
+      "evidence": "cross-checked",
+      "location": "海上巡航 Duck of Doom",
+      "method": "ship",
+      "prerequisites": [
+        "已取得船，海上木柵以船炮破壞。"
+      ],
+      "instructions": [
+        "依上述地標完成戰鬥、解謎或回程取箱。",
+        "到船選單核對同名部件與 +／++ 階級，再登錄；不自動確認PS5跳盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-cannonpaw-super-cannonpaw",
+      "kind": "cannonpaw",
+      "label": "Super Cannonpaw",
+      "tip": "取得船後核對初始炮彈。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S16"
+      ],
+      "scope": "base",
+      "evidence": "single-source",
+      "location": "開局船教學",
+      "method": "ship",
+      "prerequisites": [
+        "取得船。"
+      ],
+      "instructions": [
+        "完成上述取得流程，檢查船選單。",
+        "炮彈與被動獨立登錄；不以4種炮彈加13被動保證PS5金盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-cannonpaw-magma-cannonpaw",
+      "kind": "cannonpaw",
+      "label": "Magma Cannonpaw",
+      "tip": "擊倒Boar King後拾取；酒館領賞另記。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S01",
+        "S22"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "location": "Purvanna／Boar King",
+      "method": "ship",
+      "prerequisites": [
+        "取得船。"
+      ],
+      "instructions": [
+        "完成上述取得流程，檢查船選單。",
+        "炮彈與被動獨立登錄；不以4種炮彈加13被動保證PS5金盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-cannonpaw-electric-cannonpaw",
+      "kind": "cannonpaw",
+      "label": "Electric Cannonpaw",
+      "tip": "擊沉外海敵船；與陸上演唱會Boss分開。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S01",
+        "S22"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "location": "演唱會外 Meowtallicurse",
+      "method": "ship",
+      "prerequisites": [
+        "取得船。"
+      ],
+      "instructions": [
+        "完成上述取得流程，檢查船選單。",
+        "炮彈與被動獨立登錄；不以4種炮彈加13被動保證PS5金盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-cannonpaw-cursed-cannonpaw",
+      "kind": "cannonpaw",
+      "label": "Cursed Cannonpaw",
+      "tip": "擊沉The Undying後拾取；海盜王巢穴另走後續。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S01",
+        "S22"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "location": "Furggy 北岸／The Undying",
+      "method": "ship",
+      "prerequisites": [
+        "取得船。"
+      ],
+      "instructions": [
+        "完成上述取得流程，檢查船選單。",
+        "炮彈與被動獨立登錄；不以4種炮彈加13被動保證PS5金盃。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-antares-cavalier",
+      "kind": "equipment",
+      "label": "Antares' Cavalier",
+      "tip": "頂層 Boss 後的獎勵箱。",
+      "route": "cq3-r08-antares",
+      "sourceIds": [
+        "S17",
+        "S27"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Antares Ruins",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-arcane-mage-hat",
+      "kind": "equipment",
+      "label": "Arcane Mage Hat",
+      "tip": "Boss 前梯子周邊／右棟 Dining Hall 寶箱。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S03",
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Twin Castle Manors",
+      "method": "chest",
+      "prerequisites": [
+        "依兩棟的鎖門提示來回取鑰匙，Boss 後再清支路。"
+      ],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-clawfords-hat",
+      "kind": "equipment",
+      "label": "Clawford's Hat",
+      "tip": "第三本故事章末取獎。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Lovepurr Castle",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-dratculas-topper",
+      "kind": "equipment",
+      "label": "Dratcula's Topper",
+      "tip": "Dratcula 後回四樓，檢查樓梯左門內寶箱。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S03",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Eight Bit Castle",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-head-fire-mage-hat",
+      "kind": "equipment",
+      "label": "Fire Mage Hat",
+      "tip": "首梯後右行，穿火球支路，下梯開箱。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S03",
+        "S17"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Fire Pi-rat Hideout",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-head-fishercat-hat",
+      "kind": "equipment",
+      "label": "Fishercat Hat",
+      "tip": "清北岸敵船接請求，趕魚上岸後領箱。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S17",
+        "S27"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "head",
+      "location": "Straits／漁夫支線",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+    },
+    {
+      "id": "cq3-equip-head-gentlebro-hat",
+      "kind": "equipment",
+      "label": "Gentlebro Hat",
+      "tip": "Furggy 南方缺口出海，循淺色水路找 NPC，收三份稿紙回報。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S01",
+        "S17"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "世界邊界外 Gentlebros",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-golden-helm",
+      "kind": "equipment",
+      "label": "Golden Helm",
+      "tip": "持黃金鑰匙清樓層；第三樓獎勵。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Golden Tower",
+      "method": "chest",
+      "prerequisites": [
+        "塔內一把與世界四把黃金鑰匙，合計五把。"
+      ],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-gunner-eyepatch",
+      "kind": "equipment",
+      "label": "Gunner Eyepatch",
+      "tip": "檢查洞內支路寶箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Furrlorn Cave",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-ice-mage-hat",
+      "kind": "equipment",
+      "label": "Ice Mage Hat",
+      "tip": "左側梯子向上，檢查儲藏室。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S03",
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Ice Pi-rat Hideout",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-head-knight-hat",
+      "kind": "equipment",
+      "label": "Knight Hat",
+      "tip": "完成 One Cat’s Treasure，回報第三輪獎勵。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Purvanna／Watchcat",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-meowtallika-helm",
+      "kind": "equipment",
+      "label": "Meowtallika Helm",
+      "tip": "第三樓中央敵人守護的箱子。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Orion Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-meowtallikas-tricorne",
+      "kind": "equipment",
+      "label": "Meowtallika's Tricorne",
+      "tip": "Polaris 取票後進演唱會，打倒船長領取。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S01",
+        "S17"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Meowtallika’s Concert",
+      "method": "boss",
+      "prerequisites": [
+        "完成 Polaris 並取得演唱會門票。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-oinker-headdress",
+      "kind": "equipment",
+      "label": "Oinker Headdress",
+      "tip": "Oinker Chief 戰後檢查房內獎勵。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Centauri Ruins",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-orions-cavalier",
+      "kind": "equipment",
+      "label": "Orion's Cavalier",
+      "tip": "頂層 Orion 戰後取箱。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S17",
+        "S27"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Orion Ruins",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-patchys-hood",
+      "kind": "equipment",
+      "label": "Patchy's Hood",
+      "tip": "完成 Patchy’s Booty，檢查任務獎勵箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Booty Cave",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-pi-rat-kings-bicorne",
+      "kind": "equipment",
+      "label": "Pi-rat King's Bicorne",
+      "tip": "先擊沉 The Undying，進龍屍巢穴打倒真正海盜王。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S01",
+        "S17"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Furggy／Pi-rat King Hideout",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-pirate-bandana",
+      "kind": "equipment",
+      "label": "Pirate Bandana",
+      "tip": "西岸寶箱。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S03",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Catuga",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-purccaneer-bandana",
+      "kind": "equipment",
+      "label": "Purccaneer Bandana",
+      "tip": "淺色海星群中的紅海星。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S03",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Purvanna 研究者周邊",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-purrivateer-hat",
+      "kind": "equipment",
+      "label": "Purrivateer Hat",
+      "tip": "木片／叉記號附近岩石藏箱；Twin Manors 左棟亦有同名箱。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Furggy 南岸",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-purrmaid-helm",
+      "kind": "equipment",
+      "label": "Purrmaid Helm",
+      "tip": "Shell Phone 水點獎勵；先查 Furggy 南部與 Furtigua 水點。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S17",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "head",
+      "location": "Furggy／Furtigua 水點",
+      "method": "ripple",
+      "prerequisites": [
+        "Shell Phone 已取得；水點與人魚結尾回報分開。"
+      ],
+      "instructions": [
+        "先在 Sunset 取得 Shell Phone。",
+        "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+    },
+    {
+      "id": "cq3-equip-head-rogue-bandana",
+      "kind": "equipment",
+      "label": "Rogue Bandana",
+      "tip": "小沙洲獨立紅海星。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S03",
+        "S04"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Sandy Islands",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-spicy-bandana",
+      "kind": "equipment",
+      "label": "Spicy Bandana",
+      "tip": "洞內寶箱。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S17",
+        "S27"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Spicy Cave",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-head-takomeowkis-bicorne",
+      "kind": "equipment",
+      "label": "Takomeowki's Bicorne",
+      "tip": "主線打倒 Takomeowki 後拾取。",
+      "route": "cq3-r18",
+      "sourceIds": [
+        "S17",
+        "S27"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "head",
+      "location": "Volcano Mountain",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-antares-armor",
+      "kind": "equipment",
+      "label": "Antares' Armor",
+      "tip": "三遺跡要件齊全後進入，檢查首樓收尾獎勵。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Polaris Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-arcane-mage-vest",
+      "kind": "equipment",
+      "label": "Arcane Mage Vest",
+      "tip": "互取兩棟門鑰匙，右棟 Dining Hall 開箱。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Twin Castle Manors",
+      "method": "chest",
+      "prerequisites": [
+        "依兩棟的鎖門提示來回取鑰匙，Boss 後再清支路。"
+      ],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-clawfords-vest",
+      "kind": "equipment",
+      "label": "Clawford's Vest",
+      "tip": "戀愛故事章末獎勵；先檢查第一、二章。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Lovepurr Castle",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-dratculas-coat",
+      "kind": "equipment",
+      "label": "Dratcula's Coat",
+      "tip": "Boss 後回四樓，與貓畫像互動領獎。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S23",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Eight Bit Castle",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-fire-mage-vest",
+      "kind": "equipment",
+      "label": "Fire Mage Vest",
+      "tip": "先檢查 Fire Pi-rat Hideout 及 Heartpurreak／Lovepurr 書洞窟。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S03",
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "body",
+      "location": "候選：Fire Hideout／兩處書洞窟",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "先核對背包是否已持有，避免為名字相近重跑。",
+        "沿途檢查三個候選地城的剩餘箱；不要把來源差異當成三件不同裝備。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S03：Fire Hideout；S18：Lovepurr Cave；S24：Heartpurreak Cave。三處互異，尚不能指定唯一取得點。"
+    },
+    {
+      "id": "cq3-equip-body-fishercat-attire",
+      "kind": "equipment",
+      "label": "Fishercat Attire",
+      "tip": "趕魚上岸開箱；Rock Catfish 的箱子有此服記錄。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S18",
+        "S23",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "body",
+      "location": "漁夫支線／各地鯰魚",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+    },
+    {
+      "id": "cq3-equip-body-gentlebro-tuxedo",
+      "kind": "equipment",
+      "label": "Gentlebro Tuxedo",
+      "tip": "完成 The Speech 三份稿紙回報。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "世界邊界外 Gentlebros",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-golden-armor",
+      "kind": "equipment",
+      "label": "Golden Armor",
+      "tip": "第二樓獎勵；更高樓有重複同名箱。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Golden Tower",
+      "method": "chest",
+      "prerequisites": [
+        "塔內一把與世界四把黃金鑰匙，合計五把。"
+      ],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-gunner-vest",
+      "kind": "equipment",
+      "label": "Gunner Vest",
+      "tip": "城堡右方、鸚鵡群附近的地表箱。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S03",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Lovepurr Islands",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-body-ice-mage-vest",
+      "kind": "equipment",
+      "label": "Ice Mage Vest",
+      "tip": "左側拉鎖鏈後返回，走右梯支路檢查房間。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Ice Pi-rat Hideout",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-body-knight-armor",
+      "kind": "equipment",
+      "label": "Knight Armor",
+      "tip": "找到 Smithy Hammer 後回鍛造店歸還。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Twilight／Kidd Cat",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-meowtallika-shirt",
+      "kind": "equipment",
+      "label": "Meowtallika Shirt",
+      "tip": "第二樓箱子。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Orion Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-meowtallikas-jacket",
+      "kind": "equipment",
+      "label": "Meowtallika's Jacket",
+      "tip": "持票進場打倒船長後拾取。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Meowtallika’s Concert",
+      "method": "boss",
+      "prerequisites": [
+        "完成 Polaris 並取得演唱會門票。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-oinker-garments",
+      "kind": "equipment",
+      "label": "Oinker Garments",
+      "tip": "北岸休息點東側藍石附近，往南檢查灌木箱。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S03"
+      ],
+      "scope": "base",
+      "evidence": "single-source",
+      "category": "body",
+      "location": "Twilight Isles",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-body-orions-armor",
+      "kind": "equipment",
+      "label": "Orion's Armor",
+      "tip": "第三樓解謎石獎勵箱。",
+      "route": "cq3-r09",
+      "sourceIds": [
+        "S18",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Polaris Ruins",
+      "method": "puzzle",
+      "prerequisites": [],
+      "instructions": [
+        "依路線內對應解謎石解法完成。",
+        "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-patchys-coat",
+      "kind": "equipment",
+      "label": "Patchy's Coat",
+      "tip": "Patchy’s Booty 過程的箱子。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Booty Cave",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-pi-rat-kings-coat",
+      "kind": "equipment",
+      "label": "Pi-rat King's Coat",
+      "tip": "擊沉 The Undying 後進龍屍巢穴，打倒真正海盜王。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Furggy／Pi-rat King Hideout",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-pirate-shirt",
+      "kind": "equipment",
+      "label": "Pirate Shirt",
+      "tip": "初始裝備。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S03",
+        "S26"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "開局",
+      "method": "start",
+      "prerequisites": [],
+      "instructions": [
+        "從新遊戲教學取得初始裝備。",
+        "核對背包後逐件登錄，不因完成路線批次代勾。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-purccaneer-shirt",
+      "kind": "equipment",
+      "label": "Purccaneer Shirt",
+      "tip": "城堡／演唱會塔後方山側寶箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Purvanna／Ruined Castle 周邊",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-purrivateer-vest",
+      "kind": "equipment",
+      "label": "Purrivateer Vest",
+      "tip": "紅海星隱藏箱；另有 Furrlorn 及 Twin 左棟 Dining Hall 記錄。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S18",
+        "S23",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Eight Bit 沙洲／Furrlorn／Twin",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-purrmaid-vest",
+      "kind": "equipment",
+      "label": "Purrmaid Vest",
+      "tip": "有 Shell Phone 後回港口查漣漪；亦有 Twin／Catuga 水點記錄。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S18",
+        "S23",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "body",
+      "location": "Pawt Purvanna 西北水面",
+      "method": "ripple",
+      "prerequisites": [
+        "Shell Phone 已取得；水點與人魚結尾回報分開。"
+      ],
+      "instructions": [
+        "先在 Sunset 取得 Shell Phone。",
+        "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+    },
+    {
+      "id": "cq3-equip-body-rogue-vest",
+      "kind": "equipment",
+      "label": "Rogue Vest",
+      "tip": "三角木片中央岩石。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Furtigua 外小島",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-body-spicy-vest",
+      "kind": "equipment",
+      "label": "Spicy Vest",
+      "tip": "洞口南側箱為候選，先沿海岸檢查。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S03",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "single-source",
+      "category": "body",
+      "location": "Sunset／Spicy Cave 外",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "Sunset區域一致；洞口南側的精確箱位置僅S03明載，仍需實機核對。"
+    },
+    {
+      "id": "cq3-equip-body-takomeowkis-coat",
+      "kind": "equipment",
+      "label": "Takomeowki's Coat",
+      "tip": "主線 Takomeowki 戰後拾取。",
+      "route": "cq3-r18",
+      "sourceIds": [
+        "S18",
+        "S24"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "body",
+      "location": "Volcano Mountain",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-blade-of-orion",
+      "kind": "equipment",
+      "label": "Blade of Orion",
+      "tip": "Boss 後回二樓，打開先前被柵欄擋住的金屬箱。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Orion Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-bloodsucker",
+      "kind": "equipment",
+      "label": "Bloodsucker",
+      "tip": "Dratcula 戰後的頂層獎勵。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Eight Bit Castle",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-deaths-hook",
+      "kind": "equipment",
+      "label": "Death's Hook",
+      "tip": "真正海盜王戰後，出巢穴再開外面的箱子。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Pi-rat King Hideout 外",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-golden-shield",
+      "kind": "equipment",
+      "label": "Golden Shield",
+      "tip": "完成頂層戰鬥後開獎勵箱。",
+      "route": "cq3-r15",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Golden Tower",
+      "method": "boss",
+      "prerequisites": [
+        "塔內一把與世界四把黃金鑰匙，合計五把。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-heartbreaker",
+      "kind": "equipment",
+      "label": "Heartbreaker",
+      "tip": "三書三章後進後門打 Clawford，領戰後箱。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Lovepurr Castle",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-heartmender",
+      "kind": "equipment",
+      "label": "Heartmender",
+      "tip": "Boss 後回入口 Clawford 完成結案並領最後獎勵。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Lovepurr Castle",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-knight-shield",
+      "kind": "equipment",
+      "label": "Knight Shield",
+      "tip": "找到 Jug o’ Milk，回港口酒館歸還。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Purrier Beach／Mama Milka",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-meowtallika-axe",
+      "kind": "equipment",
+      "label": "Meowtallika Axe",
+      "tip": "開地表箱會遇埋伏，先準備戰鬥。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S03",
+        "S19"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Purvanna 東北海岸",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-oinker-shield",
+      "kind": "equipment",
+      "label": "Oinker Shield",
+      "tip": "走到樓梯畫像處後回查樓梯間支路箱。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S03",
+        "S19"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Centauri Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-melee-patchys-claws",
+      "kind": "equipment",
+      "label": "Patchy's Claws",
+      "tip": "Patchy’s Booty 中擊敗 Patchy 並領獎。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Booty Cave",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-pirate-cutlass",
+      "kind": "equipment",
+      "label": "Pirate Cutlass",
+      "tip": "初始裝備。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S03",
+        "S26"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "開局",
+      "method": "start",
+      "prerequisites": [],
+      "instructions": [
+        "從新遊戲教學取得初始裝備。",
+        "核對背包後逐件登錄，不因完成路線批次代勾。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-purccaneer-cutlass",
+      "kind": "equipment",
+      "label": "Purccaneer Cutlass",
+      "tip": "小島洞口外寶箱。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Furst Cave 入口外",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-rogue-claws",
+      "kind": "equipment",
+      "label": "Rogue Claws",
+      "tip": "山間地表寶箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S03"
+      ],
+      "scope": "base",
+      "evidence": "single-source",
+      "category": "melee",
+      "location": "Purvanna／Golden Tower 西南",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "地城／區域可對照，細部轉彎或箱位置未經PS5實機驗證。"
+    },
+    {
+      "id": "cq3-equip-melee-the-dragonbone",
+      "kind": "equipment",
+      "label": "The Dragonbone",
+      "tip": "還鐵鎚後接尋骨，海盜王巢穴取 Dragon Bone 再交回。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Kidd Cat 鍛造店",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-the-rocker",
+      "kind": "equipment",
+      "label": "The Rocker",
+      "tip": "持票進場，打倒船長後拾取。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Meowtallika’s Concert",
+      "method": "boss",
+      "prerequisites": [
+        "完成 Polaris 並取得演唱會門票。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-melee-tri-claws",
+      "kind": "equipment",
+      "label": "Tri-Claws",
+      "tip": "拿 Shell Phone 後先查人魚附近漣漪。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "melee",
+      "location": "Sunset 人魚附近水點",
+      "method": "ripple",
+      "prerequisites": [
+        "Shell Phone 已取得；水點與人魚結尾回報分開。"
+      ],
+      "instructions": [
+        "先在 Sunset 取得 Shell Phone。",
+        "下船靠近所列水點的漣漪使用電話，確認箱子獎勵；缺少時再查其他水點。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "來源對各水點／各魚的固定獎勵與隨機分配說法不一；所列為可查路線，實際以開箱與背包為準。"
+    },
+    {
+      "id": "cq3-equip-melee-tsurai",
+      "kind": "equipment",
+      "label": "Tsurai",
+      "tip": "打倒 Takomeowki 後繼續檢查房間寶箱。",
+      "route": "cq3-r18",
+      "sourceIds": [
+        "S19",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "melee",
+      "location": "Volcano Mountain",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-arcane-wand",
+      "kind": "equipment",
+      "label": "Arcane Wand",
+      "tip": "Necromouser 後在 Boss 房開箱。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Twin Castle Manors",
+      "method": "boss",
+      "prerequisites": [
+        "依兩棟的鎖門提示來回取鑰匙，Boss 後再清支路。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-blunderpuss",
+      "kind": "equipment",
+      "label": "Blunderpuss",
+      "tip": "初始裝備。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S03",
+        "S26"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "開局",
+      "method": "start",
+      "prerequisites": [],
+      "instructions": [
+        "從新遊戲教學取得初始裝備。",
+        "核對背包後逐件登錄，不因完成路線批次代勾。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-fire-wand",
+      "kind": "equipment",
+      "label": "Fire Wand",
+      "tip": "首樓寶箱；火藏身處亦有同名獎勵記錄。",
+      "route": "cq3-r08-antares",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Antares Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-furlintlock",
+      "kind": "equipment",
+      "label": "Furlintlock",
+      "tip": "先與 NPC 問提示，攻擊石圈灌木開隱藏箱。",
+      "route": "cq3-r02",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Pawt Purvanna 西岸",
+      "method": "secret",
+      "prerequisites": [],
+      "instructions": [
+        "依地標找到可破壞物並攻擊，使隱藏箱出現。",
+        "開箱後確認裝備入手；秘密完成與裝備取得分開勾選。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-ice-wand",
+      "kind": "equipment",
+      "label": "Ice Wand",
+      "tip": "冰船長戰後檢查 Captain’s Quarters。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Ice Pi-rat Hideout",
+      "method": "boss",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-meowchine-gun",
+      "kind": "equipment",
+      "label": "Meowchine Gun",
+      "tip": "Boss 後拉鎖鏈開柵欄，返回 Treasure Room 開箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Ruined Castle／Castle Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-squiderpuss",
+      "kind": "equipment",
+      "label": "Squiderpuss",
+      "tip": "清洞窟後取末端獎勵。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Spicy Cave",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-stave-of-antares",
+      "kind": "equipment",
+      "label": "Stave of Antares",
+      "tip": "Boss 後走回存檔鳥旁，沿新開梯子下去取箱。",
+      "route": "cq3-r08-antares",
+      "sourceIds": [
+        "S20",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Antares Ruins",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-the-architect",
+      "kind": "equipment",
+      "label": "The Architect",
+      "tip": "完成 The Speech：找三份稿紙回報。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S20",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "世界邊界外 Gentlebros",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-ranged-the-sons-rod",
+      "kind": "equipment",
+      "label": "The Son's Rod",
+      "tip": "完成漁夫四尾特殊魚請求後回報。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S20",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "ranged",
+      "location": "Straits 漁夫／Fursome Four",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-bird-poop",
+      "kind": "equipment",
+      "label": "Bird Poop",
+      "tip": "攻擊存檔鸚鵡至飛走，拾取掉落。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S21",
+        "S15"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "任一 Rest Beakon",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-equip-trinket-boar-tusk",
+      "kind": "equipment",
+      "label": "Boar Tusk",
+      "tip": "郵差送信過程找 Boarb；另有野豬掉落記錄。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S03",
+        "S23",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Purvanna／Going Pawstal",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-bomb-satchel",
+      "kind": "equipment",
+      "label": "Bomb Satchel",
+      "tip": "擊敗投彈海盜，檢查隨機掉落。",
+      "route": "cq3-r01",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Catuga／投彈 Pi-rat",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-equip-trinket-chimeowra-claw",
+      "kind": "equipment",
+      "label": "Chimeowra Claw",
+      "tip": "交齊研究者要求的三隻敵人，完成戰鬥後領取。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S07"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Purvanna 研究者塔",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-electric-circuit",
+      "kind": "equipment",
+      "label": "Electric Circuit",
+      "tip": "擊敗小型閃電海盜，檢查掉落。",
+      "route": "cq3-r07",
+      "sourceIds": [
+        "S21",
+        "S03"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Furtigua／閃電 Pi-rat",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-equip-trinket-flame-crystal",
+      "kind": "equipment",
+      "label": "Flame Crystal",
+      "tip": "擊敗頭部帶火焰晶體的敵人，檢查掉落。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Sunset Islands",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-equip-trinket-hearty-milk",
+      "kind": "equipment",
+      "label": "Hearty Milk",
+      "tip": "回酒館逐張海報領賞，開懸賞獎勵箱。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Pawt Purvanna 酒館",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-ice-crystal",
+      "kind": "equipment",
+      "label": "Ice Crystal",
+      "tip": "擊敗冰系施法敵人，檢查掉落。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S03",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Ice Pi-rat Hideout",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-equip-trinket-lousy-boot",
+      "kind": "equipment",
+      "label": "Lousy Boot",
+      "tip": "One Cat’s Treasure 第一輪獎勵。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Purvanna／Watchcat",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-lousy-gloves",
+      "kind": "equipment",
+      "label": "Lousy Gloves",
+      "tip": "One Cat’s Treasure 後續指引箱；核對第二輪獎勵。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Watchcat／Straits",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-magic-milk",
+      "kind": "equipment",
+      "label": "Magic Milk",
+      "tip": "已擊倒海報目標仍須互動領賞、開箱。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Pawt Purvanna 酒館",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-magical-glove",
+      "kind": "equipment",
+      "label": "Magical Glove",
+      "tip": "完成石頭謎題開獎勵箱；逐區內容有來源差異。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "trinket",
+      "location": "Purvanna 高低石／Straits 石",
+      "method": "puzzle",
+      "prerequisites": [],
+      "instructions": [
+        "依路線內對應解謎石解法完成。",
+        "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+    },
+    {
+      "id": "cq3-equip-trinket-magical-punching-bag",
+      "kind": "equipment",
+      "label": "Magical Punching Bag",
+      "tip": "依 II、V、III、IV、I、VI 解謎後取箱。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "trinket",
+      "location": "Purvanna Watchcat 石頭",
+      "method": "puzzle",
+      "prerequisites": [],
+      "instructions": [
+        "依路線內對應解謎石解法完成。",
+        "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+    },
+    {
+      "id": "cq3-equip-trinket-magical-purse",
+      "kind": "equipment",
+      "label": "Magical Purse",
+      "tip": "Code 島依 I 至 V 解謎開箱；其他石頭箱也有記錄。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S21",
+        "S03",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "trinket",
+      "location": "Code Island／Sandy",
+      "method": "puzzle",
+      "prerequisites": [],
+      "instructions": [
+        "依路線內對應解謎石解法完成。",
+        "解謎後另開獎勵箱、檢查背包；不把石頭點亮等同取得裝備。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "不同攻略對石頭獎勵的種類／隨機性有差異；以實際開箱確認，缺少再查其他未開解謎箱。"
+    },
+    {
+      "id": "cq3-equip-trinket-meowtallikas-pick",
+      "kind": "equipment",
+      "label": "Meowtallika's Pick",
+      "tip": "船長戰後繼續開場內獎勵箱。",
+      "route": "cq3-r10",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Meowtallika’s Concert",
+      "method": "boss",
+      "prerequisites": [
+        "完成 Polaris 並取得演唱會門票。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-oinker-necklace",
+      "kind": "equipment",
+      "label": "Oinker Necklace",
+      "tip": "塔西北周邊箱為候選；亦有 Oinker 掉落說法。",
+      "route": "cq3-r06",
+      "sourceIds": [
+        "S03",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "conflicting",
+      "category": "trinket",
+      "location": "Twilight／Centauri 西側開關塔",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "S03列地表箱，S01列Oinker掉落；保留兩條候選，不保證單次戰鬥取得。"
+    },
+    {
+      "id": "cq3-equip-trinket-pawer-milk",
+      "kind": "equipment",
+      "label": "Pawer Milk",
+      "tip": "懸賞領賞箱及 Milka 結案獎勵，回鎮逐項檢查。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Pawt Purvanna 酒館",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-the-furst-mail",
+      "kind": "equipment",
+      "label": "The Furst Mail",
+      "tip": "完成 Going Pawstal 全程送信，回郵差領獎。",
+      "route": "cq3-r04",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Purvanna／Postmutt 塔",
+      "method": "quest",
+      "prerequisites": [],
+      "instructions": [
+        "完成所列任務的取得與回報流程。",
+        "對話後領取獎勵、檢查背包，再勾選此件。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-the-necropawmicon",
+      "kind": "equipment",
+      "label": "The Necropawmicon",
+      "tip": "Necromouser 戰後拾取；交給 Bonny 的任務回報另記。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Twin Castle Manors",
+      "method": "boss",
+      "prerequisites": [
+        "依兩棟的鎖門提示來回取鑰匙，Boss 後再清支路。"
+      ],
+      "instructions": [
+        "完成所列戰鬥與遊戲必要前置。",
+        "拾取戰後獎勵並檢查背包；擊倒不代替懸賞領賞。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-warriors-braid",
+      "kind": "equipment",
+      "label": "Warrior's Braid",
+      "tip": "檢查洞窟末端獎勵箱；敵人掉落不是唯一候選。",
+      "route": "cq3-r03",
+      "sourceIds": [
+        "S21",
+        "S23"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Furst Cave",
+      "method": "chest",
+      "prerequisites": [],
+      "instructions": [
+        "進入所列區域，依提示檢查寶箱或支路。",
+        "開箱後以背包實際新增的種類確認；重複升級不算新種類。"
+      ],
+      "checkedAt": "2026-11-27"
+    },
+    {
+      "id": "cq3-equip-trinket-weird-mushroom",
+      "kind": "equipment",
+      "label": "Weird Mushroom",
+      "tip": "Boss／波次獎勵箱隨機出；沒有核實必出樓層或掉率。",
+      "route": "cq3-r11",
+      "sourceIds": [
+        "S21",
+        "S01"
+      ],
+      "scope": "base",
+      "evidence": "cross-checked",
+      "category": "trinket",
+      "location": "Infinity Tower",
+      "method": "drop",
+      "prerequisites": [],
+      "instructions": [
+        "前往提示區域，找指定敵人或獎勵箱。",
+        "拾取掉落並檢查背包；未核實掉率，不保證刷取次數。"
+      ],
+      "checkedAt": "2026-11-27",
+      "caveat": "隨機掉落；沒有已核實掉率，不以重複升級增加裝備種類。"
+    },
+    {
+      "id": "cq3-quest-shell-phone",
+      "kind": "quest",
+      "label": "取得 Shell Phone",
+      "tip": "Sunset 人魚池北側用船炮清木柵，與人魚交談確認電話入手。",
+      "route": "cq3-r12",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-milka-return",
+      "kind": "quest",
+      "label": "Mama Milka · Cathulhu 後回報",
+      "tip": "完成請求並擊倒 Cathulhu 後回酒館談話、領獎。",
+      "route": "cq3-r16",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-kidd-return",
+      "kind": "quest",
+      "label": "Kidd Cat · 鍛造結案",
+      "tip": "先還鐵鎚，再交 Dragon Bone，確認獎勵入手。",
+      "route": "cq3-r14",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-bonny-return",
+      "kind": "quest",
+      "label": "Bonny · 尋書結案",
+      "tip": "Twin Castle Manors 取 Necropawmicon，回 Magic Bone 交書領獎。",
+      "route": "cq3-r13",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-clawford-return",
+      "kind": "quest",
+      "label": "Clawford · Boss 後回報",
+      "tip": "三章各取獎，走城堡後門打倒 Clawford，再回入口交談領獎。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-fishercat-start",
+      "kind": "quest",
+      "label": "接取漁夫請求",
+      "tip": "北端清漁夫旁敵船後，回漁夫談話。",
+      "route": "cq3-r05",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-fishercat-return",
+      "kind": "quest",
+      "label": "漁夫 · 釣魚結案",
+      "tip": "魚需趕往可捕捉岸邊；全魚精確位置待核，完成後回報。",
+      "route": "cq3-r17",
+      "sourceIds": [
+        "S07",
+        "S12"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-lovepurr-chapter-1",
+      "kind": "quest",
+      "label": "戀愛故事第1章 · 領取獎勵",
+      "tip": "依三書選擇提示走完本章，開啟章末獎勵箱。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-lovepurr-chapter-2",
+      "kind": "quest",
+      "label": "戀愛故事第2章 · 領取獎勵",
+      "tip": "依三書選擇提示走完本章，開啟章末獎勵箱。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    },
+    {
+      "id": "cq3-quest-lovepurr-chapter-3",
+      "kind": "quest",
+      "label": "戀愛故事第3章 · 領取獎勵",
+      "tip": "依三書選擇提示走完本章，開啟章末獎勵箱。",
+      "route": "cq3-r08",
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "scope": "base",
+      "evidence": "spec-reviewed"
+    }
+  ],
+  "trophies": [
+    {
+      "id": "cq3-trophy-purrlatinum-seeker",
+      "label": "Purrlatinum Seeker",
+      "condition": "其餘30座實際取得後確認白金。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-paws-over-tentacles",
+      "label": "Paws Over Tentacles",
+      "condition": "Cathulhu擊倒。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r16"
+    },
+    {
+      "id": "cq3-trophy-rock-on-supurrstar",
+      "label": "Rock on, Supurrstar!",
+      "condition": "Meowtallika擊倒。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r10"
+    },
+    {
+      "id": "cq3-trophy-king-of-pi-rats-no-more",
+      "label": "King of Pi-rats No More",
+      "condition": "真正海盜王。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r14"
+    },
+    {
+      "id": "cq3-trophy-quack-goes-the-ducky",
+      "label": "Quack Goes the Ducky",
+      "condition": "Duck of Doom。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r16"
+    },
+    {
+      "id": "cq3-trophy-furry-spicy-yet-supurr-sweet",
+      "label": "Furry Spicy yet Supurr Sweet",
+      "condition": "Takomeowki。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-furst-bounty",
+      "label": "Furst Bounty",
+      "condition": "首次領賞。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r02"
+    },
+    {
+      "id": "cq3-trophy-bounty-domiewnator",
+      "label": "Bounty Domiewnator",
+      "condition": "原版領賞集合；版本差異核對。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r17"
+    },
+    {
+      "id": "cq3-trophy-armeowry-amateur",
+      "label": "Armeowry Amateur",
+      "condition": "裝備10種。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r03"
+    },
+    {
+      "id": "cq3-trophy-armeowry-enjoyer",
+      "label": "Armeowry Enjoyer",
+      "condition": "裝備40種。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-armeowry-furshionista",
+      "label": "Armeowry Furshionista",
+      "condition": "裝備集合／96文案差異核對。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-ship-mieutenant",
+      "label": "Ship Mieutenant",
+      "condition": "首張藍圖。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r01"
+    },
+    {
+      "id": "cq3-trophy-ship-furst-mate",
+      "label": "Ship Furst Mate",
+      "condition": "藍圖5張。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r16"
+    },
+    {
+      "id": "cq3-trophy-ship-mewster",
+      "label": "Ship Mewster",
+      "condition": "藍圖集合核對。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r16"
+    },
+    {
+      "id": "cq3-trophy-treasure-rummeowger",
+      "label": "Treasure Rummeowger",
+      "condition": "箱20個。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r03"
+    },
+    {
+      "id": "cq3-trophy-treasure-pouncer",
+      "label": "Treasure Pouncer",
+      "condition": "箱50個。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-treasure-expurrlorer",
+      "label": "Treasure Expurrlorer",
+      "condition": "箱80個。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    },
+    {
+      "id": "cq3-trophy-purrzzler",
+      "label": "Purrzzler",
+      "condition": "首組解謎石。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r03"
+    },
+    {
+      "id": "cq3-trophy-purroblem-solver",
+      "label": "Purroblem Solver",
+      "condition": "12組解謎石。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r17"
+    },
+    {
+      "id": "cq3-trophy-once-bitten-8-times-shy",
+      "label": "Once Bitten, 8 Times Shy",
+      "condition": "8-bit地城。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r15"
+    },
+    {
+      "id": "cq3-trophy-purrsitively-golden",
+      "label": "Purrsitively Golden",
+      "condition": "黃金塔。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r15"
+    },
+    {
+      "id": "cq3-trophy-love-is-furever",
+      "label": "Love is Furever",
+      "condition": "戀愛城堡。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r08"
+    },
+    {
+      "id": "cq3-trophy-furst-secret",
+      "label": "Furst Secret",
+      "condition": "首隱藏物。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r02"
+    },
+    {
+      "id": "cq3-trophy-secret-purrlunderer",
+      "label": "Secret Purrlunderer",
+      "condition": "六處隱藏物。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r17"
+    },
+    {
+      "id": "cq3-trophy-spellmewster",
+      "label": "Spellmewster",
+      "condition": "十魔法。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r13"
+    },
+    {
+      "id": "cq3-trophy-meowsterwork",
+      "label": "Meowsterwork",
+      "condition": "Kidd Cat結案。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r14"
+    },
+    {
+      "id": "cq3-trophy-no-necromeowncy-here",
+      "label": "No Necromeowncy Here!",
+      "condition": "Bonny結案。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r13"
+    },
+    {
+      "id": "cq3-trophy-a-painful-pawst-avenged",
+      "label": "A Painful Pawst, Avenged",
+      "condition": "Milka結案。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r16"
+    },
+    {
+      "id": "cq3-trophy-happurrly-ever-after",
+      "label": "Happurrly Ever After",
+      "condition": "人魚結尾。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r17"
+    },
+    {
+      "id": "cq3-trophy-commewnity-helper",
+      "label": "Commewnity Helper",
+      "condition": "三件失物全部歸還。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r12"
+    },
+    {
+      "id": "cq3-trophy-my-north-star-was-always-you",
+      "label": "My North Star was Always You",
+      "condition": "結局；先查Aelius。",
+      "sourceIds": [
+        "S05"
+      ],
+      "route": "cq3-r18"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "body": "[PlatGet](https://platget.com/guides/cat-quest-3-trophy-guide/)",
+      "note": "通關清理、隱藏物、地城收尾與石柱；結局杯說法過度簡化，不採自動取得斷言。"
+    },
+    {
+      "id": "S02",
+      "body": "[Knoef](https://knoef.info/trophy-guides/ps5/cat-quest-3-trophy-guide/)",
+      "note": "一輪可補、隨機飾品、解謎對照；鑰匙段文字自相矛盾，以專篇修正。"
+    },
+    {
+      "id": "S03",
+      "body": "[100% Guides 裝備](https://www.100pguides.com/guides/cat-quest-3-all-equipment)",
+      "note": "原版96名稱、分類及個別位置；不代表更新完整總量。"
+    },
+    {
+      "id": "S04",
+      "body": "[CHRSuperstar](https://chrsuperstar.com/catquest3/en/)",
+      "note": "名稱清單、船被動、水點；方位及部分拼字有誤，不能單源定位。"
+    },
+    {
+      "id": "S05",
+      "body": "[Trophies Hunter PS5](https://trophieshunter.com/games/cat-quest-iii-ps5)",
+      "note": "31獎盃列表、條件與PS5平台標記；金盃仍寫all equipment。"
+    },
+    {
+      "id": "S06",
+      "body": "[Last Word on Gaming 解謎](https://lastwordongaming.com/2024/08/09/cat-quest-3-puzzle-stone-guide/)",
+      "note": "12組操作；原版時點，與其他來源核對。"
+    },
+    {
+      "id": "S07",
+      "body": "[Pro Game Guides 流程](https://progameguides.com/cat-quest-3/cat-quest-3-walkthrough/)",
+      "note": "主支線觸發、失物、書籍、Aelius地標；黃金鑰匙標題數有誤。"
+    },
+    {
+      "id": "S08",
+      "body": "[100% Guides 懸賞](https://www.100pguides.com/guides/cat-quest-3-all-bounty-locations)",
+      "note": "原版11、海盜王鏈、領賞與戀愛選擇。"
+    },
+    {
+      "id": "S09",
+      "body": "[100% Guides 魔法](https://www.100pguides.com/guides/cat-quest-3-all-spell-locations)",
+      "note": "十魔法及Furry Shield主線觸發。"
+    },
+    {
+      "id": "S10",
+      "body": "[100% Guides 結局](https://www.100pguides.com/guides/cat-quest-3-how-to-get-secret-ending)",
+      "note": "Aelius三次及好結局、位置圖；不是PS5現版實機驗證。"
+    },
+    {
+      "id": "S11",
+      "body": "[100% Guides 黃金塔](https://www.100pguides.com/guides/cat-quest-3-the-golden-tower-side-quest)",
+      "note": "五鑰匙與逐層收尾。"
+    },
+    {
+      "id": "S12",
+      "body": "[100% Guides 人魚](https://www.100pguides.com/guides/cat-quest-3-mermaids-booty-side-quest)",
+      "note": "電話、八點與回報。"
+    },
+    {
+      "id": "S13",
+      "body": "[開發者官方Roadmap](https://steamcommunity.com/app/2305840/discussions/0/4521136683853375810/)／[官方更新公告](https://steamcommunity.com/app/2305840/announcements/)",
+      "note": "免費更新內容存在；Steam版號不能直接當作PS5安裝版號。"
+    },
+    {
+      "id": "S14",
+      "body": "[PlayStationTrophies印刷列表](https://www.playstationtrophies.org/game/cat-quest-3/print-list/)",
+      "note": "檢索內容見96文案；正文擷取403，僅作差異線索，非PS5定論。"
+    },
+    {
+      "id": "S15",
+      "body": "[Prima Bird Poop專篇](https://primagames.com/tips/how-to-obtain-the-bird-poop-trinket-cat-quest-iii)",
+      "note": "攻擊休息點鸚鵡取得。"
+    },
+    {
+      "id": "S16",
+      "body": "[Prima／原PC Invasion裝備](https://primagames.com/gaming/cat-quest-3-all-gear-locations-guide-all-equipment-ship-blueprints-weapons-and-spells)",
+      "note": "船炮彈、後段配裝參考；數處取得點與其他來源矛盾，不作單一完整資料庫。"
+    },
+    {
+      "id": "S17",
+      "body": "[Neoseeker 頭部](https://www.neoseeker.com/cat-quest-iii/All_Head_Armor_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S18",
+      "body": "[Neoseeker 身體](https://www.neoseeker.com/cat-quest-iii/All_Body_Armor_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S19",
+      "body": "[Neoseeker 近戰](https://www.neoseeker.com/cat-quest-iii/All_Melee_Weapon_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S20",
+      "body": "[Neoseeker 遠程](https://www.neoseeker.com/cat-quest-iii/All_Long-Range_Weapon_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S21",
+      "body": "[Neoseeker 飾品](https://www.neoseeker.com/cat-quest-iii/All_Accessory_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S22",
+      "body": "[Neoseeker 船部件](https://www.neoseeker.com/cat-quest-iii/All_Ship_Parts_Locations)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S23",
+      "body": "[TenOunceCan 寶箱筆記](https://gameplay.tips/guides/cat-quest-3-treasure-locations-guide-world-maps.html)",
+      "note": "2026-11-27公開網頁／索引查核；原版攻略，未證明PS5現版條件。"
+    },
+    {
+      "id": "S24",
+      "body": "[ミルピリ 身體裝備](https://milpiriblog.com/cat_quest_iii-equipments-body)",
+      "note": "2026-11-27公開網頁／索引查核；原版攻略，未證明PS5現版條件。"
+    },
+    {
+      "id": "S25",
+      "body": "[Siliconera 船升級](https://www.siliconera.com/how-to-upgrade-your-ship-in-cat-quest-3/)",
+      "note": "2026-11-27公開網頁／索引查核；原版攻略，未證明PS5現版條件。"
+    },
+    {
+      "id": "S26",
+      "body": "[Papo de Platina 船與白金](https://www.papodeplatina.com.br/guias-de-platinas/acao-aventura/guia-de-trofeus-cat-quest-iii)",
+      "note": "2026-11-27公開搜尋索引文字查核；未核對圖片。部分正文不可擷取，不代表PS5現版或實機已驗證。"
+    },
+    {
+      "id": "S27",
+      "body": "[攻略空間 裝備](https://kouryakukuukan-puki.com/catquest3-equipment/amp/)",
+      "note": "2026-11-27公開網頁／索引查核；原版攻略，未證明PS5現版條件。"
+    }
+  ],
+  "gaps": [
+    [
+      "U01",
+      "PS5現版裝備金盃是否固定96、更新裝備能否替代",
+      "核對PS5實際獎盃文案與同版本達標紀錄；保留原版96的名稱集合",
+      "不阻塞UI；阻塞自動達標推算。"
+    ],
+    [
+      "U02",
+      "96件已有取得提示與來源；部分精確箱、固定／隨機說法及中文對照待核。",
+      "把S03逐列路徑與獨立流程攻略／影像核對；名稱、區域、前置與獎勵分別留證",
+      "不阻塞查漏；不宣稱全數位置已實機證實。"
+    ],
+    [
+      "U03",
+      "13被動與4炮彈已有逐項流程；++階級、固定箱／掉落及PS5金盃集合仍有差異。",
+      "對照PS5船選單及S04／S16，查完整影像定位；實際跳盃再驗",
+      "阻塞藍圖全收集自動判定及完整定位。"
+    ],
+    [
+      "U04",
+      "大石柱起點與Furtigua秘密方位的文字衝突",
+      "對S01圖片、S10位置圖或實機；記圖內地標，不沿用矛盾方位",
+      "阻塞精確地圖點；已有可用地標與順序。"
+    ],
+    [
+      "U05",
+      "更新追加懸賞是否影響PS5本體杯條件",
+      "以PS5更新版本與領原版11後的跳盃結果核對",
+      "阻塞「11即保證跳」；可追原版11。"
+    ],
+    [
+      "U06",
+      "PS5現版回溯的實際繁中UI文字與按鍵",
+      "來源明示Continue與左側水晶；逐按鍵仍以PS5影像核對",
+      "不阻塞補救路線；只阻塞精確在地化按鍵指引。"
+    ],
+    [
+      "U07",
+      "釣魚支線每條魚的精確位置、部分一般支線完整步驟",
+      "以S07各專節和影像逐點整理",
+      "阻塞「全支線逐操作完整攻略」；本文件不是該等級100%攻略。"
+    ],
+    [
+      "U08",
+      "現版完整箱子總數與每箱內容",
+      "需平台版本一致全箱圖＋實機核對",
+      "非本次白金核心；不建立假分母。"
+    ]
+  ],
+  "coverage": [
+    [
+      "PS5 獎盃",
+      "31／31 名稱與條件類型",
+      "已查列表；部分『全部』判定有版本差異，詳見缺口。"
+    ],
+    [
+      "原版裝備",
+      "96／96 名稱",
+      "96筆均有取得提示、來源與路線；單源及衝突可見，未PS5實機驗證。"
+    ],
+    [
+      "解謎石",
+      "12／12 組",
+      "有操作解法；大石柱起點文字存在來源差異，採遊戲內地標與圖核對。"
+    ],
+    [
+      "隱藏物",
+      "6／6 處",
+      "以場景特徵定位；不採互相矛盾的單源東西方描述。"
+    ],
+    [
+      "貝殼電話水點",
+      "8／8 區域",
+      "前置與回報已核對，逐點精確截圖尚未重新標註。"
+    ],
+    [
+      "失物",
+      "3／3",
+      "取得與歸還分開。"
+    ],
+    [
+      "戀愛書籍",
+      "3／3",
+      "洞窟與解法已收錄。"
+    ],
+    [
+      "黃金鑰匙",
+      "5／5",
+      "塔內一把、世界四把；不是四把或三把。"
+    ],
+    [
+      "魔法",
+      "10／10",
+      "取得來源已收錄；Furry Shield 採較保守主線觸發。"
+    ],
+    [
+      "原版懸賞",
+      "11／11",
+      "擊倒與領賞分開；更新追加懸賞另列。"
+    ],
+    [
+      "船藍圖",
+      "13 個被動升級名稱",
+      "13被動與4炮彈均有查漏攻略；名稱、階級與金盃集合仍有來源差異，不作白金分母。"
+    ],
+    [
+      "全部寶箱",
+      "未建逐箱資料庫",
+      "白金門檻80；不宣稱已收錄現版全部箱子。"
+    ]
+  ],
+  "bookGuide": "第一章介入保護 Purrscilla、最後稱讚她；第二章可採擬定計畫／潛入，認出 Snoutford，選擇保護 Purrscilla；第三章帶她逃離、表示慶幸她安全、承認對往事的悔意，最後選兄弟仍是家人。前段有可行分支，不把單一攻略選項誤當每句都唯一。章末要取獎，三章後還有Boss與回入口回報。[S07、S08]",
+  "scope": ""
+}

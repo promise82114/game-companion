@@ -26,6 +26,7 @@ assert.ok(modules.length>0);assert.equal(new Set(modules.map(m=>m.gameId)).size,
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let html=await fs.readFile(path.join(root,'portal/index.html'),'utf8');
 const presentation={
+ 'cat-quest-iii':{kind:'roadmap',features:['31 座 PS5 本體獎盃','19 段航海路線','原版96裝備與專項查漏']},
  'cat-quest-ii':{kind:'roadmap',features:['20 座 PS4 本體獎盃','六階段路線與67支線','地城、法術與裝備查漏']},
  'a-little-to-the-left':{kind:'roadmap',features:['48 座 PS5 本體獎盃','五章逐題文字與解法查漏','每日整理與乾淨首輪提醒']},
  'like-a-dragon-infinite-wealth':{kind:'roadmap',features:['65 座 PS5 本體獎盃','110 攝影、90 追憶逐點查漏','14 章路線與52支線']},

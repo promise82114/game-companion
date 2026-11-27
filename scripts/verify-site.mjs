@@ -4,6 +4,11 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../_site/',import.meta.url));
 let files=0,links=0;
+const cq3=path.join(root,'games/cat-quest-iii');
+for(const file of ['index.html','app.js','model.js','style.css','data.json'])await fs.access(path.join(cq3,file));
+const cq3Data=JSON.parse(await fs.readFile(path.join(cq3,'data.json'),'utf8'));assert.equal(cq3Data.trophies.length,31);assert.equal(cq3Data.steps.length,19);assert.equal(cq3Data.entities.filter(e=>e.kind==='equipment').length,96);
+assert.ok((await fs.readFile(path.join(root,'index.html'),'utf8')).includes('href="games/cat-quest-iii/"'));
+
 const cq2=path.join(root,'games/cat-quest-ii');
 for(const file of ['index.html','app.js','model.js','style.css','data.json','locations.js'])await fs.access(path.join(cq2,file));
 const cq2Data=JSON.parse(await fs.readFile(path.join(cq2,'data.json'),'utf8'));

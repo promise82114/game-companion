@@ -1,0 +1,12 @@
+{
+  "gameId": "cat-quest-iii",
+  "slug": "cat-quest-iii",
+  "title": "Cat Quest III／貓咪鬥惡龍III",
+  "description": "PS5 白金航海路線、原版96裝備與專項蒐集查漏",
+  "moduleVersion": "1.1.0",
+  "progressSchema": 1,
+  "entry": "dist/index.html",
+  "publicPath": "games/cat-quest-iii/",
+  "storagePrefix": "game-companion.cat-quest-iii.",
+  "cloudWritesEnabled": false
+}

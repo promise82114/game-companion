@@ -63,4 +63,6 @@ const ballCheck=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'g
 results.push({slug:'ball-x-pit',trophies:64,baseMatrix:128,cloudWrite:'not implemented'});
 const cq2Check=spawnSync(process.execPath,['games/cat-quest-ii/verify.mjs'],{cwd:root,encoding:'utf8'});assert.equal(cq2Check.status,0,cq2Check.stdout+cq2Check.stderr);console.log(cq2Check.stdout.trim());
 results.push({slug:'cat-quest-ii',trophies:20,sideQuests:67,dungeons:73,equipment:'101 reference + 7 update',cloudWrite:'not implemented'});
+const cq3Check=spawnSync(process.execPath,['verify.mjs'],{cwd:path.join(root,'games/cat-quest-iii'),encoding:'utf8'});assert.equal(cq3Check.status,0,cq3Check.stdout+cq3Check.stderr);console.log(cq3Check.stdout.trim());
+results.push({slug:'cat-quest-iii',trophies:31,steps:19,equipment:96,cloudWrite:'not implemented'});
 console.log(JSON.stringify({passed:true,modules:results}));

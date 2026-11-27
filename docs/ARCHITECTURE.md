@@ -2,6 +2,8 @@
 
 2026-11-27 Cat Quest II 1.1.0：research/locations.mjs與原規格以獨立SHA256疊加產生catalog；108裝備的取得來源／候選池及26地城提醒由dist/locations.js呈現，共用原entities紀錄，schema1與namespace不變。來源與查證範圍篩選只影響檢視，地城清洞不代填裝備／鑰匙；Infinity Tomb五件仍在額外內容。2026-11-27使用者已授權本批commit／push與既有main GitHub Pages發布，部署結果以對應提交Actions及正式資源核對為準。見[補查紀錄](../games/cat-quest-ii/docs/LOCATIONS_RESEARCH.md)。
 
+2026-11-27 Cat Quest III 1.1.0：`games/cat-quest-iii/`原生ES模組，根規格與research.json雙hash離線產生四階段19段路線、211個原子事實與31盃。`game-companion.cat-quest-iii.progress.v1`獨立IndexedDB，沿用共用交易store／BroadcastChannel；steps／facts／trophies／counters／settings分開，逐鍵撤銷及條件匯入。Portal只增加目錄入口與原創封面；無Drive／SW，沒有改動其他遊戲儲存。資料缺口及驗證見[實作報告](../games/cat-quest-iii/docs/IMPLEMENTATION.md)，本批已獲授權沿main Pages流程發布，結果以對應Actions及正式資源為準。
+
 2026-11-27 Cat Quest II 本機1.0.0：`games/cat-quest-ii/`以根規格SHA256離線產生六階段19步、292個實體與20座PS4獎盃。原生ES模組沿用`shared/roadmap-store.js`交易儲存，獨立`game-companion.cat-quest-ii.progress.v1`，steps／entities／trophies／counters／settings各自保存；一般寫入與撤銷檢查逐鍵修訂，收藏關聯與推定門檻不代填其他狀態。無Drive／SW，Portal只增加模組入口及封面。保護式差異匯入保留兩端原文與未知資料、過期停止；資料缺口在小訣竅頁顯示。見[實作紀錄](../games/cat-quest-ii/docs/IMPLEMENTATION.md)，2026-11-27 使用者已授權本批 commit／push，沿既有 main GitHub Pages 流程發布；結果以對應提交 Actions 與正式資源核對為準。
 
 2026-11-27 人中之龍８ 1.2.0：research/substories.json離線維護52條詳細攻略與逐條來源，prepare-data以獨立SHA256合併；dist/substories.js共用路線與查漏呈現。沿用substories.SS01～SS52及schema1／namespace，不新增重複進度；路線依當章主角／可開始章節提供區域與系列閱讀單元，前置可互跳。關係支線三份禮物與商店、人格及特殊門檻分開列示。資料、建置、產物與隔離瀏覽器檢查通過，2026-11-27使用者已授權本批commit／push及既有main Pages發布，結果以對應提交Actions與正式資源核對為準。來源限制見[支線查核](../games/like-a-dragon-infinite-wealth/docs/SUBSTORIES_RESEARCH.md)。
