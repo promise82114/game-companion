@@ -13,6 +13,6 @@
 .skip{top:0;clip-path:inset(50%);width:1px;height:1px;padding:0;overflow:hidden;white-space:nowrap}.skip:focus{clip-path:none;width:auto;height:auto;padding:12px;overflow:visible}
 
 /* Chinese leads; the original is a readable secondary reference. */
-.localized-name{font:inherit;overflow-wrap:anywhere}.localized-name .name-zh{font:inherit}.localized-name .original-name{display:inline;font-size:12px;line-height:1.65;font-weight:400;color:#53625a;white-space:normal;overflow-wrap:anywhere}.translation-note{font-size:13px;line-height:1.65;color:#43554b}.translation-policy{margin:16px 0;padding:12px;border-left:3px solid #547761}.translation-policy p{font-size:14px}.check .localized-name{min-width:0}
+.localized-name{font:inherit;overflow-wrap:anywhere}.localized-name .name-zh{font:inherit}.localized-name .original-name{display:inline;margin:0;font-size:12px;line-height:1.65;font-weight:400;color:#53625a;white-space:normal;overflow-wrap:anywhere}.translation-note{font-size:13px;line-height:1.65;color:#43554b}.translation-policy{margin:16px 0;padding:12px;border-left:3px solid #547761}.translation-policy p{font-size:14px}.check .localized-name{min-width:0}
 
 .sidebar .localized-name .original-name{color:#c8ddd4}.brand .localized-name>.original-name{display:block}
